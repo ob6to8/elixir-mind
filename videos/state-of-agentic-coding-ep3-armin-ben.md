@@ -19,6 +19,18 @@ related:
   - "[[context-engineering-and-persistent-agent-memory]]"
 ---
 
+## Summary
+
+Episode 3 of Armin Ronacher and Ben's agentic coding podcast, recorded mid-February 2026 during what they call "the craziest month" in AI coding. The episode opens by revisiting their January predictions — Cursor didn't make a big splash, harnesses multiplied, and personal agents (particularly OpenClaw/Claudebot) exploded in popularity, allegedly driving Mac Mini sales.
+
+The core tension running through the episode: **agentic coding is powerful but the code quality isn't there yet, and going faster may be counterproductive.** Armin is on a self-described "detox" — pulling back from pure requirements-engineering-and-let-the-agent-build mode because agents produce code that works but nobody understands. Ben echoes this: "I can objectively say my codebase is not good quality standard... but it's good enough."
+
+On Opus 4.6: both find it incrementally better, with notably improved compaction. Fast mode (2.5x speed, 6x cost) is impressive but neither needs it — they're bottlenecked by human review, not model speed. The exception: large autonomous projects like Cursor's browser or Anthropic's C compiler, where machine-verifiable win conditions let agents run unsupervised.
+
+The most forward-looking thread: **the IDE is dying.** AMP killed their IDE extension. Cursor's website now shows agent view, not editor. Armin predicts the discourse will shift to "death of the IDE" within weeks. The future UI may just be a chat app — OpenClaw is a year early on this pattern.
+
+Predictions for next month: more sandbox solutions, productized multi-agent orchestration ("Gas Town" pattern), and Google still won't crack the developer tools market despite having great models — both Google and Microsoft are "deeply dysfunctional" at shipping resonant end-user products.
+
 ## Participants
 
 - **Armin Ronacher** — creator of Flask, founder of Arendelle (stealth), self-described agentic coding addict
