@@ -39,8 +39,14 @@ Markdown-based personal knowledge base. Obsidian-compatible vault.
 - Only read full `.md` files when the user asks about a specific topic
 
 ## Scripts
-- `scripts/ingest.sh <url>` — fetch raw content (article/YouTube/arxiv), print to stdout
+- `scripts/ingest.sh <url>` — fetch raw content, print to stdout. Detects: YouTube (yt-dlp transcript), Reddit (.json API), arxiv, generic article (curl + pandoc)
 - `scripts/build-index.sh` — regenerate `index.json` from all frontmatter
+
+## Ingestion Notes
+- **Reddit:** `ingest.sh` appends `.json` to URLs — bypasses JS rendering, extracts post + top 15 comments via jq
+- **X/Twitter:** cannot be auto-fetched (JS wall, oEmbed returns only URLs for articles). User must paste content manually.
+- **YouTube:** auto-generated transcripts have mangled names — clean up in the structured note
+- **Generic articles:** WebFetch often works better than `ingest.sh` for non-JS-rendered pages
 
 ## Dependencies
 - `yt-dlp` — YouTube transcript extraction
