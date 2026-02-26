@@ -2,7 +2,13 @@
 
 Markdown-based personal knowledge base. Obsidian-compatible vault.
 
-## Ingestion Workflow
+## Content Types
+- **article** — web articles, blog posts → `articles/<topic>/`
+- **video** — YouTube transcripts → `videos/`
+- **paper** — arxiv, research papers → `papers/`
+- **conversation** — archived investigations and dialogues → `conversations/`
+
+## Ingestion Workflow (articles, videos, papers)
 1. User provides a URL
 2. Detect content type (article, YouTube video, paper)
 3. Fetch content: `./scripts/ingest.sh <url>` for raw text, or WebFetch for articles
@@ -11,6 +17,14 @@ Markdown-based personal knowledge base. Obsidian-compatible vault.
 6. Create the `.md` file with frontmatter + extracted body
 7. Run `./scripts/build-index.sh` to update `index.json`
 8. Commit the new note
+
+## Conversation Workflow
+1. User provides a seed question or topic
+2. Generate frontmatter from `templates/conversation.md` — title, tags, participants, seed_question
+3. Write the exchanges as structured markdown (## Seed, ## Discussion, ### subsections)
+4. Save to `conversations/<kebab-title>.md`
+5. Run `./scripts/build-index.sh` to update `index.json`
+6. Commit the note
 
 ## Conventions
 - Filenames: kebab-case, derived from title
