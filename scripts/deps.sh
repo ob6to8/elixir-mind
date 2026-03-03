@@ -30,18 +30,29 @@ if [[ "$exists" != "true" ]]; then
   exit 1
 fi
 
-# Track visited nodes to prevent cycles
-declare -A visited
+# Track visited nodes to prevent cycles (compatible with bash 3)
+visited_list=""
+
+is_visited() {
+  local id="$1"
+  echo "$visited_list" | grep -qx "$id" 2>/dev/null
+}
+
+mark_visited() {
+  local id="$1"
+  visited_list="${visited_list}${id}
+"
+}
 
 walk_tree() {
   local id="$1"
   local indent="$2"
 
-  if [[ -n "${visited[$id]+x}" ]]; then
+  if is_visited "$id"; then
     echo "${indent}(cycle: $id)"
     return
   fi
-  visited[$id]=1
+  mark_visited "$id"
 
   # Check if it's an assertion
   local assertion

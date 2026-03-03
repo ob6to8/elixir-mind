@@ -84,10 +84,12 @@ for mdfile in "$REPO_ROOT"/assertions/*.md; do
 
   # --- Extract edges from this assertion ---
 
-  # Evidence edges: assertion -> source
+  # Evidence edges: assertion -> source (only for wikilink sources, not inline strings)
   evidence_links=$(echo "$fm_json" | jq -r '(.evidence // [])[] | .source // empty')
   while IFS= read -r link; do
     [[ -z "$link" ]] && continue
+    # Skip inline context strings — only process [[wikilink]] format
+    [[ "$link" != "[["* ]] && continue
     target_id=$(extract_id "$link")
     edge=$(jq -n --arg from "$filename" --arg to "$target_id" \
       '{from: $from, to: $to, type: "evidence"}')
