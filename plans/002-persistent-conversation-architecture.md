@@ -66,8 +66,12 @@ Wraps `llm` to enforce the persistence-first protocol:
 ./scripts/thread.sh export <thread-id>
 ```
 
-#### 4. `scripts/export-conversation.sh` — thread → second-brain note
-Queries `llm logs` for a conversation, generates frontmatter, writes to `conversations/<kebab-title>.md`, runs `build-index.sh`.
+#### 4. `scripts/export-conversation.sh` — thread → second-brain
+Queries `llm logs` for a conversation, then either:
+- Writes a source file to `sources/<kebab-title>.md` with `type: source`, `source_type: conversation`
+- Or invokes `/conclude` logic to extract assertions from the thread directly into the DAG
+
+The second path is more aligned with Plan 003's architecture — conversations are a means to assertions, not artifacts themselves.
 
 ### Context loading strategies
 
@@ -95,8 +99,7 @@ Use `llm embed` to find the most relevant prior turns and notes. Requires pgvect
 2. Write `scripts/context-load.sh` — SQLite query + index.json lookup
 3. Write `scripts/thread.sh` — conversation wrapper
 4. Write `scripts/export-conversation.sh` — thread → .md note
-5. Add `conversations/` to directory structure and CLAUDE.md
-6. Test: run a multi-turn thread, export it, verify it appears in index.json
+5. Test: run a multi-turn thread, export it, verify it appears in index.json
 7. Shellcheck all scripts
 
 ## Open Questions
@@ -105,7 +108,7 @@ Use `llm embed` to find the most relevant prior turns and notes. Requires pgvect
 - **Context budget** — how many prior turns to load? Fixed window? Token-counted? Configurable per thread?
 - **Thread discovery** — how does the context loader know which second-brain notes are relevant? Tag matching? Full-text search? Embeddings?
 - **Editing** — should exported conversations be editable? If so, do edits propagate back to SQLite or is the .md the final form?
-- **Claude Code integration** — can this coexist with Claude Code sessions, or is it a parallel workflow?
+- **Claude Code integration** — can this coexist with Claude Code sessions, or is it a parallel workflow? Plan 003's `/conclude` skill is the natural bridge — export triggers assertion extraction.
 
 ## Non-Goals (for now)
 
