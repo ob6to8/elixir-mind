@@ -81,10 +81,19 @@ related: []
 
 ### 5. Ingest referenced sources
 
-If the conversation references URLs that aren't already in `sources/`, ingest them:
-- Use `./scripts/ingest.sh <url>` or WebFetch to get content
-- Create source files in `sources/` with `type: source` frontmatter
-- Link them as evidence in the relevant assertions
+If the conversation references URLs that aren't already in `sources/`, ingest them as **full verbatim content**. A source worthy of inclusion must have its original content, not just a summary.
+
+**Extraction cascade — try each method in order until one produces full content:**
+1. `./scripts/ingest.sh <url>` — works for YouTube, Reddit, arxiv, simple articles
+2. `WebFetch <url>` — works for most non-JS-rendered pages
+3. Ask the user to paste the content — last resort for JS-walled or paywalled pages
+
+**Source fidelity rules:**
+- Sources must contain the original extracted text, not a summary or synopsis
+- If no method produces full content, do NOT create a thin placeholder source. Ask the user to provide the content manually.
+- It is better to have no source file than a stub that only contains metadata
+
+Create source files in `sources/` with `type: source` frontmatter and link them as evidence in the relevant assertions.
 
 ### 6. Rebuild index and commit
 

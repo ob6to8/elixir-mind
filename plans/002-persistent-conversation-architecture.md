@@ -11,7 +11,7 @@ Architect a persistence-first conversation system where:
 2. The context window is a cache, not the source of truth
 3. Conversations are inspectable, searchable, and exportable
 4. A fresh agent can reconstruct any conversation by loading from the store
-5. Finished threads export to the second-brain as `conversations/*.md` notes
+5. Finished threads export to the second-brain as source files or assertions
 
 ## Key Insight
 
@@ -110,9 +110,74 @@ Use `llm embed` to find the most relevant prior turns and notes. Requires pgvect
 - **Editing** — should exported conversations be editable? If so, do edits propagate back to SQLite or is the .md the final form?
 - **Claude Code integration** — can this coexist with Claude Code sessions, or is it a parallel workflow? Plan 003's `/conclude` skill is the natural bridge — export triggers assertion extraction.
 
+## Persistence Architecture Decision: Markdown-Canonical, SQLite-Derived
+
+### The question
+
+Plan 002 introduces SQLite (via `llm`) alongside the markdown-based knowledge store from Plan 003. This raises a domain-crossing problem: if assertions and sources live in markdown but conversation turns live in SQLite, linking across domains is awkward. Two clean options exist — everything markdown, or everything SQLite. Research (March 2026) shows the industry has converged on a third answer.
+
+### Industry convergence: markdown-canonical + SQLite-derived
+
+Multiple projects arrived independently at the same pattern:
+
+**Basic Memory** (MCP server for Claude/Obsidian): Markdown files with structured frontmatter are the source of truth. SQLite indexes the knowledge graph for search and traversal. Bidirectional sync — file edits trigger re-indexing, LLM tool calls write files that get indexed. If the database is lost, rebuild from files.
+
+**OpenClaw** (145K+ stars): `MEMORY.md` files are canonical. SQLite at `~/.openclaw/memory/{agentId}.sqlite` stores chunked embeddings for hybrid search. Retrieval uses 70% vector similarity + 30% BM25 keyword matching (89% recall vs 76% pure vector or 68% pure BM25). Pre-compaction flush checkpoints memories to markdown before context overflow.
+
+**Simon Willison's `llm`**: Pure SQLite — `conversations`, `responses`, `responses_fts` (FTS5) tables. Rich schema with tool calls, attachments, token counts. Great for machines, bad for humans (not browsable, not git-diffable).
+
+**Logseq DB**: Migrating from markdown-first to SQLite-first. Community backlash over losing portability, file sync, and the "it's just markdown" promise. Cautionary tale.
+
+**Manus** (acquired by Meta, $2B): Pure markdown — three files per agent session (`task_plan.md`, `notes.md`, deliverable). Works under ~1,000 files. No semantic search, no relational queries.
+
+### Trade-offs
+
+| Factor | Markdown-only | SQLite-only | Markdown + SQLite |
+|---|---|---|---|
+| Debuggability | Excellent | Poor (need SQL client) | Good |
+| Semantic search | None (grep) | FTS5 / embeddings | Full hybrid |
+| Git-friendliness | Excellent | Terrible (binary diffs) | Markdown diffs, DB is ephemeral |
+| Portability | Universal | Requires SQLite tooling | Files are portable, DB is rebuildable |
+| Editor integration | Native | None | Via markdown layer |
+| Scalability | Degrades >1K files | Millions of rows | File count for writes, DB for reads |
+| Rebuild from scratch | N/A | Must export | Delete DB, re-derive from files |
+
+### Decision for this project
+
+**Markdown-canonical, SQLite-derived.** Aligned with Plan 003's design principles (shell-first, agent-agnostic, files on disk).
+
+- `llm`'s SQLite log persists naturally (it's `llm`'s internal storage — we don't fight it)
+- The SQLite log is a **persistent operational record** — the raw reasoning chain, dead ends, full derivation history. Valuable evidence for why you believe something.
+- Export converts threads to markdown (sources and/or assertions via `/conclude`)
+- `index.json` is the current derived query layer. It happens to be JSON, not SQLite.
+- **Upgrade path when corpus demands it:** replace `index.json` with a SQLite index derived from the same markdown files. Same `build-index.sh` concept, different output format. Add FTS5 for full-text, embeddings for semantic search.
+
+The migration path: `markdown → markdown + JSON index → markdown + SQLite index → markdown + postgres + pgvector`. The file layer stays constant; the query layer scales up.
+
+### How conversation turns fit
+
+Two persistence layers, different purposes:
+
+| Layer | Store | Purpose | Example |
+|---|---|---|---|
+| **Operational log** | `llm` SQLite | Process — how you got there, full reasoning, dead ends | "I searched for X, found Y, concluded Z" |
+| **Knowledge store** | Markdown files | Product — curated claims with provenance | `assertions/context-window-is-viewport.md` |
+
+Export is the bridge: `thread.sh export` reads from SQLite, writes to markdown. The SQLite log is never the source of truth for knowledge — only for conversation history.
+
+### Sources
+
+- [Basic Memory — GitHub](https://github.com/basicmachines-co/basic-memory)
+- [AI Agent Memory Management: When Markdown Files Are All You Need — DEV Community](https://dev.to/imaginex/ai-agent-memory-management-when-markdown-files-are-all-you-need-5ekk)
+- [OpenClaw Memory Architecture — MMNTM](https://www.mmntm.net/articles/openclaw-memory-architecture)
+- [Design Patterns for Long-Term Memory in LLM-Powered Architectures — Serokell](https://serokell.io/blog/design-patterns-for-long-term-memory-in-llm-powered-architectures)
+- [Logseq OG (markdown) vs Logseq (DB:sqlite) — Logseq Forum](https://discuss.logseq.com/t/logseq-og-markdown-vs-logseq-db-sqlite/34608)
+- [LLM CLI — Logging to SQLite](https://llm.datasette.io/en/stable/logging.html)
+
 ## Non-Goals (for now)
 
 - Real-time streaming (batch is fine)
 - Multi-user threads
 - Web UI (CLI-first)
 - Replacing Claude Code (complementing it)
+- Moving the knowledge store to SQLite (markdown stays canonical)
