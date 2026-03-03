@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: conversation
 title: "Context engineering and persistent agent memory"
 tags: [ai, context-engineering, llm-architecture, agent-memory, simon-willison, llm-cli]
 participants: [mark, claude]
@@ -9,7 +11,6 @@ summary: >
   whether the context window is an artificial constraint masking a
   persistence problem, and how Simon Willison's llm CLI could architect
   truly persistent exchanges where every round is atomically saved.
-content_type: conversation
 seed_question: "Why do we do context engineering such that an ephemeral chat transcript is built and then an ad hoc attempt is made to persist its learnings?"
 related: []
 ---

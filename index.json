@@ -1,172 +1,100 @@
-[
-  {
-    "title": "macOS System Data Disk Cleanup — Tools and Techniques",
-    "url": "https://news.ycombinator.com/item?id=47218288",
-    "aliases": [
-      "macos disk space",
-      "system data cleanup"
-    ],
-    "tags": [
-      "macos",
-      "disk-management",
-      "dev-tools",
-      "cli"
-    ],
-    "source": "Hacker News",
-    "authors": [],
-    "date_published": "2026-03-02",
-    "date_captured": "2026-03-02",
-    "summary": "Curated tips from an HN thread on reclaiming macOS disk space consumed by opaque \"System Data.\" Covers GUI tools (GrandPerspective, DaisyDisk), CLI tools (ncdu, dust, du), Finder tricks, and an advanced SIP-disable technique.\n",
-    "content_type": "article",
-    "word_count": 450,
-    "related": [],
-    "file": "articles/macos/macos-system-data-disk-cleanup.md"
-  },
-  {
-    "title": "We built persistent memory for OpenClaw — Here's what we learned",
-    "url": "https://www.reddit.com/r/openclaw/comments/1regq4c/we_built_persistent_memory_for_openclaw_heres/",
-    "aliases": [
-      "mem0 openclaw plugin",
-      "openclaw persistent memory"
-    ],
-    "tags": [
-      "ai",
-      "agent-memory",
-      "context-engineering",
-      "openclaw",
-      "mem0",
-      "vector-search"
-    ],
-    "source": "r/openclaw (Reddit)",
-    "authors": [
-      "singh_taranjeet"
-    ],
-    "date_published": "2025-02-26",
-    "date_captured": "2026-02-25",
-    "summary": "Mem0 team describes building a OpenClaw plugin that moves memory outside the context window — auto-recall injects relevant memories each turn, auto-capture persists new facts after each response. Claims this solves compaction-induced forgetting. Community pushback notes OpenClaw already has built-in vector + SQLite memory that survives compaction.\n",
-    "content_type": "article",
-    "word_count": 1200,
-    "related": [
-      "[[context-engineering-and-persistent-agent-memory]]"
-    ],
-    "file": "articles/ai/persistent-memory-for-openclaw-mem0-plugin.md"
-  },
-  {
-    "title": "Everything Claude Code — Complete Configuration Repository",
-    "url": "https://github.com/affaan-m/everything-claude-code",
-    "aliases": [
-      "everything claude code",
-      "affaan claude code configs"
-    ],
-    "tags": [
-      "ai",
-      "claude-code",
-      "agentic-coding",
-      "agent-config",
-      "coding-agents",
-      "mcp",
-      "hooks"
-    ],
-    "source": "GitHub",
-    "authors": [
-      "affaan-m"
-    ],
-    "date_published": "",
-    "date_captured": "2026-02-25",
-    "summary": "Massive Claude Code plugin repo (50K+ stars) with 13 agents, 48+ skills, 32+ slash commands, hooks, and rules. Production-ready configs for TDD, code review, security, multi-agent orchestration, and continuous learning. Created by an Anthropic hackathon winner.\n",
-    "content_type": "article",
-    "word_count": 800,
-    "related": [
-      "[[longform-guide-everything-claude-code]]",
-      "[[context-engineering-and-persistent-agent-memory]]",
-      "[[state-of-agentic-coding-ep3-armin-ben]]"
-    ],
-    "file": "articles/ai/everything-claude-code-config-repo.md"
-  },
-  {
-    "title": "The Longform Guide to Everything Claude Code",
-    "url": "https://x.com/affaanmustafa/status/2014040193557471352",
-    "aliases": [
-      "everything claude code longform",
-      "affaan claude code guide"
-    ],
-    "tags": [
-      "ai",
-      "claude-code",
-      "context-engineering",
-      "agent-memory",
-      "token-optimization",
-      "agentic-coding",
-      "hooks",
-      "subagents",
-      "evals"
-    ],
-    "source": "X (article)",
-    "authors": [
-      "affaan-m (cogsec)"
-    ],
-    "date_published": "2026-01-21",
-    "date_captured": "2026-02-25",
-    "summary": "Deep guide to advanced Claude Code patterns from 10+ months of daily use. Covers context/memory management (session files, hooks, strategic compaction), token optimization (subagent model selection, modular codebases), verification loops (checkpoint vs continuous evals), parallelization (worktrees, cascade method), and sub-agent orchestration (iterative retrieval, sequential phases).\n",
-    "content_type": "article",
-    "word_count": 4500,
-    "related": [
-      "[[everything-claude-code-config-repo]]",
-      "[[context-engineering-and-persistent-agent-memory]]",
-      "[[state-of-agentic-coding-ep3-armin-ben]]"
-    ],
-    "file": "articles/ai/longform-guide-everything-claude-code.md"
-  },
-  {
-    "title": "State Of Agentic Coding #3 with Armin and Ben",
-    "url": "https://www.youtube.com/watch?v=b0SYAChbOlc",
-    "aliases": [
-      "agentic coding ep3",
-      "armin ronacher ben agentic coding"
-    ],
-    "tags": [
-      "ai",
-      "agentic-coding",
-      "claude-code",
-      "opus-4-6",
-      "coding-agents",
-      "harnesses",
-      "personal-agents",
-      "ide-vs-cli"
-    ],
-    "channel": "Armin Ronacher",
-    "date_published": "2026-02-16",
-    "date_captured": "2026-02-25",
-    "summary": "Armin Ronacher and Ben discuss the state of agentic coding in Feb 2026: Opus 4.6 and fast mode impressions, the explosion of harnesses (Codex, Pi, Toad), OpenClaw/personal agents going mainstream, the IDE-to-CLI shift, code quality concerns, and whether the job becomes requirements engineering.\n",
-    "duration": "59:01",
-    "content_type": "video",
-    "word_count": 11517,
-    "related": [
-      "[[persistent-memory-for-openclaw-mem0-plugin]]",
-      "[[context-engineering-and-persistent-agent-memory]]"
-    ],
-    "file": "videos/state-of-agentic-coding-ep3-armin-ben.md"
-  },
-  {
-    "title": "Context engineering and persistent agent memory",
-    "tags": [
-      "ai",
-      "context-engineering",
-      "llm-architecture",
-      "agent-memory",
-      "simon-willison",
-      "llm-cli"
-    ],
-    "participants": [
-      "mark",
-      "claude"
-    ],
-    "date_started": "2026-02-25",
-    "date_captured": "2026-02-25",
-    "summary": "Investigation into why LLM conversations are ephemeral by default, whether the context window is an artificial constraint masking a persistence problem, and how Simon Willison's llm CLI could architect truly persistent exchanges where every round is atomically saved.\n",
-    "content_type": "conversation",
-    "seed_question": "Why do we do context engineering such that an ephemeral chat transcript is built and then an ad hoc attempt is made to persist its learnings?",
-    "related": [],
-    "file": "conversations/context-engineering-and-persistent-agent-memory.md"
-  }
-]
+{
+  "sources": [
+    {
+      "id": "context-engineering-and-persistent-agent-memory",
+      "type": "source",
+      "source_type": "conversation",
+      "title": "Context engineering and persistent agent memory",
+      "tags": [
+        "ai",
+        "context-engineering",
+        "llm-architecture",
+        "agent-memory",
+        "simon-willison",
+        "llm-cli"
+      ],
+      "file": "sources/context-engineering-and-persistent-agent-memory.md"
+    },
+    {
+      "id": "everything-claude-code-config-repo",
+      "type": "source",
+      "source_type": "article",
+      "title": "Everything Claude Code — Complete Configuration Repository",
+      "tags": [
+        "ai",
+        "claude-code",
+        "agentic-coding",
+        "agent-config",
+        "coding-agents",
+        "mcp",
+        "hooks"
+      ],
+      "file": "sources/everything-claude-code-config-repo.md"
+    },
+    {
+      "id": "longform-guide-everything-claude-code",
+      "type": "source",
+      "source_type": "article",
+      "title": "The Longform Guide to Everything Claude Code",
+      "tags": [
+        "ai",
+        "claude-code",
+        "context-engineering",
+        "agent-memory",
+        "token-optimization",
+        "agentic-coding",
+        "hooks",
+        "subagents",
+        "evals"
+      ],
+      "file": "sources/longform-guide-everything-claude-code.md"
+    },
+    {
+      "id": "macos-system-data-disk-cleanup",
+      "type": "source",
+      "source_type": "article",
+      "title": "macOS System Data Disk Cleanup — Tools and Techniques",
+      "tags": [
+        "macos",
+        "disk-management",
+        "dev-tools",
+        "cli"
+      ],
+      "file": "sources/macos-system-data-disk-cleanup.md"
+    },
+    {
+      "id": "persistent-memory-for-openclaw-mem0-plugin",
+      "type": "source",
+      "source_type": "article",
+      "title": "We built persistent memory for OpenClaw — Here's what we learned",
+      "tags": [
+        "ai",
+        "agent-memory",
+        "context-engineering",
+        "openclaw",
+        "mem0",
+        "vector-search"
+      ],
+      "file": "sources/persistent-memory-for-openclaw-mem0-plugin.md"
+    },
+    {
+      "id": "state-of-agentic-coding-ep3-armin-ben",
+      "type": "source",
+      "source_type": "video",
+      "title": "State Of Agentic Coding #3 with Armin and Ben",
+      "tags": [
+        "ai",
+        "agentic-coding",
+        "claude-code",
+        "opus-4-6",
+        "coding-agents",
+        "harnesses",
+        "personal-agents",
+        "ide-vs-cli"
+      ],
+      "file": "sources/state-of-agentic-coding-ep3-armin-ben.md"
+    }
+  ],
+  "assertions": [],
+  "edges": []
+}

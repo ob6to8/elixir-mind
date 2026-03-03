@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: ""
 title: ""
 url: ""
 aliases: []
@@ -7,7 +9,5 @@ authors: []
 date_published: ""
 date_captured: ""
 summary: >
-content_type: paper
-word_count: 0
 related: []
 ---

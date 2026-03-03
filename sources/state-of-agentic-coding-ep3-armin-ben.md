@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: video
 title: "State Of Agentic Coding #3 with Armin and Ben"
 url: "https://www.youtube.com/watch?v=b0SYAChbOlc"
 aliases: ["agentic coding ep3", "armin ronacher ben agentic coding"]
@@ -12,7 +14,6 @@ summary: >
   Toad), OpenClaw/personal agents going mainstream, the IDE-to-CLI shift,
   code quality concerns, and whether the job becomes requirements engineering.
 duration: "59:01"
-content_type: video
 word_count: 11517
 related:
   - "[[persistent-memory-for-openclaw-mem0-plugin]]"

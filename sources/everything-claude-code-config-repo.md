@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: article
 title: "Everything Claude Code — Complete Configuration Repository"
 url: "https://github.com/affaan-m/everything-claude-code"
 aliases: ["everything claude code", "affaan claude code configs"]
@@ -12,7 +14,6 @@ summary: >
   32+ slash commands, hooks, and rules. Production-ready configs for TDD,
   code review, security, multi-agent orchestration, and continuous learning.
   Created by an Anthropic hackathon winner.
-content_type: article
 word_count: 800
 related:
   - "[[longform-guide-everything-claude-code]]"

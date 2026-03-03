@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: article
 title: "We built persistent memory for OpenClaw — Here's what we learned"
 url: "https://www.reddit.com/r/openclaw/comments/1regq4c/we_built_persistent_memory_for_openclaw_heres/"
 aliases: ["mem0 openclaw plugin", "openclaw persistent memory"]
@@ -13,7 +15,6 @@ summary: >
   persists new facts after each response. Claims this solves compaction-induced
   forgetting. Community pushback notes OpenClaw already has built-in vector + SQLite
   memory that survives compaction.
-content_type: article
 word_count: 1200
 related:
   - "[[context-engineering-and-persistent-agent-memory]]"

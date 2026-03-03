@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: article
 title: "macOS System Data Disk Cleanup — Tools and Techniques"
 url: "https://news.ycombinator.com/item?id=47218288"
 aliases:
@@ -17,7 +19,6 @@ summary: >
   Curated tips from an HN thread on reclaiming macOS disk space consumed by
   opaque "System Data." Covers GUI tools (GrandPerspective, DaisyDisk), CLI
   tools (ncdu, dust, du), Finder tricks, and an advanced SIP-disable technique.
-content_type: article
 word_count: 450
 related: []
 ---

@@ -1,4 +1,6 @@
 ---
+type: source
+source_type: article
 title: "The Longform Guide to Everything Claude Code"
 url: "https://x.com/affaanmustafa/status/2014040193557471352"
 aliases: ["everything claude code longform", "affaan claude code guide"]
@@ -13,7 +15,6 @@ summary: >
   token optimization (subagent model selection, modular codebases), verification
   loops (checkpoint vs continuous evals), parallelization (worktrees, cascade
   method), and sub-agent orchestration (iterative retrieval, sequential phases).
-content_type: article
 word_count: 4500
 related:
   - "[[everything-claude-code-config-repo]]"
