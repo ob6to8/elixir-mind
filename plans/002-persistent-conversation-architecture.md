@@ -1,5 +1,7 @@
 # Plan 002: Persistent Conversation Architecture
 
+**Status: EXECUTED 2026-03-03 (via Plan 007 — Shellclaw Integration)**
+
 ## Problem
 
 LLM conversations are ephemeral by default. The context window is treated as the source of truth, but it's actually a lossy viewport. Persistence is an afterthought — summaries written at session end, memories the user never inspects, context lost at boundaries.

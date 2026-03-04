@@ -6,8 +6,8 @@ Assertion DAG knowledge base. Markdown files, shell scripts, optional Claude Cod
 
 ```
 Layer 0: Files on disk (markdown, json, shell scripts)
-Layer 1: Shell scripts (ingest, build-index, query, deps, orphans, contested)
-Layer 2: Claude Code skills (/search, /conclude — thin wrappers over Layer 1)
+Layer 1: Shell scripts (ingest, build-index, query, deps, orphans, contested, context-load, thread, publish-*)
+Layer 2: Claude Code skills (/search, /conclude, /publish — thin wrappers over Layer 1)
 Layer 3: Natural language conversation (research, reasoning)
 ```
 
@@ -28,8 +28,12 @@ assertions/     # Primitives and compounds (flat)
 schema/         # File specs and conventions
 templates/      # Frontmatter templates (source.md, assertion.md)
 scripts/        # Shell tooling
+scripts/lib/    # Shared libraries (llm-call, log, test-harness)
+scripts/test/   # Test suite (run_all.sh discovers test_*.sh)
 plans/          # Architecture plans (historical)
 intake/         # Staging area
+publish/        # Generated content for itsjustshell.com (NimblePublisher format)
+logs/           # JSONL event logs
 .claude/skills/ # Claude Code skills
 ```
 
@@ -62,12 +66,29 @@ intake/         # Staging area
 
 ## Scripts
 
+All scripts support `--describe` for machine-readable JSON schema output.
+
+### Knowledge base
 - `scripts/ingest.sh <url>` — fetch raw content, print to stdout. Detects: YouTube (yt-dlp), Reddit (.json API), arxiv, generic article (curl + pandoc)
 - `scripts/build-index.sh` — regenerate `index.json` from `sources/` and `assertions/` frontmatter
 - `scripts/query.sh` — search by tag, claim text, type, tier, confidence, or full-text
 - `scripts/deps.sh <id>` — walk assertion DAG upward, show dependency tree
 - `scripts/orphans.sh` — find unconnected nodes (assertions nothing depends on, sources nothing cites)
 - `scripts/contested.sh` — find contested/low-confidence assertions and potential contradictions
+
+### Conversations
+- `scripts/context-load.sh` — assemble KB context for LLM calls (`--topic`, `--assertion-id`, `--thread-id`)
+- `scripts/thread.sh` — persistent conversations via `llm` CLI (`new`, `continue`, `list`, `export`, `conclude`)
+- `scripts/export-conversation.sh` — convert a thread to a source file in `sources/`
+
+### Publishing
+- `scripts/publish-post.sh <assertion-id>` — generate blog post from compound assertion (claude backend)
+- `scripts/publish-research.sh <source-id>` — generate research item from source (claude backend)
+
+### Libraries
+- `scripts/lib/llm-call.sh` — LLM abstraction. Backends: `llm` (threading), `claude` (heavy reasoning), `stub` (testing). Env: `SB_LLM_BACKEND`, `SB_MODEL`.
+- `scripts/lib/log.sh` — JSONL event logging. Env: `LOG_FILE`, `SB_AGENT_ID`.
+- `scripts/lib/test-harness.sh` — test framework (`check_exit`, `check_output`, `check_contains`, `check_json_field`, `summary`)
 
 ## Ingestion Notes
 
@@ -86,6 +107,8 @@ See `schema/conventions.md` for full rules. Key points:
 
 ## Dependencies
 
-- `yt-dlp` — YouTube transcript extraction
 - `jq` — JSON processing
 - `yq` — YAML frontmatter parsing
+- `yt-dlp` — YouTube transcript extraction
+- `llm` — Simon Willison's CLI for LLM calls and conversation persistence (`pip install llm`)
+- `claude` — Anthropic CLI for heavy reasoning tasks (publish scripts)
