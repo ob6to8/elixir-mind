@@ -16,7 +16,7 @@ check_file_exists "$LOG_FILE" "log file created"
 
 line=$(head -1 "$LOG_FILE")
 check_json_field "$line" "event" "ingest" "event field correct"
-check_json_field "$line" "agent" "second-brain" "default agent id"
+check_json_field "$line" "agent" "assertion-graph" "default agent id"
 check_contains "$line" "Fetched source" "message preserved"
 
 # Validate JSON

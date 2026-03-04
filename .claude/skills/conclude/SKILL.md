@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebFetch
 
 # /conclude — Extract Assertions from Conversation
 
-You are operating inside a Second Brain knowledge base built on an assertion DAG architecture. The user has had a conversation (research, discussion, investigation) and wants to extract the findings as structured assertions.
+You are operating inside an Assertion Graph knowledge base built on an assertion DAG architecture. The user has had a conversation (research, discussion, investigation) and wants to extract the findings as structured assertions.
 
 ## Optional Focus
 

@@ -1,4 +1,4 @@
-# Second Brain
+# Assertion Graph
 
 Assertion DAG knowledge base. Markdown files, shell scripts, optional Claude Code skills.
 

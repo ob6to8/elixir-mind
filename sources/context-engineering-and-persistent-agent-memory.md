@@ -75,7 +75,7 @@ A persistence-first architecture on `llm` would look like:
 llm -s "$(load-context thread-id)" "user's question here"
 
 # load-context queries SQLite for relevant prior turns,
-# plus any related notes from the second-brain index,
+# plus any related notes from the assertion-graph index,
 # and formats them as a system prompt
 
 # The response is automatically persisted by llm to SQLite

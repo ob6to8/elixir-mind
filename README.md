@@ -1,4 +1,4 @@
-# Second Brain
+# Assertion Graph
 
 A knowledge base that turns research into structured claims.
 
@@ -166,7 +166,7 @@ Persistent research conversations via Simon Willison's `llm` CLI:
 # Continue an existing conversation
 ./scripts/thread.sh continue sb-20260303-141500 "What about pre-compaction?"
 
-# List all second-brain conversations
+# List all assertion-graph conversations
 ./scripts/thread.sh list
 
 # Export a conversation as a source file

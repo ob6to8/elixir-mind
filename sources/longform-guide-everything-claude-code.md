@@ -175,7 +175,7 @@ Many docs sites expose `/llms.txt` — LLM-optimized documentation. Feed directl
 ### Philosophy: Build Reusable Patterns
 From @omarsar0: "Early on, I spent time building reusable workflows/patterns. Tedious to build, but this had a wild compounding effect as models and agent harnesses improved." Patterns are transferable across agents (Claude Code, Codex, etc.) and survive model upgrades.
 
-## Relevance to Second Brain
+## Relevance to Assertion Graph
 
 This article is the practitioner's manual for the exact problems discussed in [[context-engineering-and-persistent-agent-memory]]. The session files, memory persistence hooks, and continuous learning system are all workarounds for the fundamental issue: **the context window is ephemeral and persistence is an afterthought.**
 

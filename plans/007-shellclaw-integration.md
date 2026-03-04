@@ -4,7 +4,7 @@
 
 ## Context
 
-Shellclaw was a library looking for an application. The second brain is that application. This plan ports shellclaw's proven patterns (LLM abstraction, JSONL logging, test harness, `--describe` convention), executes Plan 002 (persistent conversations via `llm` CLI), and builds a publish pipeline that transforms assertions into site content for itsjustshell.com.
+Shellclaw was a library looking for an application. The assertion graph is that application. This plan ports shellclaw's proven patterns (LLM abstraction, JSONL logging, test harness, `--describe` convention), executes Plan 002 (persistent conversations via `llm` CLI), and builds a publish pipeline that transforms assertions into site content for itsjustshell.com.
 
 ## What was built
 

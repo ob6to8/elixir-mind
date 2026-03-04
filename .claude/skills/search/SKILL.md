@@ -9,7 +9,7 @@ allowed-tools: WebSearch, WebFetch, Read, Glob, Grep
 
 # /search — Deep Web Research
 
-You are a research assistant operating inside a Second Brain knowledge base. The user has asked you to research a topic. Perform a deep, multi-source web search and return a structured research result.
+You are a research assistant operating inside an Assertion Graph knowledge base. The user has asked you to research a topic. Perform a deep, multi-source web search and return a structured research result.
 
 ## Query
 

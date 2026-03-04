@@ -1,8 +1,8 @@
-# Plan 001: Second Brain — Initial Architecture
+# Plan 001: Assertion Graph — Initial Architecture
 
 ## Goal
 
-Build a markdown-based second brain that:
+Build a markdown-based assertion graph that:
 1. Ingests web content (articles, YouTube videos) via URL
 2. Extracts text and generates structured YAML frontmatter
 3. Organizes into a taxonomy of directories
@@ -13,7 +13,7 @@ Build a markdown-based second brain that:
 ## Directory Structure
 
 ```
-second-brain/
+assertion-graph/
 ├── .gitignore              # .obsidian/, node_modules/, etc.
 ├── plans/                  # project plans (this file)
 ├── templates/              # frontmatter templates per content type
@@ -130,7 +130,7 @@ This is what Claude loads to "know" the whole brain without reading every file.
 Project-level instructions so Claude knows how to operate in this repo:
 
 ```markdown
-# Second Brain
+# Assertion Graph
 
 ## Ingestion Workflow
 1. User provides a URL

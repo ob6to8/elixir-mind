@@ -5,7 +5,7 @@
 #
 # Environment:
 #   LOG_FILE     — Path to append log entries to (required)
-#   SB_AGENT_ID  — Agent identifier in each entry (default: "second-brain")
+#   SB_AGENT_ID  — Agent identifier in each entry (default: "assertion-graph")
 #
 # Usage:
 #   source scripts/lib/log.sh
@@ -15,7 +15,7 @@
 log_event() {
     local event_type="${1:-}"
     local message="${2:-}"
-    local agent="${SB_AGENT_ID:-second-brain}"
+    local agent="${SB_AGENT_ID:-assertion-graph}"
 
     if [[ -z "${LOG_FILE:-}" ]]; then
         echo "log_event: LOG_FILE not set" >&2

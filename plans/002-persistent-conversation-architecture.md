@@ -13,7 +13,7 @@ Architect a persistence-first conversation system where:
 2. The context window is a cache, not the source of truth
 3. Conversations are inspectable, searchable, and exportable
 4. A fresh agent can reconstruct any conversation by loading from the store
-5. Finished threads export to the second-brain as source files or assertions
+5. Finished threads export to the assertion-graph as source files or assertions
 
 ## Key Insight
 
@@ -50,7 +50,7 @@ Simon Willison's `llm` CLI already provides the storage primitive: every exchang
 #### 2. `scripts/context-load.sh` — the context assembler
 Replaces the context window's role as memory. Before each exchange:
 1. Query SQLite for the current thread's prior turns (last N, or by relevance)
-2. Load `index.json` to find related second-brain notes
+2. Load `index.json` to find related assertion-graph notes
 3. Optionally read referenced notes for deeper context
 4. Format as a system prompt or context block
 5. Output to stdout for piping into `llm -s`
@@ -64,11 +64,11 @@ Wraps `llm` to enforce the persistence-first protocol:
 # Continue a thread (loads context automatically)
 ./scripts/thread.sh continue <thread-id> "How would you architect this?"
 
-# Export a finished thread to second-brain
+# Export a finished thread to assertion-graph
 ./scripts/thread.sh export <thread-id>
 ```
 
-#### 4. `scripts/export-conversation.sh` — thread → second-brain
+#### 4. `scripts/export-conversation.sh` — thread → assertion-graph
 Queries `llm logs` for a conversation, then either:
 - Writes a source file to `sources/<kebab-title>.md` with `type: source`, `source_type: conversation`
 - Or invokes `/conclude` logic to extract assertions from the thread directly into the DAG
@@ -83,7 +83,7 @@ Start simple, evolve:
 Load the last N exchanges from the thread. Simple, predictable.
 
 **v2 — Recency + related notes**
-Last N exchanges + any second-brain notes whose tags overlap with the thread's topic.
+Last N exchanges + any assertion-graph notes whose tags overlap with the thread's topic.
 
 **v3 — Embedding similarity** (future)
 Use `llm embed` to find the most relevant prior turns and notes. Requires pgvector or similar.
@@ -108,7 +108,7 @@ Use `llm embed` to find the most relevant prior turns and notes. Requires pgvect
 
 - **Tool call logging** — `llm` doesn't log intermediate tool calls. Do we need a wrapper that captures these, or is prompt+response sufficient for the archive?
 - **Context budget** — how many prior turns to load? Fixed window? Token-counted? Configurable per thread?
-- **Thread discovery** — how does the context loader know which second-brain notes are relevant? Tag matching? Full-text search? Embeddings?
+- **Thread discovery** — how does the context loader know which assertion-graph notes are relevant? Tag matching? Full-text search? Embeddings?
 - **Editing** — should exported conversations be editable? If so, do edits propagate back to SQLite or is the .md the final form?
 - **Claude Code integration** — can this coexist with Claude Code sessions, or is it a parallel workflow? Plan 003's `/conclude` skill is the natural bridge — export triggers assertion extraction.
 

@@ -283,9 +283,9 @@ Two short guides:
 - GUI or web interface
 - Rewriting existing MCP servers upstream
 
-## Relationship to second-brain
+## Relationship to assertion-graph
 
-This plan originated from a second-brain research conversation. The reasoning chain should be ingested as a source and assertions extracted. The plan itself graduates to its own repo — it does not modify second-brain.
+This plan originated from an assertion-graph research conversation. The reasoning chain should be ingested as a source and assertions extracted. The plan itself graduates to its own repo — it does not modify assertion-graph.
 
 ## Status
 

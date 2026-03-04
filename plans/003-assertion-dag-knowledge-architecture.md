@@ -2,7 +2,7 @@
 
 ## Context
 
-The second brain currently stores 6 notes as monolithic markdown files (articles, videos, conversations) organized by content type. This works for accumulation but not composition — notes are isolated artifacts with no mechanism for beliefs to build on each other, get updated by new evidence, or surface contradictions.
+The assertion graph currently stores 6 notes as monolithic markdown files (articles, videos, conversations) organized by content type. This works for accumulation but not composition — notes are isolated artifacts with no mechanism for beliefs to build on each other, get updated by new evidence, or surface contradictions.
 
 The user's assertion DAG thesis demonstrates that explicit dependency graphs between atomic claims produce dramatically better knowledge composition than prose. This plan restructures the vault from a note repository into a belief system with provenance, where sources are evidence, assertions are composable claims, and an index encodes the DAG.
 
@@ -25,7 +25,7 @@ Layer 3: Natural language conversation (research, reasoning)
 ### Directory structure (target)
 
 ```
-second-brain/
+assertion-graph/
 ├── sources/                    # External content (articles, videos, papers, journals)
 ├── assertions/                 # Primitives and compounds (distinguished by frontmatter)
 ├── schema/                     # System rules — file specs, conventions, index format

@@ -2,7 +2,7 @@
 # scripts/lib/llm-call.sh — LLM call abstraction
 #
 # Three backends: llm (Simon Willison's CLI), claude (Anthropic CLI), stub (testing).
-# Ported from shellclaw lib/llm.sh, adapted for second-brain.
+# Ported from shellclaw lib/llm.sh, adapted for assertion-graph.
 #
 # Environment:
 #   SB_LLM_BACKEND  — "llm", "claude", or "stub" (default: "llm")

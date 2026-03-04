@@ -2,7 +2,7 @@
 
 ## Context
 
-The second brain currently uses `build-index.sh` to derive `index.json` from markdown frontmatter. Queries go through `query.sh` which does text matching against this index. This works at current scale (~12 sources, ~9 assertions) but has two limitations:
+The assertion graph currently uses `build-index.sh` to derive `index.json` from markdown frontmatter. Queries go through `query.sh` which does text matching against this index. This works at current scale (~12 sources, ~9 assertions) but has two limitations:
 
 1. **No semantic search.** You can only find assertions by exact tag/keyword match, not by meaning. Searching "career transitions" won't find an assertion about "people leaving jobs to start consulting" unless the words overlap.
 2. **No cross-tool access.** The brain is Claude Code-only. No other AI client can query it.

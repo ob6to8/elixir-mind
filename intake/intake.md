@@ -570,7 +570,7 @@ https://isitnerfed.org/
 opencode
 https://github.com/code-yeongyu/oh-my-opencode/blob/master/README.md#goodbye-claude-code-hello-oh-my-opencode
 
-SECOND BRAIN
+ASSERTION GRAPH
 https://www.perplexity.ai/search/what-is-a-better-system-of-org-kI3b_A3BQ9yZOqssx4MU8A
 https://www.kimi.com/chat/19baeff2-5fa2-82db-8000-09346c1c3400
 https://www.reddit.com/r/ClaudeCode/comments/1pjon1r/til_that_claude_code_has_opentelemetry_metrics/#lightbox

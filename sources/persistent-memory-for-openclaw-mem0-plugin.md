@@ -64,7 +64,7 @@ Several commenters pushed back on the premise:
 - Layer 2: full code and wiki
 - Claims dramatically reduced API calls with rigorous forced reading calls
 
-## Relevance to Second Brain
+## Relevance to Assertion Graph
 
 This post directly addresses the same problem as [[context-engineering-and-persistent-agent-memory]]: the context window is treated as the source of truth but is actually a lossy viewport. The mem0 approach (external memory with auto-recall/auto-capture) is one architecture. The `llm` CLI + SQLite approach from our conversation is another — with the advantage of full transparency and user inspectability.
 
