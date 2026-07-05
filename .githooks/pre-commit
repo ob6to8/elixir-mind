@@ -1,0 +1,24 @@
+#!/bin/bash
+# Fast local guard mirroring CI. Enable once with:
+#   git config core.hooksPath .githooks
+set -euo pipefail
+
+if ! command -v mix >/dev/null 2>&1; then
+  echo "pre-commit: mix (Elixir) not found — skipping contract/format/test checks." >&2
+  exit 0
+fi
+
+echo "pre-commit: mix format --check-formatted"
+mix format --check-formatted
+
+echo "pre-commit: mix brain.contract --check"
+mix brain.contract --check
+
+echo "pre-commit: mix brain.registry --check"
+mix brain.registry --check
+
+echo "pre-commit: mix brain.verify"
+mix brain.verify
+
+echo "pre-commit: mix test"
+mix test
