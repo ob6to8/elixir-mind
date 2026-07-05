@@ -23,6 +23,7 @@ defmodule SecondBrain.Contract do
     {"directory-structure", "Directory structure — unix-like, domain-agnostic, evolving"},
     {"filing", "Filing conventions"},
     {"type-vocabulary", "Controlled `type` vocabulary"},
+    {"verification", "Identity & verification"},
     {"conformance", "Conformance (keep the bundle valid)"},
     {"skills", "Skills"}
   ]

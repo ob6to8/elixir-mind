@@ -14,5 +14,11 @@ mix format --check-formatted
 echo "pre-commit: mix brain.contract --check"
 mix brain.contract --check
 
+echo "pre-commit: mix brain.registry --check"
+mix brain.registry --check
+
+echo "pre-commit: mix brain.verify"
+mix brain.verify
+
 echo "pre-commit: mix test"
 mix test

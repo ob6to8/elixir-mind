@@ -40,12 +40,14 @@ Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
+| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
 | `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
-| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed. Default `false` for AI-generated statements. |
+| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed **and grounded** (requires `resource` or `verified_by`). Default `false` for AI-generated statements. |
+| `verified_by` | When verified via evidence | Inline YAML list of stable ids of the `verified: true` concepts (typically `source` excerpts) that jointly support this one. The only committed representation of evidence edges. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 
@@ -174,7 +176,45 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 
 ---
 
-## 5. Conformance (keep the bundle valid)
+## 5. Identity & verification
+
+- **Every bundle concept carries a stable `id`** in frontmatter: `sb:` + 6 lowercase
+  hex chars (e.g. `sb:4c9e1f`). Ids are **opaque and immutable** — minted once
+  (`mix brain.id`), never changed, and never reused, even if the file moves, is
+  renamed, or is superseded. Identity survives refactors; paths don't have to.
+- **Typed edges reference ids, not paths.** Structured frontmatter references
+  (`verified_by`, and future typed edges) point at stable ids as an inline YAML list.
+  Prose links in bodies still use ordinary markdown paths.
+- **The per-file `id` is canonical; the registry is compiled.**
+  [`meta/registry.md`](/meta/registry.md) — the id → path view — is a generated
+  artifact (`mix brain.registry`, checked in CI with `--check`), exactly like
+  `CLAUDE.md`. Never hand-edit it.
+
+_Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
+
+- **Provenance and verification are orthogonal.** `provenance` records where a
+  statement came from and is **immutable history** — verifying a claim never
+  rewrites its provenance.
+- **`verified: true` requires grounding.** A concept may be marked verified only when
+  it has a `resource` (it *is* primary evidence — e.g. a verbatim excerpt of an
+  official document) or a non-empty `verified_by` (derived evidence). Ungrounded
+  "verified" is a defect; `mix brain.verify` enforces this.
+- **Evidence edges live in `verified_by` only** — an inline list of stable ids whose
+  targets must exist and be themselves `verified: true`. Do not duplicate the edge
+  list in prose: the verification narrative is **derived on demand**
+  (`mix brain.evidence <id>`), never committed, so there is exactly one source of
+  truth for what supports a concept.
+- **Verify technical claims from primary sources.** Extract the supporting passages
+  from authoritative documentation into `type: source` concepts (verbatim quotes;
+  `resource` = the official URL; provenance = extracted from that resource), then
+  aggregate them via `verified_by` on the claim. A `claim` that becomes grounded
+  this way may graduate to `concept`.
+
+_Source: [`meta/policy/verification-grounding.md`](/meta/policy/verification-grounding.md)_
+
+---
+
+## 6. Conformance (keep the bundle valid)
 
 A bundle conforms to OKF v0.1 when:
 
@@ -189,7 +229,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 
 ---
 
-## 6. Skills
+## 7. Skills
 
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the

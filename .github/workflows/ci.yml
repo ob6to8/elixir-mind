@@ -27,3 +27,9 @@ jobs:
 
       - name: CLAUDE.md is compiled and current
         run: mix brain.contract --check
+
+      - name: Registry is compiled and current
+        run: mix brain.registry --check
+
+      - name: Bundle verifies (ids, evidence edges, grounding)
+        run: mix brain.verify

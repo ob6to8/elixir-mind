@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-05
 
+- Added the **identity & verification** contract section with two policies:
+  [stable-identity](/meta/policy/stable-identity.md) (immutable `sb:` ids, id-based
+  edges, compiled registry) and
+  [verification-grounding](/meta/policy/verification-grounding.md) (immutable
+  provenance; `verified` requires grounding; `verified_by` is the only committed
+  evidence representation; prose derived via `mix brain.evidence`). Extended the
+  frontmatter schema with `id` and `verified_by`. New tooling: `SecondBrain.Registry`,
+  `SecondBrain.Verifier`, and the `brain.id` / `brain.registry` / `brain.verify` /
+  `brain.evidence` mix tasks; CI and the pre-commit hook now run the registry check
+  and verifier.
 - Established the `meta/` governance namespace and backfilled the operating contract
   into fourteen `type: policy` documents under `meta/policy/`, grouped into six
   contract sections (composition, directory-structure, filing, type-vocabulary,

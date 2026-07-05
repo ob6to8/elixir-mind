@@ -27,6 +27,10 @@ that section.
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of concept types
 
+## verification
+- [stable-identity](/meta/policy/stable-identity.md) — immutable `sb:xxxxxx` ids; edges reference ids; `meta/registry.md` is compiled
+- [verification-grounding](/meta/policy/verification-grounding.md) — provenance immutable; `verified` requires grounding; evidence edges live only in `verified_by`
+
 ## conformance
 - [okf-conformance](/meta/policy/okf-conformance.md) — the OKF v0.1 conformance conditions
 

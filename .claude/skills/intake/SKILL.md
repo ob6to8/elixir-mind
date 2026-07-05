@@ -69,6 +69,9 @@ For **each** concept:
 - Filename: kebab-case slug of the title (`some-concept.md`). Use a `YYYY-MM-DD-`
   prefix **only** for inherently time-ordered/journal entries.
 - Write valid frontmatter (mandatory non-empty `type`) + distilled body.
+- **Mint a stable id** and refresh the compiled registry:
+  `mix brain.id && mix brain.registry` (requires Elixir; the SessionStart hook
+  installs it). Then confirm the bundle passes `mix brain.verify`.
 
 ### 7. Maintain reserved files
 - Update the directory's `index.md` (create it if missing): add a bulleted link to

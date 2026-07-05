@@ -4,6 +4,14 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-05
 
+- Verified the git fetch claim from primary sources: extracted verbatim passages from
+  Pro Git §3.5 (`sb:a3d27b`) and gitglossary (`sb:f08c54`) into
+  `SWE/version-control/git/sources/`, wired them as `verified_by` edges, and graduated
+  `sb:4c9e1f` from `claim` to `concept` (`verified: true`; provenance unchanged).
+- Added the stable-identity layer: immutable `sb:xxxxxx` ids on every bundle concept,
+  compiled `meta/registry.md`, and `mix brain.id` / `brain.registry` / `brain.verify` /
+  `brain.evidence` tasks. Evidence edges live only in `verified_by`; verification prose
+  is derived, never committed. See [meta/log.md](/meta/log.md).
 - Introduced the `meta/` governance namespace and made `CLAUDE.md` a **compiled
   artifact**: the operating contract was backfilled into 14 `type: policy` documents
   under `meta/policy/`, and an Elixir compiler (`mix brain.contract`) now renders

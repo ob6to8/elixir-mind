@@ -12,12 +12,14 @@ Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
+| `id` | **Mandatory** (bundle concepts) | Stable opaque identifier, `sb:` + 6 hex chars. Immutable once minted (`mix brain.id`); see the identity-and-verification section. |
 | `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
-| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed. Default `false` for AI-generated statements. |
+| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed **and grounded** (requires `resource` or `verified_by`). Default `false` for AI-generated statements. |
+| `verified_by` | When verified via evidence | Inline YAML list of stable ids of the `verified: true` concepts (typically `source` excerpts) that jointly support this one. The only committed representation of evidence edges. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 
