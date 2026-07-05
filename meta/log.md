@@ -4,6 +4,8 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-05
 
+- Created `meta/threads/` and archived the bootstrap conversation:
+  [2026-07-05 — greenfield OKF bootstrap and verification layer](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md).
 - Added the **identity & verification** contract section with two policies:
   [stable-identity](/meta/policy/stable-identity.md) (immutable `sb:` ids, id-based
   edges, compiled registry) and

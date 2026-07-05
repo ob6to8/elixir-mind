@@ -8,6 +8,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)
+- [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
 
 ## Related tooling (not part of the knowledge bundle)
 
