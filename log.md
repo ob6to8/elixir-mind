@@ -4,6 +4,12 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-05
 
+- Introduced the `meta/` governance namespace and made `CLAUDE.md` a **compiled
+  artifact**: the operating contract was backfilled into 14 `type: policy` documents
+  under `meta/policy/`, and an Elixir compiler (`mix brain.contract`) now renders
+  `CLAUDE.md` from `meta/preamble.md` + those policies, with a trace link per rule.
+  Added the `/render-contract` skill, the `policy` type, and the mix project
+  (`mix.exs`, `lib/`, `test/`). See [meta/log.md](/meta/log.md).
 - Dropped the `link` type: a web resource enters the brain only once processed into a
   `reference`; bare URLs are not filed. Removed the `link`/`reference` distinction.
 - Policy update to the operating contract: create the natural directory path even for a

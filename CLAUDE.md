@@ -1,3 +1,10 @@
+<!--
+  GENERATED FILE — do not edit by hand.
+  Source of truth: meta/preamble.md + meta/policy/*.md
+  Regenerate:      mix brain.contract
+  Verify (CI):     mix brain.contract --check
+-->
+
 # Operating Contract — Second Brain (OKF)
 
 This repository is a personal **second brain** stored as an
@@ -9,23 +16,31 @@ the backbone that keeps the brain consistent as it grows.
 The operator is the human (mreveley@gmail.com). The agent files and organizes;
 the operator ratifies changes to the *shape* of the brain.
 
+> **This file is a generated artifact.** It is compiled from
+> [`meta/preamble.md`](/meta/preamble.md) and the `type: policy` documents under
+> [`meta/policy/`](/meta/policy/index.md). Do **not** edit it by hand — edit the
+> source policies and run `mix brain.contract` (see the `/render-contract` skill).
+
 ---
 
 ## 1. What the brain is made of
 
 - **The repo root is the OKF bundle.** Concepts live at the root and in
-  subdirectories. `.claude/` (skills) and `deprecated/` (archived legacy content,
+  subdirectories. `.claude/` (skills), `meta/` (governance), the Elixir tooling
+  (`mix.exs`, `lib/`, `test/`), and `deprecated/` (archived legacy content,
   read-only) sit alongside but are **not** part of the knowledge bundle.
 - **A concept** is a single UTF-8 markdown file with two parts:
   1. **YAML frontmatter** (required), delimited by `---`.
   2. **Markdown body** (distilled prose; no required sections).
 - **Concept ID** = file path minus `.md` (e.g. `areas/health.md` → `areas/health`).
 
-### Frontmatter fields
+_Source: [`meta/policy/concept-anatomy.md`](/meta/policy/concept-anatomy.md)_
+
+Frontmatter fields:
 
 | Field | Requirement | Notes |
 |-------|-------------|-------|
-| `type` | **Mandatory** | From the controlled vocabulary in §4. Non-empty. |
+| `type` | **Mandatory** | From the controlled vocabulary (see the type-vocabulary section). Non-empty. |
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
@@ -36,51 +51,73 @@ the operator ratifies changes to the *shape* of the brain.
 
 Arbitrary extra keys are allowed and must be preserved.
 
-### Reserved filenames (any directory level)
+_Source: [`meta/policy/frontmatter-schema.md`](/meta/policy/frontmatter-schema.md)_
+
+Reserved filenames (any directory level):
 
 - **`index.md`** — directory listing for progressive disclosure. Markdown sections
   with bulleted links + one-line descriptions. **No frontmatter** — except the
   bundle-root `index.md`, which carries only `okf_version: "0.1"`.
 - **`log.md`** — chronological change history, ISO 8601 date headings, newest first.
 
+_Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.md)_
+
 ---
 
 ## 2. Directory structure — unix-like, domain-agnostic, evolving
 
 - Organize concepts into a **unix-like hierarchy**: lowercase, kebab-case directory
-  names; each directory holds a coherent set of related concepts.
+  names (short, established acronyms like `SWE` may stay uppercase); each directory
+  holds a coherent set of related concepts.
 - **Create the natural directory path even for a single concept.** Do not flatten to
   avoid nesting — a lone note about git belongs in `SWE/version-control/git/`, not
   dumped at the root. Depth that mirrors the real structure of the knowledge is good.
+
+_Source: [`meta/policy/directory-hierarchy.md`](/meta/policy/directory-hierarchy.md)_
+
 - **The tree *is* the taxonomy.** The directory hierarchy — surfaced through `index.md`
   files at every level (progressive disclosure, rooted at `/index.md`) — is the
   canonical taxonomy. Keep those `index.md` files current; do not maintain a separate
-  map that drifts. This file (`CLAUDE.md`) holds the *policy* (the `type` vocabulary
-  and frontmatter schema); the tree holds the *instance*.
+  map that drifts.
+- **Policy vs. instance.** `CLAUDE.md` holds the *policy* (this contract — the `type`
+  vocabulary and frontmatter schema), compiled from `meta/policy/`. The tree holds the
+  *instance*. Governance (`meta/`) is a separate namespace from the knowledge taxonomy.
 - The taxonomy is **not fixed**. It **emerges bottom-up** and evolves
   **collaboratively**. There is no pre-imposed schema to satisfy.
-- **The taxonomy-evolution protocol (important):**
-  - Filing a concept into an **existing** directory, or creating **subdirectories
-    under an already-established top-level domain**, → the agent does this
-    **autonomously** (create the path and each new directory's `index.md`).
-  - Creating a **new top-level directory** (or renaming/moving/merging directories) is
-    a change to the *shape* of the brain → the agent **proposes it and waits for the
-    operator to ratify** before creating it. Explain the proposed name, where it
-    sits, and why the existing tree doesn't fit.
-  - On creation, add each new directory's `index.md`, record it in the nearest
-    `log.md`, and list new top-level dirs in the root `index.md`.
+
+_Source: [`meta/policy/tree-is-the-taxonomy.md`](/meta/policy/tree-is-the-taxonomy.md)_
+
+The taxonomy-evolution protocol (important):
+
+- Filing a concept into an **existing** directory, or creating **subdirectories
+  under an already-established top-level domain**, → the agent does this
+  **autonomously** (create the path and each new directory's `index.md`).
+- Creating a **new top-level directory** (or renaming/moving/merging directories) is
+  a change to the *shape* of the brain → the agent **proposes it and waits for the
+  operator to ratify** before creating it. Explain the proposed name, where it
+  sits, and why the existing tree doesn't fit.
+- On creation, add each new directory's `index.md`, record it in the nearest
+  `log.md`, and list new top-level dirs in the root `index.md`.
+
+_Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-evolution-protocol.md)_
 
 ---
 
 ## 3. Filing conventions
 
-- **Distill, don't dump.** Capture the *knowledge*, not the raw noise. A concept has
-  a clear title, a one-sentence `description`, and a clean body. Keep the original
-  material as a `resource` URI and/or under a `# Citations` section — not as the
-  whole document.
-- **Update in place; don't fragment.** Before creating a file, **search the bundle**
-  for an existing concept on the same subject. If one exists, update it (merge new
-  info, bump `timestamp`, add a `log.md` entry) instead of creating a near-duplicate.
+**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A concept has
+a clear title, a one-sentence `description`, and a clean body. Keep the original
+material as a `resource` URI and/or under a `# Citations` section — not as the
+whole document.
+
+_Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)_
+
+**Update in place; don't fragment.** Before creating a file, **search the bundle**
+for an existing concept on the same subject. If one exists, update it (merge new
+info, bump `timestamp`, add a `log.md` entry) instead of creating a near-duplicate.
+
+_Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
+
 - **Filenames**: kebab-case slug derived from the title
   (`open-knowledge-format.md`). Use a `YYYY-MM-DD-` prefix **only** for inherently
   time-ordered entries (journal/log-style notes); topical concepts stay purely
@@ -89,6 +126,9 @@ Arbitrary extra keys are allowed and must be preserved.
   (begin with `/`, e.g. `[OKF](/references/open-knowledge-format.md)`). Links are
   untyped edges; the prose carries the meaning. Broken links are tolerated but avoid
   creating them.
+
+_Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-and-cross-linking.md)_
+
 - **Links must be processed, not parked.** A web resource enters the brain only once it
   has been **processed into a `reference`** (fetched and summarized/captured). Do not
   file bare, unprocessed URLs as their own concepts — process it now, or don't file it.
@@ -96,8 +136,13 @@ Arbitrary extra keys are allowed and must be preserved.
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
   **write a faithful summary** as the concept body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.
-- **Maintain the reserved files**: after filing, update the directory's `index.md`
-  (create it if missing) and append a dated entry to `log.md`.
+
+_Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
+
+**Maintain the reserved files**: after filing, update the directory's `index.md`
+(create it if missing) and append a dated entry to `log.md`.
+
+_Source: [`meta/policy/maintain-reserved-files.md`](/meta/policy/maintain-reserved-files.md)_
 
 ---
 
@@ -114,14 +159,18 @@ Seed vocabulary:
   the `verified` field; may graduate to `concept` once confirmed).
 - `concept` — a definition or mental model (established/accepted).
 - `reference` — external material you have **captured and summarized** (article, doc,
-  video, thread). A bare URL becomes a `reference` only once processed — see §3.
+  video, thread). A bare URL becomes a `reference` only once processed.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
 - `project` — an active, goal-bounded effort.
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
+- `policy` — a governance rule for how the brain operates; the source from which
+  `CLAUDE.md` is compiled (lives under `meta/policy/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
+
+_Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-type-vocabulary.md)_
 
 ---
 
@@ -136,6 +185,8 @@ A bundle conforms to OKF v0.1 when:
 Be a tolerant **consumer**: never reject the bundle for missing optional fields,
 unknown types, extra frontmatter keys, broken links, or absent `index.md` files.
 
+_Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
+
 ---
 
 ## 6. Skills
@@ -143,5 +194,10 @@ unknown types, extra frontmatter keys, broken links, or absent `index.md` files.
 - **`/intake`** — process pasted content into one or more filed concepts. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
   brain.
+- **`/render-contract`** — recompile `CLAUDE.md` from `meta/policy/*.md` after editing
+  any policy. See `.claude/skills/render-contract/SKILL.md`. `CLAUDE.md` is a
+  generated artifact — never hand-edit it.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
+
+_Source: [`meta/policy/skills-registry.md`](/meta/policy/skills-registry.md)_
