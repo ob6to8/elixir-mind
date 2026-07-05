@@ -29,6 +29,8 @@ the operator ratifies changes to the *shape* of the brain.
 | `title` | Strongly recommended | Human-readable display name. |
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
+| `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
+| `verified` | Recommended for claims | Boolean. `false` = asserted but not independently fact-checked; `true` = confirmed. Default `false` for AI-generated statements. |
 | `tags` | Recommended | YAML list of categorization strings. |
 | `timestamp` | Recommended | ISO 8601 datetime of last meaningful change. |
 
@@ -46,19 +48,27 @@ Arbitrary extra keys are allowed and must be preserved.
 ## 2. Directory structure — unix-like, domain-agnostic, evolving
 
 - Organize concepts into a **unix-like hierarchy**: lowercase, kebab-case directory
-  names; each directory holds a coherent set of related concepts; nest only when a
-  directory earns it (roughly >~7 loosely-related files → consider splitting).
+  names; each directory holds a coherent set of related concepts.
+- **Create the natural directory path even for a single concept.** Do not flatten to
+  avoid nesting — a lone note about git belongs in `SWE/version-control/git/`, not
+  dumped at the root. Depth that mirrors the real structure of the knowledge is good.
+- **The tree *is* the taxonomy.** The directory hierarchy — surfaced through `index.md`
+  files at every level (progressive disclosure, rooted at `/index.md`) — is the
+  canonical taxonomy. Keep those `index.md` files current; do not maintain a separate
+  map that drifts. This file (`CLAUDE.md`) holds the *policy* (the `type` vocabulary
+  and frontmatter schema); the tree holds the *instance*.
 - The taxonomy is **not fixed**. It **emerges bottom-up** and evolves
   **collaboratively**. There is no pre-imposed schema to satisfy.
 - **The taxonomy-evolution protocol (important):**
-  - Filing a concept into an **existing** directory → the agent does this
-    **autonomously**.
-  - **Creating any new directory** (or renaming/moving/merging directories) is a
-    change to the *shape* of the brain → the agent **proposes it and waits for the
+  - Filing a concept into an **existing** directory, or creating **subdirectories
+    under an already-established top-level domain**, → the agent does this
+    **autonomously** (create the path and each new directory's `index.md`).
+  - Creating a **new top-level directory** (or renaming/moving/merging directories) is
+    a change to the *shape* of the brain → the agent **proposes it and waits for the
     operator to ratify** before creating it. Explain the proposed name, where it
     sits, and why the existing tree doesn't fit.
-  - When the operator ratifies, create the directory, add its `index.md`, and record
-    it in the nearest `log.md` and (if top-level) the root `index.md`.
+  - On creation, add each new directory's `index.md`, record it in the nearest
+    `log.md`, and list new top-level dirs in the root `index.md`.
 
 ---
 
@@ -96,9 +106,14 @@ propose a new type, but the operator ratifies additions (same as directories).
 Seed vocabulary:
 
 - `note` — a distilled idea, observation, or thought.
-- `reference` — external material captured/summarized (article, doc, video, thread).
+- `claim` — a statement **asserted but not independently verified** (track status with
+  the `verified` field; may graduate to `concept` once confirmed).
+- `concept` — a definition or mental model (established/accepted).
+- `reference` — external material you have **captured and summarized** (article, doc,
+  video, thread).
+- `link` — a **pointer** to a web resource with a brief annotation; lighter than
+  `reference` (not yet fully distilled — a bookmark / read-later).
 - `source` — a primary source citation (paper, book, dataset).
-- `concept` — a definition or mental model.
 - `person` — a person.
 - `project` — an active, goal-bounded effort.
 - `area` — an ongoing responsibility or domain (no end state).

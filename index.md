@@ -10,14 +10,11 @@ progressive disclosure. Agents and humans start here and navigate down.
 
 ## Contents
 
-_The taxonomy is intentionally empty. Directories emerge as knowledge is filed,
-one `/intake` at a time, and evolve collaboratively between the operator and the
-agent. See the [operating contract](/CLAUDE.md) for how structure grows._
+Top-level domains (progressive disclosure — navigate down from here). The taxonomy
+emerges as knowledge is filed and evolves collaboratively; see the
+[operating contract](/CLAUDE.md).
 
-<!-- As top-level directories are created, list them here as bulleted links with a
-one-line description, e.g.:
-- [/areas](/areas/index.md) — ongoing responsibilities and domains
--->
+- [SWE](/SWE/index.md) — software engineering knowledge
 
 ## Reserved files
 

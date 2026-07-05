@@ -43,10 +43,15 @@ For **each** concept:
   - `title`: human-readable name.
   - `description`: one sentence.
   - `type`: pick from the controlled vocabulary in the operating contract. If nothing
-    fits, **propose a new type to the operator** and wait for ratification.
+    fits, **propose a new type to the operator** and wait for ratification. Use `claim`
+    for unverified assertions (e.g. content generated in a chat thread).
   - `tags`: a few useful categorization strings.
   - `timestamp`: today's date/time (ISO 8601).
   - `resource`: the source URI, when there is one.
+  - `provenance`: where the content came from (e.g. "Claude Opus 4.8, chat thread"),
+    when it isn't the operator's own words.
+  - `verified`: `false` for anything not independently fact-checked (default for
+    AI-generated statements); `true` once confirmed.
   - Body: distilled prose. Use conventional headings where helpful
     (`# Schema`, `# Examples`, `# Citations`). Keep raw source material under
     `# Citations` or as the `resource` link — not as the whole body.
