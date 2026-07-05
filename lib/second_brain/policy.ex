@@ -46,8 +46,7 @@ defmodule SecondBrain.Policy do
   @doc "Load and validate a single policy document."
   @spec load!(String.t()) :: t
   def load!(path) do
-    %{frontmatter: fm, body: body} =
-      path |> File.read!() |> SecondBrain.Frontmatter.parse!()
+    %{frontmatter: fm, body: body} = path |> File.read!() |> SecondBrain.Frontmatter.parse!()
 
     id = Path.basename(path, ".md")
 

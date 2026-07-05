@@ -16,9 +16,22 @@ defmodule SecondBrain.ContractTest do
     File.write!(Path.join(dir, "meta/policy/#{id}.md"), "---\n#{fm}\n---\n#{body}\n")
   end
 
-  test "renders policies grouped by section, ordered, with trace links and banner", %{tmp_dir: dir} do
-    write_policy(dir, "b-rule", [type: "policy", title: "B", section: "filing", order: 2], "Rule B body.")
-    write_policy(dir, "a-rule", [type: "policy", title: "A", section: "filing", order: 1], "Rule A body.")
+  test "renders policies grouped by section, ordered, with trace links and banner", %{
+    tmp_dir: dir
+  } do
+    write_policy(
+      dir,
+      "b-rule",
+      [type: "policy", title: "B", section: "filing", order: 2],
+      "Rule B body."
+    )
+
+    write_policy(
+      dir,
+      "a-rule",
+      [type: "policy", title: "A", section: "filing", order: 1],
+      "Rule A body."
+    )
 
     out = Contract.render(dir)
 
@@ -32,7 +45,12 @@ defmodule SecondBrain.ContractTest do
   end
 
   test "check/1 reports :ok after write and :stale after drift", %{tmp_dir: dir} do
-    write_policy(dir, "a-rule", [type: "policy", title: "A", section: "filing", order: 1], "Rule A body.")
+    write_policy(
+      dir,
+      "a-rule",
+      [type: "policy", title: "A", section: "filing", order: 1],
+      "Rule A body."
+    )
 
     Contract.write(dir)
     assert Contract.check(dir) == :ok
@@ -48,6 +66,7 @@ defmodule SecondBrain.ContractTest do
 
   test "Policy.load! rejects non-policy type", %{tmp_dir: dir} do
     write_policy(dir, "note", [type: "note", title: "N", section: "filing", order: 1], "x")
+
     assert_raise ArgumentError, ~r/expected `type: policy`/, fn ->
       Policy.load!(Path.join(dir, "meta/policy/note.md"))
     end

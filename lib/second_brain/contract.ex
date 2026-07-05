@@ -133,8 +133,11 @@ defmodule SecondBrain.Contract do
     |> Enum.with_index(1)
     |> Enum.find(fn {{e, a}, _} -> e != a end)
     |> case do
-      nil -> "length differs (expected #{length(exp)} lines, on disk #{length(act)})"
-      {{e, a}, line} -> "first diff at line #{line}:\n  expected: #{inspect(e)}\n  on disk:  #{inspect(a)}"
+      nil ->
+        "length differs (expected #{length(exp)} lines, on disk #{length(act)})"
+
+      {{e, a}, line} ->
+        "first diff at line #{line}:\n  expected: #{inspect(e)}\n  on disk:  #{inspect(a)}"
     end
   end
 end

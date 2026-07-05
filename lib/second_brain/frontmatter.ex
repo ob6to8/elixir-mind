@@ -41,7 +41,9 @@ defmodule SecondBrain.Frontmatter do
 
   defp split_after_open(rest) do
     case String.split(rest, "\n---\n", parts: 2) do
-      [yaml, body] -> {:ok, yaml, body}
+      [yaml, body] ->
+        {:ok, yaml, body}
+
       # frontmatter block that ends the file with a trailing `\n---`
       [only] ->
         case String.split(only, "\n---", parts: 2) do
