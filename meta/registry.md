@@ -12,6 +12,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 
 | id | concept | type | verified |
 |----|---------|------|----------|
+| `sb:52aefa` | [SWE/agentic-coding/claude-code/cloud-environment-architecture](/SWE/agentic-coding/claude-code/cloud-environment-architecture.md) | note | false |
 | `sb:4c9e1f` | [SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch](/SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch.md) | concept | true |
 | `sb:f08c54` | [SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source | true |
 | `sb:a3d27b` | [SWE/version-control/git/sources/pro-git-remote-tracking-branches](/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source | true |

@@ -4,6 +4,12 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-05
 
+- Filed `SWE/agentic-coding/claude-code/cloud-environment-architecture.md` (`sb:52aefa`,
+  type `note`, `verified: false`): Claude Code cloud (CCR) environment/orchestration
+  architecture notes from in-container forensics, with per-item E/D/I confidence
+  markers. Created the `SWE/agentic-coding/claude-code/` subtree (autonomous — under
+  the established `SWE/` domain) with its `index.md` files; cross-linked the existing
+  git remote-tracking-refs concept (`sb:4c9e1f`).
 - Verified the git fetch claim from primary sources: extracted verbatim passages from
   Pro Git §3.5 (`sb:a3d27b`) and gitglossary (`sb:f08c54`) into
   `SWE/version-control/git/sources/`, wired them as `verified_by` edges, and graduated
