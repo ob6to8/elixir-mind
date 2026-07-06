@@ -5,7 +5,6 @@ title: "Unit vs. integration tests: replace the dichotomy with purity and extent
 description: Alex Kladov argues the unit/integration distinction is confused and harmful, and proposes measuring tests along two independent axes instead — purity (freedom from threads, time, filesystem, network, processes) and extent (how much code is exercised).
 resource: https://matklad.github.io/2022/07/04/unit-and-integration-tests.html
 provenance: "Distilled from Alex Kladov's (matklad) blog post, 2022-07-04"
-verified: false
 tags: [testing, software-engineering, test-design, unit-tests, integration-tests, flakiness]
 timestamp: 2026-07-06
 ---

@@ -5,7 +5,6 @@ title: "How to test: test features, not code (matklad)"
 description: Alex Kladov's methodology for testing — couple tests to features rather than code structure so refactors don't break them, funnel assertions through a single check helper, keep logic sans-IO, drive tests from serializable data, and climb from example tests to property-based, exhaustive, and coverage-guided generation.
 resource: https://matklad.github.io/2021/05/31/how-to-test.html
 provenance: "Distilled from Alex Kladov's (matklad) blog post, 2021-05-31"
-verified: false
 tags: [testing, software-engineering, test-design, property-based-testing, fuzzing, snapshot-tests]
 timestamp: 2026-07-06
 ---
