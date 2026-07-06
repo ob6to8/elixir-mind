@@ -4,6 +4,11 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- `/intake`: filed `SWE/testing/how-to-test-features-not-code.md` (`sb:a5ea86`, type
+  `reference`, `verified: false`) — matklad's "test features, not code" methodology
+  (the `check` chokepoint, sans-IO logic, data-driven and expect tests, generative
+  testing). Filed alongside and cross-linked with the purity/extent reference in the
+  existing `SWE/testing/`.
 - `/intake`: filed `SWE/testing/unit-vs-integration-purity-and-extent.md` (`sb:73115b`,
   type `reference`, `verified: false`) — matklad's argument to replace the unit/integration
   dichotomy with two axes, purity and extent. Created the `SWE/testing/` subtree

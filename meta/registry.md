@@ -18,6 +18,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3420c8` | [SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity](/SWE/agentic-coding/claude-code/sources/cloud-web-environment-reclaimed-on-inactivity.md) | source | true |
 | `sb:863b32` | [SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config](/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) | source | true |
 | `sb:3f35e1` | [SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source | true |
+| `sb:a5ea86` | [SWE/testing/how-to-test-features-not-code](/SWE/testing/how-to-test-features-not-code.md) | reference | false |
 | `sb:73115b` | [SWE/testing/unit-vs-integration-purity-and-extent](/SWE/testing/unit-vs-integration-purity-and-extent.md) | reference | false |
 | `sb:4c9e1f` | [SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch](/SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch.md) | concept | true |
 | `sb:f08c54` | [SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source | true |

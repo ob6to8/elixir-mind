@@ -58,6 +58,8 @@ fidelity of the tests, and makes the code more brittle in the face of refactors.
 
 - **Ruthlessly optimize purity.** Moving one step down the impurity ladder has
   outsized impact on speed and reliability. Mock impure IO, not your own code.
+  (See also his [how-to-test methodology](/SWE/testing/how-to-test-features-not-code.md),
+  where keeping logic sans-IO is the same move applied to architecture.)
 - **Let extent be natural.** Don't optimize extent for its own sake — but do read
   it as a signal: unexpectedly high extent for a small test can tell you something
   about your application's architecture.
