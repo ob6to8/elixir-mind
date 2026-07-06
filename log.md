@@ -4,6 +4,11 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- `/intake`: filed `SWE/testing/unit-vs-integration-purity-and-extent.md` (`sb:73115b`,
+  type `reference`, `verified: false`) — matklad's argument to replace the unit/integration
+  dichotomy with two axes, purity and extent. Created the `SWE/testing/` subtree
+  (autonomous — under the established `SWE/` domain) with its `index.md`; added it to
+  `SWE/index.md`.
 - Grounded the CCR architecture note (`sb:52aefa`) against the official "Use Claude
   Code on the web" docs: captured five verbatim `type: source` excerpts under
   `SWE/agentic-coding/claude-code/sources/` (`sb:863b32`, `sb:eb418b`, `sb:3420c8`,
