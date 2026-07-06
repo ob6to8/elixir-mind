@@ -2,6 +2,18 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-06
+
+- Grounded the CCR architecture note (`sb:52aefa`) against the official "Use Claude
+  Code on the web" docs: captured five verbatim `type: source` excerpts under
+  `SWE/agentic-coding/claude-code/sources/` (`sb:863b32`, `sb:eb418b`, `sb:3420c8`,
+  `sb:564b8e`, `sb:3f35e1`, all `verified: true`), promoted several items from
+  forensic-only to documented, resolved the per-environment-snapshot / ~7-day
+  cache-expiry inference questions, and surfaced the fresh-clone-vs-baked-clone
+  divergence (reconciled via environment caching). Note stays `verified: false`
+  (retains session-specific forensic anecdotes); documented backbone now cross-links
+  the source excerpts.
+
 ## 2026-07-05
 
 - Filed `SWE/agentic-coding/claude-code/cloud-environment-architecture.md` (`sb:52aefa`,
