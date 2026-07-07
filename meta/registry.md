@@ -43,3 +43,5 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:4c9e1f` | [SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch](/SWE/version-control/git/git-local-branches-dont-auto-advance-on-fetch.md) | concept | true |
 | `sb:f08c54` | [SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source |  |
 | `sb:a3d27b` | [SWE/version-control/git/sources/pro-git-remote-tracking-branches](/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source |  |
+| `sb:07610c` | [ai-industry/ai-margin-collapse-glm-5-2](/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
+| `sb:2867ac` | [ai-industry/ai-roi-runway-outside-tech-sector](/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |

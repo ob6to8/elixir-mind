@@ -4,6 +4,15 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- **Operator-ratified new top-level domain**: `ai-industry/` — market, economic, and
+  competitive analysis of the AI industry, distinct from `SWE/` (building software
+  with/for AI). Filed the two sources this domain was proposed for:
+  `ai-industry/ai-roi-runway-outside-tech-sector.md` (`sb:2867ac`, Torsten Slok/Apollo
+  on AI valuations outpacing non-tech margin reality, with HN counterpoints folded in)
+  and `ai-industry/ai-margin-collapse-glm-5-2.md` (`sb:07610c`, Martin Alderson on
+  frontier-lab inference margins exposed by open-weight competition, cross-linked to
+  the KV-cache compression history for the MLA lineage). Added the directory `index.md`
+  and listed the new top-level domain in the bundle-root `index.md`.
 - `/intake`: filed two LLM-engineering references — `SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md`
   (`sb:41be22`, Kapa.ai's cheap-LLM RAG chunk pruning) and
   `SWE/llm-engineering/kv-cache-compression-history.md` (`sb:266c5e`, Martin Alderson's

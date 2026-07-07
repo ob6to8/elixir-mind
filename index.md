@@ -15,6 +15,7 @@ emerges as knowledge is filed and evolves collaboratively; see the
 [operating contract](/CLAUDE.md).
 
 - [SWE](/SWE/index.md) — software engineering knowledge
+- [ai-industry](/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
 
 ### Meta / governance
 
