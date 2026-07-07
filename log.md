@@ -4,6 +4,32 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- **Operator-ratified new top-level domain**: `ai-industry/` — market, economic, and
+  competitive analysis of the AI industry, distinct from `SWE/` (building software
+  with/for AI). Filed the two sources this domain was proposed for:
+  `ai-industry/ai-roi-runway-outside-tech-sector.md` (`sb:2867ac`, Torsten Slok/Apollo
+  on AI valuations outpacing non-tech margin reality, with HN counterpoints folded in)
+  and `ai-industry/ai-margin-collapse-glm-5-2.md` (`sb:07610c`, Martin Alderson on
+  frontier-lab inference margins exposed by open-weight competition, cross-linked to
+  the KV-cache compression history for the MLA lineage). Added the directory `index.md`
+  and listed the new top-level domain in the bundle-root `index.md`.
+- `/intake`: filed two LLM-engineering references — `SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md`
+  (`sb:41be22`, Kapa.ai's cheap-LLM RAG chunk pruning) and
+  `SWE/llm-engineering/kv-cache-compression-history.md` (`sb:266c5e`, Martin Alderson's
+  MQA→GQA→MLA→quantization history) — and one agent-framework reference,
+  `SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md` (`sb:eeb2bb`,
+  an Elixir agent-orchestration library on LangChain). Created two new autonomous
+  subtrees: `SWE/llm-engineering/` (new sibling under `SWE/`) and
+  `SWE/agentic-coding/frameworks/` (subdir under the established `agentic-coding`
+  domain). Two economics-of-AI sources from the same intake batch (Apollo/Slok "AI
+  ROI runway" + HN discussion; Alderson "AI margin collapse"/GLM-5.2 + HN discussion)
+  do not fit any existing directory and await operator ratification of a new
+  top-level domain before filing.
+- `/intake`: filed `SWE/agentic-coding/code-context/gitnexus.md` (`sb:b89ea1`, type
+  `reference`) — GitNexus, a client-side code knowledge-graph tool that serves codebase
+  context (calls, imports, clusters, execution flows) to coding agents over MCP. Created
+  the `SWE/agentic-coding/code-context/` subtree (autonomous — under the established
+  `SWE/` domain) with its `index.md`; cross-linked to the context-engineering reference.
 - Research spike into **agentic "looping"**: filed 16 primary sources as `reference`
   captures under the new `SWE/agentic-coding/agentic-loop/` subtree (autonomous — under
   the established `SWE/` domain), spanning foundations (ReAct `sb:f63910`), canonical
