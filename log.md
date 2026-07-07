@@ -4,6 +4,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- `/intake`: filed `SWE/agentic-coding/context-engineering/conversation-tree-architecture.md`
+  (`sb:784985`, type `reference`) — Hemanth & Saha's Conversation Tree Architecture
+  proposal (arXiv:2603.21278v1): structuring LLM conversations as branching trees with
+  selective downstream/upstream context flow to avoid "logical context poisoning".
+  Summarized (an academic paper; full text linked as `resource`) — flagged as a
+  framework proposal with a working prototype, not yet empirically validated. Created
+  the `SWE/agentic-coding/context-engineering/` subtree (autonomous — under the
+  established `agentic-coding` domain) with its `index.md`; cross-linked the existing
+  Anthropic context-engineering reference in `agentic-loop/`.
+
 - **Operator-ratified new top-level domain**: `ai-industry/` — market, economic, and
   competitive analysis of the AI industry, distinct from `SWE/` (building software
   with/for AI). Filed the two sources this domain was proposed for:
