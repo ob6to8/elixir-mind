@@ -4,6 +4,18 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- `/intake`: filed `SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md`
+  (`sb:649457`, type `reference`) — Michael Coen's paper (arXiv:2512.17083v3)
+  separating boundary *scoring* from boundary *selection* in dialogue topic
+  segmentation, showing that sweeping boundary density (BOR) changes W-F1 more
+  than switching segmentation methods does, and introducing purity/coverage
+  diagnostics to distinguish granularity mismatch from genuine detection failure.
+  Summarized (dense empirical paper with many tables); full text linked as
+  `resource`. Read from an uploaded PDF (installed `poppler-utils` after a stale-apt
+  failure, fixed with `--allow-releaseinfo-change` per the known issue in `sb:52aefa`).
+  Filed alongside and cross-linked with the existing Conversation Tree Architecture
+  reference in `SWE/agentic-coding/context-engineering/`.
+
 - `/intake`: filed `SWE/agentic-coding/context-engineering/conversation-tree-architecture.md`
   (`sb:784985`, type `reference`) — Hemanth & Saha's Conversation Tree Architecture
   proposal (arXiv:2603.21278v1): structuring LLM conversations as branching trees with

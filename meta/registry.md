@@ -36,6 +36,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:3f35e1` | [SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
 | `sb:b89ea1` | [SWE/agentic-coding/code-context/gitnexus](/SWE/agentic-coding/code-context/gitnexus.md) | reference |  |
 | `sb:784985` | [SWE/agentic-coding/context-engineering/conversation-tree-architecture](/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md) | reference |  |
+| `sb:649457` | [SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `sb:eeb2bb` | [SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration](/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `sb:266c5e` | [SWE/llm-engineering/kv-cache-compression-history](/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
