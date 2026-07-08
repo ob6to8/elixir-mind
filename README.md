@@ -22,3 +22,24 @@ to ratify before creating it.
 ## Usage
 
 From the Claude Code app, paste material after `/intake` to capture it into the brain.
+
+## Website
+
+The bundle is published as a navigable knowledge base at **GitHub Pages**. A
+dependency-free Elixir generator renders every concept into a static HTML site — a
+sidebar mirroring the directory taxonomy, per-concept metadata panels (type, tags,
+verification status, evidence edges and their reverse backlinks), and client-side
+search — with all links relative so it works at any base path.
+
+```sh
+mix brain.site            # build into _site/
+mix brain.site --out DIR  # build into a custom directory
+```
+
+Open `_site/index.html` (serve over HTTP — e.g. `python3 -m http.server -d _site`
+— so client-side search can load its index). The site is not committed; it is built
+and deployed by [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every
+push to `main`.
+
+> **Enable it once:** in the repository's **Settings → Pages**, set **Source** to
+> **GitHub Actions**. The workflow then publishes the site on each push to `main`.
