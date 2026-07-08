@@ -4,6 +4,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-06
 
+- Applied the new `/summarize-technical` skill to the two just-filed
+  context-engineering references, updating each in place (per update-in-place —
+  no new files): `SWE/agentic-coding/context-engineering/conversation-tree-architecture.md`
+  (`sb:784985`) and `SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md`
+  (`sb:649457`) now each carry a plain-language summary, a glossary of the
+  paper's key technical terms, and an integrated technical summary reusing that
+  vocabulary, replacing their prior single-pass distilled bodies. Frontmatter,
+  ids, and citations unchanged. See [meta/log.md](/meta/log.md) for the new
+  skill itself.
+
 - `/intake`: filed `SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md`
   (`sb:649457`, type `reference`) — Michael Coen's paper (arXiv:2512.17083v3)
   separating boundary *scoring* from boundary *selection* in dialogue topic
