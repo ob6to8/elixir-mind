@@ -12,6 +12,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   `route-tagging`'s guide (`meta/session-workflow.md`), and the `/capture`
   skill; recompiled `CLAUDE.md`. Historical mentions in this log and the
   2026-07-05 thread are left as-is (frozen records).
+- **Clarified the `/capture` keep/strip rule** to match cb `transcript_hook.py`
+  exactly and read as an *inclusion* rule: keep **every** exchange, dropping only
+  tool calls/results, reasoning/thinking, and short pre-tool narration (a block
+  *both* `< ~300` chars *and* followed by a tool call). A short block **in
+  isolation** — not followed by a tool — is kept, as are longer blocks and all
+  text in tool-less turns. Fixed the misleading "keep only the substantive
+  response" framing in the `session-capture` policy, the `/capture` skill, and
+  `meta/session-workflow.md`; recompiled `CLAUDE.md`. No behaviour change — the
+  rule was already correct in the verifier's sense; this removes an ambiguous
+  reading that could have over-dropped short standalone replies.
 
 ## 2026-07-08
 
