@@ -4,6 +4,11 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-08
 
+- **Removed the operator's email address** from the operating contract
+  (operator-directed, privacy): dropped the parenthetical from
+  `meta/preamble.md` and recompiled `CLAUDE.md` (`mix brain.contract`). The
+  operator is now identified simply as "the human"; no other published
+  reference to the address existed in the bundle.
 - Added the **GitHub Pages site generator**: a dependency-free static-site build
   (`mix brain.site`, in `SecondBrain.Site` / `SecondBrain.Markdown`) that renders
   the bundle into a navigable knowledge base, deployed by
