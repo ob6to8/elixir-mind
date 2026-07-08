@@ -22,6 +22,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   `meta/session-workflow.md`; recompiled `CLAUDE.md`. No behaviour change — the
   rule was already correct in the verifier's sense; this removes an ambiguous
   reading that could have over-dropped short standalone replies.
+- Created the **`meta/verification-flows/`** namespace (operator-directed):
+  hands-on *did-it-work?* walkthroughs for each multi-step flow — who does what
+  (operator invokes/ratifies; the agent executes), how to invoke, and exactly
+  what to check. First entry: `session-capture-routing-route-tags.md`, which
+  corrects an earlier chat framing that cast agent steps (routing, tagging,
+  minting, materializing) as operator to-dos. Listed in `meta/index.md`.
 
 ## 2026-07-08
 
