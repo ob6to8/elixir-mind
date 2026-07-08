@@ -19,7 +19,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   (`sb:d479e3`) and the first worked-example thread
   [2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md),
   whose route tag materialized the concept's `## Thread excerpts — route-tagged log`
-  section. All gates green.
+  section. Documented the full flow in [meta/session-workflow.md](/meta/session-workflow.md).
+  All gates green.
+- Ratified a new top-level domain **`knowledge-management/`** (operator-approved) —
+  knowledge representation, PKM, and knowledge formats. Filed its first concept,
+  [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`, `type: reference`), which now holds the canonical OKF spec URL.
+  Repointed every internal "Open Knowledge Format" mention — the root `index.md`,
+  `README.md`, and `meta/preamble.md` (→ recompiled `CLAUDE.md`) — from the raw
+  external URL to this node, so the link is processed once and referenced everywhere.
+  Listed the new domain in the root `index.md`; regenerated `meta/registry.md`.
 
 ## 2026-07-06
 
