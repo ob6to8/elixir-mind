@@ -8,6 +8,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)
+- [session-workflow.md](/meta/session-workflow.md) — end-to-end guide to session capture, the routing ledger, route tags, and `mix brain.route_tags` (the pipeline, data model, invariants, and the Composable Beliefs port)
 - [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
 - [tutorials](/meta/tutorials/index.md) — long-form explanatory notes on how the tooling and governance work
 
@@ -21,11 +22,16 @@ taxonomy. This is where the rules that compile into the operating contract live.
     edge resolution, and grounding of every `verified: true`.
   - `mix brain.evidence <sb:id|path>` — derive a concept's verification narrative
     (the prose is never committed; only the edges are).
+  - `mix brain.route_tags [--materialize]` — verify `<routes ref="sb:…">` tags on
+    threads and the excerpt logs they materialize into concepts (re-derives each
+    log from the current tags and fails on divergence); `--materialize` writes the
+    log sections from the tags.
   - `mix brain.site [--out DIR]` — render the bundle into a static, navigable site
     (deployed to GitHub Pages); see the [tutorials](/meta/tutorials/index.md).
 - `.github/workflows/ci.yml` — CI enforcement on every push/PR: compile, format check,
   tests, `mix brain.contract --check`, `mix brain.registry --check`, `mix brain.verify`,
-  and a `mix brain.site` build (blocks a stale contract/registry or a broken build).
+  `mix brain.route_tags`, and a `mix brain.site` build (blocks a stale contract/registry
+  or a broken build).
 - `.github/workflows/pages.yml` — builds `mix brain.site` and deploys to GitHub Pages
   on every push to `main`.
 - `.githooks/pre-commit` — optional fast local mirror of CI. Enable once with
