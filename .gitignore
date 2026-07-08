@@ -11,3 +11,6 @@ erl_crash.dump
 
 # ExUnit @tag :tmp_dir scratch fixtures
 /tmp/
+
+# Generated static site (built by `mix brain.site`, deployed from CI)
+/_site/
