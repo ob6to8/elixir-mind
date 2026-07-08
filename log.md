@@ -2,6 +2,23 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-08
+
+- Synthesized the two matklad testing references already filed under `SWE/testing/`
+  ("How to Test" `sb:a5ea86` and "Purity and Extent" `sb:73115b`) into an
+  agent-facing **testing methodology** for this repo's dependency-free Elixir
+  tooling: `SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`,
+  `type: note`). Maps each essay principle onto the actual modules — purity ladder →
+  `async: true` for `Frontmatter`/`Policy` vs. `async: false` + `@moduletag :tmp_dir`
+  for the IO-touching `Registry`/`Contract`/`Verifier`; test-features-not-code →
+  assert on error strings / rendered output and inject `root` rather than mocking
+  `File`; the `check` chokepoint → the existing `write_concept`/`write_policy`
+  builders (promote to `test/support/` when shared); golden/snapshot tests → the
+  `write`/`check` round-trip on the generated `CLAUDE.md` and `meta/registry.md`;
+  and a generative-testing ladder (properties for `mint`/frontmatter round-trip,
+  exhaustive enumeration for the `type` vocab), noting StreamData would be a new dep
+  to ratify. Updated `SWE/testing/index.md` and regenerated `meta/registry.md`.
+
 ## 2026-07-06
 
 - `/intake`: re-fetched Anthropic's "Effective context engineering for AI agents"
