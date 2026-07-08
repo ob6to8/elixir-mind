@@ -13,7 +13,7 @@ This repository is a personal **second brain** stored as an
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
 
-The operator is the human (mreveley@gmail.com). The agent files and organizes;
+The operator is the human. The agent files and organizes;
 the operator ratifies changes to the *shape* of the brain.
 
 > **This file is a generated artifact.** It is compiled from
