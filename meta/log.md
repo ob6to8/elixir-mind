@@ -28,6 +28,37 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   what to check. First entry: `session-capture-routing-route-tags.md`, which
   corrects an earlier chat framing that cast agent steps (routing, tagging,
   minting, materializing) as operator to-dos. Listed in `meta/index.md`.
+- **First real `/capture`** (dogfood): regenerated
+  [2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)
+  in place from this session's live context — superseding the hand-authored
+  worked-example version with a genuine distilled render of the whole session
+  (the port through all the refinements), an expanded routing ledger, and the
+  same `sb:d479e3` route tag re-materialized (log block unchanged). Until now the
+  skill had never been run; this is its first invocation.
+- **Retrofitted the 2026-07-05 bootstrap thread** (the only backlog thread — a
+  verbatim `/persist-thread` archive) with a `## Routing` ledger and route tags
+  over its **frozen body** (no re-render). Twelve ledger rows: the session mostly
+  built governance/tooling homed in `meta/` (not `concept` sinks), so those are
+  `unrouted`; the one knowledge feed — turn 2's definition of *what an OKF bundle
+  is* — is route-tagged to [open knowledge format](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`), whose excerpt log was materialized. All five `mix
+  brain.route_tags` checks green.
+- Added the tutorial
+  [What makes a commit show as "Verified" on GitHub](/meta/tutorials/what-makes-a-commit-verified-on-github.md)
+  (operator-requested): author vs committer identities, the fact that "Verified"
+  is a signature check bound to the committer email (not the email alone), why
+  re-authoring an agent commit to `noreply@anthropic.com` lets this environment's
+  signature attach, and the only-rewrite-unpushed-commits rule. Corrects an
+  earlier chat shorthand that implied the email itself makes a commit verified.
+  Listed in `meta/tutorials/index.md`.
+- **Second `/capture` (extend-in-place)**: re-ran capture on the adopt thread to
+  cover the exchanges since the first run (the push, the retrofit, the tutorial,
+  the two commit-signing fixes, PR #17). Refreshed the ledger (backlog row now
+  `closed`; five new rows) and narrative, and added one route tag carrying a new
+  routing-technique insight — *routing density tracks durable knowledge vs
+  process; a thin ledger is a signal, not a tagging failure* — to `sb:d479e3`,
+  whose excerpt log now lifts two regions. Confirms `/capture` extends a session's
+  existing thread doc in place rather than forking a new one.
 
 ## 2026-07-08
 
