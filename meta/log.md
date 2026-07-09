@@ -43,6 +43,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   is* — is route-tagged to [open knowledge format](/knowledge-management/open-knowledge-format.md)
   (`sb:24bd1e`), whose excerpt log was materialized. All five `mix
   brain.route_tags` checks green.
+- Added the tutorial
+  [What makes a commit show as "Verified" on GitHub](/meta/tutorials/what-makes-a-commit-verified-on-github.md)
+  (operator-requested): author vs committer identities, the fact that "Verified"
+  is a signature check bound to the committer email (not the email alone), why
+  re-authoring an agent commit to `noreply@anthropic.com` lets this environment's
+  signature attach, and the only-rewrite-unpushed-commits rule. Corrects an
+  earlier chat shorthand that implied the email itself makes a commit verified.
+  Listed in `meta/tutorials/index.md`.
 
 ## 2026-07-08
 
