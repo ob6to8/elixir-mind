@@ -5,6 +5,24 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 ## 2026-07-09
 
 - Captured the session thread
+  [2026-07-09 — news Routine verification, issue tracking, and /news featuring docs](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md)
+  (`/capture`, parse-the-log render): verified the daily Routine, found its automated
+  fires land nothing on `main` (suspected env-wide approval gate), then the governance
+  work below. Routing ledger has one open strand (the non-firing Routine, routed to the
+  new issue) and two closed (the `issue` type/namespace, the `/news` featuring docs);
+  path-ref route tags back-link the finding and summary regions to the issue,
+  vocabulary, and skill. Listed it in the threads index.
+- Added the `issue` type to the [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md)
+  and created the [`meta/issues/`](/meta/issues/index.md) namespace (operator-ratified).
+  Filed the first issue,
+  [Daily /news Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md)
+  (`status: open`): the scheduled Routine `trig_01PAiKWrWgVs4djSkhELoLYw` produces no
+  commit/push on its fresh-session fires; an environment-wide tool-approval gate is the
+  suspected cause. Workaround: run `/news` manually. Recompiled `/CLAUDE.md`
+  (`mix brain.contract`) to carry the new type; listed `issues` in the meta index. Also
+  documented the featuring/selection decision explicitly in the
+  [`/news` skill](/.claude/skills/news/SKILL.md).
+- Captured the session thread
   [2026-07-09 — daily news-inbox Routine](/meta/threads/2026-07-09-daily-news-inbox-routine.md)
   (`/capture`): a short session that created the claude-code-remote Routine
   `trig_01PAiKWrWgVs4djSkhELoLYw` (fresh session daily at 13:00 UTC, cron `0 13 * * *`)
