@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Captured the session thread
+  [2026-07-09 — news Routine verification, issue tracking, and /news featuring docs](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md)
+  (`/capture`, parse-the-log render): verified the daily Routine, found its automated
+  fires land nothing on `main` (suspected env-wide approval gate), then the governance
+  work below. Routing ledger has one open strand (the non-firing Routine, routed to the
+  new issue) and two closed (the `issue` type/namespace, the `/news` featuring docs);
+  path-ref route tags back-link the finding and summary regions to the issue,
+  vocabulary, and skill. Listed it in the threads index.
 - Added the `issue` type to the [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md)
   and created the [`meta/issues/`](/meta/issues/index.md) namespace (operator-ratified).
   Filed the first issue,
