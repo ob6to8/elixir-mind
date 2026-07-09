@@ -4,6 +4,20 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **Ratified the `analysis` type** (operator directive) and created the
+  `meta/analysis/` namespace with its `index.md`. An `analysis` is a point-in-time
+  evaluation / decision-support write-up — a question investigated against evidence,
+  yielding findings and a recommendation — distinct from a `plan` (intended work),
+  `tutorial` (explanatory), and `note` (an idea). Added the type to
+  `meta/policy/controlled-type-vocabulary.md` and recompiled `CLAUDE.md`.
+- Filed the first analysis,
+  [Would a vector DB improve recall as this bundle scales?](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)
+  (`type: analysis`): a reproducible dedup-recall probe over the live 39-concept
+  corpus shows grep already misses existing concepts on natural-phrasing queries
+  (~6 of 14) — a *semantic* (synonym/jargon) failure, not typographic. Concludes the
+  right first move is synonym-expanded intake dedup + a repeatable recall probe
+  (both zero-dependency), with cached brute-force embedding dedup as a later Tier 2,
+  and a standalone vector DB rejected at this corpus's scale.
 - Filed the tutorial
   [How the Pages deploy is gated on a verified bundle](/meta/tutorials/gating-the-pages-deploy-on-a-verified-bundle.md)
   (`type: tutorial`) explaining the mechanics of the `pages.yml` deploy gate:

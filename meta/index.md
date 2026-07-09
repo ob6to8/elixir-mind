@@ -5,6 +5,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 
 ## Contents
 
+- [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
 - [issues](/meta/issues/index.md) — tracked operational problems and open concerns about the brain's tooling/automation (`type: issue`, each with a `status`)
 - [plans](/meta/plans/index.md) — design/decision records for proposed changes to the brain or its tooling (`type: plan`, each with a `status`)
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
