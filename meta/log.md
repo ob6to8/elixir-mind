@@ -4,6 +4,24 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **Fixed a capture-semantics bug: retained responses are verbatim.** The
+  `session-capture` policy, the `/capture` skill, `meta/session-workflow.md`, and
+  the verification-flow all wrongly implied the kept agent responses could be
+  *summarized* ("distilled render… delivered substance, not word-for-word").
+  Corrected everywhere: "distilled" means the **noise** is dropped; everything
+  kept is reproduced **verbatim**. Made **parse-the-log** the preferred, most
+  faithful render path. Recompiled `CLAUDE.md`. Then **recaptured** the adopt
+  thread from the host session log (parse-the-log): all 21 exchanges now verbatim,
+  and the `sb:d479e3` route tag re-pointed at the operator's own verbatim
+  definition of the technique (replacing an earlier composed paragraph), so the
+  concept's excerpt log lifts real conversation text. All gates green.
+- **Third `/capture` (extend the verbatim render).** Re-ran capture to fold in the
+  capture-semantics fix, the reconcile, and the push — parsed straight from the
+  host session log, so the tail is verbatim too. Confirmed the parser correctly
+  drops the `isMeta` stop-hook feedback and the `<`-prefixed `/capture` invocation
+  as noise, merging the surrounding responses. Ledger + narrative extended; the
+  `sb:d479e3` tag region is unchanged, so the concept logs were untouched.
+
 - **Retired `/persist-thread`** in favour of `/capture`. The two overlapped
   (both persist a session into `meta/threads/`); `/capture` supersedes it —
   same home, but distilled + routed + route-tagged instead of raw verbatim.
