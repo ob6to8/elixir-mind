@@ -60,11 +60,30 @@ convention. Previous days are **never rewritten** — they persist as the archiv
   already surfaced, unless there's a genuinely new development. Don't repeat
   yesterday's feed.
 
-### 4. Select and reason-tag
-- Keep the items that genuinely match a domain's interest signals. Quality over
-  volume — a handful of strong items beats a long weak list.
-- Tag **each** item with one or more **reason tags** (why it surfaced). This
-  vocabulary is fixed; propose additions to the operator rather than inventing:
+### 4. Select and reason-tag — how the agent decides what to feature
+
+An item is **featured** only if it clears every gate below. This is the selection
+contract — the reason a candidate makes today's digest or gets dropped:
+
+1. **Relevance** — it maps to a domain's interest signals (a topic the brain
+   actively tracks, or a concept it has already filed). No mapping ⇒ not featured,
+   however interesting in the abstract. The taxonomy is the filter.
+2. **Novelty** — it survives both dedup passes (§3): not already in the bundle, and
+   not already surfaced in a recent digest (unless it's a genuinely new
+   development). The inbox features what's *not yet* in the brain.
+3. **A reason tag fires** — at least one tag from the fixed vocabulary below must
+   apply. **The reason tags *are* the featuring criteria**: if you can't attach a
+   reason, there's no reason to feature it. An item with no firing tag is dropped.
+4. **Source quality** — prefer primary and high-signal sources over aggregators;
+   when two items say the same thing, feature the more authoritative one.
+
+Then apply a **quality-over-volume cap**: a handful of strong items beats a long
+weak list. When more items clear the gates than are worth featuring, keep the ones
+with the strongest / most reason tags and drop the marginal. Within a domain,
+order the strongest first.
+
+Tag **each** featured item with one or more **reason tags** (why it surfaced). This
+vocabulary is fixed; propose additions to the operator rather than inventing:
 
   | Tag | Fires when |
   |-----|-----------|
@@ -75,6 +94,7 @@ convention. Previous days are **never rewritten** — they persist as the archiv
   | `buzz` | High discussion volume (HN points, social velocity) regardless of merit |
 
   Tags are orthogonal to topic tags and describe *selection reason*, not subject.
+  More (or stronger) tags on an item is itself a signal it deserves featuring.
 
 ### 5. Write today's digest
 - Path: `inbox/YYYY-MM-DD.md`. If today's digest already exists, **regenerate that

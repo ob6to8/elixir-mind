@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Added the `issue` type to the [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md)
+  and created the [`meta/issues/`](/meta/issues/index.md) namespace (operator-ratified).
+  Filed the first issue,
+  [Daily /news Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md)
+  (`status: open`): the scheduled Routine `trig_01PAiKWrWgVs4djSkhELoLYw` produces no
+  commit/push on its fresh-session fires; an environment-wide tool-approval gate is the
+  suspected cause. Workaround: run `/news` manually. Recompiled `/CLAUDE.md`
+  (`mix brain.contract`) to carry the new type; listed `issues` in the meta index. Also
+  documented the featuring/selection decision explicitly in the
+  [`/news` skill](/.claude/skills/news/SKILL.md).
 - Captured the session thread
   [2026-07-09 — daily news-inbox Routine](/meta/threads/2026-07-09-daily-news-inbox-routine.md)
   (`/capture`): a short session that created the claude-code-remote Routine
