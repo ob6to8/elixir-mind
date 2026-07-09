@@ -4,6 +4,22 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **Built the `flows` genre and collapsed the capture docs into it** (per the
+  approved [flows spec](/meta/specs/flows-genre-and-scenario-testing.md), build
+  order §9). Created `meta/flows/` with its `index.md` and the first flow doc
+  [session-capture](/meta/flows/session-capture.md) — the file-by-file
+  touch-sequence of a `/capture` run, plus pipeline, data model, actor
+  boundaries, gate suite, and invariants. Added the scenario test
+  `test/second_brain/capture_scenario_test.exs`: plain ExUnit over a `:tmp_dir`
+  fixture that drives `RouteTags.materialize/1` and asserts the materialized log
+  section **byte-exact** (co-feed lift, ATX→bold demotion, ordering) — pinning the
+  transform against a wrong-but-self-consistent change the `log fidelity`
+  self-check can't catch. **Collapsed** `meta/session-workflow.md` and
+  `meta/verification-flows/` into the flow doc (both removed), repointed
+  `meta/index.md`, added a See-also from the `/capture` skill, and updated the
+  spec's status. Flow docs live in the governance namespace (`type: note`, no
+  `sb:` id), so no registry/contract change; all gates green including the new
+  scenario.
 - **Established the `meta/specs/` genre + a persist-specs policy** (operator-directed):
   design specs and implementation plans the operator approves are now persisted as
   `type: spec` docs under `meta/specs/` (governance namespace, no `sb:` id) rather

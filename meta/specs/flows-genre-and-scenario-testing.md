@@ -9,7 +9,10 @@ timestamp: 2026-07-09
 
 # Spec — the `flows` genre + formal scenario testing
 
-**Status:** approved. Build not yet started (see build order, §9).
+**Status:** approved. Capture flow **built** (2026-07-09) per §9 — `meta/flows/`
+genre created, `session-capture` flow doc + scenario test landed, and
+`session-workflow.md` + `verification-flows/` collapsed in. `/intake` remains the
+next target.
 **Branch of record:** `claude/flows-paths-documentation-b6mzee`.
 **Decisions:** capture-first collapse · scenario tests over the deterministic
 spine · **in-code fixtures + structured/targeted assertions** (not on-disk
@@ -23,11 +26,13 @@ documentation in the flow doc (not machine-parsed) · eval layer deferred (§7).
 The brain currently traces one flow (`/capture`) across **three** overlapping
 prose docs plus a hidden test fixture:
 
-- [`meta/session-workflow.md`](/meta/session-workflow.md) — the "why + connective
-  runbook".
-- [`meta/verification-flows/session-capture-routing-route-tags.md`](/meta/verification-flows/session-capture-routing-route-tags.md)
-  — the "did-it-work?" checklist, which names a **live** thread↔concept pair
-  (`2026-07-08…` ↔ `sb:d479e3`) as "the green example to diff against".
+- `meta/session-workflow.md` — the "why + connective runbook" *(now collapsed
+  into [`meta/flows/session-capture.md`](/meta/flows/session-capture.md))*.
+- `meta/verification-flows/session-capture-routing-route-tags.md` — the
+  "did-it-work?" checklist, which named a **live** thread↔concept pair
+  (`2026-07-08…` ↔ `sb:d479e3`) as "the green example to diff against" *(also
+  collapsed into the flow doc; the scenario test is now the canonical green
+  example)*.
 - [`.claude/skills/capture/SKILL.md`](/.claude/skills/capture/SKILL.md) — the
   agent's procedure.
 - `test/second_brain/route_tags_test.exs` — a `green_fixture` mini-bundle run
