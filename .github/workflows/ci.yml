@@ -33,3 +33,9 @@ jobs:
 
       - name: Bundle verifies (ids, evidence edges, grounding)
         run: mix brain.verify
+
+      - name: Route tags verify (tags, refs, sink logs, log fidelity)
+        run: mix brain.route_tags
+
+      - name: Static site builds
+        run: mix brain.site

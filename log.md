@@ -2,7 +2,49 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-09
+
+- Ratified a new top-level **`inbox/`** namespace (operator-approved) — a daily
+  candidate feed of news, articles, papers, and resources matched against the
+  taxonomy, grouped by category and reason-tagged
+  (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). It is a **non-bundle**
+  namespace like `meta/`: candidates carry no `sb:` ids and are never verified, so
+  `inbox` was added to `SecondBrain.Registry`'s excluded dirs (keeping it out of
+  `mix brain.verify`/`registry`/`route_tags`); the static-site generator still renders
+  it. Added the **`/news`** skill (`.claude/skills/news/`), registered it in the skills
+  registry, and recompiled `CLAUDE.md`. Seeded the namespace with `inbox/index.md`,
+  `inbox/log.md`, and the first digest
+  [2026-07-09](/inbox/2026-07-09.md) (7 items across ai-industry, SWE, and
+  knowledge-management). Intake stays the sole path into the bundle: `/news` proposes,
+  `/intake` files.
+
 ## 2026-07-08
+
+- **Adopted a session-capture / routing-ledger / route-tagging workflow** from the
+  Composable Beliefs repo, at the OKF floor (the belief DAG was out of scope).
+  Added three `type: policy` docs under a new `session-workflow` contract section
+  (`session-capture`, `routing-ledger`, `route-tagging`), the **`/capture`** skill
+  (`.claude/skills/capture/`), and registered `/capture` in the skills registry;
+  recompiled `CLAUDE.md`. Ported cb's `route_tags.ex` verifier to
+  `SecondBrain.RouteTags` + **`mix brain.route_tags`** (wired into CI and the
+  pre-commit hook beside `mix brain.verify`), adapting cb's flat slugs / `cb:bNNN`
+  belief ids to this bundle: a route-tag ref is now a concept's **`sb:` id** (the
+  aggregating sink) or a **path** (a non-aggregating back-link); threads under
+  `meta/threads/` are tag *sources*. Filed the transferable concept
+  [routing non-linear work sessions](/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md)
+  (`sb:d479e3`) and the first worked-example thread
+  [2026-07-08-adopt-session-capture-routing-and-route-tags](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md),
+  whose route tag materialized the concept's `## Thread excerpts — route-tagged log`
+  section. Documented the full flow in [meta/session-workflow.md](/meta/session-workflow.md).
+  All gates green.
+- Ratified a new top-level domain **`knowledge-management/`** (operator-approved) —
+  knowledge representation, PKM, and knowledge formats. Filed its first concept,
+  [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`, `type: reference`), which now holds the canonical OKF spec URL.
+  Repointed every internal "Open Knowledge Format" mention — the root `index.md`,
+  `README.md`, and `meta/preamble.md` (→ recompiled `CLAUDE.md`) — from the raw
+  external URL to this node, so the link is processed once and referenced everywhere.
+  Listed the new domain in the root `index.md`; regenerated `meta/registry.md`.
 
 - **Ratified a new `methodology` type** (operator-approved) and added it to the
   controlled vocabulary in `meta/policy/controlled-type-vocabulary.md` — a
@@ -20,7 +62,7 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   ("How to Test" `sb:a5ea86` and "Purity and Extent" `sb:73115b`) into an
   agent-facing **testing methodology** for this repo's dependency-free Elixir
   tooling: `SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`,
-  `type: note`). Maps each essay principle onto the actual modules — purity ladder →
+  `type: methodology`). Maps each essay principle onto the actual modules — purity ladder →
   `async: true` for `Frontmatter`/`Policy` vs. `async: false` + `@moduletag :tmp_dir`
   for the IO-touching `Registry`/`Contract`/`Verifier`; test-features-not-code →
   assert on error strings / rendered output and inject `root` rather than mocking

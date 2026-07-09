@@ -8,12 +8,12 @@ timestamp: 2026-07-05
 # Operating Contract — Second Brain (OKF)
 
 This repository is a personal **second brain** stored as an
-[Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog)
+[Open Knowledge Format](/knowledge-management/open-knowledge-format.md)
 (**OKF v0.1**) bundle. Every agent that operates here — including fresh, sandboxed
 agents spun up from the Claude Code app — MUST read and follow this contract. It is
 the backbone that keeps the brain consistent as it grows.
 
-The operator is the human (mreveley@gmail.com). The agent files and organizes;
+The operator is the human. The agent files and organizes;
 the operator ratifies changes to the *shape* of the brain.
 
 > **This file is a generated artifact.** It is compiled from
