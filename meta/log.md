@@ -15,6 +15,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   and the `sb:d479e3` route tag re-pointed at the operator's own verbatim
   definition of the technique (replacing an earlier composed paragraph), so the
   concept's excerpt log lifts real conversation text. All gates green.
+- **Third `/capture` (extend the verbatim render).** Re-ran capture to fold in the
+  capture-semantics fix, the reconcile, and the push — parsed straight from the
+  host session log, so the tail is verbatim too. Confirmed the parser correctly
+  drops the `isMeta` stop-hook feedback and the `<`-prefixed `/capture` invocation
+  as noise, merging the surrounding responses. Ledger + narrative extended; the
+  `sb:d479e3` tag region is unchanged, so the concept logs were untouched.
 
 - **Retired `/persist-thread`** in favour of `/capture`. The two overlapped
   (both persist a session into `meta/threads/`); `/capture` supersedes it —

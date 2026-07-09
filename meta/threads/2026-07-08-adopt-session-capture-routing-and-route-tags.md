@@ -33,6 +33,10 @@ refinements), and **PR #17** (the first real `/capture`, the backlog retrofit,
 and a git-verification tutorial). The backlog is now clear: the 2026-07-05
 verbatim thread was retrofitted with a routing ledger and a route tag over its
 frozen body, and this session was itself captured — the skill's first real run.
+A later turn caught that the render was **summarizing** responses rather than
+keeping them verbatim; the policy, skill, and guide were corrected — retained
+responses are verbatim — and this thread was recaptured from the host session log
+via `/capture`'s parse-the-log path (which is what this doc now is).
 
 ## Routing
 
@@ -54,6 +58,7 @@ frozen body, and this session was itself captured — the skill's first real run
 | Retrofit the 2026-07-05 bootstrap thread over its frozen body | closed | `unrouted` | - |
 | Git commit verification — author/committer, signatures, "Verified" | closed | `unrouted` | - |
 | PR #17 opened | closed | `unrouted` | - |
+| Capture semantics — retained responses must be **verbatim** (fixed policy/skill/guide; recaptured from the host log) | closed | `unrouted` | - |
 
 ## User
 
@@ -887,4 +892,51 @@ There is a problem. The thread has a note that agent responses are distilled. Th
 
 ## Assistant
 
-*(Ran `/capture` — recaptured this thread **verbatim** from the host session log via the parse-the-log path, after updating the `session-capture` policy and the `/capture` skill to require verbatim retained responses. Supersedes the earlier summarized render of this doc.)*
+You're right — that's a real semantics bug. "Distilled" should mean *the noise is stripped*, not that the kept responses are summarized. The cb hook keeps retained assistant text **verbatim**; my wording ("distilled render… delivered substance, not word-for-word") wrongly licensed paraphrase. Let me fix the policy, skill, and guide, then recapture the thread doc with verbatim responses.
+
+First, find every place that implies summarization:
+
+Most uses of "distill" are fine shorthand for "noise-stripped," but the retained-text-is-verbatim requirement is missing and the "delivered substance, not word-for-word" license is wrong. Before rewriting docs, let me check whether the host session log is available — parsing it gives a truly verbatim render instead of relying on memory:
+
+The core idea + 4 mechanisms is a clean self-contained unit to tag. No line-anchored tags exist anywhere in the render, so insertion is safe. Let me assemble the thread doc via a script — reusing the existing header (narrative + ledger) with verbatim wording, then the parsed verbatim body with the route tag, truncating my in-progress turn:
+
+Committed as `9b18905` (authored correctly). Here's what this fixed and did:
+
+## The bug
+"Distilled" had leaked into meaning *summarize the substance* — the policy/skill/guide literally licensed paraphrase ("delivered substance, not word-for-word"). That's wrong: the cb rule keeps retained assistant text **verbatim**; only the *noise* is dropped.
+
+## The fix (docs)
+Corrected the `session-capture` policy, the `/capture` skill, `meta/session-workflow.md`, and the verification-flow so the rule is unambiguous: **everything kept is reproduced verbatim** — the delivered text of each operator message and agent response, never summarized. I also made **parse-the-log the preferred render path** (it's mechanically exact, vs. reproducing from memory), and recompiled `CLAUDE.md`.
+
+## The recapture (the thread doc)
+Rather than reconstruct from memory, I used the skill's own **parse-the-log** path on the host session log (`~/.claude/projects/…/<session>.jsonl`), applying `transcript_hook.py`'s exact drop rule (`len < 300 and followed_by_tool`, drop tool calls/reasoning):
+- All **21 exchanges are now verbatim** — the actual delivered text, not summaries. The doc grew from ~290 to 891 lines, which is the honest cost of verbatim.
+- The `sb:d479e3` route tag now wraps the **operator's own verbatim definition** of the technique (the "core idea + 4 mechanisms" from the task prompt), replacing my earlier composed paragraph — so the concept's excerpt log lifts real conversation text, exactly as route-tagging intends.
+- My in-progress capture turn was truncated to a closing stage note (the accepted tail-gap).
+
+**Verification:** all five `mix brain.route_tags` checks green, plus `brain.verify`, `contract`/`registry --check`, `brain.site` (91 pages), and `mix test` (69, 0).
+
+This commit sits on `main` +1 (unpushed). Want me to **push** it (it'll be a new PR, since #17 is merged), or hold?
+
+Reconciled and clean. The branch is now exactly **+1 commit over the real `main`** (`88a9d25`) — the four earlier commits are already merged via PR #17, so no rebase is needed and a future PR would show only the recapture commit.
+
+## State
+- **`5848c2f`** — "Capture semantics: retained responses are verbatim; recapture from log" — pushed to `origin/claude/okf-capture-ledger-tags-4hicil`, re-authored to `noreply@anthropic.com` (signs on push → GitHub will show Verified).
+- Branch = `main` + this one commit. Working tree clean.
+
+## What landed
+- **Docs fixed** so retained responses must be **verbatim** ("distilled" = noise dropped, not content condensed), with parse-the-log as the preferred faithful path — policy, skill, guide, verification-flow, and recompiled `CLAUDE.md`.
+- **Thread recaptured verbatim** from the host session log (parse-the-log): all 21 exchanges are now the actual delivered text, and `sb:d479e3`'s route tag lifts the operator's own verbatim definition of the technique.
+- All gates green (route-tags 5/5, 69 tests, 91-page site).
+
+This is a nice second-order proof of the workflow: the capture system caught and corrected a fidelity bug in its own output, then re-ran itself from the canonical source.
+
+Want me to **open a PR** for `5848c2f`? (It'll be a new PR — #17 is already merged.)
+
+## User
+
+*(Invoked `/capture` with "this as well, then commit and push".)*
+
+## Assistant
+
+*(Recaptured this thread verbatim from the host session log via parse-the-log — extending the render through the capture-semantics fix and the reconcile/push — then committed and pushed. This closing turn is the accepted tail-gap.)*
