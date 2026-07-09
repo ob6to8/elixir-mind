@@ -4,6 +4,25 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- **Established the `meta/specs/` genre + a persist-specs policy** (operator-directed):
+  design specs and implementation plans the operator approves are now persisted as
+  `type: spec` docs under `meta/specs/` (governance namespace, no `sb:` id) rather
+  than left in chat or the reclaimed scratchpad. Ratified a new `spec` type in
+  `controlled-type-vocabulary`, added `persist-specs` under the *filing* contract
+  section (order 6), created `meta/specs/index.md`, and recompiled `CLAUDE.md`.
+  First spec filed: [The flows genre + formal scenario testing](/meta/specs/flows-genre-and-scenario-testing.md)
+  (`status: approved`) — the collapse of the capture flow's three prose docs into
+  one `meta/flows/` doc backed by an ExUnit scenario, with the commissioned harness
+  research spike folded in (it *adjusted* the plan: in-code fixtures + structured
+  assertions over on-disk whole-tree golden). Build not yet started.
+- Added the tutorial
+  [The three bundle scanners — Registry, Verifier, and RouteTags](/meta/tutorials/the-three-bundle-scanners.md)
+  (operator-requested): how `Registry.scan/1` is the one crawler (wildcard +
+  directory-exclusion + frontmatter parse), the Verifier layers rules over the same
+  corpus, and RouteTags adds a second surface over `meta/threads` and rejoins the
+  governance and knowledge namespaces by stable id — and why everything under an
+  excluded directory (e.g. `test/` fixtures) is invisible to all three. Listed in
+  `meta/tutorials/index.md`.
 - **Retired `/persist-thread`** in favour of `/capture`. The two overlapped
   (both persist a session into `meta/threads/`); `/capture` supersedes it —
   same home, but distilled + routed + route-tagged instead of raw verbatim.

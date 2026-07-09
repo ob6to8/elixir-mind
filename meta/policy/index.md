@@ -23,6 +23,7 @@ that section.
 - [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — kebab-case slugs; bundle-absolute links
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` and `log.md` after filing
+- [persist-specs](/meta/policy/persist-specs.md) — approved specs and plans are persisted as `type: spec` docs under `meta/specs/`, not left in chat
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of concept types

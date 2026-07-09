@@ -30,5 +30,8 @@ Seed vocabulary:
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the
   "why"/"how" behind the tooling or a topic); distinct from a terse `note` and from
   a `reference` capture of external material (lives under `meta/tutorials/`).
+- `spec` — a design spec or implementation plan the agent produced and the operator
+  approved: a durable record of decisions, rationale, and build order for a change
+  to the brain's shape or tooling (lives under `meta/specs/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
