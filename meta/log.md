@@ -35,6 +35,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   (the port through all the refinements), an expanded routing ledger, and the
   same `sb:d479e3` route tag re-materialized (log block unchanged). Until now the
   skill had never been run; this is its first invocation.
+- **Retrofitted the 2026-07-05 bootstrap thread** (the only backlog thread — a
+  verbatim `/persist-thread` archive) with a `## Routing` ledger and route tags
+  over its **frozen body** (no re-render). Twelve ledger rows: the session mostly
+  built governance/tooling homed in `meta/` (not `concept` sinks), so those are
+  `unrouted`; the one knowledge feed — turn 2's definition of *what an OKF bundle
+  is* — is route-tagged to [open knowledge format](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`), whose excerpt log was materialized. All five `mix
+  brain.route_tags` checks green.
 
 ## 2026-07-08
 
