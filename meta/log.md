@@ -4,6 +4,22 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Captured the session thread
+  [2026-07-09 — home-page news-filter inbox](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)
+  (`/capture`, parse-the-log render): verbatim retained exchanges, a routing ledger
+  (feature + tutorial closed; daily Routine paused, PR open), and path-ref route tags
+  back-linking the finding regions to the tutorial/`registry.ex` and the skill-purpose
+  answer to `news/SKILL.md`. Listed it in the threads index.
+- Filed the tutorial
+  [Bundle scope and non-bundle namespaces](/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md)
+  (`type: tutorial`) — how the four independent scanners (identity/verify,
+  route-tags, contract, site) each define their own scope, why
+  `SecondBrain.Registry.@excluded_dirs` *is* the definition of "bundle concept"
+  (so adding `inbox` there is what keeps the candidate feed's id-less digests from
+  failing `mix brain.verify`), how the verifier and route-tags checker inherit that
+  scope by delegation, and why the site generator deliberately renders `meta/` and
+  `inbox/` while the registry ignores them. Added it to the tutorials index.
+
 - **Fixed a capture-semantics bug: retained responses are verbatim.** The
   `session-capture` policy, the `/capture` skill, `meta/session-workflow.md`, and
   the verification-flow all wrongly implied the kept agent responses could be
