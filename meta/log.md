@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- `/capture` — froze the GitHub Pages / OKF-node session into
+  [2026-07-09 — GitHub Pages knowledge-base site, offline-toolchain tutorial, and the OKF node](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md)
+  (parse-the-log render of the host session jsonl, so retained text is exact).
+  Routing ledger has six closed strands (the site generator, the offline
+  tutorial, the `tutorial` type, the OKF node, the Pages-enable fix, and the
+  stop-hook false alarm); route tags back-link the tooling/tutorial/vocabulary
+  regions and materialize two excerpts into the OKF node (`sb:24bd1e`). Listed it
+  in the threads index; all gates green (`mix brain.route_tags`). The site work
+  itself shipped earlier as PRs #11/#12 — this is its session record.
+
 - **Ratified the `analysis` type** (operator directive) and created the
   `meta/analysis/` namespace with its `index.md`. An `analysis` is a point-in-time
   evaluation / decision-support write-up — a question investigated against evidence,
