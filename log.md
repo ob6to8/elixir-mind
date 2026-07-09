@@ -4,6 +4,21 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-09
 
+- **Ratified a new `plan` type** (operator-approved) and a `meta/plans/` namespace —
+  intended work on the brain/tooling as design/decision records, each carrying a
+  `status` (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an
+  `issue` (a problem) and a `methodology` (a repeatable how-to). Added it to the
+  controlled vocabulary, seeded `meta/plans/index.md`, registered it in `meta/index.md`,
+  and recompiled `CLAUDE.md`. Filed the first plan,
+  [epistemic overlay](/meta/plans/epistemic-overlay.md) (`status: proposed`) — a
+  frontmatter-native overlay promoting the latent attestation/aggregation/inference/
+  prescription structure to a first-class, queryable layer over existing concepts, with
+  an integrity-checking `mix brain.graph`, explicitly bounding out atomization and
+  strength-as-count. Derived from a deep comparison against the Composable Beliefs repo
+  (the diagnosis: CB is well-engineered but carries three uncommitted purposes on one
+  substrate; its four-type epistemic layer is the one genuinely universal piece this
+  brain is already using implicitly).
+
 - Ratified a new top-level **`inbox/`** namespace (operator-approved) — a daily
   candidate feed of news, articles, papers, and resources matched against the
   taxonomy, grouped by category and reason-tagged
