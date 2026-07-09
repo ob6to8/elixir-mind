@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- Filed the tutorial
+  [How the Pages deploy is gated on a verified bundle](/meta/tutorials/gating-the-pages-deploy-on-a-verified-bundle.md)
+  (`type: tutorial`) explaining the mechanics of the `pages.yml` deploy gate:
+  GitHub Actions runs each workflow in isolation, so a `needs:` can't reach from
+  `pages.yml` into `ci.yml`'s `verify` job; the fix repeats the bundle-integrity
+  checks (`brain.contract --check`, `brain.registry --check`, `brain.verify`,
+  `brain.route_tags`) inside the Pages build job before `mix brain.site`, and a
+  non-zero exit fails `build` so `deploy` (which `needs` it) is skipped — making
+  the live site reachable only for a verified bundle. Listed it in
+  `meta/tutorials/index.md`. Accompanies the deploy-gating change in PR #16.
 - Captured the session thread
   [2026-07-09 — news Routine verification, issue tracking, and /news featuring docs](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md)
   (`/capture`, parse-the-log render): verified the daily Routine, found its automated
