@@ -32,7 +32,7 @@ hand-roll snapshot/golden comparison from ExUnit built-ins — see
 # Influence
 
 This capture informed the harness design in
-[The flows genre + formal scenario testing](/meta/specs/flows-genre-and-scenario-testing.md)
+[The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md)
 (§4, §8): it is why the spec rules out an off-the-shelf snapshot library and,
 combined with the built-ins capture above, settles on plain ExUnit with
 structured/targeted assertions plus a narrow, env-flag-gated golden only where

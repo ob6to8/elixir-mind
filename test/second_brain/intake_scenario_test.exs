@@ -1,6 +1,6 @@
 defmodule SecondBrain.IntakeScenarioTest do
   # Scenario test for the /intake flow's deterministic spine (see
-  # meta/flows/intake.md and meta/specs/flows-genre-and-scenario-testing.md).
+  # meta/flows/intake.md and meta/plans/flows-genre-and-scenario-testing.md).
   #
   # /intake's judgment steps (gather, segment, dedup, distill, choose directory)
   # have no mechanical oracle; its spine is the identity handoff after a concept is

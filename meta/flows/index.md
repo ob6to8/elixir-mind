@@ -21,7 +21,7 @@ start to finish; `specs` is the plan for a change not yet fully built; `threads`
 is verbatim session archives. A flow doc is none of these — it narrates how a
 *whole action* runs end to end, naming the files and pointing at the scenario
 that proves it. The genre itself was designed in
-[The flows genre + formal scenario testing](/meta/specs/flows-genre-and-scenario-testing.md).
+[The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md).
 
 ## Contents
 

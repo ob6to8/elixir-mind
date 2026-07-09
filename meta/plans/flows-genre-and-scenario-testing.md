@@ -1,19 +1,19 @@
 ---
-type: spec
+type: plan
 title: The flows genre + formal scenario testing
 description: Collapse the capture flow's three overlapping prose docs into one meta/flows/ doc, back it with an ExUnit scenario test over the deterministic tool spine (structured + targeted assertions, in-code fixtures), and keep the skill as the terse agent procedure — with the harness research spike that corrected the testing approach folded in.
-status: approved
-tags: [meta, governance, flows, scenario-testing, elixir, testing, spec]
+status: done
+tags: [meta, governance, flows, scenario-testing, elixir, testing, plan]
 timestamp: 2026-07-09
 ---
 
-# Spec — the `flows` genre + formal scenario testing
+# Plan — the `flows` genre + formal scenario testing
 
-**Status:** approved and **built** (2026-07-09) per §9. `meta/flows/` genre
-created; both planned flows landed with their scenario tests — `session-capture`
-(collapsing `session-workflow.md` + `verification-flows/`) and `intake`. The
-genre's planned scope is complete; further flows (e.g. the contract-render or
-site-build pipelines) are additive follow-ups, not part of this spec.
+**Status:** `done` — built 2026-07-09 per §9. `meta/flows/` genre created; both
+planned flows landed with their scenario tests — `session-capture` (collapsing
+`session-workflow.md` + `verification-flows/`) and `intake`. The genre's planned
+scope is complete; further flows (e.g. the contract-render or site-build
+pipelines) are additive follow-ups, not part of this plan.
 **Branch of record:** `claude/flows-paths-documentation-b6mzee`.
 **Decisions:** capture-first collapse · scenario tests over the deterministic
 spine · **in-code fixtures + structured/targeted assertions** (not on-disk
@@ -174,9 +174,10 @@ not this change.
   · tutorials = why · specs = plans for changes · threads = archive · flows = the
   touch-sequence of a canonical run, narrating a CI-checked scenario).
 - **Shape change?** A new `meta/` genre is governance namespace, not the knowledge
-  taxonomy; operator approval of this spec is the ratification. No new `type` for
+  taxonomy; operator approval of this plan is the ratification. No new `type` for
   flow docs (they reuse `type: note`, as the current session-workflow/verification
-  docs do). (`type: spec` for *this* doc's genre was ratified separately.)
+  docs do). (This doc was itself first filed as a `spec`; the `spec`/`plan` genres
+  were later unified into `plan`/`meta/plans/`, and it was retyped accordingly.)
 - **CI.** The new ExUnit case is picked up by the existing `mix test` step — no
   workflow edit, no new mix task.
 - **Skill.** `.claude/skills/capture/SKILL.md` stays; trim any narrative that now
@@ -196,7 +197,7 @@ gate CI the way the deterministic scenario does. The v1 design leaves the door
 open: the scenario's fixture already contains a raw-ish input the eval could
 consume, and the flow doc's step table already marks which steps are `agent`
 (eval targets) vs `tool` (scenario targets). **This is where the eval-layer
-design is persisted until it graduates into its own `meta/specs/` doc when built.**
+design is persisted until it graduates into its own `meta/plans/` doc when built.**
 
 ---
 

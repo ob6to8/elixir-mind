@@ -4,7 +4,20 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
-- **Added the second flow: `/intake`** (per the flows spec, completing its planned
+- **Collapsed the `spec` genre into `plan`** (operator-directed) — the `spec` type
+  / `meta/specs/` namespace this branch added and the `plan` type / `meta/plans/`
+  namespace from `main` were near-duplicates (both "a design/decision record for a
+  proposed change to the brain/tooling"). Unified on **`plan`/`meta/plans/`** as the
+  survivor: moved the flows design doc to
+  [meta/plans/flows-genre-and-scenario-testing.md](/meta/plans/flows-genre-and-scenario-testing.md)
+  (retyped `spec`→`plan`, `status: approved`→`done`), removed the `spec` type from
+  the controlled vocabulary and the `meta/specs/` namespace, renamed the
+  `persist-specs` policy → [persist-plans](/meta/policy/persist-plans.md) (retargeted
+  to `type: plan` / `meta/plans/`), repointed all links, and recompiled `CLAUDE.md`.
+  Earlier 2026-07-09 log entries that describe creating `meta/specs/` are frozen
+  history (their narrative is left as-is; the moved doc's link now resolves to
+  `meta/plans/`).
+- **Added the second flow: `/intake`** (per the flows plan, completing its planned
   scope). Filed [meta/flows/intake.md](/meta/flows/intake.md) — the file-by-file
   touch-sequence of an `/intake` run (paste → distill + dedup → file by taxonomy →
   mint id → compile registry → verify → reserved files), with the judgment/spine
@@ -15,7 +28,7 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   id is flagged; a capture marked `verified: true` is rejected). Added a See-also
   from the `/intake` skill and updated the spec status (both flows now built).
 - **Built the `flows` genre and collapsed the capture docs into it** (per the
-  approved [flows spec](/meta/specs/flows-genre-and-scenario-testing.md), build
+  approved [flows spec](/meta/plans/flows-genre-and-scenario-testing.md), build
   order §9). Created `meta/flows/` with its `index.md` and the first flow doc
   [session-capture](/meta/flows/session-capture.md) — the file-by-file
   touch-sequence of a `/capture` run, plus pipeline, data model, actor
@@ -36,7 +49,7 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   than left in chat or the reclaimed scratchpad. Ratified a new `spec` type in
   `controlled-type-vocabulary`, added `persist-specs` under the *filing* contract
   section (order 6), created `meta/specs/index.md`, and recompiled `CLAUDE.md`.
-  First spec filed: [The flows genre + formal scenario testing](/meta/specs/flows-genre-and-scenario-testing.md)
+  First spec filed: [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md)
   (`status: approved`) — the collapse of the capture flow's three prose docs into
   one `meta/flows/` doc backed by an ExUnit scenario, with the commissioned harness
   research spike folded in (it *adjusted* the plan: in-code fixtures + structured

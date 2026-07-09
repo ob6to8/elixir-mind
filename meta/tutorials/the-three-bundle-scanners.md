@@ -57,7 +57,7 @@ top-level directory or basename is on a fixed list:
 
 A path survives only if it is a real concept living at the root or in a
 knowledge subdirectory. This single filter is what keeps the identity layer
-scoped, and it is why a `type: spec` doc under `meta/specs/` or a fixture concept
+scoped, and it is why a `type: plan` doc under `meta/plans/` or a fixture concept
 under `test/scenarios/` never receives an `sb:` id or shows up in the registry —
 they are structurally outside the scan.
 

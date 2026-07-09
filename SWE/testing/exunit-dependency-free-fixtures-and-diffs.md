@@ -38,7 +38,7 @@ covers the alternatives and their cost.
 # Influence
 
 This capture informed the harness design in
-[The flows genre + formal scenario testing](/meta/specs/flows-genre-and-scenario-testing.md)
+[The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md)
 (§4, §8): it is the evidence that the deliberately dependency-free toolchain
 (`deps: []`) can run scenario tests and any narrow golden comparison on ExUnit
 built-ins alone, so no snapshot library was adopted.

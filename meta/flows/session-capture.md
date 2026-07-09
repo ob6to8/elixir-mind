@@ -241,7 +241,7 @@ consistent* change, which the `log fidelity` self-check structurally cannot catc
 (it re-derives both sides from the same tags). Why it's shaped this way — in-code
 fixtures and structured/targeted assertions rather than on-disk whole-tree
 golden — is recorded, with the research spike, in
-[the spec](/meta/specs/flows-genre-and-scenario-testing.md).
+[the spec](/meta/plans/flows-genre-and-scenario-testing.md).
 
 **The gate suite** (or just `./.githooks/pre-commit`, which mirrors CI):
 

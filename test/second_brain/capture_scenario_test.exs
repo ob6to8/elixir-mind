@@ -1,6 +1,6 @@
 defmodule SecondBrain.CaptureScenarioTest do
   # Scenario test for the capture flow's deterministic spine (see
-  # meta/flows/session-capture.md and meta/specs/flows-genre-and-scenario-testing.md).
+  # meta/flows/session-capture.md and meta/plans/flows-genre-and-scenario-testing.md).
   #
   # Per the harness research spike, this is plain ExUnit over a `:tmp_dir` bundle,
   # with in-code fixtures and structured + targeted assertions — NOT an on-disk

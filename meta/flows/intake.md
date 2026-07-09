@@ -199,7 +199,7 @@ mechanical handoffs: a concept written **without an id** makes the verifier flag
 it (the cue to run `mix brain.id`), and a **capture marked `verified: true`** is
 rejected. Id minting itself is random and deliberately not pinned. Why the harness
 is shaped this way — in-code fixtures + structured/targeted assertions — is in
-[the spec](/meta/specs/flows-genre-and-scenario-testing.md).
+[the spec](/meta/plans/flows-genre-and-scenario-testing.md).
 
 **The gate suite** (or just `./.githooks/pre-commit`, which mirrors CI):
 

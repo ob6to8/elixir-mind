@@ -12,7 +12,7 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   (`sb:b1ba4b`) — two `reference` captures distilled from the ExUnit docs, the
   Elixir issue tracker, and the mneme/snapshy/assert_value repos during the
   test-harness research spike. Each carries an `# Influence` back-link to the spec
-  ([flows-genre-and-scenario-testing](/meta/specs/flows-genre-and-scenario-testing.md)),
+  ([flows-genre-and-scenario-testing](/meta/plans/flows-genre-and-scenario-testing.md)),
   and the spike section of that spec now links forward to both — bidirectional
   traceability from a design decision to the resources that drove it. Minted ids
   and regenerated `meta/registry.md`.
