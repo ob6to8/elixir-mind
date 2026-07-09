@@ -23,6 +23,66 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   governance and knowledge namespaces by stable id — and why everything under an
   excluded directory (e.g. `test/` fixtures) is invisible to all three. Listed in
   `meta/tutorials/index.md`.
+- Captured the session thread
+  [2026-07-09 — news Routine verification, issue tracking, and /news featuring docs](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md)
+  (`/capture`, parse-the-log render): verified the daily Routine, found its automated
+  fires land nothing on `main` (suspected env-wide approval gate), then the governance
+  work below. Routing ledger has one open strand (the non-firing Routine, routed to the
+  new issue) and two closed (the `issue` type/namespace, the `/news` featuring docs);
+  path-ref route tags back-link the finding and summary regions to the issue,
+  vocabulary, and skill. Listed it in the threads index.
+- Added the `issue` type to the [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md)
+  and created the [`meta/issues/`](/meta/issues/index.md) namespace (operator-ratified).
+  Filed the first issue,
+  [Daily /news Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md)
+  (`status: open`): the scheduled Routine `trig_01PAiKWrWgVs4djSkhELoLYw` produces no
+  commit/push on its fresh-session fires; an environment-wide tool-approval gate is the
+  suspected cause. Workaround: run `/news` manually. Recompiled `/CLAUDE.md`
+  (`mix brain.contract`) to carry the new type; listed `issues` in the meta index. Also
+  documented the featuring/selection decision explicitly in the
+  [`/news` skill](/.claude/skills/news/SKILL.md).
+- Captured the session thread
+  [2026-07-09 — daily news-inbox Routine](/meta/threads/2026-07-09-daily-news-inbox-routine.md)
+  (`/capture`): a short session that created the claude-code-remote Routine
+  `trig_01PAiKWrWgVs4djSkhELoLYw` (fresh session daily at 13:00 UTC, cron `0 13 * * *`)
+  to run `/news` and push the day's inbox digest to `main`. This is the standing
+  automation for the daily feed the prior thread's Routing left paused. No repo code
+  changed; one closed, unrouted strand with a path-ref back-link to `news/SKILL.md`.
+  Listed it in the threads index.
+- Captured the session thread
+  [2026-07-09 — home-page news-filter inbox](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)
+  (`/capture`, parse-the-log render): verbatim retained exchanges, a routing ledger
+  (feature + tutorial closed; daily Routine paused, PR open), and path-ref route tags
+  back-linking the finding regions to the tutorial/`registry.ex` and the skill-purpose
+  answer to `news/SKILL.md`. Listed it in the threads index.
+- Filed the tutorial
+  [Bundle scope and non-bundle namespaces](/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md)
+  (`type: tutorial`) — how the four independent scanners (identity/verify,
+  route-tags, contract, site) each define their own scope, why
+  `SecondBrain.Registry.@excluded_dirs` *is* the definition of "bundle concept"
+  (so adding `inbox` there is what keeps the candidate feed's id-less digests from
+  failing `mix brain.verify`), how the verifier and route-tags checker inherit that
+  scope by delegation, and why the site generator deliberately renders `meta/` and
+  `inbox/` while the registry ignores them. Added it to the tutorials index.
+
+- **Fixed a capture-semantics bug: retained responses are verbatim.** The
+  `session-capture` policy, the `/capture` skill, `meta/session-workflow.md`, and
+  the verification-flow all wrongly implied the kept agent responses could be
+  *summarized* ("distilled render… delivered substance, not word-for-word").
+  Corrected everywhere: "distilled" means the **noise** is dropped; everything
+  kept is reproduced **verbatim**. Made **parse-the-log** the preferred, most
+  faithful render path. Recompiled `CLAUDE.md`. Then **recaptured** the adopt
+  thread from the host session log (parse-the-log): all 21 exchanges now verbatim,
+  and the `sb:d479e3` route tag re-pointed at the operator's own verbatim
+  definition of the technique (replacing an earlier composed paragraph), so the
+  concept's excerpt log lifts real conversation text. All gates green.
+- **Third `/capture` (extend the verbatim render).** Re-ran capture to fold in the
+  capture-semantics fix, the reconcile, and the push — parsed straight from the
+  host session log, so the tail is verbatim too. Confirmed the parser correctly
+  drops the `isMeta` stop-hook feedback and the `<`-prefixed `/capture` invocation
+  as noise, merging the surrounding responses. Ledger + narrative extended; the
+  `sb:d479e3` tag region is unchanged, so the concept logs were untouched.
+
 - **Retired `/persist-thread`** in favour of `/capture`. The two overlapped
   (both persist a session into `meta/threads/`); `/capture` supersedes it —
   same home, but distilled + routed + route-tagged instead of raw verbatim.

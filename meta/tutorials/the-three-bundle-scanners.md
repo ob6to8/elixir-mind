@@ -51,6 +51,7 @@ top-level directory or basename is on a fixed list:
 | `.claude` | skills — agent behavior, not concepts |
 | `lib` `test` | the Elixir toolchain (and its fixtures) |
 | `meta` | governance namespace — policies, threads, tutorials, this file |
+| `inbox` | the daily candidate feed — a non-bundle namespace with no `sb:` ids |
 | `deprecated` | the read-only archive of legacy content |
 | `index.md` `log.md` `README.md` `CLAUDE.md` | reserved/generated files, any level |
 

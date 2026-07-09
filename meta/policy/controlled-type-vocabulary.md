@@ -33,5 +33,10 @@ Seed vocabulary:
 - `spec` — a design spec or implementation plan the agent produced and the operator
   approved: a durable record of decisions, rationale, and build order for a change
   to the brain's shape or tooling (lives under `meta/specs/`).
+- `issue` — a tracked operational problem, defect, or open concern about how the
+  brain or its tooling/automation behaves, recorded for future reference and
+  follow-up. Carries a `status` (`open`/`resolved`/`wontfix`); distinct from a
+  `policy` (a rule) and a `note` (a distilled idea) — an issue is a *problem to
+  track* (lives under `meta/issues/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
