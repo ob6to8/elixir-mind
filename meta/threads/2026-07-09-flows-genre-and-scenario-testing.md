@@ -539,3 +539,15 @@ Session captured and pushed (`42044ef`).
 **Procedure notes:**
 - Per the merged-PR rule, I **restarted the branch from `main`** before capturing (PR #23 was merged), so this capture sits on fresh history atop the merge — not stacked on the finished branch. Any PR opened for it would be a new PR.
 - I pushed (not just committed) since this remote environment reclaims containers and the whole session's cadence has been commit+push. If you'd rather keep captures local until you say so, tell me and I'll hold the push next time.
+
+## Assistant
+
+Extended in place and pushed (`81b3f2b`).
+
+This was an **extend-in-place**, not a new capture: the session already had its thread doc, so per the update-in-place rule I regenerated the same file (`meta/threads/2026-07-09-flows-genre-and-scenario-testing.md`) rather than forking a second one.
+
+- **What changed:** re-parsed the now-longer host log (881 lines) → the render picked up **one new agent turn** (the previous `/capture`'s summary), which the drop rule keeps as a closing reply. Both `/capture` slash-commands stayed dropped. 18 operator messages, 23 agent turns, all verbatim.
+- **What didn't:** same routing ledger, same single route-tag region (the research-spike verdict → `sb:f6e843`/`sb:b1ba4b`). The excerpt logs re-materialized **identically**, so the two `SWE/testing` references are untouched — the only file in the diff is the thread doc. No log/index changes were warranted (the existing capture entry still holds).
+- **Verification:** `mix brain.route_tags` green, full gate suite green (78 tests).
+
+The inherent tail limitation still applies — this capture can't include its own closing summary (not yet in the log); a future `/capture` would fold it in if you run one. Nothing else outstanding.
