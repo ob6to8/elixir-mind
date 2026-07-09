@@ -257,6 +257,11 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
   `.claude/skills/summarize-technical/SKILL.md`.
+- **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
+  papers, and resources matched against the brain's taxonomy, grouped by category and
+  reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
+  the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
+  file one into the brain. See `.claude/skills/news/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
