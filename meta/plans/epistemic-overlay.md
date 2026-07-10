@@ -200,8 +200,13 @@ the bundle, and the architecture work then reads only the bundle.
 **Goal:** a curated, freshness-vetted asset base inside the bundle, sufficient
 for Thread B to execute without ever opening CB.
 
-- **Setup:** add and clone `composablebeliefs/composable-beliefs` and the
-  `cb-tut` repo (via `add_repo`).
+- **Setup:** `composablebeliefs/composable-beliefs` and the `cb-tut` repo must
+  be on disk in the session — ideally attached as sources when the session is
+  created (they clone automatically); otherwise added via `add_repo`. Filesystem
+  access is required, not a convenience: the manifest needs the verifier code
+  read directly, targeted `git log` for dating documents, and the live belief
+  graph queried with CB's own `mix bs` tasks — none of which work over
+  page-by-page web fetching.
 - **Freshness tiers** (record the tier in each capture's `provenance`):
   - *Tier 1 — authoritative:* `docs/guide/` (the most recent doc set),
     `docs/glossary.md`, the code (`CB.Schema.Verifier`, the deps / supersession /
