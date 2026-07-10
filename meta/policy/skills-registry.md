@@ -27,9 +27,9 @@ timestamp: 2026-07-10
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
-- **`/sync-main`** — fetch (or pull) `origin/main` and merge it into the current
-  working branch, keeping a feature branch current with upstream. Handles the fetch,
-  the merge, conflict surfacing, and network-failure retries; never runs on `main`
-  itself. See `.claude/skills/sync-main/SKILL.md`.
+- **`/sync-branch-with-main`** — fetch (or pull) `origin/main` and merge it into the
+  current working branch, keeping a feature branch current with upstream. Handles the
+  fetch, the merge, conflict surfacing, and network-failure retries; never runs on
+  `main` itself. See `.claude/skills/sync-branch-with-main/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.

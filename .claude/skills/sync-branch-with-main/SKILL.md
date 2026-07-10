@@ -1,9 +1,9 @@
 ---
-name: sync-main
-description: Fetch (or pull) origin/main and merge it into the current working branch, keeping the branch up to date with upstream. Use when the operator says "sync main", "merge main into this branch", "pull in the latest main", "catch up with main", or before opening/updating a PR so the branch is current. Handles the fetch, the merge, conflict surfacing, and network-failure retries.
+name: sync-branch-with-main
+description: Fetch (or pull) origin/main and merge it into the current working branch, keeping the branch up to date with upstream. Use when the operator says "sync branch with main", "merge main into this branch", "pull in the latest main", "catch up with main", or before opening/updating a PR so the branch is current. Handles the fetch, the merge, conflict surfacing, and network-failure retries.
 ---
 
-# /sync-main — bring the current branch up to date with origin/main
+# /sync-branch-with-main — bring the current branch up to date with origin/main
 
 Update the branch you are working on so it contains everything on `origin/main`.
 The mechanic is: **fetch the latest `origin/main`, then merge it into the current
