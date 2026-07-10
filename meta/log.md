@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **Execution-path addendum on the [epistemic overlay plan](/meta/plans/epistemic-overlay.md).**
+  Ratified the two-thread path for executing the plan: Thread A imports CB's
+  usable content as freshness-vetted `source`/`reference` captures under
+  `knowledge-management/composable-beliefs/` (tiered: guide/glossary/code
+  authoritative; cb-tut secondary; thesis quarantined; old type names treated as
+  a staleness flag during vetting, not filed), with an eight-item capture
+  manifest; Thread B sketches the architecture reading *only* the bundle, decides
+  Q1/Q4, specifies supersession-for-statements and `mix brain.graph` v1, and
+  revises the plan to `accepted` with `verified_by` edges into the Thread A
+  captures. Each thread launches by pointing the agent at the addendum.
 - **New analysis: [Would CB's four-typed DAG, as an overlay, stabilize this knowledge base against the failure chain?](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md)**
   Evaluates Composable Beliefs' epistemic layer as an add-on overlay against the
   five-stage failure chain: a genuine mechanical stabilizer for stage 3 (drift →

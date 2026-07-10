@@ -185,6 +185,91 @@ had drifted from its schema (deprecated type names, missing edge rules) — a li
 stage-3 demonstration inside CB itself. Enforcement in the gate suite is the
 stabilizer; an advisory DAG rots like advisory anything.
 
+## Addendum — execution path (2026-07-10)
+
+Ratified approach for executing this plan: **two fresh threads, in order, with
+filed captures as the handoff artifact.** Each thread starts from this section —
+point the agent here and say "go." Rationale: an agent free-ranging over CB's
+motley doc set absorbs stale material (demonstrated 2026-07-10 — see the
+[stabilizer analysis](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md)'s
+source-staleness check), so CB's usable content is imported once, vetted, into
+the bundle, and the architecture work then reads only the bundle.
+
+### Thread A — CB asset import (run first)
+
+**Goal:** a curated, freshness-vetted asset base inside the bundle, sufficient
+for Thread B to execute without ever opening CB.
+
+- **Setup:** add and clone `composablebeliefs/composable-beliefs` and the
+  `cb-tut` repo (via `add_repo`).
+- **Freshness tiers** (record the tier in each capture's `provenance`):
+  - *Tier 1 — authoritative:* `docs/guide/` (the most recent doc set),
+    `docs/glossary.md`, the code (`CB.Schema.Verifier`, the deps / supersession /
+    dep-repoint implementations), and the live belief graph itself (`mix bs`
+    queries) — per CB's own "query it rather than restating it."
+  - *Tier 2 — secondary:* `cb-tut` (mostly accurate per the operator); verify any
+    load-bearing statement against Tier 1 before capturing.
+  - *Quarantined:* `docs/composable-beliefs-thesis.md` and older plans/docs —
+    known stale; consult only to date material, never capture from them.
+  - *Terminology guard:* current type names are **attestation / aggregation /
+    inference / prescription**; the older names (primitive / compound /
+    directive) appearing in any document mark it as predating the rename — treat
+    that as a staleness flag for vetting. Do not file the rename history itself:
+    Thread B and all later agents read only this bundle, so it would be noise.
+    Targeted `git log` on schema/glossary files may be used the same way — as a
+    dating instrument, not as content.
+- **Capture manifest** — file under `knowledge-management/composable-beliefs/`
+  (new subdirectory under the established top-level: autonomous per the taxonomy
+  protocol; create its `index.md`, log entries, mint ids):
+  1. `reference` — CB overview as it currently is: typed nodes over a single
+     `deps` edge, supersession chain, OKF-floor / CB-ceiling positioning.
+  2. `source` — the four role definitions, verbatim from glossary/guide.
+  3. `source` — per-type dep rules (attestation: no deps; aggregation/inference:
+     required; non-contract prescription: required-or-stipulated).
+  4. `source` — the supersession model (`superseded_by`, new-node-never-edit,
+     retraction).
+  5. `source` — staleness: definition and audit-detection semantics.
+  6. `source` — dep-repoint: exact atomicity semantics, from the implementation.
+  7. `source` — the verifier's integrity predicates relevant to the overlay
+     (groundedness, schema, supersession discipline), extracted from
+     `CB.Schema.Verifier` as *predicates, not code*; note eval-specific
+     contracts as out of scope.
+  8. *(optional)* `source` — CB test cases worth mirroring as scenario tests.
+- **Rules:** every capture carries `resource` (the CB path/URL) and verbatim
+  quotes for definitions; code semantics are captured as invariants/predicates,
+  never as ported code. Captures are evidence (no `verified` field). All gates
+  green before finishing.
+- **Deliverable:** the captures filed and indexed, and this plan's Citations
+  updated to reference their `sb:` ids.
+
+### Thread B — architecture sketch (run after A)
+
+**Goal:** revise this plan to `accepted` with the concrete design.
+
+- **Reads only this bundle:** this plan and its addenda; the
+  [stabilizer](/meta/analysis/cb-epistemic-overlay-as-failure-chain-stabilizer.md),
+  [field-comparison](/meta/analysis/comparison-with-the-2026-second-brain-field.md),
+  and [eval-suitability](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)
+  analyses; and the Thread A captures. **Thread B does not open CB.** Anything
+  found missing becomes a follow-up item for another Thread A pass, not ad-hoc
+  fetching.
+- **Decide the remaining forks:** Q1 (derive epistemic role from `type` vs. an
+  `epistemic:` field) and Q4 (how to encode the anti-atomization boundary). Q2
+  and Q3 are already answered by the stabilization addendum (one `deps` edge,
+  typing on nodes; supersession is load-bearing and sequenced in).
+- **Draw the exact frontmatter surface** on the worked example (the testing
+  methodology prescription grounded by its two attestations).
+- **Specify supersession-for-statements** — the one real policy change (it
+  amends update-in-place) — including how `superseded_by` interacts with the
+  registry and `verified_by`.
+- **Define `mix brain.graph` v1** (groundedness floor; staleness once
+  supersession lands), reimplemented `second_brain`-style against
+  frontmatter-native concepts; mirror the captured CB test cases in the
+  scenario-test idiom.
+- **Output:** this plan revised to `accepted` (or a superseding revision), with
+  the design's technical claims carrying `verified_by` edges into the Thread A
+  captures — the overlay's own evidence machinery, dogfooded.
+
 # Citations
 
 - Comparison basis: [Composable Beliefs](https://github.com/composablebeliefs/composable-beliefs)
