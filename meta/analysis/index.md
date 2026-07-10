@@ -10,4 +10,5 @@ Each analysis is a `type: analysis` doc.
 
 ## Contents
 
+- [How does this bundle compare to the 2026 second-brain field?](/meta/analysis/comparison-with-the-2026-second-brain-field.md) — a landscape survey (Obsidian/PARA influencer systems, Karpathy-pattern Claude Code vaults, PKM products) finds no public system combining this bundle's enforcement stack; models the five-stage failure chain that kills advisory systems past ~500 concepts, and names intake dedup recall as the one semantic gate this bundle's CI can't cover.
 - [Would a vector DB improve recall as this bundle scales?](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) — a dedup-recall probe over the live corpus finds grep already misses existing concepts on natural-phrasing (semantic, not typographic) queries; recommends synonym-expanded intake dedup + a repeatable recall probe over any standalone vector DB.

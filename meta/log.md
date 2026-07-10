@@ -4,6 +4,18 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New analysis: [How does this bundle compare to the 2026 second-brain field?](/meta/analysis/comparison-with-the-2026-second-brain-field.md)**
+  Operator asked for an evaluation of the repo against the AI-influencer-verse
+  second-brain landscape; a same-day web survey (Forte's "AI Second Brain" pivot,
+  LYT/ACE, the Obsidian + Claude Code wave, Karpathy's LLM-wiki gist and its
+  implementations, Tana/Notion/Capacities, vault-ld, TheKnowledge) found no public
+  system combining this bundle's enforcement stack. The write-up also records a new
+  observation: the five-stage failure chain (context saturation → dedup
+  fragmentation → cross-reference drift → taxonomy entropy → trust collapse) that
+  kills advisory systems past ~500 concepts, and that this bundle's exposure to it
+  runs through intake dedup recall — reinforcing the vector-DB analysis's
+  recommendation as the highest-leverage unshipped work. Listed in the analysis
+  index.
 - **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
