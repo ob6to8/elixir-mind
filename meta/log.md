@@ -2,6 +2,16 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-10
+
+- **`/intake` now delegates to `/summarize-technical` for technical sources.**
+  Added a branch to the [`/intake` skill](/.claude/skills/intake/SKILL.md)'s
+  distill step: a technical paper/article/spec substantial enough to warrant it
+  gets `/summarize-technical`'s three-part layered breakdown as its body instead
+  of flat prose (short notes, snippets, people, projects stay plain prose).
+  Mirrored the branch in the [intake flow](/meta/flows/intake.md) (§3 touch-sequence
+  step 5, §4 moving parts) so the connective doc doesn't drift from the skill.
+
 ## 2026-07-09
 
 - **`/capture` of this session** → thread
