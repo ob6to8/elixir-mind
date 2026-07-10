@@ -4,6 +4,18 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New `todo` type + `meta/todos/` genre + `/todo` skill.** Added `todo` to the
+  [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md) — a
+  lightweight actionable task item carrying a `status` (`open`/`done`/`cancelled`),
+  distinct from an `issue` (a problem) and a `plan` (a design record). Created the
+  governance-namespace directory [`meta/todos/`](/meta/todos/index.md) (no `sb:` ids,
+  like `issues`/`plans`/`threads`) with its index, and listed it in
+  [`meta/index.md`](/meta/index.md). Authored the [`/todo`](/.claude/skills/todo/SKILL.md)
+  skill — dispatches on a subcommand: `create <title>` files a new open todo (and
+  maintains the index + `log.md`), `list` shows todos grouped by `status`. Registered
+  it in [skills-registry](/meta/policy/skills-registry.md) and re-rendered `CLAUDE.md`
+  via `mix brain.contract`. Requested by the operator (which ratifies the new type and
+  top-level-of-`meta` directory). `mix brain.verify` passes.
 - **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
