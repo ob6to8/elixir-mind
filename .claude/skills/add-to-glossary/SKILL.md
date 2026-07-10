@@ -30,6 +30,11 @@ One source per invocation (or several, processed in sequence):
 
 If nothing was given, ask the operator what to scan.
 
+**[`/create-pull-request`](../create-pull-request/SKILL.md) invokes this skill
+automatically** on the thread doc its `/capture` step just wrote, so every
+captured session's terminology lands in the glossary in the same PR as the
+thread itself.
+
 ## Procedure
 
 ### 1. Gather and extract

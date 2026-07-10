@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/create-pull-request` now glossaries the captured thread.** Inserted a step
+  between capture and commit: run
+  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) over the thread
+  doc `/capture` just wrote, so every captured session's terminology merges into
+  the [glossary](/glossary.md) and ships in the same PR as the thread itself
+  (skipped when capture was skipped; a term-free thread is a legitimate no-op).
+  Renumbered the procedure (capture → glossary → survey → commit → push → open
+  PR), extended the capture-first guardrail, cross-referenced the invocation from
+  the `/add-to-glossary` skill, updated both bullets in
+  [skills-registry](/meta/policy/skills-registry.md), and re-rendered `CLAUDE.md`.
 - **New skill `/add-to-glossary`.** Scans a persisted thread (`meta/threads/`), a
   paper, a post, or a filed concept; extracts the technical terms it actually
   uses (same selection bar as `/summarize-technical`'s key-terms section); and

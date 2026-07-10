@@ -26,15 +26,18 @@ timestamp: 2026-07-10
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the bundle-root [`/glossary.md`](/glossary.md) — one entry per term,
   alphabetical, each citing the sources it was seen in (pointer entries defer to filed
-  concepts instead of duplicating them). See `.claude/skills/add-to-glossary/SKILL.md`.
+  concepts instead of duplicating them). Also invoked automatically by
+  `/create-pull-request` on the thread doc its `/capture` step writes. See
+  `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to
   the non-bundle `inbox/` namespace (candidates, no `sb:` ids); hand off to `/intake` to
   file one into the brain. See `.claude/skills/news/SKILL.md`.
-- **`/create-pull-request`** — run `/capture` to completion, then commit the current
-  working changes, push the branch, and open a pull request — so the frozen thread doc
-  ships in the same PR. Invoking the skill **is** the authorization to open the PR
+- **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
+  over the captured thread doc, then commit the current working changes, push the
+  branch, and open a pull request — so the frozen thread doc and the glossary updates
+  it feeds ship in the same PR. Invoking the skill **is** the authorization to open the PR
   (no separate confirmation gate); PR-template detection and the GitHub MCP tools
   handle the rest. See `.claude/skills/create-pull-request/SKILL.md`.
 
