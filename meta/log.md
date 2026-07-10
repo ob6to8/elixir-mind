@@ -4,6 +4,49 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **Capture refresh (pre-merge)** — the session continued past its first
+  `/capture` (the per-term glossary restructure and the PR-readiness check), so
+  the thread doc
+  [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+  was refreshed **in place** per the capture skill's update-in-place rule: the
+  restructure exchange appended verbatim, two ledger rows added (the restructure
+  routed to the [glossary hub](/glossary.md), the readiness check `unrouted`),
+  one new region tagged to `sb:0b648f` (hub excerpt log re-materialized), and
+  the narrative/description extended. No new glossary terms cleared the
+  selection bar (*hub* is plain English used plainly).
+- **`/capture` of this session** → thread
+  [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+  (render-from-context; retained operator messages and closing replies verbatim,
+  tool noise and short pre-tool narration stripped). Four-row routing ledger, all
+  closed — one `unrouted` (running `/create-pull-request` itself), the rest routed
+  to the two skill files and the [glossary](/glossary.md). One region tagged to
+  `sb:0b648f`, materializing the glossary's first excerpt-log block; listed in the
+  threads index. Ran as step 1 of a `/create-pull-request` invocation, whose new
+  step 2 (`/add-to-glossary` over this thread doc) then executed for the first
+  time — see the root `log.md` for the seeded entries.
+- **`/create-pull-request` now glossaries the captured thread.** Inserted a step
+  between capture and commit: run
+  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) over the thread
+  doc `/capture` just wrote, so every captured session's terminology merges into
+  the [glossary](/glossary.md) and ships in the same PR as the thread itself
+  (skipped when capture was skipped; a term-free thread is a legitimate no-op).
+  Renumbered the procedure (capture → glossary → survey → commit → push → open
+  PR), extended the capture-first guardrail, cross-referenced the invocation from
+  the `/add-to-glossary` skill, updated both bullets in
+  [skills-registry](/meta/policy/skills-registry.md), and re-rendered `CLAUDE.md`.
+- **New skill `/add-to-glossary`.** Scans a persisted thread (`meta/threads/`), a
+  paper, a post, or a filed concept; extracts the technical terms it actually
+  uses (same selection bar as `/summarize-technical`'s key-terms section); and
+  merges distilled one-to-three-sentence definitions into the bundle-root
+  [glossary](/glossary.md) — one entry per term, alphabetical, with a *Seen in:*
+  citation line, dedup/merge on existing entries, pointer entries for terms
+  canonically defined by filed concepts or the operating contract, and a
+  graduation path (`/intake`) for entries that outgrow the glossary. Markdown
+  only, deliberately no `glossary.json` — the glossary is a bundle concept and
+  flows through verify/registry/site tooling. Registered it in
+  [skills-registry](/meta/policy/skills-registry.md) and re-rendered `CLAUDE.md`
+  via `mix brain.contract`; seeded the empty `/glossary.md` scaffold (id minted,
+  registry regenerated).
 - **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
