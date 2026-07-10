@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New analysis: [Is the corpus-maintenance failure space rich content for evals?](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)**
+  Follow-up to the field-comparison analysis: the operator asked whether the
+  500+ failure chain is rich eval content. Answer: yes — ground truth is
+  constructible (the operator owns the corpus), each chain stage maps to a
+  measurable task, and "corpus health under agent maintenance" is an unoccupied
+  benchmark niche. The session response is preserved verbatim at operator request,
+  with the "is this a duplicate" ground-truth fuzziness expanded into seven named
+  sources (spectrum, taxonomy-relativity, type-relativity, time-relativity,
+  query-relativity, judge drift, synthetic-vocabulary bias), each dictating a
+  gold-set property. Listed in the analysis index.
 - **New analysis: [How does this bundle compare to the 2026 second-brain field?](/meta/analysis/comparison-with-the-2026-second-brain-field.md)**
   Operator asked for an evaluation of the repo against the AI-influencer-verse
   second-brain landscape; a same-day web survey (Forte's "AI Second Brain" pivot,
