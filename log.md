@@ -11,6 +11,10 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   (`sb:b1ba4b`) by the `/capture` of the flows-genre session (thread
   `2026-07-09-flows-genre-and-scenario-testing`) — the research-spike verdict
   region feeds both. See [meta/log.md](/meta/log.md) for the capture entry.
+- [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`) gained a thread-excerpt log section from the `/capture` of the
+  GitHub Pages / OKF-node session (route-tagged; materialized by
+  `mix brain.route_tags`). Content-only; no frontmatter change.
 - **Intook the outside references that informed the flows-spec harness design**
   (operator-directed), into `SWE/testing/`:
   [ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
