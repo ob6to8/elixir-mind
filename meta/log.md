@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of this session** → thread
+  [2026-07-10-todo-skill-and-gate-suite-tutorial](/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md)
+  (render-from-context; retained operator messages and closing replies verbatim,
+  short pre-tool narration/tool noise stripped). Six-row routing ledger, all closed —
+  one `unrouted` (the `/create-pull-request` run), the rest path-routed to the touched
+  skill/policy/tutorial files (governance namespace, no `sb:` sinks, so no concept
+  excerpt logs materialized). Listed in the threads index. `mix brain.route_tags`
+  verifies clean. Captured as the first step of a `/create-pull-request` run.
 - **New tutorial: [the gate suite — what the checks prove and where they run](/meta/tutorials/the-gate-suite-and-where-it-runs.md).**
   Explains the repository's integrity gates as an enforcement surface: the eight
   CI checks grouped into four kinds (build; generated-artifact freshness via
