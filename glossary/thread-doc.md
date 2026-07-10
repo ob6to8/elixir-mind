@@ -16,4 +16,4 @@ The frozen, verbatim record of a working session that `/capture` writes under
 Assistant` render. Canonically defined by the
 [session-capture policy](/meta/policy/session-capture.md).
 
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md), [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-09 remove-email thread](/meta/threads/2026-07-09-remove-operator-email-from-contract.md), [2026-07-10 create-PR skill thread](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
