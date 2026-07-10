@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **New plan: [Dedup recall probe](/meta/plans/dedup-recall-probe.md)** (`status:
+  proposed`). Commissioned by the operator following the eval-suitability
+  analysis; executes recommendation 1 of the vector-DB recall analysis. Specifies
+  `mix brain.dedup_probe` — zero-dependency, offline, deterministic — scoring the
+  lexical search layer against an id-keyed gold set at `meta/evals/dedup-probe.md`
+  (acceptable-id sets, adjudication notes, `target`/`negative`/`quarantine` bands
+  encoding the ground-truth fuzz sources, gold pairs harvested from real operator
+  phrasing at intake, an `--expanded` mode measuring the synonym-expansion fix,
+  non-gating CI report with committed baselines). Proposes ratifying a new
+  `meta/evals/` genre. Listed in the plans index.
 - **New analysis: [Is the corpus-maintenance failure space rich content for evals?](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)**
   Follow-up to the field-comparison analysis: the operator asked whether the
   500+ failure chain is rich eval content. Answer: yes — ground truth is
