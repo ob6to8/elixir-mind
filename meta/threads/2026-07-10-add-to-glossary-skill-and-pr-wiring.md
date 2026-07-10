@@ -1,7 +1,7 @@
 ---
 type: reference
 title: 2026-07-10-add-to-glossary-skill-and-pr-wiring
-description: Built the /add-to-glossary skill and the bundle-root glossary it maintains (markdown over JSON, pointer entries, a graduation path to /intake), then wired it into /create-pull-request so every captured thread's terminology ships in the same PR — with this session's own capture as the first live run.
+description: Built the /add-to-glossary skill and the glossary it maintains (markdown over JSON, pointer entries, a graduation path), wired it into /create-pull-request so every captured thread's terminology ships in the same PR — this session's own capture was the first live run — then restructured the glossary to one concept file per term under /glossary/ so definitions are individually linkable.
 provenance: "Claude Code session (Claude Fable 5), 2026-07-10; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, skills, glossary, capture, pull-request]
 timestamp: 2026-07-10
@@ -23,9 +23,17 @@ an outgrown entry files as a proper concept via `/intake` and shrinks to a
 pointer. The operator then had it wired into `/create-pull-request` as a new
 step 2 — run `/add-to-glossary` over the thread doc `/capture` just wrote — so
 each session's terminology lands in the glossary in the same PR as its thread.
-The session closed with `/create-pull-request` itself: this capture is that
-run's first step, and its glossary pass is the new step's first live exercise,
-seeding the glossary's first entries.
+The session then ran `/create-pull-request` itself: this capture is that run's
+first step, and its glossary pass was the new step's first live exercise,
+seeding the glossary's first seven entries (PR #35). After the PR opened, the
+operator proposed per-term files so definitions can be cited as clickable
+links, and the glossary was restructured: one `type: concept` file per term
+under `/glossary/` (each with its own `sb:` id), `glossary/index.md` as the
+alphabetical listing, `/glossary.md` retained as the hub (it is `sb:0b648f`,
+the route-tag sink, and keeps the generated excerpt log), and graduation
+redefined as *moving* a term file into the domain taxonomy — the id travels —
+leaving a pointer stub behind. The capture was refreshed in place to include
+that exchange before merge.
 
 ## Routing
 
@@ -35,6 +43,8 @@ seeding the glossary's first entries.
 | Bundle-root glossary scaffold (markdown over JSON; `type: concept`, `sb:0b648f`; pointer entries; graduation) | closed | [/glossary.md](/glossary.md) | - |
 | Wire `/add-to-glossary` into `/create-pull-request` (glossary step between capture and commit) | closed | [/.claude/skills/create-pull-request/SKILL.md](/.claude/skills/create-pull-request/SKILL.md) | - |
 | Run `/create-pull-request` → capture this session, seed the glossary, open the PR | closed | `unrouted` | - |
+| Per-term glossary restructure (one concept file per term under `/glossary/`; hub retained; graduation = move) | closed | [/glossary.md](/glossary.md) | - |
+| PR #35 readiness check (refresh this capture, confirm mergeable) | closed | `unrouted` | - |
 
 ## User
 
@@ -80,4 +90,41 @@ _(operator invoked `/create-pull-request`)_
 
 ## Assistant
 
-_(this capture — freezing the session into this thread doc — is step 1 of that `/create-pull-request` run; step 2 runs `/add-to-glossary` over this very doc, seeding the glossary's first entries, followed by the commit, push, and PR.)_
+Pull request opened: **https://github.com/ob6to8/second-brain/pull/35**
+
+The full `/create-pull-request` flow ran end to end, including the new glossary step for the first time:
+
+1. **Captured the session** → `meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md` — verbatim render, four-row routing ledger (all closed), and one region route-tagged to the glossary (`sb:0b648f`), which materialized the glossary's first thread-excerpt log block.
+2. **Glossaried the thread** — the new step 2's first live exercise, run on its own origin story: seven entries seeded into `/glossary.md`. Two are definitions for terms this session coined (*graduation*, *pointer entry*); five are pointer entries for contract machinery the thread used (*concept (OKF)*, *route tag*, *stable id (`sb:` id)*, *thread doc*, *verified_by*), each a one-line gloss linking to its defining policy.
+3. **Committed and pushed** (`1a03588`) with threads index and both logs updated, then opened the PR.
+
+The PR carries all three commits on the branch: the skill + glossary scaffold, the `/create-pull-request` wiring, and this capture/seeding. All gates passed before commit — contract and registry checks, `brain.verify`, `brain.route_tags` (34 regions across 12 threads, fidelity clean), and 78 tests with 0 failures.
+
+Want me to watch the PR for review comments and CI via `subscribe_pr_activity`, or merge it into `main` now?
+
+## User
+
+What about making each glossary term its own md file? Then i could ask you to return glossary entry links for your responses, and click those to be taken to the definition
+
+## Assistant
+
+<routes ref="sb:0b648f .claude/skills/add-to-glossary/SKILL.md">
+Done — restructured and pushed (commit `b61ee57`, now part of PR #35). Each glossary term is its own concept file under `/glossary/`, so I can now cite definitions exactly the way you described: a response can link [route tag](/glossary/route-tag.md), [pointer entry](/glossary/pointer-entry.md), or [verified_by](/glossary/verified-by.md), and clicking lands on the definition — on GitHub and on the Pages site alike.
+
+How the pieces landed:
+
+- **Seven term files** under `/glossary/`, each a full bundle concept with its own minted `sb:` id, frontmatter, definition, and *Seen in:* citations. `glossary/index.md` lists them alphabetically with one-line descriptions.
+- **`/glossary.md` stayed, repurposed as the hub.** It couldn't simply be deleted: it's `sb:0b648f`, the route-tag sink for this session's thread, and it carries the generated excerpt log — ids are immutable and the verifier re-derives that log. So it now describes the system and points into the directory, and all existing links to it still resolve.
+- **Graduation got more elegant.** Since every term is already a concept, an outgrown term no longer needs re-filing via `/intake` — the file just *moves* into the domain taxonomy, its id travels with it, and a pointer stub stays at `/glossary/<slug>.md` so old glossary links keep landing somewhere useful.
+- **The `/add-to-glossary` skill** was updated to the per-term model (kebab-slug files, per-file merge rules, index upkeep) and gained a "Citing terms in responses" section: link a term's first use in a response, not every occurrence. The skills-registry policy, `CLAUDE.md`, `/create-pull-request`'s step 2, the root `index.md`, and the registry are all in sync, and every gate passes (verify, route tags, contract/registry checks, 78 tests).
+
+One governance note: `glossary/` is a new top-level directory, which the taxonomy protocol normally has me propose rather than create — your message was the proposal and direction here, and the whole shape ships in PR #35 for you to ratify or push back on in review. From here on, just ask for "glossary links" in any answer and I'll cite terms inline; anything I define along the way can be `/add-to-glossary`'d into its own linkable file.
+</routes>
+
+## User
+
+Does the pr have everything, ready to merge?
+
+## Assistant
+
+_(the readiness check that closed the session: this capture was refreshed in place with the per-term restructure exchange, the gates re-run, and PR #35 confirmed to carry the full session — the answer itself lives in the PR conversation.)_

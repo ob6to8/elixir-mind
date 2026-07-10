@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **Capture refresh (pre-merge)** — the session continued past its first
+  `/capture` (the per-term glossary restructure and the PR-readiness check), so
+  the thread doc
+  [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+  was refreshed **in place** per the capture skill's update-in-place rule: the
+  restructure exchange appended verbatim, two ledger rows added (the restructure
+  routed to the [glossary hub](/glossary.md), the readiness check `unrouted`),
+  one new region tagged to `sb:0b648f` (hub excerpt log re-materialized), and
+  the narrative/description extended. No new glossary terms cleared the
+  selection bar (*hub* is plain English used plainly).
 - **`/capture` of this session** → thread
   [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
   (render-from-context; retained operator messages and closing replies verbatim,
