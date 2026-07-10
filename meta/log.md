@@ -4,6 +4,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/create-pull-request` now runs `/capture` first.** Prepended a full `/capture`
+  step (render the frozen thread doc, routing ledger, route tags, then
+  `mix brain.route_tags --materialize`/verify) ahead of the commit, so the session
+  record ships *in the same PR* rather than trailing in a later one. Renumbered the
+  procedure (capture → survey → commit → push → open PR), updated the guardrail, and
+  re-rendered `CLAUDE.md` from [skills-registry](/meta/policy/skills-registry.md).
+  (Follow-up after PR #31 merged; branch restarted from `main`.)
 - **New skill `/create-pull-request`.** Commits the current working changes, pushes
   the branch, and opens a pull request — invoking the skill **is** the authorization,
   so there's no separate confirmation gate (PR-template detection and the GitHub MCP
