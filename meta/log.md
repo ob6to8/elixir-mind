@@ -4,6 +4,15 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
+- **`/capture` of the merge-tutorial session** → thread
+  [2026-07-10-merge-commit-reachability-tutorial](/meta/threads/2026-07-10-merge-commit-reachability-tutorial.md)
+  (render-from-context; single-exchange session — the operator's quote-seeded
+  request and the closing reply retained verbatim, pre-tool narration/tool noise
+  stripped). Three-row routing ledger, all closed — the tutorial strand
+  path-routed to the new tutorial (governance namespace, no `sb:` sinks, so no
+  excerpt logs materialized); quote provenance and the PR motion `unrouted`.
+  Listed in the threads index. Captured as step 1 of a `/create-pull-request`
+  run so the thread doc ships in the same PR.
 - **New tutorial: [Why a true merge (not a squash) keeps cited commits
   reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md).**
   Written from a session quote about deliberately true-merging a port branch
