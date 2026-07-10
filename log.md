@@ -4,6 +4,24 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-10
 
+- **Glossary restructured to one concept file per term** (operator-directed) —
+  the seven entries moved out of the monolithic `glossary.md` into
+  [`/glossary/`](/glossary/index.md), each its own `type: concept` file with a
+  minted `sb:` id ([concept (OKF)](/glossary/concept-okf.md) `sb:317879`,
+  [graduation](/glossary/graduation.md) `sb:0c8532`,
+  [pointer entry](/glossary/pointer-entry.md) `sb:393e3d`,
+  [route tag](/glossary/route-tag.md) `sb:e142e6`,
+  [stable id](/glossary/stable-id.md) `sb:4d71d3`,
+  [thread doc](/glossary/thread-doc.md) `sb:089fb2`,
+  [verified_by](/glossary/verified-by.md) `sb:c6e78a`), so every definition is
+  individually linkable from responses and concepts.
+  [`/glossary.md`](/glossary.md) (`sb:0b648f`) stays as the hub doc and keeps
+  its route-tagged excerpt log; graduation now means *moving* a term file into
+  the domain taxonomy (id travels) leaving a pointer stub. Updated the
+  `/add-to-glossary` skill (per-term merge rules, a "citing terms in responses"
+  section), the `/create-pull-request` step-2 wording, the skills-registry
+  policy (re-rendered `CLAUDE.md`), the root `index.md`, and
+  `meta/registry.md`.
 - **First `/add-to-glossary` run** — over the thread
   [2026-07-10-add-to-glossary-skill-and-pr-wiring](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md),
   as step 2 of a `/create-pull-request` invocation (the new wiring's first live

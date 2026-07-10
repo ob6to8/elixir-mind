@@ -27,10 +27,11 @@ emerges as knowledge is filed and evolves collaboratively; see the
 
 Cross-domain:
 
-- [glossary](/glossary.md) — running glossary of technical terms used across the
-  brain, one alphabetical entry per term with citations back to the threads,
-  papers, and posts it was seen in; accreted by
+- [glossary](/glossary/index.md) — running glossary of technical terms used
+  across the brain: one concept file per term, individually linkable, with
+  citations back to the threads, papers, and posts each was seen in; accreted by
   [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md)
+  (hub: [glossary.md](/glossary.md))
 
 ### Meta / governance
 

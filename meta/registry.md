@@ -54,4 +54,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:07610c` | [ai-industry/ai-margin-collapse-glm-5-2](/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `sb:2867ac` | [ai-industry/ai-roi-runway-outside-tech-sector](/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `sb:0b648f` | [glossary](/glossary.md) | concept | false |
+| `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
+| `sb:0c8532` | [glossary/graduation](/glossary/graduation.md) | concept | false |
+| `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
+| `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
+| `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
+| `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
+| `sb:c6e78a` | [glossary/verified-by](/glossary/verified-by.md) | concept | false |
 | `sb:24bd1e` | [knowledge-management/open-knowledge-format](/knowledge-management/open-knowledge-format.md) | reference |  |

@@ -24,11 +24,12 @@ timestamp: 2026-07-10
   `.claude/skills/summarize-technical/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
-  definitions into the bundle-root [`/glossary.md`](/glossary.md) — one entry per term,
-  alphabetical, each citing the sources it was seen in (pointer entries defer to filed
-  concepts instead of duplicating them). Also invoked automatically by
-  `/create-pull-request` on the thread doc its `/capture` step writes. See
-  `.claude/skills/add-to-glossary/SKILL.md`.
+  definitions into the glossary — **one concept file per term** under
+  [`/glossary/`](/glossary/index.md) (hub: [`/glossary.md`](/glossary.md)), each with
+  its own `sb:` id and *Seen in:* citations, so any response or concept can cite a
+  term by link (pointer entries defer to filed concepts instead of duplicating them).
+  Also invoked automatically by `/create-pull-request` on the thread doc its
+  `/capture` step writes. See `.claude/skills/add-to-glossary/SKILL.md`.
 - **`/news`** — generate today's **inbox**: a daily candidate feed of news, articles,
   papers, and resources matched against the brain's taxonomy, grouped by category and
   reason-tagged (`recent`/`impactful`/`influential`/`groundbreaking`/`buzz`). Writes to

@@ -2,8 +2,8 @@
 id: sb:0b648f
 type: concept
 title: Glossary
-description: Cross-domain running glossary of technical terms and concepts used across the brain, accreted from threads, papers, and posts by /add-to-glossary.
-provenance: "Agent-distilled definitions; each entry cites the sources it was seen in"
+description: Hub for the cross-domain glossary — one concept file per term under /glossary/, accreted from threads, papers, and posts by /add-to-glossary.
+provenance: "Agent-distilled definitions; each term's file cites the sources it was seen in"
 verified: false
 tags: [glossary, terminology, cross-domain]
 timestamp: 2026-07-10
@@ -11,77 +11,22 @@ timestamp: 2026-07-10
 
 # Glossary
 
-The brain's single running glossary. Entries are accreted by
+The hub for the brain's cross-domain glossary. **Each term is its own concept
+file under [`/glossary/`](/glossary/index.md)** — with its own `sb:` id,
+frontmatter, and *Seen in:* citations — so every definition is individually
+linkable: cite a term anywhere (a response, another concept, a thread) as a
+bundle-absolute link like `[route tag](/glossary/route-tag.md)` and the link
+lands on the definition.
+
+Entries are accreted by
 [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md) from persisted
-threads, papers, posts, and filed concepts — one entry per term, alphabetical,
-each with a *Seen in:* citation line pointing back at the sources that used it.
-A term whose canonical definition lives in a filed concept (or in the operating
-contract) gets a pointer entry, not a duplicate definition.
-
-## concept (OKF)
-
-A single markdown file with YAML frontmatter that is the unit of knowledge in
-this bundle; its id is its path minus `.md`. Canonically defined by the
-[concept-anatomy policy](/meta/policy/concept-anatomy.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
-
-## graduation
-
-The move by which a glossary entry that has outgrown a few sentences is filed
-as a proper concept in the taxonomy via `/intake`, after which the entry
-shrinks to a pointer at the new doc — the glossary acting as a staging layer,
-not a terminal home. Defined by the
-[`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
-
-## pointer entry
-
-A glossary entry for a term whose canonical definition already lives elsewhere
-in the brain (a filed concept, a policy, a skill): a one-line gloss plus a link
-to the defining doc, instead of a duplicated definition — the glossary's way of
-honoring update-in-place/don't-fragment. Defined by the
-[`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
-
-## route tag
-
-An inline `<routes ref="…">` region marking which concept(s) a paragraph of a
-frozen thread feeds, so cross-thread discussion of one matter aggregates into
-one place. Canonically defined by the
-[route-tagging policy](/meta/policy/route-tagging.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
-
-## stable id (`sb:` id)
-
-The opaque, immutable `sb:` + 6-hex-char identifier every bundle concept
-carries in frontmatter; typed edges reference ids rather than paths, so
-identity survives moves and renames. Canonically defined by the
-[stable-identity policy](/meta/policy/stable-identity.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
-
-## thread doc
-
-The frozen, verbatim record of a working session that `/capture` writes under
-`meta/threads/` — narrative, routing ledger, then the tagged `## User`/`##
-Assistant` render. Canonically defined by the
-[session-capture policy](/meta/policy/session-capture.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
-
-## verified_by
-
-The frontmatter field holding a statement's evidence edges: an inline YAML list
-of stable ids (typically `source` captures) that jointly support it — the only
-committed representation of evidence, required non-empty for `verified: true`.
-Canonically defined by the
-[verification-grounding policy](/meta/policy/verification-grounding.md).
-
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+threads, papers, posts, and filed concepts — one file per term, listed
+alphabetically in [`/glossary/index.md`](/glossary/index.md). A term whose
+canonical definition lives in a filed concept (or in the operating contract)
+gets a [pointer entry](/glossary/pointer-entry.md), not a duplicate
+definition; a term that outgrows the glossary
+[graduates](/glossary/graduation.md) into the domain taxonomy, its id
+travelling with it.
 
 ## Thread excerpts — route-tagged log
 
