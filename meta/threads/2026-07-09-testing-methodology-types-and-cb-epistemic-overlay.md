@@ -1,6 +1,6 @@
 ---
 type: reference
-title: Thread — testing methodology, methodology/plan types, and the Composable Beliefs epistemic-overlay plan
+title: 2026-07-09-testing-methodology-types-and-cb-epistemic-overlay
 description: A session that filed an agent-facing Elixir testing methodology, ratified the `methodology` and `plan` types, derived the "type an edge only when a machine must traverse it" link principle, compared this bundle against the operator's Composable Beliefs repo, and filed the epistemic-overlay plan.
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, testing, types, epistemics, composable-beliefs, edges, plan]

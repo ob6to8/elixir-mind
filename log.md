@@ -4,6 +4,29 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-09
 
+- **Route-tagged excerpt logs materialized** into the two `SWE/testing` references
+  [ExUnit dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+  (`sb:f6e843`) and
+  [Elixir snapshot/approval-testing libraries require a dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
+  (`sb:b1ba4b`) by the `/capture` of the flows-genre session (thread
+  `2026-07-09-flows-genre-and-scenario-testing`) — the research-spike verdict
+  region feeds both. See [meta/log.md](/meta/log.md) for the capture entry.
+- [Open Knowledge Format (OKF)](/knowledge-management/open-knowledge-format.md)
+  (`sb:24bd1e`) gained a thread-excerpt log section from the `/capture` of the
+  GitHub Pages / OKF-node session (route-tagged; materialized by
+  `mix brain.route_tags`). Content-only; no frontmatter change.
+- **Intook the outside references that informed the flows-spec harness design**
+  (operator-directed), into `SWE/testing/`:
+  [ExUnit ships dependency-free fixtures and diffs](/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md)
+  (`sb:f6e843`) and
+  [Elixir snapshot/approval-testing libraries require a dependency](/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md)
+  (`sb:b1ba4b`) — two `reference` captures distilled from the ExUnit docs, the
+  Elixir issue tracker, and the mneme/snapshy/assert_value repos during the
+  test-harness research spike. Each carries an `# Influence` back-link to the spec
+  ([flows-genre-and-scenario-testing](/meta/plans/flows-genre-and-scenario-testing.md)),
+  and the spike section of that spec now links forward to both — bidirectional
+  traceability from a design decision to the resources that drove it. Minted ids
+  and regenerated `meta/registry.md`.
 - **Ratified a new `plan` type** (operator-approved) and a `meta/plans/` namespace —
   intended work on the brain/tooling as design/decision records, each carrying a
   `status` (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an
