@@ -4,12 +4,13 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-10
 
-- **New skill `/create-pull-request`.** Commits the current working changes and
-  pushes the branch, then **asks** the operator whether to open a pull request —
-  the commit+push is autonomous, the PR is gated on an explicit yes (with PR-template
-  detection and the GitHub MCP tools, since there's no `gh` CLI here). Registered it
-  in [skills-registry](/meta/policy/skills-registry.md) and re-rendered `CLAUDE.md`
-  via `mix brain.contract`.
+- **New skill `/create-pull-request`.** Commits the current working changes, pushes
+  the branch, and opens a pull request — invoking the skill **is** the authorization,
+  so there's no separate confirmation gate (PR-template detection and the GitHub MCP
+  tools handle the rest, since there's no `gh` CLI here). Registered it in
+  [skills-registry](/meta/policy/skills-registry.md) and re-rendered `CLAUDE.md` via
+  `mix brain.contract`. (Initially drafted with a confirmation gate, then simplified
+  the same day once we settled that the invocation itself is the yes.)
 - **`/intake` now delegates to `/summarize-technical` for technical sources.**
   Added a branch to the [`/intake` skill](/.claude/skills/intake/SKILL.md)'s
   distill step: a technical paper/article/spec substantial enough to warrant it

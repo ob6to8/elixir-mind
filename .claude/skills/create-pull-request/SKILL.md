@@ -1,16 +1,18 @@
 ---
 name: create-pull-request
-description: Commit the current working changes, push the branch, then ask the operator whether to open a pull request (and open it only on a yes). Use when the operator says "/create-pull-request", "commit and PR this", "open a PR", or wants the current work committed and offered up as a pull request.
+description: Commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
 ---
 
-# /create-pull-request — commit, push, then offer a PR
+# /create-pull-request — commit, push, open a PR
 
-Take the current working changes to a committed, pushed state, then **ask before
-opening a pull request**. A PR is outward-facing and hard to unwind, so the
-commit+push is autonomous but the PR is always gated on an explicit operator yes.
+Take the current working changes to a committed, pushed state and **open the pull
+request**. Invoking this skill is itself the operator's explicit request to create
+the PR — there is no separate confirmation gate. (This is the one sanctioned path
+that opens a PR without a further ask; the default-off rule elsewhere still holds
+for every other flow.)
 
 ## When to use
-- The operator finished a change and wants it committed and offered as a PR.
+- The operator finished a change and wants it committed and turned into a PR.
 - The operator says "/create-pull-request", "commit and PR this", or "open a PR".
 
 ## Procedure
@@ -37,13 +39,7 @@ commit+push is autonomous but the PR is always gated on an explicit operator yes
   (2s, 4s, 8s, 16s). Don't retry on a non-network rejection (e.g. protected branch) —
   surface it.
 
-### 4. Ask before opening the PR
-- **Do not open the PR yet.** Ask the operator whether to open one (use
-  `AskUserQuestion`), showing: the branch, the target base branch, and a proposed
-  title + one-line summary. If they decline, stop here — the work is committed and
-  pushed, which is a complete outcome.
-
-### 5. Open the PR (only on an explicit yes)
+### 4. Open the PR
 - Check for a PR template before writing the body:
   `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, a root
   `PULL_REQUEST_TEMPLATE.md`, or `docs/PULL_REQUEST_TEMPLATE.md` (and the
@@ -56,13 +52,14 @@ commit+push is autonomous but the PR is always gated on an explicit operator yes
   the operator named another.
 - Report the PR URL.
 
-### 6. Offer to watch it
+### 5. Offer to watch it
 - After opening, offer to monitor the PR for CI failures and review comments via
   `subscribe_pr_activity` — don't subscribe unless the operator asks.
 
 ## Guardrails
-- **Never open a PR without an explicit operator yes** (step 4). Committing and
-  pushing is autonomous; opening the PR is not.
+- **The invocation is the authorization.** This skill opens the PR without a
+  separate confirmation — running it *is* the operator's yes. Don't add a
+  confirmation step back in.
 - **Never commit to a default branch.** Develop on the designated feature branch.
 - Never include internal identifiers, tokens, or model ids in commit messages or PR
   bodies.
