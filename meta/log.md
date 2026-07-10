@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-09
 
+- `/capture`: froze the testing-methodology / types / Composable-Beliefs session into
+  [2026-07-09-testing-methodology-types-and-cb-epistemic-overlay](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md).
+  Two regions route-tagged to the testing methodology (`sb:d58da3`) — materializing its
+  `## Thread excerpts — route-tagged log` — plus six path back-links to the
+  `epistemic-overlay` plan. Routing ledger has six strands (five closed, the plan
+  paused on its open questions). `mix brain.route_tags` verifies clean. Listed the
+  thread in `meta/threads/index.md`.
+
 - Captured the session thread
   [2026-07-09 — live-render appraisal and Pages-site hardening](/meta/threads/2026-07-09-live-render-appraisal-and-pages-hardening.md)
   (`/capture`, parse-the-log render): the session that produced PR #16. Built a
