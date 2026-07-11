@@ -63,6 +63,36 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   via `mix brain.contract`; seeded the empty `/glossary.md` scaffold (id minted,
   registry regenerated).
 - **`/capture` of this session** → thread
+  [2026-07-10-todo-skill-and-gate-suite-tutorial](/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md)
+  (render-from-context; retained operator messages and closing replies verbatim,
+  short pre-tool narration/tool noise stripped). Six-row routing ledger, all closed —
+  one `unrouted` (the `/create-pull-request` run), the rest path-routed to the touched
+  skill/policy/tutorial files (governance namespace, no `sb:` sinks, so no concept
+  excerpt logs materialized). Listed in the threads index. `mix brain.route_tags`
+  verifies clean. Captured as the first step of a `/create-pull-request` run.
+- **New tutorial: [the gate suite — what the checks prove and where they run](/meta/tutorials/the-gate-suite-and-where-it-runs.md).**
+  Explains the repository's integrity gates as an enforcement surface: the eight
+  CI checks grouped into four kinds (build; generated-artifact freshness via
+  `--check`; bundle validation via `mix brain.verify` / `mix brain.route_tags`; the
+  `mix brain.site` render), what turns each red and its fix, and the three widening
+  scopes they run at (an agent's scoped manual pass — the "all three gates pass"
+  subset — the opt-in pre-commit hook, and the authoritative CI job). Complements
+  [the three bundle scanners](/meta/tutorials/the-three-bundle-scanners.md) (which
+  covers the scanner *architecture*) by cross-linking to it rather than duplicating.
+  Listed in the tutorials index.
+- **New `todo` type + `meta/todos/` genre + `/todo` skill.** Added `todo` to the
+  [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md) — a
+  lightweight actionable task item carrying a `status` (`open`/`done`/`cancelled`),
+  distinct from an `issue` (a problem) and a `plan` (a design record). Created the
+  governance-namespace directory [`meta/todos/`](/meta/todos/index.md) (no `sb:` ids,
+  like `issues`/`plans`/`threads`) with its index, and listed it in
+  [`meta/index.md`](/meta/index.md). Authored the [`/todo`](/.claude/skills/todo/SKILL.md)
+  skill — dispatches on a subcommand: `create <title>` files a new open todo (and
+  maintains the index + `log.md`), `list` shows todos grouped by `status`. Registered
+  it in [skills-registry](/meta/policy/skills-registry.md) and re-rendered `CLAUDE.md`
+  via `mix brain.contract`. Requested by the operator (which ratifies the new type and
+  top-level-of-`meta` directory). `mix brain.verify` passes.
+- **`/capture` of this session** → thread
   [2026-07-10-create-pull-request-skill-and-intake-delegation](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)
   (render-from-context; retained operator messages and closing replies verbatim,
   short pre-tool narration/tool noise stripped). Seven-row routing ledger, all
