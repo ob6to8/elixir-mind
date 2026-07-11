@@ -4,6 +4,17 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Codified the glossary cross-linking convention** (operator-ratified) in
+  `/add-to-glossary`: link related terms *in the definition prose* when the
+  relationship can be stated; fall back to a `*See also:*` line (max 3–4 term
+  links, after *Seen in:*) only for genuine adjacency no sentence connects.
+  Ordinary untyped prose links per the cross-linking policy — deliberately
+  **not** a `related:` typed-edge frontmatter field, which is reserved for
+  machine-traversed relations like `verified_by`. First applied to the recall
+  cluster: inline links in [recall probe](/glossary/recall-probe.md) ↔
+  [recall@k](/glossary/recall-at-k.md), and a *See also* line on
+  [recall](/glossary/recall.md).
+
 - **Added [doctrine](/glossary/doctrine.md) to the glossary** (operator-directed:
   "used here") — the governance layer of guiding principles (the "why" shaping
   judgment), distinct from [policy](/glossary/policy-type.md)'s enforceable rules;
