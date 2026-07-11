@@ -13,10 +13,11 @@ timestamp: 2026-07-11
 
 ## Status & provenance
 
-**Proposed — operator-designated top priority** at commissioning (2026-07-11;
-note the session-init heuristic ranks `proposed` plans low, so the `priority:
-top` frontmatter key and this line carry the operator's override). Executes the
-skills-direction recommendation of
+**Proposed — operator-designated top priority** at commissioning (2026-07-11).
+The session-init heuristic ranks `proposed` plans low and does not yet read a
+priority key; the operator ratified fixing that as **build-order step 1**, so
+the `priority: top` frontmatter carries the override until the digest learns to
+enforce it. Executes the skills-direction recommendation of
 [the contracts-and-rendered-aggregations analysis](/meta/analysis/contracts-and-rendered-aggregations.md).
 
 ## 1. The problem
@@ -75,13 +76,20 @@ view**, same as `meta/registry.md` is derived from per-file ids.
 
 ## 4. Build order
 
-1. Scanner module + unit tests (missing frontmatter is a compile error).
-2. Wire into `Contract.render/1` per the Q1/Q2 decisions; regenerate.
-3. Extend
+1. **Teach the session-init digest to respect `priority: top`** (ratified
+   2026-07-11, independent of the scanner work — built first so this plan's
+   own designation becomes effective immediately): `SecondBrain.SessionInit`
+   reads a `priority: top` frontmatter key on plans and lifts those items to
+   the head of the heuristic top-3, ahead of the status-based ranking (an
+   explicit operator override outranks any heuristic). Extend
+   `test/second_brain/session_init_test.exs`.
+2. Scanner module + unit tests (missing frontmatter is a compile error).
+3. Wire into `Contract.render/1` per the Q1/Q2 decisions; regenerate.
+4. Extend
    [`contract_scenario_test.exs`](/test/second_brain/contract_scenario_test.exs):
    a fixture skill appears in the render; deleting it without recompiling
    fails `check/1`.
-4. Update the connective layer in the same motion: the
+5. Update the connective layer in the same motion: the
    [render-contract flow doc](/meta/flows/render-contract.md) touch-sequence,
    the [`/render-contract` skill](/.claude/skills/render-contract/SKILL.md),
    and the skills-registry policy per Q2.

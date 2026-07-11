@@ -19,7 +19,10 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   skills-registry drift: scan `.claude/skills/*/SKILL.md` frontmatter and render
   contract §7 from it, retiring the hand-kept duplicate list; four open
   questions (surviving prose, wrapper vs. native section, ordering, scope) await
-  ratification.
+  ratification. Amended same day (operator-ratified): build-order step 1 is now
+  teaching `SecondBrain.SessionInit` to lift `priority: top` plans to the head
+  of the heuristic top-3 — built first so the plan's own designation becomes
+  effective immediately.
 - **Branch cleanup ratified; deletion blocked agent-side; first todo filed** —
   the operator ratified deleting the 15 merged branches and keeping the 6
   unmerged. All 15 re-verified as merged, but `git push --delete` returns HTTP
