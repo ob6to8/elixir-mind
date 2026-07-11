@@ -4,6 +4,18 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossaried the [news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)**
+  (via `/add-to-glossary`, run by `/create-pull-request`) — added 5 new definitions
+  ([Model Context Protocol](/glossary/model-context-protocol.md) `sb:c66f10`,
+  [KV cache](/glossary/kv-cache.md) `sb:8415bd`,
+  [speculative decoding](/glossary/speculative-decoding.md) `sb:38d006`,
+  [Tree-sitter](/glossary/tree-sitter.md) `sb:1efc5e`,
+  [knowledge graph](/glossary/knowledge-graph.md) `sb:7498cf`) and 2 pointer entries
+  deferring to the concepts intaked this session
+  ([git worktree](/glossary/git-worktree.md) `sb:184bae`,
+  [agent time horizon](/glossary/agent-time-horizon.md) `sb:2523b4`); appended the
+  thread as a *Seen in:* citation on six existing news-mechanics terms (reason tags,
+  digest, candidate feed, featuring, query profile, deduplication).
 - **Intaked six SWE candidates from the 2026-07-11 inbox digest** (operator-picked) —
   filed into existing directories (no new dirs/types; taxonomy unchanged):
   [Codebase-Memory](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) (`sb:532b22`,

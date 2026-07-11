@@ -60,6 +60,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:07610c` | [ai-industry/ai-margin-collapse-glm-5-2](/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `sb:2867ac` | [ai-industry/ai-roi-runway-outside-tech-sector](/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `sb:0b648f` | [glossary](/glossary.md) | concept | false |
+| `sb:2523b4` | [glossary/agent-time-horizon](/glossary/agent-time-horizon.md) | concept | false |
 | `sb:73e13b` | [glossary/analysis-type](/glossary/analysis-type.md) | concept | false |
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
@@ -82,6 +83,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:f382b0` | [glossary/featuring](/glossary/featuring.md) | concept | false |
 | `sb:950a55` | [glossary/flow-touch-sequence](/glossary/flow-touch-sequence.md) | concept | false |
 | `sb:e56fb4` | [glossary/fresh-session-per-fire](/glossary/fresh-session-per-fire.md) | concept | false |
+| `sb:184bae` | [glossary/git-worktree](/glossary/git-worktree.md) | concept | false |
 | `sb:680062` | [glossary/github-flavored-markdown](/glossary/github-flavored-markdown.md) | concept | false |
 | `sb:7c640a` | [glossary/github-pages](/glossary/github-pages.md) | concept | false |
 | `sb:61877f` | [glossary/golden-test](/glossary/golden-test.md) | concept | false |
@@ -89,9 +91,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
+| `sb:7498cf` | [glossary/knowledge-graph](/glossary/knowledge-graph.md) | concept | false |
+| `sb:8415bd` | [glossary/kv-cache](/glossary/kv-cache.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
+| `sb:c66f10` | [glossary/model-context-protocol](/glossary/model-context-protocol.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
 | `sb:7adc45` | [glossary/parse-the-log](/glossary/parse-the-log.md) | concept | false |
@@ -119,11 +124,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:aa0003` | [glossary/skill](/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
+| `sb:38d006` | [glossary/speculative-decoding](/glossary/speculative-decoding.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |
 | `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |
+| `sb:1efc5e` | [glossary/tree-sitter](/glossary/tree-sitter.md) | concept | false |
 | `sb:60d394` | [glossary/tutorial-type](/glossary/tutorial-type.md) | concept | false |
 | `sb:927eb2` | [glossary/typed-edge](/glossary/typed-edge.md) | concept | false |
 | `sb:36436d` | [glossary/vector-database](/glossary/vector-database.md) | concept | false |
