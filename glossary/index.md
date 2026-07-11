@@ -23,6 +23,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
 - [deterministic spine](/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
+- [doctrine](/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)

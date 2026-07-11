@@ -4,6 +4,12 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Added [doctrine](/glossary/doctrine.md) to the glossary** (operator-directed:
+  "used here") — the governance layer of guiding principles (the "why" shaping
+  judgment), distinct from [policy](/glossary/policy-type.md)'s enforceable rules;
+  notes that this brain has no `doctrine` type and its closest analogue is the
+  preamble + compiled operating contract read as a whole. Glossary now 71 terms.
+
 - **Added the missing [policy (type)](/glossary/policy-type.md) glossary entry**
   (`sb:fa15e7`) — a pointer entry deferring to the
   [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md), filling
