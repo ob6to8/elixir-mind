@@ -35,6 +35,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:863b32` | [SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config](/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
 | `sb:3f35e1` | [SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/SWE/agentic-coding/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
 | `sb:b89ea1` | [SWE/agentic-coding/code-context/gitnexus](/SWE/agentic-coding/code-context/gitnexus.md) | reference |  |
+| `sb:41a1e3` | [SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md) | reference |  |
 | `sb:bf8a85` | [SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool](/SWE/agentic-coding/context-engineering/claude-context-editing-and-memory-tool.md) | reference |  |
 | `sb:77d68a` | [SWE/agentic-coding/context-engineering/context-rot-chroma-research](/SWE/agentic-coding/context-engineering/context-rot-chroma-research.md) | reference |  |
 | `sb:784985` | [SWE/agentic-coding/context-engineering/conversation-tree-architecture](/SWE/agentic-coding/context-engineering/conversation-tree-architecture.md) | reference |  |

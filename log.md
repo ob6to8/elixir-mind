@@ -4,6 +4,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Migrated the first legacy capture out of `deprecated/`** — intake of
+  `deprecated/sources/ai-agent-memory-markdown-files.md` into
+  [AI agent memory management — when markdown files are all you need](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md)
+  (`sb:41a1e3`, `reference`). Re-fetched the dev.to article to enrich the
+  legacy summary (author, Manus three-file pattern, OpenClaw 70:30 hybrid
+  search weighting), filed under
+  [context-engineering](/SWE/agentic-coding/context-engineering/index.md).
+  13 legacy sources and 9 assertions remain in `deprecated/` pending
+  triage/migration before the directory can be deleted.
+
 - **Resolved: skill commands stay out of the glossary** (operator-ratified) —
   settled the paused matter from the
   [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).
