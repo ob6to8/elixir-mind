@@ -4,6 +4,32 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossaried the [news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)**
+  (via `/add-to-glossary`, run by `/create-pull-request`) — added 5 new definitions
+  ([Model Context Protocol](/glossary/model-context-protocol.md) `sb:c66f10`,
+  [KV cache](/glossary/kv-cache.md) `sb:8415bd`,
+  [speculative decoding](/glossary/speculative-decoding.md) `sb:38d006`,
+  [Tree-sitter](/glossary/tree-sitter.md) `sb:1efc5e`,
+  [knowledge graph](/glossary/knowledge-graph.md) `sb:7498cf`) and 2 pointer entries
+  deferring to the concepts intaked this session
+  ([git worktree](/glossary/git-worktree.md) `sb:184bae`,
+  [agent time horizon](/glossary/agent-time-horizon.md) `sb:2523b4`); appended the
+  thread as a *Seen in:* citation on six existing news-mechanics terms (reason tags,
+  digest, candidate feed, featuring, query profile, deduplication).
+- **Intaked six SWE candidates from the 2026-07-11 inbox digest** (operator-picked) —
+  filed into existing directories (no new dirs/types; taxonomy unchanged):
+  [Codebase-Memory](/SWE/agentic-coding/code-context/codebase-memory-mcp.md) (`sb:532b22`,
+  code-context, extends GitNexus `sb:b89ea1`);
+  [VeriCache](/SWE/llm-engineering/vericache-lossless-kv-cache.md) (`sb:1cac23`,
+  llm-engineering, extends the KV-cache history `sb:266c5e`);
+  [PARC](/SWE/agentic-coding/agentic-loop/parc-self-reflective-long-horizon-agent.md)
+  (`sb:f02167`) and
+  [agent time horizons](/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md)
+  (`sb:c29a22`) under a new *Reliability & long-horizon* section of agentic-loop;
+  [git worktrees for parallel agents](/SWE/version-control/git/git-worktrees-for-parallel-agents.md)
+  (`sb:8b9548`, git); and
+  [State of AI Coding 2026](/SWE/testing/state-of-ai-coding-2026.md) (`sb:49eae4`,
+  testing, relates to `sb:a5ea86`). All verify; registry recompiled.
 - **Glossaried the [doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)**
   (`/add-to-glossary` via `/create-pull-request`) — no new terms cleared the bar
   (the session's two new terms, [doctrine](/glossary/doctrine.md) and

@@ -4,6 +4,24 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Captured [`2026-07-11-news-digest-intake-and-daily-read`](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)**
+  — the session that generated the 2026-07-11 inbox digest (two passes), intaked the
+  six SWE candidates, and shipped the daily-read synthesis. Route-tagged the intake
+  summary region to all six new concepts (`sb:532b22`, `sb:1cac23`, `sb:f02167`,
+  `sb:c29a22`, `sb:8b9548`, `sb:49eae4`) and the design region to the
+  [daily-read plan](/meta/plans/news-daily-read-synthesis.md) as a path back-link;
+  `mix brain.route_tags --materialize` appended each concept's first excerpt block.
+  Left one paused matter: whether Codebase-Memory should split into a `source` paper +
+  `reference` tool.
+- **Added the "daily read" to `/news`** (operator-proposed, ratified same session) —
+  a first-class `## The read` cross-domain synthesis lede at the top of every digest:
+  a short, `sb:`-id-grounded perspective on the day's selections as a set, saying
+  whether they reinforce/contest/extend the brain's standing positions. Wired a new
+  §4.5 into [`.claude/skills/news/SKILL.md`](/.claude/skills/news/SKILL.md), updated the
+  §5 body template, filed the decision record
+  [`meta/plans/news-daily-read-synthesis.md`](/meta/plans/news-daily-read-synthesis.md)
+  (`status: done`), and backfilled the [2026-07-11 digest](/inbox/2026-07-11.md) as the
+  first worked instance.
 - **Captured [`2026-07-11-doctrine-vs-policy-and-glossary-cross-linking`](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)**
   — the session that filled the missing [policy (type)](/glossary/policy-type.md)
   glossary entry, added [doctrine](/glossary/doctrine.md) on operator direction,
