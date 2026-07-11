@@ -19,4 +19,4 @@ and a [pointer entry](/glossary/pointer-entry.md) stub stays behind in
 terminal home. Defined by the
 [`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md).
 
-*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+*Seen in:* [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md), [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)

@@ -4,6 +4,28 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-10
 
+- **Backfilled the glossary from the remaining thread docs** — ran
+  `/add-to-glossary` over the eleven previously-unprocessed threads under
+  [`/meta/threads/`](/meta/threads/index.md) (only the
+  [add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md)
+  had been done). Added **46 new term files** and **15 pointer entries** under
+  [`/glossary/`](/glossary/index.md), taking the glossary from 7 to 68 terms —
+  spanning scheduling/automation (Routine, cron expression,
+  fresh-session-per-fire, approval gate), the news inbox (query profile,
+  candidate feed, digest, reason tags, featuring), flows & testing (flow /
+  touch-sequence, scenario test, deterministic spine, golden test,
+  self-consistency check, ExUnit, property-based testing), the site generator
+  (static-site generator, dependency-free, markdown renderer, GitHub Pages,
+  deploy gating, HTML escaping, XSS, GFM), retrieval (recall, deduplication,
+  recall probe, recall@k, vector database, embeddings, semantic search, ANN),
+  Composable Beliefs / epistemics (typed edge, epistemic overlay, supersession,
+  proto-belief document, route-tag sink), skills (skill namespacing,
+  skill-to-skill delegation, plugin), and governance (compiled contract,
+  operating contract, provenance, verification grounding, routing ledger,
+  session capture, and pointer entries for the `issue`/`analysis`/`methodology`/`plan`/`tutorial`
+  types). Appended *Seen in:* citations to the six existing entries the threads
+  also touched, refreshed [`meta/registry.md`](/meta/registry.md), and
+  re-verified (`mix brain.verify`, `mix brain.route_tags` both green).
 - **Glossary restructured to one concept file per term** (operator-directed) —
   the seven entries moved out of the monolithic `glossary.md` into
   [`/glossary/`](/glossary/index.md), each its own `type: concept` file with a
