@@ -125,6 +125,12 @@ registry (`mix brain.registry`).
 - One term, one file — dedup before writing, merge instead of creating
   near-duplicates.
 - Don't glossary the incidental: plain English used plainly is not a term of art.
+- **Terminology, not invocables.** The glossary holds *concepts*, not command
+  handles. A bare skill command (`/intake`, `/capture`, `/news`) does not get its
+  own entry — its canonical link is its own `SKILL.md`, and the *concept it enacts*
+  (e.g. [session capture](/glossary/session-capture.md)) is what earns a glossary
+  file. The [skill](/glossary/skill.md) *category* has one pointer entry; the
+  individual commands live in the [skills-registry policy](/meta/policy/skills-registry.md).
 - Definitions written here are agent statements; term files stay
   `verified: false` unless a claim gets grounded via the normal `verified_by`
   machinery.
