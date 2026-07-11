@@ -4,6 +4,15 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Added the session-init digest** — new tooling (`SecondBrain.SessionInit`,
+  `mix brain.session_init`) that scans open issues (`meta/issues/`), active
+  plans (`meta/plans/`), and dangling routing-ledger strands (`meta/threads/`)
+  into a markdown digest ending in a heuristic top-3 priority ranking (issues >
+  in-flight plans > open strands > paused/dangling strands > proposed plans;
+  strands deduped against docs they routed to). The SessionStart hook
+  (`.claude/hooks/session-start.sh`) now echoes the digest into each fresh
+  session's context, with an agent note to open the thread with a judged
+  priority appraisal. Covered by `test/second_brain/session_init_test.exs`.
 - **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
   — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
   thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
