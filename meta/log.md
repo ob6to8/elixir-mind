@@ -4,6 +4,18 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Refreshed [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md) in place**
+  (second `/create-pull-request` close; update-in-place per the capture skill) —
+  appended the post-PR-#39 exchanges verbatim: the squash-merge, the
+  commits-as-provenance question (no written policy found), the
+  squash-vs-true-merge trade-off analysis, the merge-strategy ratification, and
+  the `meta/todos/` digest extension. Four ledger rows added — one dangling:
+  operator to disable squash/rebase in the GitHub repo settings. Four new
+  regions tagged (path back-links to the policy, tutorial, skill, contract, and
+  tooling; no concept sinks). Threads index entry extended. Glossary pass added
+  [true merge](/glossary/true-merge.md) and [squash merge](/glossary/squash-merge.md)
+  as pointer entries to the
+  [reachability tutorial](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md).
 - **Session-init digest now scans `meta/todos/`** — `SecondBrain.SessionInit`
   gained open todos (`status: open`) as a fourth source, sectioned between open
   issues and active plans and ranked between in-progress and accepted plans in

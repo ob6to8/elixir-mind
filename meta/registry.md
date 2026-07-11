@@ -114,11 +114,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:aa0003` | [glossary/skill](/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
+| `sb:4a235a` | [glossary/squash-merge](/glossary/squash-merge.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |
 | `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |
+| `sb:a10e18` | [glossary/true-merge](/glossary/true-merge.md) | concept | false |
 | `sb:60d394` | [glossary/tutorial-type](/glossary/tutorial-type.md) | concept | false |
 | `sb:927eb2` | [glossary/typed-edge](/glossary/typed-edge.md) | concept | false |
 | `sb:36436d` | [glossary/vector-database](/glossary/vector-database.md) | concept | false |
