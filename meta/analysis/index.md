@@ -10,5 +10,9 @@ Each analysis is a `type: analysis` doc.
 
 ## Contents
 
-- [Top-down code review + documentation staleness audit (2026-07-11)](/meta/analysis/code-review-and-docs-staleness-audit.md) — a full review of the toolchain cross-referenced against every doc surface: two code defects confirmed (renderer fix landed; a materialize gap filed as an issue), one code-vs-policy contradiction and three stale doc claims fixed, five new flow docs produced as a byproduct; overall verdict — no structural drift.
 - [Would a vector DB improve recall as this bundle scales?](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) — a dedup-recall probe over the live corpus finds grep already misses existing concepts on natural-phrasing (semantic, not typographic) queries; recommends synonym-expanded intake dedup + a repeatable recall probe over any standalone vector DB.
+
+*(The 2026-07-11 code-review write-up was first filed here as an analysis,
+then retyped and moved to
+[meta/plans/code-review-toolchain-hardening.md](/meta/plans/code-review-toolchain-hardening.md)
+once its residue proved to be intended work rather than a settled judgment.)*

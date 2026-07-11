@@ -4,12 +4,20 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Review write-up retyped analysis → plan.** The code-review doc's residue
+  is intended work (three scoped work packages), so per the operator it moved
+  to [meta/plans/code-review-toolchain-hardening.md](/meta/plans/code-review-toolchain-hardening.md)
+  as a `type: plan`, `status: proposed` — findings kept as background, plus an
+  explicit scope decision (P1 two-directional materialize · P2 verifier
+  type-gate on `verified` · P3 five-item hygiene batch · a deliberate
+  out-of-scope list) and a build order. Both plan/analysis indexes updated.
 - **Top-down code review + docs staleness audit** — full pass over the
   toolchain (`lib/`, mix tasks, tests, CI, hooks, skills) cross-referenced
   against every documentation surface; findings, dispositions, and verdict
   filed as
-  [code-review-and-docs-staleness-audit](/meta/analysis/code-review-and-docs-staleness-audit.md)
-  (`type: analysis`). Fixes landed in the same change: the markdown renderer
+  [code-review-toolchain-hardening](/meta/plans/code-review-toolchain-hardening.md)
+  (filed as an analysis, retyped to a plan the same day — see above). Fixes
+  landed in the same change: the markdown renderer
   now leaves link syntax inside a code span literal (extraction order swapped;
   regression test added), `mix brain.evidence` no longer calls a
   resource-carrying concept "grounded" (aligned with

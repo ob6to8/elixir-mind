@@ -1,17 +1,23 @@
 ---
-type: analysis
-title: Top-down code review + documentation staleness audit (2026-07-11)
-description: A full review of the Elixir toolchain (lib, mix tasks, tests, CI, hooks, skills) cross-referenced against every documentation surface for staleness — verdict, the confirmed findings and their fixes, the minor observations left as notes, and the five flow docs the review produced as a byproduct.
-provenance: "Claude Code session, 2026-07-11 — operator-requested top-down review; staleness sweep partly delegated to a parallel read-only subagent, every reported finding independently re-verified"
-tags: [meta, analysis, code-review, staleness, tooling, flows]
+type: plan
+title: Code review toolchain hardening
+description: The 2026-07-11 top-down code review + docs staleness audit, retyped as a plan now that its residue is action — the review's findings and verdict as background, then the scoped hardening work it recommends (materialize orphan removal, a verifier type-gate on `verified`, a small hygiene batch) with explicit out-of-scope decisions and a build order.
+status: proposed
+provenance: "Claude Code session, 2026-07-11 — operator-requested top-down review; staleness sweep partly delegated to a parallel read-only subagent, every reported finding independently re-verified. Retyped from `type: analysis` at operator direction: the write-up boils down to action."
+tags: [meta, plan, code-review, staleness, tooling, route-tagging, verifier, flows]
 timestamp: 2026-07-11
 ---
 
-# Top-down code review + documentation staleness audit (2026-07-11)
+# Plan — code review toolchain hardening
 
-**Question.** Is the toolchain correct, and does the documentation still
-describe the system that actually exists? (Byproduct mandate: think in terms
-of `meta/flows/` and document undocumented flows along the way.)
+**Status:** `proposed` — the review itself is done and its inline fixes are
+landed; what awaits ratification is the remaining hardening scope (§3) and its
+build order (§4).
+
+**Question the review answered.** Is the toolchain correct, and does the
+documentation still describe the system that actually exists? (Byproduct
+mandate: think in terms of `meta/flows/` and document undocumented flows along
+the way.)
 
 **Verdict.** The system is in unusually good health. All gates were green at
 review start (79 tests after this review's addition; verify, contract,
@@ -26,7 +32,7 @@ registry header — checks out against the code as of `d830fd9`.
 
 ---
 
-## 1. Confirmed findings and their dispositions
+## 1. Background — findings already dispatched (done in the review change)
 
 ### F1 — Markdown renderer: link syntax inside a code span rendered live (fixed)
 
@@ -56,15 +62,14 @@ contradicted it. **Fix:** the note now reads "Capture — stores resource: …
 (trusted evidence, not a verifiable statement)."
 ([brain.evidence.ex](/lib/mix/tasks/brain.evidence.ex)).
 
-### F3 — `materialize` cannot remove orphaned excerpt blocks (filed, open)
+### F3 — `materialize` cannot remove orphaned excerpt blocks (filed → §3 P1)
 
 When a sink loses its **last** feeding thread, `run_checks/1` rightly fails on
 the orphan block, but `--materialize` never visits unfed sinks, so no tool
 path clears it — the only remedy is the hand-edit the section header forbids.
-Filed with reproduction and a design direction as
+Filed with reproduction as
 [route-tags-materialize-leaves-orphan-blocks](/meta/issues/route-tags-materialize-leaves-orphan-blocks.md);
-not fixed inline because whole-section deletion is a design decision
-(interacts with freeze-on-resolution, which is editorial today).
+this plan's P1 is its fix.
 
 ### F4–F6 — Stale documentation claims (all fixed)
 
@@ -86,10 +91,10 @@ log entries stay as written per the repo's own convention.
 
 ---
 
-## 2. Minor observations (noted, no action)
+## 2. Background — the minor observations (the raw material for §3)
 
-Code — all defensible as-is, recorded so a future session doesn't re-derive
-them:
+Code — recorded so a future session doesn't re-derive them; §3 decides which
+become work:
 
 - `Frontmatter` supports only inline `[a, b]` lists, not dash lists — by
   design (the schema says "inline YAML list"), but nothing *rejects* a dash
@@ -131,7 +136,105 @@ CI, the pages gate, and pre-commit.
 
 ---
 
-## 3. Byproduct: the flows genre grew from 2 to 7
+## 3. The work — scope decision (implement most, not all)
+
+The review's residue splits three ways: two substantive hardenings, a cheap
+hygiene batch, and a set of non-changes where the "defect" is actually a
+design stance worth keeping. **Not everything observed should be implemented**
+— the out-of-scope list is part of the decision.
+
+### P1 — `materialize/1` removes orphaned excerpt blocks (fixes the open issue)
+
+Make materialization a true projection of the current tags **in both
+directions**: also visit every sink that carries a
+`## Thread excerpts — route-tagged log` section but no longer appears in
+`feeding_pairs`, and remove the section (a sink that lost only *some* threads
+is already handled — the full-section rewrite drops stale blocks).
+
+**Design decision (settling the issue's open question): removal is
+unconditional, no flag.** The section header itself declares the log
+"generated … never hand-edit"; the tags are the single source of truth, so a
+vanished tag *must* vanish from the sink or the two sources diverge. The
+freeze-on-resolution concern is handled by review, not by the tool: removing a
+frozen matter's tag is the anomaly, and the PR diff showing the block deletion
+is where it gets caught — the same way every other generated-artifact change
+is reviewed.
+
+Deliverables: the `materialize/1` change; scenario-test extension in
+[capture_scenario_test.exs](/test/second_brain/capture_scenario_test.exs)
+(delete the only feeding region → materialize removes the section → all five
+checks green; plus the partial case pinning that a still-fed sink drops a
+stale block); mark the
+[issue](/meta/issues/route-tags-materialize-leaves-orphan-blocks.md)
+`resolved` and move it under Resolved in the issues index; update the
+[session-capture flow doc](/meta/flows/session-capture.md) if it states the
+one-directional behavior.
+
+### P2 — Verifier: `verified` only on statement types
+
+Enforce the [verification-grounding](/meta/policy/verification-grounding.md)
+rule that verification is **only for agent-authored statements**: a `verified`
+key (either value) on a concept whose `type` is not `claim`/`note`/`concept`
+becomes a verifier error. This converts an editorial rule into a structural
+one — the same procedural→structural direction as every other gate in this
+repo — and it is cheap (one `grounding_errors/1`-style clause plus tests).
+
+Pre-flight: scan the live registry for existing violations before enabling
+(none expected — the `verified` column is populated only by statements and
+glossary `concept`s today). Deliverables: the verifier clause; a red test in
+[registry_test.exs](/test/second_brain/registry_test.exs) or the intake
+scenario; a one-line update to the verifier rule list in
+[intake §7](/meta/flows/intake.md) and the
+[frontmatter-schema](/meta/policy/frontmatter-schema.md) policy's `verified`
+row if its wording needs the sharper edge (then `mix brain.contract`).
+
+### P3 — Hygiene batch (small, zero-risk, one commit)
+
+1. **Scope `ledger_doc_sinks/3` to the `## Routing` section** — parse rows
+   only between that heading and the next `##`, eliminating the
+   false-positive class entirely (it's the flow's own data model: the ledger
+   is a section, not "any table").
+2. **Align the section terminators** — make `parse_log_section/1` stop at
+   `#` or `##` like `replace_section/2`, removing the asymmetry.
+3. **`mix brain.id` tolerates CRLF** — normalize like `Frontmatter` does
+   before matching the opening `---`.
+4. **`mix brain.route_tags` closing line acknowledges warnings** — "… all
+   check out (1 warning above)" when any `:warn` result printed.
+5. **`pages.yml` comment precision** — "the same *bundle-integrity* checks CI
+   runs" (tests/format intentionally not repeated).
+
+### Out of scope — observed, deliberately not implemented
+
+- **Dash-list rejection in `Frontmatter`** — tolerant-consumer is OKF policy;
+  a rejection would be a conformance change, not a fix. Revisit only if a
+  silent dash-list actually bites.
+- **4-dash `hr`, setext headings, and other renderer generality** — the
+  renderer is deliberately scoped to what the bundle uses; generality without
+  a consumer is dead weight.
+- **`Site.json_string/1` control-char escaping** — unreachable through
+  `plain_text/1`; would be code without an input.
+- **An eval layer over the judgment steps** — already deferred with rationale
+  in [flows-genre-and-scenario-testing §7](/meta/plans/flows-genre-and-scenario-testing.md);
+  nothing in this review changes that calculus.
+
+---
+
+## 4. Build order (once ratified)
+
+1. **P1** — materialize both directions + scenario extension; resolve the
+   issue; gate suite.
+2. **P2** — pre-flight scan, verifier clause + red test, doc/policy touch-ups,
+   `mix brain.contract` if a policy changed; gate suite.
+3. **P3** — the five hygiene items in one commit; gate suite.
+4. Update this plan to `done`, dated entry in `meta/log.md`.
+
+Each step lands independently green; P1 is first because it closes the only
+open defect. Estimated total: small — the largest piece (P1) is one function
+plus tests.
+
+---
+
+## 5. Byproduct of the review: the flows genre grew from 2 to 7
 
 The review walked every multi-step action of the brain; the five that lacked a
 flow doc now have one, each following the genre's three-artifact model and
@@ -155,10 +258,3 @@ are among them. The pre-existing flows' naming convention
 (`<flow>_scenario_test.exs`) was not retrofitted onto contract/site — their
 existing module tests already pin those spines, and the new flow docs say so
 explicitly rather than demanding duplicate test files.
-
-**Recommendation.** Two follow-ups worth an operator decision: (1) settle the
-orphan-block design in F3 and extend `materialize/1` accordingly; (2) decide
-whether the verifier should enforce the statement-type restriction on
-`verified` (cheap to add, but it hardens an editorial rule into a gate).
-Everything else is healthy; no structural drift found between the contract,
-the policies, the tooling, and the tree.

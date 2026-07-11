@@ -12,6 +12,7 @@ record of what was decided and why.
 
 ## Proposed
 
+- [Code review toolchain hardening](/meta/plans/code-review-toolchain-hardening.md) — the 2026-07-11 top-down review + staleness audit (findings and verdict kept as background) and the scoped work it recommends: two-directional `materialize` (orphan-block removal), a verifier type-gate on `verified`, and a five-item hygiene batch — with an explicit out-of-scope list. `status: proposed`.
 - [Epistemic overlay: the four operations as a frontmatter-native graph over concepts](/meta/plans/epistemic-overlay.md) — promote the latent attestation/aggregation/inference/prescription structure to a first-class, queryable layer over existing concepts, with an integrity-checking `mix brain.graph`; explicitly bounds out atomization and strength-as-count. `status: proposed`.
 
 ## Accepted / In progress
