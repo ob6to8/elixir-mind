@@ -4,6 +4,37 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossaried the epistemic prior-art docs** — ran `/add-to-glossary` over the
+  five references and three source captures filed today, adding **29 term
+  files** under [`/glossary/`](/glossary/index.md): the TMS cluster
+  ([truth maintenance system](/glossary/truth-maintenance-system.md),
+  [justification](/glossary/justification.md) (multi-sense),
+  [assumption](/glossary/assumption.md) (multi-sense),
+  [non-monotonic reasoning](/glossary/non-monotonic-reasoning.md),
+  [dependency-directed backtracking](/glossary/dependency-directed-backtracking.md),
+  [well-founded support](/glossary/well-founded-support.md),
+  [environment (ATMS)](/glossary/environment-atms.md),
+  [label (ATMS)](/glossary/label-atms.md), [nogood](/glossary/nogood.md),
+  [paraconsistency](/glossary/paraconsistency.md)); argumentation
+  ([warrant](/glossary/warrant.md), [defeasibility](/glossary/defeasibility.md),
+  [Toulmin model](/glossary/toulmin-model.md),
+  [assurance case](/glossary/assurance-case.md),
+  [Goal Structuring Notation](/glossary/goal-structuring-notation.md)); logic
+  ([entailment](/glossary/entailment.md),
+  [semidecidability](/glossary/semidecidability.md),
+  [soundness and completeness](/glossary/soundness-and-completeness.md),
+  [description logic](/glossary/description-logic.md),
+  [ontology](/glossary/ontology.md),
+  [first-order logic](/glossary/first-order-logic.md), [OWL](/glossary/owl.md));
+  and evals ([atomic fact](/glossary/atomic-fact.md),
+  [decontextualization](/glossary/decontextualization.md),
+  [LLM-as-judge](/glossary/llm-as-judge.md), [F1@K](/glossary/f1-at-k.md),
+  [FActScore](/glossary/factscore.md), [SAFE](/glossary/safe.md),
+  [decompose-then-verify](/glossary/decompose-then-verify.md)). Nine are
+  pointer entries deferring to the filed references. Glossary now at 107
+  terms. Also amended `/summarize-technical` (operator-ratified): key-term
+  names now link to existing glossary entries while keeping their
+  source-local definitions.
 - **Three primary-source captures filed** (`type: source`), grounding the TMS
   and GSN references in their actual primary documents rather than
   encyclopedic summaries:

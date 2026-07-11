@@ -11,6 +11,9 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [analysis (type)](/glossary/analysis-type.md) — controlled type: a reasoned point-in-time judgment on a question, with findings + recommendation
 - [approval gate](/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
+- [assumption](/glossary/assumption.md) — a belief held provisionally, hence retractable: TMS (rests on absence of belief), ATMS (primitive datum), and GSN (unsubstantiated statement) senses
+- [assurance case](/glossary/assurance-case.md) — a structured, evidence-backed argument that a system satisfies a property; the regulator-facing deliverable, commonly in GSN
+- [atomic fact](/glossary/atomic-fact.md) — the decomposition unit of factuality evaluation: one independently checkable statement extracted from a longer generation
 - [bipartite graph](/glossary/bipartite-graph.md) — nodes split into two disjoint sets, edges only across the split; in belief graphs, belief vs. justification nodes
 - [blast radius (of a retracted premise)](/glossary/blast-radius.md) — everything transitively dependent on a premise, needing re-examination when it falls; a staleness signal, not a truth score
 - [candidate feed](/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
@@ -21,31 +24,50 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [consensus core](/glossary/consensus-core.md) — across compared belief systems, the beliefs every system supports and none attacks; what survives conflict examination
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
+- [decompose-then-verify](/glossary/decompose-then-verify.md) — atomize a long output, verify each statement against a source, aggregate mechanically; validated by FActScore/SAFE
+- [decontextualization](/glossary/decontextualization.md) — rewriting an extracted statement to be self-contained, so atomic claims keep their meaning out of context
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
+- [defeasibility](/glossary/defeasibility.md) — a claim or inference that holds subject to exceptions — good until defeated, not valid absolutely (Toulmin's rebuttal slot)
+- [dependency-directed backtracking](/glossary/dependency-directed-backtracking.md) — on contradiction, trace the justification records back to the culprit assumptions instead of undoing choices chronologically
 - [dependency-free](/glossary/dependency-free.md) — relying only on the standard library — no external packages, so it runs offline in restricted sandboxes
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
+- [description logic](/glossary/description-logic.md) — decidable FOL fragments for concept/role/individual reasoning; the formal basis of OWL (SROIQ)
 - [deterministic spine](/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
+- [entailment (logical consequence)](/glossary/entailment.md) — premises force the conclusion in every interpretation; the question each belief-graph support edge poses
+- [environment (ATMS)](/glossary/environment-atms.md) — a set of assumptions read as their conjunction; its consistent closure (a context) models one coherent worldview among many
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
+- [F1@K](/glossary/f1-at-k.md) — SAFE's factuality aggregate: harmonic mean of factual precision and recall against a facts-per-response target K
+- [FActScore](/glossary/factscore.md) — the percentage of a generation's atomic facts supported by a knowledge source (Min et al., EMNLP 2023)
 - [fast-forward merge](/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
 - [featuring](/glossary/featuring.md) — how `/news` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
+- [first-order logic (FOL)](/glossary/first-order-logic.md) — the standard formal language of objects, predicates, and quantifiers; sound and complete but only semidecidable
 - [flow (touch-sequence)](/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
 - [GitHub Flavored Markdown (GFM)](/glossary/github-flavored-markdown.md) — GitHub's CommonMark superset (tables, task lists, strikethrough, autolinks)
 - [GitHub Pages](/glossary/github-pages.md) — GitHub's static-site hosting, publishing a repo or build artifact to a public URL via Actions
+- [Goal Structuring Notation (GSN)](/glossary/goal-structuring-notation.md) — the graphical standard for assurance cases: goals → strategies → evidence, linked by SupportedBy/InContextOf
 - [golden test (snapshot test)](/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
 - [graduation](/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
 - [issue (type)](/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
+- [justification](/glossary/justification.md) — the recorded license for a belief; distinct TMS (derivation record), GSN (rationale annotation), and Toulmin senses
+- [label (ATMS)](/glossary/label-atms.md) — the minimal consistent environments attached to a belief, kept sound/complete/minimal so context membership is a subset test
+- [LLM-as-judge](/glossary/llm-as-judge.md) — model judgment substituting for human annotation, validated by measured agreement with human raters
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
 - [methodology (type)](/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
 - [minimal inconsistent subset](/glossary/minimal-inconsistent-subset.md) — a jointly contradictory belief set whose every proper subset is consistent; the smallest witness localizing a conflict
 - [mix task](/glossary/mix-task.md) — a named `mix` command defined under `Mix.Tasks` (e.g. `mix brain.verify`)
+- [nogood](/glossary/nogood.md) — an assumption set discovered jointly contradictory, recorded so no context is ever built on it again
 - [non-bundle namespace](/glossary/non-bundle-namespace.md) — a top-level dir excluded from the registry — no `sb:` ids, skipped by verify (e.g. `meta/`, `inbox/`)
+- [non-monotonic reasoning](/glossary/non-monotonic-reasoning.md) — adding information can remove conclusions: beliefs may rest on the absence of other beliefs
+- [ontology (knowledge representation)](/glossary/ontology.md) — a machine-readable domain vocabulary (classes, properties, individuals, axioms) with formally defined meaning
 - [operating contract](/glossary/operating-contract.md) — the root `CLAUDE.md` auto-loaded each session; a compiled artifact, never hand-edited
+- [OWL (Web Ontology Language)](/glossary/owl.md) — the W3C standard for publishing ontologies: description-logic semantics, RDF exchange, EL/QL/RL profiles
+- [paraconsistency](/glossary/paraconsistency.md) — tolerating contradiction without explosion, e.g. per-context in an ATMS; what multi-document belief comparison needs
 - [parse-the-log](/glossary/parse-the-log.md) — capturing a session by parsing the host log file (exact delivered text) vs. reconstructing from context
 - [plan (type)](/glossary/plan-type.md) — controlled type: a one-off design/decision record for an intended change, with a status
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
@@ -62,22 +84,29 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [route tag](/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
 - [Routine](/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
 - [routing ledger](/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content
+- [SAFE (Search-Augmented Factuality Evaluator)](/glossary/safe.md) — split a response into facts, decontextualize, then search-and-reason to label each (Wei et al., NeurIPS 2024)
 - [scenario test](/glossary/scenario-test.md) — an end-to-end test driving a whole workflow against a realistic fixture and asserting on final state
 - [self-consistency check](/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
 - [semantic search](/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
+- [semidecidability](/glossary/semidecidability.md) — confirmable on the "yes" side only: proof search finds real entailments but may run forever on non-entailments
 - [session capture](/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
 - [SessionStart hook](/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain)
 - [sink (route-tag sink)](/glossary/route-tag-sink.md) — the doc a route tag feeds; an `sb:` id sink accretes a log, a path back-link does not
 - [skill namespacing](/glossary/skill-namespacing.md) — prefixing skill names to resolve as a set; in Claude Code only plugin skills are auto-namespaced
 - [skill-to-skill delegation](/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
+- [soundness and completeness](/glossary/soundness-and-completeness.md) — a proof system derives only valid formulas / all valid formulas; Gödel 1929 gave FOL both
 - [stable id (`sb:` id)](/glossary/stable-id.md) — the opaque, immutable `sb:` + 6-hex identifier every bundle concept carries
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [thread doc](/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
+- [Toulmin model](/glossary/toulmin-model.md) — claim/grounds/warrant/backing/qualifier/rebuttal: justification, not formal inference, as argument's first-class object
 - [tree is the taxonomy](/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
+- [truth maintenance system (TMS)](/glossary/truth-maintenance-system.md) — bookkeeping that records beliefs with their justifications and revises exactly the affected beliefs; JTMS and ATMS variants
 - [tutorial (type)](/glossary/tutorial-type.md) — controlled type: a long-form read-start-to-finish explainer (the why/how), under `meta/tutorials/`
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [ungrounded inference](/glossary/ungrounded-inference.md) — a derived belief whose justification chain never reaches an evidence leaf; the primary defect an epistemic integrity check flags
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
 - [verification grounding](/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
 - [verified_by](/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)
+- [warrant](/glossary/warrant.md) — Toulmin's license authorizing the move from grounds to claim; what a per-edge entailment judgment actually evaluates
+- [well-founded support](/glossary/well-founded-support.md) — the anti-circularity condition: every held belief traces to premises through non-circular arguments
