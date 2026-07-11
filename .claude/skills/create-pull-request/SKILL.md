@@ -80,6 +80,10 @@ still holds for every other flow.)
   environment has **no `gh` CLI**). Set the base to the repo's default branch unless
   the operator named another.
 - Report the PR URL.
+- **Report the captured thread doc's assigned name.** After everything is done,
+  state the `meta/threads/YYYY-MM-DD-<slug>.md` path that step 1 wrote (or note
+  that capture was skipped), so the operator has the record's final name without
+  digging for it.
 
 ### 7. Offer to watch it
 - After opening, offer to monitor the PR for CI failures and review comments via

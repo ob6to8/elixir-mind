@@ -2,6 +2,18 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-11
+
+- **Resolved: skill commands stay out of the glossary** (operator-ratified) —
+  settled the paused matter from the
+  [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).
+  Bare skill-command handles (`/intake`, `/capture`, `/news`, …) do **not** get
+  glossary entries: a command's canonical link is its own `SKILL.md`, and the
+  *concept* a skill enacts (e.g. [session capture](/glossary/session-capture.md))
+  is what earns a file. Added one [skill](/glossary/skill.md) (`sb:aa0003`)
+  category pointer entry and codified the principle as a new `/add-to-glossary`
+  guardrail ("terminology, not invocables"). Glossary now 69 terms.
+
 ## 2026-07-10
 
 - **Backfilled the glossary from the remaining thread docs** — ran

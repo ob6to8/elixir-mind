@@ -110,6 +110,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:98acc0` | [glossary/semantic-search](/glossary/semantic-search.md) | concept | false |
 | `sb:243d56` | [glossary/session-capture](/glossary/session-capture.md) | concept | false |
 | `sb:71f38a` | [glossary/sessionstart-hook](/glossary/sessionstart-hook.md) | concept | false |
+| `sb:aa0003` | [glossary/skill](/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [glossary/skill-namespacing](/glossary/skill-namespacing.md) | concept | false |
 | `sb:7c0b1d` | [glossary/skill-to-skill-delegation](/glossary/skill-to-skill-delegation.md) | concept | false |
 | `sb:4d71d3` | [glossary/stable-id](/glossary/stable-id.md) | concept | false |

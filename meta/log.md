@@ -11,6 +11,11 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   backfill region to the glossary hub (`sb:0b648f`); `mix brain.route_tags
   --materialize` appended its excerpt block. Left one paused matter: whether bare
   skill-command names deserve glossary pointer entries.
+- **Resolved that paused matter** — skill commands stay out of the glossary
+  (terminology, not invocables). Added a new "terminology, not invocables"
+  guardrail to [`.claude/skills/add-to-glossary/SKILL.md`](/.claude/skills/add-to-glossary/SKILL.md),
+  filed the [skill](/glossary/skill.md) (`sb:aa0003`) category pointer entry, and
+  flipped the thread's ledger row to `closed`.
 
 ## 2026-07-10
 

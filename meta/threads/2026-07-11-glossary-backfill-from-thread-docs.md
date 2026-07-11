@@ -35,16 +35,19 @@ existing entries the threads also touched. Ids were minted (`mix brain.id`),
 [`/glossary/index.md`](/glossary/index.md) regenerated alphabetically, and the
 root `log.md` updated; `mix brain.verify` and `mix brain.route_tags` stayed
 green. The work landed as **PR #37**, squash-merged to `main` (`d830fd9`) after
-CI `verify` passed. One matter is left open: whether bare skill-command names
-(`/intake`, `/capture`, `/news`) should get glossary pointer entries too — they
-were deliberately left out as commands-not-terms, pending the operator's call.
+CI `verify` passed. A follow-up resolved the one open matter: bare skill-command
+names (`/intake`, `/capture`, `/news`) stay **out** of the glossary — a command's
+canonical link is its own `SKILL.md`, and the *concept* a skill enacts (not its
+handle) is what earns an entry. The [skill](/glossary/skill.md) category got a
+single pointer entry and the principle was codified as an `/add-to-glossary`
+guardrail.
 
 ## Routing
 
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
 | Backfilling the glossary from the eleven unprocessed thread docs — 46 new + 15 pointer entries, 7→68 terms, deduped across threads | closed | [Glossary hub](/glossary.md) | - |
-| Whether bare skill-command names (`/intake`, `/capture`, `/news`) deserve glossary pointer entries | paused | `unrouted` | Add pointer entries for the skill commands, or keep them out as commands-not-terms-of-art? |
+| Whether bare skill-command names (`/intake`, `/capture`, `/news`) deserve glossary pointer entries | closed | `unrouted` | - |
 | PR #37 lifecycle — open, CI `verify`, squash-merge to `main` | closed | `unrouted` | - |
 
 ## User
