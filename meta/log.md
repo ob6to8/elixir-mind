@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **New skill `/elaborate`.** Unpacks a technical **phrase or short passage**
+  (from the conversation, a doc, a commit message, or pasted text): quotes the
+  target, then three parts — a jargon-free restatement, definitions of the
+  terms it uses (linking [`/glossary/`](/glossary/index.md) files and defining
+  concepts instead of re-inventing them), and a less technical walkthrough of
+  the concepts and actions described. Chat-only: it files nothing; persisting
+  a definition remains an operator-invoked `/add-to-glossary`. The
+  phrase-scale sibling of `/summarize-technical` (document-scale). Registered
+  in [skills-registry](/meta/policy/skills-registry.md); `CLAUDE.md`
+  re-rendered via `mix brain.contract`.
 - **Review write-up retyped analysis → plan.** The code-review doc's residue
   is intended work (three scoped work packages), so per the operator it moved
   to [meta/plans/code-review-toolchain-hardening.md](/meta/plans/code-review-toolchain-hardening.md)

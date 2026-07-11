@@ -306,6 +306,12 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   paper/article/spec: a plain-language summary, a glossary of its key technical terms,
   then an integrated technical summary reusing those terms. See
   `.claude/skills/summarize-technical/SKILL.md`.
+- **`/elaborate`** — unpack a technical **phrase or short passage** (from the
+  conversation, a doc, a commit message, or pasted text): define the terms it uses and
+  give a less technical overview of the concepts and actions it describes — in chat
+  only, filing nothing (link glossary terms that already exist; hand off to
+  `/add-to-glossary` to persist new ones). The phrase-scale sibling of
+  `/summarize-technical`. See `.claude/skills/elaborate/SKILL.md`.
 - **`/add-to-glossary`** — scan a persisted thread (`meta/threads/`), a paper, a post,
   or a filed concept; extract the technical terms it actually uses; and merge distilled
   definitions into the glossary — **one concept file per term** under
