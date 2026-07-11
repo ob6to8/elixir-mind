@@ -4,6 +4,18 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Filed [retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)**
+  (`status: accepted`, `priority: 1`; operator-ratified) — remove root
+  `log.md`, `meta/log.md`, and `inbox/log.md` and every mandate to maintain
+  them; git's true-merge commit graph is the single provenance layer
+  (generated route-tagged excerpt logs are out of scope and stay). Prompted
+  by an agent citing a stale log entry as current policy. Alongside it,
+  `SecondBrain.SessionInit` gained an integer `priority:` frontmatter
+  override that pins a flagged issue/todo/plan above every heuristic class
+  in the digest's top-3 (documented in the
+  [session-init digest](/glossary/session-init-digest.md) entry; tested).
+  This entry is, fittingly, expected to be one of the last of its kind.
+
 - **Third-close refresh of [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
   — appended the PR #42 exchanges verbatim (open, conflicted true merge
   `9ad1d4e`, the operator's settings confirmation and its ledger flip), one new

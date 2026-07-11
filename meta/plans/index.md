@@ -17,7 +17,7 @@ record of what was decided and why.
 
 ## Accepted / In progress
 
-_(none yet)_
+- [Retire the hand-kept chronological logs (log.md) in favor of git history](/meta/plans/retire-hand-kept-logs.md) — remove root `log.md`, `meta/log.md`, and `inbox/log.md` and every policy/skill mandate to maintain them; git's true-merge commit graph is the single provenance layer. Keeps the generated route-tagged excerpt logs. `status: accepted`, `priority: 1`.
 
 ## Done / Superseded
 
