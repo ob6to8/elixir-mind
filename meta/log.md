@@ -4,6 +4,25 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Captured [`2026-07-11-branch-deletion-policy-and-contract-as-abstraction`](/meta/threads/2026-07-11-branch-deletion-policy-and-contract-as-abstraction.md)**
+  — this session's thread doc, closing out the branch: the git-branch-deletion
+  policy, the orphaned-branches cleanup (deletion 403-blocked; first todo), the
+  render-contract flow doc + scenario test, and the contract-as-abstraction
+  dialogue. Nine-row routing ledger (three open: branch deletion, the six kept
+  branches, the skills-compile plan). Nine regions tagged; three feed the
+  [compiled contract](/glossary/compiled-contract.md) sink (`sb:23f009`), whose
+  first excerpt-log blocks `mix brain.route_tags --materialize` appended; the
+  rest are path back-links to the policy, issue, todo, flow doc, test, analysis,
+  plan, and preamble. Ran as step 1 of `/create-pull-request`.
+- **Glossaried that thread** (step 2 of `/create-pull-request`) — four new terms:
+  [rendered aggregation](/glossary/rendered-aggregation.md) (`sb:1dbcc9`),
+  [mounting point (harness)](/glossary/mounting-point.md) (`sb:334e60`),
+  [orphaned branch](/glossary/orphaned-branch.md) (`sb:a9113e`), and the
+  [todo (type)](/glossary/todo-type.md) pointer entry (`sb:d7e3c5`). Two
+  reconciliations: [operating contract](/glossary/operating-contract.md) gained
+  the binds-agents-not-operator nuance and the role-vs-mounting-point framing;
+  [compiled contract](/glossary/compiled-contract.md) gained this thread's
+  citation (its body was already elaborated earlier in the session).
 - **Preamble: the contract binds agents, not the operator** — one sentence added
   to [`meta/preamble.md`](/meta/preamble.md) stating the bound party explicitly
   (chosen over renaming to "Agent-contract"); `CLAUDE.md` recompiled.
