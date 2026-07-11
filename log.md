@@ -4,6 +4,14 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossaried the [doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)**
+  (`/add-to-glossary` via `/create-pull-request`) — no new terms cleared the bar
+  (the session's two new terms, [doctrine](/glossary/doctrine.md) and
+  [policy (type)](/glossary/policy-type.md), were already filed during the session
+  itself); appended *Seen in:* citations to those two and to
+  [typed edge](/glossary/typed-edge.md), whose type-an-edge-only-for-machines
+  principle decided the cross-linking recommendation.
+
 - **Codified the glossary cross-linking convention** (operator-ratified) in
   `/add-to-glossary`: link related terms *in the definition prose* when the
   relationship can be stated; fall back to a `*See also:*` line (max 3–4 term
