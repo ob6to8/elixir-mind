@@ -30,6 +30,47 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
   (`sb:8b9548`, git); and
   [State of AI Coding 2026](/SWE/testing/state-of-ai-coding-2026.md) (`sb:49eae4`,
   testing, relates to `sb:a5ea86`). All verify; registry recompiled.
+- **Glossaried the [doctrine-vs-policy thread](/meta/threads/2026-07-11-doctrine-vs-policy-and-glossary-cross-linking.md)**
+  (`/add-to-glossary` via `/create-pull-request`) — no new terms cleared the bar
+  (the session's two new terms, [doctrine](/glossary/doctrine.md) and
+  [policy (type)](/glossary/policy-type.md), were already filed during the session
+  itself); appended *Seen in:* citations to those two and to
+  [typed edge](/glossary/typed-edge.md), whose type-an-edge-only-for-machines
+  principle decided the cross-linking recommendation.
+
+- **Codified the glossary cross-linking convention** (operator-ratified) in
+  `/add-to-glossary`: link related terms *in the definition prose* when the
+  relationship can be stated; fall back to a `*See also:*` line (max 3–4 term
+  links, after *Seen in:*) only for genuine adjacency no sentence connects.
+  Ordinary untyped prose links per the cross-linking policy — deliberately
+  **not** a `related:` typed-edge frontmatter field, which is reserved for
+  machine-traversed relations like `verified_by`. First applied to the recall
+  cluster: inline links in [recall probe](/glossary/recall-probe.md) ↔
+  [recall@k](/glossary/recall-at-k.md), and a *See also* line on
+  [recall](/glossary/recall.md).
+
+- **Added [doctrine](/glossary/doctrine.md) to the glossary** (operator-directed:
+  "used here") — the governance layer of guiding principles (the "why" shaping
+  judgment), distinct from [policy](/glossary/policy-type.md)'s enforceable rules;
+  notes that this brain has no `doctrine` type and its closest analogue is the
+  preamble + compiled operating contract read as a whole. Glossary now 71 terms.
+
+- **Added the missing [policy (type)](/glossary/policy-type.md) glossary entry**
+  (`sb:fa15e7`) — a pointer entry deferring to the
+  [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md), filling
+  the gap where every other governance type (`plan`, `issue`, `methodology`,
+  `tutorial`, `analysis`) already had one. Prompted by an operator question on
+  *doctrine* vs. *policy*: the brain's vocabulary uses `policy` for standing
+  governance rules and does not use the term *doctrine* anywhere; no `doctrine`
+  entry was added (nothing in the bundle uses the term — the glossary defines
+  terms sources actually use). Glossary now 70 terms.
+
+- **Glossary: session-init terminology** — scanned the
+  [session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)
+  per `/create-pull-request`'s glossary step. Added
+  [session-init digest](/glossary/session-init-digest.md) (`sb:6f2442`);
+  extended [SessionStart hook](/glossary/sessionstart-hook.md) with the
+  context-injection nuance (hook stdout briefs the agent) and a third citation.
 - **Resolved: skill commands stay out of the glossary** (operator-ratified) —
   settled the paused matter from the
   [glossary-backfill thread](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md).
