@@ -4,6 +4,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Glossary: routing vocabulary** (operator-invoked `/add-to-glossary`:
+  "strand, ledger") — added [strand](/glossary/strand.md) (`sb:bb2968`);
+  merged *ledger* into the existing
+  [routing ledger](/glossary/routing-ledger.md) entry (short-form note +
+  strand cross-link) rather than creating a duplicate file; and stated the
+  session-init priority ranking order in the
+  [session-init digest](/glossary/session-init-digest.md) definition, pointing
+  at its canonical source (`@weights` in `lib/second_brain/session_init.ex`).
+  Glossary at 86 terms.
+
 - **Glossaried the
   [deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md)**
   (`/add-to-glossary` via `/create-pull-request`) — four new terms:
