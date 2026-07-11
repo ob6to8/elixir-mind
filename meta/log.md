@@ -4,6 +4,16 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Branch cleanup ratified; deletion blocked agent-side; first todo filed** —
+  the operator ratified deleting the 15 merged branches and keeping the 6
+  unmerged. All 15 re-verified as merged, but `git push --delete` returns HTTP
+  403 in this environment (the credential can't delete refs), so the deletion is
+  recorded as an operator step in the
+  [issue](/meta/issues/orphaned-remote-branches-cleanup.md) with the exact
+  command. Filed the first `type: todo` —
+  [triage the six kept unmerged branches](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md)
+  — via `/todo`, detailing what each branch holds and what "done" means; the
+  issue's resolution criteria now defer unmerged-branch disposition to it.
 - **Merged `main` into the branch-deletion-policy branch and re-audited the
   [orphaned-branches issue](/meta/issues/orphaned-remote-branches-cleanup.md)**
   — three formerly-stranded branches landed in the meantime (PR #33
