@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Session-init digest now scans `meta/todos/`** — `SecondBrain.SessionInit`
+  gained open todos (`status: open`) as a fourth source, sectioned between open
+  issues and active plans and ranked between in-progress and accepted plans in
+  the heuristic top-3 (an explicitly recorded task outranks work awaiting a
+  decision). The [glossary definition](/glossary/session-init-digest.md) was
+  reconciled to the four-source list. Tests extended.
 - **Ratified the [merge-strategy policy](/meta/policy/merge-strategy.md)**
   (operator-ratified) — PRs land on `main` via a **true merge commit** only;
   squash- and rebase-merges are disallowed because the commit graph is a
