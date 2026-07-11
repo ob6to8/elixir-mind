@@ -78,7 +78,7 @@ and the compile is pure function of the sources.
 | 3 | agent | Update `meta/policy/index.md` if a doc was added/renamed | `meta/policy/index.md` | editorial |
 | 4 | tool | `mix brain.contract` — load all non-superseded policies, group by section, sort by `(section, order, id)`, render banner + preamble + sections + trace links | `CLAUDE.md` | test (render shape) |
 | 5 | tool | `mix brain.contract --check` — byte-compare a fresh render against disk | — (reads) | **tool** + CI |
-| 6 | agent | Dated entry in `meta/log.md`; commit the policy source **and** the regenerated `CLAUDE.md` together | `meta/log.md` | editorial |
+| 6 | agent | Commit the policy source **and** the regenerated `CLAUDE.md` together, with the change narrative in the commit message (no hand-kept log) | git objects | editorial |
 
 Steps 4–5 are the spine; CI (`ci.yml`), the Pages deploy gate (`pages.yml`),
 and the pre-commit hook all run step 5, so a hand-edited or stale `CLAUDE.md`

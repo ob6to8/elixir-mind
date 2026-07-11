@@ -108,9 +108,10 @@ doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
 3. **Write parts 1–3 in order** and deliver them in chat. Part 1 stays
    jargon-free; part 3 may use a term once part 2 has defined it.
 4. **Persist the doc** under `meta/elaborations/<slug>.md` (or merge into the
-   existing doc for that phrase), then maintain the reserved files: add/update
-   the entry in `meta/elaborations/index.md` (one bulleted link + one-line
-   description) and append a dated entry to `meta/log.md`.
+   existing doc for that phrase), then add/update the entry in
+   `meta/elaborations/index.md` (one bulleted link + one-line description).
+   The change narrative belongs in the commit message — there is no hand-kept
+   `log.md`.
 5. **Offer glossary persistence, don't perform it.** If part 2 produced
    definitions the glossary lacks and they seem durably useful, mention that
    `/add-to-glossary` can file them per-term — but only the operator's say-so

@@ -77,8 +77,8 @@ operator already said "open a PR" is friction without safety.
 | # | Actor | Action | Files touched | Checked by |
 |---|-------|--------|---------------|------------|
 | 1 | operator | Invoke `/create-pull-request` — this *is* the PR authorization; there is no later confirmation | — | — |
-| 2 | agent+tool | Run [`/capture`](/meta/flows/session-capture.md) to completion (thread doc, ledger, route tags, `mix brain.route_tags --materialize` + check) | `meta/threads/…`, fed sinks, `meta/threads/index.md`, `meta/log.md` | that flow's scenario + gates |
-| 3 | agent+tool | Run [`/add-to-glossary`](/meta/flows/add-to-glossary.md) on the thread doc from step 2 | `glossary/*`, `meta/registry.md`, `log.md` | that flow's spine |
+| 2 | agent+tool | Run [`/capture`](/meta/flows/session-capture.md) to completion (thread doc, ledger, route tags, `mix brain.route_tags --materialize` + check) | `meta/threads/…`, fed sinks, `meta/threads/index.md` | that flow's scenario + gates |
+| 3 | agent+tool | Run [`/add-to-glossary`](/meta/flows/add-to-glossary.md) on the thread doc from step 2 | `glossary/*`, `meta/registry.md` | that flow's spine |
 | 4 | agent | Set `thread:` (bundle-absolute path of the step-2 thread doc) in each `meta/elaborations/` doc this session created or updated — the final metadata motion on an elaboration; never retro-link older docs | `meta/elaborations/*.md` | editorial |
 | 5 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
 | 6 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |

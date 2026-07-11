@@ -60,7 +60,15 @@ Reserved filenames (any directory level):
 - **`index.md`** — directory listing for progressive disclosure. Markdown sections
   with bulleted links + one-line descriptions. **No frontmatter** — except the
   bundle-root `index.md`, which carries only `okf_version: "0.1"`.
-- **`log.md`** — chronological change history, ISO 8601 date headings, newest first.
+- **`log.md`** — reserved by OKF (chronological change history; tolerate one when
+  consuming a foreign bundle), but **this bundle does not keep hand-written logs**:
+  the true-merge commit graph is the single provenance layer (see the
+  merge-strategy policy and the
+  [retire-hand-kept-logs plan](/meta/plans/retire-hand-kept-logs.md)). Do not
+  create `log.md` files or append log entries; the change narrative belongs in
+  commit messages. (The generated `## Thread excerpts — route-tagged log`
+  sections inside concepts are unrelated — they are compiled, CI-verified
+  artifacts and stay.)
 
 _Source: [`meta/policy/reserved-filenames.md`](/meta/policy/reserved-filenames.md)_
 
@@ -98,8 +106,8 @@ The taxonomy-evolution protocol (important):
   a change to the *shape* of the brain → the agent **proposes it and waits for the
   operator to ratify** before creating it. Explain the proposed name, where it
   sits, and why the existing tree doesn't fit.
-- On creation, add each new directory's `index.md`, record it in the nearest
-  `log.md`, and list new top-level dirs in the root `index.md`.
+- On creation, add each new directory's `index.md` and list new top-level dirs
+  in the root `index.md`.
 
 _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-evolution-protocol.md)_
 
@@ -116,7 +124,7 @@ _Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)
 
 **Update in place; don't fragment.** Before creating a file, **search the bundle**
 for an existing concept on the same subject. If one exists, update it (merge new
-info, bump `timestamp`, add a `log.md` entry) instead of creating a near-duplicate.
+info, bump `timestamp`) instead of creating a near-duplicate.
 
 _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
@@ -142,7 +150,9 @@ _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-a
 _Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
 
 **Maintain the reserved files**: after filing, update the directory's `index.md`
-(create it if missing) and append a dated entry to `log.md`.
+(create it if missing). The change itself is recorded by the commit — write the
+commit message at the semantic level ("intake X", "ratify Y"); there is no
+`log.md` to append to (see the reserved-filenames policy).
 
 _Source: [`meta/policy/maintain-reserved-files.md`](/meta/policy/maintain-reserved-files.md)_
 
@@ -170,10 +180,29 @@ the session ends.
   · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
   decision history is the point.
 - **Reserved files.** After adding or updating a plan, update
-  [`meta/plans/index.md`](/meta/plans/index.md) and append a dated entry to the
-  nearest `log.md`, same as any filed document.
+  [`meta/plans/index.md`](/meta/plans/index.md), same as any filed document.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
+
+**Merge with a true merge commit; never squash or rebase.** The commit graph is
+a **provenance layer**, not an implementation detail: every commit carries the
+session trailer linking it to the agent session that produced it, durable docs
+(plans, thread docs, logs) cite commits by SHA, and `git blame` is the answer to
+"which session changed this and why". A squash-merge lands a brand-new commit
+and abandons the originals — severing commit → session traceability and turning
+cited SHAs into garbage once the branch is deleted; a rebase-merge rewrites them.
+A true merge wires the branch's real history into `main`'s ancestry, so the
+cited SHAs stay reachable forever and the branch is safe to delete (see
+[why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)).
+
+- Agents merging a PR (UI, MCP tools, or API) must use the **merge** method —
+  never `squash` or `rebase`, even when they are enabled in repo settings.
+- Never rewrite shared history; the usual noise argument for squashing does not
+  apply here — agent commits are already atomic and deliberately messaged.
+- For a one-line-per-PR reading of `main`, use `git log --first-parent` instead
+  of flattening history at the merge boundary.
+
+_Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
 ---
 
@@ -221,6 +250,11 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
+- `todo` — a lightweight actionable task item: a single thing to be done, tracked
+  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
+  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
+  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
+  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked
@@ -345,6 +379,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   the authorization to open the PR (no separate confirmation gate); PR-template
   detection and the GitHub MCP tools handle the rest. See
   `.claude/skills/create-pull-request/SKILL.md`.
+- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
+  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
+  the index); `/todo list` shows the todos grouped by `status`. See
+  `.claude/skills/todo/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

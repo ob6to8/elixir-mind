@@ -60,7 +60,7 @@ definitions the bundle already holds canonically.
    glossary/index.md           (alphabetical, case-insensitive)
           │  mix brain.id  →  mix brain.registry  →  mix brain.verify
           ▼
-   root log.md entry; terms now citable as [term](/glossary/<slug>.md)
+   terms now citable as [term](/glossary/<slug>.md)
 ```
 
 ---
@@ -77,7 +77,7 @@ definitions the bundle already holds canonically.
 | 6 | tool | `mix brain.id` — mint ids for new term files | `glossary/<slug>.md` (id line) | scenario |
 | 7 | tool | `mix brain.registry` — recompile the id→path view | `meta/registry.md` | **scenario** |
 | 8 | tool | `mix brain.verify` — conformance, ids, edges, grounding | — (reads all) | **scenario** + tool |
-| 9 | agent | Dated entry in the root `log.md` (source scanned; terms added/merged/pointed) | `log.md` | editorial |
+| 9 | agent | Commit with the run narrative in the message (source scanned; terms added/merged/pointed) — no hand-kept log | git objects | editorial |
 
 Steps 6–8 are intake's spine verbatim — see
 [intake §7](/meta/flows/intake.md) for what each task does and enforces.

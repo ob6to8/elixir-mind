@@ -56,7 +56,7 @@ a human decides an item is worth intake.
           │  writes (never into the bundle)
           ▼
    inbox/YYYY-MM-DD.md      (type: reference · NO sb: id · immutable once written)
-   inbox/index.md           (Latest + archive)     inbox/log.md (history)
+   inbox/index.md           (Latest + archive)
           │  operator: "intake the <…> item"
           ▼
    the /intake flow — fetch → distill → file → mint id → registry → verify
@@ -76,7 +76,7 @@ a human decides an item is worth intake.
 | 4 | agent | Dedup twice: against the bundle, then against recent digests | — (reads) | editorial |
 | 5 | agent | Select through the four gates (relevance · novelty · a reason tag fires · source quality), cap for quality over volume | — | editorial |
 | 6 | agent | Write today's digest: `##` per KB domain, one bullet per item with reason-tag badges, synopsis, `→ would file under` hint, `relates to sb:…` | `inbox/YYYY-MM-DD.md` | editorial |
-| 7 | agent | Maintain the reserved files: Latest + archive in `inbox/index.md`; dated entry in `inbox/log.md` | `inbox/index.md`, `inbox/log.md` | editorial |
+| 7 | agent | Maintain the index: Latest + archive in `inbox/index.md` (the run narrative lives in the commit message; no hand-kept log) | `inbox/index.md` | editorial |
 | 8 | operator | (later) Pick an item → hand off to [`/intake`](/meta/flows/intake.md) | — | (that flow's spine) |
 
 Every "checked by" is editorial — the structural checks live at the boundary:

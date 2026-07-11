@@ -87,7 +87,10 @@ this plan's P1 is its fix.
 
 One dangling reference was left deliberately: root `log.md`'s historical entry
 linking `/meta/session-workflow.md` (deleted in the flows collapse) — frozen
-log entries stay as written per the repo's own convention.
+log entries stay as written per the repo's own convention. *(Since overtaken:
+main retired the hand-kept logs entirely the same day —
+[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md) — deleting root
+`log.md` and the dangling reference with it.)*
 
 ---
 
@@ -226,7 +229,8 @@ row if its wording needs the sharper edge (then `mix brain.contract`).
 2. **P2** — pre-flight scan, verifier clause + red test, doc/policy touch-ups,
    `mix brain.contract` if a policy changed; gate suite.
 3. **P3** — the five hygiene items in one commit; gate suite.
-4. Update this plan to `done`, dated entry in `meta/log.md`.
+4. Update this plan to `done` (the change narrative lives in the commit
+   messages; the hand-kept logs were retired).
 
 Each step lands independently green; P1 is first because it closes the only
 open defect. Estimated total: small — the largest piece (P1) is one function

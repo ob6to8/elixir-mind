@@ -25,7 +25,7 @@ still holds for every other flow.)
   `meta/threads/YYYY-MM-DD-<slug>.md`, write the `## Routing` ledger, apply route
   tags over the frozen body, then `mix brain.route_tags --materialize` and
   `mix brain.route_tags` to generate/verify the fed concepts' excerpt logs. Update
-  `meta/threads/index.md` and `meta/log.md` as `/capture` requires.
+  `meta/threads/index.md` as `/capture` requires.
 - The point of ordering this first: the captured thread doc and its materialized
   logs become part of the working changes, so they ship *in this same PR* rather
   than trailing behind in a separate one.
@@ -92,6 +92,14 @@ still holds for every other flow.)
   environment has **no `gh` CLI**). Set the base to the repo's default branch unless
   the operator named another.
 - Report the PR URL.
+- **If asked to merge the PR** (now or later in the session): use a **true merge
+  commit** — `merge_method: "merge"`, never `squash` or `rebase` — per the
+  [merge-strategy policy](/meta/policy/merge-strategy.md): the commit graph is a
+  provenance layer (session trailers, SHA citations), and squashing severs it.
+- **Report the captured thread doc's assigned name.** After everything is done,
+  state the `meta/threads/YYYY-MM-DD-<slug>.md` path that step 1 wrote (or note
+  that capture was skipped), so the operator has the record's final name without
+  digging for it.
 
 ### 8. Offer to watch it
 - After opening, offer to monitor the PR for CI failures and review comments via
@@ -108,6 +116,8 @@ still holds for every other flow.)
   separate confirmation — running it *is* the operator's yes. Don't add a
   confirmation step back in.
 - **Never commit to a default branch.** Develop on the designated feature branch.
+- **Never squash- or rebase-merge.** Merges are true merge commits only — see the
+  [merge-strategy policy](/meta/policy/merge-strategy.md).
 - Never include internal identifiers, tokens, or model ids in commit messages or PR
   bodies.
 - Keep the commit atomic and the message honest — if tests fail or a step was

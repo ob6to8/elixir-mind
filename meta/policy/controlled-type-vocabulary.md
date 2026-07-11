@@ -50,6 +50,11 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
+- `todo` — a lightweight actionable task item: a single thing to be done, tracked
+  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
+  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
+  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
+  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked
