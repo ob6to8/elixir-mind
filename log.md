@@ -4,6 +4,16 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Deleted the legacy machinery from `deprecated/`** (operator-directed) —
+  removed the old assertion-graph system's code and generated artifacts:
+  `scripts/`, `schema/`, `templates/`, `publish/`, `.claude/` skills,
+  `index.json`, and its `CLAUDE.md`/`README.md` (all recoverable from git
+  history). Kept the *content* pending migration: `sources/` (13 captures),
+  `assertions/` (9 claims), `intake/` (raw URL backlog), and `plans/`
+  (historical decision records), with a new `deprecated/README.md` tracking
+  migration state. Also removed the already-migrated
+  `sources/ai-agent-memory-markdown-files.md`.
+
 - **Migrated the first legacy capture out of `deprecated/`** — intake of
   `deprecated/sources/ai-agent-memory-markdown-files.md` into
   [AI agent memory management — when markdown files are all you need](/SWE/agentic-coding/context-engineering/ai-agent-memory-management-markdown-files.md)
