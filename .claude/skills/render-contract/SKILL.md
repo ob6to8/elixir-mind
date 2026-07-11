@@ -39,6 +39,7 @@ visible trace link under each rule back to its `meta/policy/<id>.md`.
   policy docs instead.
 - To change a rule, edit its `meta/policy/<id>.md`, or add a new one with the correct
   `section` (one of: composition, directory-structure, filing, type-vocabulary,
-  conformance, skills) and `order`, then recompile.
+  verification, conformance, skills, session-workflow — the list in
+  `lib/second_brain/contract.ex` is canonical) and `order`, then recompile.
 - Adding a genuinely new *kind* of rule, a new `type`, or a new top-level directory
   still follows governance: propose it to the operator first.

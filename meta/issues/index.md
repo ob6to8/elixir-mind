@@ -12,6 +12,7 @@ fixed.
 ## Open
 
 - [Daily /news Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md) — the scheduled Routine's fresh-session runs produce no commit/push; an environment-wide tool-approval gate is the suspected cause. Workaround: run `/news` manually. `status: open`.
+- [route_tags: materialize cannot remove orphaned excerpt blocks](/meta/issues/route-tags-materialize-leaves-orphan-blocks.md) — when a sink loses its last feeding thread, the checks fail on the orphaned log block but `--materialize` never deletes it; the only remedy is the hand-edit the convention forbids. `status: open`.
 
 ## Resolved
 

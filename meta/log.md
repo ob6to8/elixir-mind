@@ -2,6 +2,39 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-11
+
+- **Top-down code review + docs staleness audit** — full pass over the
+  toolchain (`lib/`, mix tasks, tests, CI, hooks, skills) cross-referenced
+  against every documentation surface; findings, dispositions, and verdict
+  filed as
+  [code-review-and-docs-staleness-audit](/meta/analysis/code-review-and-docs-staleness-audit.md)
+  (`type: analysis`). Fixes landed in the same change: the markdown renderer
+  now leaves link syntax inside a code span literal (extraction order swapped;
+  regression test added), `mix brain.evidence` no longer calls a
+  resource-carrying concept "grounded" (aligned with
+  [verification-grounding](/meta/policy/verification-grounding.md)), the
+  [`/render-contract` skill](/.claude/skills/render-contract/SKILL.md) now
+  lists all 8 contract sections, the
+  [offline tutorial](/meta/tutorials/why-the-toolchain-runs-offline.md) names
+  the command the SessionStart hook actually runs (`mix compile`), and the
+  flows index says `plans`, not the renamed `specs`.
+- **New issue** —
+  [route_tags: materialize cannot remove orphaned excerpt blocks](/meta/issues/route-tags-materialize-leaves-orphan-blocks.md)
+  (`status: open`): when a sink loses its last feeding thread the checks fail
+  on the orphan block but `--materialize` never deletes it; the only remedy is
+  the hand-edit the convention forbids.
+- **Flows genre: 2 → 7.** As the review's byproduct, five flow docs joined
+  [`meta/flows/`](/meta/flows/index.md) — the two the flows plan anticipated
+  ([contract-render](/meta/flows/contract-render.md),
+  [site-build-and-deploy](/meta/flows/site-build-and-deploy.md)) plus
+  [news-inbox](/meta/flows/news-inbox.md),
+  [add-to-glossary](/meta/flows/add-to-glossary.md), and
+  [create-pull-request](/meta/flows/create-pull-request.md). Each follows the
+  genre's three-artifact model and states honestly where its deterministic
+  spine ends (contract/site reuse their existing module tests as the pinning
+  scenario; news has no spine to pin; glossary shares intake's).
+
 ## 2026-07-10
 
 - **Capture refresh (pre-merge)** — the session continued past its first
