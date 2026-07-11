@@ -2,6 +2,26 @@
 
 Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
+## 2026-07-11
+
+- **New analysis:**
+  [Belief decomposition over artifacts: derive the graph, never author it](/meta/analysis/belief-decomposition-derived-vs-authored.md)
+  — files the session's assessment of the operator's atomic-belief-DAG idea:
+  third iteration of the lineage (deprecated assertion graph → Composable
+  Beliefs → this brain's bounded overlay); the two failures shared an
+  authored-store cause; a **derived, regenerable** overlay escapes it. Grounded
+  in five prior-art references intaken the same session (see root `log.md`).
+- **New plan (proposed):**
+  [Belief decomposition as a derived analysis mode](/meta/plans/belief-decomposition-analysis-mode.md)
+  — executes the analysis' recommendation: a read-only decompose/canonicalize/
+  judge/audit pipeline (likely `mix brain.beliefs`), scope-bounded to store no
+  belief nodes; complements the
+  [epistemic-overlay plan](/meta/plans/epistemic-overlay.md)'s no-atomization
+  line.
+- **[future-beliefs](/meta/future-beliefs.md)** gained the session's design
+  principle: *LLM judgments stay local to edges; structure stays global and
+  mechanical.*
+
 ## 2026-07-10
 
 - **Capture refresh (pre-merge)** — the session continued past its first

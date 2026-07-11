@@ -12,6 +12,7 @@ record of what was decided and why.
 
 ## Proposed
 
+- [Belief decomposition as a derived analysis mode](/meta/plans/belief-decomposition-analysis-mode.md) — a read-only tool decomposing artifacts into a derived, regenerable belief graph (attestations + inferences, bipartite justifications), auditing groundedness/conflict/consensus over LLM-judged edges; only committable output is a filed `analysis` doc. Complements (does not compete with) the epistemic overlay's no-atomization storage line. `status: proposed`.
 - [Epistemic overlay: the four operations as a frontmatter-native graph over concepts](/meta/plans/epistemic-overlay.md) — promote the latent attestation/aggregation/inference/prescription structure to a first-class, queryable layer over existing concepts, with an integrity-checking `mix brain.graph`; explicitly bounds out atomization and strength-as-count. `status: proposed`.
 
 ## Accepted / In progress

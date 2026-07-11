@@ -41,6 +41,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:649457` | [SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/SWE/agentic-coding/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `sb:d479e3` | [SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions](/SWE/agentic-coding/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `sb:eeb2bb` | [SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration](/SWE/agentic-coding/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
+| `sb:d6cb97` | [SWE/evals/decompose-then-verify-factuality](/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
 | `sb:266c5e` | [SWE/llm-engineering/kv-cache-compression-history](/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `sb:41be22` | [SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `sb:d58da3` | [SWE/testing/elixir-second-brain-testing-methodology](/SWE/testing/elixir-second-brain-testing-methodology.md) | methodology | false |
@@ -57,11 +58,14 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:73e13b` | [glossary/analysis-type](/glossary/analysis-type.md) | concept | false |
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
+| `sb:dcbb9e` | [glossary/bipartite-graph](/glossary/bipartite-graph.md) | concept | false |
+| `sb:d73148` | [glossary/blast-radius](/glossary/blast-radius.md) | concept | false |
 | `sb:ee8dfd` | [glossary/candidate-feed](/glossary/candidate-feed.md) | concept | false |
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
+| `sb:6a5115` | [glossary/consensus-core](/glossary/consensus-core.md) | concept | false |
 | `sb:04c057` | [glossary/cron-expression](/glossary/cron-expression.md) | concept | false |
 | `sb:c2a18e` | [glossary/cross-site-scripting](/glossary/cross-site-scripting.md) | concept | false |
 | `sb:f17e05` | [glossary/deduplication](/glossary/deduplication.md) | concept | false |
@@ -85,6 +89,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
+| `sb:577155` | [glossary/minimal-inconsistent-subset](/glossary/minimal-inconsistent-subset.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
 | `sb:54995c` | [glossary/non-bundle-namespace](/glossary/non-bundle-namespace.md) | concept | false |
 | `sb:1349cb` | [glossary/operating-contract](/glossary/operating-contract.md) | concept | false |
@@ -119,7 +124,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |
 | `sb:60d394` | [glossary/tutorial-type](/glossary/tutorial-type.md) | concept | false |
 | `sb:927eb2` | [glossary/typed-edge](/glossary/typed-edge.md) | concept | false |
+| `sb:570738` | [glossary/ungrounded-inference](/glossary/ungrounded-inference.md) | concept | false |
 | `sb:36436d` | [glossary/vector-database](/glossary/vector-database.md) | concept | false |
 | `sb:4f4baf` | [glossary/verification-grounding](/glossary/verification-grounding.md) | concept | false |
 | `sb:c6e78a` | [glossary/verified-by](/glossary/verified-by.md) | concept | false |
+| `sb:59895a` | [knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
+| `sb:5c3ab0` | [knowledge-management/argumentation/toulmin-model-of-argument](/knowledge-management/argumentation/toulmin-model-of-argument.md) | reference |  |
+| `sb:8255b8` | [knowledge-management/knowledge-representation/first-order-logic-and-owl](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | reference |  |
+| `sb:401ff6` | [knowledge-management/knowledge-representation/truth-maintenance-systems](/knowledge-management/knowledge-representation/truth-maintenance-systems.md) | reference |  |
 | `sb:24bd1e` | [knowledge-management/open-knowledge-format](/knowledge-management/open-knowledge-format.md) | reference |  |

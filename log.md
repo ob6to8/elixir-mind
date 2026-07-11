@@ -2,6 +2,27 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-11
+
+- **Epistemic prior-art intake** (belief-decomposition session) — five `reference`
+  captures filed, with two new subdirectories under `knowledge-management/` and
+  one under `SWE/`:
+  [truth maintenance systems](/knowledge-management/knowledge-representation/truth-maintenance-systems.md)
+  and [FOL and OWL](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)
+  in the new [knowledge-representation](/knowledge-management/knowledge-representation/index.md);
+  [the Toulmin model](/knowledge-management/argumentation/toulmin-model-of-argument.md)
+  and [assurance cases / GSN](/knowledge-management/argumentation/assurance-cases-and-gsn.md)
+  in the new [argumentation](/knowledge-management/argumentation/index.md);
+  [decompose-then-verify factuality evaluation (FActScore, SAFE)](/SWE/evals/decompose-then-verify-factuality.md)
+  in the new [SWE/evals](/SWE/evals/index.md). All fetched from primary/encyclopedic
+  sources and distilled; links persisted in `resource`/Citations.
+- **Five glossary terms added** from the same session:
+  [bipartite graph](/glossary/bipartite-graph.md),
+  [blast radius (of a retracted premise)](/glossary/blast-radius.md),
+  [consensus core](/glossary/consensus-core.md),
+  [minimal inconsistent subset](/glossary/minimal-inconsistent-subset.md),
+  [ungrounded inference](/glossary/ungrounded-inference.md).
+
 ## 2026-07-10
 
 - **Backfilled the glossary from the remaining thread docs** — ran
