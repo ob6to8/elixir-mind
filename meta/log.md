@@ -4,6 +4,23 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Captured [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
+  — the session that built the session-init digest (entry below). Ledger: the
+  tooling and hook strands closed (`unrouted`; path back-links), one dangling
+  note kept — soften the open-every-session agent note if the appraisal proves
+  noisy. Route tags are path back-links only (no concept sinks), so no excerpt
+  logs materialized. Glossaried the thread per `/create-pull-request`: new
+  [session-init digest](/glossary/session-init-digest.md) term; citation and
+  context-injection nuance added to [SessionStart hook](/glossary/sessionstart-hook.md).
+- **Added the session-init digest** — new tooling (`SecondBrain.SessionInit`,
+  `mix brain.session_init`) that scans open issues (`meta/issues/`), active
+  plans (`meta/plans/`), and dangling routing-ledger strands (`meta/threads/`)
+  into a markdown digest ending in a heuristic top-3 priority ranking (issues >
+  in-flight plans > open strands > paused/dangling strands > proposed plans;
+  strands deduped against docs they routed to). The SessionStart hook
+  (`.claude/hooks/session-start.sh`) now echoes the digest into each fresh
+  session's context, with an agent note to open the thread with a judged
+  priority appraisal. Covered by `test/second_brain/session_init_test.exs`.
 - **Captured [`2026-07-11-glossary-backfill-from-thread-docs`](/meta/threads/2026-07-11-glossary-backfill-from-thread-docs.md)**
   — the session that ran `/add-to-glossary` over the eleven previously-unprocessed
   thread docs, growing the [glossary](/glossary.md) from 7 to 68 terms (46 new
