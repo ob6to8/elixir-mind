@@ -19,3 +19,10 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   deterministic graph algorithms compute the global properties (groundedness,
   conflict sets, consensus, blast radius). See the
   [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md).
+- **Derive the graph, never author it.** The governing boundary for
+  belief-graph work: the belief graph is a derived, regenerable analysis
+  artifact — cached at most — while the artifact stays the sole source of
+  truth. Authored belief stores accrue unbounded maintenance debt (the failure
+  mode of both prior iterations). Same discipline as the compiled contract and
+  registry. See the
+  [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md).

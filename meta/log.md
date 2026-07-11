@@ -18,9 +18,10 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
   belief nodes; complements the
   [epistemic-overlay plan](/meta/plans/epistemic-overlay.md)'s no-atomization
   line.
-- **[future-beliefs](/meta/future-beliefs.md)** gained the session's design
-  principle: *LLM judgments stay local to edges; structure stays global and
-  mechanical.*
+- **[future-beliefs](/meta/future-beliefs.md)** gained the session's two design
+  principles: *LLM judgments stay local to edges; structure stays global and
+  mechanical* and *derive the graph, never author it* (the governing boundary
+  from the belief-decomposition analysis).
 
 ## 2026-07-10
 

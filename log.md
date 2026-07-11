@@ -4,6 +4,19 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Layered breakdowns for the five prior-art references** — ran
+  `/summarize-technical` over the same day's five intakes
+  ([TMS](/knowledge-management/knowledge-representation/truth-maintenance-systems.md),
+  [Toulmin](/knowledge-management/argumentation/toulmin-model-of-argument.md),
+  [assurance cases/GSN](/knowledge-management/argumentation/assurance-cases-and-gsn.md),
+  [FOL/OWL](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md),
+  [FActScore/SAFE](/SWE/evals/decompose-then-verify-factuality.md)), replacing
+  each flat distilled body with the three-part structure (plain-language
+  summary → key terms → technical summary) per the update-in-place rule; ids,
+  `resource`, and cross-links preserved. TMS mechanics and GSN element detail
+  were supplemented from the standard literature (Doyle 1979; de Kleer 1986;
+  GSN Community Standard) since the encyclopedic sources were thin there —
+  noted in each doc's provenance and citations.
 - **Epistemic prior-art intake** (belief-decomposition session) — five `reference`
   captures filed, with two new subdirectories under `knowledge-management/` and
   one under `SWE/`:
