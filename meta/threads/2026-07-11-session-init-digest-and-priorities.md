@@ -47,9 +47,9 @@ the readability back for free), the operator **ratified the
 [merge-strategy policy](/meta/policy/merge-strategy.md)**: true merge commits
 only, no squash/rebase. `CLAUDE.md` was recompiled, and
 [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) now
-carries the pointer in its merge step and guardrails. Disabling squash/rebase
-in the GitHub repo settings remains an operator step (no settings endpoint in
-this environment). Finally, the digest gained **`meta/todos/`** as a fourth
+carries the pointer in its merge step and guardrails. The operator disabled squash/rebase in the GitHub repo
+settings the same day (after PR #42 landed as the first policy-compliant true
+merge), so the policy is structurally enforced. Finally, the digest gained **`meta/todos/`** as a fourth
 source (the genre had landed on `main` mid-session), ranked between
 in-progress and accepted plans. This doc was refreshed in place at the second
 `/create-pull-request` close.
@@ -62,7 +62,7 @@ in-progress and accepted plans. This doc was refreshed in place at the second
 | SessionStart hook wiring — digest echoed into fresh-session context; Elixir install stays gated on remote | closed | `unrouted` (back-linked to [session-start.sh](/.claude/hooks/session-start.sh)) | - |
 | PR #39 lifecycle via `/create-pull-request` — capture, glossary pass, PR; CI format-gate failure fixed; squash-merged on pre-policy precedent | closed | `unrouted` | - |
 | Squash vs true-merge — no written policy existed; trade-off analysis (provenance: session trailers, SHA citations, blame vs a linear log) | closed | `unrouted` (back-linked to [merge-strategy](/meta/policy/merge-strategy.md)) | - |
-| Merge-strategy policy ratified — true merge commits only; contract recompiled; `/create-pull-request` points at it | closed | `unrouted` (back-linked to [merge-strategy](/meta/policy/merge-strategy.md)) | Operator: disable squash/rebase in GitHub repo settings (Settings → General → Pull Requests) |
+| Merge-strategy policy ratified — true merge commits only; contract recompiled; `/create-pull-request` points at it; operator disabled squash/rebase in repo settings (2026-07-11) | closed | `unrouted` (back-linked to [merge-strategy](/meta/policy/merge-strategy.md)) | - |
 | `meta/todos/` added as the digest's fourth source (genre landed mid-session) | closed | `unrouted` (back-linked to [session_init.ex](/lib/second_brain/session_init.ex)) | - |
 
 ## User

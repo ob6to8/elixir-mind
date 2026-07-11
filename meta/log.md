@@ -4,6 +4,12 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Squash/rebase merging disabled in the GitHub repo settings** (operator) —
+  the [merge-strategy policy](/meta/policy/merge-strategy.md) is now
+  structurally enforced, not just written. PR #42 had already landed as the
+  first policy-compliant true merge (`9ad1d4e`). Cleared the corresponding
+  dangling item in the
+  [session-init thread ledger](/meta/threads/2026-07-11-session-init-digest-and-priorities.md).
 - **Refreshed [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md) in place**
   (second `/create-pull-request` close; update-in-place per the capture skill) —
   appended the post-PR-#39 exchanges verbatim: the squash-merge, the
