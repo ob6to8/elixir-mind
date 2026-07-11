@@ -4,6 +4,21 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Filed issue [`orphaned-remote-branches-cleanup`](/meta/issues/orphaned-remote-branches-cleanup.md)**
+  — the pre-policy backlog: 12 merged-but-undeleted `claude/*` branches (delete on
+  sight per the new policy), 9 unmerged branches needing operator triage — notably
+  `claude/meta-todos-skill-j42my8`, which strands the never-merged `todo` type,
+  `meta/todos/` genre, and `/todo` skill — plus the still-unset "Automatically
+  delete head branches" repo setting. Listed in the issues index.
+- **Elaborated the [compiled contract](/glossary/compiled-contract.md) glossary
+  entry** (`sb:23f009`) — added the mechanics: `section`/`order` grouping, per-rule
+  *Source:* trace links, the `--check` drift gate in CI, sections-are-code, and the
+  siblings that follow the same pattern (`meta/registry.md`, route-tag excerpt logs).
+- **Refreshed [`render-contract` skill](/.claude/skills/render-contract/SKILL.md)**
+  — its hardcoded section list had gone stale (missing `verification`,
+  `session-workflow`, `git-workflow`); it now points at `@sections` in
+  `lib/second_brain/contract.ex` as authoritative and documents that a new section
+  is a compiler change.
 - **New policy [`git-branch-deletion`](/meta/policy/git-branch-deletion.md)** —
   first policy in the new `git-workflow` contract section (and the first to use a
   domain filename prefix, `git-`): PR head branches are deleted on merge; the

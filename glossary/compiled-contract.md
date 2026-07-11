@@ -6,11 +6,13 @@ description: A configuration or policy file treated as build output — regenera
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, governance, tooling]
-timestamp: 2026-07-10
+timestamp: 2026-07-11
 ---
 
 # compiled contract
 
-A configuration or policy file treated as build output rather than hand-edited source: a compiler task regenerates it from canonical source documents (each contributing a traceable section), so there is one source of truth and the artifact cannot silently drift. Editing the artifact by hand is prohibited — you edit the sources and recompile. In this brain, `CLAUDE.md` is compiled from `meta/policy/*.md` via `mix brain.contract`.
+A configuration or policy file treated as build output rather than hand-edited source: a compiler task regenerates it from canonical source documents (each contributing a traceable section), so there is one source of truth and the artifact cannot silently drift. Editing the artifact by hand is prohibited — you edit the sources and recompile. In this brain, `CLAUDE.md` is compiled from `meta/preamble.md` + `meta/policy/*.md` via `mix brain.contract`.
+
+Mechanically: each `type: policy` source declares the contract `section` it renders into and its `order` within it; the compiler (`lib/second_brain/contract.ex`) groups and orders the policies under a fixed, ordered section list, and emits a *Source:* trace link under every rendered rule back to its `meta/policy/<id>.md`. Drift is caught structurally, not procedurally: `mix brain.contract --check` re-renders and diffs against the on-disk artifact in CI, so a hand edit or a forgotten recompile fails the gate. One consequence: adding a new contract *section* (as opposed to a new rule in an existing one) is a compiler change — the section list is code, not frontmatter. The same pattern governs [`meta/registry.md`](/meta/registry.md) (`mix brain.registry`) and the route-tagged excerpt logs (`mix brain.route_tags --materialize`).
 
 *Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 remove-email thread](/meta/threads/2026-07-09-remove-operator-email-from-contract.md)

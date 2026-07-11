@@ -38,7 +38,13 @@ visible trace link under each rule back to its `meta/policy/<id>.md`.
 - **Never hand-edit `CLAUDE.md`** — it is overwritten on the next compile. Edit the
   policy docs instead.
 - To change a rule, edit its `meta/policy/<id>.md`, or add a new one with the correct
-  `section` (one of: composition, directory-structure, filing, type-vocabulary,
-  conformance, skills) and `order`, then recompile.
+  `section` and `order`, then recompile. The **authoritative section list is the
+  ordered `@sections` in `lib/second_brain/contract.ex`** (as of 2026-07-11:
+  composition, directory-structure, filing, type-vocabulary, verification,
+  conformance, skills, session-workflow, git-workflow) — a policy naming any other
+  section fails the compile, so check the code, not this list, when in doubt.
+- Adding a genuinely new contract *section* is a compiler change: add
+  `{key, heading}` to `@sections` in `lib/second_brain/contract.ex` at the position
+  it should render, then recompile.
 - Adding a genuinely new *kind* of rule, a new `type`, or a new top-level directory
   still follows governance: propose it to the operator first.
