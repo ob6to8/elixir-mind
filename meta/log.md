@@ -4,6 +4,15 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Filed [`council-round-suitability`](/meta/analysis/council-round-suitability.md)**
+  (`type: analysis`) — operator-commissioned evaluation of the "council round"
+  adversarial draft-PR review protocol. Verdict: integrate as a `/council`
+  skill after operator ratification of four bindings (narrow its
+  no-transcripts rule to defer to session-capture; bind the distillation
+  target to `meta/plans/`; reconcile the draft-PR open motion with
+  `/create-pull-request` and position against `/code-review`; land via a
+  skills-registry policy edit + `/render-contract`). Evaluated prompt
+  preserved verbatim in the doc's appendix.
 - **Third-close refresh of [`2026-07-11-session-init-digest-and-priorities`](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)**
   — appended the PR #42 exchanges verbatim (open, conflicted true merge
   `9ad1d4e`, the operator's settings confirmation and its ledger flip), one new
