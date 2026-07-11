@@ -12,7 +12,7 @@ fixed.
 ## Open
 
 - [Daily /news Routine: automated runs not landing on `main`](/meta/issues/daily-news-routine-runs-not-landing.md) — the scheduled Routine's fresh-session runs produce no commit/push; an environment-wide tool-approval gate is the suspected cause. Workaround: run `/news` manually. `status: open`.
-- [Orphaned remote branches: 12 merged undeleted, 9 unmerged untriaged](/meta/issues/orphaned-remote-branches-cleanup.md) — pre-policy backlog of lingering `claude/*` branches: delete the 12 merged, operator-triage the 9 unmerged (incl. the stranded `todo`-type work), enable auto-delete. `status: open`.
+- [Orphaned remote branches: 15 merged undeleted, 6 unmerged untriaged](/meta/issues/orphaned-remote-branches-cleanup.md) — pre-policy backlog of lingering `claude/*` branches: delete the 15 merged (the `todo`-type work has since landed via PR #33), operator-triage the 6 unmerged, enable auto-delete. `status: open`.
 
 ## Resolved
 

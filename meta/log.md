@@ -4,6 +4,14 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **Merged `main` into the branch-deletion-policy branch and re-audited the
+  [orphaned-branches issue](/meta/issues/orphaned-remote-branches-cleanup.md)**
+  — three formerly-stranded branches landed in the meantime (PR #33
+  `meta-todos-skill` — the `todo` type is now built out — plus #34 and #36),
+  shifting the backlog to 15 merged / 6 unmerged; the newest PRs (#42–#44)
+  already had their head branches deleted post-merge. `CLAUDE.md` regenerated
+  from the merged policy sources (main's new merge-strategy policy + this
+  branch's git-workflow section).
 - **New flow doc [`render-contract`](/meta/flows/render-contract.md) + scenario
   test** — the contract-compilation flow joins `intake` and `session-capture` in
   the flows genre: the edit-policy → `mix brain.contract` → `--check` drift-gate
