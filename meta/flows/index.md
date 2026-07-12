@@ -35,3 +35,14 @@ that proves it. The genre itself was designed in
   taxonomy → mint id → compile registry → verify: the touch-sequence, the
   judgment/spine split, actor boundaries, the identity gate suite, and the
   scenario test that pins the spine.
+- [News — the daily candidate feed into the inbox](/meta/flows/news.md) —
+  driving a `/news` run from taxonomy-derived query profile through double
+  dedup, the reason-tag featuring gates, and the cross-domain read into the
+  non-bundle `inbox/` namespace; why this flow's spine is write conventions
+  rather than tooling, and so has no scenario test yet.
+- [Create-pull-request — capture, glossary, commit, push, PR](/meta/flows/create-pull-request.md) —
+  the shipping flow: `/capture` to completion, `/add-to-glossary` over its
+  thread doc, then git and the PR, so a session's change, record, and terms
+  land in one PR; a delegating spine pinned by the capture scenario, the id
+  gates, and CI-on-the-branch, with the git/GitHub half held by guardrails
+  and the merge-strategy policy.
