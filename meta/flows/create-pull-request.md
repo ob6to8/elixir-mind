@@ -1,125 +1,117 @@
 ---
 type: note
-title: Create-pull-request — capture, glossary, commit, push, PR, in one motion
-description: The end-to-end flow for a /create-pull-request run — the skill-to-skill composition (/capture, then /add-to-glossary over its thread doc, then git and the PR), why the ordering makes the session record ship inside the PR it describes, the touch-sequence, actor boundaries, and which parts of the spine are pinned by delegated scenarios versus external to any offline oracle.
+title: Create pull request — capture, glossary, commit, push, open
+description: The end-to-end flow for shipping a session — run the capture flow to completion, glossary its thread doc, then commit, push, and open the PR with no separate confirmation gate — a composition of two other flows plus the git/GitHub tail, and why its ordering (capture before commit) is the load-bearing decision.
 tags: [meta, governance, pull-request, capture, glossary, git, flow, workflow]
-timestamp: 2026-07-12
+timestamp: 2026-07-11
 ---
 
-# Create-pull-request — capture, glossary, commit, push, PR, in one motion
+# Create pull request — capture, glossary, commit, push, open
 
-The connective doc for the brain's shipping flow: how a working session's
-changes, its frozen record, and the glossary terms it introduced leave the
-sandbox as **one** pull request. This is the flow that makes the others
-durable — `/capture` writes the record, but `/create-pull-request` is what
-gets it onto `main`. It narrates the composition and points at the artifacts;
-the procedure lives in the skill.
+The connective doc for how a session's work leaves the working tree and
+becomes a reviewable PR. This flow is a **composition**: it runs the
+[session-capture flow](/meta/flows/session-capture.md) to completion, then the
+[add-to-glossary flow](/meta/flows/add-to-glossary.md) over the thread doc
+capture just wrote, then back-links this session's
+[elaboration docs](/meta/elaborations/index.md) to that thread (their `thread`
+frontmatter field — settable only once the thread is persisted), and only then
+touches git. The point of the ordering is that the session record, its
+materialized excerpt logs, its terminology, and the elaboration trace all
+become part of the same working changes — one PR carries the change *and* its
+provenance.
 
-> **The artifacts (point, don't restate):**
-> - **Rules** → [merge-strategy](/meta/policy/merge-strategy.md) (true merge,
->   never squash/rebase — the commit graph is a provenance layer) ·
->   [session-capture](/meta/policy/session-capture.md) ·
->   [persist-plans](/meta/policy/persist-plans.md).
-> - **Procedure** → the [`/create-pull-request`
->   skill](/.claude/skills/create-pull-request/SKILL.md), composing
->   [`/capture`](/.claude/skills/capture/SKILL.md) and
->   [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md).
-> - **Delegated mechanism + proof** → the capture flow's spine is pinned by
->   [`test/second_brain/capture_scenario_test.exs`](/test/second_brain/capture_scenario_test.exs)
->   (see [the capture flow doc](/meta/flows/session-capture.md)); glossary
->   files land in the ordinary id gates.
-> - **Why true merges** → [why a true merge keeps cited commits
->   reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md).
+> **The three artifacts (and the sources of truth — point, don't restate):**
+> - **Rules** → [session-capture](/meta/policy/session-capture.md) and
+>   [persist-plans](/meta/policy/persist-plans.md) (what must survive the
+>   session); the sub-flows' own policies govern their steps.
+> - **Procedure** → the [`/create-pull-request` skill](/.claude/skills/create-pull-request/SKILL.md).
+> - **Mechanism + proof** → composed: the sub-flows' spines (route-tag
+>   materialization + checks; id → registry → verify) are pinned by their own
+>   scenarios; the git/GitHub tail (commit, push, PR) is external state with
+>   no in-repo oracle — CI on the pushed branch is its check.
 
 ---
 
 ## 1. The problem
 
-A session that ends with only a diff loses its own story: the thread record
-lives in a reclaimable sandbox, the new terms live in the agent's head, and a
-PR opened "later" for the capture trails the change it describes. The flow
-exists to make one invariant hold: **everything a session produced — the
-change, the frozen record of the conversation that produced it, and the
-glossary terms it coined — ships in the same PR.** Invoking the skill *is* the
-authorization to open that PR; there is no second confirmation gate.
+A session that ends with only a diff loses everything else it produced: the
+exchanges that explain *why* the diff looks the way it does, the routing of
+each strand, and the vocabulary it coined. Committing first and capturing
+"later" reliably means never — the thread doc trails in a separate PR or is
+lost with the sandbox. And a PR gate that asks "are you sure?" after the
+operator already said "open a PR" is friction without safety.
 
-## 2. The pipeline — a composition of skills, then git
+---
+
+## 2. The pipeline
 
 ```
-   /create-pull-request
+   operator: /create-pull-request        (the invocation IS the authorization)
           │
           ▼
-   ┌──────────────┐  step 1 — the full /capture skill, to completion:
-   │   /capture    │  thread doc + routing ledger + route tags,
-   └──────┬───────┘  then route_tags --materialize && route_tags
-          │  meta/threads/YYYY-MM-DD-<slug>.md (+ sink logs, threads index)
+   1. the CAPTURE flow, in full          → meta/threads/YYYY-MM-DD-<slug>.md,
+      (skip only if nothing substantive)    ledger, tags, materialized logs
+          │
           ▼
-   ┌───────────────┐  step 2 — /add-to-glossary over that thread doc:
-   │/add-to-glossary│  new/updated per-term concepts + hub + index
-   └──────┬────────┘  (then brain.id / brain.registry for new ids)
-          │  glossary/*.md, glossary.md
+   2. the ADD-TO-GLOSSARY flow           → glossary/<slug>.md files, index,
+      over that thread doc                  registry recompile
+      (no-op if no terms clear the bar)
+          │
           ▼
-   ┌──────────────┐  steps 3–5 — survey (status/diff), commit with
-   │  git          │  trailers on the designated feature branch, push
-   └──────┬───────┘  with backoff on network failure only
+   3. back-link ELABORATIONS             → thread: field on each
+      (this session's docs only;            meta/elaborations/ doc the
+       skip if capture was skipped)          session created or updated
+          │
           ▼
-   ┌──────────────┐  step 6 — template detection, GitHub MCP
-   │  open the PR  │  create_pull_request; report URL + thread-doc name;
-   └──────────────┘  merge (if asked) is a true merge, never squash
+   4. survey: git status/diff — everything above is now part of the change
+   5. commit (atomic; explicit paths; honest message)
+   6. push -u origin <feature-branch>    (retry w/ backoff on network only)
+   7. open the PR (template-aware; GitHub MCP tools — no gh CLI here)
+   8. offer to watch CI/reviews          (subscribe only if asked)
 ```
 
-The ordering is the design: capture runs **before** git so its output is part
-of the working changes; glossary runs over the *just-written* thread doc so
-the terms and their source ship together.
+---
 
 ## 3. The touch-sequence (a canonical run)
 
 | # | Actor | Action | Files touched | Checked by |
 |---|-------|--------|---------------|------------|
-| 1 | operator | Invoke `/create-pull-request` (this *is* the PR authorization) | — | — |
-| 2 | agent | Run `/capture` to completion (its own full touch-sequence — see [the capture flow](/meta/flows/session-capture.md)); skip only if nothing substantive to capture | `meta/threads/…`, sink concepts' excerpt logs, `meta/threads/index.md` | delegated scenario + `brain.route_tags` |
-| 3 | agent | Run `/add-to-glossary` over the step-2 thread doc; a no-op is legitimate if no term clears the bar | `glossary/*.md`, `glossary.md`, `glossary/index.md` | id gates (`brain.id` → `brain.registry` → `brain.verify`) |
-| 4 | agent | Survey: `git status` / `git diff`; confirm the branch is the designated feature branch, never a default | — | editorial |
-| 5 | agent | Commit (explicit paths; atomic; trailers per the environment) | git objects | convention |
-| 6 | agent | Push `-u origin <branch>`; backoff-retry network failures only | remote | convention |
-| 7 | agent | Detect a PR template; open the PR via the GitHub MCP tools; report the URL **and** the thread doc's assigned name | GitHub PR | editorial |
-| 8 | operator | Review; optionally ask to merge → **true merge commit** (`merge_method: "merge"`) | `main` ancestry | policy + editorial |
-| 9 | agent | Offer (don't start) PR watching via `subscribe_pr_activity` | — | editorial |
+| 1 | operator | Invoke `/create-pull-request` — this *is* the PR authorization; there is no later confirmation | — | — |
+| 2 | agent+tool | Run [`/capture`](/meta/flows/session-capture.md) to completion (thread doc, ledger, route tags, `mix brain.route_tags --materialize` + check) | `meta/threads/…`, fed sinks, `meta/threads/index.md` | that flow's scenario + gates |
+| 3 | agent+tool | Run [`/add-to-glossary`](/meta/flows/add-to-glossary.md) on the thread doc from step 2 | `glossary/*`, `meta/registry.md` | that flow's spine |
+| 4 | agent | Set `thread:` (bundle-absolute path of the step-2 thread doc) in each `meta/elaborations/` doc this session created or updated — the final metadata motion on an elaboration; never retro-link older docs | `meta/elaborations/*.md` | editorial |
+| 5 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
+| 6 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |
+| 7 | agent | `git push -u origin <branch>`; retry only network failures (2s/4s/8s/16s) | remote branch | CI on the branch |
+| 8 | agent | Open the PR via the GitHub MCP tools, mirroring a PR template if one exists; report the URL | GitHub PR | editorial |
+| 9 | agent | Offer PR watching (`subscribe_pr_activity`) — don't subscribe unasked | — | — |
 
-## 4. Actor boundaries
+---
 
-| Actor | Does |
-|-------|------|
-| **Operator** | invokes (= authorizes the PR); reviews; decides merge and watching |
-| **Agent** | captures, glossaries, commits, pushes, opens and reports the PR; merges only when asked, and only with a true merge |
-| **CI** | runs the full gate suite on the pushed branch — the PR is mergeable only green |
+## 4. Invariants
 
-## 5. Invariants
+- **Capture, glossary, and elaboration back-links run before the commit** —
+  the session record and its traces ship *in* the PR, never behind it.
+  Skipping capture (nothing substantive) also skips glossary and back-linking;
+  none is padded to show activity.
+- **`thread` is set here and only here** — `/elaborate` never sets it (the
+  target doesn't exist until capture runs), and older elaborations already
+  carrying a `thread` are never retro-pointed at a new session.
+- **The invocation is the authorization** — this is the one sanctioned path
+  that opens a PR without a further ask; every other flow keeps the
+  default-off rule.
+- **Never commit to a default branch** — if the tree is on `main`/`master`,
+  stop and ask.
+- **Honest tail** — if a gate failed or a step was skipped, the commit message
+  and PR body say so; a red result is reported, not smoothed over.
 
-- **One PR carries the change, its record, and its terms.** Capture and
-  glossary run before the commit, never after the push.
-- **Invocation is authorization** — for the PR only. It does not authorize a
-  merge; merging is a separate operator ask.
-- **Never commit to a default branch; never squash- or rebase-merge.** Cited
-  SHAs must stay reachable; session trailers must survive.
-- **Honest no-ops.** An empty session skips capture; a term-less thread skips
-  glossary — neither is padded to show activity.
-- **Report the record's name.** The operator ends the flow knowing the
-  `meta/threads/…` path without digging.
+---
 
-## 6. Verify — a delegating spine
+## 5. Verify
 
-This flow adds almost no mechanism of its own; its spine is **borrowed**, and
-so is the proof. The capture half is pinned by the capture scenario and the
-`brain.route_tags` gate; the glossary half lands in the id gates like any
-filed concept; the pushed branch must pass the entire CI suite before the PR
-can merge. What has *no* offline oracle is the git/GitHub half — branch
-discipline, template detection, the true-merge method — which is exactly why
-those live as skill guardrails and policy (checked editorially, and by the
-operator at review) rather than as an ExUnit scenario. A scenario for this
-flow would test a mock of GitHub, proving little; the real enforcement point
-is CI-on-the-branch plus the merge-strategy policy at the moment of merge.
-
-**Reference instance.** Any merged PR on this repo is a worked instance; the
-merge commits on `main` (`git log --first-parent`) each trace to a session
-whose thread doc shipped inside the PR it records.
+Everything mechanical is inherited: the sub-flows' gate suites run inside
+steps 2–3, and CI re-runs the full suite (compile, format, tests, contract +
+registry checks, verify, route tags, site build) on the pushed branch — the PR
+is green only if the shipped tree passes the same checks locally claimed. The
+editorial residue is the git hygiene itself: atomicity of the commit, honesty
+of the message, and whether the PR body reflects the actual diff.

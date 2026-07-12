@@ -140,13 +140,18 @@ quotes (reproduced verbatim into materialized excerpt logs — the
 ## Outcome (2026-07-12 addendum)
 
 The operator ratified the full Tier-2 list the same day. Shipped in this
-branch: the [session-init digest tutorial](/meta/tutorials/the-session-init-digest.md),
-flow docs for [news](/meta/flows/news.md) and
-[create-pull-request](/meta/flows/create-pull-request.md), and the warn-only
-docs-freshness pass (`SecondBrain.Links`, printed by `mix brain.verify`) —
-which caught its first real case (a quoted broken path in this very analysis)
-during its own build-out, resolved by teaching it that code spans are literal
-text.
+branch: the [session-init digest tutorial](/meta/tutorials/the-session-init-digest.md)
+and the warn-only docs-freshness pass (`SecondBrain.Links`, printed by
+`mix brain.verify`, also surfaced in the session-init digest) — which caught
+its first real case (a quoted broken path in this very analysis) during its
+own build-out, resolved by teaching it that code spans are literal text. The
+third Tier-2 item — flow docs for `/news` and `/create-pull-request` — was
+overtaken by a concurrent session that landed a broader
+[flows 2→7 set](/meta/flows/index.md) (including
+[news-inbox](/meta/flows/news-inbox.md) and
+[create-pull-request](/meta/flows/create-pull-request.md)); this branch's
+duplicate drafts were dropped at merge in favor of that set, itself an
+instance of the very same-matter dedup the audit argues for.
 
 ## Verdict
 
