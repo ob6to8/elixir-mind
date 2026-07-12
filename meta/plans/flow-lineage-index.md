@@ -2,7 +2,7 @@
 type: plan
 title: "Flow lineage: frontmatter provenance + a derived lineage flowchart"
 description: Give every flow doc a canonical `lineage:` frontmatter block (analysis → plan → thread → PR), render it as a per-doc prose blockquote and derive a cross-flow flowchart index from all blocks with a --check-gated mix task, then retrofit the remaining flow docs — the flow-scoped precursor of the epistemic-overlay's typed lineage edges.
-status: in-progress
+status: done
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12 — operator asked whether the analysis → plan → PR → flow arc should be made explicit in flow docs; chose frontmatter + a derived flowchart index + include the thread, and to begin with the dedup reference instance then plan the full retrofit"
 tags: [meta, plan, flows, lineage, provenance, tooling, governance]
 timestamp: 2026-07-12
@@ -12,16 +12,32 @@ timestamp: 2026-07-12
 
 ## Status & provenance
 
-**In-progress** (2026-07-12). Reference instance shipped; tooling and retrofit pending
-operator ratification of the open questions below.
+**Done** (2026-07-12). All four open questions resolved by the operator; tooling built,
+all eight flow docs retrofitted, `--check` wired into CI and the pre-commit hook.
 
-- **Done:** the [dedup recall probe flow](/meta/flows/dedup-recall-probe.md) carries the
-  first `lineage:` block (analysis → plan → thread → PR #50) and a rendered prose
+- **The instrument:** [`SecondBrain.Lineage`](/lib/second_brain/lineage.ex) +
+  [`mix brain.lineage`](/lib/mix/tasks/brain.lineage.ex) (`--materialize` / `--check`),
+  pinned by [`test/second_brain/lineage_test.exs`](/test/second_brain/lineage_test.exs).
+  It parses each flow doc's `lineage:` block (a small nested-YAML reader, since the
+  bundle's flat `Frontmatter` parser can't), materializes the per-doc blockquote between
+  markers, and derives [`meta/flows/lineage.md`](/meta/flows/lineage.md) — a Mermaid
+  flowchart plus a dependency-free table.
+- **The retrofit:** all eight `meta/flows/*.md` carry a `lineage:` block and a generated
   blockquote; the convention is codified in [`meta/flows/index.md`](/meta/flows/index.md);
-  the [flows-genre plan](/meta/plans/flows-genre-and-scenario-testing.md) §11 records the
-  refinement and points here.
-- **Pending:** the derived flowchart index + its `--check`-gated `mix` task, and the
-  retrofit of the seven remaining flow docs.
+  the [flows-genre plan](/meta/plans/flows-genre-and-scenario-testing.md) §11 points here.
+- **The gate:** `mix brain.lineage --check` runs in `ci.yml` and `.githooks/pre-commit`,
+  beside the contract/registry drift gates.
+
+### Feature lineage, not doc-authorship lineage (a decision to flag)
+
+Most flows have **two** provenance layers: the session/PR that built the underlying
+*feature*, and the (usually later) session/PR that wrote the *flow doc + scenario*. The
+recorded `lineage:` traces the **feature** — the arc from problem-identified to the
+running system the flow describes — matching the dedup reference instance (where feature
+and doc were the same session). The doc-authorship push (most of flows 4–7 were written
+together in PR #48) is deliberately **not** recorded, because it answers "when was this
+page written", not "how did this system come to be". If the operator would rather trace
+doc authorship, the blocks are one edit each.
 
 Commissioned by the operator on 2026-07-12. Asked whether the research arc — *an idea or
 problem identified in an `analysis` → a `plan` → implemented in a PR → this flow* — should
@@ -136,18 +152,16 @@ analysis' idea becoming a running flow) lives above individual commits and has n
 - **No origin beyond the four roles in v1.** `issue`/`todo` origins (a flow that began as
   a tracked defect) are a natural extension but deferred until one occurs.
 
-## Open questions — for operator ratification
+## Open questions — resolved by the operator (2026-07-12)
 
-1. **Field names / multiplicity.** `analysis`/`plan`/`thread`/`pr` as above — and lists
-   for flows with several threads or PRs? (Lean: yes, allow a scalar-or-list for each.)
-2. **Where the flowchart index lives.** A standalone generated `meta/flows/lineage.md`,
-   or a generated section appended to `meta/flows/index.md`? (Lean: standalone doc, so the
-   hand-written genre definition and the generated flowchart don't share a file and risk a
-   `--check` clobbering prose.)
-3. **Mermaid vs. table for the flowchart.** Mermaid renders as a real flowchart on the
-   Pages site and GitHub; a table is plainer but universally legible. (Lean: both — Mermaid
-   as the flowchart, a table beneath it as the dependency-free fallback.)
-4. **Auto-materialize the per-doc blockquote, or leave it hand-written?** Materializing it
-   removes drift but means `mix brain.lineage --materialize` edits the body of every flow
-   doc. (Lean: materialize — consistent with route-tag logs and the no-hand-kept-derived
-   rule.)
+1. **Field multiplicity** → **scalar-or-list per field.** A bare value for the common
+   single-hop case, a YAML list (block `-` items or inline `[a, b]`) when a flow was built
+   across several threads/PRs. The parser normalizes both to lists.
+2. **Where the flowchart index lives** → **standalone** generated
+   [`meta/flows/lineage.md`](/meta/flows/lineage.md), so the hand-written genre definition
+   and the generated flowchart never share a file where `--check` could clobber prose.
+3. **Mermaid vs. table** → **both** — a Mermaid `flowchart LR` (renders on GitHub and the
+   Pages site) with a dependency-free table beneath it.
+4. **Auto-materialize the per-doc blockquote** → **materialize**, consistent with the
+   route-tag logs and the no-hand-kept-derived rule; `mix brain.lineage --materialize`
+   owns the block between the `lineage:start`/`lineage:end` markers.

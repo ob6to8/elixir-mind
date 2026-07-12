@@ -22,9 +22,9 @@ merged it — so the whole path *problem-identified → designed → built → r
 system* is legible, and the upstream docs gain the forward pointer they otherwise
 lack (the citations run backward only). The **canonical source is a `lineage:`
 frontmatter block**; a one-line prose blockquote at the top of the doc renders it for
-a reader, and a cross-flow **flowchart index** is *derived* from every flow's block
-(generated artifact, `--check`-gated in CI like `/CLAUDE.md` and
-[`meta/registry.md`](/meta/registry.md)). The chain is **heterogeneous**: omit hops a
+a reader, and a cross-flow **flowchart index** — [flow lineage](/meta/flows/lineage.md) — is
+*derived* from every flow's block by `mix brain.lineage` (generated artifact,
+`--check`-gated in CI like `/CLAUDE.md` and [`meta/registry.md`](/meta/registry.md)). The chain is **heterogeneous**: omit hops a
 flow doesn't have (some flows emerged directly as a plan, with no upstream analysis;
 the genre itself came from the [flows-genre plan](/meta/plans/flows-genre-and-scenario-testing.md)
 with none). Governance docs carry no `sb:` id, so lineage fields reference them by
