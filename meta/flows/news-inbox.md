@@ -8,7 +8,7 @@ timestamp: 2026-07-12
 
 # News — generate the daily inbox of candidates
 
-The connective doc for how the *outside world* reaches the brain: `/news`
+The connective doc for how the *outside world* reaches the brain: `/research`
 scans for material matching what the brain already tracks, writes a dated
 **digest** into `inbox/`, and then **auto-intakes the featured items** into the
 bundle through the [intake flow](/meta/flows/intake.md). The digest itself stays
@@ -24,7 +24,7 @@ as candidates, awaiting the operator's ratification.
 >   *is* the query profile) ·
 >   [auto-intake-featured-news](/meta/plans/auto-intake-featured-news.md) (the
 >   decision to file featured items automatically, Fork A).
-> - **Procedure** → the [`/news` skill](/.claude/skills/news/SKILL.md) —
+> - **Procedure** → the [`/research` skill](/.claude/skills/research/SKILL.md) —
 >   including the selection contract (four gates + reason-tag vocabulary) and the
 >   §6 auto-intake step.
 > - **Mechanism** → **borrowed.** The feed's own selection is all judgment
@@ -55,7 +55,7 @@ a human decides an item is worth intake.
    the taxonomy (root index.md → domain index.md → concept titles/tags)
           │  read: this IS the query profile — the feed re-aims as the brain grows
           ▼
-   ┌──────────────┐   /news (daily, or "run the feed")
+   ┌──────────────┐   /research (daily, or "run the feed")
    │ SEARCH        │   per-domain web/paper searches, current window
    │ DEDUP ×2      │   vs the bundle · vs recent digests
    │ SELECT + TAG  │   four gates; reason tags ARE the featuring criteria
@@ -80,7 +80,7 @@ a human decides an item is worth intake.
 
 | # | Actor | Action | Files touched | Checked by |
 |---|-------|--------|---------------|------------|
-| 1 | operator | Say `/news` (or the daily schedule fires) | — | — |
+| 1 | operator | Say `/research` (or the daily schedule fires) | — | — |
 | 2 | agent | Build the query profile from the taxonomy: root + domain `index.md`s, concept titles/tags; note high-signal `sb:` ids to relate items to | — (reads bundle) | editorial |
 | 3 | agent | Search per domain (web; paper tools for academic domains), current window | — (reads external) | editorial |
 | 4 | agent | Dedup twice: against the bundle, then against recent digests | — (reads) | editorial |

@@ -1,9 +1,9 @@
 ---
-name: news
-description: Generate today's inbox — a daily candidate feed of news, articles, papers, and resources matched against the brain's taxonomy, grouped by category and tagged by why each was chosen — then auto-intake the featured items into the bundle. Use when the operator says "/news", "run the feed", "what's new", or on the daily schedule.
+name: research
+description: Generate today's inbox — a daily candidate feed of news, articles, papers, and resources matched against the brain's taxonomy, grouped by category and tagged by why each was chosen — then auto-intake the featured items into the bundle. Use when the operator says "/research", "run the feed", "what's new", or on the daily schedule.
 ---
 
-# /news — the daily candidate feed (home-page inbox)
+# /research — the daily candidate feed (home-page inbox)
 
 Scan the outside world for material that matches what this brain already cares
 about, and write it into today's **inbox digest** — a dated, categorized list of
@@ -20,7 +20,7 @@ concepts its featured items become do.
 Read the [operating contract](../../../CLAUDE.md) first. Two rules shape this skill:
 
 - **Links must be processed, not parked** — a bare URL never becomes a bundle
-  concept. `/news` honors this by *processing* every featured item: each is fetched
+  concept. `/research` honors this by *processing* every featured item: each is fetched
   and distilled through `/intake` (§6), not parked as a bare link. The only items that
   linger as candidates are those **deferred** for needing a new top-level domain
   (§6) — held in the digest until the operator ratifies the shape.
@@ -164,7 +164,7 @@ For each featured item, in digest order:
   the report. Auto-intake never creates top-level shape — that stays the operator's
   to ratify (taxonomy-evolution protocol).
 - **Tag what you file `auto-intake`.** Add `auto-intake` to the filed concept's
-  `tags` and record its origin in `provenance` (e.g. "auto-intaken from /news inbox
+  `tags` and record its origin in `provenance` (e.g. "auto-intaken from /research inbox
   YYYY-MM-DD"), so the whole auto-filed set — the operator's editorial queue — is a
   single `tags: auto-intake` query.
 - **Gold-harvest no-ops here.** Intake's gold-harvest wants the *operator's* natural
@@ -203,7 +203,7 @@ to digest immutability.
 - The **digest** is not the bundle: it stays under `inbox/` with no `sb:` id and no
   `verified` field. Auto-intake (§6) is the only thing that writes into the bundle,
   and it does so through `/intake` (which mints ids and runs the gates) — never by
-  `/news` filing a concept directly.
+  `/research` filing a concept directly.
 - Distill synopses; never dump full articles into the digest — that's what
   `/intake` is for (and §6 hands it the URL, not the synopsis).
 - **Auto-intake is bounded to featured items and the known tree.** Never file a
