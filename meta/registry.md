@@ -70,6 +70,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:068a32` | [glossary/bm25](/glossary/bm25.md) | concept | false |
 | `sb:ee8dfd` | [glossary/candidate-feed](/glossary/candidate-feed.md) | concept | false |
 | `sb:21854a` | [glossary/ci-smoke-check](/glossary/ci-smoke-check.md) | concept | false |
+| `sb:d676f0` | [glossary/cognitive-debt](/glossary/cognitive-debt.md) | concept | false |
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
@@ -92,6 +93,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:184bae` | [glossary/git-worktree](/glossary/git-worktree.md) | concept | false |
 | `sb:680062` | [glossary/github-flavored-markdown](/glossary/github-flavored-markdown.md) | concept | false |
 | `sb:7c640a` | [glossary/github-pages](/glossary/github-pages.md) | concept | false |
+| `sb:24a13d` | [glossary/gold-set](/glossary/gold-set.md) | concept | false |
 | `sb:61877f` | [glossary/golden-test](/glossary/golden-test.md) | concept | false |
 | `sb:0c8532` | [glossary/graduation](/glossary/graduation.md) | concept | false |
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
@@ -100,6 +102,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
 | `sb:7498cf` | [glossary/knowledge-graph](/glossary/knowledge-graph.md) | concept | false |
 | `sb:8415bd` | [glossary/kv-cache](/glossary/kv-cache.md) | concept | false |
+| `sb:69e569` | [glossary/lexical-search](/glossary/lexical-search.md) | concept | false |
+| `sb:541206` | [glossary/margin-collapse](/glossary/margin-collapse.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:5fdc55` | [glossary/methodology-type](/glossary/methodology-type.md) | concept | false |
 | `sb:102785` | [glossary/mix-task](/glossary/mix-task.md) | concept | false |
@@ -123,6 +127,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:c86162` | [glossary/recall-probe](/glossary/recall-probe.md) | concept | false |
 | `sb:1dbcc9` | [glossary/rendered-aggregation](/glossary/rendered-aggregation.md) | concept | false |
 | `sb:4c3f16` | [glossary/research-spike](/glossary/research-spike.md) | concept | false |
+| `sb:96a610` | [glossary/residual-fragmentation](/glossary/residual-fragmentation.md) | concept | false |
 | `sb:e142e6` | [glossary/route-tag](/glossary/route-tag.md) | concept | false |
 | `sb:0a43ba` | [glossary/route-tag-sink](/glossary/route-tag-sink.md) | concept | false |
 | `sb:ba6759` | [glossary/routine](/glossary/routine.md) | concept | false |

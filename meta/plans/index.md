@@ -18,7 +18,7 @@ record of what was decided and why.
 
 ## Accepted / In progress
 
-_(none yet)_
+- [Auto-intake featured /news items: move the human from the intake gate to the editorial surface](/meta/plans/auto-intake-featured-news.md) — automatically run `/intake` on the items `/news` already featured, relocating the operator's role from a pre-intake gate (judged artificial — you can't assess filing/dup until a thing is in the system) to post-intake editorial work; bounded to the known tree, preferring update-in-place on `relates to sb:` hints, tagged `auto-intake`. Sequenced **Fork A** (gated behind the dedup-recall-probe's tier-1 `/intake` fix). `status: accepted`.
 
 ## Done / Superseded
 
