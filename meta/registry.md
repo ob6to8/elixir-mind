@@ -107,6 +107,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:184bae` | [glossary/git-worktree](/glossary/git-worktree.md) | concept | false |
 | `sb:680062` | [glossary/github-flavored-markdown](/glossary/github-flavored-markdown.md) | concept | false |
 | `sb:7c640a` | [glossary/github-pages](/glossary/github-pages.md) | concept | false |
+| `sb:d9c5d9` | [glossary/gold-set](/glossary/gold-set.md) | concept | false |
 | `sb:61877f` | [glossary/golden-test](/glossary/golden-test.md) | concept | false |
 | `sb:0c8532` | [glossary/graduation](/glossary/graduation.md) | concept | false |
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
@@ -118,6 +119,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:7498cf` | [glossary/knowledge-graph](/glossary/knowledge-graph.md) | concept | false |
 | `sb:8415bd` | [glossary/kv-cache](/glossary/kv-cache.md) | concept | false |
 | `sb:862042` | [glossary/let-it-crash](/glossary/let-it-crash.md) | concept | false |
+| `sb:792b23` | [glossary/lexical-search](/glossary/lexical-search.md) | concept | false |
 | `sb:01be3a` | [glossary/librarian-write-broker](/glossary/librarian-write-broker.md) | concept | false |
 | `sb:d49345` | [glossary/markdown-renderer](/glossary/markdown-renderer.md) | concept | false |
 | `sb:15fe73` | [glossary/materialize](/glossary/materialize.md) | concept | false |
@@ -177,6 +179,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:efad31` | [glossary/static-site-generator](/glossary/static-site-generator.md) | concept | false |
 | `sb:bb2968` | [glossary/strand](/glossary/strand.md) | concept | false |
 | `sb:ea95e4` | [glossary/supersession](/glossary/supersession.md) | concept | false |
+| `sb:40133e` | [glossary/synonym-expansion](/glossary/synonym-expansion.md) | concept | false |
 | `sb:089fb2` | [glossary/thread-doc](/glossary/thread-doc.md) | concept | false |
 | `sb:d7e3c5` | [glossary/todo-type](/glossary/todo-type.md) | concept | false |
 | `sb:8798e8` | [glossary/tree-is-the-taxonomy](/glossary/tree-is-the-taxonomy.md) | concept | false |
