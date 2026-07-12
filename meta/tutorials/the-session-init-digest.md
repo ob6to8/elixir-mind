@@ -38,6 +38,13 @@ Each source list is sorted newest first. The scanner is a tolerant consumer per
 malformed ledger row is skipped, never fatal — a broken thread doc must not be
 able to take down every future session's startup.
 
+A fifth section appears only when non-empty: the **docs-freshness warnings**
+from `SecondBrain.Links` (unresolved internal links, index-coverage gaps).
+These warnings also print in `mix brain.verify` output and CI logs, but an
+operator working purely in the Claude app never reads either surface — the
+digest is what actually reaches them, relayed by the session agent. A clean
+tree omits the section entirely, so the digest carries no permanent noise.
+
 ## The heuristic top-3 — the script ranks, the agent judges
 
 The digest ends with a ranked top-3, computed from fixed class weights
