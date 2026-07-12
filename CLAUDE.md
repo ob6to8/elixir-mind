@@ -295,7 +295,9 @@ _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
   (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
-  has a `resource`.
+  has a `resource`, and rejects a `verified` field (either value) on any type
+  outside `claim`/`note`/`concept` — the statement-type restriction is
+  machine-enforced, not editorial.
 - **`verified: true` requires evidence, never its own link.** A verified statement
   must carry a non-empty `verified_by` pointing at the captures (and/or other
   statements) that support it. Storing a `resource` on the statement itself proves
