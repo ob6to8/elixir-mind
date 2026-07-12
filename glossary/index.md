@@ -45,6 +45,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [git worktree](/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
 - [GitHub Flavored Markdown (GFM)](/glossary/github-flavored-markdown.md) — GitHub's CommonMark superset (tables, task lists, strikethrough, autolinks)
 - [GitHub Pages](/glossary/github-pages.md) — GitHub's static-site hosting, publishing a repo or build artifact to a public URL via Actions
+- [gold set](/glossary/gold-set.md) — a curated set of queries each paired with the item(s) that should be returned — the ground truth an eval scores retrieval against
 - [golden test (snapshot test)](/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
 - [graduation](/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
@@ -55,6 +56,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [knowledge graph](/glossary/knowledge-graph.md) — entities as nodes + typed edges, queried by traversal; a code KG maps files/symbols/calls for agents
 - [KV cache](/glossary/kv-cache.md) — cached key/value tensors for processed tokens in transformer inference; trades context-growing memory for speed
 - [let-it-crash](/glossary/let-it-crash.md) — Erlang's fault-tolerance philosophy: don't handle every error in place; let the process crash and a supervisor restart it known-good
+- [lexical search](/glossary/lexical-search.md) — search matching the literal surface form of text (tokens/substrings), not meaning; fast and dependency-free but blind to synonym/jargon gaps
 - [librarian write-broker](/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
 - [markdown renderer](/glossary/markdown-renderer.md) — a component parsing markdown to HTML (here dependency-free `SecondBrain.Markdown`)
 - [methodology (type)](/glossary/methodology-type.md) — controlled type: a repeatable prescriptive how-to/playbook for a recurring task
@@ -103,6 +105,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [static-site generator](/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
+- [synonym expansion](/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [todo (type)](/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [tree is the taxonomy](/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
