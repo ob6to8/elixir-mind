@@ -85,6 +85,22 @@ defmodule SecondBrain.DedupProbe do
   @spec report(String.t(), keyword) :: String.t()
   def report(root \\ File.cwd!(), opts \\ []), do: render(run(root, opts))
 
+  @doc """
+  Rewrite the gold doc's `## Baseline` table from a fresh plain + expanded run,
+  preserving all surrounding prose. The committed baseline is a *generated*
+  figure — refreshed by this command (typically at intake time), never hand-kept
+  — so the recall trend lives in the doc's git history. Returns the gold path.
+  """
+  @spec update_baseline(String.t()) :: String.t()
+  def update_baseline(root \\ File.cwd!()) do
+    plain = run(root, expanded: false).aggregate
+    expanded = run(root, expanded: true).aggregate
+
+    path = Path.join(root, @gold_doc)
+    File.write!(path, replace_baseline_rows(File.read!(path), plain, expanded))
+    path
+  end
+
   # --- scoring --------------------------------------------------------------
 
   defp score_row(%Row{} = row, index, expanded) do
@@ -242,6 +258,56 @@ defmodule SecondBrain.DedupProbe do
     else
       _ -> nil
     end
+  end
+
+  # Swap the data rows of the `mode | hits | targets` table under `## Baseline`
+  # for freshly-measured ones, leaving every other line (prose, header,
+  # separator) untouched. A small line-wise state machine, so surrounding prose
+  # is preserved and the operation is idempotent.
+  defp replace_baseline_rows(content, plain, expanded) do
+    new_rows = [
+      "| plain | #{plain.hits} | #{plain.targets} |",
+      "| expanded | #{expanded.hits} | #{expanded.targets} |"
+    ]
+
+    {out, state} =
+      content
+      |> String.split("\n")
+      |> Enum.reduce({[], :before}, fn line, {out, state} ->
+        t = String.trim(line)
+
+        case state do
+          :before ->
+            {out ++ [line], if(t == "## Baseline", do: :seek_header, else: :before)}
+
+          :seek_header ->
+            {out ++ [line], if(baseline_header?(t), do: :seek_sep, else: :seek_header)}
+
+          # the line right after the header is the `|---|` separator: keep it,
+          # then inject the fresh rows ahead of the (now stale) old rows
+          :seek_sep ->
+            {out ++ [line] ++ new_rows, :drop_old_rows}
+
+          :drop_old_rows ->
+            if String.starts_with?(t, "|"),
+              do: {out, :drop_old_rows},
+              else: {out ++ [line], :done}
+
+          :done ->
+            {out ++ [line], :done}
+        end
+      end)
+
+    if state == :before do
+      raise ArgumentError, "no ## Baseline table found in #{@gold_doc}"
+    end
+
+    Enum.join(out, "\n")
+  end
+
+  defp baseline_header?(t) do
+    String.starts_with?(t, "|") and String.contains?(t, "mode") and
+      String.contains?(t, "targets")
   end
 
   # --- markdown table extraction --------------------------------------------

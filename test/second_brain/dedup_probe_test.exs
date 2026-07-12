@@ -175,4 +175,36 @@ defmodule SecondBrain.DedupProbeTest do
     File.mkdir_p!(Path.join(dir, "meta"))
     assert_raise ArgumentError, ~r/gold doc not found/, fn -> DedupProbe.parse_gold!(dir) end
   end
+
+  test "update_baseline regenerates the table and preserves surrounding prose", %{tmp_dir: dir} do
+    fixture(dir)
+
+    # start from deliberately-wrong committed figures
+    write_gold(
+      dir,
+      [
+        {"context poisoning", "sb:aaaaaa", "target", "—", "control hit"},
+        {"context pollution", "sb:aaaaaa", "target", "context poisoning", "recovered expanded"},
+        {"totally absent phrase", "sb:bbbbbb", "target", "reranking", "recovered expanded"},
+        {"reranking", "sb:aaaaaa sb:bbbbbb", "negative", "—", "non-dup pair"},
+        {"future term", "sb:bbbbbb", "quarantine", "—", "undefined"}
+      ],
+      [{"plain", 9, 9}, {"expanded", 9, 9}]
+    )
+
+    # add a trailing prose paragraph after the baseline table to prove it survives
+    path = Path.join([dir, "meta", "evals", "dedup-probe.md"])
+    File.write!(path, File.read!(path) <> "\nTrailing prose after the table.\n")
+
+    DedupProbe.update_baseline(dir)
+
+    # table now reflects the live fixture measurement (plain 1/3, expanded 3/3)
+    assert DedupProbe.parse_baseline(dir) == %{"plain" => {1, 3}, "expanded" => {3, 3}}
+
+    body = File.read!(path)
+    assert body =~ "Trailing prose after the table."
+    # idempotent: a second run leaves exactly one pair of data rows
+    DedupProbe.update_baseline(dir)
+    assert body == File.read!(path)
+  end
 end

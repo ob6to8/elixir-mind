@@ -65,10 +65,13 @@ being mechanically rewritten.
 
 ## Baseline
 
-Committed baseline, updated deliberately (not on every run). `mix brain.dedup_probe`
-prints the current run's delta from these figures. Recorded against the live bundle
-on 2026-07-12; the CI report step is non-gating (recall is an editorial trend
-metric, like the route-tags cross-check — warn and trend, don't fail).
+**Generated, not hand-kept.** This table is rewritten by
+`mix brain.dedup_probe --update-baseline` (which `/intake` runs), so the committed
+figure stays current with zero manual upkeep and the recall **trend lives in this
+doc's git history** — read it with `git log -p -- meta/evals/dedup-probe.md`.
+`mix brain.dedup_probe` prints the current run's delta from these figures; the CI
+report step is non-gating (recall is an editorial trend metric, like the route-tags
+cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
@@ -81,6 +84,28 @@ recover: 7 of the 10 targets miss under plain lexical search but are recovered o
 the agent generates the recorded variant phrasings. When the **plain** figure
 degrades as concepts are added, that is the quantified trigger for tier-2 embedding
 dedup — not a guessed size threshold.
+
+## Upkeep — fully automated, no operator action
+
+The gold set and its baseline are **agent-maintained at intake time**; the operator
+never edits this doc or runs anything on a schedule. Every `/intake` run:
+
+1. **Harvests a gold row** — if the intake carried a natural phrasing (the operator's
+   own words for the material), the agent appends one `target` row here, keyed to the
+   filed/merged concept's `sb:` id, using that **actual** phrasing (never a synthetic
+   paraphrase, which would be systematically too easy). A bare-URL paste with no
+   natural phrasing is skipped silently — the set only grows from real query language.
+2. **Refreshes the baseline** — the agent runs `mix brain.dedup_probe --update-baseline`
+   and commits the regenerated table alongside the concept.
+3. **Escalates on regression** — if that run's **plain** recall has dropped below the
+   prior baseline, the agent surfaces it to the operator. A sustained drop is the one
+   decision that *is* the operator's: the trigger to adopt tier-2 embedding dedup (see
+   the [plan](/meta/plans/dedup-recall-probe.md)). Absent a drop, nothing is surfaced.
+
+Concept **merges** are the one case needing human eyes: a merge can change which id a
+row should point at, so the agent flags affected rows for re-adjudication here rather
+than rewriting them mechanically (ids are stable across renames, so renames need
+nothing).
 
 ## Adjudication history
 
