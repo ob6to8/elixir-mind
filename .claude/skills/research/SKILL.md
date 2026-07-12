@@ -155,7 +155,7 @@ For each featured item, in digest order:
   that related concept is intake's dedup target: **update it in place** rather than
   filing a sibling — *unless* the item is a genuinely distinct matter (a contrasting
   datapoint, not a continuation), which earns its own concept. This keeps
-  [residual fragmentation](/glossary/residual-fragmentation.md) small.
+  [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small.
 - **Stay inside the known tree — defer, don't propose.** A featured item files
   autonomously into an existing domain (new *subdirectories* under an established
   top-level domain are fine). But an item that would require a **new top-level

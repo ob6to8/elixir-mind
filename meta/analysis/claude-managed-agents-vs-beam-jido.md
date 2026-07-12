@@ -145,9 +145,9 @@ messages. Three properties make the fit specific rather than generic:
 Both planes read and write the same knowledge base, and concurrent autonomous
 writers are exactly the condition under which its integrity fails — duplicate
 concepts, ungrounded claims, silently stale beliefs. The remedy is structural:
-a single owned **write-gatekeeper** (a [librarian](/glossary/librarian-write-broker.md))
+a single owned **write-gatekeeper** (a [librarian](/beliefs/glossary/librarian-write-broker.md))
 that solely mutates the bundle. Agents on either plane submit proposals; the
-gatekeeper runs the gauntlet — [dedup](/glossary/deduplication.md),
+gatekeeper runs the gauntlet — [dedup](/beliefs/glossary/deduplication.md),
 verification, grounding — and serializes commits.
 
 The gatekeeper's placement and enforcement follow from the division of labor:
@@ -214,7 +214,7 @@ never contest the same work.
   [dedup recall probe](/meta/plans/dedup-recall-probe.md) gives the
   gatekeeper's entry gate a measured recall floor, and the
   [epistemic overlay](/meta/plans/epistemic-overlay.md) supplies the grounding
-  graph that [staleness propagation](/glossary/staleness-propagation.md)
+  graph that [staleness propagation](/beliefs/glossary/staleness-propagation.md)
   traverses. Both are substrate-independent and precede any agent fleet,
   rented or owned.
 
@@ -229,10 +229,10 @@ never contest the same work.
   (2.3.2) · https://jido.hexdocs.pm/readme.html · https://github.com/agentjido/jido ·
   https://hex.pm/packages/jido_ai · https://hex.pm/packages/req_llm; fuller
   baseline in [the BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md).
-- Related concepts — [two-plane rule](/glossary/two-plane-rule.md) ·
-  [librarian write-broker](/glossary/librarian-write-broker.md) ·
-  [actor model](/glossary/actor-model.md) ·
-  [deterministic spine](/glossary/deterministic-spine.md).
+- Related concepts — [two-plane rule](/beliefs/glossary/two-plane-rule.md) ·
+  [librarian write-broker](/beliefs/glossary/librarian-write-broker.md) ·
+  [actor model](/beliefs/glossary/actor-model.md) ·
+  [deterministic spine](/beliefs/glossary/deterministic-spine.md).
 - Caveats: CMA is beta — shapes, limits, and availability may shift; platform
   pricing beyond token usage was not stated in the reference consulted; Jido
   has no published cross-node distribution story (`jido_cluster` unreleased).
