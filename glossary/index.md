@@ -26,14 +26,17 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
 - [CRLF](/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
+- [cross-reference drift](/glossary/cross-reference-drift.md) — a change that should update many interlinked docs only updates some; the rest rot silently (the LLM-wiki killer)
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [dark factory](/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
 - [dependency-free](/glossary/dependency-free.md) — relying only on the standard library — no external packages, so it runs offline in restricted sandboxes
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
+- [detector](/glossary/detector.md) — a mechanical check converting a violation or drift from silent state into announced signal; gates fail, warn passes report
 - [deterministic spine](/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [doctrine](/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [drift class](/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
 - [DRY (don't repeat yourself)](/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [elaboration (type)](/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
@@ -54,6 +57,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [hybrid search](/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
+- [invisible degradation](/glossary/invisible-degradation.md) — corpus rot that emits no signal while it happens; nothing announces it until retrieval visibly fails
 - [issue (type)](/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
 - [Jido](/glossary/jido.md) — Elixir agent framework: agents as immutable data through a `cmd/2` reducer, Actions doubling as LLM tools, CloudEvents signals, supervised runtime
 - [knowledge graph](/glossary/knowledge-graph.md) — entities as nodes + typed edges, queried by traversal; a code KG maps files/symbols/calls for agents
@@ -77,6 +81,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [plugin](/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
 - [pointer entry](/glossary/pointer-entry.md) — an entry for a term canonically defined elsewhere: one-line gloss + link, never a duplicate definition
 - [policy (type)](/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
+- [probabilistic enforcement](/glossary/probabilistic-enforcement.md) — rules as prose an agent promises to follow; violations scale with operation count and compound without a detector
 - [prompt injection](/glossary/prompt-injection.md) — instructions embedded in untrusted content an LLM processes hijack it into serving the attacker's intent instead of the user's task
 - [property-based testing](/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
 - [proto-belief document](/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink
@@ -94,6 +99,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [route tag](/glossary/route-tag.md) — inline `<routes ref="…">` region marking which concept(s) a paragraph of a frozen thread feeds
 - [Routine](/glossary/routine.md) — a saved scheduled trigger that fires a preset prompt into an agent session on a cron schedule
 - [routing ledger](/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content
+- [run (canonical run)](/glossary/run.md) — a single end-to-end execution of a flow or scheduled job; the unit a flow doc's touch-sequence narrates
 - [scenario test](/glossary/scenario-test.md) — an end-to-end test driving a whole workflow against a realistic fixture and asserting on final state
 - [section terminator](/glossary/section-terminator.md) — the pattern deciding where a parsed section ends; reader and rewriter of one section must agree on it
 - [self-consistency check](/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
@@ -124,5 +130,6 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [two-plane rule](/glossary/two-plane-rule.md) — keep the fast operational plane (ephemeral state, in databases) out of the slow epistemic plane (durable verified beliefs, in the bundle)
 - [typed edge](/glossary/typed-edge.md) — an id-based relationship in frontmatter that tooling traverses (e.g. `verified_by`); prose links stay untyped
 - [vector database](/glossary/vector-database.md) — a store indexing items as embedding vectors, answering nearest-neighbor queries for semantic retrieval
+- [warn pass](/glossary/warn-pass.md) — an advisory check that reports findings without failing; chosen where detection is mechanical but enforcement would overreach
 - [verification grounding](/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
 - [verified_by](/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)

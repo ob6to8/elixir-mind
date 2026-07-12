@@ -79,14 +79,17 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
 | `sb:a48aeb` | [glossary/crlf](/glossary/crlf.md) | concept | false |
 | `sb:04c057` | [glossary/cron-expression](/glossary/cron-expression.md) | concept | false |
+| `sb:1c53dc` | [glossary/cross-reference-drift](/glossary/cross-reference-drift.md) | concept | false |
 | `sb:c2a18e` | [glossary/cross-site-scripting](/glossary/cross-site-scripting.md) | concept | false |
 | `sb:197b02` | [glossary/dark-factory](/glossary/dark-factory.md) | concept | false |
 | `sb:f17e05` | [glossary/deduplication](/glossary/deduplication.md) | concept | false |
 | `sb:aa3e46` | [glossary/dependency-free](/glossary/dependency-free.md) | concept | false |
 | `sb:048bca` | [glossary/deploy-gating](/glossary/deploy-gating.md) | concept | false |
+| `sb:0da4a3` | [glossary/detector](/glossary/detector.md) | concept | false |
 | `sb:d18504` | [glossary/deterministic-spine](/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
 | `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
+| `sb:683301` | [glossary/drift-class](/glossary/drift-class.md) | concept | false |
 | `sb:9074c1` | [glossary/dry](/glossary/dry.md) | concept | false |
 | `sb:16e171` | [glossary/elaboration-type](/glossary/elaboration-type.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
@@ -107,6 +110,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
 | `sb:3983f2` | [glossary/hybrid-search](/glossary/hybrid-search.md) | concept | false |
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
+| `sb:e08db0` | [glossary/invisible-degradation](/glossary/invisible-degradation.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
 | `sb:44f899` | [glossary/jido](/glossary/jido.md) | concept | false |
 | `sb:7498cf` | [glossary/knowledge-graph](/glossary/knowledge-graph.md) | concept | false |
@@ -130,6 +134,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:78580d` | [glossary/plugin](/glossary/plugin.md) | concept | false |
 | `sb:393e3d` | [glossary/pointer-entry](/glossary/pointer-entry.md) | concept | false |
 | `sb:fa15e7` | [glossary/policy-type](/glossary/policy-type.md) | concept | false |
+| `sb:e8c1a9` | [glossary/probabilistic-enforcement](/glossary/probabilistic-enforcement.md) | concept | false |
 | `sb:8654d1` | [glossary/prompt-injection](/glossary/prompt-injection.md) | concept | false |
 | `sb:4849ca` | [glossary/property-based-testing](/glossary/property-based-testing.md) | concept | false |
 | `sb:573229` | [glossary/proto-belief-document](/glossary/proto-belief-document.md) | concept | false |
@@ -148,6 +153,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:0a43ba` | [glossary/route-tag-sink](/glossary/route-tag-sink.md) | concept | false |
 | `sb:ba6759` | [glossary/routine](/glossary/routine.md) | concept | false |
 | `sb:570e22` | [glossary/routing-ledger](/glossary/routing-ledger.md) | concept | false |
+| `sb:e55bda` | [glossary/run](/glossary/run.md) | concept | false |
 | `sb:4f4f5c` | [glossary/scenario-test](/glossary/scenario-test.md) | concept | false |
 | `sb:23844f` | [glossary/section-terminator](/glossary/section-terminator.md) | concept | false |
 | `sb:4e01f8` | [glossary/self-consistency-check](/glossary/self-consistency-check.md) | concept | false |
@@ -179,4 +185,5 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:36436d` | [glossary/vector-database](/glossary/vector-database.md) | concept | false |
 | `sb:4f4baf` | [glossary/verification-grounding](/glossary/verification-grounding.md) | concept | false |
 | `sb:c6e78a` | [glossary/verified-by](/glossary/verified-by.md) | concept | false |
+| `sb:de14e6` | [glossary/warn-pass](/glossary/warn-pass.md) | concept | false |
 | `sb:24bd1e` | [knowledge-management/open-knowledge-format](/knowledge-management/open-knowledge-format.md) | reference |  |
