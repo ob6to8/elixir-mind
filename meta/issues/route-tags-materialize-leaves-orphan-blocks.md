@@ -2,13 +2,25 @@
 type: issue
 title: "route_tags: materialize cannot remove orphaned excerpt blocks"
 description: Removing or re-pointing a route tag leaves the sink's now-orphaned excerpt block in place — mix brain.route_tags fails on it, but --materialize never deletes blocks, so the only fix is hand-editing a section the policy says never to hand-edit.
-status: open
+status: resolved
 provenance: "Claude Code session, 2026-07-11 — top-down code review of the toolchain"
 tags: [meta, issue, route-tagging, materialize, tooling]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # `route_tags`: materialize cannot remove orphaned excerpt blocks
+
+## Resolution (2026-07-12)
+
+Fixed by P1 of the
+[code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md):
+`materialize/1` now projects the tags in both directions — it also visits every
+sink that carries a log section but no longer appears among the feeding pairs
+and removes the section, unconditionally (the design question below was settled
+as *no flag*: the tags are the single source of truth and the PR diff is the
+review point). Pinned by two scenario tests in
+[capture_scenario_test.exs](/test/second_brain/capture_scenario_test.exs)
+(full-orphan removal; a still-fed sink dropping one thread's stale block).
 
 ## Summary
 

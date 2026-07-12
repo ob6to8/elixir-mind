@@ -9,7 +9,8 @@ defmodule Mix.Tasks.Brain.RouteTags do
   that every concept-routed routing-ledger row is covered by a tag.
 
       mix brain.route_tags              # verify; exits non-zero on any failure
-      mix brain.route_tags --materialize  # (re)generate the log sections from tags, then verify
+      mix brain.route_tags --materialize  # project tags into sinks (write fed
+                                          # sections, remove unfed ones), then verify
 
   Warnings never fail the task; only `:fail` results do.
   """
@@ -23,7 +24,7 @@ defmodule Mix.Tasks.Brain.RouteTags do
     if opts[:materialize] do
       case SecondBrain.RouteTags.materialize() do
         [] ->
-          Mix.shell().info("Route tags: no fed sinks; nothing to materialize.")
+          Mix.shell().info("Route tags: no log sections to write or remove.")
 
         paths ->
           Mix.shell().info(
