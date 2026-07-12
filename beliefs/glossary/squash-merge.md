@@ -6,16 +6,13 @@ description: A merge that flattens a branch's commits into one brand-new commit 
 provenance: "Agent-distilled glossary definition; pointer to the reachability tutorial"
 verified: false
 tags: [glossary, git, merge, provenance]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # squash merge
 
-A merge that combines all of a branch's commits into one brand-new commit on
-the target branch, leaving the originals outside the target's ancestry. It
-buys a linear one-commit-per-PR history at the cost of per-commit provenance:
-original messages and trailers, SHAs cited in durable docs (garbage-collectible
-once the branch is deleted), and `git blame` granularity. Canonically explained
+The cited-SHA cost bites concretely: SHAs cited in durable docs become
+garbage-collectible once the branch is deleted. Canonically explained
 in [why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md);
 disallowed here by the [merge-strategy policy](/meta/policy/merge-strategy.md).
 Contrast [true merge](/beliefs/glossary/true-merge.md).

@@ -6,11 +6,11 @@ description: Dense numeric vector representations of text produced by a model su
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, embeddings, search]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # embeddings
 
-Dense numeric vector representations of text produced by a model such that semantically similar text maps to nearby vectors. They enable similarity comparison via distance metrics like cosine, and underpin semantic search and vector databases.
+They underpin [semantic search](/beliefs/glossary/semantic-search.md) and [vector databases](/beliefs/glossary/vector-database.md).
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

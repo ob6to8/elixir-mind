@@ -6,11 +6,11 @@ description: The gated criteria by which `/research` decides which candidates ma
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, research, inbox]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # featuring
 
-The gated decision by which `/research` decides which candidates make the cut — relevance, then novelty, then a [reason tag](/beliefs/glossary/reason-tags.md) firing, then source quality, under a quality-over-volume cap. Documented in the [`/research` skill](/.claude/skills/research/SKILL.md).
+Documented in the [`/research` skill](/.claude/skills/research/SKILL.md); the tag vocabulary the third gate draws on is covered under [reason tags](/beliefs/glossary/reason-tags.md).
 
 *Seen in:* [2026-07-09 news-issue thread](/meta/threads/2026-07-09-news-routine-issue-and-featuring.md), [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md)

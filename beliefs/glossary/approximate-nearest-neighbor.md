@@ -6,11 +6,11 @@ description: An index/algorithm class that trades exactness for speed when findi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # approximate nearest neighbor (ANN)
 
-An index or algorithm class (ANN) that trades exactness for speed when finding the closest vectors to a query in high-dimensional space. Its overhead only pays off at large corpus sizes, above which a brute-force linear scan is no longer sufficient.
+The large-corpus threshold is the point above which a brute-force linear scan is no longer sufficient.
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

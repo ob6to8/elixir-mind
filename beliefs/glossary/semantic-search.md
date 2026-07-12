@@ -6,11 +6,11 @@ description: Retrieval based on meaning rather than surface tokens, typically vi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, embeddings]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # semantic search
 
-Retrieval based on meaning rather than surface tokens, typically via embedding similarity. It can bridge synonym/jargon mismatches (e.g. "lost in the middle" vs "context rot") that lexical or typo-tolerant search cannot — the recall gap that motivates a vector database.
+The local example of the mismatch it bridges: "lost in the middle" vs "context rot" — the recall gap that motivates a vector database.
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

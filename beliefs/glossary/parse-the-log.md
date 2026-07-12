@@ -6,11 +6,11 @@ description: A session-capture implementation path that renders a transcript by 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, capture, tooling]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # parse-the-log
 
-A session-capture implementation path that renders a transcript by mechanically parsing the host session log file (e.g. a `.jsonl`) rather than reproducing text from the agent's live context. It is preferred for fidelity because it yields the exact delivered text instead of a memory reconstruction; it contrasts with render-from-context.
+The host log file is typically a `.jsonl`. The fidelity gain is that parsing yields the exact delivered text, where the contrasting path — render-from-context — reproduces a memory reconstruction.
 
 *Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)

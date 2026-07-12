@@ -11,13 +11,12 @@ timestamp: 2026-07-12
 
 # feeding pairs
 
-The set of (thread, [sink](/beliefs/glossary/route-tag-sink.md)) pairs that the
-current [route tags](/beliefs/glossary/route-tag.md) induce: a thread *feeds* a sink
-when at least one of its tagged regions lists that sink's
-[stable id](/beliefs/glossary/stable-id.md). The set is derived fresh from the tags on
-every run — nothing stores it — and it is the domain of
-[materialization](/beliefs/glossary/materialize.md) in both directions: a sink inside
-it gets its [excerpt log](/beliefs/glossary/excerpt-log.md) (re)written, a sink outside
-it loses the section.
+Nothing stores the set — it is derived fresh on every run from the current
+[route tags](/beliefs/glossary/route-tag.md), matching each region's ref list of
+[stable ids](/beliefs/glossary/stable-id.md) against the sinks. "Both directions"
+of [materialization](/beliefs/glossary/materialize.md) means: a
+[sink](/beliefs/glossary/route-tag-sink.md) inside the set gets its
+[excerpt log](/beliefs/glossary/excerpt-log.md) (re)written, a sink outside it
+loses the section.
 
 *Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [session-capture flow](/meta/flows/session-capture.md)

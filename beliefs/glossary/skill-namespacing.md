@@ -6,11 +6,11 @@ description: Prefixing invocable skill/command names with a group identifier so 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, claude-code, skills]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # skill namespacing
 
-Prefixing invocable skill/command names with a group identifier so they autocomplete and resolve as a set. In Claude Code only plugin skills are auto-namespaced (`plugin:skill`); project skills are invoked by their bare directory name, and collisions resolve by hierarchy.
+A namespaced set also autocompletes together. Claude Code writes the auto-namespaced plugin form as `plugin:skill`; a project skill's bare name is its directory name.
 
 *Seen in:* [2026-07-10 create-PR skill thread](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)

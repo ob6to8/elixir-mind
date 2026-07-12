@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # backpressure
 
-Flow control in which a slower downstream stage pushes back on faster upstream producers — via bounded queues, worker-pool limits, or explicit demand signalling — so that overload turns into orderly waiting rather than unbounded memory growth or dropped work. The canonical agent-fleet case: many agents wanting concurrent LLM calls against a rate-limited, expensive provider, where bounded mailboxes and pools are the native answer.
+Without it, overload shows up as unbounded memory growth or dropped work; with it, overload becomes orderly waiting. The canonical agent-fleet case: many agents wanting concurrent LLM calls against a rate-limited, expensive provider, where bounded mailboxes and pools are the native answer.
 
 *Seen in:* [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md)

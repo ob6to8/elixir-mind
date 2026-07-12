@@ -11,13 +11,6 @@ timestamp: 2026-07-12
 
 # pipe table
 
-Markdown's `|`-delimited table syntax, a
-[GitHub Flavored Markdown](/beliefs/glossary/github-flavored-markdown.md) extension: a
-header row, a separator row of dashes (with optional `:` alignment markers),
-then one row per line, cells split on `|`. Being plain text, any pipe table in
-a document *looks* the same to a naive parser — which is why a tool reading a
-specific table (this bundle's
-[routing ledger](/beliefs/glossary/routing-ledger.md)) must scope itself to that
-table's section rather than matching every `|`-prefixed line.
+Being plain text, any [GitHub Flavored Markdown](/beliefs/glossary/github-flavored-markdown.md) pipe table in a document *looks* the same to a naive parser — which is why a tool reading a specific table (this bundle's [routing ledger](/beliefs/glossary/routing-ledger.md)) must scope itself to that table's section rather than matching every `|`-prefixed line.
 
 *Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md)

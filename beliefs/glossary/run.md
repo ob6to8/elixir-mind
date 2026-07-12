@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # run (canonical run)
 
-A single end-to-end execution of a flow, task, or scheduled job, from invocation to its last file touched. Two senses in this brain: **(1)** the unit a flow doc narrates — its "touch-sequence of a canonical run" lists every file one representative execution touches, in order, which is also the unit a [scenario test](/beliefs/glossary/scenario-test.md) pins the deterministic spine of; **(2)** the unit a scheduled [Routine](/beliefs/glossary/routine.md) produces on each firing (as in the open issue about daily `/research` runs not landing). In both senses a run is an *instance*, distinct from the flow (the repeatable shape) and the skill (the procedure).
+In both senses a run is an *instance* — from invocation to its last file touched — distinct from the flow (the repeatable shape) and the skill (the procedure). In the flow-doc sense, the "touch-sequence of a canonical run" lists every file one representative execution touches, in order, and is also the unit a [scenario test](/beliefs/glossary/scenario-test.md) pins the deterministic spine of. In the [Routine](/beliefs/glossary/routine.md) sense, each firing yields one run (as in the open issue about daily `/research` runs not landing).
 
 *Seen in:* [the intake flow](/meta/flows/intake.md), [the research-inbox flow](/meta/flows/research-inbox.md), [daily /research Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md)

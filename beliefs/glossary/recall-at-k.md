@@ -6,11 +6,11 @@ description: A retrieval metric measuring whether the correct target appears wit
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, search, evaluation]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # recall@k
 
-A retrieval metric measuring whether the correct target appears within the top k returned results for a query. A [recall probe](/beliefs/glossary/recall-probe.md) reports recall@k across a query set to quantify how reliably a search surfaces known targets.
+See [recall probe](/beliefs/glossary/recall-probe.md) for the evaluation harness that reports it.
 
 *Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)

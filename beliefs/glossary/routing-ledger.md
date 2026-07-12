@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # routing ledger
 
-A per-thread dispatch table (Topic | State | Routed-to | Dangling), often shortened to just "the ledger", that answers what you would need to know to reply to a thread without re-reading it — holding pointers and states only, never synthesized content. Each row tracks one [strand](/beliefs/glossary/strand.md) of the session's work. Canonically defined by the [routing-ledger policy](/meta/policy/routing-ledger.md).
+Often shortened to just "the ledger", it answers what you would need to know to reply to a thread without re-reading it; each row tracks one [strand](/beliefs/glossary/strand.md) of the session's work. Canonically defined by the [routing-ledger policy](/meta/policy/routing-ledger.md).
 
 *Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [2026-07-12 news→research rename thread](/meta/threads/2026-07-12-rename-news-skill-to-research.md)

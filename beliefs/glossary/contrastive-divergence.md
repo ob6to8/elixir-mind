@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # contrastive divergence
 
-An approximate learning algorithm, introduced by Hinton, for training [restricted Boltzmann machines](/beliefs/glossary/restricted-boltzmann-machine.md) and similar energy-based models. Computing the exact maximum-likelihood gradient is intractable, so contrastive divergence estimates it from a short run of Gibbs sampling — often just one step — started at the training data, trading exactness for speed. It is the per-layer learning step inside [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md).
+Introduced by Hinton, and applicable to [restricted Boltzmann machines](/beliefs/glossary/restricted-boltzmann-machine.md) and similar energy-based models generally. The Gibbs chain is started at the training data rather than run to equilibrium, trading exactness for speed. It is the per-layer learning step inside [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md).
 
 *Seen in:* [2026-07-12 deep-belief-networks research spike](/meta/threads/2026-07-12-deep-belief-networks-research-spike-and-refile.md)

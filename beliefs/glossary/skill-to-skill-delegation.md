@@ -6,11 +6,11 @@ description: One skill invoking another as a sub-step so the callee's procedure 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, claude-code, skills]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # skill-to-skill delegation
 
-One skill invoking another as a sub-step so the callee's procedure becomes part of the caller's flow — e.g. `/intake` handing off to `/summarize-technical`, or `/create-pull-request` running `/capture` first. It composes behavior instead of duplicating it.
+Local examples: `/intake` handing off to `/summarize-technical`, and `/create-pull-request` running `/capture` first.
 
 *Seen in:* [2026-07-10 create-PR skill thread](/meta/threads/2026-07-10-create-pull-request-skill-and-intake-delegation.md)

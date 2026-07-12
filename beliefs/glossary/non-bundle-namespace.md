@@ -6,11 +6,11 @@ description: A top-level directory excluded from the identity registry, so its d
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, namespaces, identity]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # non-bundle namespace
 
-A top-level directory excluded from the identity registry, so its docs carry no `sb:` ids and are skipped by the verifier (like `meta/` and `inbox/`), as opposed to the bundle concepts that must be identified. Explained in the [bundle-scope tutorial](/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md).
+The contrast is with bundle concepts, which must be identified. Explained in the [bundle-scope tutorial](/meta/tutorials/bundle-scope-and-non-bundle-namespaces.md).
 
 *Seen in:* [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md)

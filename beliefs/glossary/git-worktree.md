@@ -6,15 +6,12 @@ description: A linked working directory attached to one git repository — its o
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, git, worktree, parallel-agents]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # git worktree
 
-A linked working directory attached to a single git repository: it has its own
-**HEAD**, staging index, and file tree, but shares the repo's one `.git` **object
-store**, so several branches can be checked out simultaneously in separate
-directories (git enforces one branch per worktree). The primitive that isolates
+Git enforces one branch per worktree. It is the primitive that isolates
 parallel coding agents — each on its own branch — pushing their conflicts to visible
 merge time. Defined by [Git worktrees for parallel AI agents](/knowledge/SWE/version-control/git/git-worktrees-for-parallel-agents.md).
 

@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # restricted Boltzmann machine
 
-A two-layer undirected neural network — one layer of visible units and one of hidden units — that learns a probability distribution over its inputs. The "restricted" part is the bipartite connectivity: units connect only across layers, never within one, which makes each layer conditionally independent given the other and enables efficient training by [contrastive divergence](/beliefs/glossary/contrastive-divergence.md). Stacking RBMs is what builds a [deep belief network](/beliefs/glossary/deep-belief-network.md).
+The "restricted" in the name is the bipartite constraint. It learns a probability distribution over its inputs, trained by [contrastive divergence](/beliefs/glossary/contrastive-divergence.md). Stacking RBMs is what builds a [deep belief network](/beliefs/glossary/deep-belief-network.md).
 
 *Seen in:* [2026-07-12 deep-belief-networks research spike](/meta/threads/2026-07-12-deep-belief-networks-research-spike-and-refile.md)

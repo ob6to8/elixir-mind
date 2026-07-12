@@ -11,13 +11,12 @@ timestamp: 2026-07-12
 
 # stale block
 
-A [materialized](/beliefs/glossary/materialize.md) block in a
-[sink](/beliefs/glossary/route-tag-sink.md)'s [excerpt log](/beliefs/glossary/excerpt-log.md)
-whose content no longer matches its re-derivation from the current tags — the
-source moved (a tagged region edited, a region added or dropped) without the
-log being re-materialized. The `log fidelity` check catches it and re-running
-`--materialize` fixes it, because the whole section is rewritten from the
-current [feeding pairs](/beliefs/glossary/feeding-pairs.md). Distinct from an
+"Source changed" concretely: a tagged region edited, or a region added or
+dropped, without the log being re-materialized. Re-running `--materialize`
+works as the fix because the whole [excerpt log](/beliefs/glossary/excerpt-log.md)
+section in the [sink](/beliefs/glossary/route-tag-sink.md) is rewritten from the
+current [feeding pairs](/beliefs/glossary/feeding-pairs.md) (see
+[materialize](/beliefs/glossary/materialize.md)). Distinct from an
 [orphan block](/beliefs/glossary/orphan-block.md), whose source *vanished entirely*
 rather than merely changed.
 

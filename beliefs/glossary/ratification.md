@@ -11,13 +11,6 @@ timestamp: 2026-07-12
 
 # ratification
 
-The operator's explicit approval that turns a *proposed* change to the shape
-of the brain — a new top-level directory, a new `type`, a plan's scope — into
-an *adopted* one. The division of labor is the point: the agent files and
-organizes autonomously within the existing shape, but **proposes and waits**
-on anything that changes the shape itself; a plan moves `proposed` →
-`accepted` only on the operator's say-so. Canonically defined by the
-[taxonomy-evolution protocol](/meta/policy/taxonomy-evolution-protocol.md)
-(and, for plan scopes, the [persist-plans policy](/meta/policy/persist-plans.md)).
+The division of labor is the point: the agent files and organizes autonomously *within* the existing shape, while anything that changes the shape itself waits on the operator; a plan moves `proposed` → `accepted` only on the operator's say-so. Canonically defined by the [taxonomy-evolution protocol](/meta/policy/taxonomy-evolution-protocol.md) (and, for plan scopes, the [persist-plans policy](/meta/policy/persist-plans.md)).
 
 *Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [render-contract flow](/meta/flows/render-contract.md), [2026-07-12 doctrine-genre-and-orchestrator-alignment thread](/meta/threads/2026-07-12-doctrine-genre-and-orchestrator-alignment.md)

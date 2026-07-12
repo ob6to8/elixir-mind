@@ -6,11 +6,11 @@ description: A generative testing technique that asserts invariants ("properties
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, testing]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # property-based testing
 
-A generative testing technique that asserts invariants ("properties") hold across many automatically generated inputs, rather than over a few hand-written example cases — for example a round-trip property, or exhaustive enumeration of a closed vocabulary.
+Examples include a round-trip property, or exhaustive enumeration of a closed vocabulary.
 
 *Seen in:* [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md)

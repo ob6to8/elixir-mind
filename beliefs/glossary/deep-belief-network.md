@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # deep belief network
 
-A generative neural network that models a distribution over its inputs by stacking layers of latent variables — concretely a stack of [restricted Boltzmann machines](/beliefs/glossary/restricted-boltzmann-machine.md) whose top two layers form an undirected associative memory and whose lower layers are directed generative connections. Introduced by Hinton, Osindero & Teh (2006); trained by [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md). Defined in full at [machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md).
+Introduced by Hinton, Osindero & Teh (2006). Each layer of latent variables is a [restricted Boltzmann machine](/beliefs/glossary/restricted-boltzmann-machine.md); the top two layers form an undirected associative memory while the lower layers are directed generative connections, and the layer-at-a-time training procedure is [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md). Defined in full at [machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md).
 
 *Seen in:* [2026-07-12 deep-belief-networks research spike](/meta/threads/2026-07-12-deep-belief-networks-research-spike-and-refile.md)

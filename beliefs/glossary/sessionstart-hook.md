@@ -11,7 +11,7 @@ timestamp: 2026-07-12
 
 # SessionStart hook
 
-A hook that runs a script at the start of every session to provision or warm the environment — install a toolchain, prime a build cache, check tool availability — so later commands "just work" in a fresh, ephemeral sandbox. It may run synchronously (blocking session start) or asynchronously. Beyond provisioning, its stdout is injected into the session's context, so it can also brief the agent — e.g. emit a [session-init digest](/beliefs/glossary/session-init-digest.md) of open work.
+Typical provisioning work: install a toolchain, prime a build cache, check tool availability — so later commands "just work" in a fresh, ephemeral sandbox. It may run synchronously (blocking session start) or asynchronously. The briefing channel works because its stdout is injected into the session's context — e.g. it can emit a [session-init digest](/beliefs/glossary/session-init-digest.md) of open work.
 
 *Seen in:* [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 GitHub Pages thread](/meta/threads/2026-07-09-github-pages-knowledge-base-site.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-12 priorities-skill thread](/meta/threads/2026-07-12-priorities-skill-and-persistence-listers.md)
 

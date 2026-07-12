@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # BEAM
 
-The virtual machine that runs Erlang and Elixir. Its signature design is huge numbers of lightweight processes — each with its own isolated heap, preemptively scheduled, communicating only by message passing (the [actor model](/beliefs/glossary/actor-model.md)) — which makes fault containment, per-process supervision, and hot code upgrades natural properties rather than add-ons. Those affordances pay off for long-running concurrent services; a one-shot batch program uses none of them, which is why this brain's [dependency-free](/beliefs/glossary/dependency-free.md) tooling runs *on* the BEAM without being *a BEAM system*.
+Message passing between its processes is the [actor model](/beliefs/glossary/actor-model.md) made industrial, and the heap isolation is what makes fault containment and per-process supervision natural properties rather than add-ons. A one-shot batch program uses none of those affordances — which is why this brain's [dependency-free](/beliefs/glossary/dependency-free.md) tooling runs *on* the BEAM without being *a BEAM system*.
 
 *Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md)

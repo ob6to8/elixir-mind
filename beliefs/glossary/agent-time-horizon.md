@@ -6,16 +6,11 @@ description: The human-completion-time length of task an AI agent can finish at 
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, agentic-loop, evaluation, long-horizon, metr]
-timestamp: 2026-07-11
+timestamp: 2026-07-12
 ---
 
 # agent time horizon
 
-The length of a task — measured in how long it takes a *human* — that an AI agent can
-complete at a fixed success rate. The **50% time horizon** is the task length the
-agent finishes half the time; the **80% horizon** is the same at a stricter bar and is
-always shorter, so the gap between them is a measure of reliability decay as tasks
-lengthen. METR's finding that this horizon doubles every few months is the basis for
-"a Moore's Law for AI agents." Defined by [Agent task time horizons](/knowledge/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md).
+The **80% horizon** — the same measure at a stricter success bar — is always shorter than the 50% one, so the gap between them is a measure of reliability decay as tasks lengthen. METR's finding that the horizon doubles every few months is the basis for "a Moore's Law for AI agents." Defined by [Agent task time horizons](/knowledge/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md).
 
 *Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Agent task time horizons](/knowledge/SWE/agentic-coding/agentic-loop/agent-task-time-horizons.md)

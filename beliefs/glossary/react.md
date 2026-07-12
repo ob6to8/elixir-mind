@@ -11,7 +11,7 @@ timestamp: 2026-07-12
 
 # ReAct
 
-The foundational LLM agent loop: the model alternates free-form **rea**soning traces with tool **act**ions, and each action's observation feeds back into the next round of reasoning. Widely reused as the default strategy in agent frameworks (including [Jido](/beliefs/glossary/jido.md)'s `jido_ai`).
+The name splices **rea**soning + **act**ing. Widely reused as the default strategy in agent frameworks (including [Jido](/beliefs/glossary/jido.md)'s `jido_ai`).
 
 Canonically defined in [ReAct — reasoning + acting as the thought-action-observation loop (Yao et al.)](/knowledge/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md).
 

@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # complementary priors
 
-The technical device at the heart of the 2006 [deep belief network](/beliefs/glossary/deep-belief-network.md) result. In a directed [belief network](/beliefs/glossary/belief-network.md), observing data makes a node's hidden parents compete to explain it ("explaining away"), which correlates them and makes inference intractable. A complementary prior is an extra distribution deliberately shaped to exactly cancel those correlations, restoring conditional independence among the hidden units — which is what lets each layer be learned greedily and independently as a [restricted Boltzmann machine](/beliefs/glossary/restricted-boltzmann-machine.md).
+The technical device at the heart of the 2006 [deep belief network](/beliefs/glossary/deep-belief-network.md) result. The problem it solves: in a directed [belief network](/beliefs/glossary/belief-network.md), observing data makes a node's hidden parents compete to explain it, which is what correlates them and makes inference intractable. The prior is an extra distribution deliberately shaped so the cancellation is exact, and the greedy learning it unlocks treats each layer as a [restricted Boltzmann machine](/beliefs/glossary/restricted-boltzmann-machine.md).
 
 *Seen in:* [2026-07-12 deep-belief-networks research spike](/meta/threads/2026-07-12-deep-belief-networks-research-spike-and-refile.md)

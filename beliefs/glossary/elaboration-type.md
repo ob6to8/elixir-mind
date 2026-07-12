@@ -11,13 +11,11 @@ timestamp: 2026-07-12
 
 # elaboration (type)
 
-Controlled type: a persisted expansion of a technical **phrase or short
-passage** — the quoted target, definitions of the terms it uses, and a less
-technical overview of the concepts and actions it describes — written by
-`/elaborate` under `meta/elaborations/` (governance namespace, no `sb:` id)
-and back-linked to its originating [thread doc](/beliefs/glossary/thread-doc.md) via a
-`thread` frontmatter field that `/create-pull-request` sets after capture.
-Distinct from a glossary `concept` (one *term*, source-independent) and a
+The doc sits in the governance namespace (no `sb:` id); the `thread`
+frontmatter field carrying its back-link to the originating
+[thread doc](/beliefs/glossary/thread-doc.md) is set by `/create-pull-request`
+after capture, not by `/elaborate` itself. Distinct from a glossary `concept`
+(one *term*, source-independent) and a
 [tutorial (type)](/beliefs/glossary/tutorial-type.md) (long-form, standalone subject).
 Canonically defined by the
 [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md).

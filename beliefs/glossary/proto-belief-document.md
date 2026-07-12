@@ -6,11 +6,11 @@ description: In Composable Beliefs, a durable single page that accretes synthesi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, composable-beliefs, routing]
-timestamp: 2026-07-10
+timestamp: 2026-07-12
 ---
 
 # proto-belief document
 
-A durable, maintained single page that accretes synthesized knowledge about exactly one matter over time (its Composable Beliefs name). This brain maps it onto an OKF `concept` doc, which serves as the per-topic sink that routed session content lands in.
+The mapped OKF `concept` doc serves as the per-topic sink that routed session content lands in.
 
 *Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md)

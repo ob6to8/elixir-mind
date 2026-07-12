@@ -11,6 +11,6 @@ timestamp: 2026-07-12
 
 # credential vault
 
-A store that keeps a secret *out of* the process that uses it. The running code — an agent's sandbox, a worker container — holds only an opaque placeholder; the real token is substituted into the outbound request at the **egress** boundary, on requests to allowed hosts only. Because the secret never enters the executing environment, code running there cannot read or exfiltrate it even under [prompt injection](/beliefs/glossary/prompt-injection.md) — which directly narrows the injection surface that enables [epistemic poisoning](/beliefs/glossary/epistemic-poisoning.md). [Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md) implements this for both MCP OAuth tokens (auto-refreshed) and environment-variable secrets.
+Because the secret never enters the executing environment — an agent's sandbox, a worker container — code running there cannot read or exfiltrate it even under [prompt injection](/beliefs/glossary/prompt-injection.md), which directly narrows the injection surface that enables [epistemic poisoning](/beliefs/glossary/epistemic-poisoning.md). [Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md) implements this for both MCP OAuth tokens (auto-refreshed) and environment-variable secrets.
 
 *Seen in:* [Managed Agents vs. Jido/BEAM analysis](/meta/analysis/claude-managed-agents-vs-beam-jido.md)

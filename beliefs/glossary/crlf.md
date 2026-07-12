@@ -11,12 +11,6 @@ timestamp: 2026-07-12
 
 # CRLF
 
-The two-byte **c**arriage-**r**eturn + **l**ine-**f**eed sequence (`\r\n`)
-that ends lines in the Windows convention, versus Unix's bare LF (`\n`). The
-practical rule for text tooling: anything that pattern-matches on line
-boundaries must either normalize CRLF away on read (as this bundle's
-frontmatter parser does) or honor the file's own ending when writing into it
-(as `mix brain.id` does when inserting an id line) — matching only `\n` while
-writing `\n` into a `\r\n` file silently mixes endings.
+Concretely the byte sequence `\r\n`, versus `\n`. In this bundle, the frontmatter parser normalizes CRLF away on read, and `mix brain.id` honors the file's own ending when inserting an id line — matching only `\n` while writing `\n` into a `\r\n` file silently mixes endings.
 
 *Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md)

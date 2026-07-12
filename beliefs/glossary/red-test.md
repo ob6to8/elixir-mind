@@ -11,12 +11,6 @@ timestamp: 2026-07-12
 
 # red test
 
-A test that constructs a known-*bad* input and asserts the check under test
-**flags it** — proving the detector actually fires. Its complement, the green
-test, proves good input passes; without the red side, a check that silently
-stopped detecting anything would still be "fully tested". In this repo's
-suites every verifier and route-tag failure mode carries one (e.g. a capture
-marked `verified: true` is rejected; an unresolved ref fails resolution), and
-each new gate lands with its red test in the same commit.
+Without the red side, a check that silently stopped detecting anything would still be "fully tested". In this repo's suites every verifier and route-tag failure mode carries one (e.g. a capture marked `verified: true` is rejected; an unresolved ref fails resolution), and each new gate lands with its red test in the same commit.
 
 *Seen in:* [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [intake flow](/meta/flows/intake.md)
