@@ -2,7 +2,7 @@
 type: plan
 title: "Auto-intake featured /news items: move the human from the intake gate to the editorial surface"
 description: Automatically run /intake on the items /news already featured, so the brain grows a real corpus for the downstream evals — relocating the operator's role from a pre-intake gate (which the operator judges artificial) to post-intake editorial work (prune, relabel, merge, retag), gated behind the tier-1 dedup fix.
-status: accepted
+status: done
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-12 — operator proposal + design discussion in this session; authorized to persist and execute"
 tags: [meta, plan, news, intake, automation, dedup, corpus]
 timestamp: 2026-07-12
@@ -12,8 +12,11 @@ timestamp: 2026-07-12
 
 ## Status & provenance
 
-**Accepted** — proposed by the operator on 2026-07-12 and refined in the same
-session. The operator's framing is the load-bearing decision: the pre-intake
+**Done** — proposed by the operator on 2026-07-12, refined and shipped in the same
+session. The Fork A dependency (the dedup-recall-probe's tier-1 synonym-expanded
+`/intake` fix) landed via PR #50; the `/news` skill then gained its §6 auto-intake
+step (with the flow-doc mirror and the skills-registry description updated). The
+operator's framing is the load-bearing decision: the pre-intake
 approval click ("this looks interesting, intake it") is *not* editorial work —
 you cannot evaluate a candidate's filing, cross-links, or duplication against a
 URL until it is actually in the system. Gating intake on that judgment is close
@@ -96,15 +99,16 @@ lands.
 - **Loss of the curation signal** (which items the operator chose to intake) —
   judged minor for a personal brain where "it's all pertinent."
 
-## Build order (resumes after the dedup dependency lands)
+## Build order (all shipped 2026-07-12)
 
-1. *(prerequisite, parallel thread)* tier-1 synonym-expansion `/intake` dedup step.
-2. `/news` gains an auto-intake step: featured items → `/intake`, updating in place
-   on a `relates to sb:` hint, deferring new-top-level-domain items, tagging
+1. ✅ *(prerequisite, PR #50)* tier-1 synonym-expansion `/intake` dedup step.
+2. ✅ `/news` gains the §6 auto-intake step: featured items → `/intake`, updating in
+   place on a `relates to sb:` hint, deferring new-top-level-domain items, tagging
    `auto-intake`.
-3. Digest lines marked `✓ auto-intaken → /path` in the same run.
-4. Mirror the new step in the [intake flow doc](/meta/flows/intake.md) per the
-   no-drift rule.
+3. ✅ Digest lines marked `✓ auto-intaken` / `✓ merged` / `⏸ deferred` in the same run.
+4. ✅ Mirrored in the [news-inbox flow doc](/meta/flows/news-inbox.md) and the
+   [skills-registry policy](/meta/policy/skills-registry.md) (contract re-rendered)
+   per the no-drift rule.
 
 ## Open questions (for the operator)
 
