@@ -5,7 +5,7 @@ description: Renamed the /news skill to /research and scrubbed the "news" featur
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-12; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, skills, rename, research, news, refactor, provenance]
 timestamp: 2026-07-12
-# pr: added by /create-pull-request after the PR is opened
+pr: 59
 ---
 
 # 2026-07-12-rename-news-skill-to-research
