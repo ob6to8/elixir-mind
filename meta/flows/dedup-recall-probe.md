@@ -4,6 +4,11 @@ title: Dedup recall probe — measuring and maintaining intake dedup recall
 description: The end-to-end flow of the dedup-recall eval loop — how intake dedup recall is measured (mix brain.dedup_probe over an id-keyed gold set), how the gold set and baseline are grown automatically at intake, and — the point of this doc — exactly how the operator audits, explores, and re-evaluates a system that otherwise runs silently in the background.
 tags: [meta, governance, evals, dedup, recall, intake, flow, workflow, auditability]
 timestamp: 2026-07-12
+lineage:
+  analysis: /meta/analysis/vector-db-recall-for-the-scaling-bundle.md
+  plan: /meta/plans/dedup-recall-probe.md
+  thread: /meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md
+  pr: 50
 ---
 
 # Dedup recall probe — measuring and maintaining intake dedup recall
@@ -17,13 +22,17 @@ run silently unless something regresses**, it deliberately foregrounds *how you
 audit, explore, and re-evaluate it by hand* (§4). It does not restate the rules or
 the procedure; those have homes.
 
-> **Lineage — how this flow came to be.** A problem identified in the
+> **Lineage — how this flow came to be** *(rendered from the `lineage:` frontmatter,
+> the canonical source).* A problem identified in the
 > [vector-DB recall analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)
 > (PR #25) — grep already misses existing concepts *semantically*, not typographically,
 > at 39 concepts → designed in the
-> [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) (`status: done`) →
-> implemented in PR #50 → runs as the loop this doc narrates below. Read it top to
-> bottom; each hop links the record that carries its reasoning.
+> [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) (`status: done`) → built
+> in the [dedup-recall-probe & synonym-intake session](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md)
+> and merged as **PR #50** → runs as the loop this doc narrates below. Read it top to
+> bottom; each hop links the record that carries its reasoning. The cross-flow view —
+> every flow's chain as one flowchart — is derived by the tooling designed in the
+> [flow-lineage plan](/meta/plans/flow-lineage-index.md).
 
 > **The artifacts (sources of truth — point, don't restate):**
 > - **Design + decisions** → the [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md)

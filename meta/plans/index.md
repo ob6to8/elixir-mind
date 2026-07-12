@@ -18,7 +18,7 @@ record of what was decided and why.
 
 ## Accepted / In progress
 
-_(none yet)_
+- [Flow lineage: frontmatter provenance + a derived flowchart](/meta/plans/flow-lineage-index.md) — give every flow doc a canonical `lineage:` frontmatter block (`analysis → plan → thread → PR`), render it as a per-doc blockquote and derive a cross-flow flowchart index from all blocks with a `--check`-gated `mix brain.lineage` task, then retrofit the remaining flow docs. Reference instance (dedup recall probe flow) shipped; tooling + retrofit pending ratification of four open questions. The flow-scoped precursor of the epistemic-overlay's typed lineage edges. `status: in-progress`.
 
 ## Done / Superseded
 
