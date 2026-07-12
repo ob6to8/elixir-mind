@@ -18,7 +18,7 @@ lineage:
 <!-- lineage:end -->
 
 The connective doc for the brain's first **eval loop**: the machinery that measures
-whether [intake](/meta/flows/intake.md) [deduplication](/glossary/deduplication.md)
+whether [intake](/meta/flows/intake.md) [deduplication](/beliefs/glossary/deduplication.md)
 actually finds the existing concept a new item should merge into, and that keeps that
 measurement honest as the corpus grows. It narrates the whole loop end to end and
 points at the artifacts that make it work — and, because the loop is **designed to
@@ -86,7 +86,7 @@ holds it back (§8). Auditing this should never require re-deriving it from the 
 The **backend under test** is deliberately dumb: case-insensitive substring match
 over each concept's title, description, tags, and body (what intake actually has, no
 LLM, no embeddings). `--expanded` re-scores using each gold row's recorded synonym
-variants — approximating the tier-1 [synonym-expansion](/glossary/synonym-expansion.md)
+variants — approximating the tier-1 [synonym-expansion](/beliefs/glossary/synonym-expansion.md)
 fix offline. The gap between the two numbers is the whole signal.
 
 ---

@@ -27,11 +27,11 @@ moves the human's locus of control accordingly.
 
 ## Problem
 
-`/news` writes a daily candidate feed into the [inbox namespace](/glossary/inbox-namespace.md);
+`/news` writes a daily candidate feed into the [inbox namespace](/beliefs/glossary/inbox-namespace.md);
 a candidate enters the bundle only when the operator says "intake the <…> item",
 which runs `/intake`. That human gate was designed as a quality filter, but:
 
-- The featured set is **already filtered** — `/news` [featuring](/glossary/featuring.md)
+- The featured set is **already filtered** — `/news` [featuring](/beliefs/glossary/featuring.md)
   applies relevance → novelty (two dedup passes) → a reason tag → source quality,
   then a quality-over-volume cap. The operator's click is a *second* filter on an
   already-curated set.
@@ -65,7 +65,7 @@ effort; the operator shows up editorially, by design.
 4. **Prefer update-in-place aggressively.** When a featured item carries a
    `relates to sb:xxxxxx` hint (the digest already computes it), intake **updates
    that concept in place** rather than creating a sibling. This is free dedup that
-   keeps [residual fragmentation](/glossary/residual-fragmentation.md) small, so the
+   keeps [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small, so the
    editorial pass reconciles the *residual*, not the bulk.
 5. **Every auto-filed concept is tagged** (`tags: [auto-intake]` + provenance) and
    the digest line is marked `✓ auto-intaken → /path`, so the editorial surface —
@@ -74,11 +74,11 @@ effort; the operator shows up editorially, by design.
 ## Sequencing — Fork A (operator's choice)
 
 **Gate on the dedup fix first.** Auto-intake activates only *after* the tier-1
-synonym-expansion [dedup](/glossary/deduplication.md) step from the
+synonym-expansion [dedup](/beliefs/glossary/deduplication.md) step from the
 [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) lands. Rationale: a
 fragmentation committed to history is costlier to reconcile (reassigning
-[`sb:` ids](/glossary/stable-id.md) and redirecting
-[`verified_by`](/glossary/verified-by.md) edges) than one avoided at write time,
+[`sb:` ids](/beliefs/glossary/stable-id.md) and redirecting
+[`verified_by`](/beliefs/glossary/verified-by.md) edges) than one avoided at write time,
 so the firehose should not open until intake dedup can merge in place. The
 operator chose this over ship-now-with-guardrails.
 
@@ -88,7 +88,7 @@ lands.
 
 ## Risks & tradeoffs
 
-- **[Cognitive debt](/glossary/cognitive-debt.md)** — the operator's understanding
+- **[Cognitive debt](/beliefs/glossary/cognitive-debt.md)** — the operator's understanding
   lagging the corpus as it grows faster than they internalize it. Mitigated by the
   operator's stated intent to keep reading each item, plus the `auto-intake` tag
   making periodic review cheap. Named and accepted, not eliminated.

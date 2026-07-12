@@ -17,7 +17,7 @@ lineage:
 
 The connective doc for how the brain's *rules* change: `CLAUDE.md` — the
 operating contract every agent reads on session start — is a
-[compiled contract](/glossary/compiled-contract.md), regenerated from small,
+[compiled contract](/beliefs/glossary/compiled-contract.md), regenerated from small,
 individually-versioned policy documents rather than edited in place. This doc
 narrates the whole flow end to end and points at the three artifacts that make
 it work. It does **not** restate the rules or the procedure; those have homes.

@@ -71,7 +71,7 @@ that proves it. The genre itself was designed in
   all judgment layer — the structural guarantee is the namespace boundary.
 - [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) —
   `/add-to-glossary` extracts a source's technical terms, dedups
-  (merge/pointer/new), and files one concept per term under `/glossary/`,
+  (merge/pointer/new), and files one concept per term under `/beliefs/glossary/`,
   riding the same id → registry → verify spine as intake (one pin, shared
   scenario).
 - [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) —

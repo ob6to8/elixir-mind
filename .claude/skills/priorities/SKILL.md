@@ -7,7 +7,7 @@ description: List the brain's open work as a prioritized appraisal — open issu
 
 Surface everything the brain has left open and rank it, so a session can decide
 what to work on. This is the on-demand successor to the old SessionStart digest:
-the [session-init digest](/glossary/session-init-digest.md) is no longer injected
+the [session-init digest](/beliefs/glossary/session-init-digest.md) is no longer injected
 automatically at session start — it is produced here, when the operator asks for
 it. Follow the [operating contract](/CLAUDE.md).
 

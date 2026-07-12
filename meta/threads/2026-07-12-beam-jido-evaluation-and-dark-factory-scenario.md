@@ -148,7 +148,7 @@ Commit, then run /add-to-glossary on your last responses to see if there are som
 
 ## Assistant
 
-<routes ref="glossary/index.md">
+<routes ref="beliefs/glossary/index.md">
 Done. The two analyses were already committed (nothing pending), so the glossary pass was the only new work — committed and pushed as `c2b0909`. The yield, per the skill's report format:
 
 **New entries (13):**
