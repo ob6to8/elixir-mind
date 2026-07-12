@@ -20,6 +20,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [BEAM](/beliefs/glossary/beam.md) — the Erlang/Elixir VM: lightweight heap-isolated processes, message passing, supervision — built for long-running concurrent services
 - [belief network](/beliefs/glossary/belief-network.md) — a probabilistic graphical model (a.k.a. Bayesian network): a DAG of stochastic variables, each conditioned on its parents; the "belief" in *deep belief network*
 - [BM25](/beliefs/glossary/bm25.md) — lexical full-text ranking by term frequency and rarity; the keyword-search tier between grep and semantic search
+- [bundle-absolute link](/beliefs/glossary/bundle-absolute-link.md) — a markdown link whose target begins at the bundle root with a leading slash, resolving identically from any document; breaks when the target moves, since it encodes the path, not the id
 - [candidate feed](/beliefs/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
 - [CI smoke check](/beliefs/glossary/ci-smoke-check.md) — a cheap CI check that fails the build on a basic broken invariant — a tripwire, not a full test
 - [Claude Managed Agents (CMA)](/beliefs/glossary/claude-managed-agents.md) — Anthropic's hosted agent service: the loop runs on Anthropic's infra, each session gets a sandboxed container; versioned agents, scheduled deployments, outcomes, vaults
@@ -57,6 +58,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [feeding pairs](/beliefs/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
 - [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
+- [gate suite](/beliefs/glossary/gate-suite.md) — the full set of blocking verification checks a change must pass before landing, run manually, by the pre-commit hook, and in CI; pointer to the gate-suite tutorial
 - [generative model](/beliefs/glossary/generative-model.md) — a model that learns the joint distribution of its data so it can synthesize new samples, as opposed to a discriminative input→label mapping
 - [git worktree](/beliefs/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
 - [GitHub Flavored Markdown (GFM)](/beliefs/glossary/github-flavored-markdown.md) — GitHub's CommonMark superset (tables, task lists, strikethrough, autolinks)
