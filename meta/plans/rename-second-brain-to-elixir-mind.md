@@ -54,12 +54,13 @@ string sites** in `lib/` + `test/`.
 | **Session hook** | `.claude/hooks/session-start.sh`: log path `/tmp/second-brain-session-start.log`, two `second-brain:` message prefixes | Rename strings |
 | **CI workflows** | `.github/workflows/ci.yml`, `pages.yml` | **No occurrences** — nothing to change |
 | **Generated artifacts** | `CLAUDE.md` (title "Operating Contract — Second Brain (OKF)"), `meta/registry.md`, route-tag excerpt logs, `meta/flows/lineage.md` | Never hand-edited — edit sources (`meta/preamble.md`, policies), then regenerate (`mix brain.contract`, `brain.registry`, `brain.route_tags --materialize`, `brain.lineage --materialize`) |
-| **Maintained docs** | `README.md`, root `index.md` (`# Second Brain`), `meta/preamble.md`, skill `SKILL.md`s, `meta/flows/*`, `meta/tutorials/*`, policy examples (e.g. route-tagging's `lib/second_brain/route_tags.ex` sample ref) | Update names and code paths |
+| **Maintained docs (name-prose + code refs)** | `README.md`, root `index.md` (`# Second Brain`), `meta/preamble.md`, skill `SKILL.md`s, `meta/flows/*`, `meta/tutorials/*`, policy examples (e.g. route-tagging's `lib/second_brain/route_tags.ex` sample ref) | Update names and code paths |
+| **Live code-identifier refs across *all* doc surfaces** | `SecondBrain.` module refs, `lib/second_brain/…` & `test/second_brain/…` paths, and `:second_brain` — appearing in **37 doc files** beyond the maintained-docs list above: `beliefs/glossary/*` (7) + `beliefs/glossary.md` + `beliefs/future-beliefs.md`, `knowledge/**` concept bodies, `meta/analysis/*` (3), `meta/issues/*`, `meta/evals/*`, `meta/elaborations/*`, `meta/plans/*` | **Grep is the worklist, not a file list** — update every live code-identifier occurrence (see Decision 6). These are pointers into moving code, distinct from name-prose |
 | **Route-tag path refs in frozen threads** | `<routes ref="… lib/second_brain/….ex">` attributes inside `meta/threads/` docs; `mix brain.route_tags` **fails CI** if a path ref doesn't resolve to a file on disk | Update the `ref` attributes when `lib/` moves — see Decision 3 |
-| **Filed concept slug** | `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`) | Rename file; id survives the move — see Decision 4 |
+| **Filed concept slug + body** | `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` (`sb:d58da3`): the slug, the in-body `SecondBrain.Frontmatter`/`SecondBrain.Policy` module refs, and the "Second Brain testing methodology" display text in its 3 inbound links | Rename file, update body module refs and inbound display text; id survives — see Decision 4 |
 | **GitHub Pages** | Site served at `ob6to8.github.io/second-brain/`; the site build uses relative URLs throughout (only doc comments mention the subpath) | No code change; URL moves to `…/elixir-mind/` on repo rename, **old Pages URL will 404** (Pages does not redirect) |
 | **Environment / sessions** | Claude Code remote environment source and session repo scope pinned to `ob6to8/second-brain`; local clone dir `/home/user/second-brain` | Operator updates the environment source after the repo rename; git-level redirects cover existing clones/Routines in the interim |
-| **Frozen / archival prose** | `meta/threads/` bodies, `deprecated/` (read-only), `inbox/` dated digests, point-in-time `meta/analysis/` docs | **Not renamed** (workstream A prose) — see scope boundaries |
+| **Frozen / archival prose** | `meta/threads/` bodies, `deprecated/` (read-only), `inbox/` dated digests, `meta/analysis/` **name-prose** | Name-prose **not renamed** (workstream A) — but analysis's *live code pointers* are (see Decision 6 and scope boundaries) |
 
 ### Workstream B: the `sb:` id namespace
 
@@ -131,14 +132,21 @@ layer. (With Decision 2 ratified, the sink-id side of these refs is being
 rewritten anyway.) The alternative — an alias map in the verifier — adds
 permanent complexity to serve one rename. **Update the ref attributes.**
 
-**Decision 4 — rename the one filed concept whose slug carries the name
-(recommended: yes).**
+**Decision 4 — rename the one filed concept whose slug carries the name, and
+fix its body and inbound links (recommended: yes).**
 `knowledge/SWE/testing/elixir-second-brain-testing-methodology.md` names *this
 project*. Per the identity policy, identity survives refactors: rename to
-`elixir-mind-testing-methodology.md`, keep the id (tail `d58da3`), update
-inbound prose links, regenerate the registry. By contrast,
-`meta/analysis/comparison-with-the-2026-second-brain-field.md` stays — there
-"second brain" is the product category being compared against, not this repo.
+`elixir-mind-testing-methodology.md`, keep the id (tail `d58da3`), and
+regenerate the registry. Beyond the slug, this file also needs its **body** and
+its **inbound links** updated — the concept body references `SecondBrain.Frontmatter`
+and `SecondBrain.Policy` (code identifiers that move in Workstream A), and three
+sibling docs (`unit-vs-integration-purity-and-extent.md`,
+`how-to-test-features-not-code.md`, `knowledge/SWE/testing/index.md`) link it
+with the display text "Second Brain testing methodology" (proper-noun → "Elixir
+Mind testing methodology") plus the old slug in the path. By contrast,
+`meta/analysis/comparison-with-the-2026-second-brain-field.md` keeps its **name**
+— there "second brain" is the product category being compared against, not this
+repo — but its live code pointers still move under Decision 6.
 
 **Decision 5 — prose policy: proper noun vs. category term.**
 Where "Second Brain" names *this repo* (README title, root `index.md` heading,
@@ -154,6 +162,34 @@ line can carry both: "…a personal second brain … named **elixir-mind**."
 Operator may instead direct a full prose sweep; that widens the diff into
 policy/tutorial prose but changes nothing structural.
 
+**Decision 6 — sweep live code identifiers everywhere, separately from
+name-prose (recommended: yes).**
+The rename has *two* targets that must not be conflated: the **display name**
+("Second Brain" → "Elixir Mind"), governed by Decision 5's proper-noun/category
+split; and the **code identifiers** — `SecondBrain.` module refs,
+`lib/second_brain/…` & `test/second_brain/…` paths, and the `:second_brain` app
+atom — which are *live pointers into the code Workstream A moves*. A stale code
+pointer is a dangling reference, not preserved history, so it must move wherever
+it is live. An audit finds these identifiers in **37 doc files**, well beyond the
+maintained-docs list: `beliefs/glossary/*` and the glossary hub/index,
+`beliefs/future-beliefs.md`, `knowledge/**` concept bodies (including the
+Decision 4 file), `meta/analysis/*`, `meta/issues/*`, `meta/evals/*`,
+`meta/elaborations/*`, and `meta/plans/*`.
+
+- **The sweep is grep-defined, not file-list-defined.** The 1a docs step targets
+  every live occurrence of the three identifier forms across all non-frozen,
+  non-`deprecated/` surfaces; the residue grep (1a.8) is the completeness oracle.
+- **Name-prose vs. code-pointer, per surface.** In `meta/analysis/` and other
+  point-in-time docs, the *prose* ("the second-brain field") stays under
+  Decision 5, but the *code links* (`lib/second_brain/contract.ex`, `SecondBrain.*`)
+  are updated. This resolves the otherwise-contradictory "analysis is frozen"
+  boundary: analysis name-prose is frozen, its code pointers are not.
+- **Frozen thread bodies are the one exception.** Prose code mentions inside the
+  verbatim `## User`/`## Assistant` render of `meta/threads/` bodies stay as
+  historical record (the path was accurate when said); only the `<routes>` ref
+  attributes are repointed (Decision 3). A tolerated stale mention in frozen
+  conversation is not the same as a live pointer in a maintained doc.
+
 ## Scope boundaries — what does not change
 
 - **Id tails.** All 200 six-hex tails survive verbatim; no id is re-minted,
@@ -162,8 +198,13 @@ policy/tutorial prose but changes nothing structural.
 - **`mix brain.*` task names** — already repo-name-agnostic and domain-neutral.
 - **Frozen retained text** in `meta/threads/` bodies, beyond the two ratified
   exceptions: the Decision 2 id-token regex and the Decision 3 `<routes>` ref
-  attributes. Prose mentions of "second brain", old URLs, and quoted commit
-  messages stay verbatim.
+  attributes. Prose mentions of "second brain", old URLs, quoted commit
+  messages, and **prose code mentions** (`lib/second_brain/…`, `SecondBrain.*`
+  in the verbatim render) stay verbatim — a stale pointer in frozen conversation
+  is tolerated (Decision 6), unlike a live pointer in a maintained doc.
+- **Name-prose** ("second brain" the category, per Decision 5) across all
+  surfaces — only *code identifiers* move in maintained/analysis docs
+  (Decision 6), not the category term.
 - **`deprecated/`** — read-only archive; not part of the bundle; excluded from
   both workstreams (its one `sb:` token and its prose stay).
 - **Git history, cited SHAs, PR numbers** — untouched; GitHub repo renames
@@ -176,8 +217,9 @@ policy/tutorial prose but changes nothing structural.
 ## Build order
 
 **Phase 0 — ratify.** Operator approves this plan; ratification covers the
-stable-identity amendment (Decision 1) and the frozen-body exceptions
-(Decisions 2–3). Plan `status` → `accepted`.
+stable-identity amendment (Decision 1), the frozen-body exceptions
+(Decisions 2–3), and the name-prose/code-identifier split (Decisions 5–6). Plan
+`status` → `accepted`.
 
 **Phase 1a — name rename PR (workstream A, one session).**
 
@@ -188,22 +230,34 @@ stable-identity amendment (Decision 1) and the frozen-body exceptions
    `SecondBrain` → `ElixirMind` and `second_brain` → `elixir_mind` across
    `lib/` and `test/` (~78 module references plus path strings in moduledocs).
 3. `.claude/hooks/session-start.sh`: log path and message prefixes.
-4. Maintained docs sweep: `README.md`, root `index.md`, `meta/preamble.md`,
-   `.claude/skills/*/SKILL.md`, `meta/flows/*.md` (including `lineage:` blocks
-   carrying code paths), `meta/tutorials/*.md`, `meta/policy/*` examples —
-   rename proper-noun uses and every `lib/second_brain/…` / `test/second_brain/…`
-   path per Decision 5.
-5. Decision 4 file rename + inbound-link fixes.
-6. Frozen-thread `<routes>` path-ref sweep (Decision 3).
-7. Regenerate: `mix brain.contract`, `brain.registry`,
+4. **Name-prose sweep** (Decision 5): rename proper-noun uses of "Second Brain"
+   in `README.md`, root `index.md`, `meta/preamble.md`, `.claude/skills/*/SKILL.md`,
+   `meta/flows/*.md`, `meta/tutorials/*.md`, `meta/policy/*` — leaving the
+   "second brain" category term.
+5. **Code-identifier sweep** (Decision 6): update every live occurrence of
+   `SecondBrain.`, `lib/second_brain/…`, `test/second_brain/…`, and `:second_brain`
+   across **all** non-frozen, non-`deprecated/` surfaces — the maintained docs
+   above *plus* `beliefs/glossary/*`, the glossary hub/index, `beliefs/future-beliefs.md`,
+   `knowledge/**` bodies, `meta/analysis/*` (code pointers only; name-prose stays),
+   `meta/issues/*`, `meta/evals/*`, `meta/elaborations/*`, `meta/plans/*`. The grep
+   (`SecondBrain\.|lib/second_brain|test/second_brain|:second_brain`) is the
+   worklist (~37 doc files today), not a fixed file list.
+6. Decision 4: rename the testing-methodology file, fix its body module refs and
+   the three inbound links' display text + paths.
+7. Frozen-thread `<routes>` path-ref sweep (Decision 3).
+8. Regenerate: `mix brain.contract`, `brain.registry`,
    `brain.route_tags --materialize`, `brain.lineage --materialize`. Hand-edit
    none of them; if a materialized surface still shows an old path, fix the
    *tag*, not the log.
-8. Full gate suite (see below); residue check
-   `grep -ri 'second[-_ ]?brain' --exclude-dir=deprecated --exclude-dir=_build .`
-   — every remaining hit must be an intentional keep (frozen prose,
-   category-term prose, dated records, this plan).
-9. PR, true merge, delete the head branch.
+9. Full gate suite (see below); **two residue checks**:
+   (a) code identifiers must be gone —
+   `grep -rIn -E 'SecondBrain\.|lib/second_brain|test/second_brain|:second_brain'
+   --include='*.md' . | grep -vE 'meta/threads/|deprecated/'` expects **zero**
+   (frozen-thread prose code mentions are the only tolerated live-tree residue);
+   (b) `grep -ri 'second[-_ ]?brain' --exclude-dir=deprecated --exclude-dir=_build .`
+   — every remaining hit must be an intentional keep (frozen prose, category-term
+   prose, dated records, this plan).
+10. PR, true merge, delete the head branch.
 
 **Phase 1b — id migration PR (workstream B, one session, after 1a merges).**
 Atomic by construction: the verifiers reject any mixed `sb:`/`em:` state, so
@@ -279,13 +333,17 @@ ids for a scratch concept. File an `issue` for anything that slipped.
   nothing depends on the directory basename.
 - **Sweep discipline:** workstream A's name appears in four casings
   (`second-brain`, `second_brain`, `SecondBrain`, `Second Brain`); the
-  residue greps in 1a.8 and 1b.6 are the completeness oracles, with the scope
-  boundaries above as the keep-list.
+  residue greps in 1a.9 and 1b.6 are the completeness oracles, with the scope
+  boundaries above as the keep-list. Note the keep-list distinguishes
+  *name-prose* (kept) from *code identifiers* (moved) — see Decision 6.
 
 ## Estimate
 
 Two focused sessions for Phase 1 (one per PR): 1a hand-edits roughly the
-Elixir tree (mechanical), one hook, ~15 maintained docs, and ~10 thread-doc
-ref sweeps; 1b is one code flip (~10 files), one policy amendment pass, one
-deterministic corpus rewrite (~940 tokens), and regeneration. Phases 2–3 are
-minutes of operator action plus one verification session.
+Elixir tree (mechanical), one hook, a name-prose sweep of the maintained docs,
+a code-identifier sweep across **~37 doc files** (Decision 6 — mostly
+mechanical `SecondBrain`/`lib/second_brain` substitutions), the Decision 4 file
+rename, and ~10 thread-doc `<routes>` ref sweeps; 1b is one code flip
+(~10 files), one policy amendment pass, one deterministic corpus rewrite
+(~940 tokens), and regeneration. Phases 2–3 are minutes of operator action plus
+one verification session.
