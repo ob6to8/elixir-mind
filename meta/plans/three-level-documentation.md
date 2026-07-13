@@ -2,8 +2,8 @@
 type: plan
 title: "Three-level documentation: plain, technical, and grounding tiers"
 description: Present opt-in documents at three levels — a plain-speak backstop for the tutorial-mode reader, the canonical terse technical body, and a grounding tier one abstraction below the source — implemented as one canonical level plus two anchored derivations, never three parallel texts.
-status: proposed
-provenance: "Claude Code session, 2026-07-13 — operator proposed three presentation levels (plain / technical / code); framing refined and core decisions agreed in-session"
+status: accepted
+provenance: "Claude Code session, 2026-07-13 — operator proposed three presentation levels (plain / technical / code); framing refined, ratified same session; execution deferred to a future session"
 tags: [meta, plan, documentation, accessibility, levels]
 timestamp: 2026-07-13
 ---
@@ -12,12 +12,15 @@ timestamp: 2026-07-13
 
 ## Status & provenance
 
-**Proposed** — the operator raised the idea on 2026-07-13 and the core framing
-was agreed in the same session: levels are opt-in per document, and the design
-is *one canonical level plus two anchored derivations*, not three parallel
-texts. The concrete artifact shape below (section conventions, frontmatter
-edge, verifier behavior) is the agent's elaboration of that framing and awaits
-operator ratification before execution.
+**Accepted** — the operator raised the idea on 2026-07-13 and ratified the
+framing and artifact shape in the same session: levels are opt-in per
+document, and the design is *one canonical level plus two anchored
+derivations*, not three parallel texts. Execution (the policy doc, the
+verifier rule, the two pilots) is deliberately **deferred to a future
+session** — this session's mandate was the plan only. A brief pre-execution
+reconnaissance of the tooling surfaced two constraints that reshape the
+artifact; they are recorded under *Design findings* below so the executing
+session inherits them.
 
 ## Problem
 
@@ -78,28 +81,48 @@ derived evidence narratives).
    remains the single source of truth. The plain tier is regenerated from it;
    the grounding tier points below it. Neither may fork into an independently
    drifting account.
-3. **The grounding tier is relative.** `implemented_by` on a doctrine holds
-   `sb:` id edges to the policies implementing it; on a policy it holds path
-   refs to the enforcing code. This mirrors the route-tag ref rule exactly: a
-   ref is a stable `sb:` id (a bundle sink) or a path (a back-link to code).
+3. **The grounding tier is relative.** `implemented_by` on a doctrine points
+   at the policies implementing it; on a policy it points at the enforcing
+   code. Refs follow the route-tag ref rule exactly: a stable `sb:` id when
+   the target is a bundle concept, a repo path otherwise (see design finding
+   2 — governance docs carry no ids, so doctrine→policy edges are paths).
 4. **The plain tier is committed, not site-only.** An earlier alternative —
    rendering level 1 only on the Pages site — was rejected by the level-1
    rationale: the backstop must be adjacent to the technical body *wherever*
    the operator reads (repo checkout, chat citation, site). A committed
    section serves all three; a site toggle serves only one.
 
-## Proposed artifact shape (awaiting ratification)
+## Design findings (pre-execution reconnaissance)
 
-- **Level 1**: a `## Plain` section in the same file, placed immediately after
-  the frontmatter and before the technical body — the failing reader meets it
-  first; the fluent reader skips a clearly-marked block at zero cost.
-  Agent-maintained: whenever a session meaningfully edits the body, it
-  re-renders the plain section *in the same motion* (the update-in-place
-  discipline applied to a derived section).
+Two constraints discovered by inspecting the tooling before building; both
+reshape the artifact and are binding on the executing session:
+
+1. **Policy bodies are inlined into `CLAUDE.md`.** The contract compiler
+   (`SecondBrain.Contract`) renders each policy's body verbatim under its
+   contract section, so a `## Plain` heading inside a policy would inject a
+   sibling of the contract's own section headings and break its structure.
+   The derived tiers therefore use **blockquote blocks**, which inline safely
+   anywhere and typographically encode "subordinate to the canonical body":
+   `> **In plain terms:** …` and `> **Grounding:** …`.
+2. **Governance docs carry no `sb:` ids.** The identity registry deliberately
+   excludes `meta/` (per the stable-identity policy), so a doctrine cannot
+   reference its implementing policies by id — those edges are **repo paths**
+   (e.g. `meta/policy/verification-grounding.md`). This is not an exception
+   invented here: route tags already define exactly this ref rule (`sb:` id
+   for bundle concepts, path for everything outside the registry).
+
+## Artifact shape (ratified)
+
+- **Level 1**: a blockquote block beginning `> **In plain terms:**` at the
+  top of the body (immediately after the H1 for docs that carry one) — the
+  failing reader meets it first; the fluent reader skips a clearly-marked
+  block at zero cost. Agent-maintained: whenever a session meaningfully edits
+  the body, it re-renders the plain block *in the same motion* (the
+  update-in-place discipline applied to a derived section).
 - **Level 3**: an `implemented_by:` frontmatter field — inline YAML list of
-  `sb:` ids and/or repo paths — plus an optional `## Grounding` prose section
-  describing what the referenced level does. The edge is the anchor; the prose
-  is editorial.
+  `sb:` ids and/or repo paths — plus an optional `> **Grounding:** …`
+  blockquote at the bottom of the body describing what the referenced level
+  does. The edge is the anchor; the prose is editorial.
 - **Verification**: `mix brain.verify` checks what has a mechanical oracle —
   `implemented_by` targets resolve (ids exist in the registry; paths exist on
   disk). Plain-section *faithfulness* has no mechanical oracle and stays
@@ -107,18 +130,21 @@ derived evidence narratives).
   most, never a CI failure.
 - **Pilot documents** (execution scope):
   - [verification-grounding](/meta/policy/verification-grounding.md) — the
-    full three-tier case: plain section, existing body,
-    `implemented_by: lib/second_brain/verifier.ex` (+ mix task) with a
-    grounding section on what the verifier rules actually check.
+    full three-tier case: plain block, existing body,
+    `implemented_by: [lib/second_brain/verifier.ex, lib/mix/tasks/brain.verify.ex]`
+    with a grounding block on what the verifier rules actually check.
   - [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md) —
-    the doctrine case: plain section, existing body, `implemented_by` id edges
-    to the policies that realize the doctrine.
+    the doctrine case: plain block, existing body, `implemented_by` path refs
+    to the policies that realize the doctrine (see design finding 2).
 
 ## Open questions
 
-- **Section naming.** `## Plain` and `## Grounding` are placeholders; the
-  operator may prefer other names (e.g. `## In plain terms`,
-  `## Implementation`).
+- **Model selection for tier maintenance.** Whether guidance on which model
+  tier performs which motion (e.g. a cheaper model re-rendering plain blocks,
+  a stronger one writing canonical bodies) belongs anywhere durable. Position:
+  not in this plan — a plan finishes and its guidance gets buried, while model
+  choice for a *recurring* maintenance motion is standing direction. If wanted,
+  it belongs in the doctrine/policy layer, and plans merely cite it.
 - **Staleness signal for the plain tier.** Presence is checkable; freshness is
   not. Whether to add a soft signal (e.g. a verifier warning when a body's
   timestamp outruns some marker on the plain section) is deferred until the
@@ -130,12 +156,14 @@ derived evidence narratives).
   produce level-1↔level-2 movements for external material and phrases; once
   the section convention exists they could target it directly. Deferred.
 
-## Build order (on ratification)
+## Build order (for the executing session)
 
-1. Settle section names and flip this plan to `accepted`.
-2. Policy doc under `meta/policy/` (the levels convention, the
-   `implemented_by` field, the opt-in rule) + `/render-contract`.
-3. Verifier rule for `implemented_by` resolution, with tests.
+1. Flip this plan to `in-progress`.
+2. Policy doc under `meta/policy/` (the levels convention, the blockquote
+   markers, the `implemented_by` field, the opt-in rule) + `/render-contract`.
+3. Verifier rule for `implemented_by` resolution — refs on bundle concepts
+   *and* governance docs; `sb:` ids resolve in the registry, paths exist in
+   the repo — with red + green tests.
 4. Pilot the two documents above.
-5. Gate suite, commit, push; flip to `done` with any classification calls
+5. Gate suite, commit, push; flip to `done` with any editorial calls
    recorded.
