@@ -7,7 +7,8 @@ A separate namespace from `issues` (problems to diagnose and track) and `plans`
 Each todo is a `type: todo` doc carrying a `status` (`open` · `done` · `cancelled`).
 Todos are added and listed with the [`/todo`](/.claude/skills/todo/SKILL.md) skill.
 Done and cancelled todos stay filed as a record of what was on the list and its
-outcome.
+outcome. Entries within each section are ordered by `timestamp`, most recent first
+(see the [collection-view-by-date plan](/meta/plans/collection-view-by-date.md)).
 
 ## Open
 
