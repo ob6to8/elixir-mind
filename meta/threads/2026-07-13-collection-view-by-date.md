@@ -5,6 +5,7 @@ description: Surveyed the brain's three date signals and four surfaces for viewi
 provenance: "Claude Code session, 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, indexes, collections, recency, timestamp]
 timestamp: 2026-07-13
+pr: 68
 ---
 
 # 2026-07-13-collection-view-by-date
