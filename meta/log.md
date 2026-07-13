@@ -4,6 +4,17 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-11
 
+- **`/capture` of this session** → thread
+  [2026-07-11-belief-decomposition-analysis-and-epistemic-prior-art](/meta/threads/2026-07-11-belief-decomposition-analysis-and-epistemic-prior-art.md)
+  (render-from-context; operator messages and closing replies verbatim, tool
+  noise and short pre-tool narration stripped). Five-row routing ledger, all
+  closed; one region tagged to the [glossary hub](/glossary.md) (`sb:0b648f`,
+  excerpt log materialized), the rest path back-links to the analysis, plan, and
+  future-beliefs. `/add-to-glossary` over the thread doc then added three more
+  terms the session coined ([attestation](/glossary/attestation.md),
+  [inference (belief role)](/glossary/inference-belief-role.md),
+  [entity resolution](/glossary/entity-resolution.md)), taking the glossary to
+  110. Ran as step 1–2 of `/create-pull-request`.
 - **New analysis:**
   [Belief decomposition over artifacts: derive the graph, never author it](/meta/analysis/belief-decomposition-derived-vs-authored.md)
   — files the session's assessment of the operator's atomic-belief-DAG idea:

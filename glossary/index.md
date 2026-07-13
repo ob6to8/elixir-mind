@@ -15,6 +15,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [assumption](/glossary/assumption.md) — a belief held provisionally, hence retractable: TMS (rests on absence of belief), ATMS (primitive datum), and GSN (unsubstantiated statement) senses
 - [assurance case](/glossary/assurance-case.md) — a structured, evidence-backed argument that a system satisfies a property; the regulator-facing deliverable, commonly in GSN
 - [atomic fact](/glossary/atomic-fact.md) — the decomposition unit of factuality evaluation: one independently checkable statement extracted from a longer generation
+- [attestation (belief role)](/glossary/attestation.md) — a belief asserted directly by a source/artifact; the primary atomic node an inference must ultimately ground in
 - [bipartite graph](/glossary/bipartite-graph.md) — nodes split into two disjoint sets, edges only across the split; in belief graphs, belief vs. justification nodes
 - [blast radius (of a retracted premise)](/glossary/blast-radius.md) — everything transitively dependent on a premise, needing re-examination when it falls; a staleness signal, not a truth score
 - [candidate feed](/glossary/candidate-feed.md) — a regenerated list of external candidates held outside the bundle until a human accepts one
@@ -37,6 +38,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [entailment (logical consequence)](/glossary/entailment.md) — premises force the conclusion in every interpretation; the question each belief-graph support edge poses
+- [entity resolution](/glossary/entity-resolution.md) — deciding when two differently-phrased items denote the same entity; for beliefs, the hard core of cross-document comparison
 - [environment (ATMS)](/glossary/environment-atms.md) — a set of assumptions read as their conjunction; its consistent closure (a context) models one coherent worldview among many
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
@@ -55,6 +57,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [grounded extension](/glossary/grounded-extension.md) — a Dung framework's unique minimal (most skeptical) self-defending argument set; the formal model of a consensus core
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
+- [inference (belief role)](/glossary/inference-belief-role.md) — a belief derived from other beliefs, licensed to exceed its premises; the counterpart to an attestation
 - [issue (type)](/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`
 - [justification](/glossary/justification.md) — the recorded license for a belief; distinct TMS (derivation record), GSN (rationale annotation), and Toulmin senses
 - [label (ATMS)](/glossary/label-atms.md) — the minimal consistent environments attached to a belief, kept sound/complete/minimal so context membership is a subset test

@@ -62,6 +62,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:7a467d` | [glossary/assumption](/glossary/assumption.md) | concept | false |
 | `sb:6cf17b` | [glossary/assurance-case](/glossary/assurance-case.md) | concept | false |
 | `sb:fd5a1e` | [glossary/atomic-fact](/glossary/atomic-fact.md) | concept | false |
+| `sb:0e6a29` | [glossary/attestation](/glossary/attestation.md) | concept | false |
 | `sb:dcbb9e` | [glossary/bipartite-graph](/glossary/bipartite-graph.md) | concept | false |
 | `sb:d73148` | [glossary/blast-radius](/glossary/blast-radius.md) | concept | false |
 | `sb:ee8dfd` | [glossary/candidate-feed](/glossary/candidate-feed.md) | concept | false |
@@ -84,6 +85,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:c2c638` | [glossary/entailment](/glossary/entailment.md) | concept | false |
+| `sb:990c2c` | [glossary/entity-resolution](/glossary/entity-resolution.md) | concept | false |
 | `sb:9054ac` | [glossary/environment-atms](/glossary/environment-atms.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
@@ -102,6 +104,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:fe0ebd` | [glossary/grounded-extension](/glossary/grounded-extension.md) | concept | false |
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
+| `sb:1c0310` | [glossary/inference-belief-role](/glossary/inference-belief-role.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
 | `sb:7d7a88` | [glossary/justification](/glossary/justification.md) | concept | false |
 | `sb:056746` | [glossary/label-atms](/glossary/label-atms.md) | concept | false |
