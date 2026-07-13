@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, derived dev-history session"
   why: "persists the design of the generated dev-history view per the persist-plans policy"
+  from: [/meta/threads/2026-07-13-derived-dev-history-from-merge-graph.md]
 tags: [meta, plan, tooling, provenance, generated-artifact]
 timestamp: 2026-07-13
 ---
