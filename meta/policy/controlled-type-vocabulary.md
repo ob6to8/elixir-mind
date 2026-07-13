@@ -6,7 +6,12 @@ section: type-vocabulary
 order: 1
 status: active
 tags: [meta, governance, types, vocabulary]
-timestamp: 2026-07-05
+timestamp: 2026-07-11
+attribution:
+  when: 2026-07-05T12:30:48+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -50,5 +55,27 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
+- `todo` — a lightweight actionable task item: a single thing to be done, tracked
+  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
+  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
+  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
+  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
+- `elaboration` — a persisted expansion of a technical **phrase or short passage**:
+  the quoted target, definitions of the terms it uses, and a less technical overview
+  of the concepts and actions it describes — produced by `/elaborate` and back-linked
+  to its originating session via `attribution.from` once that session is
+  captured (`/create-pull-request` stamps it). Distinct from a glossary `concept` (one
+  *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
+  elaboration unpacks *one specific mouthful in context* (lives under
+  `meta/elaborations/`).
+- `doctrine` — a persisted **intention statement**: a guiding principle or direction
+  that shapes how the brain and its agents are designed and prioritized — the "why"
+  that informs judgment without prescribing a specific enforceable action. Doctrine
+  sits *above* policy: a `policy` implements doctrine as a concrete, machine- or
+  operator-enforceable rule, and plans, analyses, and priority rankings may cite a
+  doctrine as the direction they serve. Distinct from a `policy` (an enforceable
+  *rule*), an `analysis` (a *reasoned judgment on a question*), and a `note` (a
+  distilled *idea*) — a doctrine is a *standing direction* (lives under
+  `meta/doctrine/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.

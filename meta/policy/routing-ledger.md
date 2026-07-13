@@ -7,6 +7,11 @@ order: 2
 status: active
 tags: [meta, governance, threads, routing, workflow]
 timestamp: 2026-07-08
+attribution:
+  when: 2026-07-08T11:54:45+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
 ---
 Every captured thread carries a **`## Routing`** section: a per-thread dispatch
 table with one row per topic the session touched. It is a **router, never a
@@ -28,7 +33,7 @@ Four columns:
   dispatch) are orthogonal: a strand can be routed yet still `open`, or `closed`
   and `unrouted`.
 - **Routed-to targets are `concept` docs**, linked by bundle-absolute path
-  (e.g. `[foo](/SWE/…/foo.md)`). The route-tagging cross-check reads this column
+  (e.g. `[foo](/knowledge/SWE/…/foo.md)`). The route-tagging cross-check reads this column
   to confirm every concept-routed row is covered by a tag (see the route-tagging
   policy).
 - **In-doc, maintained at capture time.** The ledger is a section of the thread

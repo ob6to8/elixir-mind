@@ -1,24 +1,29 @@
 ---
 type: issue
-title: "Daily /news Routine: automated runs not landing on main"
-description: The scheduled daily /news Routine's fresh-session runs produce no commit, branch, or push; an environment-wide tool-approval gate is the suspected cause.
+title: "Daily /research Routine: automated runs not landing on main"
+description: The scheduled daily /research Routine's fresh-session runs produce no commit, branch, or push; an environment-wide tool-approval gate is the suspected cause.
 status: open
 resource: "trigger:trig_01PAiKWrWgVs4djSkhELoLYw"
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — setup/verification of the /news Routine"
-tags: [meta, issue, inbox, news, automation, scheduling, approval-gate]
+tags: [meta, issue, inbox, research, automation, scheduling, approval-gate]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T17:10:59+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-news-routine-issue-and-featuring.md]
 ---
 
-# Daily /news Routine: automated runs not landing on `main`
+# Daily /research Routine: automated runs not landing on `main`
 
 ## Summary
 
-The daily news-inbox Routine — claude-code-remote trigger
+The daily research-inbox Routine — claude-code-remote trigger
 `trig_01PAiKWrWgVs4djSkhELoLYw` (cron `0 13 * * *`, fresh session per fire, env
 `env_011CUozZFcUmXQWzMusBiZQp`; see
 [the setup thread](/meta/threads/2026-07-09-daily-news-inbox-routine.md)) — is
 created and enabled, but its **automated runs do not land any change on `main`**.
-The intended pipeline (run `/news` → write `inbox/YYYY-MM-DD.md` → `mix
+The intended pipeline (run `/research` → write `inbox/YYYY-MM-DD.md` → `mix
 brain.verify && mix brain.route_tags` → commit & push) never produces a commit.
 
 ## Evidence
@@ -29,7 +34,7 @@ at **2026-07-09T13:01:53 UTC**:
 - Top commit unchanged (`f570fc2`, last committed 12:41 UTC — *before* the fire).
 - `inbox/2026-07-09.md` byte-identical to the prior-session original (blob
   `029108ef…`, from commit `7efb6be`). No regeneration.
-- No news-related branch or PR appeared; the newest `claude/*` branch predates
+- No research-related branch or PR appeared; the newest `claude/*` branch predates
   13:00 UTC.
 
 In the same session, **tool-approval calls to the claude-code-remote MCP server
@@ -50,13 +55,13 @@ Not fully confirmed: from inside a session it was not possible to distinguish
 
 ## Impact
 
-The daily feed is not self-generating. Everything else is healthy: the `/news`
+The daily feed is not self-generating. Everything else is healthy: the `/research`
 skill, the `inbox/` namespace, and the verification plumbing (`mix brain.verify`
 and `mix brain.route_tags` both pass on a clean tree).
 
 ## Workaround (current)
 
-The trigger is **left in place** (enabled). For now the operator runs **`/news`
+The trigger is **left in place** (enabled). For now the operator runs **`/research`
 manually each day** to generate the digest. This produces the same artifact the
 Routine would.
 

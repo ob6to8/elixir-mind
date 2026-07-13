@@ -5,6 +5,7 @@ description: Created a daily scheduled trigger (Routine) that fires a fresh sess
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, inbox, news, automation, scheduling]
 timestamp: 2026-07-09
+pr: 20
 ---
 
 # Thread — daily news-inbox Routine (scheduled /news trigger)
@@ -28,7 +29,7 @@ the Routine itself (plus this capture).
 
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
-| Daily scheduled trigger (Routine) that runs the `/news` skill and pushes the inbox digest | closed | `unrouted` (operational; back-linked to [`/news` skill](/.claude/skills/news/SKILL.md)) | - |
+| Daily scheduled trigger (Routine) that runs the `/news` skill and pushes the inbox digest | closed | `unrouted` (operational; back-linked to [`/news` skill](/.claude/skills/research/SKILL.md)) | - |
 
 ## User
 
@@ -38,7 +39,7 @@ Generate today's news inbox for this second-brain knowledge base. Run the /news 
 
 ## Assistant
 
-<routes ref=".claude/skills/news/SKILL.md">
+<routes ref=".claude/skills/research/SKILL.md">
 The Routine is created and enabled.
 
 **Trigger ID: `trig_01PAiKWrWgVs4djSkhELoLYw`**

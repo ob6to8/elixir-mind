@@ -23,5 +23,11 @@ mix brain.verify
 echo "pre-commit: mix brain.route_tags"
 mix brain.route_tags
 
+echo "pre-commit: mix brain.lineage --check"
+mix brain.lineage --check
+
+echo "pre-commit: mix brain.dev_history --check"
+mix brain.dev_history --check
+
 echo "pre-commit: mix test"
 mix test
