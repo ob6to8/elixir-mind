@@ -5,6 +5,7 @@ description: Closed out the operator side of the orphaned-branch cleanup — loc
 provenance: "Claude Code session (Claude Opus 4.8, with earlier turns as Claude Fable 5), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, git, branches, cleanup, transplant, orphaned-branch]
 timestamp: 2026-07-13
+pr: 81
 ---
 
 # 2026-07-13-orphaned-branch-cleanup-and-transplant-plan
