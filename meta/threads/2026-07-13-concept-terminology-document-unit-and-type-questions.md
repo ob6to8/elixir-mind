@@ -5,7 +5,7 @@ description: A terminology review that split the overloaded word "concept" — P
 provenance: "Claude Code session (Claude Fable 5, then Claude Opus 4.8 for capture), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, terminology, types, vocabulary, glossary, verification]
 timestamp: 2026-07-13
-# pr: added by /create-pull-request once the PR is opened
+pr: 71
 ---
 
 # 2026-07-13-concept-terminology-document-unit-and-type-questions
