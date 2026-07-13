@@ -3,7 +3,7 @@ type: plan
 title: "Glossary sense disambiguation: common vs. repo-specific usage"
 description: Classify every glossary term by where its usage lives — common (portable), repo (this brain's own vocabulary), or dual (both senses) — via a `sense` frontmatter field, a dual-entry body convention, a verifier rule, and the /add-to-glossary conventions to keep it current.
 status: done
-provenance: "Claude Code session (claude-fable-5), 2026-07-13 — operator proposed disambiguating glossary usages between common and repo-specific; ratified and implemented same session"
+provenance: "Claude Code session, 2026-07-13 — operator proposed disambiguating glossary usages between common and repo-specific; ratified and implemented same session"
 tags: [meta, plan, glossary, terminology, verification]
 timestamp: 2026-07-13
 ---
