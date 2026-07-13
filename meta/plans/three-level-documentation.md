@@ -139,12 +139,12 @@ reshape the artifact and are binding on the executing session:
 
 ## Open questions
 
-- **Model selection for tier maintenance.** Whether guidance on which model
-  tier performs which motion (e.g. a cheaper model re-rendering plain blocks,
-  a stronger one writing canonical bodies) belongs anywhere durable. Position:
-  not in this plan — a plan finishes and its guidance gets buried, while model
-  choice for a *recurring* maintenance motion is standing direction. If wanted,
-  it belongs in the doctrine/policy layer, and plans merely cite it.
+- **Model selection for tier maintenance** — *resolved 2026-07-13*: standing
+  direction belongs in the doctrine layer, not in plans, and is now filed as
+  [capability-matched model selection](/meta/doctrine/capability-matched-model-selection.md).
+  Applied here: plain-tier re-rendering is a derivational motion (delegate to
+  a cheaper tier); canonical-body writing and verification judgment stay with
+  the strongest tier.
 - **Staleness signal for the plain tier.** Presence is checkable; freshness is
   not. Whether to add a soft signal (e.g. a verifier warning when a body's
   timestamp outruns some marker on the plain section) is deferred until the
