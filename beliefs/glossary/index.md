@@ -30,6 +30,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [context rot](/beliefs/glossary/context-rot.md) — degradation of an LLM's effective attention as its context window fills; retrieval reliability drops with occupancy
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
@@ -37,6 +38,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [cross-reference drift](/beliefs/glossary/cross-reference-drift.md) — a change that should update many interlinked docs only updates some; the rest rot silently (the LLM-wiki killer)
 - [cross-site scripting (XSS)](/beliefs/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [dark factory](/beliefs/glossary/dark-factory.md) — from lights-out manufacturing: an operation run end-to-end by autonomous agents, humans reduced to governance rather than presence
+- [decision prior](/beliefs/glossary/decision-prior.md) — a proposition held true enough to guide action even when uncertain or value-laden; same facts, different priors → different strategies
 - [deduplication](/beliefs/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
 - [deep belief network](/beliefs/glossary/deep-belief-network.md) — a generative stack of restricted Boltzmann machines, trained greedily layer by layer; Hinton/Osindero/Teh (2006); pointer to the filed concept
 - [dependency-free](/beliefs/glossary/dependency-free.md) — relying only on the standard library — no external packages, so it runs offline in restricted sandboxes
@@ -51,6 +53,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [embeddings](/beliefs/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/beliefs/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [epistemic poisoning](/beliefs/glossary/epistemic-poisoning.md) — contaminating a shared knowledge base with false beliefs via untrusted intake; prompt injection escalated to every future reader
+- [epistemic/teleological split](/beliefs/glossary/epistemic-teleological-split.md) — the filing distinction between what-is-true statements (beliefs, claims) and standing-direction statements (doctrine)
 - [excerpt log (route-tagged log)](/beliefs/glossary/excerpt-log.md) — the generated per-thread excerpt section a route-tag sink carries, re-derivable from the tags, never hand-edited
 - [ExUnit](/beliefs/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)
 - [fast-forward merge](/beliefs/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
@@ -58,6 +61,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [feeding pairs](/beliefs/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
 - [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
+- [functional core, imperative shell](/beliefs/glossary/functional-core-imperative-shell.md) — pure decision logic in a stateless core, state and effects in a thin wrapper; the agent = model core + loop shell
 - [gate suite](/beliefs/glossary/gate-suite.md) — the full set of blocking verification checks a change must pass before landing, run manually, by the pre-commit hook, and in CI; pointer to the gate-suite tutorial
 - [generative model](/beliefs/glossary/generative-model.md) — a model that learns the joint distribution of its data so it can synthesize new samples, as opposed to a discriminative input→label mapping
 - [git worktree](/beliefs/glossary/git-worktree.md) — a linked working dir with its own HEAD/index/tree over a shared `.git` store; isolates parallel branches/agents
@@ -103,6 +107,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [property-based testing](/beliefs/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
 - [proto-belief document](/beliefs/glossary/proto-belief-document.md) — cb's per-matter accreting page; maps onto this brain's per-topic `concept` sink
 - [provenance](/beliefs/glossary/provenance.md) — the frontmatter field for a statement's immutable origin; orthogonal to verification
+- [pure function](/beliefs/glossary/pure-function.md) — output determined only by explicit inputs, no side effects; what an LLM forward pass with frozen weights literally is
 - [query profile](/beliefs/glossary/query-profile.md) — per-category interest signals derived from the taxonomy tree, used as the `/research` retrieval filter
 - [ratification](/beliefs/glossary/ratification.md) — the operator's explicit approval turning a proposed shape change (directory, type, plan scope) into an adopted one
 - [ReAct](/beliefs/glossary/react.md) — the foundational LLM agent loop: alternate reasoning traces with tool actions whose observations feed back in (pointer to the filed Yao et al. reference)
@@ -113,6 +118,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [recall@k](/beliefs/glossary/recall-at-k.md) — a metric: is the correct target within the top *k* results? reported across a query set
 - [red test](/beliefs/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
 - [rendered aggregation](/beliefs/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
+- [REPL](/beliefs/glossary/repl.md) — read-eval-print loop; the agent loop is one over model output (read emission, dispatch, evaluate tool, append, recurse)
 - [research spike](/beliefs/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
 - [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) — the near-duplicate concepts left after automated dedup's cheap best, handed to a human editorial pass to merge
 - [restricted Boltzmann machine (RBM)](/beliefs/glossary/restricted-boltzmann-machine.md) — a two-layer undirected generative net with bipartite (no within-layer) connectivity, so each layer is conditionally independent given the other; the building block of a deep belief network
@@ -121,6 +127,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [routing ledger](/beliefs/glossary/routing-ledger.md) — the per-thread dispatch table (topic/state/routed-to/dangling); pointers and states only, no content
 - [run (canonical run)](/beliefs/glossary/run.md) — a single end-to-end execution of a flow or scheduled job; the unit a flow doc's touch-sequence narrates
 - [scenario test](/beliefs/glossary/scenario-test.md) — an end-to-end test driving a whole workflow against a realistic fixture and asserting on final state
+- [second mind](/beliefs/glossary/second-mind.md) — an AI layer that reasons and synthesizes over a personal knowledge store, vs. a second brain that only stores and retrieves
 - [section terminator](/beliefs/glossary/section-terminator.md) — the pattern deciding where a parsed section ends; reader and rewriter of one section must agree on it
 - [self-consistency check](/beliefs/glossary/self-consistency-check.md) — a check that re-derives a value from its own source; catches drift but is blind to shared-logic errors
 - [semantic search](/beliefs/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
@@ -144,6 +151,7 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
+- [tower of interpreters](/beliefs/glossary/tower-of-interpreters.md) — the agent as stacked interpreters: model over natural language, loop over model emissions, tools over structured arguments
 - [tree is the taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) — the directory tree, surfaced via `index.md` files (progressive disclosure), *is* the canonical taxonomy
 - [Tree-sitter](/beliefs/glossary/tree-sitter.md) — incremental multi-language parser producing concrete syntax trees; the parsing layer under code knowledge graphs
 - [true merge](/beliefs/glossary/true-merge.md) — a two-parent merge commit wiring the branch's real history into the target's ancestry; keeps cited SHAs reachable (mandated here)
@@ -156,3 +164,4 @@ definition. See the [glossary hub](/beliefs/glossary.md) for how the system work
 - [webhook](/beliefs/glossary/webhook.md) — an HTTP callback that inverts polling: the service POSTs to an endpoint you operate when an event occurs; needs an always-on receiver that authenticates and reacts
 - [verification grounding](/beliefs/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
 - [verified_by](/beliefs/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)
+- [von Neumann architecture](/beliefs/glossary/von-neumann-architecture.md) — stored-program computer organization (ALU, control, memory, I/O) that the model/loop/memory/tools decomposition reproduces
