@@ -18,6 +18,7 @@ system works.
 - [append-only](/beliefs/glossary/append-only.md) — a structure that admits new entries but never edits or removes existing ones, so its history is immutable even as it grows; the carve-out that lets governance `attribution.from` accrete
 - [approval gate](/beliefs/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/beliefs/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
+- [artifact](/beliefs/glossary/artifact.md) — a self-contained, hosted, client-side document Claude generates alongside a chat reply, rendered live and shareable by URL; pointer to the filed concept
 - [assertion graph](/beliefs/glossary/assertion-graph.md) — the pre-OKF design: atomic claims (primitives + compounds with explicit deps) forming a DAG; remnants under `deprecated/`
 - [attribution](/beliefs/glossary/attribution.md) — the frontmatter map recording a doc's ingestion event (when/channel/agent/why, plus governance `from`); immutable, orthogonal to provenance and timestamp
 - [auto-intake](/beliefs/glossary/auto-intake.md) — the `/research` step that files its featured items into the bundle via `/intake` in the same run, moving the operator from a pre-intake gate to post-intake editorial work
@@ -39,6 +40,7 @@ system works.
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
 - [constant tutorial mode](/beliefs/glossary/constant-tutorial-mode.md) — the operator's reader state when learning an agent-built system by using it; the audience the plain tier backstops
+- [Content Security Policy](/beliefs/glossary/content-security-policy.md) — a browser-enforced standard restricting which resources a page may load or contact; what makes a Claude artifact a sealed client-side document
 - [contrastive divergence](/beliefs/glossary/contrastive-divergence.md) — a fast approximate training algorithm for restricted Boltzmann machines, using a short Gibbs-sampling run in place of the intractable exact gradient
 - [CRLF](/beliefs/glossary/crlf.md) — the two-byte `\r\n` line ending (Windows) vs Unix's bare LF; normalize on read or honor the file's own ending on write
 - [cron expression](/beliefs/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
@@ -53,6 +55,7 @@ system works.
 - [detector](/beliefs/glossary/detector.md) — a mechanical check converting a violation or drift from silent state into announced signal; gates fail, warn passes report
 - [deterministic spine](/beliefs/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/beliefs/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
+- [directed acyclic graph (DAG)](/beliefs/glossary/directed-acyclic-graph.md) — a graph of directed edges with no cycles — the shape of dependencies, pipelines, orderings, and cross-linked concept graphs; guarantees a topological order
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
 - [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
@@ -79,6 +82,7 @@ system works.
 - [greedy layer-wise pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) — building a deep network one layer at a time, each trained (unsupervised) on the layer below's output, before any end-to-end fine-tuning
 - [grounding tier](/beliefs/glossary/grounding-tier.md) — the third documentation tier: one abstraction level below the source doc, anchored by a planned `implemented_by` edge (code for a policy, policies for a doctrine)
 - [HTML escaping](/beliefs/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
+- [hot module reload (HMR)](/beliefs/glossary/hot-module-reload.md) — a dev-server technique swapping changed modules into a running app in place, updating the live view on each edit without a full reload; the local echo of an artifact's iteration loop
 - [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
 - [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/research` candidate digests (no ids, never verified)
 - [invisible degradation](/beliefs/glossary/invisible-degradation.md) — corpus rot that emits no signal while it happens; nothing announces it until retrieval visibly fails
