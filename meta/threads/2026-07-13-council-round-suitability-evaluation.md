@@ -1,8 +1,8 @@
 ---
 type: reference
 title: 2026-07-13-council-round-suitability-evaluation
-description: Evaluated the operator-supplied "council round" adversarial draft-PR review protocol for integration; filed the suitability analysis (verdict — integrate as /council after four ratified bindings) and clarified the three senses of "distilled, not dumped" across the council prompt and the bundle's policies.
-provenance: "Claude Code session (Claude Fable), 2026-07-13; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped; one delivered ≥300-char assistant block absent from the host log was reinstated verbatim from the live context"
+description: Evaluated the operator-supplied "council round" adversarial draft-PR review protocol for integration; filed the suitability analysis (verdict — integrate as /council after four ratified bindings), reconciled and merged PR #72, then ratified the verdict into a deferred-execution plan.
+provenance: "Claude Code session (Claude Fable, then Claude Sonnet 5 after a mid-session /model switch), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped; earlier turns parsed from the host session log with one gap reinstated from live context, later turns (main-reconciliation, PR merge, plan authoring) rendered from live context"
 tags: [meta, thread, council, review, adversarial, analysis, distillation]
 timestamp: 2026-07-13
 pr: 72
@@ -50,13 +50,27 @@ added, the analysis doc gained its required `attribution.from` back-link to
 this thread, this thread was stamped `pr: 72`, and the `log.md`/`meta/log.md`
 entries this session had written were dropped (retired policy) rather than
 merged — content untouched throughout, relocation and metadata backfill only.
+The operator then said "Merge"; PR #72 was merged into `main` as a true merge
+commit (`7b708a5`), CI green beforehand, head branch auto-deleted. Rather than
+leave the verdict as a paused analysis strand awaiting ratification, the
+operator asked for it to be authored as a plan for later: this session
+restarted the designated branch from the new `main` tip (the prior branch was
+merged and gone) and filed
+[the /council skill plan](/meta/plans/council-skill.md) (`type: plan`,
+`status: accepted`, execution explicitly deferred) — the four bindings
+recast as concrete build decisions plus a build order, with a "Ratified"
+pointer added atop the analysis and an entry in `meta/plans/index.md`. A
+stop-hook then required the resulting uncommitted changes to be committed and
+pushed, which this capture pass folds in.
 
 ## Routing
 
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
-| Council-round protocol: suitability for integration | paused | [council-round-suitability](/meta/analysis/council-round-suitability.md) | Operator to ratify the four bindings and commission the `/council` skill |
+| Council-round protocol: suitability for integration | closed | [council-round-suitability](/meta/analysis/council-round-suitability.md) | - |
 | "Distilled, not dumped" — where defined, when it applies, three senses | closed | `unrouted` | - |
+| Reconcile PR #72 against main's intervening restructure and land it | closed | `unrouted` | - |
+| Author the ratified verdict as a deferred-execution plan | closed | [council-skill plan](/meta/plans/council-skill.md) | - |
 
 ## User
 
@@ -211,3 +225,80 @@ Nothing is left unpersisted now — the session is captured and everything is pu
 All gates green (`brain.contract --check`, `brain.registry --check`, `brain.verify`, `brain.route_tags`, 81 tests), committed as `09c6826` and pushed to `claude/council-review-secondbrain-oq5e8o` (two commits total on the branch: the analysis `ccb6a31`, the capture `09c6826`).
 
 The only open items are yours, and both are recorded in the tree: ratifying the four bindings if you want `/council` built, and whether to open a PR for this branch — say the word or run `/create-pull-request` (its capture step will just update this thread doc in place).
+
+## User
+
+Pull main again and reconcile pr
+
+## Assistant
+
+<routes ref="meta/policy/merge-strategy.md">
+PR #72 is reconciled and pushed. What the merge involved, since main had moved substantially since this branch was cut (a root reorg into `knowledge/`/`beliefs/`, new `attribution`/`sense` frontmatter properties, and retirement of the hand-kept logs, plus 20+ other PRs):
+
+- True-merged `origin/main` into the branch (per the merge-strategy policy — no rebase, so this thread's own cited commit SHAs stay reachable).
+- Relocated the 5 new glossary terms to `beliefs/glossary/`, added `sense` (repo/dual/common per term) and the required `attribution` block to each, and fixed their internal cross-links to the new paths.
+- Added the required `attribution.from` block to the analysis doc, pointing back at the thread.
+- Stamped the thread doc with `pr: 72` (now known) and added a short note documenting this reconciliation pass.
+- Merged the two additive index conflicts (`meta/analysis/index.md`, `meta/threads/index.md`) — kept both sides.
+- Dropped this session's `log.md`/`meta/log.md` entries entirely — those files are deleted on `main` under the retired-logs policy; the commit graph is now the sole change-narrative layer.
+- Regenerated `meta/registry.md` rather than hand-merging it.
+
+Content itself is untouched — this was pure relocation and metadata backfill. Full gate suite is green: format, `brain.contract --check`, `brain.registry --check`, `brain.verify`, `brain.route_tags`, `brain.lineage --check`, and 156 tests (dev-history check skipped — shallow clone, as designed). Pushed as `9fde6d8`; PR #72 should now be mergeable against current `main`.
+</routes>
+
+## User
+
+Merge
+
+## Assistant
+
+<routes ref="meta/policy/merge-strategy.md meta/policy/git-branch-deletion.md">
+Good — `claude/council-review-secondbrain-oq5e8o` is already gone (auto-delete handled it), and `main` is now at `7b708a5`, the merge commit. Nothing further to clean up.
+
+**PR #72 is merged.** Summary:
+- Merge commit: `7b708a5` (true merge, per policy — the PR's four commits, including the council-round-suitability analysis and the main-reconciliation merge, stay reachable from `main`'s history).
+- CI (`verify`) was green on the head commit before merging.
+- Head branch auto-deleted.
+
+The suitability verdict is now durably on `main`: **integrate the council-round protocol as a `/council` skill, after you ratify the four bindings** (narrow the no-transcripts rule, bind the distillation target to `meta/plans/`, reconcile with `/create-pull-request`, land via a skills-registry policy edit). That's recorded in `meta/analysis/council-round-suitability.md`, with the full session in `meta/threads/2026-07-13-council-round-suitability-evaluation.md` — routing ledger still shows the evaluation strand `paused` on your ratification.
+</routes>
+
+## User
+
+I would rather author this as a plan to do later
+
+## Assistant
+
+<routes ref="meta/plans/council-skill.md meta/policy/persist-plans.md">
+I've filed the ratified decision as a plan rather than leaving it as a paused analysis strand. What I did:
+
+**[`meta/plans/council-skill.md`](meta/plans/council-skill.md)** — `type: plan`, `status: accepted`, execution deferred. It carries:
+- The problem (no defined drafted→merged gate) and the decision to build `.claude/skills/council/SKILL.md`.
+- The four bindings from the analysis, now written as concrete build decisions rather than open caveats.
+- A build order (write the skill → registry edit + `/render-contract` → one labelled hand-run founding round → only then consider a mechanical gate checker).
+- Explicit scope boundaries (not replacing `/code-review`; not building the verifier yet).
+- `attribution.from` pointing back at both the analysis and the thread, per the resource-attribution policy.
+
+**Housekeeping to keep the two docs coherent:**
+- Added the plan to `meta/plans/index.md` under Accepted / In progress.
+- Added a short "Ratified" pointer note at the top of the analysis doc, directing future readers to the plan for the build spec — the analysis stays the historical judgment, the plan is where work resumes.
+
+I deliberately left the thread doc's routing ledger untouched — that row (`paused`, dangling: "operator to ratify...") gets updated by `/capture` at the next close, not hand-edited mid-session, per how this repo's ledger upkeep works.
+
+Everything's local on the restarted `claude/council-review-secondbrain-oq5e8o` branch (PR #72 merged, so I rebuilt the branch from current `main` first) — not yet committed or shipped. Want me to run `/create-pull-request` now, or keep going?
+</routes>
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+## Assistant
+
+The hook wants uncommitted work saved — that's a mechanical safety check, not a request to open a PR. I'll persist the session properly first (capture the new exchange, since a ratified plan is exactly the kind of decision this repo's policy says must survive the session), then commit and push to the branch, without opening a PR since that wasn't asked for.
+
+Committed (`2aabfee`) and pushed to `claude/council-review-secondbrain-oq5e8o` — no PR opened, since only the commit was requested.
+
+What shipped: the plan (`meta/plans/council-skill.md`, `status: accepted`, execution deferred), the analysis's "Ratified" pointer, the plans index entry, and a capture of everything since PR #72 merged — the main-reconciliation, the merge itself, and this plan-authoring turn, folded into the thread doc's routing ledger (evaluation strand now `closed`, routed to the plan) and threads index. All gates green (contract, registry, verify, route_tags, lineage, 156 tests).
+
+The branch is pushed but has no open PR — say the word (or run `/create-pull-request`) whenever you want this shipped to `main`.

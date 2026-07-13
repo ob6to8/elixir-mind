@@ -15,6 +15,14 @@ attribution:
 
 # Should the council-round protocol be integrated into this repo?
 
+> **Ratified.** The operator accepted this verdict and asked for it to be
+> authored as intended work for later, rather than built immediately. The
+> build spec — the four bindings as concrete decisions, plus the build order —
+> is persisted as
+> [the /council skill plan](/meta/plans/council-skill.md) (`status: accepted`,
+> execution deferred). This analysis remains the reasoned judgment; the plan
+> is where a future session picks up the work.
+
 **Question.** The operator supplied a prompt defining a **council round**: a
 structured, adversarial, multi-agent review of drafted work, run as comments on
 a draft PR, driven through four motions (open → review → respond → close), gated
