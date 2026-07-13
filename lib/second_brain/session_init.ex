@@ -1,8 +1,10 @@
 defmodule SecondBrain.SessionInit do
   @moduledoc """
   The session-init digest: a point-in-time scan of the brain's open work,
-  rendered as markdown for injection into a fresh session's context (the
-  SessionStart hook runs `mix brain.session_init` and echoes the output).
+  rendered as markdown for the operator's priority appraisal. Produced on
+  demand by the `/priorities` skill, which runs `mix brain.session_init` and
+  relays the output (it is no longer auto-injected at session start — the
+  SessionStart hook now only provisions the toolchain).
 
   Four sources, all already maintained by existing policy:
 
@@ -14,13 +16,24 @@ defmodule SecondBrain.SessionInit do
       state is `open`/`paused`, or whose Dangling column carries a question
       (a `closed` row can still leave deferred work dangling).
 
+  Plus, when any exist, the **docs-freshness warnings** from
+  `SecondBrain.Links` (unresolved internal links, index-coverage gaps) — the
+  digest is the surface an app-based operator actually sees, so advisory
+  warnings that would otherwise live only in gate output and CI logs are
+  repeated here. The section is omitted entirely when the tree is clean.
+
   The digest ends with a heuristic top-3 priority ranking (issues, then
   in-flight plans, then open todos, then accepted plans, then open strands,
   then paused strands and leftover dangling questions, then proposed plans;
   newer first within a class) and an
-  agent note asking the session agent to open the thread with its own
-  appraisal, using the heuristic as a starting point — the script ranks, the
-  agent judges.
+  agent note asking the agent to state its own top-3 appraisal, using the
+  heuristic as a starting point — the script ranks, the agent judges.
+
+  An issue/todo/plan may carry an explicit `priority: <integer>` frontmatter
+  key (1 = most urgent). Flagged items rank above every heuristic class,
+  ordered among themselves by the integer — the operator's escape hatch when
+  the class weights get it wrong. Strands come from ledger rows, which have
+  no frontmatter, so they cannot be flagged.
 
   Tolerant consumer per OKF conformance: unparseable files and malformed
   ledger rows are skipped, never fatal.
@@ -61,10 +74,10 @@ defmodule SecondBrain.SessionInit do
     #{section("Open todos", Enum.map(todos, &issue_line/1))}
     #{section("Active plans", Enum.map(plans, &plan_line/1))}
     #{section("Dangling strands (from thread ledgers)", Enum.map(strands, &strand_line/1))}
-    #{priorities_section(issues, todos, plans, strands)}
-    > **Agent note:** open this session by stating your top-3 priority appraisal
-    > for the operator — start from the heuristic ranking above, adjust it with
-    > judgment, and say why. Then address the operator's request.
+    #{freshness_section(root)}#{priorities_section(issues, todos, plans, strands)}
+    > **Agent note:** state your top-3 priority appraisal for the operator —
+    > start from the heuristic ranking above, adjust it with judgment, and say
+    > why.
     """
   end
 
@@ -185,6 +198,7 @@ defmodule SecondBrain.SessionInit do
               title: fm["title"] || Path.basename(path, ".md"),
               description: fm["description"],
               status: fm["status"],
+              priority: to_priority(fm["priority"]),
               timestamp: to_string(fm["timestamp"] || ""),
               body: body
             }
@@ -200,6 +214,17 @@ defmodule SecondBrain.SessionInit do
   defp parse(error), do: error
 
   defp status(doc), do: doc.status && String.downcase(to_string(doc.status))
+
+  defp to_priority(p) when is_integer(p), do: p
+
+  defp to_priority(p) when is_binary(p) do
+    case Integer.parse(String.trim(p)) do
+      {n, ""} -> n
+      _ -> nil
+    end
+  end
+
+  defp to_priority(_), do: nil
 
   defp sort_newest_first(docs),
     do: Enum.sort_by(docs, &{&1.timestamp, &1.rel_path}, :desc)
@@ -227,6 +252,25 @@ defmodule SecondBrain.SessionInit do
       else: text
   end
 
+  # --- docs-freshness warnings ----------------------------------------------
+
+  # Advisory only, and omitted entirely when clean — the digest must not carry
+  # a permanently empty section. Repeated here because gate output and CI logs
+  # never reach an operator working purely in the app.
+  defp freshness_section(root) do
+    case SecondBrain.Links.check(root) do
+      [] ->
+        ""
+
+      warnings ->
+        lines = Enum.map_join(warnings, "\n", &("- " <> &1))
+
+        "## Docs-freshness warnings (#{length(warnings)})\n\n" <>
+          "Advisory (never fail a gate) — fix in the next change that touches these files.\n\n" <>
+          lines <> "\n\n"
+    end
+  end
+
   # --- heuristic priorities -------------------------------------------------
 
   defp priorities_section(issues, todos, plans, strands) do
@@ -235,7 +279,7 @@ defmodule SecondBrain.SessionInit do
     # whose ledger routed to an already-picked doc is the same matter — skip it.
     picks =
       candidates(issues, todos, plans, strands)
-      |> Enum.sort_by(&@weights[&1.class])
+      |> Enum.sort_by(&sort_key/1)
       |> Enum.reduce([], fn c, acc ->
         if Enum.any?(acc, &(&1.path && String.contains?(c.routed_to || "", &1.path))),
           do: acc,
@@ -251,11 +295,16 @@ defmodule SecondBrain.SessionInit do
         lines =
           picks
           |> Enum.with_index(1)
-          |> Enum.map(fn {c, i} -> "#{i}. #{c.label}\n   — #{why(c.class)}" end)
+          |> Enum.map(fn {c, i} -> "#{i}. #{c.label}\n   — #{why(c)}" end)
 
         "## Heuristic top-3 priorities\n\n#{Enum.join(lines, "\n")}\n"
     end
   end
+
+  # Operator-flagged items (integer `priority:` frontmatter) outrank every
+  # heuristic class, ordered among themselves by the integer.
+  defp sort_key(%{priority: p}) when is_integer(p), do: {0, p}
+  defp sort_key(c), do: {1, @weights[c.class]}
 
   defp candidates(issues, todos, plans, strands) do
     issue_cands =
@@ -263,6 +312,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: :issue,
           path: d.rel_path,
+          priority: d.priority,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
@@ -273,6 +323,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: :todo,
           path: d.rel_path,
+          priority: d.priority,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
@@ -290,6 +341,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: class,
           path: d.rel_path,
+          priority: d.priority,
           routed_to: nil,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
@@ -307,6 +359,7 @@ defmodule SecondBrain.SessionInit do
         %{
           class: class,
           path: nil,
+          priority: nil,
           routed_to: row.routed_to,
           label: "#{truncate(row.topic)} (`/#{row.thread}`)"
         }
@@ -314,6 +367,11 @@ defmodule SecondBrain.SessionInit do
 
     issue_cands ++ todo_cands ++ plan_cands ++ strand_cands
   end
+
+  defp why(%{priority: p}) when is_integer(p),
+    do: "operator-flagged `priority: #{p}` — pinned above the heuristic classes"
+
+  defp why(%{class: class}), do: why(class)
 
   defp why(:issue), do: "open operational issue — tracked problems outrank new work"
   defp why(:todo), do: "open todo — an explicitly recorded task awaiting completion"

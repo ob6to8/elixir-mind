@@ -6,6 +6,11 @@ status: proposed
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09 — derived from a comparison of this bundle against the Composable Beliefs repo"
 tags: [meta, plan, epistemics, graph, knowledge-representation, composable-beliefs, edges]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T18:59:03+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md]
 ---
 
 # Epistemic overlay: the four operations as a frontmatter-native graph over concepts
@@ -209,7 +214,7 @@ for Thread B to execute without ever opening CB.
   page-by-page web fetching.
 - **Freshness tiers** (record the tier in each capture's `provenance`):
   - *Tier 1 — authoritative:* `docs/guide/` (the most recent doc set),
-    `docs/glossary.md`, the code (`CB.Schema.Verifier`, the deps / supersession /
+    `docs/beliefs/glossary.md`, the code (`CB.Schema.Verifier`, the deps / supersession /
     dep-repoint implementations), and the live belief graph itself (`mix bs`
     queries) — per CB's own "query it rather than restating it."
   - *Tier 2 — secondary:* `cb-tut` (mostly accurate per the operator); verify any
@@ -278,7 +283,7 @@ for Thread B to execute without ever opening CB.
 # Citations
 
 - Comparison basis: [Composable Beliefs](https://github.com/composablebeliefs/composable-beliefs)
-  (`okf/standard/types.md`; the four structural types; `docs/glossary.md` for the
+  (`okf/standard/types.md`; the four structural types; `docs/beliefs/glossary.md` for the
   current schema — the thesis doc `docs/composable-beliefs-thesis.md` was found
   stale on 2026-07-10 and should not be treated as authoritative).
 - Prior in-bundle decisions this builds on: the `methodology` type ratification and the

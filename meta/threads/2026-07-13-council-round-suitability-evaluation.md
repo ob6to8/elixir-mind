@@ -5,6 +5,7 @@ description: Evaluated the operator-supplied "council round" adversarial draft-P
 provenance: "Claude Code session (Claude Fable), 2026-07-13; verbatim retained messages parsed from the host session log — tool calls, tool results, reasoning, and short pre-tool narration stripped; one delivered ≥300-char assistant block absent from the host log was reinstated verbatim from the live context"
 tags: [meta, thread, council, review, adversarial, analysis, distillation]
 timestamp: 2026-07-13
+pr: 72
 ---
 
 # 2026-07-13-council-round-suitability-evaluation
@@ -40,7 +41,15 @@ filing), and the session-capture policy's deliberately inverted sense
 during it, the analysis doc's dates were corrected from 2026-07-11 to
 2026-07-13 (the actual session date). The operator then invoked
 `/create-pull-request` — this doc was refreshed in place with the closing
-exchange, glossaried, and shipped in that PR.
+exchange, glossaried, and shipped as PR #72. A follow-up session merged
+`origin/main` into the branch to reconcile against a large intervening
+restructure (root reorg into `knowledge/`/`beliefs/`, the `attribution` and
+`sense` frontmatter properties, and hand-kept-log retirement): the five new
+glossary terms moved to `beliefs/glossary/` with `sense` and `attribution`
+added, the analysis doc gained its required `attribution.from` back-link to
+this thread, this thread was stamped `pr: 72`, and the `log.md`/`meta/log.md`
+entries this session had written were dropped (retired policy) rather than
+merged — content untouched throughout, relocation and metadata backfill only.
 
 ## Routing
 

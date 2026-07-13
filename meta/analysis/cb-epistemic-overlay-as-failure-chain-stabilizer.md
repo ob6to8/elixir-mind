@@ -5,6 +5,11 @@ description: An evaluation of Composable Beliefs' epistemic layer (attestation/a
 provenance: "Claude Code session (Claude Fable), 2026-07-10 — operator asked whether enlisting CB's four-typed DAG as an overlay above the second brain could stabilize it against the failure modes, and whether it could be language-agnostic; initial read used CB's stale thesis doc, corrected against the current glossary after the operator flagged deprecated terminology"
 tags: [meta, analysis, composable-beliefs, epistemics, overlay, dag, supersession, staleness, failure-modes, drift, portability]
 timestamp: 2026-07-10
+attribution:
+  when: 2026-07-10T21:29:04+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-10-field-comparison-evals-and-cb-overlay-execution-path.md]
 ---
 
 # Would CB's four-typed DAG, as an overlay, stabilize this knowledge base against the failure chain?
@@ -35,7 +40,7 @@ which uses the type names *primitive / compound / inference / directive*. The
 operator flagged these as deprecated (current: **attestation / aggregation /
 inference / prescription**) and asked the right follow-up: if the terminology was
 stale, was anything else sourced from that doc stale too? Re-verification against
-the current glossary (`docs/glossary.md`) found:
+the current glossary (`docs/beliefs/glossary.md`) found:
 
 | Claim from the thesis read | Status after re-check |
 |---|---|
@@ -172,7 +177,7 @@ This analysis feeds three concrete updates into
 # Citations
 
 - Current CB sources (fetched 2026-07-10): repository README;
-  `docs/glossary.md` (four type definitions, deps as sole edge kind, per-type dep
+  `docs/beliefs/glossary.md` (four type definitions, deps as sole edge kind, per-type dep
   rules, supersession, staleness-by-audit, dep-repoint, OKF-floor/CB-ceiling);
   `docs/belief-graph.md` ("query it rather than restating it").
 - Stale source identified and set aside: `docs/composable-beliefs-thesis.md`

@@ -5,6 +5,7 @@ description: Verified the daily /news Routine, found its automated fires land no
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-09; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, inbox, news, automation, scheduling, issues, governance]
 timestamp: 2026-07-09
+pr: 21
 ---
 
 # Thread — news Routine verification, issue tracking, and /news featuring docs
@@ -36,7 +37,7 @@ committed and pushed to `claude/news-routine-setup-75q3w0`.
 |---|---|---|---|
 | Daily `/news` Routine automation — verified set up, but automated fires land nothing (suspected env-wide approval gate); trigger left in place, operator runs `/news` manually for now | open | [issue: news Routine runs not landing](/meta/issues/daily-news-routine-runs-not-landing.md) | Does the 13:01 fire actually run? Clear the approval gate / manage the Routine via the scheduled-triggers UI (https://claude.ai/code) |
 | New `issue` type + `meta/issues/` namespace (operator-ratified) | closed | [controlled type vocabulary](/meta/policy/controlled-type-vocabulary.md) | - |
-| Document how `/news` decides what to feature | closed | [/news skill](/.claude/skills/news/SKILL.md) | - |
+| Document how `/news` decides what to feature | closed | [/news skill](/.claude/skills/research/SKILL.md) | - |
 
 ## User
 
@@ -165,7 +166,7 @@ The `/news` skill's Section 4 + reason-tag table already covers *why an item is 
 
 Let me make the changes. First, add the `issue` type to the vocabulary policy (the source CLAUDE.md compiles from):
 
-<routes ref="meta/policy/controlled-type-vocabulary.md .claude/skills/news/SKILL.md meta/issues/daily-news-routine-runs-not-landing.md">
+<routes ref="meta/policy/controlled-type-vocabulary.md .claude/skills/research/SKILL.md meta/issues/daily-news-routine-runs-not-landing.md">
 Done — all changes are committed and pushed to `claude/news-routine-setup-75q3w0`.
 
 ## What I did

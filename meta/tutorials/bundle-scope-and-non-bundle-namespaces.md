@@ -4,6 +4,11 @@ title: Bundle scope and non-bundle namespaces — which scanner sees what, and w
 description: The brain runs several independent scanners (identity/verify, route-tags, the contract compiler, the site generator), and each defines its own scope rather than sharing one list. This note explains why a new top-level namespace like inbox/ would break CI unless it is added to the registry's exclusion list, how the verifier and route-tags checker inherit that scope for free, and why the site generator deliberately renders namespaces the registry ignores.
 tags: [meta, tooling, okf, registry, verification, namespaces, ci, site]
 timestamp: 2026-07-09
+attribution:
+  when: 2026-07-09T12:08:06+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-09-home-page-news-filter-inbox.md]
 ---
 
 # Bundle scope and non-bundle namespaces
@@ -69,8 +74,8 @@ is governed by that single `@excluded_dirs` list.
 ## Why a bare new namespace breaks CI
 
 `inbox/` digests are, by design, **candidates, not concepts**: dated feed pages
-with `type: reference` and *no* `sb:` id (see the [`/news`](/.claude/skills/news/SKILL.md)
-skill and the [route/inbox log](/inbox/log.md)). But `inbox` is a *new top-level
+with `type: reference` and *no* `sb:` id (see the [`/research`](/.claude/skills/research/SKILL.md)
+skill). But `inbox` is a *new top-level
 directory*, and until it is named in `@excluded_dirs` the glob happily picks up
 `inbox/2026-07-09.md` as a bundle concept. The verifier then fires **rule 2** on
 it:
@@ -126,7 +131,7 @@ So a file's membership is really **two orthogonal decisions**:
 
 `meta/` and `inbox/` sit in the same quadrant: **not a concept, but published.**
 `deprecated/` sits in another: excluded from *both* (archived and hidden). Regular
-concepts under `SWE/`, `ai-industry/`, etc. are in both. Keeping the two lists
+concepts under `knowledge/`, `beliefs/`, etc. are in both. Keeping the two lists
 separate is what lets the brain publish more than it identity-checks.
 
 ## The checklist for a new non-bundle namespace
@@ -157,4 +162,4 @@ list.
 
 - [Why the brain's toolchain runs offline in CI and any sandbox](/meta/tutorials/why-the-toolchain-runs-offline.md)
 - The identity & verification rules in the [operating contract](/CLAUDE.md)
-- The [`/news`](/.claude/skills/news/SKILL.md) skill and the [`inbox/`](/inbox/index.md) namespace
+- The [`/research`](/.claude/skills/research/SKILL.md) skill and the [`inbox/`](/inbox/index.md) namespace

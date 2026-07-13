@@ -5,6 +5,12 @@ description: An adversarial multi-agent PR-review protocol ("council round") is 
 provenance: "Claude Code session (Claude Fable), 2026-07-13 — operator pasted the council-round prompt and asked for a suitability evaluation against this repo; evaluated against the live policy set under meta/policy/ and the existing skills"
 tags: [meta, analysis, council, review, adversarial, pr-workflow, skills, governance, provenance]
 timestamp: 2026-07-13
+attribution:
+  when: 2026-07-13T20:16:15+00:00
+  channel: agent-authored
+  agent: "Claude Code agent, operator-commissioned suitability evaluation"
+  why: "operator pasted the council-round protocol and asked for a suitability evaluation against this repo's operating contract"
+  from: [/meta/threads/2026-07-13-council-round-suitability-evaluation.md]
 ---
 
 # Should the council-round protocol be integrated into this repo?

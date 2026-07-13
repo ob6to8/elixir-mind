@@ -26,7 +26,8 @@ defmodule SecondBrain.Contract do
     {"verification", "Identity & verification"},
     {"conformance", "Conformance (keep the bundle valid)"},
     {"skills", "Skills"},
-    {"session-workflow", "Session capture, routing & route tags"}
+    {"session-workflow", "Session capture, routing & route tags"},
+    {"git-workflow", "Git workflow"}
   ]
 
   @banner """
@@ -48,7 +49,14 @@ defmodule SecondBrain.Contract do
     validate_sections!(policies)
 
     grouped = Enum.group_by(policies, & &1.section)
-    preamble = root |> Path.join(@preamble) |> File.read!() |> preamble_body() |> String.trim()
+
+    preamble =
+      root
+      |> Path.join(@preamble)
+      |> File.read!()
+      |> preamble_body()
+      |> SecondBrain.SiteConfig.expand_tokens()
+      |> String.trim()
 
     body =
       @sections
@@ -110,7 +118,8 @@ defmodule SecondBrain.Contract do
   end
 
   defp render_policy(%Policy{} = p) do
-    "#{p.body}\n\n_Source: [`meta/policy/#{p.id}.md`](/meta/policy/#{p.id}.md)_"
+    body = SecondBrain.SiteConfig.expand_tokens(p.body)
+    "#{body}\n\n_Source: [`meta/policy/#{p.id}.md`](/meta/policy/#{p.id}.md)_"
   end
 
   # --- validation ----------------------------------------------------------
