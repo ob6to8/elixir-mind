@@ -10,7 +10,9 @@ direction*.
 
 Each doctrine is a `type: doctrine` doc (governance namespace — no `sb:` id).
 
+_Entries are ordered by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Contents
 
-- [The engineer as orchestrator, not implementer](/meta/doctrine/engineer-as-orchestrator.md) — the brain's founding direction, quoted from Anthropic's 2026 coding-trends report: the human's value has shifted to system architecture design, agent coordination, quality evaluation, and strategic problem decomposition; scored against by the [orchestrator-role alignment analysis](/meta/analysis/alignment-with-the-orchestrator-role.md).
 - [Capability-matched model selection](/meta/doctrine/capability-matched-model-selection.md) — the model-layer application of the orchestrator direction: concentrate the strongest models where output becomes canonical, a judgment is rendered, or errors are silent; delegate derivational, oracle-checked, and high-volume motions to cheaper tiers. Selection is a runtime act enforceable only through its attribution shadow (provenance naming the producing model — a possible future policy).
+- [The engineer as orchestrator, not implementer](/meta/doctrine/engineer-as-orchestrator.md) — the brain's founding direction, quoted from Anthropic's 2026 coding-trends report: the human's value has shifted to system architecture design, agent coordination, quality evaluation, and strategic problem decomposition; scored against by the [orchestrator-role alignment analysis](/meta/analysis/alignment-with-the-orchestrator-role.md).

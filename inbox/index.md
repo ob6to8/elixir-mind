@@ -10,6 +10,8 @@ bundle (no `sb:` ids, never verified), the same way `meta/` does. A candidate en
 the brain only when the operator says *"intake the &lt;…&gt; item"*, which runs
 [`/intake`](/.claude/skills/intake/SKILL.md) to fetch, distill, and file it.
 
+_Entries are ordered by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Latest
 
 - **[2026-07-12](/inbox/2026-07-12.md)** — 4 items across ai-industry (2) and SWE (2):

@@ -204,7 +204,7 @@ defmodule SecondBrain.Site do
     files =
       here
       |> Enum.reject(&(Path.basename(&1.src) == "index.md"))
-      |> Enum.sort_by(&{&1.kind == :log, String.downcase(&1.title)})
+      |> sort_files(dir)
 
     child_dirs =
       all_dirs
@@ -219,6 +219,43 @@ defmodule SecondBrain.Site do
       dirs: child_dirs,
       files: files
     }
+  end
+
+  # Collections list newest-modified first (`timestamp`, descending; same-day ties
+  # broken by `attribution.when`), so the nav mirrors recency the way the
+  # governance indexes do (see meta/plans/collection-ordering-by-date-modified.md). The
+  # glossary is the sole exception: it is a name-keyed reference collection looked
+  # up alphabetically, so its terms keep A–Z ordering. Logs (if any) sort last in
+  # both modes.
+  defp sort_files(files, dir) do
+    {logs, docs} = Enum.split_with(files, &(&1.kind == :log))
+
+    ordered =
+      if alphabetical_dir?(dir) do
+        Enum.sort_by(docs, &String.downcase(&1.title))
+      else
+        Enum.sort_by(docs, &recency_key/1, :desc)
+      end
+
+    ordered ++ Enum.sort_by(logs, &String.downcase(&1.title))
+  end
+
+  # Directories whose listings stay alphabetical instead of newest-first. The
+  # glossary (and anything nested under it) is a name-keyed reference collection.
+  defp alphabetical_dir?(dir),
+    do: dir == "beliefs/glossary" or String.starts_with?(dir, "beliefs/glossary/")
+
+  # Newest-first sort key: `timestamp`, then `attribution.when` for same-day ties,
+  # then title for total determinism. All compared descending; a missing
+  # `timestamp` sorts last. Dates are ISO 8601, so string order is date order.
+  defp recency_key(page) do
+    when_ =
+      case page.fm["attribution"] do
+        %{"when" => w} -> to_string(w)
+        _ -> ""
+      end
+
+    {to_string(page.fm["timestamp"] || ""), when_, String.downcase(page.title)}
   end
 
   # --- per-page rendering --------------------------------------------------

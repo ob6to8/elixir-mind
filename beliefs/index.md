@@ -4,6 +4,8 @@ The brain's own working vocabulary and observations — cross-domain material
 *about* what the brain holds, as opposed to the domain knowledge filed under
 [knowledge](/knowledge/index.md).
 
+_Concepts are listed by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Contents
 
 - [glossary](/beliefs/glossary/index.md) — running glossary of technical terms used

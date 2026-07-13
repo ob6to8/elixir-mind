@@ -42,18 +42,20 @@ fully built; `threads` is verbatim session archives. A flow doc is none of these
 that proves it. The genre itself was designed in
 [The flows genre + formal scenario testing](/meta/plans/flows-genre-and-scenario-testing.md).
 
+_Entries are ordered by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Contents
 
-- [Session capture, routing & route tags](/meta/flows/session-capture.md) —
-  driving a session through `/capture` → routing ledger → route tags →
-  materialized excerpt log: the pipeline, data model, invariants, the
-  touch-sequence, actor boundaries, the gate suite, and the scenario test that
-  pins the spine.
-- [Intake — capture pasted material into a filed concept](/meta/flows/intake.md) —
-  driving pasted material through `/intake` → distill + dedup → file by the
-  taxonomy → mint id → compile registry → verify: the touch-sequence, the
-  judgment/spine split, actor boundaries, the identity gate suite, and the
-  scenario test that pins the spine.
+- [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) —
+  the dedup-recall eval loop: how `mix brain.dedup_probe` scores intake dedup
+  against an id-keyed gold set, how the gold set and baseline grow automatically
+  at intake, and — foregrounded — **how the operator audits, explores, and
+  re-evaluates** a system that otherwise runs silently in the background.
+- [Research — generate the daily inbox of candidates](/meta/flows/research-inbox.md) —
+  `/research` derives a query profile from the taxonomy, searches, dedups twice,
+  reason-tags, and writes a dated digest into the non-bundle `inbox/`
+  namespace; hand-off to `/intake` crosses a candidate into the brain. Almost
+  all judgment layer — the structural guarantee is the namespace boundary.
 - [Render-contract — compile the operating contract from its policy sources](/meta/flows/render-contract.md) —
   driving a rule change through edit-the-policy → `mix brain.contract` →
   `--check` drift gate → one commit for source + artifact: the touch-sequence
@@ -64,24 +66,24 @@ that proves it. The genre itself was designed in
   `mix brain.site` renders every page (metadata panels, evidence edges +
   backlinks, search index) and the workflow deploys it. Fully unattended; no
   skill involved.
-- [Research — generate the daily inbox of candidates](/meta/flows/research-inbox.md) —
-  `/research` derives a query profile from the taxonomy, searches, dedups twice,
-  reason-tags, and writes a dated digest into the non-bundle `inbox/`
-  namespace; hand-off to `/intake` crosses a candidate into the brain. Almost
-  all judgment layer — the structural guarantee is the namespace boundary.
-- [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) —
-  `/add-to-glossary` extracts a source's technical terms, dedups
-  (merge/pointer/new), and files one concept per term under `/beliefs/glossary/`,
-  riding the same id → registry → verify spine as intake (one pin, shared
-  scenario).
 - [Create pull request — capture, glossary, commit, push, open](/meta/flows/create-pull-request.md) —
   the composition flow that ships a session: run capture in full, glossary its
   thread doc, back-link this session's `meta/elaborations/` docs to the
   captured thread (`thread:` frontmatter), then commit/push/open the PR —
   invocation is the authorization; ordering (capture before commit) keeps the
   record in the same PR as the change.
-- [Dedup recall probe — measuring and maintaining intake dedup recall](/meta/flows/dedup-recall-probe.md) —
-  the dedup-recall eval loop: how `mix brain.dedup_probe` scores intake dedup
-  against an id-keyed gold set, how the gold set and baseline grow automatically
-  at intake, and — foregrounded — **how the operator audits, explores, and
-  re-evaluates** a system that otherwise runs silently in the background.
+- [Add to glossary — accrete per-term definition concepts](/meta/flows/add-to-glossary.md) —
+  `/add-to-glossary` extracts a source's technical terms, dedups
+  (merge/pointer/new), and files one concept per term under `/beliefs/glossary/`,
+  riding the same id → registry → verify spine as intake (one pin, shared
+  scenario).
+- [Intake — capture pasted material into a filed concept](/meta/flows/intake.md) —
+  driving pasted material through `/intake` → distill + dedup → file by the
+  taxonomy → mint id → compile registry → verify: the touch-sequence, the
+  judgment/spine split, actor boundaries, the identity gate suite, and the
+  scenario test that pins the spine.
+- [Session capture, routing & route tags](/meta/flows/session-capture.md) —
+  driving a session through `/capture` → routing ledger → route tags →
+  materialized excerpt log: the pipeline, data model, invariants, the
+  touch-sequence, actor boundaries, the gate suite, and the scenario test that
+  pins the spine.

@@ -9,6 +9,8 @@ designing the trigger, tools, verifier, stopping condition, budget, and the oute
 **harness** that decides when to keep going. This directory captures primary
 sources from the 2022–2026 lexicon, filed as `reference` captures.
 
+_Concepts are listed by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Foundations & canonical framing
 
 - [ReAct — reasoning + acting (Yao et al.)](/knowledge/SWE/agentic-coding/agentic-loop/react-reasoning-and-acting.md) — the foundational thought→action→observation loop. `sb:f63910`

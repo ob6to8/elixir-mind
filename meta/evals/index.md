@@ -9,6 +9,8 @@ on a question): an eval is a fixture the tooling re-scores on every run.
 Each gold set is a prose-bearing markdown doc whose table a `mix brain.*` task parses;
 governance namespace (no `sb:` id, like plans and threads).
 
+_Entries are ordered by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Contents
 
 - [Dedup recall probe](/meta/evals/dedup-probe.md) — the id-keyed gold set of

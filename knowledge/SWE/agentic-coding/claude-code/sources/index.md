@@ -3,6 +3,8 @@
 Primary-source excerpts from Anthropic's official Claude Code documentation, used
 as verification grounding for the Claude Code concepts and notes in this directory.
 
+_Concepts are listed by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Contents
 
 - [environments carry config; each session gets a fresh VM](/knowledge/SWE/agentic-coding/claude-code/sources/cloud-web-environments-carry-config.md) — an environment owns network access, env vars, and the setup script; sessions run in a fresh VM with the repo cloned. `sb:863b32`

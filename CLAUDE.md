@@ -237,6 +237,18 @@ _Source: [`meta/policy/link-processing.md`](/meta/policy/link-processing.md)_
 commit message at the semantic level ("intake X", "ratify Y"); there is no
 `log.md` to append to (see the reserved-filenames policy).
 
+**Order every listing by date modified.** Within an `index.md`, list concept
+entries by most recent `timestamp` first (newest at the top; same-day ties broken
+by `attribution.when`) — and *within* an existing grouping (status sections,
+`## Concepts` vs `## Subdirectories`) where one exists, so the grouping stays
+primary and recency orders inside it. A newly filed concept therefore lands at the
+top of its section. Subdirectory-map bullets keep their structural order — a
+taxonomy map is not a dated collection. **The one exception is the glossary**
+([`beliefs/glossary/`](/beliefs/glossary/index.md)), a name-keyed reference
+collection that stays alphabetical. The generated site nav applies the same rule
+mechanically (`SecondBrain.Site`); see
+[collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md).
+
 _Source: [`meta/policy/maintain-reserved-files.md`](/meta/policy/maintain-reserved-files.md)_
 
 **Persist plans; don't leave them in the conversation.** A design spec or

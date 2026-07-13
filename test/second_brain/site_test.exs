@@ -139,4 +139,58 @@ defmodule SecondBrain.SiteTest do
     assert html =~ "Topic"
     assert html =~ ~s(class="nav-link active")
   end
+
+  test "nav lists a collection newest-modified first, not alphabetically", %{tmp_dir: dir} do
+    # Titles chosen so alphabetical and recency orders disagree: the newer doc
+    # is alphabetically last, so recency ordering is the only way it comes first.
+    write(
+      dir,
+      "coll/apple.md",
+      "---\ntype: note\ntitle: Apple old\ntimestamp: 2026-01-01\n---\nold\n"
+    )
+
+    write(
+      dir,
+      "coll/zebra.md",
+      "---\ntype: note\ntitle: Zebra new\ntimestamp: 2026-12-31\n---\nnew\n"
+    )
+
+    write(dir, "coll/index.md", "# Coll\n\nA collection.\n")
+
+    out = Path.join(dir, "_site")
+    Site.build(dir, out)
+    html = File.read!(Path.join(out, "index.html"))
+
+    assert nav_pos(html, "coll/zebra.html") < nav_pos(html, "coll/apple.html")
+  end
+
+  test "nav keeps the glossary alphabetical even when dates disagree", %{tmp_dir: dir} do
+    # Same title/date disagreement, but under beliefs/glossary/ the older,
+    # alphabetically-first term must still lead.
+    write(
+      dir,
+      "beliefs/glossary/apple.md",
+      "---\ntype: concept\ntitle: apple\ntimestamp: 2026-01-01\n---\na\n"
+    )
+
+    write(
+      dir,
+      "beliefs/glossary/zebra.md",
+      "---\ntype: concept\ntitle: zebra\ntimestamp: 2026-12-31\n---\nz\n"
+    )
+
+    write(dir, "beliefs/glossary/index.md", "# Glossary\n\nTerms.\n")
+
+    out = Path.join(dir, "_site")
+    Site.build(dir, out)
+    html = File.read!(Path.join(out, "index.html"))
+
+    assert nav_pos(html, "beliefs/glossary/apple.html") <
+             nav_pos(html, "beliefs/glossary/zebra.html")
+  end
+
+  defp nav_pos(html, href) do
+    {pos, _} = :binary.match(html, ~s(href="#{href}"))
+    pos
+  end
 end

@@ -9,6 +9,8 @@ Todos are added and listed with the [`/todo`](/.claude/skills/todo/SKILL.md) ski
 Done and cancelled todos stay filed as a record of what was on the list and its
 outcome.
 
+_Entries are ordered by most recent `timestamp` (date modified) first within each status section; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Open
 
 - [Triage the six kept unmerged claude/* branches](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md) — each kept branch ends up merged, superseded-and-deleted, or explicitly retired — none left in limbo. `status: open`.

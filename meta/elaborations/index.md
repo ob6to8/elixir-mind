@@ -20,6 +20,8 @@ one *term*, source-independent; a [`tutorial`](/meta/tutorials/index.md)
 explains a standalone subject long-form; an elaboration unpacks *one specific
 mouthful in its context*.
 
+_Entries are ordered by most recent `timestamp` (date modified) first; see the [collection ordering by date modified](/meta/plans/collection-ordering-by-date-modified.md) plan._
+
 ## Contents
 
 - [two-directional materialize with unconditional orphan-block removal](/meta/elaborations/two-directional-materialize.md) —
