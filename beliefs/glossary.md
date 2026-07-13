@@ -6,7 +6,7 @@ description: Hub for the cross-domain glossary — one concept file per term und
 provenance: "Agent-distilled definitions; each term's file cites the sources it was seen in"
 verified: false
 tags: [glossary, terminology, cross-domain]
-timestamp: 2026-07-10
+timestamp: 2026-07-13
 ---
 
 # Glossary
@@ -27,6 +27,19 @@ gets a [pointer entry](/beliefs/glossary/pointer-entry.md), not a duplicate
 definition; a term that outgrows the glossary
 [graduates](/beliefs/glossary/graduation.md) into the domain taxonomy, its id
 travelling with it.
+
+Every term is classified by **where its usage lives** — a `sense` frontmatter
+field, gated by `mix brain.verify`: `common` (portable — industry, field, or
+ecosystem vocabulary that means the same thing outside this repo), `repo`
+(this brain's own vocabulary — coined here or naming local machinery), or
+`dual` (an established common sense *plus* a specific repo referent). Dual
+entries define the common sense first, then the local one in an **In this
+brain:** passage, so local jargon never silently displaces the portable
+meaning. Querying the `repo` and `dual` subset answers "which terms here mean
+something non-standard?" — the local-jargon primer. The convention is defined
+in the [`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md); the
+decision record is the
+[glossary sense-disambiguation plan](/meta/plans/glossary-sense-disambiguation.md).
 
 ## Thread excerpts — route-tagged log
 

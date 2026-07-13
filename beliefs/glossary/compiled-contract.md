@@ -6,6 +6,7 @@ description: A configuration or policy file treated as build output — regenera
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, governance, tooling]
+sense: repo
 timestamp: 2026-07-12
 ---
 

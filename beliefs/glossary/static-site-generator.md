@@ -6,6 +6,7 @@ description: A tool that renders source files — typically markdown with YAML f
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, site-generator, deployment]
+sense: common
 timestamp: 2026-07-10
 ---
 

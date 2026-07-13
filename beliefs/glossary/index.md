@@ -4,7 +4,10 @@ One concept file per technical term, alphabetical, maintained by
 [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md). Each definition
 is individually linkable — cite a term in any response as a bundle-absolute
 link (e.g. `[route tag](/beliefs/glossary/route-tag.md)`) and the link lands on its
-definition. See the [glossary hub](/beliefs/glossary.md) for how the system works.
+definition. Every entry carries a `sense` field marking where its usage lives —
+`common` (portable), `repo` (this brain's own vocabulary), or `dual` (both,
+defined common-first). See the [glossary hub](/beliefs/glossary.md) for how the
+system works.
 
 ## Terms
 
