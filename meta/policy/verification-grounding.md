@@ -6,7 +6,12 @@ section: verification
 order: 2
 status: active
 tags: [meta, governance, verification, provenance, evidence]
-timestamp: 2026-07-05
+timestamp: 2026-07-12
+attribution:
+  when: 2026-07-05T19:41:08+00:00
+  channel: backfill
+  agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
 ---
 - **Provenance and verification are orthogonal.** `provenance` records where a
   statement came from and is **immutable history** — verifying a statement never
@@ -17,7 +22,9 @@ timestamp: 2026-07-05
   link — anything carrying a `resource` — is a **capture**, not a statement:
   verification is **not possible** for it, so a capture never carries `verified`
   (omit the field). `mix brain.verify` rejects `verified: true` on any concept that
-  has a `resource`.
+  has a `resource`, and rejects a `verified` field (either value) on any type
+  outside `claim`/`note`/`concept` — the statement-type restriction is
+  machine-enforced, not editorial.
 - **`verified: true` requires evidence, never its own link.** A verified statement
   must carry a non-empty `verified_by` pointing at the captures (and/or other
   statements) that support it. Storing a `resource` on the statement itself proves

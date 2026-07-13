@@ -36,7 +36,7 @@ on. For each term:
   that reads more naturally. Don't just mirror the source's table of contents.
 - Skip terms that don't materially change how a reader would describe the work —
   this is a working glossary, not an index of every noun in the paper.
-- Where a term already has an entry in the bundle glossary (`/glossary/`), link
+- Where a term already has an entry in the bundle glossary (`/beliefs/glossary/`), link
   the term name to it — but keep the local, source-specific definition in place
   (the glossary is cross-domain canonical; this section defines the term *as
   this source uses it*).
@@ -73,7 +73,7 @@ exist to close.
      rule. Keep the frontmatter (`id`, `type`, `resource`, etc.) unchanged except
      bumping `timestamp`; keep any existing `# Citations` section at the end, and
      preserve cross-links to other concepts if they're still relevant to the new
-     prose. Update the nearest `log.md` with what changed and why.
+     prose. The commit message records what changed and why.
    - If the source is **not yet in the bundle**, this skill's output is fine as
      plain chat output — nothing requires filing it. If the operator wants it
      captured afterward, that's a separate `/intake` invocation (the three-part

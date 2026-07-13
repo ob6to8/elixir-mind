@@ -6,6 +6,12 @@ status: proposed
 provenance: "Claude Code session, 2026-07-11 — commissioned by the operator following the belief-decomposition assessment"
 tags: [meta, plan, epistemics, belief-decomposition, dag, audit, evals, tooling]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T09:07:29+00:00
+  channel: agent-authored
+  agent: "Claude Code agent, in-session authoring"
+  why: "authored at operator request (\"commit both an analysis and a plan\") to persist the belief-decomposition assessment"
+  from: [/meta/threads/2026-07-11-belief-decomposition-analysis-and-epistemic-prior-art.md]
 ---
 
 # Belief decomposition as a derived analysis mode
@@ -33,7 +39,7 @@ artifacts (documents, threads, eventually claims-about-code) to:
 - give agent–operator prose a structure that code can check while the LLM
   supplies the local interpretation;
 - eventually back evals (the validated
-  [decompose-then-verify](/SWE/evals/decompose-then-verify-factuality.md)
+  [decompose-then-verify](/knowledge/SWE/evals/decompose-then-verify-factuality.md)
   pattern).
 
 Two prior iterations (the deprecated assertion graph; Composable Beliefs)
@@ -53,7 +59,7 @@ therefore:
   by the artifact/source directly) and **inference** (derived from other
   beliefs).
 - **Justification nodes.** The graph is
-  [bipartite](/glossary/bipartite-graph.md): an inference is connected to its
+  [bipartite](/beliefs/glossary/bipartite-graph.md): an inference is connected to its
   premises through a justification node carrying the warrant (the license the
   LLM judged). One conclusion may carry several independent justifications.
 - **Edges.** Support/derivation edges form a DAG. **Conflict** is a separate
@@ -72,19 +78,19 @@ therefore:
    conflict ("can these both hold?"). Judgments are local, cacheable, and
    auditable.
 4. **Audit mechanically** — pure graph algorithms over the judged graph:
-   - [ungrounded inferences](/glossary/ungrounded-inference.md) (groundedness
+   - [ungrounded inferences](/beliefs/glossary/ungrounded-inference.md) (groundedness
      floor, per artifact);
-   - [minimal inconsistent subsets](/glossary/minimal-inconsistent-subset.md)
+   - [minimal inconsistent subsets](/beliefs/glossary/minimal-inconsistent-subset.md)
      (conflict localized to its smallest witness);
-   - [consensus core](/glossary/consensus-core.md) across the compared
+   - [consensus core](/beliefs/glossary/consensus-core.md) across the compared
      artifacts (supported by all, attacked by none);
-   - [blast radius](/glossary/blast-radius.md) of any belief (what would need
+   - [blast radius](/beliefs/glossary/blast-radius.md) of any belief (what would need
      re-examination if it fell).
 5. **Report** — a human-readable audit. If the operator wants it kept, it is
    filed as a normal `type: analysis` doc; otherwise it is scratch output.
 
 **The principle throughout** (recorded in
-[future-beliefs](/meta/future-beliefs.md)): *LLM judgments stay local to
+[future-beliefs](/beliefs/future-beliefs.md)): *LLM judgments stay local to
 edges; structure stays global and mechanical.*
 
 ### Likely first surface
@@ -163,11 +169,11 @@ deprecated repo's `llm-call.sh` may apply; decide at build time.)
 
 - [Belief-decomposition analysis (derived vs. authored)](/meta/analysis/belief-decomposition-derived-vs-authored.md) — the commissioning assessment.
 - Prior art captured 2026-07-11:
-  [TMS/ATMS](/knowledge-management/knowledge-representation/truth-maintenance-systems.md),
-  [Toulmin](/knowledge-management/argumentation/toulmin-model-of-argument.md),
-  [assurance cases/GSN](/knowledge-management/argumentation/assurance-cases-and-gsn.md),
-  [FOL/OWL](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md),
-  [FActScore/SAFE](/SWE/evals/decompose-then-verify-factuality.md).
+  [TMS/ATMS](/knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems.md),
+  [Toulmin](/knowledge/knowledge-management/argumentation/toulmin-model-of-argument.md),
+  [assurance cases/GSN](/knowledge/knowledge-management/argumentation/assurance-cases-and-gsn.md),
+  [FOL/OWL](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md),
+  [FActScore/SAFE](/knowledge/SWE/evals/decompose-then-verify-factuality.md).
 - Lineage: [deprecated plan 003](/deprecated/plans/003-assertion-dag-knowledge-architecture.md),
-  [Composable Beliefs](/glossary/composable-beliefs.md),
+  [Composable Beliefs](/beliefs/glossary/composable-beliefs.md),
   [epistemic-overlay plan](/meta/plans/epistemic-overlay.md).

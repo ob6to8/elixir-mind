@@ -5,6 +5,12 @@ description: An evaluation of the idea of decomposing artifacts into atomic-beli
 provenance: "Claude Code session, 2026-07-11 — operator proposed a semiformal epistemic structure over documents and code and asked for an assessment"
 tags: [meta, analysis, epistemics, belief-decomposition, dag, composable-beliefs, argumentation, evals, knowledge-representation]
 timestamp: 2026-07-11
+attribution:
+  when: 2026-07-11T09:07:29+00:00
+  channel: agent-authored
+  agent: "Claude Code agent, in-session authoring"
+  why: "authored at operator request (\"commit both an analysis and a plan\") to persist the belief-decomposition assessment"
+  from: [/meta/threads/2026-07-11-belief-decomposition-analysis-and-epistemic-prior-art.md]
 ---
 
 # Belief decomposition over artifacts: derive the graph, never author it
@@ -36,7 +42,7 @@ prior versions and a diagnosis of what went wrong:
    evidence edges to sources, `deps` + `implication` on compounds, a generated
    DAG index, `contested.sh` for conflict detection. Now archived under
    `deprecated/`.
-2. **[Composable Beliefs](/glossary/composable-beliefs.md) (CB)** — the
+2. **[Composable Beliefs](/beliefs/glossary/composable-beliefs.md) (CB)** — the
    four-operation ontology (attestation / aggregation / inference /
    prescription), stable ids, supersession. Per the epistemic-overlay plan's
    own post-mortem, CB "became overwhelming": ~400 atomized belief files and a
@@ -58,7 +64,7 @@ require beliefs to be stored at all. The graph can be a **derived intermediate
 representation** — computed from the artifact when an audit or comparison is
 wanted, cached or discarded afterward, regenerated at will — while the
 artifact stays the sole source of truth. This is the same discipline the brain
-already runs on ([compiled contract](/glossary/compiled-contract.md), compiled
+already runs on ([compiled contract](/beliefs/glossary/compiled-contract.md), compiled
 registry, route-tag logs re-derived by a verifier that fails on divergence).
 Derivation converts the two killer problems into tolerable ones:
 
@@ -71,38 +77,38 @@ Derivation converts the two killer problems into tolerable ones:
 Each pillar of the idea has an established literature, now captured in the
 bundle:
 
-- **[Truth maintenance systems](/knowledge-management/knowledge-representation/truth-maintenance-systems.md)**
+- **[Truth maintenance systems](/knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems.md)**
   (Doyle's JTMS, de Kleer's ATMS) are the direct ancestor: a
-  [bipartite](/glossary/bipartite-graph.md) graph of belief and justification
+  [bipartite](/beliefs/glossary/bipartite-graph.md) graph of belief and justification
   nodes with dependency-directed revision. The ATMS *assumption environment*
   answers how two internally-coherent, mutually-contradictory documents are
   compared without merging them into one inconsistent soup: beliefs carry
   context labels; you compare belief *sets*.
-- **[The Toulmin model](/knowledge-management/argumentation/toulmin-model-of-argument.md)**
+- **[The Toulmin model](/knowledge/knowledge-management/argumentation/toulmin-model-of-argument.md)**
   establishes that the justification (premises → conclusion, licensed by a
   warrant) is the first-class object — which is why the graph must be
   bipartite: one conclusion under several independent justifications is
   epistemically stronger, and consensus evaluation needs to see them
   separately.
-- **[Decompose-then-verify factuality evaluation](/SWE/evals/decompose-then-verify-factuality.md)**
+- **[Decompose-then-verify factuality evaluation](/knowledge/SWE/evals/decompose-then-verify-factuality.md)**
   (FActScore, SAFE) is the empirical validation of the evals use case: atomize
   → verify each fact locally → aggregate mechanically measurably beats
   holistic judging, at automated-estimator error under 2%. SAFE's
   revise-to-self-contained step is the canonical answer to decontextualization.
-- **[Assurance cases / GSN](/knowledge-management/argumentation/assurance-cases-and-gsn.md)**
+- **[Assurance cases / GSN](/knowledge/knowledge-management/argumentation/assurance-cases-and-gsn.md)**
   prove the artifact-facing application in safety-critical practice: claim
   trees over systems, mechanically checkable for shape while leaf judgments
   stay expert. They also carry the standing caution (Haddon-Cave): argument
   structure audits *coherence*, not *truth*.
-- **[Dung's abstract argumentation frameworks](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)**
+- **[Dung's abstract argumentation frameworks](/knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)**
   are the formal engine for "consensus evaluation and conflict examination" —
   the operator's original framing. Arguments plus an *attack* relation, with
   semantics (grounded, preferred, stable) that compute which sets rationally
-  co-stand: the [grounded extension](/glossary/grounded-extension.md) *is* a
-  [consensus core](/glossary/consensus-core.md), and the framework grounds the
+  co-stand: the [grounded extension](/beliefs/glossary/grounded-extension.md) *is* a
+  [consensus core](/beliefs/glossary/consensus-core.md), and the framework grounds the
   structural correction below (conflict is a separate, possibly-cyclic relation,
   not a DAG edge).
-- **[FOL and OWL](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)**
+- **[FOL and OWL](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)**
   mark the fully formal pole and its costs — semidecidability, ontology
   authoring expense, brittleness against real prose — which is the argument
   *for* the semiformal middle: natural-language beliefs, typed edges, an LLM
@@ -111,14 +117,14 @@ bundle:
 ## Finding 3 — the architecture principle
 
 **LLM judgments stay local to edges; structure stays global and mechanical**
-(now recorded in [future-beliefs](/meta/future-beliefs.md)). The LLM answers
+(now recorded in [future-beliefs](/beliefs/future-beliefs.md)). The LLM answers
 small, cacheable questions — "does this passage assert this belief?", "do
 these premises entail this conclusion?", "do these two beliefs conflict?" —
 and deterministic graph algorithms compute the global properties:
-[ungrounded inferences](/glossary/ungrounded-inference.md),
-[minimal inconsistent subsets](/glossary/minimal-inconsistent-subset.md),
-[consensus cores](/glossary/consensus-core.md) across artifacts, and the
-[blast radius of a retracted premise](/glossary/blast-radius.md). This is what
+[ungrounded inferences](/beliefs/glossary/ungrounded-inference.md),
+[minimal inconsistent subsets](/beliefs/glossary/minimal-inconsistent-subset.md),
+[consensus cores](/beliefs/glossary/consensus-core.md) across artifacts, and the
+[blast radius of a retracted premise](/beliefs/glossary/blast-radius.md). This is what
 makes the structure *semiformal in a useful way*: local judgments compose into
 global audits with a per-edge audit trail, and only the dirty subgraph needs
 re-judging on change.
@@ -128,7 +134,7 @@ Two structural corrections to the raw proposal:
 - **The DAG holds for derivation only.** Support/inference edges can be kept
   acyclic; conflict is a separate, symmetric relation that cannot be forced
   acyclic (mutual attack is normal;
-  [Dung-style semantics](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)
+  [Dung-style semantics](/knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)
   resolve it).
 - **Attestation/inference is the right cut, but the edge is the unit.** The
   justification node (Toulmin's warranted step), not the belief pair, is what
@@ -141,7 +147,7 @@ apple is a kind of fruit" (doc B) unify to one node. That is entity resolution
 for propositions: fuzzy, LLM-mediated, and the single largest design cost —
 larger than the graph machinery itself. It is the same lesson this brain
 already learned twice: cross-context joins must key on canonical identities,
-not free-text phrasings ([stable ids](/glossary/stable-id.md); route tags
+not free-text phrasings ([stable ids](/beliefs/glossary/stable-id.md); route tags
 keyed on `sb:` ids). Expect canonicalization plus decontextualization to
 dominate the decomposer's design.
 

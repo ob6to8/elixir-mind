@@ -5,6 +5,7 @@ description: Assessed the operator's idea of decomposing artifacts into belief D
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-11; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, epistemics, belief-decomposition, prior-art, glossary, argumentation, knowledge-representation, evals]
 timestamp: 2026-07-11
+pr: 73
 ---
 
 # 2026-07-11-belief-decomposition-analysis-and-epistemic-prior-art
@@ -140,7 +141,7 @@ Add "derive the graph, never author it" to future beliefs
 
 Both done and pushed (commit `6ce5486`, all verifiers green).
 
-<routes ref="meta/future-beliefs.md">
+<routes ref="beliefs/future-beliefs.md">
 **future-beliefs** now carries the second principle: *"Derive the graph, never author it"* — recorded with its rationale (authored belief stores accrue unbounded maintenance debt; same discipline as the compiled contract and registry) and a link back to the analysis, alongside its sibling *"LLM judgments stay local to edges."* The meta log entry was extended to cover both.
 </routes>
 
