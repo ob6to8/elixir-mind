@@ -58,8 +58,8 @@ Seed vocabulary:
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked
-  to its originating session via a `thread` frontmatter field once that session is
-  captured (`/create-pull-request` sets it). Distinct from a glossary `concept` (one
+  to its originating session via `attribution.from` once that session is
+  captured (`/create-pull-request` stamps it). Distinct from a glossary `concept` (one
   *term*, source-independent) and a `tutorial` (long-form, standalone subject) — an
   elaboration unpacks *one specific mouthful in context* (lives under
   `meta/elaborations/`).
