@@ -65,6 +65,7 @@ system works.
 - [fast-forward merge](/beliefs/glossary/fast-forward-merge.md) — a merge that advances the branch pointer with no merge commit; leaves a zero-diff branch
 - [featuring](/beliefs/glossary/featuring.md) — how `/research` decides what makes the cut: relevance → novelty → a reason tag → source quality, capped
 - [feeding pairs](/beliefs/glossary/feeding-pairs.md) — the (thread, sink) pairs the current route tags induce; the domain of materialization in both directions
+- [first-parent history](/beliefs/glossary/first-parent-history.md) — the `git log --first-parent` traversal that follows only each merge's first parent, reading a PR-driven branch as one entry per landed PR
 - [flow (touch-sequence)](/beliefs/glossary/flow-touch-sequence.md) — a per-workflow touch-sequence doc tracing one canonical run, each step actor-tagged (`meta/flows/`)
 - [fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) — a scheduling mode where every trigger firing spawns a clean session, inheriting no prior state
 - [gate suite](/beliefs/glossary/gate-suite.md) — the full set of blocking verification checks a change must pass before landing, run manually, by the pre-commit hook, and in CI; pointer to the gate-suite tutorial
@@ -85,6 +86,7 @@ system works.
 - [Jido](/beliefs/glossary/jido.md) — Elixir agent framework: agents as immutable data through a `cmd/2` reducer, Actions doubling as LLM tools, CloudEvents signals, supervised runtime
 - [knowledge graph](/beliefs/glossary/knowledge-graph.md) — entities as nodes + typed edges, queried by traversal; a code KG maps files/symbols/calls for agents
 - [KV cache](/beliefs/glossary/kv-cache.md) — cached key/value tensors for processed tokens in transformer inference; trades context-growing memory for speed
+- [lag-tolerant check](/beliefs/glossary/lag-tolerant-check.md) — a staleness gate that accepts a generated artifact lagging its still-moving source but fails on divergence in the content it does contain
 - [let-it-crash](/beliefs/glossary/let-it-crash.md) — Erlang's fault-tolerance philosophy: don't handle every error in place; let the process crash and a supervisor restart it known-good
 - [lexical search](/beliefs/glossary/lexical-search.md) — search matching the literal surface form of text (tokens/substrings), not meaning; fast and dependency-free but blind to synonym/jargon gaps
 - [librarian write-broker](/beliefs/glossary/librarian-write-broker.md) — a supervised process solely owning mutation of a knowledge namespace: agents submit proposals, it runs the gauntlet and serializes commits
@@ -138,6 +140,7 @@ system works.
 - [session capture](/beliefs/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
 - [session-init digest](/beliefs/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, todos, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
 - [SessionStart hook](/beliefs/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout
+- [shallow clone](/beliefs/glossary/shallow-clone.md) — a git clone truncated to limited commit depth (the CI checkout default); breaks history-derived tooling unless fetched full or guarded for
 - [single source of truth](/beliefs/glossary/single-source-of-truth.md) — a fact lives in one authoritative place; everything else is generated from it or points at it
 - [sink (route-tag sink)](/beliefs/glossary/route-tag-sink.md) — the doc a route tag feeds; an `sb:` id sink accretes a log, a path back-link does not
 - [skill](/beliefs/glossary/skill.md) — a named, invocable `SKILL.md` capability; the glossary holds the concepts a skill enacts, not its bare `/command` handle

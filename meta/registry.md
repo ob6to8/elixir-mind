@@ -68,6 +68,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:e7689f` | [beliefs/glossary/fast-forward-merge](/beliefs/glossary/fast-forward-merge.md) | concept | false |
 | `sb:f382b0` | [beliefs/glossary/featuring](/beliefs/glossary/featuring.md) | concept | false |
 | `sb:c0ed08` | [beliefs/glossary/feeding-pairs](/beliefs/glossary/feeding-pairs.md) | concept | false |
+| `sb:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `sb:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `sb:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
 | `sb:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
@@ -88,6 +89,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:44f899` | [beliefs/glossary/jido](/beliefs/glossary/jido.md) | concept | false |
 | `sb:7498cf` | [beliefs/glossary/knowledge-graph](/beliefs/glossary/knowledge-graph.md) | concept | false |
 | `sb:8415bd` | [beliefs/glossary/kv-cache](/beliefs/glossary/kv-cache.md) | concept | false |
+| `sb:731c59` | [beliefs/glossary/lag-tolerant-check](/beliefs/glossary/lag-tolerant-check.md) | concept | false |
 | `sb:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `sb:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
 | `sb:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
@@ -142,6 +144,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `sb:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
 | `sb:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
+| `sb:7580df` | [beliefs/glossary/shallow-clone](/beliefs/glossary/shallow-clone.md) | concept | false |
 | `sb:8ea139` | [beliefs/glossary/single-source-of-truth](/beliefs/glossary/single-source-of-truth.md) | concept | false |
 | `sb:aa0003` | [beliefs/glossary/skill](/beliefs/glossary/skill.md) | concept | false |
 | `sb:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
