@@ -18,7 +18,7 @@ record of what was decided and why.
 
 ## Accepted / In progress
 
-_(none yet)_
+- [Three-level documentation: plain, technical, and grounding tiers](/meta/plans/three-level-documentation.md) — opt-in per document: a plain-speak backstop block for the tutorial-mode reader, the canonical terse body unchanged, and an `implemented_by` grounding edge one abstraction below the source (path refs to code for policies and to policies for doctrine) — one canonical level plus two anchored derivations, never three parallel texts. Ratified 2026-07-13; pre-execution design findings recorded (blockquote tiers, path refs for governance targets); execution deferred. `status: accepted`.
 
 ## Done / Superseded
 
