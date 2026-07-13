@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code session (Claude Opus 4.8), operator-directed advisor-pattern discussion"
   why: "operator asked for a persisted analysis of the benefits of building an advisor-pattern harness rather than using Anthropic's native advisor tool, distilled from the session's discussion"
+  from: [/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md]
 ---
 
 # When to roll your own advisor-pattern harness instead of Anthropic's native advisor tool
