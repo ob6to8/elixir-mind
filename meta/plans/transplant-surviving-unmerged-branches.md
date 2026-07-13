@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, branch-cleanup triage session"
   why: "records the remaining branch-transplant work identified in the orphaned-branches audit, so a future session can execute it"
+  from: [/meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md]
 ---
 
 # Transplant the salvageable content from the surviving unmerged `claude/*` branches

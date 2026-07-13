@@ -10,7 +10,7 @@ attribution:
   when: 2026-07-11T09:49:17+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md]
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md, /meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md]
 ---
 
 # Orphaned remote branches: 15 merged undeleted, 6 unmerged untriaged
