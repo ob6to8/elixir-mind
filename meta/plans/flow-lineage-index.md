@@ -170,3 +170,15 @@ analysis' idea becoming a running flow) lives above individual commits and has n
 4. **Auto-materialize the per-doc blockquote** → **materialize**, consistent with the
    route-tag logs and the no-hand-kept-derived rule; `mix brain.lineage --materialize`
    owns the block between the `lineage:start`/`lineage:end` markers.
+
+## Addendum — source of truth migrated to `attribution.from` (2026-07-13)
+
+The hand-kept `lineage:` frontmatter block this plan introduced is retired.
+The [resource-attribution property](/meta/plans/resource-attribution-property.md)
+(operator-ratified decision 5) made the flow docs' `attribution.from`
+back-links plus each thread's `pr:` anchor the canonical source;
+`mix brain.lineage` now derives the same two views (per-doc blockquote,
+cross-flow index) from those edges. The migration check confirmed the
+derived views reproduced the hand-kept blocks byte-for-byte before the
+blocks were deleted. Everything else this plan decided — the views, the
+`--check` gate, feature-lineage semantics — stands.
