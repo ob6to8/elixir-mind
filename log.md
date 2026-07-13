@@ -4,6 +4,20 @@ Chronological history of the knowledge base. Newest entries first. Dates are ISO
 
 ## 2026-07-11
 
+- **Dung's abstract argumentation frameworks intaken** — the one prior-art line
+  from the opening assessment that hadn't been filed (its "consensus/conflict"
+  machinery was cited by the analysis and glossary with nothing to ground it).
+  Added a [reference](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)
+  (three-part layered) and a
+  [source capture](/knowledge-management/argumentation/dung-1995-acceptability-of-arguments.md)
+  (verbatim abstract + standard-formulation definitions, explicitly flagged as
+  **not** verbatim from the paper body — the PDF wasn't accessed). Two new
+  glossary terms ([argumentation framework](/glossary/argumentation-framework.md),
+  [grounded extension](/glossary/grounded-extension.md)); the
+  [consensus core](/glossary/consensus-core.md) and
+  [defeasibility](/glossary/defeasibility.md) entries and the
+  [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md)
+  (new sixth prior-art bullet) now cite Dung.
 - **Glossaried the epistemic prior-art docs** — ran `/add-to-glossary` over the
   five references and three source captures filed today, adding **29 term
   files** under [`/glossary/`](/glossary/index.md): the TMS cluster

@@ -26,3 +26,11 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   mode of both prior iterations). Same discipline as the compiled contract and
   registry. See the
   [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md).
+- **A `phrase`-type above the glossary was considered and deferred**
+  (2026-07-11). The idea: a `type` for multi-word idioms/principles that aren't
+  concept definitions (the future-beliefs entries are the closest case).
+  Deferred because the `type` axis distinguishes *epistemic role*, not lexical
+  length, and the glossary already holds multi-word terms comfortably; a
+  `phrase` type would be the first keyed on surface form. Revisit only if a
+  concrete need with real examples emerges — then propose for ratification like
+  any new type.

@@ -11,6 +11,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [analysis (type)](/glossary/analysis-type.md) — controlled type: a reasoned point-in-time judgment on a question, with findings + recommendation
 - [approval gate](/glossary/approval-gate.md) — a control blocking a tool/MCP action until approval resolves; environment-wide if it blocks every session
 - [approximate nearest neighbor (ANN)](/glossary/approximate-nearest-neighbor.md) — index class trading exactness for speed on nearest-vector queries; worth it only at large corpus size
+- [argumentation framework (Dung)](/glossary/argumentation-framework.md) — arguments + a binary attack relation as a directed graph; acceptability semantics decide which sets rationally co-stand
 - [assumption](/glossary/assumption.md) — a belief held provisionally, hence retractable: TMS (rests on absence of belief), ATMS (primitive datum), and GSN (unsubstantiated statement) senses
 - [assurance case](/glossary/assurance-case.md) — a structured, evidence-backed argument that a system satisfies a property; the regulator-facing deliverable, commonly in GSN
 - [atomic fact](/glossary/atomic-fact.md) — the decomposition unit of factuality evaluation: one independently checkable statement extracted from a longer generation
@@ -51,6 +52,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [Goal Structuring Notation (GSN)](/glossary/goal-structuring-notation.md) — the graphical standard for assurance cases: goals → strategies → evidence, linked by SupportedBy/InContextOf
 - [golden test (snapshot test)](/glossary/golden-test.md) — a test comparing current output to a checked-in "golden" reference artifact, flagging any drift
 - [graduation](/glossary/graduation.md) — a term outgrowing the glossary relocates into the domain taxonomy, id travelling with it, a pointer stub left behind
+- [grounded extension](/glossary/grounded-extension.md) — a Dung framework's unique minimal (most skeptical) self-defending argument set; the formal model of a consensus core
 - [HTML escaping](/glossary/html-escaping.md) — encoding `& " < >` as entities so untrusted text can't break out of its HTML context
 - [inbox namespace](/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/news` candidate digests (no ids, never verified)
 - [issue (type)](/glossary/issue-type.md) — controlled type: a tracked operational problem with a status (open/resolved/wontfix), under `meta/issues/`

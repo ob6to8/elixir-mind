@@ -15,9 +15,10 @@ When several artifacts' belief systems are compared, the consensus core is the
 subset of beliefs that every system supports and no system attacks — the
 uncontested common ground that survives conflict examination. Everything
 outside the core is where the interesting disagreement lives. The notion is
-kin to the *grounded extension* in Dung-style argumentation semantics (the
-uniquely defensible, skeptically acceptable argument set), transplanted to
+kin to the [grounded extension](/glossary/grounded-extension.md) in Dung-style
+[argumentation semantics](/glossary/argumentation-framework.md) (the uniquely
+defensible, skeptically acceptable argument set), transplanted to
 cross-document comparison: compute it mechanically over the merged graph once
 the local support/attack judgments are made.
 
-*Seen in:* [decompose-then-verify factuality evaluation](/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md)
+*Seen in:* [Dung frameworks reference](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md), [decompose-then-verify factuality evaluation](/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md)

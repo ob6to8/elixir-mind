@@ -94,6 +94,14 @@ bundle:
   trees over systems, mechanically checkable for shape while leaf judgments
   stay expert. They also carry the standing caution (Haddon-Cave): argument
   structure audits *coherence*, not *truth*.
+- **[Dung's abstract argumentation frameworks](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)**
+  are the formal engine for "consensus evaluation and conflict examination" —
+  the operator's original framing. Arguments plus an *attack* relation, with
+  semantics (grounded, preferred, stable) that compute which sets rationally
+  co-stand: the [grounded extension](/glossary/grounded-extension.md) *is* a
+  [consensus core](/glossary/consensus-core.md), and the framework grounds the
+  structural correction below (conflict is a separate, possibly-cyclic relation,
+  not a DAG edge).
 - **[FOL and OWL](/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)**
   mark the fully formal pole and its costs — semidecidability, ontology
   authoring expense, brittleness against real prose — which is the argument
@@ -119,7 +127,9 @@ Two structural corrections to the raw proposal:
 
 - **The DAG holds for derivation only.** Support/inference edges can be kept
   acyclic; conflict is a separate, symmetric relation that cannot be forced
-  acyclic (mutual attack is normal; Dung-style semantics resolve it).
+  acyclic (mutual attack is normal;
+  [Dung-style semantics](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md)
+  resolve it).
 - **Attestation/inference is the right cut, but the edge is the unit.** The
   justification node (Toulmin's warranted step), not the belief pair, is what
   the LLM judges and the audit cites.

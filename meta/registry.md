@@ -58,6 +58,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:73e13b` | [glossary/analysis-type](/glossary/analysis-type.md) | concept | false |
 | `sb:98ec38` | [glossary/approval-gate](/glossary/approval-gate.md) | concept | false |
 | `sb:e2377d` | [glossary/approximate-nearest-neighbor](/glossary/approximate-nearest-neighbor.md) | concept | false |
+| `sb:43244e` | [glossary/argumentation-framework](/glossary/argumentation-framework.md) | concept | false |
 | `sb:7a467d` | [glossary/assumption](/glossary/assumption.md) | concept | false |
 | `sb:6cf17b` | [glossary/assurance-case](/glossary/assurance-case.md) | concept | false |
 | `sb:fd5a1e` | [glossary/atomic-fact](/glossary/atomic-fact.md) | concept | false |
@@ -98,6 +99,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:f9daf3` | [glossary/goal-structuring-notation](/glossary/goal-structuring-notation.md) | concept | false |
 | `sb:61877f` | [glossary/golden-test](/glossary/golden-test.md) | concept | false |
 | `sb:0c8532` | [glossary/graduation](/glossary/graduation.md) | concept | false |
+| `sb:fe0ebd` | [glossary/grounded-extension](/glossary/grounded-extension.md) | concept | false |
 | `sb:8fda94` | [glossary/html-escaping](/glossary/html-escaping.md) | concept | false |
 | `sb:5b2e0f` | [glossary/inbox-namespace](/glossary/inbox-namespace.md) | concept | false |
 | `sb:e9a82b` | [glossary/issue-type](/glossary/issue-type.md) | concept | false |
@@ -158,6 +160,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:a8f067` | [glossary/warrant](/glossary/warrant.md) | concept | false |
 | `sb:d8d057` | [glossary/well-founded-support](/glossary/well-founded-support.md) | concept | false |
 | `sb:59895a` | [knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
+| `sb:148cd9` | [knowledge-management/argumentation/dung-1995-acceptability-of-arguments](/knowledge-management/argumentation/dung-1995-acceptability-of-arguments.md) | source |  |
+| `sb:d72938` | [knowledge-management/argumentation/dung-abstract-argumentation-frameworks](/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md) | reference |  |
 | `sb:01e477` | [knowledge-management/argumentation/gsn-community-standard](/knowledge-management/argumentation/gsn-community-standard.md) | source |  |
 | `sb:5c3ab0` | [knowledge-management/argumentation/toulmin-model-of-argument](/knowledge-management/argumentation/toulmin-model-of-argument.md) | reference |  |
 | `sb:d82615` | [knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms](/knowledge-management/knowledge-representation/de-kleer-1986-an-assumption-based-tms.md) | source |  |
