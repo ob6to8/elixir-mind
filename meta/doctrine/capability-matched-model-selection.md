@@ -3,6 +3,12 @@ type: doctrine
 title: "Capability-matched model selection"
 description: Match the model tier to the epistemic weight of the motion — concentrate the strongest models where output becomes canonical or a judgment is rendered, and delegate mechanical, derivational, and oracle-checked motions to cheaper tiers; selection is a runtime act enforceable only through its attribution shadow (provenance naming the producing model).
 provenance: "Claude Code session, 2026-07-13 — raised by the operator as an open question on the three-level-documentation plan (should the plan instruct on model use?); resolved to the doctrine layer and ratified for filing in the same session"
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, three-level documentation session"
+  why: "operator resolved that model-use guidance is standing direction, filed as doctrine"
+  from: [/meta/threads/2026-07-13-three-level-documentation-plan-and-model-doctrine.md, /meta/plans/three-level-documentation.md]
 tags: [meta, doctrine, models, delegation, orchestration, agents]
 timestamp: 2026-07-13
 ---

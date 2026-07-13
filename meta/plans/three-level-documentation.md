@@ -4,6 +4,12 @@ title: "Three-level documentation: plain, technical, and grounding tiers"
 description: Present opt-in documents at three levels — a plain-speak backstop for the tutorial-mode reader, the canonical terse technical body, and a grounding tier one abstraction below the source — implemented as one canonical level plus two anchored derivations, never three parallel texts.
 status: accepted
 provenance: "Claude Code session, 2026-07-13 — operator proposed three presentation levels (plain / technical / code); framing refined, ratified same session; execution deferred to a future session"
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, three-level documentation session"
+  why: "persists the operator-ratified three-level design per the persist-plans policy"
+  from: [/meta/threads/2026-07-13-three-level-documentation-plan-and-model-doctrine.md]
 tags: [meta, plan, documentation, accessibility, levels]
 timestamp: 2026-07-13
 ---

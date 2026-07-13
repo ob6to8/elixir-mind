@@ -5,6 +5,11 @@ title: capability-matched model selection
 description: The doctrine that model tier is matched to the epistemic weight of the motion — strongest models where output becomes canonical, a judgment is rendered, or errors are silent; cheaper tiers for derivational, oracle-checked, or high-volume motions.
 provenance: "Agent-distilled glossary definition; doctrine filed in the 2026-07-13 session"
 verified: false
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: glossary
+  agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
+  why: "names the doctrine filed this session"
 tags: [glossary, doctrine, models, delegation, terminology]
 sense: repo
 timestamp: 2026-07-13

@@ -5,6 +5,11 @@ title: attribution shadow
 description: The enforceable trace of an unenforceable runtime act — a choice like model selection cannot itself be gated because the repository never records it, but the committed attribution of who/what performed the act can be required and checked.
 provenance: "Agent-distilled glossary definition; coined in the 2026-07-13 session while resolving whether model-selection guidance is enforceable"
 verified: false
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: glossary
+  agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
+  why: "coined while resolving whether model-selection guidance is enforceable"
 tags: [glossary, enforcement, provenance, models, terminology]
 sense: repo
 timestamp: 2026-07-13

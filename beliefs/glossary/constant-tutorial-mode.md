@@ -5,6 +5,11 @@ title: constant tutorial mode
 description: The reader state of an operator who builds systems through natural-language collaboration and is therefore always learning the system by using it — the audience the plain tier of three-level documentation exists to backstop.
 provenance: "Agent-distilled glossary definition; phrase coined by the operator in the 2026-07-13 three-level documentation session"
 verified: false
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: glossary
+  agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
+  why: "operator-coined phrase carrying the plain tier's audience rationale"
 tags: [glossary, documentation, operator, terminology]
 sense: repo
 timestamp: 2026-07-13

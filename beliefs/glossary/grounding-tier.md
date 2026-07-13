@@ -5,6 +5,11 @@ title: grounding tier
 description: The third tier of three-level documentation — one level of abstraction below whatever the source document is — anchored by an implemented_by frontmatter edge (paths to enforcing code for a policy, paths to implementing policies for a doctrine) plus optional prose.
 provenance: "Agent-distilled glossary definition; the one-abstraction-below generalization coined by the operator in the 2026-07-13 three-level documentation session"
 verified: false
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: glossary
+  agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
+  why: "the operator's one-abstraction-below generalization, load-bearing in the ratified plan"
 tags: [glossary, documentation, levels, edges, terminology]
 sense: repo
 timestamp: 2026-07-13

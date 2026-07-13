@@ -5,6 +5,11 @@ title: three-level documentation
 description: An opt-in scheme presenting a document at three tiers — a plain-speak backstop, the canonical terse technical body, and a grounding tier one abstraction below the source — built as one canonical level plus two anchored derivations, never three parallel texts.
 provenance: "Agent-distilled glossary definition; scheme proposed by the operator and ratified in the 2026-07-13 three-level documentation session"
 verified: false
+attribution:
+  when: 2026-07-13T14:29:00Z
+  channel: glossary
+  agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
+  why: "the three-level documentation scheme this session designed and ratified"
 tags: [glossary, documentation, levels, terminology]
 sense: repo
 timestamp: 2026-07-13
