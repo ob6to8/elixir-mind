@@ -2,6 +2,20 @@
 
 Chronological history of the knowledge base. Newest entries first. Dates are ISO 8601.
 
+## 2026-07-13
+
+- **Glossaried the
+  [council-round thread](/meta/threads/2026-07-13-council-round-suitability-evaluation.md)**
+  (`/add-to-glossary` via `/create-pull-request`) — four new terms:
+  [council round](/glossary/council-round.md) (`sb:b467a5`),
+  [disposition](/glossary/disposition.md) (`sb:537412`),
+  [distillation target](/glossary/distillation-target.md) (`sb:04befc`), and
+  [draft pull request](/glossary/draft-pull-request.md) (`sb:f5523f`); one new
+  pointer entry, [distill, don't dump](/glossary/distill-dont-dump.md)
+  (`sb:bec37f`), deferring to the policy and contrasting the session-capture
+  sense; appended the thread citation to
+  [session capture](/glossary/session-capture.md).
+
 ## 2026-07-11
 
 - **Glossaried the

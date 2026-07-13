@@ -38,7 +38,9 @@ the close motion after the gate), the bundle's
 filing), and the session-capture policy's deliberately inverted sense
 (noise-stripped, kept text verbatim). The session closed with this capture;
 during it, the analysis doc's dates were corrected from 2026-07-11 to
-2026-07-13 (the actual session date).
+2026-07-13 (the actual session date). The operator then invoked
+`/create-pull-request` — this doc was refreshed in place with the closing
+exchange, glossaried, and shipped in that PR.
 
 ## Routing
 
@@ -184,6 +186,19 @@ There are two definitions — one in the council prompt, one in this repo — pl
 
 Anything left to persist before closing thread?
 
-*(Answered by running `/capture`: the one thing left was the session record
-itself — this thread doc. The short pre-capture reply and the capture-run
-narration are stripped per the drop rule.)*
+*(The short pre-capture reply and the capture-run narration are stripped per
+the drop rule; the capture ran here, and the closing report below followed
+it. The session then shipped via `/create-pull-request` — this doc's second,
+update-in-place close.)*
+
+## Assistant
+
+Nothing is left unpersisted now — the session is captured and everything is pushed. What this last pass did:
+
+**Thread doc**: `meta/threads/2026-07-13-council-round-suitability-evaluation.md` — rendered via the parse-the-log path from the host session log, with one caveat recorded in its provenance: the host log was missing one delivered ≥300-char assistant block (the priority-appraisal/filing-decision message), which I reinstated verbatim from the live context rather than losing it. Routing ledger has two rows: the evaluation strand is **paused** (dangling: you ratifying the four bindings and commissioning `/council`), and the distilled-vs-dumped clarification is **closed**. The route tags are all path back-links (to the analysis doc and the two policies) — the session fed no `sb:` concept sinks, so no excerpt logs were materialized.
+
+**A date correction I caught during capture**: I had stamped the analysis doc's `timestamp`/provenance as 2026-07-11 and filed its `meta/log.md` entry under that heading, but today is 2026-07-13. Both are fixed in this commit, with the fix noted in the log entry.
+
+All gates green (`brain.contract --check`, `brain.registry --check`, `brain.verify`, `brain.route_tags`, 81 tests), committed as `09c6826` and pushed to `claude/council-review-secondbrain-oq5e8o` (two commits total on the branch: the analysis `ccb6a31`, the capture `09c6826`).
+
+The only open items are yours, and both are recorded in the tree: ratifying the four bindings if you want `/council` built, and whether to open a PR for this branch — say the word or run `/create-pull-request` (its capture step will just update this thread doc in place).

@@ -4,6 +4,11 @@ Chronological history of the governance namespace. Newest first. ISO 8601 dates.
 
 ## 2026-07-13
 
+- **Second-close refresh of [`2026-07-13-council-round-suitability-evaluation`](/meta/threads/2026-07-13-council-round-suitability-evaluation.md) in place**
+  (`/create-pull-request` close; update-in-place per the capture skill) —
+  appended the post-capture closing report verbatim and noted the PR shipping
+  in the narrative. Glossary pass added four terms + one pointer entry (see
+  the root `log.md`).
 - **Captured [`2026-07-13-council-round-suitability-evaluation`](/meta/threads/2026-07-13-council-round-suitability-evaluation.md)**
   — the session that evaluated the council-round protocol and filed the
   suitability analysis. Two ledger rows: the evaluation strand (`paused` on

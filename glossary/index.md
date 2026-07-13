@@ -20,6 +20,7 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [compiled contract](/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [Composable Beliefs (cb)](/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
 - [concept (OKF)](/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [council round](/glossary/council-round.md) — an adversarial, multi-agent review of drafted work run as draft-PR comments through four motions, gated on dispositions, distilled into a curated target
 - [cron expression](/glossary/cron-expression.md) — the five-field spec (min hr dom mon dow) defining when a recurring job fires, e.g. `0 13 * * *`
 - [cross-site scripting (XSS)](/glossary/cross-site-scripting.md) — a vuln where unescaped attacker content runs as markup/script; closed by HTML escaping
 - [deduplication](/glossary/deduplication.md) — checking for an existing equivalent before filing, to avoid fragmenting the brain (intake-time)
@@ -27,7 +28,11 @@ definition. See the [glossary hub](/glossary.md) for how the system works.
 - [deploy gating](/glossary/deploy-gating.md) — gating a deploy on verification passing, so a failed check skips publish and the last good deploy stays live
 - [deterministic spine](/glossary/deterministic-spine.md) — the input-determined, mechanical part of a workflow that a conventional test can pin
 - [digest](/glossary/digest.md) — one dated per-day document collecting candidate items with synopses, grouped by category
+- [disposition](/glossary/disposition.md) — the single verdict a review finding must receive before a round can converge: agree, refute with evidence, or defer with a destination
+- [distill, don't dump](/glossary/distill-dont-dump.md) — the filing rule that a concept captures the knowledge, not the raw noise; originals live in `resource`/Citations
+- [distillation target](/glossary/distillation-target.md) — the curated document (plan, ADR, issue) that receives a review round's settled outcome; never a transcript
 - [doctrine](/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [draft pull request](/glossary/draft-pull-request.md) — a PR opened in draft state: full diff, commentable, explicitly not ready to merge; a council round's chamber
 - [embeddings](/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [epistemic overlay](/glossary/epistemic-overlay.md) — a layer classifying docs by epistemic role and linking their dependencies (the cb model)
 - [ExUnit](/glossary/exunit.md) — Elixir's built-in unit-testing framework (fixtures, tags like `:tmp_dir`)

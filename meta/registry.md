@@ -73,6 +73,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:23f009` | [glossary/compiled-contract](/glossary/compiled-contract.md) | concept | false |
 | `sb:04f8dd` | [glossary/composable-beliefs](/glossary/composable-beliefs.md) | concept | false |
 | `sb:317879` | [glossary/concept-okf](/glossary/concept-okf.md) | concept | false |
+| `sb:b467a5` | [glossary/council-round](/glossary/council-round.md) | concept | false |
 | `sb:04c057` | [glossary/cron-expression](/glossary/cron-expression.md) | concept | false |
 | `sb:c2a18e` | [glossary/cross-site-scripting](/glossary/cross-site-scripting.md) | concept | false |
 | `sb:f17e05` | [glossary/deduplication](/glossary/deduplication.md) | concept | false |
@@ -80,7 +81,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `sb:048bca` | [glossary/deploy-gating](/glossary/deploy-gating.md) | concept | false |
 | `sb:d18504` | [glossary/deterministic-spine](/glossary/deterministic-spine.md) | concept | false |
 | `sb:d4fc9d` | [glossary/digest](/glossary/digest.md) | concept | false |
+| `sb:537412` | [glossary/disposition](/glossary/disposition.md) | concept | false |
+| `sb:bec37f` | [glossary/distill-dont-dump](/glossary/distill-dont-dump.md) | concept | false |
+| `sb:04befc` | [glossary/distillation-target](/glossary/distillation-target.md) | concept | false |
 | `sb:6a9e78` | [glossary/doctrine](/glossary/doctrine.md) | concept | false |
+| `sb:f5523f` | [glossary/draft-pull-request](/glossary/draft-pull-request.md) | concept | false |
 | `sb:da21de` | [glossary/embeddings](/glossary/embeddings.md) | concept | false |
 | `sb:f727fe` | [glossary/epistemic-overlay](/glossary/epistemic-overlay.md) | concept | false |
 | `sb:9e1592` | [glossary/exunit](/glossary/exunit.md) | concept | false |
