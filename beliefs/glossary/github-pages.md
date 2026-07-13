@@ -6,6 +6,7 @@ description: GitHub's static-site hosting service that publishes a repository's 
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, deployment, ci]
+sense: common
 timestamp: 2026-07-13
 ---
 

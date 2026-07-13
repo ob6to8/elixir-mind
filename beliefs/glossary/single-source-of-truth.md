@@ -6,6 +6,7 @@ description: The design guarantee that a given fact lives in exactly one authori
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, principles, provenance, compiled-artifacts]
+sense: common
 timestamp: 2026-07-13
 ---
 

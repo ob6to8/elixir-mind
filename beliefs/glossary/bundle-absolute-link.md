@@ -6,6 +6,7 @@ description: A markdown link whose target begins at the bundle root with a leadi
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, cross-linking, okf]
+sense: repo
 timestamp: 2026-07-13
 ---
 
