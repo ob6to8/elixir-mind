@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code session (Claude Fable), operator-directed external-system evaluation"
   why: "operator asked for Loomkin to be evaluated against this repo in light of the AST/macro analysis and, on review, directed the assessment be filed as the fourth leg of the BEAM/Jido analysis set"
+  from: [/meta/threads/2026-07-14-elixir-ast-macros-and-loomkin-evaluation.md]
 ---
 
 # Loomkin as existence proof: evaluating a shipped Jido-native agent harness against this bundle's tiered path

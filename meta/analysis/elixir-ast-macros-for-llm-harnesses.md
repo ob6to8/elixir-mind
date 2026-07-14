@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code session (Claude Fable), operator-directed Elixir metaprogramming discussion"
   why: "operator asked for the AST/macro implications to be assessed and, on review, directed the assessment be filed with verified citations as the third leg of the BEAM/Jido analysis set"
+  from: [/meta/threads/2026-07-14-elixir-ast-macros-and-loomkin-evaluation.md]
 ---
 
 # What do Elixir's AST and macro capabilities buy for LLM interaction, agent harnesses, and this brain's future runtime?
