@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-11T19:38:44+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md, /meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md]
+  from: [/meta/threads/2026-07-12-beam-jido-evaluation-and-dark-factory-scenario.md, /meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md, /meta/threads/2026-07-13-execute-branch-transplant-ports.md]
 ---
 
 # Triage the six kept unmerged claude/* branches
@@ -43,19 +43,25 @@ todo just records the final disposition:
 - **`claude/council-review-secondbrain-oq5e8o`** — ✅ merged via PR #76
   ([council-round-suitability analysis](/meta/analysis/council-round-suitability.md)),
   deleted.
-- **`claude/git-fetch-merge-skill-ke7adg`** — ⏳ **still to port**: the
-  `/sync-branch-with-main` skill, genuinely absent from `main`.
-- **`claude/ccr-architecture-notes-csbiuv`** — ⏳ **still to port**: the Chroma
-  **product** intake (`sb:ea15aa`), distinct from `main`'s Chroma context-rot
-  *research* concept.
+- **`claude/git-fetch-merge-skill-ke7adg`** — ✅ **ported 2026-07-13**: the
+  [`/sync-branch-with-main`](/.claude/skills/sync-branch-with-main/SKILL.md)
+  skill + registry entry transplanted, contract recompiled. Source branch now
+  safe to delete.
+- **`claude/ccr-architecture-notes-csbiuv`** — ✅ **ported 2026-07-13**: the
+  Chroma **product** intake landed at
+  [`chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md)
+  (`sb:ea15aa`), links repointed, cross-linked to `main`'s Chroma context-rot
+  *research* concept. Source branch now safe to delete.
 - **`claude/glossary-thread-docs-zwfk6i`** — ❌ false orphan; ratify deletion.
 - **`claude/glossary-doctrine-policy-lkabog`** — ❌ false orphan (content landed
   via PR #40); ratify deletion.
 
 **Done means:** every branch above is merged, deleted, or explicitly kept with a
-reason. Remaining: execute the two ports (per the
-[transplant plan](/meta/plans/transplant-surviving-unmerged-branches.md)) and
-operator-ratify deleting the two false orphans.
+reason. The two ports are executed (per the
+[transplant plan](/meta/plans/transplant-surviving-unmerged-branches.md));
+**remaining is operator-only**: delete the two false orphans
+(`glossary-thread-docs`, `glossary-doctrine-policy`) and the two now-ported
+source branches (`git-fetch-merge-skill`, `ccr-architecture-notes`).
 
 ---
 

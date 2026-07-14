@@ -64,6 +64,11 @@ attribution:
   PR. Invoking the skill **is** the authorization to open the PR (no separate
   confirmation gate); PR-template detection and the GitHub MCP tools handle the
   rest. See `.claude/skills/create-pull-request/SKILL.md`.
+- **`/sync-branch-with-main`** — fetch `origin/main` and merge it into the current
+  working branch, keeping a feature branch current so its diff reflects only its own
+  changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
+  rather than blindly resolving them; retries only on network errors. See
+  `.claude/skills/sync-branch-with-main/SKILL.md`.
 - **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
   a subcommand argument: `/todo create <title>` files a new open todo (and maintains
   the index); `/todo list` shows the todos grouped by `status`. See

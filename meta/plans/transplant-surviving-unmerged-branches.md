@@ -2,7 +2,7 @@
 type: plan
 title: "Transplant the salvageable content from the surviving unmerged claude/* branches"
 description: Recover the genuinely-absent content from the surviving unmerged session branches by transplanting it onto the reorganized main (never plain-merging, which would resurrect dead paths). As of filing, most of the audited set has since merged via other sessions — only two small ports (Chroma intake, /sync-branch-with-main skill) and two false-orphan deletions remain to close the orphaned-branches cleanup.
-status: proposed
+status: in-progress
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-13 — commissioned by the operator after a per-branch content audit of the surviving unmerged branches (recorded in the triage todo)"
 tags: [meta, plan, git, branches, cleanup, transplant]
 timestamp: 2026-07-13
@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, branch-cleanup triage session"
   why: "records the remaining branch-transplant work identified in the orphaned-branches audit, so a future session can execute it"
-  from: [/meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md]
+  from: [/meta/threads/2026-07-13-orphaned-branch-cleanup-and-transplant-plan.md, /meta/threads/2026-07-13-execute-branch-transplant-ports.md]
 ---
 
 # Transplant the salvageable content from the surviving unmerged `claude/*` branches
@@ -50,22 +50,22 @@ deleted once its content lands.
 
 Verdicts and sizing from the audit (see the triage todo for the full reasoning).
 
-### Ports — bring the content forward (the remaining work)
+### Ports — bring the content forward (✅ done 2026-07-13)
 
-- **`ccr-architecture-notes-csbiuv`** (small) — a 60-line Chroma
-  vector-database **product** intake (`sb:ea15aa`). Transplant to
-  `knowledge/SWE/llm-engineering/`; update that dir's `index.md`. `main` now
-  carries a *distinct* Chroma concept —
+- **`ccr-architecture-notes-csbiuv`** (small) — ✅ **ported.** The Chroma
+  vector-database **product** intake (`sb:ea15aa`) is now at
+  [`knowledge/SWE/llm-engineering/chroma-vector-database.md`](/knowledge/SWE/llm-engineering/chroma-vector-database.md),
+  its cross-links repointed to the reorganized tree and an `attribution` block
+  added. Cross-linked to the *distinct* Chroma concept already on `main` —
   `knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md`
-  (Chroma's context-rot *study*, not the database) — so cross-link the two
-  rather than treating either as a duplicate.
-- **`git-fetch-merge-skill-ke7adg`** (small) — the `/sync-branch-with-main`
-  skill for merging `origin/main` into the working branch (genuinely absent
-  from `main`). Port the `.claude/skills/sync-branch-with-main/SKILL.md` and add
-  its entry to the skills-registry policy; recompile the contract
-  (`mix brain.contract`). **Check first** whether the
-  [skills-registry-compile plan](/meta/plans/compile-skills-registry-from-skill-frontmatter.md)
-  has since changed how skills register.
+  (Chroma's context-rot *study*, not the database) — rather than duplicating it.
+  Index updated.
+- **`git-fetch-merge-skill-ke7adg`** (small) — ✅ **ported.** The
+  [`/sync-branch-with-main`](/.claude/skills/sync-branch-with-main/SKILL.md)
+  skill and its skills-registry entry are transplanted verbatim (still accurate)
+  and the contract recompiled. The skills-registry policy is still hand-kept —
+  the [skills-registry-compile plan](/meta/plans/compile-skills-registry-from-skill-frontmatter.md)
+  hasn't executed — so the entry was added by hand.
 
 ### Already landed (no action — recorded for the audit trail)
 
@@ -88,20 +88,18 @@ Verdicts and sizing from the audit (see the triage todo for the full reasoning).
 
 ## 3. Build order
 
-1. **Small ports batch** (one session): transplant the two remaining port
-   branches' content (Chroma intake, `/sync-branch-with-main` skill) onto a
-   fresh branch under the current layout, preserving ids, updating each affected
-   `index.md`, recompiling the contract for the skill. Gates: `mix brain.verify`,
-   `mix brain.registry --check`, `mix brain.route_tags`,
-   `mix brain.contract --check`, `mix test`. One PR.
-2. **Operator ratifies deleting** the two false orphans (`glossary-thread-docs`,
-   `glossary-doctrine-policy`) and each port's source branch once its content
-   lands. Agents cannot delete refs in this environment (HTTP 403) — deletion is
-   an operator step.
-3. **Close the orphaned-branches issue** once the two ports land, the two false
-   orphans are deleted, and the "Automatically delete head branches" repo setting
-   is confirmed on. (The epistemic batch and the `repo-skills`/`council` ports
-   already merged — no action.)
+1. ✅ **Small ports batch** — **done 2026-07-13** (this branch): both ports
+   transplanted under the current layout, ids preserved, indexes updated, contract
+   recompiled; full gate suite green. Shipping as the port PR.
+2. ⏳ **Operator ratifies deleting** the two false orphans
+   (`glossary-thread-docs`, `glossary-doctrine-policy`) and the two port source
+   branches (`ccr-architecture-notes-csbiuv`, `git-fetch-merge-skill-ke7adg`)
+   now that their content has landed. Agents cannot delete refs in this
+   environment (HTTP 403) — deletion is an operator step.
+3. ⏳ **Close the orphaned-branches issue** once the port PR merges, the four
+   branches above are deleted, and the "Automatically delete head branches" repo
+   setting is confirmed on. (The epistemic batch and the `repo-skills`/`council`
+   ports already merged — no action.)
 
 ## 4. Scope boundary
 
