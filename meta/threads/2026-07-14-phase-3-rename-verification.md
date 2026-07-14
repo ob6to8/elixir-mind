@@ -5,7 +5,7 @@ description: Phase 3 verification of the second-brain to elixir-mind rename — 
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-14; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, rename, elixir-mind, identity, verification, tooling, governance]
 timestamp: 2026-07-14
-# pr: added by /create-pull-request once the PR is opened
+pr: 90
 ---
 
 # 2026-07-14-phase-3-rename-verification
