@@ -125,6 +125,7 @@ system works.
 - [hot code loading](/beliefs/glossary/hot-code-loading.md) — the BEAM's ability to load new module versions into a running system without restart; makes compilation a service the system can invoke on itself
 - [hot module reload (HMR)](/beliefs/glossary/hot-module-reload.md) — a dev-server technique swapping changed modules into a running app in place, updating the live view on each edit without a full reload; the local echo of an artifact's iteration loop
 - [hybrid search](/beliefs/glossary/hybrid-search.md) — retrieval blending BM25 and vector-similarity scores so keyword precision and semantic matching cover each other's misses
+- [id-namespace migration](/beliefs/glossary/id-namespace-migration.md) — a ratified, tail-preserving, verifier-atomic re-key of the id prefix on every concept (e.g. `sb:` → `em:`); only the prefix changes, each 6-hex tail is kept
 - [inbox namespace](/beliefs/glossary/inbox-namespace.md) — the non-bundle `inbox/` waiting room for `/research` candidate digests (no ids, never verified)
 - [inference (belief role)](/beliefs/glossary/inference-belief-role.md) — a belief derived from other beliefs, licensed to exceed its premises; the counterpart to an attestation
 - [invisible degradation](/beliefs/glossary/invisible-degradation.md) — corpus rot that emits no signal while it happens; nothing announces it until retrieval visibly fails

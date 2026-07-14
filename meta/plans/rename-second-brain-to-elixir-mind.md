@@ -9,7 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, elixir-mind rename-plan session"
   why: "persists the second-brain → elixir-mind rename spec (with the sb: → em: id migration) per the persist-plans policy"
-  from: [/meta/threads/2026-07-13-elixir-mind-rename-plan-and-model-orchestration.md]
+  from: [/meta/threads/2026-07-13-elixir-mind-rename-plan-and-model-orchestration.md, /meta/threads/2026-07-14-execute-second-brain-to-elixir-mind-rename.md]
 tags: [meta, plan, rename, identity, migration, tooling, governance]
 timestamp: 2026-07-13
 ---
