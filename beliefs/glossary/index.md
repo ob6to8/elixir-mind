@@ -87,7 +87,7 @@ system works.
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
 - [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [elaboration (type)](/beliefs/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`
-- [elixir-mind](/beliefs/glossary/elixir-mind.md) — the operator's working name for this brain's prospective owned runtime: the tier-1/2 resident BEAM system mapped in the BEAM/Jido analyses, not yet built
+- [elixir-mind](/beliefs/glossary/elixir-mind.md) — the ratified new name for this brain itself (repo, app namespace, and `sb:` → `em:` id prefix, per the accepted rename plan); also used narrowly for its prospective owned-runtime tier
 - [embeddings](/beliefs/glossary/embeddings.md) — dense vectors placing semantically similar text nearby, compared via distances like cosine
 - [entailment (logical consequence)](/beliefs/glossary/entailment.md) — premises force the conclusion in every interpretation; the question each belief-graph support edge poses
 - [entity resolution](/beliefs/glossary/entity-resolution.md) — deciding when two differently-phrased items denote the same entity; for beliefs, the hard core of cross-document comparison

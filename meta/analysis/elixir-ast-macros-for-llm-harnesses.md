@@ -171,6 +171,12 @@ analyses undersell one consequence:
 
 ## 4. Implications for the elixir-mind direction
 
+(Terminology note, added at merge time: the
+[rename plan](/meta/plans/rename-second-brain-to-elixir-mind.md) that landed on
+`main` in parallel makes **elixir-mind** the ratified name of this bundle
+itself; this section uses it for the narrower prospective runtime tier *of*
+that project, and the implications are unchanged either way.)
+
 Reading "elixir-mind" as the prospective owned runtime — the tier-1/tier-2
 resident system mapped in
 [the BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md)
