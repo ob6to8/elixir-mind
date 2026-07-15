@@ -5,7 +5,7 @@ description: The operator recalled changing the OKF unit's name from "concept" t
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-15; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, terminology, types, vocabulary, glossary, replication]
 timestamp: 2026-07-15
-# pr: added by /create-pull-request once the PR is opened
+pr: 93
 ---
 
 # 2026-07-15-replicate-concept-document-terminology-from-pr-71
