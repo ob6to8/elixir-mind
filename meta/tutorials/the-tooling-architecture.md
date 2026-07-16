@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, code-tutorial-glossary session"
   why: "operator ratified a prose architecture tour of the tooling, complementing the generated code-map (code-tutorial-and-code-map plan)"
+  from: [/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md]
 ---
 
 # The tooling architecture — a grand tour of the `mix brain.*` pipeline

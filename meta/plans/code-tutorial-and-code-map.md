@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, code-tutorial-glossary session"
   why: "operator ratified persisting the code-tutorial + generated-code-map design as a plan before executing the fan-out"
+  from: [/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md]
 ---
 
 # Plan — code tutorial and generated code-map
