@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, in-session authoring"
   why: "authored at operator request to recreate PR #64's glossary work on a fresh branch off main rather than resolve its conflicts"
+  from: [/meta/threads/2026-07-16-recreate-pr-64-glossary-single-overview-and-check.md]
 ---
 
 # Glossary single canonical overview, expansion-only bodies, and the mix brain.glossary check
