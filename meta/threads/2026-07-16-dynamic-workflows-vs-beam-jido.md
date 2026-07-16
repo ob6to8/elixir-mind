@@ -5,7 +5,7 @@ description: Analyzed whether recreating Anthropic's Dynamic Workflows multi-age
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, architecture, anthropic, dynamic-workflows, beam, otp, jido, agents]
 timestamp: 2026-07-16
-# pr: <N>  ← added later by /create-pull-request once the PR is opened; not set here
+pr: 101
 ---
 
 # 2026-07-16-dynamic-workflows-vs-beam-jido
