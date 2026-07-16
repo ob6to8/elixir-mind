@@ -17,9 +17,9 @@ attribution:
 
 # timestamp
 
-A recorded date-time marking when an event occurred or a piece of data was created or changed. Timestamps are what let systems order records, detect staleness, and reason about concurrency — the general currency of "when" in computing.
+Timestamps are the general currency of "when" in computing: they let systems order records, detect staleness, and reason about concurrency.
 
-**In this brain:** the frontmatter field recording a doc's last **meaningful** change — the *semantic* modified-date, bumped by update-in-place merges but not by mechanical churn (route-tag materialization, backfills), which git commit dates record instead. It is one of three deliberately orthogonal date signals: [`attribution`](/beliefs/glossary/attribution.md)`.when` is the created/ingestion instant, git history is the mechanical narrative, and `timestamp` marks when the *content* last meaningfully moved. Ratified as the ordering key for date-ordered collection views: the plans, todos, and issues indexes keep entries newest-first by it (see the [collection-view-by-date plan](/meta/plans/collection-view-by-date.md)). Defined by the [frontmatter-schema policy](/meta/policy/frontmatter-schema.md).
+**In this brain:** it is bumped by update-in-place merges but not by mechanical churn (route-tag materialization, backfills), which git commit dates record instead. It is one of three deliberately orthogonal date signals: [`attribution`](/beliefs/glossary/attribution.md)`.when` is the created/ingestion instant, git history is the mechanical narrative, and `timestamp` marks when the *content* last meaningfully moved. Ratified as the ordering key for date-ordered collection views: the plans, todos, and issues indexes keep entries newest-first by it (see the [collection-view-by-date plan](/meta/plans/collection-view-by-date.md)). Defined by the [frontmatter-schema policy](/meta/policy/frontmatter-schema.md).
 
 *Seen in:* [2026-07-16 collection-view-by-date recreation thread](/meta/threads/2026-07-16-recreate-collection-view-by-date.md)
 
