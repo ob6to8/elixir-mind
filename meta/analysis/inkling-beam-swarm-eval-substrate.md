@@ -226,7 +226,11 @@ where the tier-2/tier-3 path has (i) a runtime that is genuinely the product,
 (ii) an owned, pinnable, reproducible model layer to drive, and (iii) a
 research question this brain has already staked out. If a swarm-eval project is
 ever commissioned, it should start as its own plan; this analysis is its
-decision record, not its start.
+decision record, not its start. *Graduated 2026-07-16, operator-commissioned:
+the harness now has that plan —
+[inkling-beam-swarm-eval-harness](/meta/plans/inkling-beam-swarm-eval-harness.md)
+(`status: proposed`, M0 determinism canary as the only initially committed
+rung).*
 
 ## 6. The implementation stack
 
