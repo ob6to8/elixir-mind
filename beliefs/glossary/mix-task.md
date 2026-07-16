@@ -19,4 +19,4 @@ attribution:
 
 This brain's verifiers and generators (`mix brain.verify`, `mix brain.id`, `mix brain.route_tags`, …) are all mix tasks.
 
-*Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md)
+*Seen in:* [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-16 render-contract-invocation thread](/meta/threads/2026-07-16-render-contract-invocation-and-auto-render.md) (the contract render is a mix task, `mix brain.contract`)
