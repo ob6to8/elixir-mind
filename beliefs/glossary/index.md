@@ -49,7 +49,7 @@ system works.
 - [compiled contract](/beliefs/glossary/compiled-contract.md) — a policy/config file regenerated from source docs, never hand-edited (e.g. `CLAUDE.md` via `mix brain.contract`)
 - [complementary priors](/beliefs/glossary/complementary-priors.md) — Hinton/Osindero/Teh's device for cancelling explaining-away correlations in a directed belief net, making a deep model tractable to learn layer by layer
 - [Composable Beliefs (cb)](/beliefs/glossary/composable-beliefs.md) — the external Elixir belief-management repo whose capture/routing/verifier patterns were ported into this brain
-- [concept (OKF)](/beliefs/glossary/concept-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`
+- [concept (type)](/beliefs/glossary/concept-type.md) — the controlled `type` for a definition or mental model; in practice two speech acts (term definition vs accepted proposition) sharing a name, a tension recorded for redefinition
 - [consensus core](/beliefs/glossary/consensus-core.md) — across compared belief systems, the beliefs every system supports and none attacks; what survives conflict examination
 - [constant tutorial mode](/beliefs/glossary/constant-tutorial-mode.md) — the operator's reader state when learning an agent-built system by using it; the audience the plain tier backstops
 - [Content Security Policy](/beliefs/glossary/content-security-policy.md) — a browser-enforced standard restricting which resources a page may load or contact; what makes a Claude artifact a sealed client-side document
@@ -81,7 +81,9 @@ system works.
 - [disposition](/beliefs/glossary/disposition.md) — the single verdict a review finding must receive before a round can converge: agree, refute with evidence, or defer with a destination
 - [distill, don't dump](/beliefs/glossary/distill-dont-dump.md) — the filing rule that a concept captures the knowledge, not the raw noise; originals live in `resource`/Citations
 - [distillation target](/beliefs/glossary/distillation-target.md) — the curated document (plan, ADR, issue) that receives a review round's settled outcome; never a transcript
+- [distributed Erlang](/beliefs/glossary/distributed-erlang.md) — the BEAM's built-in clustering (transparent inter-node messaging, `:global`, `:pg`); the substrate for cross-node scale/failover, which a framework must deliberately opt into (Jido doesn't)
 - [doctrine](/beliefs/glossary/doctrine.md) — the governance layer of guiding principles (the "why" shaping judgment), distinct from policy's enforceable rules
+- [document (OKF)](/beliefs/glossary/document-okf.md) — the unit of knowledge in this bundle: a markdown file with YAML frontmatter, id = path minus `.md`; OKF's own term for it is "concept document"
 - [domain-specific language](/beliefs/glossary/domain-specific-language.md) — a small language purpose-built for one domain, trading generality for concision and checkability; doubles as a constrained generation target for LLMs
 - [draft pull request](/beliefs/glossary/draft-pull-request.md) — a PR opened in draft state: full diff, commentable, explicitly not ready to merge; a council round's chamber
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
@@ -170,6 +172,7 @@ system works.
 - [plugin](/beliefs/glossary/plugin.md) — a distributable bundle of Claude Code skills; its skills get an automatic `plugin-name:` namespace
 - [pointer entry](/beliefs/glossary/pointer-entry.md) — an entry for a term canonically defined elsewhere: one-line gloss + link, never a duplicate definition
 - [policy (type)](/beliefs/glossary/policy-type.md) — controlled type: a standing governance rule for how the brain operates, under `meta/policy/`; the source `CLAUDE.md` is compiled from
+- [PostToolUse hook](/beliefs/glossary/posttooluse-hook.md) — a Claude Code hook firing after a tool call; exit 2 (or `block` JSON) injects its output into the session as context on the next turn — the mechanism a post-edit linter uses to alert the agent
 - [probabilistic enforcement](/beliefs/glossary/probabilistic-enforcement.md) — rules as prose an agent promises to follow; violations scale with operation count and compound without a detector
 - [prompt injection](/beliefs/glossary/prompt-injection.md) — instructions embedded in untrusted content an LLM processes hijack it into serving the attacker's intent instead of the user's task
 - [property-based testing](/beliefs/glossary/property-based-testing.md) — testing that asserts invariants over many generated inputs, not hand-picked examples
@@ -188,6 +191,7 @@ system works.
 - [red test](/beliefs/glossary/red-test.md) — a test feeding a known-bad input and asserting the check flags it; proves the detector fires, not just that good input passes
 - [rendered aggregation](/beliefs/glossary/rendered-aggregation.md) — a derived doc compiled from scattered canonical sources with a drift gate; sources are edited, the view only re-rendered
 - [REPL](/beliefs/glossary/repl.md) — read-eval-print loop; the agent loop is one over model output (read emission, dispatch, evaluate tool, append, recurse)
+- [req_llm](/beliefs/glossary/req-llm.md) — Jido's in-house Elixir LLM client (on `Req`) owning provider adapters, model catalog, streaming, and tool-call encoding; the single dependency every Jido inference routes through
 - [research spike](/beliefs/glossary/research-spike.md) — a time-boxed investigation answering a design/feasibility question, yielding a verdict not code
 - [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) — the near-duplicate concepts left after automated dedup's cheap best, handed to a human editorial pass to merge
 - [restricted Boltzmann machine (RBM)](/beliefs/glossary/restricted-boltzmann-machine.md) — a two-layer undirected generative net with bipartite (no within-layer) connectivity, so each layer is conditionally independent given the other; the building block of a deep belief network
@@ -219,12 +223,14 @@ system works.
 - [stable id (`em:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `em:` + 6-hex identifier every bundle concept carries
 - [stale block](/beliefs/glossary/stale-block.md) — a materialized excerpt-log block diverged from its re-derivation (source changed, not re-materialized); distinct from an orphan block
 - [staleness propagation](/beliefs/glossary/staleness-propagation.md) — when a premise changes, follow dependency edges outward and flag every statement resting on it for re-verification
+- [statement type](/beliefs/glossary/statement-type.md) — the controlled types (claim/note/concept) whose docs are agent-authored assertions and so may carry a `verified` field; the verifier draws no distinction among them
 - [static-site generator](/beliefs/glossary/static-site-generator.md) — a tool rendering source files into pre-built static pages, no backend (here `mix brain.site`)
 - [strand](/beliefs/glossary/strand.md) — one topic's line of work through a session; the routing ledger tracks one row per strand, state orthogonal to routing
 - [supersession](/beliefs/glossary/supersession.md) — updating by recording `superseded_by` instead of overwriting; preserves history (cb's model)
 - [synonym expansion](/beliefs/glossary/synonym-expansion.md) — broadening a query with synonyms, jargon variants, and acronym expansions to bridge vocabulary mismatch without embeddings
 - [thread doc](/beliefs/glossary/thread-doc.md) — the frozen, verbatim session record `/capture` writes under `meta/threads/`
 - [three-level documentation](/beliefs/glossary/three-level-documentation.md) — opt-in scheme: plain backstop / canonical technical body / grounding tier — one canonical level plus two anchored derivations
+- [timestamp](/beliefs/glossary/timestamp.md) — commonly a recorded date-time; here the frontmatter field for last *meaningful* change — the semantic modified-date beside `attribution.when` (created) and git dates (mechanical)
 - [todo (type)](/beliefs/glossary/todo-type.md) — controlled type: a lightweight actionable task with a status (open/done/cancelled), under `meta/todos/` via `/todo`
 - [Toulmin model](/beliefs/glossary/toulmin-model.md) — claim/grounds/warrant/backing/qualifier/rebuttal: justification, not formal inference, as argument's first-class object
 - [tower of interpreters](/beliefs/glossary/tower-of-interpreters.md) — the agent as stacked interpreters: model over natural language, loop over model emissions, tools over structured arguments
