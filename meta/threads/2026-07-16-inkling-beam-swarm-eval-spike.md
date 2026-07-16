@@ -5,6 +5,7 @@ description: An operator-commissioned research spike on pairing Thinking Machine
 provenance: "Claude Code session (Claude Fable), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, agents, swarm, failure-modes, beam, otp, inkling, thinking-machines, tinker, lora, determinism]
 timestamp: 2026-07-16
+pr: 104
 ---
 
 # 2026-07-16-inkling-beam-swarm-eval-spike
