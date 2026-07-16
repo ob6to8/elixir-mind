@@ -247,6 +247,7 @@ system works.
 - [warn pass](/beliefs/glossary/warn-pass.md) — an advisory check that reports findings without failing; chosen where detection is mechanical but enforcement would overreach
 - [warrant](/beliefs/glossary/warrant.md) — Toulmin's license authorizing the move from grounds to claim; what a per-edge entailment judgment actually evaluates
 - [webhook](/beliefs/glossary/webhook.md) — an HTTP callback that inverts polling: the service POSTs to an endpoint you operate when an event occurs; needs an always-on receiver that authenticates and reacts
+- [write-time vs build-time](/beliefs/glossary/write-time-vs-build-time.md) — LLM-placement rule: LLM output enters only at the authoring edge as committed, reviewable source; never as a live call inside a deterministic derivation step
 - [verification grounding](/beliefs/glossary/verification-grounding.md) — the rule that `verified: true` needs evidence (`verified_by`), not its own link, and only on statements
 - [verified_by](/beliefs/glossary/verified-by.md) — the frontmatter field holding a statement's evidence edges (inline list of stable ids)
 - [von Neumann architecture](/beliefs/glossary/von-neumann-architecture.md) — stored-program computer organization (ALU, control, memory, I/O) that the model/loop/memory/tools decomposition reproduces

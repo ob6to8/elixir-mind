@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, PR #70 investigation session"
   why: "persists the derived-listings design and the write-time-vs-build-time LLM placement decision per the persist-plans policy, as the spec a later session builds against"
+  from: [/meta/threads/2026-07-16-derived-index-listings-plan.md]
 tags: [meta, plan, tooling, generated-artifact, indexes, llm-placement]
 timestamp: 2026-07-16
 ---
