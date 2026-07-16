@@ -17,20 +17,18 @@ attribution:
 
 # Workflow (orchestration tool)
 
-The Claude Code execution environment's **orchestration primitive**: a plain
-JavaScript script that deterministically coordinates many subagents. Its core
-call is `agent(prompt, opts)`, which spawns a
-[fresh-context](/beliefs/glossary/fresh-context-execution.md) subagent and
-returns its result (a validated object when given a `schema`); `parallel()` runs
-thunks concurrently behind a barrier, `pipeline()` streams items through stages
-with no barrier between them, and `phase()` groups calls in the progress display.
-An agent can run with `isolation: 'worktree'` so parallel file-mutating workers
-each get their own [git worktree](/beliefs/glossary/git-worktree.md). The Workflow
-runs *inside one tool call* of a thin orchestrating session and returns synthesized
-results — which matters for capture, since
-[session capture](/beliefs/glossary/session-capture.md) strips tool calls, so the
-orchestrator must narrate the results in delivered text for them to be recorded.
-It is the concrete mechanism this brain's proposed
+The script is plain JavaScript, run deterministically: `agent(prompt, opts)`
+spawns a [fresh-context](/beliefs/glossary/fresh-context-execution.md) subagent
+and returns its result (a schema-validated object when one is given); `parallel()`
+runs thunks concurrently behind a barrier, `pipeline()` streams items through
+stages with *no* barrier between them, and `phase()` groups calls in the progress
+display. Passing `isolation: 'worktree'` gives each parallel file-mutating worker
+its own [git worktree](/beliefs/glossary/git-worktree.md), pushing conflicts to
+merge time. One consequence matters for this brain: because the whole script runs
+*inside one tool call* of its dispatching session, the subagents' work is
+invisible to [session capture](/beliefs/glossary/session-capture.md), which strips
+tool calls — so the orchestrator must narrate the results in delivered text for
+them to reach the thread record. It is the concrete mechanism the proposed
 [Workflow-driven plan-execution convention](/meta/analysis/executing-ratified-plans-via-workflow-fan-out.md)
 uses to fan a plan's workstreams out for execution.
 
