@@ -292,6 +292,45 @@ A document is `---\n<yaml>\n---\n<body>`. `parse/1` returns
 - `parse!/1` — Like `parse/1` but raises on malformed input.
 
 
+### `ElixirMind.Glossary`
+
+`lib/elixir_mind/glossary.ex`
+
+Machine checks over the glossary's single-overview convention (see the
+[glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)).
+
+Each term file under `beliefs/glossary/` carries one canonical overview: its
+`description` frontmatter, rendered as the entry page's lede and shown
+verbatim as the term's gloss in the index `## Terms` section. The body below
+the lede is expansion-only — it must not restate what the description
+already says.
+
+Enforcement splits by what has a mechanical oracle, mirroring
+`ElixirMind.RouteTags`:
+
+  * **fail** — a term file missing a non-empty `description`; the index
+    `## Terms` section diverging from its re-derivation (`materialize/1`
+    regenerates it: one bullet per term, title-sorted case-insensitively,
+    gloss = description verbatim).
+  * **fail** — a body sentence that near-restates the description:
+    normalized content-word containment (lowercase, punctuation stripped,
+    stopwords dropped, naive plural stemming; sentences under
+    8 content words skipped) at or above the fail threshold.
+  * **warn** — moderate containment. Semantic redundancy has no exact
+    oracle, so the middle band reports without failing, like the
+    routing-ledger coverage warning.
+
+Generated `## Thread excerpts — route-tagged log` sections, *Seen in:* and
+*See also:* lines are excluded from the repetition check — they are
+citations and route-tag materializations, not definition prose.
+
+**Functions**
+
+- `index_path/0` — Repo-relative path of the glossary index.
+- `materialize/1` — Regenerate the index's `## Terms` section from the term files (title-sorted case-insensitively, gloss = `description` verbatim), preserving the prose above the heading. Returns `{:written, path}` or `:unchanged`.
+- `run_checks/1` — Run all glossary checks. Returns a list of `{name, :ok | :warn | :fail, detail}` tuples, like `ElixirMind.RouteTags.run_checks/1`.
+
+
 ### `ElixirMind.Lineage`
 
 `lib/elixir_mind/lineage.ex`
@@ -790,6 +829,25 @@ bundle commits only the `verified_by` edges; the prose is generated on demand.
 
     mix brain.evidence em:4c9e1f
     mix brain.evidence SWE/version-control/git/some-concept
+
+
+
+### `Mix.Tasks.Brain.Glossary`
+
+`lib/mix/tasks/brain.glossary.ex`
+
+Verify the glossary layer (see `ElixirMind.Glossary` and the
+[glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)): that
+every term carries a non-empty `description` (its one canonical overview), that
+the index `## Terms` section matches its re-derivation from the term files
+(title-sorted, gloss = description verbatim), and — with a fail/warn split —
+that no body sentence near-restates its entry's description.
+
+    mix brain.glossary                # verify; exits non-zero on any failure
+    mix brain.glossary --materialize  # regenerate the index `## Terms`
+                                      # section, then verify
+
+Warnings never fail the task; only `:fail` results do.
 
 
 

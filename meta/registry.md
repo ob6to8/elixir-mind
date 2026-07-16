@@ -57,6 +57,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6a5115` | [beliefs/glossary/consensus-core](/beliefs/glossary/consensus-core.md) | concept | false |
 | `em:0bf58a` | [beliefs/glossary/constant-tutorial-mode](/beliefs/glossary/constant-tutorial-mode.md) | concept | false |
 | `em:37a60d` | [beliefs/glossary/content-security-policy](/beliefs/glossary/content-security-policy.md) | concept | false |
+| `em:8ef17d` | [beliefs/glossary/content-word-containment](/beliefs/glossary/content-word-containment.md) | concept | false |
 | `em:a9bb1d` | [beliefs/glossary/context-mesh](/beliefs/glossary/context-mesh.md) | concept | false |
 | `em:cc0302` | [beliefs/glossary/context-rot](/beliefs/glossary/context-rot.md) | concept | false |
 | `em:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
@@ -102,6 +103,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e1c3b6` | [beliefs/glossary/epistemic-poisoning](/beliefs/glossary/epistemic-poisoning.md) | concept | false |
 | `em:735b38` | [beliefs/glossary/epistemic-teleological-split](/beliefs/glossary/epistemic-teleological-split.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
+| `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
 | `em:9e1592` | [beliefs/glossary/exunit](/beliefs/glossary/exunit.md) | concept | false |
 | `em:6a6054` | [beliefs/glossary/f1-at-k](/beliefs/glossary/f1-at-k.md) | concept | false |
 | `em:7d0700` | [beliefs/glossary/factscore](/beliefs/glossary/factscore.md) | concept | false |
@@ -113,6 +115,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `em:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
+| `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
@@ -218,6 +221,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
 | `em:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
 | `em:7580df` | [beliefs/glossary/shallow-clone](/beliefs/glossary/shallow-clone.md) | concept | false |
+| `em:30dc3f` | [beliefs/glossary/single-overview-convention](/beliefs/glossary/single-overview-convention.md) | concept | false |
 | `em:8ea139` | [beliefs/glossary/single-source-of-truth](/beliefs/glossary/single-source-of-truth.md) | concept | false |
 | `em:aa0003` | [beliefs/glossary/skill](/beliefs/glossary/skill.md) | concept | false |
 | `em:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
@@ -257,6 +261,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
+| `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
 | `em:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |
