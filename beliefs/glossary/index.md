@@ -204,6 +204,7 @@ system works.
 - [semantic search](/beliefs/glossary/semantic-search.md) — meaning-based retrieval via embedding similarity, bridging synonym/jargon gaps lexical search misses
 - [semidecidability](/beliefs/glossary/semidecidability.md) — confirmable on the "yes" side only: proof search finds real entailments but may run forever on non-entailments
 - [sense (glossary sense)](/beliefs/glossary/sense.md) — the frontmatter field classifying where a term's usage lives: common (portable), repo (local vocabulary), or dual (both, defined common-first); gated by verifier rule 7
+- [separation of concerns](/beliefs/glossary/separation-of-concerns.md) — divide a system so each part addresses one concern, with explicit boundaries, so parts evolve and are reused independently
 - [session capture](/beliefs/glossary/session-capture.md) — rendering a session into a verbatim thread doc, dropping only tool calls, reasoning, short pre-tool narration
 - [session-init digest](/beliefs/glossary/session-init-digest.md) — a machine-compiled summary of open work (issues, todos, plans, dangling strands) injected into a fresh session's context, ending in a heuristic priority ranking the agent refines
 - [SessionStart hook](/beliefs/glossary/sessionstart-hook.md) — a hook that runs at session start to provision or validate the environment (e.g. warm the Elixir toolchain) and brief the agent via its stdout
@@ -215,6 +216,7 @@ system works.
 - [skill-to-skill delegation](/beliefs/glossary/skill-to-skill-delegation.md) — one skill invoking another as a sub-step (e.g. `/create-pull-request` runs `/capture`), composing behavior
 - [soundness and completeness](/beliefs/glossary/soundness-and-completeness.md) — a proof system derives only valid formulas / all valid formulas; Gödel 1929 gave FOL both
 - [speculative decoding](/beliefs/glossary/speculative-decoding.md) — draft cheap tokens, verify in parallel against the full model, accept the correct prefix; identical output, higher throughput
+- [spin-out](/beliefs/glossary/spin-out.md) — extracting a component grown inside a larger project into its own independent repo/package, the host becoming one consumer among many
 - [spurious (warning)](/beliefs/glossary/spurious-warning.md) — a false-positive warning/match; never fails a build but teaches the reader to ignore the channel
 - [squash merge](/beliefs/glossary/squash-merge.md) — flattening a branch into one new commit on the target; linear history at the cost of per-commit provenance (disallowed here)
 - [stable id (`em:` id)](/beliefs/glossary/stable-id.md) — the opaque, immutable `em:` + 6-hex identifier every bundle concept carries
