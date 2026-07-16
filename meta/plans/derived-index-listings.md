@@ -162,15 +162,42 @@ function of the repo.** Agents write; compilers derive; checkers compare.
   carries a generated listing section; hand prose stays above it.
 - Recompile `CLAUDE.md` (`mix brain.contract`).
 
-### 7. PR #70 disposition
+### 7. PR #68 and PR #70 disposition
 
-Superseded by this plan: its nav-sort core ships here (§4); its 30
-hand-reorderings are made obsolete rather than redone. Close PR #70 unmerged
-once this plan's PR lands. Its branch
-(`claude/sort-collections-date-modified-brq02g`) then carries unmerged
-commits — per the
+PR #68 ("order plans/todos/issues indexes by timestamp") and PR #70 are
+**open, unmergeable siblings from the same 2026-07-13 session** — independent
+branches, not a stack, but #70 was written with #68 in context and
+semantically subsumes it: #70's every-index reorder includes #68's three, and
+#70 re-creates #68's glossary `timestamp` entry outright. Both predate the
+`second-brain` → `elixir-mind` rename (`sb:` ids, `lib/second_brain` paths)
+and the knowledge-tree reorganization, so both are stale the same way.
+
+**Both are superseded by this plan** — the hand-reordering convention they
+established (state-it-in-the-header, maintain-at-filing-time) is exactly what
+derivation retires. Close both unmerged once this plan's PR lands. But #68
+uniquely holds three artifacts that exist on neither `main` nor #70's branch,
+salvaged as a build step here (§Build order, step 3a):
+
+- the **[`collection-view-by-date` plan doc]** — the decision record this
+  plan's ordering key stands on: the three-date-signals survey
+  (`attribution.when` = created, `timestamp` = semantic modified, git =
+  mechanical), the operator's ratification of `timestamp`, and the deferred
+  recency surfaces (`mix brain.recent`, skill `by-date` dispatch, site sort
+  toggle) — transplanted onto the current tree with paths/prefixes fixed,
+  kept `status: done` (its deferred options remain live options);
+- its **thread doc** (`2026-07-13-collection-view-by-date.md`, `pr: 68`) —
+  the session record backing that plan's `attribution.from`;
+- the **glossary `timestamp` entry** — re-filed with the `em:` prefix
+  (`sb:715275`'s tail carries per the stable-identity migration rule,
+  collision-checked against the registry at mint time).
+
+Transplant, never plain-merge — the same discipline as the
+[transplant-surviving-unmerged-branches plan](/meta/plans/transplant-surviving-unmerged-branches.md),
+whose problem class both branches join. After both PRs close, the two
+branches carry unmerged commits — per the
 [git-branch-deletion policy](/meta/policy/git-branch-deletion.md), deletion is
-proposed to the operator, not automatic.
+proposed to the operator, not automatic (and is moot for content once the
+salvage lands).
 
 ## Build order
 
@@ -181,6 +208,10 @@ proposed to the operator, not automatic.
    ~40 governance docs across plans/issues/todos/analysis/threads/
    elaborations). Bump nothing else — `attribution` is immutable and this is
    a metadata move, but `timestamp` bumps per update-in-place.
+
+   3a. Salvage PR #68's three orphaned artifacts (§7): transplant the
+   `collection-view-by-date` plan doc and its thread doc onto the current
+   tree, and re-file the glossary `timestamp` entry under the `em:` prefix.
 4. Build `ElixirMind.Index` + `mix brain.index` (`--materialize`/`--check`)
    with tests over a tmp-dir bundle (grouping, recency order, glossary
    exception, dir-bullet derivation, preamble preservation).
