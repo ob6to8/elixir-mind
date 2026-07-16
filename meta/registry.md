@@ -48,6 +48,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bee09c` | [beliefs/glossary/claude-agent-sdk](/beliefs/glossary/claude-agent-sdk.md) | concept | false |
 | `em:04b9a8` | [beliefs/glossary/claude-managed-agents](/beliefs/glossary/claude-managed-agents.md) | concept | false |
 | `em:8cfcb8` | [beliefs/glossary/cloudevents](/beliefs/glossary/cloudevents.md) | concept | false |
+| `em:5b3608` | [beliefs/glossary/code-map](/beliefs/glossary/code-map.md) | concept | false |
 | `em:d676f0` | [beliefs/glossary/cognitive-debt](/beliefs/glossary/cognitive-debt.md) | concept | false |
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
@@ -106,6 +107,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:9e1592` | [beliefs/glossary/exunit](/beliefs/glossary/exunit.md) | concept | false |
 | `em:6a6054` | [beliefs/glossary/f1-at-k](/beliefs/glossary/f1-at-k.md) | concept | false |
 | `em:7d0700` | [beliefs/glossary/factscore](/beliefs/glossary/factscore.md) | concept | false |
+| `em:143384` | [beliefs/glossary/fan-out](/beliefs/glossary/fan-out.md) | concept | false |
 | `em:e7689f` | [beliefs/glossary/fast-forward-merge](/beliefs/glossary/fast-forward-merge.md) | concept | false |
 | `em:f382b0` | [beliefs/glossary/featuring](/beliefs/glossary/featuring.md) | concept | false |
 | `em:c0ed08` | [beliefs/glossary/feeding-pairs](/beliefs/glossary/feeding-pairs.md) | concept | false |
@@ -117,6 +119,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
+| `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
