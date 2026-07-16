@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session"
   why: "operator asked to expand the two Jido caveats named in passing by the prior BEAM/Jido analyses and persist the expansion as an analysis"
+  from: [/meta/threads/2026-07-16-jido-caveats-and-build-agent-linter-loop.md]
 ---
 
 # Jido's two structural caveats, unpacked
