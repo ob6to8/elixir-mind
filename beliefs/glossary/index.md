@@ -86,6 +86,7 @@ system works.
 - [domain-specific language](/beliefs/glossary/domain-specific-language.md) — a small language purpose-built for one domain, trading generality for concision and checkability; doubles as a constrained generation target for LLMs
 - [draft pull request](/beliefs/glossary/draft-pull-request.md) — a PR opened in draft state: full diff, commentable, explicitly not ready to merge; a council round's chamber
 - [drift class](/beliefs/glossary/drift-class.md) — a category of staleness whose instances share one detection mechanism, so a single detector covers the class
+- [Dynamic Workflows](/beliefs/glossary/dynamic-workflows.md) — Anthropic's Claude Code feature where Claude writes a deterministic JS orchestration script that a runtime fans out to up to ~1,000 stateless subagents; an ephemeral, session-scoped orchestrator, distinct from a standing actor-model fleet
 - [DRY (don't repeat yourself)](/beliefs/glossary/dry.md) — every piece of knowledge gets one authoritative representation; duplicated copies drift until one is wrong
 - [elaboration (type)](/beliefs/glossary/elaboration-type.md) — controlled type: a persisted expansion of a technical phrase (quoted target, term definitions, plain walkthrough), under `meta/elaborations/`
 - [elixir-mind](/beliefs/glossary/elixir-mind.md) — the ratified new name for this brain itself (repo, app namespace, and `sb:` → `em:` id prefix, per the accepted rename plan); also used narrowly for its prospective owned-runtime tier

@@ -90,6 +90,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `em:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
 | `em:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
+| `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
 | `em:d907fd` | [beliefs/glossary/elixir-mind](/beliefs/glossary/elixir-mind.md) | concept | false |
 | `em:da21de` | [beliefs/glossary/embeddings](/beliefs/glossary/embeddings.md) | concept | false |

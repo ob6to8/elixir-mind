@@ -10,6 +10,7 @@ attribution:
   channel: intake
   agent: "operator via /intake, Claude Code session"
   why: "operator asked whether recreating Anthropic's Dynamic Workflows multi-agent architecture on the BEAM with Jido 2 has any advantage, or whether the workflow feature obviates the BEAM"
+  from: [/meta/threads/2026-07-16-dynamic-workflows-vs-beam-jido.md]
 ---
 
 # Ephemeral spine vs. standing fleet: Anthropic's Dynamic Workflows vs. BEAM/Jido 2
