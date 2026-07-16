@@ -1,7 +1,7 @@
 ---
 type: analysis
 title: "Research spike: Inkling + Elixir/BEAM as an eval substrate for agent-swarm dynamics and failure modes"
-description: Finds the pairing unusually complementary — Inkling (Thinking Machines' Apache-2.0 open-weights MoE, released 2026-07-15) supplies the four model-side properties swarm evals need (a pinned policy-under-test, reproducible rollouts via the batch-invariance lineage, cheap LoRA-built agent populations with a thinking-effort knob, and a Tinker RL loop that closes eval→train), while the BEAM supplies the harness-side ones (process-per-agent topology, native failure injection, supervision-as-subject, full-trace capture); locates the work as a separate tier-2-shaped app that finally gives the resident-BEAM path an owned model layer, without reversing the brain's own "not now."
+description: Finds the pairing unusually complementary — Inkling (Thinking Machines' Apache-2.0 open-weights MoE, released 2026-07-15) supplies the four model-side properties swarm evals need (a pinned policy-under-test, reproducible rollouts via the batch-invariance lineage, cheap LoRA-built agent populations with a thinking-effort knob, and a Tinker RL loop that closes eval→train), while the BEAM supplies the harness-side ones (process-per-agent topology, native failure injection, supervision-as-subject, full-trace capture); locates the work as a separate tier-2-shaped app that finally gives the resident-BEAM path an owned model layer, without reversing the brain's own "not now" — and details the four-layer implementation stack (Tinker training / OTP harness / deterministic SGLang-vLLM inference / synthesized-corpus data, joined by a JSONL-and-adapter file boundary), the fine-tuning path (PEFT adapters at ~$20–25 per population variant, RL closed against the harness's own oracles, prompting first), and the campaign anatomy (manifest → determinism gate → rollouts under scheduled faults → two-layer scoring → bitwise replay/ablation) with an M0–M5 build order whose first three rungs need no fine-tuning at all.
 provenance: "Claude Code session (Claude Fable), 2026-07-16 — operator commissioned a research spike on using Inkling with Elixir/BEAM to run evals on agent swarm dynamics and failure modes; Inkling facts fetched same day from thinkingmachines.ai (announcement, product page, model card) and web coverage"
 tags: [meta, analysis, evals, agents, multi-agent, swarm, failure-modes, beam, otp, elixir, inkling, thinking-machines, tinker, open-weights, determinism, reproducibility, lora, rl]
 timestamp: 2026-07-16
@@ -227,7 +227,156 @@ research question this brain has already staked out. If a swarm-eval project is
 ever commissioned, it should start as its own plan; this analysis is its
 decision record, not its start.
 
-## 6. Risks and counterweights
+## 6. The implementation stack
+
+Four layers, with one deliberate language boundary. Everything below is a
+separate application on a modern toolchain (Elixir 1.17+/OTP 26+, dependencies
+allowed) — the brain's zero-dep verifier core is untouched, per the layering
+rule of the [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md).
+
+```
+┌─ Training layer (Python) ── Tinker SDK: LoRA fine-tuning + RL loops ─────┐
+│    ▲ trajectories/rewards (JSONL)          │ PEFT adapters (artifacts)   │
+┌─ Harness layer (Elixir/OTP) ──────────────▼──────────────────────────────┐
+│  Campaign runner · topology supervisor · agent GenServers ·              │
+│  fault-injecting router · trace store · deterministic scorers           │
+│    │ OpenAI-compatible HTTP (per-request seed + adapter name)            │
+┌─ Inference layer ─────────────▼──────────────────────────────────────────┐
+│  vLLM or SGLang (deterministic mode) serving Inkling / Inkling-Small     │
+│  + hot-swapped LoRA adapters — self-hosted or dedicated Modal/Baseten    │
+┌─ Data/eval layer ─────────────────────────────────────────────────────────┐
+│  Synthesized corpora + injected defects · gold sets · replay tooling     │
+└───────────────────────────────────────────────────────────────────────────┘
+```
+
+- **Inference layer.** One SGLang (or vLLM) deployment serving the base model
+  with **multi-LoRA hot-swapping** — the whole population shares one set of
+  base weights in VRAM, and each request selects its member by adapter name.
+  SGLang's deterministic mode plus seeded sampling is the reproducibility
+  substrate, which is why this layer must be self-hosted or a dedicated
+  single-tenant deployment (Modal/Baseten), never a shared public endpoint.
+  Inkling-Small is the default resident model; full Inkling is a rented
+  spot-check tier.
+- **Harness layer (the Elixir application).** The components map onto OTP
+  idioms directly: a **campaign runner** (`Task.async_stream` over the rollout
+  matrix, bounded concurrency as backpressure to the GPU cluster); a
+  **topology supervisor** that builds the swarm graph (star, ring, mesh,
+  hierarchy) as a supervision tree; an **agent GenServer** per member holding
+  its transcript, adapter name, seed, and effort setting; a **router process**
+  every inter-agent message traverses — the seam where the chaos controller
+  injects delay/drop/reorder/partition from a scripted fault schedule; an
+  **append-only trace store** (every message, seed, timing, token count — the
+  replay substrate); and **scorers** as pure Elixir functions over traces. The
+  HTTP client is Req/Finch with a connection pool — no LLM-framework
+  dependency, per the req_llm concern in the
+  [Jido caveats analysis](/meta/analysis/jido-distribution-gap-and-req-llm-cognition-dependency.md).
+  Jido itself is optional at this scale; plain OTP suffices for a first build.
+- **The language boundary.** Training stays in Python (Tinker has no Elixir
+  SDK and won't); orchestration stays in Elixir. The interface is two file
+  formats, not a shared runtime: the harness **exports trajectories and
+  rewards as JSONL**, and training **returns adapters as artifacts** the
+  inference layer loads. This keeps each side replaceable — Tinker could be
+  swapped for self-hosted PEFT training without touching the harness.
+- **Data/eval layer.** Synthesized corpora with injected defects, generated by
+  the same patterns the brain's existing `mix brain.*` tooling uses; gold sets
+  versioned beside campaign manifests; a replay tool that re-drives a recorded
+  trajectory against the same `(weights, adapters, seeds)` triple and
+  byte-compares.
+
+## 7. What fine-tuning would take
+
+The [Tinker](https://tinker-docs.thinkingmachines.ai/) workflow, concretely:
+a Python `TrainingClient` against the chosen base (`inkling` or
+`inkling-small`), a `LoraConfig` (default rank 32), then a loop of
+`forward_backward` + `optim_step` over your data, `sample` for in-training
+evals, `save_state` for checkpoints. The trained adapter **exports as a
+standard PEFT artifact** (or a merged HF model) via the cookbook's weights
+utilities — PEFT-adapter export is the preferred path here, since the
+inference layer keeps one base model and hot-swaps adapters.
+
+- **SFT for role/persona variants — the population builder.** Each swarm
+  member variant (a planner, a critic, an overconfident member, a sycophant, a
+  stale-knowledge member, a Byzantine member) is a supervised fine-tune on
+  hundreds to low thousands of transcript examples — synthesized directly, or
+  distilled from harness rollouts of a prompted-only prototype. At Tinker's
+  launch pricing (~$5.61/M training tokens), a 2k-example × 2k-token role
+  adapter is roughly **4M training tokens ≈ $20–25 per variant** — a
+  population of a dozen controlled variants is lunch money, and each adapter
+  is megabytes to store and version.
+- **RL against the harness's own metrics — the loop closure.** The eval
+  oracles (§8) double as reward functions: the harness exports
+  `(trajectory, reward)` JSONL, and a Tinker RL loop (the cookbook ships
+  reference loops, including multi-agent setups; SkyRL's async off-policy
+  multi-turn tool-use runs are the working precedent) updates the adapter
+  against them. This is where §2(b)'s determinism becomes load-bearing rather
+  than nice-to-have: on-policy RL is only stable when the sampler and trainer
+  agree, and batch-invariant inference is what makes them agree. Cost is
+  dominated by sampling (~$4.68/M launch-priced), not the update steps.
+- **What you give up vs. self-hosted training.** Tinker is LoRA-only and
+  managed — no full fine-tunes, and training data transits their service. For
+  this workload both are acceptable: LoRA is the point (populations share a
+  base), the data is synthetic, and Thinking Machines' own LoRA-parity
+  research is the published argument that adapters match full fine-tuning in
+  this regime. Self-hosted PEFT training of Inkling-Small remains the fallback
+  if custody ever matters; full-Inkling training infra is not worth owning.
+- **Prompting first.** Variants should begin as system prompts on the stock
+  model; an adapter is minted only when a prompted variant proves too weak or
+  too leaky to hold its assigned flaw. Fine-tuning is the instrument for
+  *controlled, stable* member differences — not the first tool.
+
+## 8. What running evals would look like
+
+The anatomy of a campaign, end to end:
+
+1. **Manifest.** A campaign is a declarative file (versioned beside the gold
+   sets): task domain and corpus spec, topology, population (adapter list ×
+   count), effort levels, fault schedule, seed block, rollout count.
+2. **Determinism gate.** Boot the inference deployment, load adapters, then
+   run a canary — the same prompt k times, byte-compared — and refuse to start
+   the campaign if outputs diverge. Determinism is asserted per run, never
+   assumed (§2(b)'s caveat operationalized).
+3. **Rollouts.** The runner fans out rollouts under bounded concurrency; per
+   rollout, the topology supervisor spawns the swarm, feeds the task, and the
+   chaos controller fires the scheduled faults (kill the coordinator at turn
+   12; partition members {3,4} for 90s; delay all critic→planner messages).
+   Every message and seed lands in the trace store as it happens, so even a
+   crashed rollout is a complete record.
+4. **Scoring.** Two metric layers over the traces: **task metrics** from the
+   constructible-ground-truth domain (dedup recall, fan-out completeness,
+   filing consistency — the oracles the
+   [eval-suitability analysis](/meta/analysis/eval-suitability-of-the-corpus-maintenance-failure-space.md)
+   already specified) and **dynamics metrics** computed from the message graph
+   itself (cascade depth, redundant-work ratio, time-to-consensus,
+   recovery-time-after-fault, conflict rate under concurrent writes).
+5. **Replay and ablation.** Any interesting trajectory reruns bitwise from its
+   `(weights, adapters, seeds, fault schedule)` tuple; change exactly one
+   manifest field and the outcome diff is attributable. This step is the
+   product — it is what no closed-API swarm setup can offer.
+6. **Report.** A per-campaign artifact keyed on the full reproducibility tuple,
+   longitudinally comparable because the policy is pinned (§2(a)).
+
+**Cost envelope** (order-of-magnitude, launch prices, flagged as estimate): a
+10-agent × 20-turn rollout with shared-transcript prefix caching runs roughly
+1–2M prefill + ~0.2M sampled tokens; hosted, that is a few dollars per
+rollout, so a 1,000-rollout campaign lands in the **low thousands of dollars —
+or the equivalent GPU-hours on a self-hosted Inkling-Small node, which is the
+cheaper steady-state** and the one that carries the determinism guarantee.
+Aggressive prefix caching (member transcripts share long prefixes by
+construction) and Inkling's claimed token efficiency are what keep the
+multiplier (agents × turns × rollouts) survivable.
+
+**Build order** (each rung falsifiable before the next is funded): **M0**
+determinism canary against a deployed endpoint — if bitwise replay fails here,
+the thesis fails cheaply; **M1** single-agent baseline on the
+corpus-maintenance tasks (calibrates against the existing single-writer
+numbers); **M2** concurrent writers, no faults (first swarm-dynamics data:
+conflict and redundancy at n=2..k); **M3** fault injection (the failure-mode
+catalog proper); **M4** population and effort sweeps (LoRA variants enter);
+**M5** RL loop closure (train against a measured failure mode, re-measure).
+M0–M2 need no fine-tuning at all — prompted stock Inkling-Small suffices —
+so the stack proves itself before a single adapter is trained.
+
+## 9. Risks and counterweights
 
 - **Capability gap and transferability.** Inkling is positioned as an adaptable
   foundation, not a frontier leader. Failure modes observed in an
@@ -261,7 +410,8 @@ decision record, not its start.
 - [Introducing Inkling — Thinking Machines Lab](https://thinkingmachines.ai/news/introducing-inkling/) (2026-07-15)
 - [Inkling product page](https://thinkingmachines.ai/inkling/)
 - [Inkling model card](https://thinkingmachines.ai/model-card/inkling/)
-- [Tinker](https://thinkingmachines.ai/tinker/) and [Tinker docs — LoRA primer](https://tinker-docs.thinkingmachines.ai/lora-primer)
+- [Tinker](https://thinkingmachines.ai/tinker/) and [Tinker docs](https://tinker-docs.thinkingmachines.ai/) — [LoRA primer](https://tinker-docs.thinkingmachines.ai/lora-primer), [weights management](https://tinker-docs.thinkingmachines.ai/tutorials/core-concepts/weights/), [build a LoRA adapter](https://tinker-docs.thinkingmachines.ai/tutorials/deployment/lora-adapter/), [export to HuggingFace](https://tinker-docs.thinkingmachines.ai/tutorials/deployment/export-hf/) · [tinker-cookbook](https://github.com/thinking-machines-lab/tinker-cookbook)
+- [Tinker model pricing (third-party summary of launch prices)](https://www.beam.cloud/blog/tinker-model-pricing)
 - [Defeating Nondeterminism in LLM Inference — Thinking Machines Lab](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/) (2025-09) · [batch_invariant_ops](https://github.com/thinking-machines-lab/batch_invariant_ops)
 - [Towards Deterministic Inference in SGLang and Reproducible RL Training — LMSYS](https://www.lmsys.org/blog/2025-09-22-sglang-deterministic/)
 - [TechCrunch coverage of the Inkling launch](https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/)
