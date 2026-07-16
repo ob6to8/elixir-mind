@@ -5,7 +5,7 @@ description: A session that started by asking whether the repo has a closed buil
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-16; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, beam, jido, req_llm, distribution, agents, linter-loop, hooks, architecture]
 timestamp: 2026-07-16
-# pr: added later by /create-pull-request once the PR is opened
+pr: 96
 ---
 
 # 2026-07-16-jido-caveats-and-build-agent-linter-loop
