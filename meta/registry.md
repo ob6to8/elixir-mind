@@ -217,6 +217,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
 | `em:b7760e` | [beliefs/glossary/semidecidability](/beliefs/glossary/semidecidability.md) | concept | false |
 | `em:60220a` | [beliefs/glossary/sense](/beliefs/glossary/sense.md) | concept | false |
+| `em:425356` | [beliefs/glossary/separation-of-concerns](/beliefs/glossary/separation-of-concerns.md) | concept | false |
 | `em:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
 | `em:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
@@ -228,6 +229,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
 | `em:38d006` | [beliefs/glossary/speculative-decoding](/beliefs/glossary/speculative-decoding.md) | concept | false |
+| `em:c13e28` | [beliefs/glossary/spin-out](/beliefs/glossary/spin-out.md) | concept | false |
 | `em:c67f48` | [beliefs/glossary/spurious-warning](/beliefs/glossary/spurious-warning.md) | concept | false |
 | `em:4a235a` | [beliefs/glossary/squash-merge](/beliefs/glossary/squash-merge.md) | concept | false |
 | `em:4d71d3` | [beliefs/glossary/stable-id](/beliefs/glossary/stable-id.md) | concept | false |
