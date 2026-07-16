@@ -3,14 +3,14 @@ type: plan
 title: "Derived index listings: compile Contents sections from frontmatter, with write-time summaries"
 description: Retire hand-maintained index.md listings — a mix brain.index generator derives every directory's listing section from its children's frontmatter (newest-first, glossary A–Z, status-grouped where children carry status), bullet text sourced from a new write-time summary field with description fallback; absorbs PR #70's nav-sort core and supersedes its 30 hand-reorderings.
 status: proposed
-provenance: "Claude Code session, 2026-07-15 — grew out of investigating PR #70's merge conflicts; the operator redirected from 'hand-reorder the listings by date' to 'derive the listings so hand-sync stops existing'"
+provenance: "Claude Code session, 2026-07-16 — grew out of investigating PR #70's merge conflicts; the operator redirected from 'hand-reorder the listings by date' to 'derive the listings so hand-sync stops existing'"
 attribution:
-  when: 2026-07-15T00:00:00Z
+  when: 2026-07-16T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, PR #70 investigation session"
   why: "persists the derived-listings design and the write-time-vs-build-time LLM placement decision per the persist-plans policy, as the spec a later session builds against"
 tags: [meta, plan, tooling, generated-artifact, indexes, llm-placement]
-timestamp: 2026-07-15
+timestamp: 2026-07-16
 ---
 
 # Derived index listings: compile Contents sections from frontmatter, with write-time summaries
@@ -174,30 +174,29 @@ and the knowledge-tree reorganization, so both are stale the same way.
 
 **Both are superseded by this plan** — the hand-reordering convention they
 established (state-it-in-the-header, maintain-at-filing-time) is exactly what
-derivation retires. Close both unmerged once this plan's PR lands. But #68
-uniquely holds three artifacts that exist on neither `main` nor #70's branch,
-salvaged as a build step here (§Build order, step 3a):
+derivation retires.
 
-- the **[`collection-view-by-date` plan doc]** — the decision record this
-  plan's ordering key stands on: the three-date-signals survey
-  (`attribution.when` = created, `timestamp` = semantic modified, git =
-  mechanical), the operator's ratification of `timestamp`, and the deferred
-  recency surfaces (`mix brain.recent`, skill `by-date` dispatch, site sort
-  toggle) — transplanted onto the current tree with paths/prefixes fixed,
-  kept `status: done` (its deferred options remain live options);
-- its **thread doc** (`2026-07-13-collection-view-by-date.md`, `pr: 68`) —
-  the session record backing that plan's `attribution.from`;
-- the **glossary `timestamp` entry** — re-filed with the `em:` prefix
-  (`sb:715275`'s tail carries per the stable-identity migration rule,
-  collision-checked against the registry at mint time).
+**#68's salvage already happened: closed unmerged 2026-07-16 and recreated
+on the current tree as PR #95 (merged).** #95 landed the three artifacts #68
+uniquely held: the
+[`collection-view-by-date` plan doc](/meta/plans/collection-view-by-date.md)
+(the decision record this plan's ordering key stands on — the
+three-date-signals survey, the operator's ratification of `timestamp`, and
+the deferred recency surfaces `mix brain.recent` / skill `by-date` dispatch /
+site sort toggle); a recreated thread doc
+([2026-07-16-recreate-collection-view-by-date](/meta/threads/2026-07-16-recreate-collection-view-by-date.md));
+and the glossary [timestamp](/beliefs/glossary/timestamp.md) entry —
+re-minted fresh (`em:59cff6`) rather than tail-carrying `sb:715275`, which is
+fine: that id never reached `main`, so no committed reference to its tail
+ever existed. #95 also landed the hand-maintained ordering-convention headers
+in the plans/todos/issues indexes — the very headers §6 retires when the
+generator takes over stating the convention.
 
-Transplant, never plain-merge — the same discipline as the
-[transplant-surviving-unmerged-branches plan](/meta/plans/transplant-surviving-unmerged-branches.md),
-whose problem class both branches join. After both PRs close, the two
-branches carry unmerged commits — per the
+**Remaining disposition is #70 only:** close it unmerged once this plan's PR
+lands. Its branch (and #68's, now closed) carry unmerged commits — per the
 [git-branch-deletion policy](/meta/policy/git-branch-deletion.md), deletion is
-proposed to the operator, not automatic (and is moot for content once the
-salvage lands).
+proposed to the operator, not automatic. #68's branch content is fully
+recovered via #95; #70's is superseded here.
 
 ## Build order
 
@@ -209,9 +208,8 @@ salvage lands).
    elaborations). Bump nothing else — `attribution` is immutable and this is
    a metadata move, but `timestamp` bumps per update-in-place.
 
-   3a. Salvage PR #68's three orphaned artifacts (§7): transplant the
-   `collection-view-by-date` plan doc and its thread doc onto the current
-   tree, and re-file the glossary `timestamp` entry under the `em:` prefix.
+   3a. ~~Salvage PR #68's three orphaned artifacts~~ — **done via PR #95**
+   (2026-07-16, a parallel recreation session; see §7). Nothing left here.
 4. Build `ElixirMind.Index` + `mix brain.index` (`--materialize`/`--check`)
    with tests over a tmp-dir bundle (grouping, recency order, glossary
    exception, dir-bullet derivation, preamble preservation).
