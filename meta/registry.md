@@ -125,6 +125,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
+| `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
 | `em:7c640a` | [beliefs/glossary/github-pages](/beliefs/glossary/github-pages.md) | concept | false |
@@ -263,6 +264,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:cd2537` | [beliefs/glossary/truth-maintenance-system](/beliefs/glossary/truth-maintenance-system.md) | concept | false |
 | `em:60d394` | [beliefs/glossary/tutorial-type](/beliefs/glossary/tutorial-type.md) | concept | false |
 | `em:82c03c` | [beliefs/glossary/two-plane-rule](/beliefs/glossary/two-plane-rule.md) | concept | false |
+| `em:e7c96f` | [beliefs/glossary/two-tier-memory](/beliefs/glossary/two-tier-memory.md) | concept | false |
 | `em:927eb2` | [beliefs/glossary/typed-edge](/beliefs/glossary/typed-edge.md) | concept | false |
 | `em:570738` | [beliefs/glossary/ungrounded-inference](/beliefs/glossary/ungrounded-inference.md) | concept | false |
 | `em:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
