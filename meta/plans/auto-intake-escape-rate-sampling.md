@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code session, tier-3/4 trust analysis follow-up"
   why: "operator asked to file the parked follow-up: instrument /research auto-intake escape-rate sampling, the trust experiment the gate suite is built to support"
+  from: [/meta/threads/2026-07-17-escape-rate-plan-and-genserver-agent-minds.md]
 ---
 
 # Auto-intake escape-rate sampling: measure the quality of what `/research` files
