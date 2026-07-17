@@ -5,7 +5,7 @@ description: Started as a walkthrough of iex/mix commands for exploring the bund
 provenance: "Claude Code session (claude-opus-4-8), 2026-07-17; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, tooling, mix-task, links, iex, elixir]
 timestamp: 2026-07-17
-# pr: added by /create-pull-request once the PR is opened
+pr: 106
 ---
 
 # 2026-07-17-brain-orphans-mix-task
