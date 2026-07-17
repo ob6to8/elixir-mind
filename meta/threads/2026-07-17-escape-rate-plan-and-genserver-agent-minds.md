@@ -5,7 +5,7 @@ description: The post-PR-#107 continuation — filed the parked auto-intake esca
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-17; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, escape-rate, auto-intake, genserver, otp, jido, agent-memory, two-tier-memory, beam, trust]
 timestamp: 2026-07-17
-# pr: added by /create-pull-request once the PR is opened
+pr: 108
 ---
 
 # 2026-07-17-escape-rate-plan-and-genserver-agent-minds
