@@ -5,6 +5,7 @@ description: Researched Claude Code's experimental, undocumented observer subage
 provenance: "Claude Code session (Claude Fable 5), 2026-07-18; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, claude-code, subagents, multi-agent, oversight, intake]
 timestamp: 2026-07-18
+pr: 110
 ---
 
 # 2026-07-18-observer-subagent-pattern-intake
