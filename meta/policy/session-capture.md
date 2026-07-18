@@ -6,7 +6,7 @@ section: session-workflow
 order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
-timestamp: 2026-07-12
+timestamp: 2026-07-18
 attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill
@@ -56,6 +56,20 @@ record so it can be resumed from the record instead of from memory.
   and the pre-policy squash era left the original branch commits unreachable
   entirely — so the PR number is the only stable link from a thread back to how
   it landed. The branch name is deliberately **not** recorded.
+- **The thread also records its session (`session:`) — the full-fidelity escape
+  hatch.** At capture time, `/capture` stamps the cloud session's transcript URL
+  into the thread's frontmatter as `session: <url>`, derived from the
+  `CLAUDE_CODE_REMOTE_SESSION_ID` environment variable (the id's `cse_` prefix
+  becomes the URL's `session_` prefix:
+  `https://claude.ai/code/session_<tail>`). The thread doc is the *distilled*
+  record; the session URL points at the *raw* transcript on claude.ai — useful
+  precisely when the distillation turns out to have dropped something later
+  needed. It is deliberately the **weaker anchor**: account-bound (viewable only
+  by the operator logged into claude.ai, unreadable by agents), and deletable —
+  it complements `pr:`, never substitutes for it. Write-once at capture, never
+  rewritten. When the variable is unset (local-terminal sessions have no cloud
+  transcript), the key is **omitted** — never invented, never guessed. Threads
+  captured before this rule simply lack the key; do not backfill.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.
