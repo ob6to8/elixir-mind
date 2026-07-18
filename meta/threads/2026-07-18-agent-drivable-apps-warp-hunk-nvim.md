@@ -5,6 +5,7 @@ description: Compared Claude Code, Warp.dev, and hunk on diff review and agent i
 provenance: "Claude Code session (Claude Fable 5), 2026-07-17/18; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, agents, rpc, mcp, nvim, hunk, warp, review-bottleneck, trust-model]
 timestamp: 2026-07-18
+pr: 109
 ---
 
 # 2026-07-18-agent-drivable-apps-warp-hunk-nvim
