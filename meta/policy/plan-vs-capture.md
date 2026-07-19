@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, session-transcript-persistence session"
   why: "operator asked for a policy capturing the plan-vs-thread decision matrix surfaced deciding whether the session-URL backfill needed a plan doc or could run inline"
+  from: [/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md]
 ---
 **Two records of a change sit in different tenses.** A `type: plan`
 ([persist-plans](/meta/policy/persist-plans.md)) is **prospective** — decisions

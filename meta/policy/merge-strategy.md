@@ -11,6 +11,7 @@ attribution:
   when: 2026-07-11T17:58:27+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md]
 ---
 **Merge with a true merge commit; never squash or rebase.** The commit graph is
 a **provenance layer**, not an implementation detail: session-authored commits
