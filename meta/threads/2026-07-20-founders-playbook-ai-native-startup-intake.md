@@ -5,6 +5,7 @@ description: Intake of Anthropic's "The Founder's Playbook: Building an AI-Nativ
 provenance: "Claude Code session, 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, intake, startups, anthropic, founders-playbook]
 timestamp: 2026-07-20
+pr: 116
 ---
 
 # 2026-07-20-founders-playbook-ai-native-startup-intake
