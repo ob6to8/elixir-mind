@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   why: "persists the session's judgment on where the dark-factory pattern does and does not apply to this brain, so the doctrine it tests carries its evidence"
   agent: "Claude Code agent, code-is-an-implementation-detail session"
+  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md]
 ---
 
 # What the dark-factory wave prices about intent-as-source: StrongDM's software factory as the strong-form experiment

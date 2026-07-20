@@ -55,3 +55,17 @@ the scenario library and the twins — the specification and verification plant.
 
 - Simon Willison, "How StrongDM's AI team build serious software without even
   looking at the code", 2026-02-07 — the `resource` URL.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:efab03">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-20-intent-as-source-and-dark-factory-pricing (2026-07-20)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:efab03`]**
+
+**What StrongDM actually built**
+
+Their rules are absolute: code must not be written *or reviewed* by humans. A three-person team runs agents that plan, implement, test, and ship. The load-bearing pieces: **holdout scenarios** — end-to-end behavioral specs kept *outside* the codebase and outside the agents' development context, like an ML validation set; **digital twins** — agent-built behavioral clones of Okta, Slack, Jira, etc., so behavior can be exercised at volumes production APIs won't allow; and **satisfaction metrics** — instead of boolean test results, "what fraction of observed trajectories through the scenarios likely satisfy the user?" Reported cost: $1,000+/day per engineer in tokens.
