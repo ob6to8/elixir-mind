@@ -143,6 +143,14 @@ moment it is *used*, that stops being true. People build mental models of *this*
 artifact; downstream systems depend on incidental behaviors; bugs get fixed in the
 gaps. Each is the discovery of a property you actually care about that was never
 pinned — an **emergent load-bearing set** that exists only in the current artifact.
+This is [Hyrum's law](/beliefs/glossary/hyrums-law.md) exactly — *with enough
+users, every observable behavior of a system will be depended on by somebody* — and
+it is the established name for what makes whole-system regeneration lossy: the
+unpinned surface is not idle, it is quietly load-bearing, so re-rolling it breaks
+someone. (The [intent-is-the-source](/meta/doctrine/intent-is-the-source.md)
+session surfaced the same law in inverted form — a bundle whose integrity tooling
+depends on its verifier's *unspecified* behavior is its own Hyrum-exposed
+consumer.)
 A from-scratch rebuild throws it away *silently*, because by the frame's own logic
 those properties are unstated, hence free, hence fair game to re-roll. The escape
 hatch — *everything you leave unstated, you agree to let change* — is survivable
@@ -175,6 +183,39 @@ for the first draw and weakens with every day a system stays alive — living sy
 accumulate exactly the continuity, embedded understanding, and
 discovered-but-unstated constraints that a from-scratch recompile is designed to
 discard.
+
+## Relation to the intent-is-the-source pair (same proposal, two facets)
+
+A sibling session worked this identical operator proposal in parallel and ratified
+[intent-is-the-source](/meta/doctrine/intent-is-the-source.md) with its evidence
+analysis [what the dark-factory wave prices about intent-as-source](/meta/analysis/dark-factory-oracle-pricing-intent-as-source.md).
+The two takes are complementary, not competing, and they converge where it counts:
+
+- **Same gap, two treatments.** This analysis names specification-completeness (a
+  complete spec is isomorphic to the code) and the equivalence class it forces. The
+  dark-factory analysis shows the *industrial* answer to the same gap: don't attempt
+  a complete spec — keep it partial and compensate with massive empirical
+  measurement ([holdout scenarios](/beliefs/glossary/holdout-scenario.md), digital
+  twins, [satisfaction metrics](/beliefs/glossary/satisfaction-metric.md)), letting
+  the unpinned remainder drift and *pricing* the drift statistically. My
+  equivalence-class frame is the theory; their satisfaction-sampling is that theory
+  shipped, with the class members deemed interchangeable by measured user
+  satisfaction rather than by pinned invariants.
+- **Same boundary, two names.** My band-limit/[test-oracle](/beliefs/glossary/test-oracle.md)
+  point — how completely the checker pins behavior — is exactly intent-is-the-source's
+  *opacity is earned by the oracle*. Where the oracle is partial, the artifact stays
+  inspectable (theirs) / the class stays uncollapsed and regeneration stays a re-roll
+  risk (mine).
+- **Same forcing function.** "Ratchet emergent properties into the pinned set" (this
+  analysis) and "ratchet the oracle, and let opacity follow" (that doctrine) are one
+  idea: regenerability is a forcing function, and its failures are the discovery
+  procedure for what was never stated.
+
+The distinctive residue this analysis adds to the pair is the **temporal** cut —
+snapshot-vs-trajectory, the change-not-the-system unit, and Hyrum's law as the name
+for why a live artifact is load-bearing beyond its spec — captured as the
+[regenerate-the-change doctrine](/meta/doctrine/regenerate-the-change-not-the-system.md),
+the temporal companion to intent-is-the-source.
 
 ## What this commits to
 

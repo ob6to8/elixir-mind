@@ -22,6 +22,20 @@ it — with the full for/against and the arguments that survive — is
 [Code as a natural-language compilation target](/meta/analysis/code-as-natural-language-compilation-target.md);
 this doctrine is the fixed direction, that analysis is its derivation.
 
+It is the **temporal companion to
+[intent-is-the-source](/meta/doctrine/intent-is-the-source.md)**, which a sibling
+session ratified from the same operator proposal. That doctrine works the vertical
+axis — the *status* of an artifact (intent is ratified source; code is a derived,
+machine-checked product) and when the operator may stop looking at it (opacity is
+earned only to the degree a mechanical oracle covers its behavior). This one works
+the horizontal axis — the *unit and dynamics* of regeneration once an artifact is
+alive: what you regenerate (the change, not the system) and what a living artifact
+silently accumulates that no from-scratch rebuild preserves. The two meet at one
+shared boundary, seen from two sides: intent-is-the-source's *deterministic
+derivation earns full opacity, generative derivation does not yet* is this
+doctrine's *deterministic regenerations are safe to re-roll wholesale, code
+regeneration is not* — opacity there, re-roll-safety here, the same line.
+
 ## The direction
 
 **A specification selects an equivalence class of programs, never one program.** A
