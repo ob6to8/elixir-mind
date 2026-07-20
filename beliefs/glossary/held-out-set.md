@@ -20,3 +20,5 @@ attribution:
 The standard cure for [contamination](/beliefs/glossary/contamination.md), inherited from machine learning's train/test split. For corpus-maintenance benchmarking it means generating a fresh synthetic corpus and answer key that never lands in any repo the agent reads — the constructible-[ground-truth](/beliefs/glossary/ground-truth.md) affordance is exactly the generator.
 
 *Seen in:* [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md)
+
+*See also:* [holdout scenario](/beliefs/glossary/holdout-scenario.md), [contamination](/beliefs/glossary/contamination.md)
