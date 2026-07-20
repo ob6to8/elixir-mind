@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, in-session authoring"
   why: "authored at operator request (\"Proceed with tutorial\") to give the DSP-as-testing analogy a standalone home, developing both the sampling and quantization axes"
+  from: [/meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md]
 ---
 
 # Sampling and quantization as a model of software testing

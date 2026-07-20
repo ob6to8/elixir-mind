@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, in-session authoring"
   why: "authored at operator request (\"Yes, how should we divide all this?\") to persist the standing direction the session converged on"
+  from: [/meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md]
 ---
 
 # Regenerate the change, not the system
