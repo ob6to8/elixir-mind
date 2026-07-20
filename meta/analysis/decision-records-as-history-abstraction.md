@@ -144,6 +144,19 @@ and [agent-memory](/knowledge/SWE/agentic/agent-memory/index.md)):
    than on every future session, and the low-precision result shows the
    re-derivation it replaces is not just expensive but unreliable.
 
+   *A live example of the missing lineage view:* the four 2026-07-20
+   **code-as-derived-artifact** sessions — the
+   [intent-is-source](/meta/doctrine/intent-is-the-source.md),
+   [regenerate-the-change](/meta/doctrine/regenerate-the-change-not-the-system.md),
+   and [comprehension-of-generated-code](/meta/doctrine/comprehension-of-generated-code.md)
+   doctrines, plus this analysis — are one decision neighborhood: sibling facets of
+   a single question, each a child of
+   [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md). They were
+   connected after the fact by hand-authored cross-links (each doctrine's *Sibling
+   directions* section); a compiled decision graph is exactly what would surface
+   that neighborhood automatically rather than depending on whoever notices the
+   adjacency.
+
 3. **It would aid the operator as an audit and navigation surface.** A
    browsable why-map of the brain's evolution; supersession trails showing
    which beliefs were revised and when; and — per the vibe-architecting
