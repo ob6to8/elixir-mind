@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-tree-dev-history session"
   why: "operator ratified persisting the decision-tree investigation so the reasoning and its research grounding survive the session"
+  from: [/meta/threads/2026-07-20-decision-records-as-history-abstraction.md]
 ---
 
 # Decision records as an abstraction over development history

@@ -62,3 +62,15 @@ newly applicable even though the tools built on it died.
   [context strategies for ADR generation](/knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation.md),
   [AgenticAKM](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md),
   [Architecture Without Architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:2e4803">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-20-decision-records-as-history-abstraction (2026-07-20)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:2e4803`]**  (co-feeds: `/meta/analysis/decision-records-as-history-abstraction.md`)
+
+**1. Classic design-rationale research (1980s–90s).** Your idea is a direct descendant of IBIS (Rittel), gIBIS (Conklin & Begeman, 1988), QOC (MacLean et al., 1991), and DRL (Lee, 1991): representing design as a graph of *issues → considered positions → arguments → decision*. That field's famous failure mode is the **capture problem** (Grudin): rationale capture died in practice because the person who bears the documentation cost isn't the one who benefits. This is the most important frame for your idea — **an agentic brain dissolves the capture problem**, because the agent bears the authoring cost and does so at decision time. The old research established the representation is valuable; it failed on economics that no longer apply here.

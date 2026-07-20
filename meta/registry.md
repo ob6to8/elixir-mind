@@ -26,6 +26,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a74152` | [beliefs/glossary/append-only](/beliefs/glossary/append-only.md) | concept | false |
 | `em:98ec38` | [beliefs/glossary/approval-gate](/beliefs/glossary/approval-gate.md) | concept | false |
 | `em:e2377d` | [beliefs/glossary/approximate-nearest-neighbor](/beliefs/glossary/approximate-nearest-neighbor.md) | concept | false |
+| `em:3f16ba` | [beliefs/glossary/architecture-decision-record](/beliefs/glossary/architecture-decision-record.md) | concept | false |
 | `em:43244e` | [beliefs/glossary/argumentation-framework](/beliefs/glossary/argumentation-framework.md) | concept | false |
 | `em:54ea6d` | [beliefs/glossary/artifact](/beliefs/glossary/artifact.md) | concept | false |
 | `em:ac22a3` | [beliefs/glossary/assertion-graph](/beliefs/glossary/assertion-graph.md) | concept | false |
@@ -48,6 +49,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:79ca74` | [beliefs/glossary/bundle-absolute-link](/beliefs/glossary/bundle-absolute-link.md) | concept | false |
 | `em:ee8dfd` | [beliefs/glossary/candidate-feed](/beliefs/glossary/candidate-feed.md) | concept | false |
 | `em:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
+| `em:0568b3` | [beliefs/glossary/capture-problem](/beliefs/glossary/capture-problem.md) | concept | false |
 | `em:21854a` | [beliefs/glossary/ci-smoke-check](/beliefs/glossary/ci-smoke-check.md) | concept | false |
 | `em:bee09c` | [beliefs/glossary/claude-agent-sdk](/beliefs/glossary/claude-agent-sdk.md) | concept | false |
 | `em:04b9a8` | [beliefs/glossary/claude-managed-agents](/beliefs/glossary/claude-managed-agents.md) | concept | false |
@@ -85,6 +87,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:aa3e46` | [beliefs/glossary/dependency-free](/beliefs/glossary/dependency-free.md) | concept | false |
 | `em:048bca` | [beliefs/glossary/deploy-gating](/beliefs/glossary/deploy-gating.md) | concept | false |
 | `em:f9d319` | [beliefs/glossary/description-logic](/beliefs/glossary/description-logic.md) | concept | false |
+| `em:805816` | [beliefs/glossary/design-rationale](/beliefs/glossary/design-rationale.md) | concept | false |
 | `em:0da4a3` | [beliefs/glossary/detector](/beliefs/glossary/detector.md) | concept | false |
 | `em:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
 | `em:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
@@ -111,6 +114,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
+| `em:af40d9` | [beliefs/glossary/experience-graph](/beliefs/glossary/experience-graph.md) | concept | false |
 | `em:9e1592` | [beliefs/glossary/exunit](/beliefs/glossary/exunit.md) | concept | false |
 | `em:6a6054` | [beliefs/glossary/f1-at-k](/beliefs/glossary/f1-at-k.md) | concept | false |
 | `em:7d0700` | [beliefs/glossary/factscore](/beliefs/glossary/factscore.md) | concept | false |
@@ -282,6 +286,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
 | `em:4f4baf` | [beliefs/glossary/verification-grounding](/beliefs/glossary/verification-grounding.md) | concept | false |
 | `em:c6e78a` | [beliefs/glossary/verified-by](/beliefs/glossary/verified-by.md) | concept | false |
+| `em:2ecd37` | [beliefs/glossary/vibe-architecting](/beliefs/glossary/vibe-architecting.md) | concept | false |
 | `em:34fbe3` | [beliefs/glossary/von-neumann-architecture](/beliefs/glossary/von-neumann-architecture.md) | concept | false |
 | `em:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `em:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |

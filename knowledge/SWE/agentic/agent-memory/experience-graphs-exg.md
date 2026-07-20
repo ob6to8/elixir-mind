@@ -43,3 +43,15 @@ A session thread body is a raw trajectory; a decision graph over distilled
 records is exactly the form this literature favors — the reasoning-efficiency
 half of the case made in the
 [decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:221e3e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-20-decision-records-as-history-abstraction (2026-07-20)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:221e3e`]**
+
+**3. Structured memory for agentic reasoning (very current).** [EXG: Self-Evolving Agents with Experience Graphs](https://arxiv.org/abs/2605.17721) (2026) shows organizing accumulated successes/failures into a relational graph yields better performance-efficiency trade-offs than reflection- and unstructured-memory baselines; a cluster of 2026 papers (graph memory, event-centric "logic map" memory, episodic-memory reasoning) converges on the same result: **agents reason better and cheaper over distilled, linked records than over raw trajectories.** Thread bodies are raw trajectories; a decision graph is exactly the distilled-and-linked form this literature favors.

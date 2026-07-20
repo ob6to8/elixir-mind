@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-tree-dev-history session"
   why: "persist the ratified direction and its design shape so a future session can execute it; graduated from the decision-records-as-history-abstraction analysis"
+  from: [/meta/threads/2026-07-20-decision-records-as-history-abstraction.md]
 ---
 
 # Plan — decision extraction at capture + a compiled decision graph
