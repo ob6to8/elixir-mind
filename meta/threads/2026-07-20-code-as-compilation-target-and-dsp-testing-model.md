@@ -5,6 +5,7 @@ description: Worked the operator's proposal that a codebase is regeneratable fro
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, regeneration, equivalence-class, specs, tests, invariants, dsp, sampling, nyquist, quantization, code-as-artifact]
 timestamp: 2026-07-20
+pr: 115
 ---
 
 # 2026-07-20-code-as-compilation-target-and-dsp-testing-model
