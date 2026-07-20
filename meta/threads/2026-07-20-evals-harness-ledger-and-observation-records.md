@@ -5,6 +5,7 @@ description: A layered Q&A on whether the bundle's harness and ledger apply to e
 provenance: "Claude Code session (Claude Fable), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, ledger, harness, conflict-of-interest, observation, continuous-evals]
 timestamp: 2026-07-20
+pr: 121
 ---
 
 # 2026-07-20-evals-harness-ledger-and-observation-records
