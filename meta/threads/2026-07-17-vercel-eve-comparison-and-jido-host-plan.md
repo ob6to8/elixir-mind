@@ -5,6 +5,7 @@ description: A session that examined Vercel's eve agent framework against this b
 provenance: "Claude Code session (Claude Fable), 2026-07-17; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped; in-body ATX headers demoted to bold"
 tags: [meta, thread, eve, vercel, jido, agents, skills, tools, architecture, runtime, host]
 timestamp: 2026-07-17
+pr: 117
 ---
 
 # 2026-07-17-vercel-eve-comparison-and-jido-host-plan
