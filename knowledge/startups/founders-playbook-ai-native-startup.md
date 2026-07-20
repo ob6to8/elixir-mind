@@ -197,3 +197,58 @@ choose to build."
 
 - Source PDF: [The Founder's Playbook: Building an AI-Native Startup](https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/69fe2a55b93bb0732b1fe33c_The-Founders-Playbook-05062026_v3%20(1).pdf) (Anthropic, published 2026-05-14)
 - Announcement: [claude.com/blog/the-founders-playbook](https://claude.com/blog/the-founders-playbook)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:54cf3c">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-20-founders-playbook-ai-native-startup-intake (2026-07-20)
+
+4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:54cf3c`]**
+
+No PDF matching this is present in the environment, and no content was actually pasted after the `/intake` invocation — only a reference to "the anthropic pdf." I can't fetch it from memory since I don't have reliable access to Anthropic's actual "Founder's Playbook" content or a verified URL for it.
+
+---
+
+**[`em:54cf3c`]**
+
+I don't have the PDF content — nothing was attached or pasted, and I don't have a reliable way to fetch "The Founder's Playbook: Building an AI-Native Startup" from memory alone. To intake it properly, could you either:
+
+1. **Paste the text** of the PDF directly, or
+2. **Share a URL** to it so I can fetch it, or
+3. **Attach the file** to this session
+
+Once I have the actual content, I'll dedup-check the bundle, distill it, and file it per the intake procedure.
+
+---
+
+**[`em:54cf3c`]**  (co-feeds: `em:d042c5 em:e24e40`)
+
+I have the full playbook content now. This is a single coherent document (Anthropic's founder-methodology playbook), so it's one concept, not several.
+
+**Dedup check**: I searched the bundle for "founder," "startup," "product-market fit," "AI-native," etc. Nothing existing captures this — the closest neighbors are `knowledge/SWE/agentic/anthropic/` (Anthropic's *products*: Claude, Claude Code, Agent SDK) and `knowledge/ai-industry/` (market/competitive analysis of the AI industry). Neither fits: this playbook isn't product documentation, and it isn't market analysis — it's a founder-facing methodology for building a company, with AI tooling woven in as the means.
+
+**This doesn't fit any existing top-level domain**, so per the taxonomy-evolution protocol I need to stop and propose one rather than create it myself:
+
+**Proposed new top-level directory: `knowledge/startups/`**
+- Sits alongside `SWE`, `ai-industry`, `machine-learning`, `knowledge-management`.
+- Scope: startup-building methodology and founder playbooks — the lifecycle of building and growing a company (idea validation, MVP, launch, scale), as distinct from `SWE` (the craft of building software) and `ai-industry` (market/economic analysis of the AI sector).
+- First document: `knowledge/startups/founders-playbook-ai-native-startup.md`, `type: methodology` (a repeatable, prescriptive playbook — matches the controlled-vocabulary definition exactly), `resource` linking the source PDF and blog post.
+
+Want me to go ahead and create `knowledge/startups/` for this, or does it belong somewhere else (e.g., folded into an existing domain, or a different name like `entrepreneurship`)?
+
+---
+
+**[`em:54cf3c`]**
+
+Intake complete. Summary:
+
+**Filed:** [`knowledge/startups/founders-playbook-ai-native-startup.md`](https://ob6to8.github.io/elixir-mind/knowledge/startups/founders-playbook-ai-native-startup.html) — `em:54cf3c`, `type: methodology`. Distilled the full 36-page PDF (fetched, converted, read end-to-end) into a body covering the core thesis and all four stages (Idea, MVP, Launch, Scale), each with goal / exit criteria / failure modes / AI-powered exercises, plus the closing framing. Source PDF and blog announcement kept under `resource` and `# Citations`.
+
+**New top-level directory created** (per your ratification): `knowledge/startups/` — added its `index.md` and listed it in both `index.md` (root) and `knowledge/index.md`.
+
+**Dedup gold set:** harvested your literal query phrasing ("the founders playbook - building an ai native startup") into `meta/evals/dedup-probe.md`, refreshed the baseline. No recall regression.
+
+Bundle verifies clean. Nothing else is pending operator action — let me know if you'd like this captured/PR'd (`/create-pull-request`).
