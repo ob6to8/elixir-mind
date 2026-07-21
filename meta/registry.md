@@ -55,6 +55,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `em:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
+| `em:4e4719` | [beliefs/glossary/composition-over-inheritance](/beliefs/glossary/composition-over-inheritance.md) | concept | false |
 | `em:4a590f` | [beliefs/glossary/concept-type](/beliefs/glossary/concept-type.md) | concept | false |
 | `em:6a5115` | [beliefs/glossary/consensus-core](/beliefs/glossary/consensus-core.md) | concept | false |
 | `em:0bf58a` | [beliefs/glossary/constant-tutorial-mode](/beliefs/glossary/constant-tutorial-mode.md) | concept | false |
@@ -63,6 +64,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a9bb1d` | [beliefs/glossary/context-mesh](/beliefs/glossary/context-mesh.md) | concept | false |
 | `em:cc0302` | [beliefs/glossary/context-rot](/beliefs/glossary/context-rot.md) | concept | false |
 | `em:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
+| `em:f3e4cb` | [beliefs/glossary/control-plane](/beliefs/glossary/control-plane.md) | concept | false |
 | `em:b467a5` | [beliefs/glossary/council-round](/beliefs/glossary/council-round.md) | concept | false |
 | `em:aea1cb` | [beliefs/glossary/credential-vault](/beliefs/glossary/credential-vault.md) | concept | false |
 | `em:a48aeb` | [beliefs/glossary/crlf](/beliefs/glossary/crlf.md) | concept | false |
@@ -83,6 +85,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f9d319` | [beliefs/glossary/description-logic](/beliefs/glossary/description-logic.md) | concept | false |
 | `em:0da4a3` | [beliefs/glossary/detector](/beliefs/glossary/detector.md) | concept | false |
 | `em:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
+| `em:610415` | [beliefs/glossary/diamond-problem](/beliefs/glossary/diamond-problem.md) | concept | false |
 | `em:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
 | `em:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
 | `em:537412` | [beliefs/glossary/disposition](/beliefs/glossary/disposition.md) | concept | false |
@@ -99,11 +102,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d907fd` | [beliefs/glossary/elixir-mind](/beliefs/glossary/elixir-mind.md) | concept | false |
 | `em:da21de` | [beliefs/glossary/embeddings](/beliefs/glossary/embeddings.md) | concept | false |
 | `em:c2c638` | [beliefs/glossary/entailment](/beliefs/glossary/entailment.md) | concept | false |
+| `em:560ae2` | [beliefs/glossary/entity-component-system](/beliefs/glossary/entity-component-system.md) | concept | false |
 | `em:990c2c` | [beliefs/glossary/entity-resolution](/beliefs/glossary/entity-resolution.md) | concept | false |
 | `em:9054ac` | [beliefs/glossary/environment-atms](/beliefs/glossary/environment-atms.md) | concept | false |
 | `em:f727fe` | [beliefs/glossary/epistemic-overlay](/beliefs/glossary/epistemic-overlay.md) | concept | false |
 | `em:e1c3b6` | [beliefs/glossary/epistemic-poisoning](/beliefs/glossary/epistemic-poisoning.md) | concept | false |
 | `em:735b38` | [beliefs/glossary/epistemic-teleological-split](/beliefs/glossary/epistemic-teleological-split.md) | concept | false |
+| `em:14d4b0` | [beliefs/glossary/escalating-example-exposition](/beliefs/glossary/escalating-example-exposition.md) | concept | false |
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |

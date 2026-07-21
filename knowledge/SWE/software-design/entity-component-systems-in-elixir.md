@@ -111,3 +111,15 @@ for the article's presentation technique, distilled.
 - Yos Riady, "Entity Component Systems in Elixir" (2016-09-17):
   <https://yos.io/2016/09/17/entity-component-systems/> — the captured
   resource; follow-up to his conference talk on ECS.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f03f9c">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-21-ecs-intake-and-agent-entity-substitution (2026-07-21)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:f03f9c`]**
+
+1. **[Entity Component Systems in Elixir (Yos Riady)](https://ob6to8.github.io/elixir-mind/knowledge/SWE/software-design/entity-component-systems-in-elixir.html)** — `reference`, `em:f03f9c`, in the new `knowledge/SWE/software-design/` subdirectory. The article is a long read, so it's a faithful layered summary (plain-language → key terms → technical) with the URL persisted in `resource`; it covers both the pattern argument (the Killer Bunny breaking the class hierarchy) and his Elixir mapping (components as Agents, systems as Redux-style reducers, an Agent-backed registry).

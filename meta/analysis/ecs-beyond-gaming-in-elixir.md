@@ -4,12 +4,13 @@ title: "Is ECS in Elixir viable beyond gaming — how adopted is it, and what ar
 description: "Viable but narrowly: ECS earns its keep in Elixir only for tick-driven worlds of many heterogeneous entities whose capability sets churn at runtime (simulation, digital twins, IoT fleets) — its gaming-native performance rationale (cache-local memory layout) does not survive the trip to the BEAM, adoption is a handful of pre-1.0 libraries (ECSx, ECSpanse) against a mainstream that lives in Rust/C++/Unity, and for everything else idiomatic OTP processes, a functional core, or relational modeling do the same decoupling with less machinery; deliberately written in the escalating-example style of the source article it evaluates."
 provenance: "Claude Code session, 2026-07-18 — operator intook Yos Riady's ECS-in-Elixir article and asked whether the approach is viable for domains other than gaming, how widely it is adopted, and what the alternatives are. Adoption facts checked 2026-07-18 against hexdocs/GitHub (ECSx, ECSpanse), the DockYard ECSx announcement, a 2023 Hacker News practitioner thread on non-game ECS, and published non-game ECS systems (Vico, AtomECS, Gazebo)."
 tags: [meta, analysis, ecs, elixir, software-design, architecture, otp, adoption, alternatives, simulation]
-timestamp: 2026-07-18T14:01:55Z
+timestamp: 2026-07-21T00:01:43Z
 attribution:
   when: 2026-07-18T14:01:55Z
   channel: agent-authored
   agent: "Claude Code session, operator-directed /intake follow-up"
   why: "operator asked for an analysis of whether ECS in Elixir is viable outside gaming, its adoption, and its alternatives, filed alongside the article capture"
+  from: [/meta/threads/2026-07-21-ecs-intake-and-agent-entity-substitution.md]
 ---
 
 # Is ECS in Elixir viable beyond gaming — how adopted is it, and what are the alternatives?
@@ -145,6 +146,12 @@ the domain is small, keep a functional core and resist the machinery. And
 keep Riady's closing point, which survives even where his implementation
 doesn't: raiding unfamiliar domains for architectural ideas is exactly how a
 pattern like this earns a fair trial.
+
+*Amended by a follow-up: the operator's agent-for-entity substitution
+surfaced one domain this draft didn't consider — an agent fleet's control
+plane, where the orchestrator's record of an agent is authentically an
+entity. See
+[Does substituting "agent" for "entity" open an ECS domain in Elixir?](/meta/analysis/agent-for-entity-ecs-as-agent-fleet-control-plane.md).*
 
 # Citations
 

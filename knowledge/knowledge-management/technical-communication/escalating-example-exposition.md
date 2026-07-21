@@ -93,3 +93,17 @@ motivating pain (state the conclusion first for them).
 - [Yos Riady, "Entity Component Systems in Elixir" (2016)](https://yos.io/2016/09/17/entity-component-systems/)
   — the exemplar; captured as
   [a reference](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:68279d">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-21-ecs-intake-and-agent-entity-substitution (2026-07-21)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:68279d`]**
+
+3. **[Escalating-example exposition](https://ob6to8.github.io/elixir-mind/knowledge/knowledge-management/technical-communication/escalating-example-exposition.html)** — `methodology`, `em:68279d`, in the new `knowledge/knowledge-management/technical-communication/` subdirectory (sibling to `argumentation/`).
+
+**On your tone question — yes, on both counts.** I modeled the writer's approach as ten explicit principles (open inside a scenario; one memorable cast reused throughout; escalate the *same* example until the design breaks on the page; name the problem only after it's felt; rebuild with the same cast; concede costs plainly; close by generalizing outward), plus a when-to-use boundary and a draft checklist — so the article now functions as the bundle's citable reference for tone and presentation. And the analysis in item 2 is deliberately written *using* that method (inventory → drone fleet → the trading-firm counter-example), so you can judge the modeling against a live demonstration, not just the theory.
