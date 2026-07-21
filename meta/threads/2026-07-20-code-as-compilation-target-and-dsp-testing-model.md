@@ -1,10 +1,10 @@
 ---
 type: reference
 title: 2026-07-20-code-as-compilation-target-and-dsp-testing-model
-description: Worked the operator's proposal that a codebase is regeneratable from its specs, tests, and invariants (code as a natural-language compilation target) through a for/against into an equivalence-class reframe, then two intuition frames — DSP sampling/Nyquist and snapshot-vs-trajectory — filing the regenerate-the-change doctrine, the compilation-target analysis, and a sampling-and-quantization tutorial (PR #115); then, across follow-up turns, merged that PR (true-merge, after syncing in the parallel #112/#113/#114 sessions) and cross-linked the four 2026-07-20 code-as-derived-artifact facets into a coherent doctrine cluster.
+description: Worked the operator's proposal that a codebase is regeneratable from its specs, tests, and invariants (code as a natural-language compilation target) through a for/against into an equivalence-class reframe, then two intuition frames — DSP sampling/Nyquist and snapshot-vs-trajectory — filing the regenerate-the-change doctrine, the compilation-target analysis, and a sampling-and-quantization tutorial (PR #115); then, across follow-up turns, merged that PR, cross-linked the four 2026-07-20 code-as-derived-artifact facets into a coherent doctrine cluster, and ratified a session-capture convention that a thread's `pr:` is write-once (records the origin PR; follow-up PRs go in prose).
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-20; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
-tags: [meta, thread, regeneration, equivalence-class, specs, tests, invariants, dsp, sampling, nyquist, quantization, code-as-artifact, doctrine-cluster]
-timestamp: 2026-07-20
+tags: [meta, thread, regeneration, equivalence-class, specs, tests, invariants, dsp, sampling, nyquist, quantization, code-as-artifact, doctrine-cluster, session-capture]
+timestamp: 2026-07-21
 pr: 115
 ---
 
@@ -35,28 +35,37 @@ and its derivation analysis
 discovered a sibling session had merged a parallel take on the identical proposal
 (the [intent-is-the-source doctrine](/meta/doctrine/intent-is-the-source.md) and its
 dark-factory analysis, PR #112), synced `main` and reconciled the two as
-complementary facets (vertical: artifact status + oracle-opacity; horizontal:
-regeneration dynamics), and gave the DSP analogy a standalone
+complementary facets, and gave the DSP analogy a standalone
 [sampling-and-quantization tutorial](/meta/tutorials/sampling-and-quantization-as-a-model-of-testing.md),
 developing the previously-undeveloped quantization axis. All of that shipped as
 **PR #115**.
 
-Follow-up turns closed the loop. PR #115 was **true-merged** — but only after a
-`mergeable_state: dirty` on first attempt, caused by `main` advancing past the sync
+Follow-up turns closed the loop. PR #115 was **true-merged** — after a
+`mergeable_state: dirty` on first attempt caused by `main` advancing past the sync
 with two more parallel sessions ([#114](/meta/doctrine/comprehension-of-generated-code.md)
 comprehension-of-generated-code, and #113 decision-records); those were merged in,
-the one `meta/threads/index.md` conflict resolved (all three 2026-07-20 entries
-kept), gates re-run, and the PR merged with the head branch auto-deleted. A final
-pass then **cross-linked the four 2026-07-20 code-as-derived-artifact sessions into
-a coherent cluster**: a tailored *Sibling directions* section in each of the three
-doctrines (framing them as facets of one question — *if code is a derived artifact,
-what must the human and process still guarantee?* — each a child of
+the one `meta/threads/index.md` conflict resolved, gates re-run, and the PR merged
+with the head branch auto-deleted. A pass then **cross-linked the four 2026-07-20
+code-as-derived-artifact sessions into a coherent cluster**: a tailored *Sibling
+directions* section in each of the three doctrines (framing them as facets of one
+question — *if code is a derived artifact, what must the human and process still
+guarantee?* — each a child of
 [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md)), plus a
 worked-example note in the
-[decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md)
-naming the cluster as exactly the connected-lineage view its decision-graph plan
-would surface automatically. That reconciliation-and-cross-linking follow-up
-shipped as **PR #120** (this thread's `pr:` frontmatter stays at its origin, #115).
+[decision-records analysis](/meta/analysis/decision-records-as-history-abstraction.md).
+That follow-up shipped as **PR #120**.
+
+A final turn settled a governance question the multi-PR shape had exposed: **should a
+thread's `pr:` be overwritten when one session spans several PRs?** Ratified: no —
+`pr:` is **write-once and records the origin PR** (the one that first opened and
+stamped the thread), and follow-up PRs are recorded in the thread's narrative prose,
+because the origin anchor is already relied upon downstream (governance
+`attribution.from`, cross-links, git history) and overwriting it would orphan that
+linkage. This was added to the
+[session-capture policy](/meta/policy/session-capture.md), the contract recompiled,
+and the `/create-pull-request` skill's stamp step mirrored to match — shipped as
+**PR #122**. This thread is the convention's own first instance: its `pr:` stays at
+its origin, #115, with #120 and #122 recorded here in prose.
 
 ## Routing
 
@@ -67,6 +76,7 @@ shipped as **PR #120** (this thread's `pr:` frontmatter stays at its origin, #11
 | DSP as a model of testing: sampling + quantization axes, Nyquist band-limit, aliasing, dither | closed | [sampling-and-quantization-as-a-model-of-testing](/meta/tutorials/sampling-and-quantization-as-a-model-of-testing.md) | - |
 | Overlap with the sibling intent-as-source pair (PR #112): reconcile as complementary facets, fold in Hyrum's law | closed | [intent-is-the-source](/meta/doctrine/intent-is-the-source.md) | - |
 | Reconcile #115 with #113/#114 on merge; cross-link the four code-as-derived-artifact facets into a doctrine cluster | closed | [comprehension-of-generated-code](/meta/doctrine/comprehension-of-generated-code.md) | - |
+| Multi-PR shape: should a thread's `pr:` be overwritten? Ratified write-once (origin PR; follow-ups in prose) | closed | [session-capture policy](/meta/policy/session-capture.md) | - |
 
 ## User
 
@@ -460,3 +470,52 @@ The two tightest links are stated in prose, not just listed:
 **Gates:** every new cross-link resolves (clean `verify`), contract/registry current, 177 tests pass. Pushed to `claude/codebase-regeneration-specs-aqebw2` (freshly restarted from the merged `main`, since #115 was already merged).
 
 **Not yet done — the landing motions**, since you asked me to *proceed with the cross-linking*, not to PR it. When you're ready, `/create-pull-request` will re-capture this session (extending the existing thread doc in place), stamp this session's thread into the `attribution.from` of the three docs I revised from other sessions (#112/#113/#114), and open the PR; add `merge` to drive it green and land it. Want me to?
+
+Running the full `/create-pull-request merge` flow. First, capture — since this session already has a thread doc (`2026-07-20-code-as-compilation-target-and-dsp-testing-model.md`, born in #115), I update it in place with the post-#115 turns rather than creating a second. Let me re-parse the now-longer session log.
+
+The new turns since the #115 capture are the merge-drive and the cluster cross-linking — thin dialogue ("Merge", "Yes proceed") over operational work. I'll regenerate the thread body in place (faithful verbatim, cutting at session close before this capture turn), then update the narrative and ledger.
+
+PR #120 merged and cleaned up. The `/create-pull-request merge` flow is complete.
+
+## PR #120 merged ✅ — https://github.com/ob6to8/elixir-mind/pull/120
+
+- **Merge:** true merge commit `e8fe31a` (per policy — never squash/rebase). Head branch auto-deleted.
+- **CI:** both `verify` checks green on the final head `4671ea6`; `mergeable_state: clean` before merging.
+
+### What the flow did
+
+1. **Capture** — updated this session's existing thread doc in place (`2026-07-20-code-as-compilation-target-and-dsp-testing-model.md`) with the post-#115 turns (the true-merge and the cluster cross-linking), refreshing its narrative and routing ledger (now 5 strands). Kept `pr: 115` as its origin anchor and recorded the follow-up **#120** in the narrative, since this one session now spans two PRs.
+2. **Glossary** — legitimate no-op; the cross-linking introduced no new vocabulary.
+3. **`attribution.from`** — appended this thread (append-only) to the three governance docs the follow-up revised: `intent-is-the-source`, `comprehension-of-generated-code`, `decision-records-as-history-abstraction`.
+4. **Gates** — `contract --check`, `registry --check`, `verify`, `route_tags`, `glossary`, `mix test` (177) all green.
+
+### Net result of the two PRs
+
+The 2026-07-20 **code-as-derived-artifact** cluster is now coherent in `main`: three doctrines (`intent-is-source`, `regenerate-the-change`, `comprehension-of-generated-code`) each carry a *Sibling directions* section tying them to one shared question under `engineer-as-orchestrator`, and the `decision-records` analysis names the cluster as the connected-lineage view its decision-graph plan would compile automatically.
+
+One transparency note worth flagging: I deviated from step 7's literal "overwrite `pr:` with the new number" — doing so would have orphaned #115's linkage (already baked into merged from-stamps), so the thread keeps `pr: 115` and carries #120 in prose instead. If you'd prefer a firmer convention for session-spanning-multiple-PRs threads, that's a small session-capture policy question worth settling — say the word and I'll draft it.
+
+## User
+
+yes do so, documenting the reasoning, i assume in the commit
+
+## Assistant
+
+
+The convention is settled and pushed.
+
+## What landed
+
+**`meta/policy/session-capture.md`** — added a write-once rule under the "records its PR" bullet: **`pr:` records the *origin* PR** (where the thread doc was first opened and stamped) and is never overwritten. A session spanning several PRs keeps its origin `pr:`; follow-up PRs are recorded in the thread's **narrative prose**, not frontmatter. The reasoning is stated in the policy prose itself (a policy should explain its own convention) and in the commit.
+
+Also:
+- **`CLAUDE.md`** recompiled from the policy (contract `--check` green).
+- **`.claude/skills/create-pull-request/SKILL.md`** — mirrored the refinement in step 7's stamp instruction, so the skill and policy agree: stamp only the first PR that opens a thread; record a later re-touch in prose.
+
+The commit message carries the full rationale, including why I chose write-once-origin over making `pr:` a list (that would be a schema change to a field the verifier/tooling treat as a single number — this is the lower-churn, backward-compatible option).
+
+**Gates:** contract `--check`, `verify`, `registry --check`, and `mix test` (177) all green. Pushed to `claude/codebase-regeneration-specs-aqebw2` (restarted from the current `main`).
+
+One deliberate note on this very change: the policy now says a follow-up PR shouldn't rewrite `pr:` — but this session's thread (`…compilation-target-and-dsp-testing-model`, `pr: 115`) is already merged and correctly follows the new rule (origin #115, #120 in prose), so nothing needs backfilling.
+
+I stopped at pushed-to-branch rather than opening a PR, since you asked for the change committed, not a PR. Want me to `/create-pull-request merge` to land it the same way as the others?
