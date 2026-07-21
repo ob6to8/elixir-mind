@@ -19,4 +19,4 @@ attribution:
 
 Supervision trees are the mechanism behind [let-it-crash](/beliefs/glossary/let-it-crash.md); GenServers are the behaviour where most long-lived state lives. On the [BEAM](/beliefs/glossary/beam.md), a codebase with no OTP application is Elixir used as a scripting language — adopting OTP is the line where a project becomes a resident system.
 
-*Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md)
+*Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md), [Dynamic Workflows vs. BEAM/Jido 2 analysis](/meta/analysis/dynamic-workflows-vs-beam-jido.md)
