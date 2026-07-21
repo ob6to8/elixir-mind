@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-commissioned research spike"
   why: "operator asked how Inkling affects opportunities for evals and the evals industry, where it sits among current open-weight models, why one would adopt it, what is new about it, and what Thinking Machines is betting; the findings are persisted so the judgment survives the session"
+  from: [/meta/threads/2026-07-16-inkling-evals-landscape-spike.md]
 ---
 
 # Research spike: Inkling's effect on the evals world, its place in the mid-2026 open-weights landscape, and the Thinking Machines bet

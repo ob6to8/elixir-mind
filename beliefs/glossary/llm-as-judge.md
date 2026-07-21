@@ -23,6 +23,11 @@ rather than assumed. The decompose-then-verify factuality results are the canoni
 validation: SAFE matches crowdworkers 72% of the time and wins 76% of
 adjudicated disagreements at more than 20× lower cost. The same pattern
 underlies per-edge belief-graph judgments: local, cacheable model verdicts
-composed by mechanical aggregation.
+composed by mechanical aggregation. A structural caveat: judge *ensembles*
+drawn from the same few model lineages share blind spots ("great models think
+alike"), so best practice runs 3–5 judges across distinct model families —
+which makes each genuinely new pretraining lineage (e.g.
+[Inkling](/beliefs/glossary/inkling.md)) an oversight resource, not just a
+contestant.
 
-*Seen in:* [decompose-then-verify factuality reference](/knowledge/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition plan](/meta/plans/belief-decomposition-analysis-mode.md)
+*Seen in:* [decompose-then-verify factuality reference](/knowledge/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition plan](/meta/plans/belief-decomposition-analysis-mode.md), [2026-07-16 evals-landscape spike thread](/meta/threads/2026-07-16-inkling-evals-landscape-spike.md) (judge diversity against correlated error; fine-tuned judges as the evals industry's product)
