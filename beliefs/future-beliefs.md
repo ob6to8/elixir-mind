@@ -39,22 +39,22 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   `phrase` type would be the first keyed on surface form. Revisit only if a
   concrete need with real examples emerges — then propose for ratification like
   any new type.
-- **"Distill, don't dump" is miscast and slated for retirement/rewrite**
-  (proposed 2026-07-21). The slogan reads as a single dump-vs-distill axis, but
-  the two are neither accurate nor mutually exclusive here: thread docs are
-  near-*dumps* (verbatim, only tool-noise stripped) and knowledge docs are
-  near-*distillations* — yet really *expansions* of thread fragments, which
-  function as provenance. Dump and distill also operate at *different levels of
-  the system*, so pitting one against the other misdescribes the architecture.
-  Proposal: strip the `distill, don't dump` doctrine
-  ([`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md),
-  compiled into `CLAUDE.md` §3) and rewrite it around fitness-for-purpose per
-  layer — likely as a `doctrine` (a standing direction) rather than a mechanical
-  `policy`. The two principles that should anchor the replacement:
+- **"Distill, don't dump" was miscast — formalized 2026-07-21 as a doctrine.**
+  The slogan read as a single dump-vs-distill axis, but the two are neither
+  accurate nor mutually exclusive here: thread docs are near-*dumps* (verbatim,
+  only tool-noise stripped) and knowledge docs are near-*distillations* — yet
+  really *expansions* of thread fragments, which function as provenance. Dump and
+  distill also operate at *different levels of the system*, so pitting one
+  against the other misdescribed the architecture. Resolved by retiring the
+  slogan and creating the doctrine
+  [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md),
+  anchored on two descriptive premises:
   - Knowledge wants concision + queryability → distill hard, cite the raw.
   - Provenance wants fidelity → you cannot reconstruct "what did we actually
     decide, what got rejected, and why" from a lossy summary. A condensed record
     is a worse record.
-  Worth preserving in the rewrite: the one still-valid injunction the old slogan
-  carried — on intake, don't file the raw paste *as* the document; capture the
-  knowledge and cite the source.
+  The old policy became
+  [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md)
+  (the knowledge-layer filing rule the slogan validly carried); the is-to-ought
+  structure of the move is recorded in the
+  [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md).

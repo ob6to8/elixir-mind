@@ -2,7 +2,7 @@
 id: em:bec37f
 type: concept
 title: distill, don't dump
-description: The filing rule that a concept captures the knowledge rather than the raw noise — clear title, one-sentence description, clean body — with original material kept as a resource URI or under a Citations section.
+description: A retired slogan (through 2026-07-21) that framed the brain's whole retention stance as a single distill-vs-dump axis; reframed as the per-layer doctrine "fit each layer to its purpose", with its one true filing injunction preserved in the capture-knowledge-cite-the-source policy.
 provenance: "Agent-distilled glossary definition, pointer to the defining doc"
 verified: false
 tags: [glossary, filing, distillation, governance]
@@ -17,10 +17,14 @@ attribution:
 
 # distill, don't dump
 
-Canonically defined by the
-[distill-dont-dump policy](/meta/policy/distill-dont-dump.md); it applies at
-every filing into the bundle. Note the deliberately different sense in
-[session capture](/beliefs/glossary/session-capture.md), where "distilled" means
-noise-stripped with the kept text verbatim — stripping, not summarizing.
+It failed on three counts. Its two labels fit neither end cleanly: thread docs
+strip noise rather than dump, and knowledge docs often *expand* a fragment (the
+fragment serving as provenance) rather than boil it down. Its one dial implied
+one right answer, when retention is set independently per layer by that layer's
+purpose. And it applied a single rule across levels that need opposite rules —
+"always distill" mischaracterizes the provenance layer, whose correctness
+*depends on* fidelity. The [session capture](/beliefs/glossary/session-capture.md)
+sense of "distilled" (noise-stripped, kept text verbatim) is the record-layer
+half of what replaced it.
 
 *Seen in:* [2026-07-13 council-round thread](/meta/threads/2026-07-13-council-round-suitability-evaluation.md)

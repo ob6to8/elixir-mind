@@ -96,6 +96,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:aa3e46` | [beliefs/glossary/dependency-free](/beliefs/glossary/dependency-free.md) | concept | false |
 | `em:048bca` | [beliefs/glossary/deploy-gating](/beliefs/glossary/deploy-gating.md) | concept | false |
 | `em:f9d319` | [beliefs/glossary/description-logic](/beliefs/glossary/description-logic.md) | concept | false |
+| `em:ca7b27` | [beliefs/glossary/descriptive-premise](/beliefs/glossary/descriptive-premise.md) | concept | false |
 | `em:805816` | [beliefs/glossary/design-rationale](/beliefs/glossary/design-rationale.md) | concept | false |
 | `em:0da4a3` | [beliefs/glossary/detector](/beliefs/glossary/detector.md) | concept | false |
 | `em:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
@@ -222,6 +223,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
 | `em:54995c` | [beliefs/glossary/non-bundle-namespace](/beliefs/glossary/non-bundle-namespace.md) | concept | false |
 | `em:724e2f` | [beliefs/glossary/non-monotonic-reasoning](/beliefs/glossary/non-monotonic-reasoning.md) | concept | false |
+| `em:0c343a` | [beliefs/glossary/normative-conclusion](/beliefs/glossary/normative-conclusion.md) | concept | false |
 | `em:760063` | [beliefs/glossary/nyquist-shannon-sampling-theorem](/beliefs/glossary/nyquist-shannon-sampling-theorem.md) | concept | false |
 | `em:617977` | [beliefs/glossary/observer-agent](/beliefs/glossary/observer-agent.md) | concept | false |
 | `em:8c9ef1` | [beliefs/glossary/observer-effect](/beliefs/glossary/observer-effect.md) | concept | false |

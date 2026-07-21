@@ -172,12 +172,21 @@ _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-ev
 
 ## 3. Filing conventions
 
-**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A document has
-a clear title, a one-sentence `description`, and a clean body. Keep the original
-material as a `resource` URI and/or under a `# Citations` section — not as the
-whole document.
+**Capture the knowledge, cite the source.** When you file a knowledge document,
+capture the *knowledge*, not the raw noise. A document has a clear title, a
+one-sentence `description`, and a clean body. Keep the original material as a
+`resource` URI and/or under a `# Citations` section — not as the whole document.
 
-_Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)_
+This is the knowledge-layer half of
+[fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md):
+a document consulted to *understand a subject* is fit for purpose when it is
+concise and queryable, so here you distill hard and relegate the raw source to a
+citation. The record-layer half — where fidelity, not concision, is the goal, and
+material is kept verbatim-minus-noise — is governed separately by
+[session-capture](/meta/policy/session-capture.md); do not apply this filing rule
+to thread docs.
+
+_Source: [`meta/policy/capture-knowledge-cite-the-source.md`](/meta/policy/capture-knowledge-cite-the-source.md)_
 
 **Update in place; don't fragment.** Before creating a file, **search the bundle**
 for an existing document on the same subject. If one exists, update it (merge new
