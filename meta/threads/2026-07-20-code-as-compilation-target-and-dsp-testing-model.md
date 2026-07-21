@@ -64,8 +64,8 @@ because the origin anchor is already relied upon downstream (governance
 linkage. This was added to the
 [session-capture policy](/meta/policy/session-capture.md), the contract recompiled,
 and the `/create-pull-request` skill's stamp step mirrored to match — shipped as
-**PR #NNN**. This thread is the convention's own first instance: its `pr:` stays at
-its origin, #115, with #120 and #NNN recorded here in prose.
+**PR #122**. This thread is the convention's own first instance: its `pr:` stays at
+its origin, #115, with #120 and #122 recorded here in prose.
 
 ## Routing
 
