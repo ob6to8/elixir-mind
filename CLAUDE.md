@@ -223,11 +223,25 @@ in chat; the live URL is a click away.
   `/knowledge/knowledge-management/open-knowledge-format.md` is cited as
   `https://ob6to8.github.io/elixir-mind/knowledge/knowledge-management/open-knowledge-format.html`,
   and a directory's `index.md` as `…/<dir>/index.html`. This covers governance docs
-  too (`meta/…`), which are rendered as well. `mix brain.url <path>` prints the
-  mapped URL for a bundle path — the mechanical way to get it right.
+  too (`meta/…`), which are rendered as well. **`mix brain.url <path>` prints the
+  working URL — the mechanical way to get it right; route every response link
+  through it rather than hand-constructing one** (hand-construction is exactly what
+  produces dead links).
+- **Live only after merge — cite unmerged docs by branch.** Pages deploys **only
+  from the default branch** (`pages.yml` → `push: branches: [main]`), so a document
+  *created or modified on an unmerged branch has no live page yet*: its Pages URL
+  **404s** (new doc) or shows **stale** content (modified doc) until the PR merges
+  and Pages rebuilds. Cite such a doc by its GitHub **blob URL at the branch ref**
+  (`<repo>/blob/<branch>/<path>.md`), which resolves immediately and shows the
+  current content. `mix brain.url` does this automatically — it emits the live
+  Pages URL when the doc is rendered *and* unchanged vs `origin/main`, and the
+  branch blob URL otherwise (new, modified, or under a non-rendered directory).
+  The Pages URL is the canonical form once merged; a branch blob link is fine in
+  ephemeral chat (branches are deleted post-merge, so never hardcode a blob URL
+  into a durable doc body).
 - **Not rendered → no live URL.** Resources under directories the site excludes
-  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page; cite those by repo path
-  (or link the file on GitHub) rather than fabricating a Pages URL.
+  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever; `mix brain.url`
+  cites those by their GitHub blob URL instead of fabricating a Pages URL.
 - **This is the response-side rule only.** Cross-links *inside* document bodies stay
   bundle-absolute markdown paths per
   [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
