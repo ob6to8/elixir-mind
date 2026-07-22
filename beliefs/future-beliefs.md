@@ -81,3 +81,28 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   vs. [descriptive premise](/beliefs/glossary/descriptive-premise.md). The
   descriptive premise underneath it: the commit graph already records what
   changed, so in-artifact change-narration is duplicative and staleness-prone._
+- **A rule over off-repo output must be made correct in the tooling it mandates,
+  not merely asserted in prose — because it cannot be CI-gated.** Most of the
+  brain's rules are enforced *structurally*: `mix brain.verify`, `route_tags`,
+  `contract --check` each gate an in-repo artifact and fail CI on drift. But a
+  rule governing output that leaves **no repo artifact** — a link, a phrasing, or
+  a claim in a chat reply or PR body — has nothing for a verifier to check; it is
+  runtime guidance a verifier cannot gate. Its reliability then rests on exactly
+  two legs: (a) the tool it directs agents to must return the correct result *by
+  construction*, and (b) the contract must forbid the by-hand shortcut that
+  bypasses that tool. Asserting the rule harder in prose does **not** move
+  reliability. Proof: the
+  [response-resource-links](/meta/policy/response-resource-links.md) link bug
+  (2026-07-21) — the contract already said "use `mix brain.url`", yet a dead Pages
+  URL shipped, because the *tool* was wrong (not branch-aware) and the policy also
+  taught a hand-mapping an agent could apply instead. The fix landed in the tool
+  (liveness-aware `mix brain.url`) plus an explicit no-hand-construction clause,
+  never in a sterner sentence.
+
+  _Note — like the entry above, this is itself an **ought**, destined for
+  [`doctrine`](/meta/doctrine/index.md). Descriptive premise underneath: an
+  instruction an agent can satisfy *incorrectly while believing it complied* is
+  effectively unenforced; only a correct tool or a CI gate closes that gap, and
+  off-repo output admits only the former. Sibling of "an artifact states what it
+  is" above — both are cases where the durable lever is structural (tool, commit
+  graph), not exhortation._

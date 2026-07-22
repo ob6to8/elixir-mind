@@ -218,15 +218,16 @@ in chat; the live URL is a click away.
   (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
   source of truth, and this contract's copy of it is compiled in from that config —
   a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
-- **The mapping.** Take the resource's bundle path and swap the base and extension:
-  bundle path `P.md` → `https://ob6to8.github.io/elixir-mind/P.html`. So
-  `/knowledge/knowledge-management/open-knowledge-format.md` is cited as
-  `https://ob6to8.github.io/elixir-mind/knowledge/knowledge-management/open-knowledge-format.html`,
-  and a directory's `index.md` as `…/<dir>/index.html`. This covers governance docs
-  too (`meta/…`), which are rendered as well. **`mix brain.url <path>` prints the
-  working URL — the mechanical way to get it right; route every response link
-  through it rather than hand-constructing one** (hand-construction is exactly what
-  produces dead links).
+- **Get the URL from the tool, never by hand. `mix brain.url <path>` prints the
+  working URL** for any bundle path — always run it; do **not** construct a URL
+  yourself. The correct URL depends on state you have to check (is the doc live on
+  `main` yet? see below), not on the path alone, so hand-construction is exactly
+  what produces dead links. *Under the hood* the tool maps a live, rendered doc by
+  swapping base and extension — `P.md` → `https://ob6to8.github.io/elixir-mind/P.html` (a directory's
+  `index.md` → `…/<dir>/index.html`; governance `meta/…` docs render too) — but
+  that mapping is **what the site does at build time, not a recipe to apply in a
+  response**. Reproducing it by hand is the anti-pattern this policy exists to
+  stop.
 - **Live only after merge — cite unmerged docs by branch.** Pages deploys **only
   from the default branch** (`pages.yml` → `push: branches: [main]`), so a document
   *created or modified on an unmerged branch has no live page yet*: its Pages URL
