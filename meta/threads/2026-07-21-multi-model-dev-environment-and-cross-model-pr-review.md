@@ -166,3 +166,54 @@ That's the missing piece — thanks. **pi.dev is not an OpenRouter alternative a
 - And it's a genuinely strong Shape B option for you specifically: **15+ providers with mid-session model switching**, and — the part that maps to what you love about the Claude app — **tree-structured session history with branching/export**, which is essentially your "persisted + archivable threads + resuscitation" feature. It's deliberately minimal (no MCP/sub-agents/plan-mode out of the box; you add them as TypeScript/npm extensions), with TUI + print/JSON + RPC + SDK modes.
 - One neat consequence: because it has **print/JSON and RPC modes**, pi *could* be scripted as the reviewer inside the Shape C Action (invoke it headless with a review prompt) — but that's heavier than a plain `chat/completions` POST, so for the CI reviewer the gateway call is still simpler. pi's real value to you is as an authoring cockpit.
 </routes>
+
+## User
+
+is function-calling.md a glossary entry?
+
+## Assistant
+
+Yes. It's at `beliefs/glossary/function-calling.md` — a `type: concept` glossary entry (`em:eec645`, title "function calling"), created 2026-07-17 from the vercel-eve thread. That's exactly why I didn't create a new "tool calling" entry in this session: tool calling / tool use is the same concept (its body even says "Also called tool calling or tool use"), so per the one-term-one-file rule I extended that existing entry instead — adding the harness↔model tool-calling-seam nuance and a citation to this session's thread.
+
+## User
+
+are all glossary entries type: concept?
+
+## Assistant
+
+Yes — all 342 term files under `beliefs/glossary/` are `type: concept`, with zero exceptions (`index.md` is excluded — it's the generated listing, no frontmatter).
+
+That's by design in the `/add-to-glossary` skill: a glossary entry is always a `concept` (a definition/mental model), each with its own `em:` id. Two edge cases still hold to it:
+
+- **Pointer entries** (a one-line gloss that defers to a canonically-defined doc elsewhere) are still `type: concept` files — they just link out instead of redefining.
+- **Graduation** moves a term *out* of the glossary into the domain tree when it outgrows a definition; the file keeps its id and leaves a `concept` pointer stub behind at the glossary path. So the glossary directory stays uniformly `concept` even after a term graduates.
+
+## User
+
+should the glossary be renamed "concept glossary", or the type be changed to "glossary"?
+
+## Assistant
+
+**My recommendation: neither.** The current state isn't a mismatch to fix — it's the intended design, and both proposed changes would break something.
+
+**Why not change the type to `glossary`:** `type` and location are *orthogonal axes* — `type` says what a document **is** (its epistemic nature); the directory says **where it sits** in the taxonomy. A glossary entry *is* a definition/mental model, which is exactly what `concept` means. "Glossary-ness" is conferred by the `beliefs/glossary/` path, not by the document's nature, so encoding it in `type` would be redundant with location. Worse, it breaks two things: graduation (a graduated term stays a definition — if its type were `glossary` it would need retyping on move) and the bundle-wide `concept` type (~51 concept docs already live in the tree; they can't all become `glossary`).
+
+**On the apparent precedent** — `policy`, `tutorial`, `plan`, `issue` etc. *are* types that correlate with directories. But each carries genuinely distinct semantics or a status lifecycle (a policy is a rule; a plan is proposed→done; an issue is open→resolved). `glossary` would be the *first* type whose only distinction from an existing type is location — the anti-pattern to avoid.
+
+**Why not rename the directory to `concept-glossary`:** it's redundant (a glossary is definitions by nature), and the cost is real — rewriting hundreds of bundle-absolute cross-links, the `/add-to-glossary` skill, `mix brain.glossary`, and index references, plus a directory rename is a shape change needing ratification. Big churn, negligible gain over the universally-understood word "glossary."
+
+The one-liner: the type is right (`concept` = definition, wherever it lives), the name is right (`glossary` = the location that collects them), and the reason all 342 are concepts is that the glossary is the canonical *home* of concepts — not that concept and glossary should be the same thing.
+
+## User
+
+ok makes sense. last thought, should any of the concepts at directory paths be in fact folded into the glossary? what determines "graduation"?
+
+## Assistant
+
+Concrete answer, and it's clean: **none of the six should be folded in.** Each is either a developed subject with a real home in the tree, or — instructively — *not a term at all*. Every one already has the healthy arrangement: the concept lives in the tree, and the glossary carries a **pointer entry** that defers to it. So the split isn't an accident to clean up; it's the intended pattern, already working.
+
+<routes ref="em:0c8532">
+**Should any tree concepts fold into the glossary?** No — for these, and rarely in general. Two reasons: (1) the tree *is* the taxonomy — a domain concept belongs in its branch, related to its siblings; folding it into the flat glossary would strip it of its taxonomic home. (2) When a tree concept is *also* a term you want to link by name, the tool is a glossary **pointer**, not relocation — you get linkability without duplication or displacement. The only real fold-in candidate would be a tree doc that's a *bare cross-cutting term-definition with no domain-node role* — misfiled vocabulary. None of the six qualify; the most instructive is `git-local-branches-dont-auto-advance-on-fetch` (31 lines, `verified: true`): short, but it's a **verified proposition**, not a term — the glossary holds terms you look up, not claims.
+
+**What determines graduation:** the discriminator is **role, not size**. A glossary entry answers "what does this word *mean*?" (a cross-cutting term you look up, a 1–3 sentence definition + citations); a tree concept answers "tell me *about* X" (a subject you study, a node in a domain, with mechanism/senses/claims/sections). A term **graduates** (glossary → tree) when it stops being a lookup and becomes a subject — concretely, when it accumulates **verified claims** (`verified_by` evidence), grows **multiple senses or real exposition** that want headings, becomes a **hub** other terms point at, and has a **natural taxonomic home**. The tell-tale sign: the entry *wants sections*. Move the file into the tree (its `em:` id travels), leave a pointer stub, and the two homes stay in sync rather than competing.
+</routes>
