@@ -228,10 +228,30 @@ in chat; the live URL is a click away.
 
 _Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
-- **Links must be processed, not parked.** A web resource enters the brain only once it
-  has been **processed into a `reference`** (fetched and summarized/captured). Do not
-  file bare, unprocessed URLs as their own documents — process it now, or don't file it.
-  (There is deliberately no lightweight "bookmark" type.)
+- **No bare URLs as bundle documents.** A link becomes a bundle
+  [`reference`](/meta/policy/controlled-type-vocabulary.md) — filed into the taxonomy,
+  distilled, cross-linked, carrying an `em:` id — only once it has been **processed**
+  (fetched and summarized/captured). Never file a bare, unprocessed URL as a bundle
+  document: distill it into a reference, or park it in the survey tier below. The two
+  levels are the point — a link is either *ingested* (a filed reference) or *surveyed*
+  (a bookmark), never dumped raw into the taxonomy.
+- **The survey tier — the one sanctioned staging exception.** Links worth keeping but
+  not worth fully ingesting yet live in [`survey/`](/survey/index.md) as **bookmarks**:
+  rows in a register (`survey/bookmarks.md`), each **fetched, one-line-summarized, and
+  tagged** by [`/bookmarks`](/.claude/skills/bookmarks/SKILL.md) — enough metadata to be
+  surfaced by a topic query, without the distill-file-cross-link cost of a reference. A
+  bookmark is *surveyed, not parked bare*; the summary + tags are mandatory, so the tier
+  never degrades into a link graveyard. `survey/` is a **non-bundle namespace** (no `em:`
+  ids, never verified, outside the taxonomy) like `inbox/` and `meta/`, so a bookmark
+  makes no claim on the tree. It is a distinct staging level, **not** a new bundle
+  `type` — bookmarks are register rows, and the register reuses `type: reference` (as
+  `inbox/` digests do).
+- **Promotion is the bridge back to the taxonomy.** A surveyed bookmark graduates to a
+  filed `reference` via [`/intake`](/.claude/skills/intake/SKILL.md) (driven by
+  `/bookmarks promote`); that is the single point where the full distill pass runs and
+  [distill, don't dump](/meta/policy/distill-dont-dump.md) re-engages. The register row
+  records the graduation (`status: promoted → <link>`) so the staging debt stays
+  visible and countable rather than all-or-nothing.
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
   **write a faithful summary** as the document body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.
@@ -556,6 +576,16 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   a new top-level domain are deferred for operator ratification) and attributed
   `channel: auto-intake` for the operator's post-intake editorial pass. See
   `.claude/skills/research/SKILL.md`.
+- **`/bookmarks`** — process the **survey tier**: links the operator wants kept but not
+  yet fully ingested. The operator drops raw URLs under **Pending** in the register
+  (`survey/bookmarks.md`); a bare `/bookmarks` fetches each, writes a one-line summary
+  and topical tags, and moves it to **Surveyed** (`status: surveyed`) — a non-bundle
+  namespace (no `em:` ids) like `inbox/`. `/bookmarks list [surveyed|promoted|all]`
+  reviews the register; `/bookmarks promote <url>` runs `/intake` to distill and file
+  the link as a bundle `reference`, then records the graduation on the row. The
+  lower-effort staging sibling of `/intake` (see the
+  [link-processing](/meta/policy/link-processing.md) survey-tier carve-out). See
+  `.claude/skills/bookmarks/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
   over the captured thread doc, **stamp the thread into `attribution.from`** (append
   the just-captured thread's path to the `from` list of every governance doc the
