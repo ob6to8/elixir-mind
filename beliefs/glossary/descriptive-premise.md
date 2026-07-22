@@ -35,3 +35,17 @@ with the existing epistemic ones). A belief is something the brain holds *true*;
 *Seen in:* [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md), [future beliefs](/beliefs/future-beliefs.md)
 
 *See also:* [normative conclusion](/beliefs/glossary/normative-conclusion.md), [doctrine](/beliefs/glossary/doctrine.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ca7b27">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine (2026-07-22)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:ca7b27`]**  (co-feeds: `em:6a9e78 em:0c343a`)
+
+**Doctrine vs. belief**
+
+The cleanest way to separate them is by **register** — what kind of statement each one *is*. A **belief** is descriptive (the *is* register): it answers "what is the case?", is truth-apt (true/false, verifiable), and if wrong it is *false* → corrected against evidence. A **doctrine** is normative (the *ought* register): it answers "what should guide design and priorities?", is a commitment (adhered-to, not verified), and if wrong it is *misguided* → the direction is re-decided. In the stack, belief *grounds* doctrine (the *is* that motivates the *ought*), and doctrine *sits above* policy (a policy implements it as an enforceable rule). "Belief" isn't a type while "doctrine" is — because the descriptive register is already covered by `claim`/`note`/`concept`; the normative-direction register had no type, and that gap is what `doctrine` fills. The bridge — each of your two bullets is shaped `descriptive premise → normative conclusion`, and that `→` is the is-to-ought step. Tidy statement of the contrast: **a belief is something the brain holds *true*; a doctrine is something the brain holds *to*.**

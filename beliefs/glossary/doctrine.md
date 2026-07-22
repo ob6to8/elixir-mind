@@ -57,3 +57,13 @@ Done — [`doctrine`](glossary/doctrine.md) is committed and pushed (`5a57194`, 
 **[`em:6a9e78`]**  (co-feeds: `meta/doctrine/engineer-as-orchestrator.md`)
 
 You're right that this is neither analysis nor concept — it's an *intention statement*: a direction that shapes judgment without prescribing action. The brain already named exactly this layer and noted the vocabulary was missing it. From [`/beliefs/glossary/doctrine.md`](/beliefs/glossary/doctrine.md):
+
+### 2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine (2026-07-22)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:6a9e78`]**  (co-feeds: `em:0c343a em:ca7b27`)
+
+**Doctrine vs. belief**
+
+The cleanest way to separate them is by **register** — what kind of statement each one *is*. A **belief** is descriptive (the *is* register): it answers "what is the case?", is truth-apt (true/false, verifiable), and if wrong it is *false* → corrected against evidence. A **doctrine** is normative (the *ought* register): it answers "what should guide design and priorities?", is a commitment (adhered-to, not verified), and if wrong it is *misguided* → the direction is re-decided. In the stack, belief *grounds* doctrine (the *is* that motivates the *ought*), and doctrine *sits above* policy (a policy implements it as an enforceable rule). "Belief" isn't a type while "doctrine" is — because the descriptive register is already covered by `claim`/`note`/`concept`; the normative-direction register had no type, and that gap is what `doctrine` fills. The bridge — each of your two bullets is shaped `descriptive premise → normative conclusion`, and that `→` is the is-to-ought step. Tidy statement of the contrast: **a belief is something the brain holds *true*; a doctrine is something the brain holds *to*.**

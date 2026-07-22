@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, qiju-thread-storage session"
   why: "authored at operator request to persist the is-to-ought account that underlay the distill-dont-dump rewrite, so the reasoning survives the session"
+  from: [/meta/threads/2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine.md]
 ---
 
 # The is-to-ought layer: how a belief grounds a doctrine

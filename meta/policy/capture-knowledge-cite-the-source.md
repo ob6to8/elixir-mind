@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine.md]
 ---
 **Capture the knowledge, cite the source.** When you file a knowledge document,
 capture the *knowledge*, not the raw noise. A document has a clear title, a

@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-13T07:50:19+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-13-response-resource-links-policy-and-site-config.md]
+  from: [/meta/threads/2026-07-13-response-resource-links-policy-and-site-config.md, /meta/threads/2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine.md]
 ---
 **In responses, link resources to the deployed site, not to repo paths.** When an
 agent's **delivered response** (chat to the operator, a PR body, an issue comment —

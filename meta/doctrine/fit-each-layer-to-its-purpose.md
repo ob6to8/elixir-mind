@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   why: "the operator ratified persisting this per-layer retention direction as standing doctrine"
   agent: "Claude Code agent, qiju-thread-storage session"
+  from: [/meta/threads/2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine.md]
 ---
 
 # Fit each layer to its purpose: distill the knowledge, preserve the record
