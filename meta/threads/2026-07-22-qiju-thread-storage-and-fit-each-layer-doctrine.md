@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 4.8), 2026-07-22; verbatim retaine
 tags: [meta, thread, qiju, distillation, doctrine, is-ought, glossary, response-links, tooling]
 timestamp: 2026-07-22
 session: https://claude.ai/code/session_016sMoc9k6FSwoQgjtmuKS8K
+pr: 127
 ---
 
 # 2026-07-22-qiju-thread-storage-and-fit-each-layer-doctrine
