@@ -141,6 +141,19 @@ defmodule ElixirMind.AttributionTest do
       assert Enum.join(errors, "\n") =~ "exempt file carries `attribution`"
     end
 
+    test "the survey/ tier is exempt: no attribution required, and flagged if present", %{
+      tmp_dir: dir
+    } do
+      # A bare survey register is fine — the tier is exempt from presence.
+      write_doc(dir, "survey/bookmarks.md", "type: reference")
+      assert Verifier.run(dir) == :ok
+
+      # ...but carrying attribution is an error, like inbox/ digests.
+      write_doc(dir, "survey/bookmarks.md", "type: reference\n" <> attribution_block())
+      assert {:error, errors} = Verifier.run(dir)
+      assert Enum.join(errors, "\n") =~ "exempt file carries `attribution`"
+    end
+
     test "governance presence is enforced by default, relaxable via presence: false", %{
       tmp_dir: dir
     } do

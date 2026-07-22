@@ -13,8 +13,9 @@ defmodule ElixirMind.Orphans do
       its directory's `index.md`, so counting those listings as inbound links
       would mask every real orphan. Pass `include_index: true` to count them.
     * **Anchored-by-design namespaces are not candidates** by default:
-      `meta/threads/` (anchored by `pr:`) and `inbox/` (dated digests) are
-      unreferenced on purpose, not orphaned. Pass `all: true` to include them.
+      `meta/threads/` (anchored by `pr:`), `inbox/` (dated digests), and
+      `survey/` (bookmark registers) are unreferenced on purpose, not orphaned.
+      Pass `all: true` to include them.
 
   A doc that links *out* but has nothing linking *in* is still an orphan — only
   inbound edges matter here.
@@ -23,7 +24,7 @@ defmodule ElixirMind.Orphans do
   alias ElixirMind.Links
 
   @reserved ~w(index.md log.md README.md CLAUDE.md)
-  @anchored_dirs ~w(meta/threads inbox)
+  @anchored_dirs ~w(meta/threads inbox survey)
 
   @doc """
   Repo-relative paths (sorted) of candidate docs with no inbound link.
@@ -33,7 +34,7 @@ defmodule ElixirMind.Orphans do
     * `:include_index` (default `false`) — count links inside `index.md`
       listings as inbound edges.
     * `:all` (default `false`) — keep anchored-by-design namespaces
-      (`meta/threads/`, `inbox/`) as orphan candidates.
+      (`meta/threads/`, `inbox/`, `survey/`) as orphan candidates.
   """
   @spec find(String.t(), keyword()) :: [String.t()]
   def find(root \\ File.cwd!(), opts \\ []) do
