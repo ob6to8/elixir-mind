@@ -37,8 +37,10 @@ own text-based review surface.
    with logging/caching/key control), or a **provider's native endpoint** if you
    only ever want one reviewer family. OpenRouter is chosen here only because one
    key spans GPT/Codex, Kimi, and GLM, making a switch of reviewer family a
-   one-line change. A single-family assistant API (e.g. Inflection's Pi) works as a
-   reviewer but forfeits that cross-family switch.
+   one-line change. A single-family provider endpoint works as a reviewer but
+   forfeits that cross-family switch. (Note the gateway is the *model-access* layer,
+   not an agent harness — a coding agent like Pi/OpenCode sits on the *other* side
+   and would be the thing authoring PRs, not the endpoint this Action POSTs to.)
 2. Pick the reviewer model in `env.REVIEWER_MODEL` (e.g. `openai/gpt-5.2`,
    `moonshotai/kimi-k2`, `z-ai/glm-4.6`). Choose a **different family** than your
    usual author so the review adds an independent perspective.

@@ -46,7 +46,14 @@ today. The real decision is **which surface to optimize**, accepting a seam.
   **different models to different agents** (builder on GPT, reviewer on GLM) in
   config. [claude-code-router](https://github.com/musistudio/claude-code-router)
   instead keeps Claude Code's exact ergonomics and routes its requests to other
-  providers. Sandbox-per-session comes from the *environment* (devcontainer,
+  providers. [Pi](https://pi.dev) is a third: a deliberately minimal, extensible
+  agent harness (15+ providers, mid-session model switching) that adds features
+  (MCP, sub-agents, plan mode) as TypeScript/npm extensions rather than
+  out-of-the-box — and whose **tree-structured, branchable session history** maps
+  closely to the persisted/archivable-threads feature the operator values. These
+  are *harnesses* (the cockpit), not [LLM gateways](/beliefs/glossary/llm-gateway.md)
+  (the model-access layer) — they still reach models through a provider key or a
+  gateway. Sandbox-per-session comes from the *environment* (devcontainer,
   Codespace) or a heavier all-in-one like OpenHands.
 - **Shape C — the code-review workflow (author with one model, review with
   another).** GitHub is the neutral shared surface: the author and reviewer never
@@ -99,7 +106,7 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-07-21-multi-model-dev-environment-and-cross-model-pr-review (2026-07-21)
 
-3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`em:db4e6c`]**
 
@@ -140,3 +147,11 @@ And note — **you're already half-way to this pattern.** The harness you're in 
 If I had to name one starting move: **stand up the cross-model PR reviewer (Shape C) first.** It's a weekend of YAML, it's provider-agnostic by construction, it plugs into the PR-review GUI you already love, and it doesn't force you to abandon Claude Code as your authoring cockpit. Then, if you want the *interactive* multi-model feel, add OpenCode alongside.
 
 One structural point worth internalizing: the Claude app's magic is that Anthropic controls the harness *and* the model, so tool-calling is flawless. The moment you go multi-provider, **the harness↔model tool-calling seam is where quality leaks** — which is exactly why routing reviews through GitHub (a neutral, text-based surface) is more robust than routing foreign models through an Anthropic-shaped agent loop.
+
+---
+
+**[`em:db4e6c`]**
+
+- **pi.dev is a coding-agent harness — a Shape B tool, not a gateway.** It sits exactly where OpenCode and claude-code-router sit (the *cockpit*), not where OpenRouter sits (the *model-access layer*). So it doesn't replace the OpenRouter role in the review Action; it's an alternative to the *agent* you'd author with.
+- And it's a genuinely strong Shape B option for you specifically: **15+ providers with mid-session model switching**, and — the part that maps to what you love about the Claude app — **tree-structured session history with branching/export**, which is essentially your "persisted + archivable threads + resuscitation" feature. It's deliberately minimal (no MCP/sub-agents/plan-mode out of the box; you add them as TypeScript/npm extensions), with TUI + print/JSON + RPC + SDK modes.
+- One neat consequence: because it has **print/JSON and RPC modes**, pi *could* be scripted as the reviewer inside the Shape C Action (invoke it headless with a review prompt) — but that's heavier than a plain `chat/completions` POST, so for the CI reviewer the gateway call is still simpler. pi's real value to you is as an authoring cockpit.

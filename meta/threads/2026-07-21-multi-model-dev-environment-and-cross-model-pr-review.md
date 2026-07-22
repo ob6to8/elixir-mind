@@ -27,8 +27,12 @@ subdirectory (autonomous, under the established `agentic` domain): a `note`
 (`em:db4e6c`) recording the landscape and decision, and a `snippet` (`em:9b5d41`)
 holding a drop-in cross-model PR-review GitHub Action that routes the reviewer model
 through OpenRouter and posts inline diff-anchored comments with a summary-only
-fallback. Bundle verifies clean. One strand remains open: whether to install the
-workflow into a specific dev repo and which default reviewer model to use.
+fallback. Bundle verifies clean. A follow-up exchange corrected a category error:
+the operator's "pi" (pi.dev) is a **coding-agent harness** (a Shape B peer of
+OpenCode/claude-code-router), *not* an OpenRouter-style gateway — so the note's
+Shape B and the snippet were amended, and the gateway-vs-harness distinction made
+explicit. One strand remains open: whether to install the workflow into a specific
+dev repo and which default reviewer model to use.
 
 ## Routing
 
@@ -129,4 +133,36 @@ Good — `agentic` is an established top-level domain, so I can create a subdire
 Done. Both are filed in the brain and pushed to `claude/multi-model-dev-environment-pbxdv7`.
 
 **How the Action works, briefly** — on every PR open/update it fetches the diff, sends it to a reviewer model of a *different* family than the author (routed through OpenRouter so `openai/gpt-5.2` → `moonshotai/kimi-k2` → `z-ai/glm-4.6` is a one-line change), and posts a review with **inline comments anchored to diff lines** plus a summary. The one real failure mode — GitHub rejecting the whole review if a comment points at a line not in the diff — is handled with a summary-only fallback. To use it you just add an `OPENROUTER_API_KEY` secret and pick `REVIEWER_MODEL`.
+</routes>
+
+## User
+
+would pi be an alternative possibility to openrouter here?
+
+## Assistant
+
+Quick answer to your mid-flight question, then I'll finish the PR.
+
+**On "pi":** I couldn't pin down a mainstream multi-provider gateway named exactly *pi* — the closest match is **Inflection's Pi**, which is a different animal: it's Inflection's *own* model family with an enterprise API, not an aggregator. So it'd work as a *reviewer model source*, but it wouldn't give you the cross-family switching (GPT ↔ Kimi ↔ GLM) that's the whole point of the OpenRouter layer. If you meant something else by "pi," tell me and I'll place it exactly.
+
+**The architecture-level answer, which is the useful part:** the Action isn't OpenRouter-specific. The reviewer call is just a standard **OpenAI-compatible `chat/completions` POST**, so *any* gateway with that shape is a drop-in — you change the base URL and the key, nothing else:
+
+- **[LiteLLM](https://github.com/BerriAI/litellm)** (self-hosted proxy) — the canonical open-source OpenRouter alternative, 100+ providers, you own the keys.
+- **[Portkey](https://portkey.ai)** / **Cloudflare AI Gateway** — managed gateways adding logging, caching, key control on top.
+- **A provider's native endpoint** — if you only ever want one reviewer family, skip the gateway entirely.
+
+So whatever "pi" is: **if it exposes an OpenAI-compatible endpoint over multiple providers, yes — it drops in.** If it's single-family (like Inflection's Pi), it works but you lose the switch-the-reviewer-in-one-line benefit.
+
+## User
+
+here is pi https://pi.dev/
+
+## Assistant
+
+That's the missing piece — thanks. **pi.dev is not an OpenRouter alternative at all** — I had the wrong "Pi," and it's the wrong *category*. Here's the correction:
+
+<routes ref="em:db4e6c">
+- **pi.dev is a coding-agent harness — a Shape B tool, not a gateway.** It sits exactly where OpenCode and claude-code-router sit (the *cockpit*), not where OpenRouter sits (the *model-access layer*). So it doesn't replace the OpenRouter role in the review Action; it's an alternative to the *agent* you'd author with.
+- And it's a genuinely strong Shape B option for you specifically: **15+ providers with mid-session model switching**, and — the part that maps to what you love about the Claude app — **tree-structured session history with branching/export**, which is essentially your "persisted + archivable threads + resuscitation" feature. It's deliberately minimal (no MCP/sub-agents/plan-mode out of the box; you add them as TypeScript/npm extensions), with TUI + print/JSON + RPC + SDK modes.
+- One neat consequence: because it has **print/JSON and RPC modes**, pi *could* be scripted as the reviewer inside the Shape C Action (invoke it headless with a review prompt) — but that's heavier than a plain `chat/completions` POST, so for the CI reviewer the gateway call is still simpler. pi's real value to you is as an authoring cockpit.
 </routes>
