@@ -14,6 +14,14 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #134](https://github.com/ob6to8/elixir-mind/pull/134) — Intake Zornek's AI-drift article + LocalCents standards; ratify elixir-coding-standards policy and three new guardrails *(2026-07-23)*
+
+- intake: AI drift guardrails and Elixir coding conventions
+- ratify: elixir-coding-standards policy and three new guardrails
+- regenerate dev-history through PR #132 after syncing with main
+- capture: ai-drift intake and coding-standards ratification session
+- stamp pr: 134 into the session thread doc
+
 ## [PR #132](https://github.com/ob6to8/elixir-mind/pull/132) — Refresh bookmarks collection *(2026-07-23)*
 
 - Reorganize bookmarks by primary topic with section headings

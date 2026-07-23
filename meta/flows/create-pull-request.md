@@ -1,9 +1,9 @@
 ---
 type: note
 title: Create pull request — capture, glossary, commit, push, open
-description: The end-to-end flow for shipping a session — run the capture flow to completion, glossary its thread doc, then commit, push, and open the PR with no separate confirmation gate — a composition of two other flows plus the git/GitHub tail, and why its ordering (capture before commit) is the load-bearing decision.
+description: The end-to-end flow for shipping a session — run the capture flow to completion, glossary its thread doc, regenerate the dev-history view, then commit, push, and open the PR with no separate confirmation gate — a composition of two other flows plus the git/GitHub tail, and why its ordering (capture before commit) is the load-bearing decision.
 tags: [meta, governance, pull-request, capture, glossary, git, flow, workflow]
-timestamp: 2026-07-11
+timestamp: 2026-07-23
 attribution:
   when: 2026-07-11T07:13:22+00:00
   channel: backfill
@@ -72,11 +72,16 @@ operator already said "open a PR" is friction without safety.
        skip if capture was skipped)          session created or updated
           │
           ▼
-   4. survey: git status/diff — everything above is now part of the change
-   5. commit (atomic; explicit paths; honest message)
-   6. push -u origin <feature-branch>    (retry w/ backoff on network only)
-   7. open the PR (template-aware; GitHub MCP tools — no gh CLI here)
-   8. offer to watch CI/reviews          (subscribe only if asked)
+   4. regenerate DEV-HISTORY              → meta/dev-history.md, caught up
+      (mix brain.dev_history; always,        through the previous merge
+       independent of capture)               (see the staleness analysis)
+          │
+          ▼
+   5. survey: git status/diff — everything above is now part of the change
+   6. commit (atomic; explicit paths; honest message)
+   7. push -u origin <feature-branch>    (retry w/ backoff on network only)
+   8. open the PR (template-aware; GitHub MCP tools — no gh CLI here)
+   9. offer to watch CI/reviews          (subscribe only if asked)
 ```
 
 ---
@@ -89,11 +94,12 @@ operator already said "open a PR" is friction without safety.
 | 2 | agent+tool | Run [`/capture`](/meta/flows/session-capture.md) to completion (thread doc, ledger, route tags, `mix brain.route_tags --materialize` + check) | `meta/threads/…`, fed sinks, `meta/threads/index.md` | that flow's scenario + gates |
 | 3 | agent+tool | Run [`/add-to-glossary`](/meta/flows/add-to-glossary.md) on the thread doc from step 2 | `glossary/*`, `meta/registry.md` | that flow's spine |
 | 4 | agent | Set `thread:` (bundle-absolute path of the step-2 thread doc) in each `meta/elaborations/` doc this session created or updated — the final metadata motion on an elaboration; never retro-link older docs | `meta/elaborations/*.md` | editorial |
-| 5 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
-| 6 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |
-| 7 | agent | `git push -u origin <branch>`; retry only network failures (2s/4s/8s/16s) | remote branch | CI on the branch |
-| 8 | agent | Open the PR via the GitHub MCP tools, mirroring a PR template if one exists; report the URL | GitHub PR | editorial |
-| 9 | agent | Offer PR watching (`subscribe_pr_activity`) — don't subscribe unasked | — | — |
+| 5 | agent+tool | Run `mix brain.dev_history` — always, independent of whether capture ran — catching the checked-in view up through the previous merge (it can never include this PR's own merge commit) | `meta/dev-history.md` | `mix brain.dev_history --check` (lag-tolerant by one PR) |
+| 6 | agent | Survey (`git status`/`diff`); confirm on the designated feature branch, never a default branch | — | editorial |
+| 7 | agent | Commit — atomic, explicit paths, message matching the history's style | git objects | editorial |
+| 8 | agent | `git push -u origin <branch>`; retry only network failures (2s/4s/8s/16s) | remote branch | CI on the branch |
+| 9 | agent | Open the PR via the GitHub MCP tools, mirroring a PR template if one exists; report the URL | GitHub PR | editorial |
+| 10 | agent | Offer PR watching (`subscribe_pr_activity`) — don't subscribe unasked | — | — |
 
 ---
 
@@ -106,6 +112,13 @@ operator already said "open a PR" is friction without safety.
 - **`thread` is set here and only here** — `/elaborate` never sets it (the
   target doesn't exist until capture runs), and older elaborations already
   carrying a `thread` are never retro-pointed at a new session.
+- **Dev-history regeneration runs unconditionally, even if capture was
+  skipped** — it's the one generated doc CI's `--check` won't hard-fail on by
+  itself (deliberately lag-tolerant by one PR, since a PR can never contain
+  its own merge commit — see the
+  [staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)
+  for why the fix isn't a CI auto-commit bot instead). This step is what keeps
+  that one-PR lag from compounding across merges.
 - **The invocation is the authorization** — this is the one sanctioned path
   that opens a PR without a further ask; every other flow keeps the
   default-off rule.
