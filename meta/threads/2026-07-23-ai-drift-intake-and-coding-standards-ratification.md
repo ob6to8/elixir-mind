@@ -6,6 +6,7 @@ provenance: "Claude Code session (Opus 4.8, then Fable 5), 2026-07-23; verbatim 
 tags: [meta, thread, intake, code-quality, coding-standards, guardrails, drift, ci]
 timestamp: 2026-07-23T18:10:00Z
 session: https://claude.ai/code/session_01Mj8gmkjrbZgNdDqewr3Uam
+pr: 134
 ---
 
 # 2026-07-23-ai-drift-intake-and-coding-standards-ratification
