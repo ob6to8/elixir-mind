@@ -6,6 +6,7 @@ provenance: "Claude Code session (claude-sonnet-5), 2026-07-23; verbatim retaine
 tags: [meta, thread, ci, dev-history, generated-artifacts, provenance, merge-strategy, bookmarks]
 timestamp: 2026-07-23
 session: https://claude.ai/code/session_01G1KA4wrh5MG58bJfw5FZsV
+pr: 135
 ---
 
 # 2026-07-23-dev-history-drift-and-regeneration-flow
