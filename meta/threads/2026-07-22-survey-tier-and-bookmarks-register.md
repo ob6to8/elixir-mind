@@ -50,7 +50,7 @@ below is the faithful record**, so it keeps the slogan where it was actually sai
 filed as the
 [reconciling-a-mid-flight-doctrine-retirement analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md).
 The survey-tier feature landed in **PR #128** (this thread's origin `pr:`); this
-transcript-update and the analysis note land in a **follow-up PR**.)
+transcript-update and the analysis note land in **PR #129**.)
 
 ## Routing
 
@@ -334,4 +334,4 @@ a
 
 ## Assistant
 
-A it is — the transcript is now the faithful record. I restored the "distill, don't dump" investigation exchange and appended the doctrine-collision arc verbatim (this section), so the record layer carries what was actually said, while every knowledge/deliverable artifact stays slogan-free. The layer-split reasoning is filed as the [reconciling-a-mid-flight-doctrine-retirement analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md). This thread keeps `pr: 128` as its origin anchor; the transcript-update and the analysis note land in a follow-up PR recorded here in prose.
+A it is — the transcript is now the faithful record. I restored the "distill, don't dump" investigation exchange and appended the doctrine-collision arc verbatim (this section), so the record layer carries what was actually said, while every knowledge/deliverable artifact stays slogan-free. The layer-split reasoning is filed as the [reconciling-a-mid-flight-doctrine-retirement analysis](/meta/analysis/reconciling-a-mid-flight-doctrine-retirement.md). This thread keeps `pr: 128` as its origin anchor; the transcript-update and the analysis note land in PR #129 (recorded here in prose).
