@@ -85,9 +85,8 @@ link for the requested count. Read-only.
 
 ## Respond
 
-Only when the operator asks (never by default): reply **in chat** — the journal file
-stays pure operator voice; a response is conversation, not record. Unless the
-operator directs otherwise, respond in two parts:
+Only when the operator asks (never by default). Unless the operator directs
+otherwise, respond in two parts:
 
 1. **Editorial read** — a critical evaluation of the entry's communication style and
    expressivity: what lands, what blurs, how it could be edited or reformulated.
@@ -96,14 +95,21 @@ operator directs otherwise, respond in two parts:
    extensions, counterpoints, connections to what the brain already holds, questions
    worth carrying forward.
 
-If the operator wants a response persisted, file it through the normal channels (a
-thread capture, a note) — never edit it into the journal entry itself.
+Deliver the response in chat **and persist it verbatim into the same day's file**,
+appended below the entry body under a `---` rule and a
+`## Response — Claude (YYYY-MM-DD)` heading (demote the response's own headings
+beneath it as needed; content stays verbatim as delivered). The delineation is the
+rule: everything above the response heading is operator voice; everything below it
+is agent voice — never interleave the two. Do not hardcode live or branch URLs into
+the persisted response; cite bundle documents by bundle-absolute path.
 
 ## Guardrails
 
 - **The operator's voice is inviolable.** No summarizing, no tightening, no style
-  fixes beyond dictation noise. The `description` frontmatter line is the only
-  agent-written summary.
+  fixes beyond dictation noise. Entries are recorded verbatim, with only
+  transcription errors fixed. In the entry body, the `description` frontmatter line
+  is the only agent-written text; agent responses live exclusively in the marked
+  `## Response` section below the entry.
 - **Never mint an `em:` id, never add `attribution`** — `journal/` is exempt and
   `mix brain.verify` errors if attribution is present.
 - One file per day; append, don't fragment.

@@ -652,9 +652,10 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
   `attribution` (machine-enforced exempt), anchored by date rather than inbound
   links, outside the taxonomy — the operator's synthesis practice, on the record
-  layer. `/journal list` reviews recent entries; a response to an entry is delivered
-  in chat only when asked, never written into the entry. See
-  `.claude/skills/journal/SKILL.md`.
+  layer. `/journal list` reviews recent entries; a response to an entry is produced
+  only when asked, delivered in chat and persisted verbatim below the entry under a
+  marked `## Response` heading — operator voice above, agent voice below, never
+  interleaved. See `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
