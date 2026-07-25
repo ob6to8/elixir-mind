@@ -6,6 +6,7 @@ provenance: "Claude Code session (Opus 5), 2026-07-25; verbatim retained message
 tags: [meta, thread, intake, context-engineering, currency-check, glossary, manus]
 timestamp: 2026-07-25T18:35:00Z
 session: https://claude.ai/code/session_01CWRX8GSaMFJBvkv3eKcHbj
+pr: 136
 ---
 
 # 2026-07-25-manus-context-engineering-intake-and-currency-check
