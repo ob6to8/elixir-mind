@@ -154,6 +154,17 @@ defmodule ElixirMind.AttributionTest do
       assert Enum.join(errors, "\n") =~ "exempt file carries `attribution`"
     end
 
+    test "the journal/ tier is exempt: no attribution required, and flagged if present", %{
+      tmp_dir: dir
+    } do
+      write_doc(dir, "journal/2026-01-01.md", "type: note")
+      assert Verifier.run(dir) == :ok
+
+      write_doc(dir, "journal/2026-01-01.md", "type: note\n" <> attribution_block())
+      assert {:error, errors} = Verifier.run(dir)
+      assert Enum.join(errors, "\n") =~ "exempt file carries `attribution`"
+    end
+
     test "governance presence is enforced by default, relaxable via presence: false", %{
       tmp_dir: dir
     } do

@@ -645,6 +645,16 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
   of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
   policy). See `.claude/skills/plan/SKILL.md`.
+- **`/journal`** — file the operator's daily journal entry: everything following the
+  invocation is the entry body, transcribed faithfully (only dictation noise cleaned —
+  the operator's voice is inviolable) into a dated `type: note` doc at
+  `journal/YYYY-MM-DD.md` (one file per day; same-day additions append). `journal/` is
+  a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
+  `attribution` (machine-enforced exempt), anchored by date rather than inbound
+  links, outside the taxonomy — the operator's synthesis practice, on the record
+  layer. `/journal list` reviews recent entries; a response to an entry is delivered
+  in chat only when asked, never written into the entry. See
+  `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
