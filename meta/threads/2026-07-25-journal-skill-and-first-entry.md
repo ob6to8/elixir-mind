@@ -59,6 +59,13 @@ doctrine's in-body source acknowledgement into the
 [provenance-lives-in-metadata policy](/meta/policy/provenance-lives-in-metadata.md)
 (bodies and index glosses never restate sourcing the frontmatter records;
 load-bearing content links stay), and the round's docs were swept to conform.
+That sweep itself left a stump — a "no contrived experiments" negation whose
+referent the sweep had removed — which the operator caught, ratifying a second
+composition policy
+([negate only an explicit case](/meta/policy/negate-only-explicit-cases.md))
+and a clearer glossary description for
+[doctrine](/beliefs/glossary/doctrine.md), after confirming where the type's
+official definition lives (the controlled-type-vocabulary policy).
 
 ## Routing
 
@@ -71,6 +78,7 @@ load-bearing content links stay), and the round's docs were swept to conform.
 | Brain-level recitation experiment | open | [recitation eval](/meta/evals/priorities-recitation-vs-harness-reminders.md) | Build the A/B instrument and run it (eval is `status: proposed`) |
 | Depth of code understanding | closed | [depth-of-code-understanding analysis](/meta/analysis/depth-of-code-understanding.md) | - |
 | Source acknowledgement redundant with metadata | closed | [provenance-lives-in-metadata policy](/meta/policy/provenance-lives-in-metadata.md) | - |
+| Unanchored negations in composed prose | closed | [negate-only-explicit-cases policy](/meta/policy/negate-only-explicit-cases.md) | - |
 
 ## User
 
@@ -203,3 +211,40 @@ Filed as [Provenance lives in metadata, not body prose](https://github.com/ob6to
 Then swept this round's docs against it: the doctrine's "(the operator's anti-contrivance principle from the first journal entry)" is gone — the sentence now just states the rule; the doctrine and analysis index glosses dropped their "distilled from / fleshed out from" tails; the *synthesis by proxy* glossary body lost its "the operator's first journal entry diagnosed" lead-in; and *recitation*'s "the 2026-07-25 session's open question" now reads as a plain cross-link to the eval that tracks the question. Kept, deliberately: the analysis's and eval's links to the journal entry where they engage its argument as content — those fail the test in the right direction.
 
 Committed and pushed to PR #137; gates green.
+
+## User
+
+is "a standing direction that informs future judgment without prescribing an enforceable action" the official recorded definition of doctrine? if so, where is it defined?
+
+## Assistant
+
+Close to verbatim, but my phrase was a compression of two recorded sources, and yes — there is one official definition.
+
+**The canonical definition** lives in the [controlled-type-vocabulary policy](https://ob6to8.github.io/elixir-mind/meta/policy/controlled-type-vocabulary.html) (`meta/policy/controlled-type-vocabulary.md`), the policy that defines every `type`, and is compiled verbatim into `CLAUDE.md` §4. Its exact wording:
+
+> `doctrine` — a persisted **intention statement**: a guiding principle or direction that shapes how the brain and its agents are designed and prioritized — the "why" that informs judgment without prescribing a specific enforceable action. Doctrine sits *above* policy: a `policy` implements doctrine as a concrete, machine- or operator-enforceable rule, and plans, analyses, and priority rankings may cite a doctrine as the direction they serve.
+
+So the back half of my phrase — "informs judgment without prescribing an enforceable action" — is lifted nearly word-for-word from there. The front half, "standing direction," comes from the genre's own docs: [`meta/doctrine/index.md`](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/doctrine/index.md) opens with "Standing **intention statements**…" and calls a doctrine "a *standing direction*," and the doctrine docs themselves (fit-each-layer, and now derived-views) open their bodies with "This is a **standing direction** for…".
+
+Two derived surfaces restate it, per the repo's layering:
+
+- **[Glossary entry `doctrine`](https://ob6to8.github.io/elixir-mind/beliefs/glossary/doctrine.html)** (`em:6a9e78`, `sense: dual`) — defines the *common* governance sense (principles layer vs. policy's enforceable rules) and, under "In this brain," points at the controlled type and the `meta/doctrine/` genre. Its route-tagged log actually records the definition's history: the term entered the vocabulary on 2026-07-11 (your doctrine-vs-policy question, when no `doctrine` type existed), the type and genre were ratified 2026-07-12, and the 2026-07-22 thread added the register distinction — a belief is descriptive (*is*), a doctrine is normative (*ought*): "a belief is something the brain holds *true*; a doctrine is something the brain holds *to*."
+- **The doctrine index blurb** — a prose restatement for progressive disclosure.
+
+Hierarchy-wise: the policy is the authority (it's what agents are contract-bound to), the glossary entry and index are restatements that defer to it. My paraphrase introduced no new content — though it's a fair flag that when I'm justifying a type choice, quoting the vocabulary's actual words is the cleaner move than paraphrasing them.
+
+## User
+
+I find your paraphrase clearer than the glossary definition. what do you think?
+
+also ,the new sentence: "No contrived experiments: the tradeoff is learned by watching for the first real query the grep-plus-generated-index pattern cannot express, not by building a database to have built one." - in this case, "no contrived.." is now an orphaned reference. who said anything about contrivances, outside of the newly no longer referenced journal entry? this ties into the general policy of agent communication to not employ negative statements unless there is an explicit case to negate (and if this is not defined, it should be)
+
+## Assistant
+
+On the paraphrase: agreed — the glossary description now carries it. The two definitions were doing different jobs: the vocabulary policy defines by role in the governance stack (that's its job — it's the contract-bound wording, and it already contains the "informs judgment without prescribing" clause), while a glossary description is the fast-read overview, where defining by *function* beats defining by *layer membership*. The entry's description is now: "A standing direction that informs judgment without prescribing an enforceable action — the governance layer of guiding principles (the "why"), as distinct from policy, the layer of specific enforceable rules." The policy's wording is untouched; the glossary index gloss regenerated with it.
+
+On the orphaned negation: correct, and worth naming the mechanism — the negation didn't start orphaned; the provenance sweep removed its referent and left the stump, an argument with a missing party. The doctrine now states the rule positively: "The tradeoff is learned from real demand: the crossing signal is the first query, arising in actual work, that the grep-plus-generated-index pattern cannot express."
+
+And the principle is now policy: [Negate only an explicit case](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/policy/negate-only-explicit-cases.md) (filing section, order 11, beside provenance-lives-in-metadata — companions: that one removes credit prose, this one prevents the dangling stumps such removals can leave). As filed: a negation is a *reference* — it points at the case it rules out — and it earns its place only when that case is explicit: raised in the same document, a live alternative the reader would otherwise assume, or a standing rule being overridden. The test: can the reader point at what is being negated? It also carries the fossil rule your catch exposed — an edit that removes a negation's referent must recast the negation in the same motion — and the scope: doc bodies, index glosses, and agent responses alike, with thread renders exempt as verbatim record. Anchored negations stay fully legitimate ("cache, never know" is the pattern working as intended).
+
+Contract recompiled, swept docs conform, everything ships in PR #137.

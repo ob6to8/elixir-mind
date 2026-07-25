@@ -41,9 +41,9 @@ makes it an explicit, operator-ratified decision.
 
 ## Crossing signals to watch
 
-No contrived experiments: the tradeoff is learned by watching for the first
-real query the grep-plus-generated-index pattern cannot express, not by
-building a database to have built one. The signals:
+The tradeoff is learned from real demand: the crossing signal is the first
+query, arising in actual work, that the grep-plus-generated-index pattern
+cannot express. Watch for:
 
 - **Concurrent writers** — multiple agents mutating shared state where
   file-level git merge stops being a sufficient concurrency model.

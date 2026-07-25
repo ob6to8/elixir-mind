@@ -438,6 +438,32 @@ the metadata states the origin.
 
 _Source: [`meta/policy/provenance-lives-in-metadata.md`](/meta/policy/provenance-lives-in-metadata.md)_
 
+**Negate only an explicit case.** A negative statement — "no X", "never Y",
+"not by Z-ing" — is a reference: it points at the case it rules out. It earns
+its place only when that case is **explicit**: raised in the same document, a
+live alternative the reader would otherwise assume, or a standing rule being
+overridden. Absent an explicit case, state the rule positively — an unanchored
+negation is an orphaned reference, gesturing at an argument the reader cannot
+see.
+
+- **The test: can the reader point at what is being negated?** If the case is
+  named nearby, assumed by default, or contract-bound elsewhere (link it), the
+  negation is anchored and does real work. If answering "who said anything
+  about that?" requires context outside the document, recast the sentence as
+  the positive rule.
+- **Negations fossilize.** An anchored negation loses its anchor when a later
+  edit removes the referent — a provenance sweep, a trim, a refactor — and the
+  stump reads as an argument with a missing party. An edit that removes a
+  negation's referent must recast the negation in the same motion, not leave
+  the stump.
+- **Scope.** Document bodies, index glosses, and agent responses alike —
+  wherever the agent composes prose. Thread renders are exempt (verbatim
+  record). Anchored negations remain fully legitimate and load-bearing —
+  contrast pairs ("cache, never know"), guardrails negating a named temptation,
+  and overrides of stated defaults are the pattern working as intended.
+
+_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
