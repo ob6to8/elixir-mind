@@ -14,6 +14,18 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #135](https://github.com/ob6to8/elixir-mind/pull/135) — Capture the dev-history drift session; glossary the terms it used *(2026-07-23)*
+
+- capture: dev-history drift and regeneration-flow session
+- stamp pr: 135 into the session thread doc
+- regenerate flow lineage to include PR #135
+
+## [PR #133](https://github.com/ob6to8/elixir-mind/pull/133) — Fix + prevent dev-history drift: regenerate now, fold into /create-pull-request *(2026-07-23)*
+
+- regenerate meta/dev-history.md from the merge graph
+- fold dev-history regeneration into /create-pull-request; persist the analysis
+- regenerate dev-history after syncing with main (through PR #134)
+
 ## [PR #134](https://github.com/ob6to8/elixir-mind/pull/134) — Intake Zornek's AI-drift article + LocalCents standards; ratify elixir-coding-standards policy and three new guardrails *(2026-07-23)*
 
 - intake: AI drift guardrails and Elixir coding conventions

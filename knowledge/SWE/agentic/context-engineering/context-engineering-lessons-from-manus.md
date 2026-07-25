@@ -444,3 +444,47 @@ Currency-check sources, researched 2026-07-25:
   <https://sacra.com/c/manus/>
 - AI21, "Attention was never enough: Tracing the rise of hybrid LLMs" —
   <https://www.ai21.com/blog/rise-of-hybrid-llms/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b4440a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-25-manus-context-engineering-intake-and-currency-check (2026-07-25)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:b4440a`]**
+
+Pushed. Here's what landed.
+
+**Your question about the "analysis" skill**
+
+There isn't one — that's a conflation of three things:
+
+- **`/summarize-technical`** is the skill for technical articles. It produces a three-part layered breakdown: plain-language summary → key terms → technical summary reusing those terms. `/intake` calls it automatically for substantial technical sources.
+- **`type: analysis`** is a *document type* (not a skill) for point-in-time evaluations under `meta/analysis/` — a question investigated against evidence, yielding a recommendation.
+- **`/elaborate`** is the phrase-scale sibling: it unpacks one technical mouthful rather than a whole document.
+
+For an aging assessment there's also an established in-bundle pattern I followed rather than inventing one: a **`## 2026 currency check`** section inside the reference doc itself, as used in [effective-context-engineering-for-agents](https://ob6to8.github.io/elixir-mind/knowledge/SWE/agentic/agentic-loop/effective-context-engineering-for-agents.html).
+
+**What I filed**
+
+[**context-engineering-lessons-from-manus.md**](https://github.com/ob6to8/elixir-mind/blob/claude/article-intake-aging-analysis-t4nwxp/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md) (`em:b4440a`, `type: reference`), promoted from the survey-tier bookmark row you'd already parked.
+
+One framing note: rather than reproduce the article with insertions, I wrote the walkthrough as original distilled prose covering all six lessons with every term defined inline at first use — which is what the brain's own "capture the knowledge, cite the source" rule requires anyway, and keeps us clear of reproducing the source. Short quotes only where Ji's exact coinage matters; both URLs cited.
+
+**Currency check (researched today, 12 months on).** The headline: nothing refuted, four lessons unmodified, but two moved.
+
+- **Lesson 2 ("mask, don't remove") is the big one.** Its rule was *never mutate the tool array mid-loop*. Anthropic's Tool Search Tool (Nov 2025) with `defer_loading` does exactly the forbidden thing — ~85% fewer tool-definition tokens, MCP evals 49%→74% (Opus 4) and 79.5%→88.1% (Opus 4.5). The reconciliation is the interesting part: deferred loading *appends* definitions instead of rewriting the prefix, so it honors Ji's real invariant while breaking his literal instruction. Read it today as "never *edit* what the cache has seen." This session runs deferred tool loading, so the demonstration is right here.
+- **Lesson 5 ("keep the wrong stuff in") is genuinely qualified** — it's in direct tension with compaction. Current consensus: keep failures *verbatim while task-relevant*, retire once resolved. "Verbatim" is load-bearing — paraphrasing a concrete error string destroys the agent's ability to match on it.
+- Lesson 3 is the most vindicated (Memory Tool, markdown-file convergence); its SSM speculation is playing out only as *hybrid* attention/state-space architectures, not file-native agents. Lesson 4 became a product feature. Lesson 6 held, but the field's fix shifted from serialization noise to subagent isolation.
+
+**Glossary**
+
+**19 new entries** — the brain turned out to have a real hole in core LLM-plumbing vocabulary (no `context window`, no `context engineering`, no `fine-tuning`): kv-cache hit rate, prefix caching, logit masking, response prefill, context window, lost-in-the-middle, recitation, context offloading/isolation/compaction, deferred tool loading, error recovery, few-shot prompting, state-space model, deterministic serialization, vLLM, context engineering, fine-tuning, in-context learning.
+
+**5 merged** with new citations and cross-links: kv-cache, function calling, append-only, agent memory, context rot.
+
+Gates all clean — `verify`, `glossary --materialize`, `route_tags`, `registry`, `contract`. Dedup-probe plain recall unchanged at 5/14, no regression; no gold row harvested since the intake carried a URL rather than a subject phrasing in your words.
+
+No PR opened — say the word (or `/create-pull-request`) if you want one.
