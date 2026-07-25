@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-07-25; verbatim retained
 tags: [meta, thread, journal, skill, namespaces, agent-memory, code-understanding]
 timestamp: 2026-07-25
 session: https://claude.ai/code/session_013FPGb51cx8ugwyVpEPGuGQ
+pr: 137
 ---
 
 # 2026-07-25-journal-skill-and-first-entry
