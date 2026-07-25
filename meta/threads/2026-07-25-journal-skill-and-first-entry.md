@@ -54,7 +54,11 @@ argument was fleshed out as the
 which found the repo's existing doctrines (intent-is-the-source,
 comprehension-of-generated-code) already held the adjacent ground. The operator
 also noted convergence on the journal-as-counter-practice point ("hinging on
-the definition of 'for me'").
+the definition of 'for me'"). A final round turned an operator flag on the new
+doctrine's in-body source acknowledgement into the
+[provenance-lives-in-metadata policy](/meta/policy/provenance-lives-in-metadata.md)
+(bodies and index glosses never restate sourcing the frontmatter records;
+load-bearing content links stay), and the round's docs were swept to conform.
 
 ## Routing
 
@@ -66,6 +70,7 @@ the definition of 'for me'").
 | Markdown→database crossing criteria | closed | [derived-views doctrine](/meta/doctrine/derived-views-stay-disposable.md) | - |
 | Brain-level recitation experiment | open | [recitation eval](/meta/evals/priorities-recitation-vs-harness-reminders.md) | Build the A/B instrument and run it (eval is `status: proposed`) |
 | Depth of code understanding | closed | [depth-of-code-understanding analysis](/meta/analysis/depth-of-code-understanding.md) | - |
+| Source acknowledgement redundant with metadata | closed | [provenance-lives-in-metadata policy](/meta/policy/provenance-lives-in-metadata.md) | - |
 
 ## User
 
@@ -184,3 +189,17 @@ All three insights are now persisted, and folding into existing structure turned
 **Code understanding → analysis: [How deep must code understanding go?](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/analysis/depth-of-code-understanding.md)** Not a `note` (too argued) and not doctrine (it's a judgment, not a direction) — and `meta/analysis` already holds exactly this genre of domain reasoning. The folding here was the real find: two standing doctrines already held the adjacent ground. [Intent is the source](https://ob6to8.github.io/elixir-mind/meta/doctrine/intent-is-the-source.html) says opacity is earned by the oracle; the oracle-trust depth rule turns out to be its operator-side application — what oracle coverage buys the artifact (permission to become invisible) is the same thing it buys you (permission to skim). And [comprehension of generated code](https://ob6to8.github.io/elixir-mind/meta/doctrine/comprehension-of-generated-code.html) sets the floor skimming rights never cross. The analysis fleshes out the full argument: the industry debate, why contracts leak, the per-module depth rule, invariants as the only intermediate layer both natural-language-adjacent and machine-checkable (your policy+gate stack as existence proof), the code-as-anchor inversion — and it keeps genuinely open the one question your entry leaves open, whether the layer above code can ever be the *only* authored layer.
 
 The thread doc is extended with these exchanges and its routing ledger re-pointed: the markdown→database strand closed into the doctrine, the recitation strand open and routed to the eval (dangling on building the instrument), code understanding closed into the analysis. All of it ships in PR #137.
+
+## User
+
+in derived views stay disposable, it says "No contrived experiments (the operator's anti-contrivance principle from the first journal entry):" - i would like to leave explicit acknowledgement of source out of all documents when it is redundant with the meta-data, in this case being the thread doc. how to persist this?
+
+## Assistant
+
+Persisted as policy. This is an editorial rule about how agents compose documents — exactly what `meta/policy/` holds and `CLAUDE.md` compiles in — and the contract's own anti-drift principle applies: a recurring agent miss is fixed by updating the policy and recompiling, never only in the offending doc.
+
+Filed as [Provenance lives in metadata, not body prose](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/policy/provenance-lives-in-metadata.md) (filing section, order 10; contract recompiled). The rule: when frontmatter — `provenance`, `attribution` and its `from` back-links — already records where content came from, the body and index glosses must not restate it. The carve-out is the load-bearing citation, with a one-line test: **does the sentence lose meaning, or only credit, if the reference is removed?** Credit-only references belong in frontmatter; content references stay as plain cross-links, without acknowledgement framing. The rationale the doc carries: acknowledgement prose is a shadow copy of the attribution record — unchecked where the metadata is machine-verified, stale-prone as docs are revised, and a leak of record-layer content into the knowledge layer. Thread docs are exempt (they *are* the record), as are the frontmatter fields themselves.
+
+Then swept this round's docs against it: the doctrine's "(the operator's anti-contrivance principle from the first journal entry)" is gone — the sentence now just states the rule; the doctrine and analysis index glosses dropped their "distilled from / fleshed out from" tails; the *synthesis by proxy* glossary body lost its "the operator's first journal entry diagnosed" lead-in; and *recitation*'s "the 2026-07-25 session's open question" now reads as a plain cross-link to the eval that tracks the question. Kept, deliberately: the analysis's and eval's links to the journal entry where they engage its argument as content — those fail the test in the right direction.
+
+Committed and pushed to PR #137; gates green.

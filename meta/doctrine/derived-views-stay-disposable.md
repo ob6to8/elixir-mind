@@ -41,10 +41,9 @@ makes it an explicit, operator-ratified decision.
 
 ## Crossing signals to watch
 
-No contrived experiments (the operator's anti-contrivance principle from the
-[first journal entry](/journal/2026-07-25.md)): the tradeoff is learned by
-watching for the first real query the grep-plus-generated-index pattern cannot
-express, not by building a database to have built one. The signals:
+No contrived experiments: the tradeoff is learned by watching for the first
+real query the grep-plus-generated-index pattern cannot express, not by
+building a database to have built one. The signals:
 
 - **Concurrent writers** — multiple agents mutating shared state where
   file-level git merge stops being a sufficient concurrency model.
