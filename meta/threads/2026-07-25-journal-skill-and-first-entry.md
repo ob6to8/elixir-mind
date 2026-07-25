@@ -34,10 +34,27 @@ follow-up on its four questions. A second exchange ratified three things: the
 a requested agent response is **persisted verbatim beneath the entry** under a
 marked `## Response — Claude (date)` heading, operator voice above, agent voice
 below, never interleaved. The skill, the skills-registry policy, and
-`journal/2026-07-25.md` were updated accordingly. The session closed with
-`/create-pull-request` (this capture). Open strands the response named but did
-not resolve: the markdown→database crossing criteria, and the
-brain-level-recitation experiment.
+`journal/2026-07-25.md` were updated accordingly. `/create-pull-request` then
+captured the session and opened **PR #137**.
+
+The session continued past the capture (this render was extended in place, per
+the update-in-place rule). A follow-up round defined *oracle* inline in the
+journal response's code-understanding section at operator request. The operator
+then directed persisting the response's insights — folding into existing
+documents where possible — and the round resolved the response's three strands:
+the markdown→database line became the
+[derived views stay disposable](/meta/doctrine/derived-views-stay-disposable.md)
+doctrine (the storage-layer application of intent-is-the-source); the
+recitation experiment became the first `status: proposed` entry in the existing
+`meta/evals/` genre
+([priorities recitation vs harness task reminders](/meta/evals/priorities-recitation-vs-harness-reminders.md)),
+per the operator's evals-generally direction; and the code-understanding
+argument was fleshed out as the
+[depth-of-code-understanding analysis](/meta/analysis/depth-of-code-understanding.md),
+which found the repo's existing doctrines (intent-is-the-source,
+comprehension-of-generated-code) already held the adjacent ground. The operator
+also noted convergence on the journal-as-counter-practice point ("hinging on
+the definition of 'for me'").
 
 ## Routing
 
@@ -46,8 +63,9 @@ brain-level-recitation experiment.
 | /journal skill + journal/ non-bundle namespace | closed | [skills-registry policy](/meta/policy/skills-registry.md) | - |
 | First journal entry (Manus, markdown memory, code understanding) | closed | [journal/2026-07-25.md](/journal/2026-07-25.md) | - |
 | Response persistence beneath entries (operator/agent voice delineation) | closed | [journal SKILL.md](/.claude/skills/journal/SKILL.md) | - |
-| Markdown→database crossing criteria | open | [journal/2026-07-25.md](/journal/2026-07-25.md) | What is the first query the grep-plus-generated-index pattern can't express? |
-| Brain-level recitation experiment | open | [journal/2026-07-25.md](/journal/2026-07-25.md) | Does reciting the brain's own priorities change agent behavior beyond the harness's task reminders? |
+| Markdown→database crossing criteria | closed | [derived-views doctrine](/meta/doctrine/derived-views-stay-disposable.md) | - |
+| Brain-level recitation experiment | open | [recitation eval](/meta/evals/priorities-recitation-vs-harness-reminders.md) | Build the A/B instrument and run it (eval is `status: proposed`) |
+| Depth of code understanding | closed | [depth-of-code-understanding analysis](/meta/analysis/depth-of-code-understanding.md) | - |
 
 ## User
 
@@ -120,3 +138,49 @@ All three points are handled, committed as `5316cf1`, and pushed.
 Today's entry at [`journal/2026-07-25.md`](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/journal/2026-07-25.md) now carries the full two-part response (editorial read + substantive follow-up) beneath your entry, verbatim as delivered — minus the chat-logistics paragraphs (the build report and the todo/promote offers), which were conversation about the session rather than response to the entry. `mix brain.verify` and the format/contract gates are green.
 
 The branch has two commits and no PR yet — say the word (or `/create-pull-request`) when you want it opened.
+
+## User
+
+*(/create-pull-request invoked — slash-command wrapper stripped; the skill ran capture, glossary, attribution stamping, dev-history regeneration, commit, push, and opened PR #137, then stamped `pr: 137` into this doc.)*
+
+## User
+
+define oracle in your "depth of code understanding" section
+
+## Assistant
+
+"Oracle" there is the software-testing term — I'll define it inline in the persisted response section of the journal entry (with a glossary link; the term already has an entry at `test-oracle.md`), and leave the thread doc untouched since its render is the frozen verbatim record of what was actually said in chat.
+
+Done — pushed as `cd2ba66`, so it ships inside PR #137.
+
+The definition, as it now reads in the entry's response section: an **oracle** is a source of ground truth, *independent of the system under test*, that decides whether an output is correct. In your paragraph's context, the test suite is the oracle — "enough tests should prove the integrity of the function" is really the claim "my oracle is strong enough that I don't need to read the implementation." That's why the depth rule hinges on it: your license to skim a module is exactly as good as your trust in that module's oracle, and the trust rests on the oracle's *independence* (a test written by copying the implementation's logic verifies nothing) and *coverage* (the contract behaviors it actually exercises).
+
+The first use of "oracle" in `journal/2026-07-25.md` now links to the existing glossary entry ([test oracle](https://ob6to8.github.io/elixir-mind/beliefs/glossary/test-oracle.html), `em:3d4be4`) with the appositive definition inline, so the section reads self-contained. I left the thread doc's copy of the response untouched — that render is the frozen verbatim record of what was said in chat, per the capture policy; the journal is where the living version resides.
+
+## User
+
+ftr, for point 3 we are saying the same thing in different ways, hinging on the definition of "for me"
+
+i would like to find a way to persist your follow up insights and observations. would like to prioritize folding into existing documents where possible, creating new ones if necessary
+
+re: On the markdown→database line
+this sounds to me like a sort of analysis that leads to a guideline to keep in mind for future dev. does that become an analysis? a doctrine? or..?
+
+re: "measure whether reciting the brain's own priorities changes agent behavior beyond what the harness's task reminders already achieve."
+this seems to be an eval that would naturally emerge out of the operations of this repo. ideally i would like to see our work move towards evals generally and whenever possible. my thoughts are to create a new entry in meta/evals for this. thoughts?
+
+re "code understanding" - would like to see this fleshed out more and persisted, what type would you suggest?
+
+## Assistant
+
+Point 3 taken — "for me" is the hinge, and we do converge: the practice only works if the synthesis is yours; my role in the journal loop is stenographer and sparring partner, not synthesizer.
+
+All three insights are now persisted, and folding into existing structure turned out to be the story of the round — more of it existed than the response knew. What I filed, and why each type:
+
+**Markdown→database line → doctrine: [Derived views stay disposable](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/doctrine/derived-views-stay-disposable.md).** Your instinct that it's "an analysis that leads to a guideline" maps exactly onto the vocabulary's split: an `analysis` is a point-in-time judgment on a question, and there's nothing to evaluate until a crossing-signal candidate actually appears — when one does, *that* investigation becomes the analysis. What deserves persisting today is the guideline itself: a standing direction that informs future judgment without prescribing an enforceable action, which is the definition of `doctrine`. It also isn't freestanding — it's the storage-layer application of [intent is the source](https://ob6to8.github.io/elixir-mind/meta/doctrine/intent-is-the-source.html): derived views (registry, search index, a future SQLite cache) are regenerable caches of the canonical file layer exactly as generated code is a regenerable cache of intent. The doc carries the line (crossed the day a fact lives only in the database), the three crossing signals to watch, and your anti-contrivance principle; the [vector-DB "not yet" analysis](https://ob6to8.github.io/elixir-mind/meta/analysis/vector-db-recall-for-the-scaling-bundle.html) is cited as its precedent case.
+
+**Recitation experiment → `meta/evals`, agreed — and the genre already exists.** It was created two weeks ago for the dedup-recall probe, self-described one notch narrower than this needs ("gold sets a mix task re-scores"). Rather than a parallel genre, I filed [Priorities recitation vs harness task reminders](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/evals/priorities-recitation-vs-harness-reminders.md) as the genre's first `status: proposed` eval and widened the index blurb to admit designed-but-not-yet-built instruments. The doc carries the full design: question, hypothesis, A/B method (a hook injecting the active plan's goal + `/priorities` top-3 vs baseline harness behavior, matched sessions), candidate metrics (open-strand pickup rate, first-action alignment with the top-3, operator redirections, drift incidents), and the falsification condition — no measurable difference means the harness's reminders suffice and the re-engineering worry was right, a finding that retires the question cheaply. Your "evals generally and whenever possible" direction has prior art here too: the [harness-and-ledger analysis](https://ob6to8.github.io/elixir-mind/meta/analysis/harness-and-ledger-as-eval-infrastructure.html) argued the routing ledger and priorities machinery double as eval infrastructure, so evals emerge from operations rather than being built beside them.
+
+**Code understanding → analysis: [How deep must code understanding go?](https://github.com/ob6to8/elixir-mind/blob/claude/journal-skill-repo-75e4lt/meta/analysis/depth-of-code-understanding.md)** Not a `note` (too argued) and not doctrine (it's a judgment, not a direction) — and `meta/analysis` already holds exactly this genre of domain reasoning. The folding here was the real find: two standing doctrines already held the adjacent ground. [Intent is the source](https://ob6to8.github.io/elixir-mind/meta/doctrine/intent-is-the-source.html) says opacity is earned by the oracle; the oracle-trust depth rule turns out to be its operator-side application — what oracle coverage buys the artifact (permission to become invisible) is the same thing it buys you (permission to skim). And [comprehension of generated code](https://ob6to8.github.io/elixir-mind/meta/doctrine/comprehension-of-generated-code.html) sets the floor skimming rights never cross. The analysis fleshes out the full argument: the industry debate, why contracts leak, the per-module depth rule, invariants as the only intermediate layer both natural-language-adjacent and machine-checkable (your policy+gate stack as existence proof), the code-as-anchor inversion — and it keeps genuinely open the one question your entry leaves open, whether the layer above code can ever be the *only* authored layer.
+
+The thread doc is extended with these exchanges and its routing ledger re-pointed: the markdown→database strand closed into the doctrine, the recitation strand open and routed to the eval (dangling on building the instrument), code understanding closed into the analysis. All of it ships in PR #137.
