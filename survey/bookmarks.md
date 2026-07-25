@@ -293,7 +293,7 @@ re-engages.
 - Open-source infrastructure for long-running AI teammates with event-sourced memory, isolated execution, and multi-platform integration capabilities.
 
 ### [Context Engineering for AI Agents: Lessons from Building Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `ai-agent-optimization` `prompt-engineering` `context-management` `llm-performance` `agentic-systems`
+- **Added:** 2026-07-23 · **Status:** promoted → [Context engineering for AI agents — lessons from building Manus](/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md) (2026-07-25) · **Tags:** `ai-agent-optimization` `prompt-engineering` `context-management` `llm-performance` `agentic-systems`
 - Practical strategies for optimizing AI agent systems through context design, including KV-cache optimization, tool masking, file system usage, and error handling.
 
 ### [AI Evals For Engineers & PMs by Hamel Husain and Shreya Shankar on Maven](https://maven.com/parlance-labs/evals)
