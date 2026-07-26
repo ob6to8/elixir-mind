@@ -14,6 +14,12 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #140](https://github.com/ob6to8/elixir-mind/pull/140) — Ratify living-text-is-present-tense policy; trim retrospective narration *(2026-07-26)*
+
+- Ratify living-text-is-present-tense policy; trim retrospective narration
+- Capture the living-text-present-tense session; glossary its terms
+- Stamp pr: 140 into the living-text-present-tense thread doc
+
 ## [PR #139](https://github.com/ob6to8/elixir-mind/pull/139) — Explain the session-start.sh core.hooksPath gate; plan the machinery reference *(2026-07-26)*
 
 - Plan: repo-map and machinery reference (proposed)
