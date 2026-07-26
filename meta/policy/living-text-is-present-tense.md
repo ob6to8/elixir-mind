@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, deprecated-wording-docs session"
   why: "operator noticed 'this used to…' narration accreting in living code and docs and asked whether a policy should stop it; ratified as the inline-narration generalization of retire-hand-kept-logs"
+  from: [/meta/threads/2026-07-26-living-text-present-tense-policy.md]
 ---
 **Living text states the present; git narrates the past.** A **living surface** —
 code, code comments, operational skills, reference docs, the compiled contract —

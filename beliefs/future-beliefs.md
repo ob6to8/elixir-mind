@@ -59,7 +59,10 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   structure of the move is recorded in the
   [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md).
 - **An artifact states what it *is*, not what it replaced or changed from — the
-  commit graph is the change-narrative layer.** A document should read as a
+  commit graph is the change-narrative layer.** Formalized 2026-07-26 as the
+  policy [living text states the present; git narrates the past](/meta/policy/living-text-is-present-tense.md),
+  which carries the rule and its carve-outs for living surfaces (code, comments,
+  operational skills, reference docs, the compiled contract). A document should read as a
   standing statement of its current shape and rationale. It must not narrate its
   own genesis or supersession: "this retires X", "previously Y", "reframed from
   Z", "formerly the … slogan" all belong in the commit message and git history —
@@ -75,9 +78,9 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   first draft of the fit-each-layer doctrine did exactly that).
 
   _Note — this belief is itself an **ought** (a prescriptive/normative rule), not
-  a descriptive observation like the entries above it. So when formalized it
-  becomes a [`doctrine`](/meta/doctrine/index.md) (or a `policy` implementing
-  one), never a `note`/`concept` — see [normative conclusion](/beliefs/glossary/normative-conclusion.md)
+  a descriptive observation like the entries above it, so it formalized as a
+  `policy` implementing the direction merge-strategy already carries, never as a
+  `note`/`concept` — see [normative conclusion](/beliefs/glossary/normative-conclusion.md)
   vs. [descriptive premise](/beliefs/glossary/descriptive-premise.md). The
   descriptive premise underneath it: the commit graph already records what
   changed, so in-artifact change-narration is duplicative and staleness-prone._
@@ -144,3 +147,39 @@ That's the right challenge — a per-session promise dies with this session, so 
 **[`em:1b3c79`]**
 
 Both done, committed and pushed. **1. Belief captured** — *A rule over off-repo output must be made correct in the tooling it mandates, not merely asserted in prose — because it cannot be CI-gated.* Grounded in the 2026-07-22 link bug as its proof case, flagged as an *ought* destined for doctrine, and linked as the sibling of the "artifact states what it is" belief — both cases where the durable lever is structural (tool, commit graph), not exhortation. **2. Policy demoted the hand-mapping** — `response-resource-links` now leads with "Get the URL from the tool, never by hand" and reframes `P.md → …P.html` as "what the site does at build time, not a recipe to apply in a response." The trap I fell into is now labeled as the trap, in the compiled contract every session reads.
+
+### 2026-07-26-living-text-present-tense-policy (2026-07-26)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:1b3c79`]**  (co-feeds: `meta/policy/living-text-is-present-tense.md`)
+
+**What the brain already ratified**
+
+The closest ratified rule is **[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)** (done, 2026-07-11) resting on **[merge-strategy](/meta/policy/merge-strategy.md)**: *the true-merge commit graph is the single provenance layer; the change narrative belongs in commit messages.* The operator's own ratifying argument was exactly yours:
+
+> *"the only true guarantee is one source of truth… why is git history not enough? If we can't define [the log's unique value] discretely, better to remove the liability."*
+
+And its "Demonstrated failure avenue" is precisely the risk here:
+
+> *Stale-but-greppable prose gets retrieved and trusted as current state.*
+
+That's the whole hazard of a comment like *"This hook used to also emit the digest…"* — it's a miniature hand-kept changelog embedded in a comment, the same liability the log purge removed, just at a smaller scale and in a spot the purge didn't sweep.
+
+So: **the principle is ratified, but it was scoped to `log.md` files, not to retrospective narration living inside code comments and doc prose.** There is no dedicated policy or doctrine saying "don't narrate deprecated behavior in living text." What you're noticing is that principle's logic reaching past the specific artifacts it was written against.
+
+---
+
+**[`em:1b3c79`]**
+
+**One caveat before a blanket sweep**
+
+Not all "used to" wording is pure history. There's a real distinction:
+
+- **Retrospective narration** — "This hook *used to also emit* the session-init digest." This is the changelog fragment. Git owns it; drop it.
+- **Present-tense pointer** — "the appraisal *now lives behind* `/priorities`." This tells a present reader *where the functionality went*, which git history does *not* surface at a glance. That's load-bearing and worth keeping.
+
+The hook comment mixes both. Trimmed, it stays useful without the archaeology:
+
+
+Same information a reader needs, minus the "used to."

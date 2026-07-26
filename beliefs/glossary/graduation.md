@@ -2,12 +2,12 @@
 id: em:0c8532
 type: concept
 title: graduation
-description: A document or work item earning promotion up a level — a glossary term relocating into the domain taxonomy (sense 1), a grounded claim becoming a concept (sense 2), or a deferred strand or analysis residue becoming a plan (sense 3).
+description: A document or work item earning promotion up a level — a glossary term relocating into the domain taxonomy (sense 1), a grounded claim becoming a concept (sense 2), a deferred strand or analysis residue becoming a plan (sense 3), or a parked future-belief becoming a policy or doctrine (sense 4).
 provenance: "Agent-distilled glossary definition; coined by the /add-to-glossary skill"
 verified: false
 tags: [glossary, taxonomy, lifecycle]
 sense: repo
-timestamp: 2026-07-21
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-10T23:09:18+00:00
   channel: glossary
@@ -17,7 +17,7 @@ attribution:
 
 # graduation
 
-A document earning promotion up a level once it has been earned. Two senses:
+A document earning promotion up a level once it has been earned. Four senses:
 
 1. **Glossary term → taxonomy.** A glossary term that has outgrown its entry —
    accumulating senses, claims, or citations that belong in the domain tree —
@@ -41,8 +41,14 @@ A document earning promotion up a level once it has been earned. Two senses:
    residue) is promoted into a `type: plan` doc once the operator commissions
    it — a *new* plan citing its source as decision record, never a retype of
    the source. The promotion is what resolves the dangling strand.
+4. **Belief → governance artifact.** An entry parked in
+   [future beliefs](/beliefs/future-beliefs.md) — the holding pen for true
+   observations "not yet formalized" — becomes a `policy` or `doctrine` once it
+   is examined and ratified, the choice between them following the entry's own
+   is/ought character. The holding-pen entry is kept and marked formalized,
+   pointing at the artifact, so the staging record and its outcome stay linked.
 
-*Seen in:* [2026-07-16 harness-plan graduation thread](/meta/threads/2026-07-16-graduate-swarm-eval-harness-plan.md) (sense 3: the swarm-eval harness strand → the [harness plan](/meta/plans/inkling-beam-swarm-eval-harness.md)), [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md), [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md), [2026-07-21 multi-model dev environment thread](/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md) (the graduation criterion as role-not-size: a term graduates when it stops being a lookup and becomes a subject that wants sections)
+*Seen in:* [2026-07-16 harness-plan graduation thread](/meta/threads/2026-07-16-graduate-swarm-eval-harness-plan.md) (sense 3: the swarm-eval harness strand → the [harness plan](/meta/plans/inkling-beam-swarm-eval-harness.md)), [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [2026-07-10 add-to-glossary thread](/meta/threads/2026-07-10-add-to-glossary-skill-and-pr-wiring.md), [2026-07-05 OKF bootstrap thread](/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md), [2026-07-09 flows-genre thread](/meta/threads/2026-07-09-flows-genre-and-scenario-testing.md), [2026-07-09 news-inbox thread](/meta/threads/2026-07-09-home-page-news-filter-inbox.md), [2026-07-09 testing-methodology thread](/meta/threads/2026-07-09-testing-methodology-types-and-cb-epistemic-overlay.md), [2026-07-21 multi-model dev environment thread](/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md) (the graduation criterion as role-not-size: a term graduates when it stops being a lookup and becomes a subject that wants sections), [2026-07-26 living-text present-tense policy thread](/meta/threads/2026-07-26-living-text-present-tense-policy.md) (sense 4: the "an artifact states what it *is*" future-belief → the [living-text-is-present-tense policy](/meta/policy/living-text-is-present-tense.md))
 
 ## Thread excerpts — route-tagged log
 
