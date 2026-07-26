@@ -16,3 +16,7 @@ to distill and file it, then records the graduation on the row.
 
 - [bookmarks](/survey/bookmarks.md) — the survey register: pending dropzone + surveyed
   entries. Shards by top-level domain (e.g. `survey/ai.md`) only if it grows large.
+- [channels](/survey/channels.md) — the source register: the channels the brain draws
+  from (blogs, papers, vendor docs, repositories, video, forums), each listing the
+  documents ingested from it. Where `bookmarks` tracks individual links awaiting
+  intake, `channels` tracks the sources behind them and what each has produced.

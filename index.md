@@ -18,7 +18,8 @@ progressive disclosure. Agents and humans start here and navigate down.
   summary and topical tags, awaiting full intake. Processed by
   [`/bookmarks`](/.claude/skills/bookmarks/SKILL.md), promoted to filed references by
   [`/intake`](/.claude/skills/intake/SKILL.md); a non-bundle namespace (surveyed, not
-  distilled).
+  distilled). Alongside it, [channels](/survey/channels.md) registers the *sources*
+  those links come from and the documents ingested from each.
 - [journal](/journal/index.md) — the operator's daily journal: dated, first-person
   entries on the repo's development and its subject matter, kept in the operator's
   voice. Filed by [`/journal`](/.claude/skills/journal/SKILL.md); a non-bundle
