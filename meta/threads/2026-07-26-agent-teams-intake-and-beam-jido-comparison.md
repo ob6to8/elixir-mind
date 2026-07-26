@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable), 2026-07-26; verbatim retained m
 tags: [meta, thread, intake, agent-teams, claude-code, beam, jido, multi-agent, analysis]
 timestamp: 2026-07-26T00:00:00Z
 session: https://claude.ai/code/session_015GhCftsnD7iKM5HMkRVoHW
+pr: 138
 ---
 
 # 2026-07-26-agent-teams-intake-and-beam-jido-comparison
