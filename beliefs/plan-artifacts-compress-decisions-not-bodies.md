@@ -40,3 +40,30 @@ Acted on as the granularity rule of the
 - The originating session's thread doc under `meta/threads/` (captured at PR
   time; the route-tagged excerpt log below aggregates the relevant passages once
   materialized).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a96688">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-26-structured-plan-bodies-and-belief-layer (2026-07-26)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:a96688`]**  (co-feeds: `em:1eebdf em:0c4913`)
+
+Two boundaries matter. This is **outline-level pseudocode, not full pseudocode**: Dex's adjacent post makes the constraint explicit — "a spec that is sufficiently detailed to generate code with a reliable degree of quality is roughly the same length and detail as the code itself — so don't review those things." The artifacts compress the *decisions* (interfaces, layout, call order) while leaving function bodies to the agent. And it's not prose-free: the artifacts sit inside a narrative doc; they replace the *ambiguous* part of prose, not the rationale.
+
+---
+
+**[`em:a96688`]**  (co-feeds: `em:1eebdf em:0c4913 em:6c7e85`)
+
+add the following to the belief list, with a link to the dex article as provenance:
+""a spec that is sufficiently detailed to generate code with a reliable degree of quality is roughly the same length and detail as the code itself" and then a belief that depends on that belief: "so don't review those things.""
+also: "every one of them is a decision you'd otherwise be making implicitly during code review" (define "every one")
+"The artifacts compress the decisions (interfaces, layout, call order) while leaving function bodies to the agent" - provenance will be this thread (does this mean we should open the pull request now to get the thread doc to tie all these to for provenance?
+
+---
+
+**[`em:a96688`]**  (co-feeds: `em:1eebdf em:0c4913 em:6c7e85`)
+
+- **Belief layer ratified and seeded.** Your "add to the belief list" instruction was the ratification the [belief-layer plan](https://github.com/ob6to8/elixir-mind/blob/claude/pseudocode-agent-plans-n80bua/meta/plans/belief-type-and-beliefs-namespace.md) was waiting on, so I executed its build order: `belief` type in the vocabulary (with the epistemic/teleological filing test), [`/beliefs/`](https://github.com/ob6to8/elixir-mind/blob/claude/pseudocode-agent-plans-n80bua/beliefs/index.md) rewritten as the layer's home, and a verifier regression test pinning that `verified` on a `belief` is rejected. Four seed beliefs, each quoting its source verbatim: the Dex spec-length thesis (`em:1eebdf`), **"so don't review those things"** (`em:0c4913`, carrying `depends_on: [em:1eebdf]` — the dependency you specified), the wsff quote with **"every one of them" resolved in the body** to its referent (call-stack trees, file-tree diffs, type signatures — `em:6c7e85`), and my synthesis about compressing decisions (`em:a96688`).

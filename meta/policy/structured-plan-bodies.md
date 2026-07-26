@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator ratified adopting the structured plan-body format after reviewing the wsff.md program-design method and the Mulroy/Horthy/Jain posts on pseudocode plans"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 **Encode a plan's shape as structured artifacts; keep prose for the why.** When
 a plan's subject has structure — code, a skill's control flow, the bundle tree,

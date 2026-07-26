@@ -11,6 +11,7 @@ attribution:
   when: 2026-07-09T23:11:18+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 **Persist plans; don't leave them in the conversation.** A design spec or
 implementation plan is a durable record of *decisions and their rationale* — the

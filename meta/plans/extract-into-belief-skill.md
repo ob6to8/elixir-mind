@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator commissioned the skill and directed authoring it as a structured plan for fresh-context execution, dogfooding the structured-plan-bodies format"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 
 # A /extract-into-belief skill: decompose compound statements into atomic beliefs

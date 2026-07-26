@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator ratified making verbatim-quotation-with-citation a standing rule after flagging an exemplary instance in a delivered response"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 **Quote primary sources verbatim; mark the boundary between quotation and
 synthesis.** When a delivered response or a document body leans on what a

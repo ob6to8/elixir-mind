@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator directed a plan to retrofit all existing plans to the newly ratified structured format, executed in fresh contexts as format dogfooding"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 
 # Retrofit active plans (and flow docs) to structured bodies

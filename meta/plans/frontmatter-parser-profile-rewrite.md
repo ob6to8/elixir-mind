@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session on the data-format question"
   why: "operator commissioned the plan after the assessment identified the hand-rolled frontmatter parser as the bundle's most likely first casualty of growth"
-  from: [/meta/threads/2026-07-20-storage-format-verdict-and-frontmatter-parser-plan.md]
+  from: [/meta/threads/2026-07-20-storage-format-verdict-and-frontmatter-parser-plan.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 
 # Replace the frontmatter parser: strict profile parser + serializer

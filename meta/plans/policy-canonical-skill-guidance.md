@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator directed authoring this plan after the agent agreed decisions belong in policy with skills carrying qualified duplicates"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 
 # Policy-canonical skill guidance: decisions live in policy, skills carry marked duplicates

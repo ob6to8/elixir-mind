@@ -14,6 +14,65 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #141](https://github.com/ob6to8/elixir-mind/pull/141) — version-control audit, workflow tutorial, and the routing/response-format policies *(2026-07-26)*
+
+- Audit the version-control workflow; file the actionable residue
+- Wire local gates in web sessions; allowlist tools; text-first permission rule
+- Add governance-artifact-routing and response-work-report-format policies
+- Capture the version-control-audit session; glossary and stamp its artifacts
+- Stamp pr: 141 into the session's thread doc
+
+## [PR #140](https://github.com/ob6to8/elixir-mind/pull/140) — Ratify living-text-is-present-tense policy; trim retrospective narration *(2026-07-26)*
+
+- Ratify living-text-is-present-tense policy; trim retrospective narration
+- Capture the living-text-present-tense session; glossary its terms
+- Stamp pr: 140 into the living-text-present-tense thread doc
+
+## [PR #139](https://github.com/ob6to8/elixir-mind/pull/139) — Explain the session-start.sh core.hooksPath gate; plan the machinery reference *(2026-07-26)*
+
+- Plan: repo-map and machinery reference (proposed)
+- Capture 2026-07-23 session: tutorial, glossary terms, plan from-stamp
+- Stamp pr: 139 into the 2026-07-23 thread doc
+- Sync with main (#137) and regenerate dev-history
+
+## [PR #137](https://github.com/ob6to8/elixir-mind/pull/137) — Add the /journal skill, journal/ namespace, and first entry (2026-07-25) *(2026-07-26)*
+
+- add the /journal skill and journal/ namespace; file the first entry (2026-07-25)
+- persist agent responses beneath journal entries; append the 2026-07-25 response
+- capture the journal-skill session; glossary its terms; stamp attribution
+- stamp pr: 137 into the session thread doc
+- define oracle inline in the journal response's code-understanding section
+- persist the journal response's insights: doctrine, proposed eval, analysis
+- ratify provenance-lives-in-metadata policy; sweep the round's docs
+- ratify negate-only-explicit-cases policy; recast the orphaned negation
+- elaborate the crossing-signal sentence; answer the definition-hierarchy question
+- record definition-hierarchy beliefs; add hub paragraph; file database tutorial
+- glossary the late rounds; stamp the elaboration's from; regen dev-history
+
+## [PR #138](https://github.com/ob6to8/elixir-mind/pull/138) — Intake Claude Code agent teams; analyze vs BEAM/Jido 2 *(2026-07-26)*
+
+- Intake Claude Code agent teams; analyze vs BEAM/Jido 2
+- Capture agent-teams intake session; glossary and attribution stamp
+- Stamp pr: 138 into the agent-teams intake thread doc
+
+## [PR #136](https://github.com/ob6to8/elixir-mind/pull/136) — Intake: Manus context-engineering post with 2026 currency check and 20 glossary terms *(2026-07-25)*
+
+- intake Manus context-engineering post with 2026 currency check and 20 glossary terms
+- capture the Manus-intake session and glossary its thread
+- stamp pr: 136 into the session thread doc
+
+## [PR #135](https://github.com/ob6to8/elixir-mind/pull/135) — Capture the dev-history drift session; glossary the terms it used *(2026-07-23)*
+
+- capture: dev-history drift and regeneration-flow session
+- stamp pr: 135 into the session thread doc
+- regenerate flow lineage to include PR #135
+
+## [PR #133](https://github.com/ob6to8/elixir-mind/pull/133) — Fix + prevent dev-history drift: regenerate now, fold into /create-pull-request *(2026-07-23)*
+
+- regenerate meta/dev-history.md from the merge graph
+- fold dev-history regeneration into /create-pull-request; persist the analysis
+- regenerate dev-history after syncing with main (through PR #134)
+
 ## [PR #134](https://github.com/ob6to8/elixir-mind/pull/134) — Intake Zornek's AI-drift article + LocalCents standards; ratify elixir-coding-standards policy and three new guardrails *(2026-07-23)*
 
 - intake: AI drift guardrails and Elixir coding conventions

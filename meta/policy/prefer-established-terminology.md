@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator directed encoding the avoid-bespoke-terminology preference as policy while deciding the flow-genre naming question"
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
 ---
 **Prefer established terminology; coin bespoke terms only when nothing
 established fits.** When naming a genre, a `type`, an artifact, a mix task, or
