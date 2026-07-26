@@ -1,12 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-# Provision the session's toolchain — nothing more. This hook used to also emit
-# the session-init digest (open work + a heuristic top-3) into every session's
-# context; that appraisal now lives behind the on-demand `/priorities` skill
-# (see .claude/skills/priorities/SKILL.md), so the hook's sole job is to ensure
-# the Elixir/OTP toolchain is present and warm so `mix brain.*` — including the
-# priorities skill, the contract compiler, and the test suite — works.
+# Provision the session's toolchain — nothing more. The session-init appraisal
+# (open work + a heuristic top-3) is not emitted here; it lives behind the
+# on-demand `/priorities` skill (see .claude/skills/priorities/SKILL.md). This
+# hook's sole job is to ensure the Elixir/OTP toolchain is present and warm so
+# `mix brain.*` — including the priorities skill, the contract compiler, and the
+# test suite — works.
 #
 # The install is only needed in Claude Code on the web (remote) sessions;
 # local machines are expected to already have Elixir installed.

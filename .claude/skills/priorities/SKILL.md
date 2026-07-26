@@ -6,12 +6,11 @@ description: List the brain's open work as a prioritized appraisal — open issu
 # /priorities — the open-work appraisal
 
 Surface everything the brain has left open and rank it, so a session can decide
-what to work on. This is the on-demand successor to the old SessionStart digest:
-the [session-init digest](/beliefs/glossary/session-init-digest.md) is no longer injected
-automatically at session start — it is produced here, when the operator asks for
-it. Follow the [operating contract](/CLAUDE.md).
+what to work on. The [session-init digest](/beliefs/glossary/session-init-digest.md)
+is produced here, on demand, when the operator asks for it — it is not injected
+into a session's opening context. Follow the [operating contract](/CLAUDE.md).
 
-The engine is unchanged: this skill runs the existing
+The engine: this skill runs the existing
 [`mix brain.session_init`](/lib/elixir_mind/session_init.ex) task, which scans
 four surfaces already kept current by policy and ends in a heuristic top-3. The
 full mechanics — the four sources, the class weights, the `priority:` escape
