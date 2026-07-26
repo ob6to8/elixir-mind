@@ -6,7 +6,7 @@ description: Deliberately re-emitting a task's plan or objective into the tail o
 provenance: "Agent-distilled glossary definition"
 verified: false
 sense: common
-tags: [glossary, context-engineering, agentic-loop, attention, agent-memory]
+tags: [glossary, context-engineering, agentic-loop, attention, agent-memory, terminology]
 timestamp: 2026-07-25
 attribution:
   when: 2026-07-25T00:00:00Z
@@ -27,4 +27,11 @@ serving stack. It directly counters
 long runs, and it is now standard in mainstream coding agents, which maintain
 explicit plan or todo state and rewrite it as work proceeds.
 
-*Seen in:* [Context engineering for AI agents — lessons from building Manus](/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md), <https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus>
+Whether reciting *brain-level* objectives — doctrine, priorities, the active
+plan's intent — adds behavior a harness's mechanical task reminders don't is
+tracked by the
+[priorities-recitation eval](/meta/evals/priorities-recitation-vs-harness-reminders.md);
+this brain's `/priorities` and `mix brain.session_init` are recitation at
+session granularity.
+
+*Seen in:* [Context engineering for AI agents — lessons from building Manus](/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md), <https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus>, [2026-07-25 journal-skill thread](/meta/threads/2026-07-25-journal-skill-and-first-entry.md), [journal 2026-07-25](/journal/2026-07-25.md)

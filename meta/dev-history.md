@@ -14,6 +14,12 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #138](https://github.com/ob6to8/elixir-mind/pull/138) — Intake Claude Code agent teams; analyze vs BEAM/Jido 2 *(2026-07-26)*
+
+- Intake Claude Code agent teams; analyze vs BEAM/Jido 2
+- Capture agent-teams intake session; glossary and attribution stamp
+- Stamp pr: 138 into the agent-teams intake thread doc
+
 ## [PR #136](https://github.com/ob6to8/elixir-mind/pull/136) — Intake: Manus context-engineering post with 2026 currency check and 20 glossary terms *(2026-07-25)*
 
 - intake Manus context-engineering post with 2026 currency check and 20 glossary terms

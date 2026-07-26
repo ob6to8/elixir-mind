@@ -409,6 +409,61 @@ agent session.
 
 _Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
+**Provenance lives in metadata, not body prose.** A document's sourcing is
+already recorded structurally — `provenance` (where the content came from),
+`attribution` (how it entered, including the `from` back-link to its thread) —
+so the body must not restate it. No "from the first journal entry", no
+"distilled from thread X", no "at operator direction" in body prose, and none
+in the `index.md` gloss that lists the doc. The body states the knowledge;
+the metadata states the origin.
+
+- **The test: does the sentence lose meaning, or only credit, if the reference
+  is removed?** A *credit-only* reference is metadata and belongs in
+  frontmatter. A *load-bearing* reference — a citation supporting a claim, the
+  grounding analysis a doctrine is judged against, a document the reader must
+  follow to understand the argument — stays, as a plain cross-link per
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md),
+  without acknowledgement framing around it.
+- **Why.** Acknowledgement prose is a shadow copy of the attribution record:
+  unchecked where the metadata is machine-verified, stale-prone where
+  governance `from` is append-only, and a leak of record-layer content into
+  the knowledge layer (see
+  [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md)).
+  One origin, one home.
+- **Scope.** Bundle documents, governance docs, and their index glosses alike.
+  Thread docs are exempt — they *are* the record, and their narrative sections
+  legitimately speak in terms of who said and did what. Frontmatter fields
+  (`provenance`, `attribution.why`) are the sanctioned home for origin prose
+  and are untouched by this rule.
+
+_Source: [`meta/policy/provenance-lives-in-metadata.md`](/meta/policy/provenance-lives-in-metadata.md)_
+
+**Negate only an explicit case.** A negative statement — "no X", "never Y",
+"not by Z-ing" — is a reference: it points at the case it rules out. It earns
+its place only when that case is **explicit**: raised in the same document, a
+live alternative the reader would otherwise assume, or a standing rule being
+overridden. Absent an explicit case, state the rule positively — an unanchored
+negation is an orphaned reference, gesturing at an argument the reader cannot
+see.
+
+- **The test: can the reader point at what is being negated?** If the case is
+  named nearby, assumed by default, or contract-bound elsewhere (link it), the
+  negation is anchored and does real work. If answering "who said anything
+  about that?" requires context outside the document, recast the sentence as
+  the positive rule.
+- **Negations fossilize.** An anchored negation loses its anchor when a later
+  edit removes the referent — a provenance sweep, a trim, a refactor — and the
+  stump reads as an argument with a missing party. An edit that removes a
+  negation's referent must recast the negation in the same motion, not leave
+  the stump.
+- **Scope.** Document bodies, index glosses, and agent responses alike —
+  wherever the agent composes prose. Thread renders are exempt (verbatim
+  record). Anchored negations remain fully legitimate and load-bearing —
+  contrast pairs ("cache, never know"), guardrails negating a named temptation,
+  and overrides of stated defaults are the pattern working as intended.
+
+_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -645,6 +700,17 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
   of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
   policy). See `.claude/skills/plan/SKILL.md`.
+- **`/journal`** — file the operator's daily journal entry: everything following the
+  invocation is the entry body, transcribed faithfully (only dictation noise cleaned —
+  the operator's voice is inviolable) into a dated `type: note` doc at
+  `journal/YYYY-MM-DD.md` (one file per day; same-day additions append). `journal/` is
+  a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
+  `attribution` (machine-enforced exempt), anchored by date rather than inbound
+  links, outside the taxonomy — the operator's synthesis practice, on the record
+  layer. `/journal list` reviews recent entries; a response to an entry is produced
+  only when asked, delivered in chat and persisted verbatim below the entry under a
+  marked `## Response` heading — operator voice above, agent voice below, never
+  interleaved. See `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

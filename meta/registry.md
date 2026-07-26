@@ -93,6 +93,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:04c057` | [beliefs/glossary/cron-expression](/beliefs/glossary/cron-expression.md) | concept | false |
 | `em:1c53dc` | [beliefs/glossary/cross-reference-drift](/beliefs/glossary/cross-reference-drift.md) | concept | false |
 | `em:c2a18e` | [beliefs/glossary/cross-site-scripting](/beliefs/glossary/cross-site-scripting.md) | concept | false |
+| `em:466011` | [beliefs/glossary/crossing-signal](/beliefs/glossary/crossing-signal.md) | concept | false |
 | `em:6e5432` | [beliefs/glossary/currency-check](/beliefs/glossary/currency-check.md) | concept | false |
 | `em:197b02` | [beliefs/glossary/dark-factory](/beliefs/glossary/dark-factory.md) | concept | false |
 | `em:cd979f` | [beliefs/glossary/decision-graph](/beliefs/glossary/decision-graph.md) | concept | false |
@@ -106,6 +107,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c68b6d` | [beliefs/glossary/dependency-directed-backtracking](/beliefs/glossary/dependency-directed-backtracking.md) | concept | false |
 | `em:aa3e46` | [beliefs/glossary/dependency-free](/beliefs/glossary/dependency-free.md) | concept | false |
 | `em:048bca` | [beliefs/glossary/deploy-gating](/beliefs/glossary/deploy-gating.md) | concept | false |
+| `em:dcffa5` | [beliefs/glossary/derived-view](/beliefs/glossary/derived-view.md) | concept | false |
 | `em:f9d319` | [beliefs/glossary/description-logic](/beliefs/glossary/description-logic.md) | concept | false |
 | `em:ca7b27` | [beliefs/glossary/descriptive-premise](/beliefs/glossary/descriptive-premise.md) | concept | false |
 | `em:805816` | [beliefs/glossary/design-rationale](/beliefs/glossary/design-rationale.md) | concept | false |
@@ -211,6 +213,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f978aa` | [beliefs/glossary/is-ought-gap](/beliefs/glossary/is-ought-gap.md) | concept | false |
 | `em:e9a82b` | [beliefs/glossary/issue-type](/beliefs/glossary/issue-type.md) | concept | false |
 | `em:44f899` | [beliefs/glossary/jido](/beliefs/glossary/jido.md) | concept | false |
+| `em:eee9e2` | [beliefs/glossary/journal-namespace](/beliefs/glossary/journal-namespace.md) | concept | false |
 | `em:7d7a88` | [beliefs/glossary/justification](/beliefs/glossary/justification.md) | concept | false |
 | `em:7498cf` | [beliefs/glossary/knowledge-graph](/beliefs/glossary/knowledge-graph.md) | concept | false |
 | `em:8415bd` | [beliefs/glossary/kv-cache](/beliefs/glossary/kv-cache.md) | concept | false |
@@ -302,6 +305,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:96a610` | [beliefs/glossary/residual-fragmentation](/beliefs/glossary/residual-fragmentation.md) | concept | false |
 | `em:0ad3bb` | [beliefs/glossary/response-prefill](/beliefs/glossary/response-prefill.md) | concept | false |
 | `em:fd9873` | [beliefs/glossary/restricted-boltzmann-machine](/beliefs/glossary/restricted-boltzmann-machine.md) | concept | false |
+| `em:3e46be` | [beliefs/glossary/retrieval-practice](/beliefs/glossary/retrieval-practice.md) | concept | false |
 | `em:2bcd9a` | [beliefs/glossary/reusable-workflow](/beliefs/glossary/reusable-workflow.md) | concept | false |
 | `em:fa29f5` | [beliefs/glossary/reward-model](/beliefs/glossary/reward-model.md) | concept | false |
 | `em:490d9d` | [beliefs/glossary/round-trip](/beliefs/glossary/round-trip.md) | concept | false |
@@ -350,6 +354,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:025b76` | [beliefs/glossary/supervision-tree](/beliefs/glossary/supervision-tree.md) | concept | false |
 | `em:60e22c` | [beliefs/glossary/survey-tier](/beliefs/glossary/survey-tier.md) | concept | false |
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
+| `em:ac9709` | [beliefs/glossary/synthesis-by-proxy](/beliefs/glossary/synthesis-by-proxy.md) | concept | false |
 | `em:f5710f` | [beliefs/glossary/teleport](/beliefs/glossary/teleport.md) | concept | false |
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |

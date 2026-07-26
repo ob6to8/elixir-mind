@@ -42,11 +42,17 @@ defmodule ElixirMind.OrphansTest do
     write(dir, "a.md", "body")
     write(dir, "meta/threads/2026-01-01-t.md", "a thread nothing links to")
     write(dir, "inbox/2026-01-01.md", "a digest nothing links to")
+    write(dir, "journal/2026-01-01.md", "a journal entry nothing links to")
 
     assert Orphans.find(dir) == ["a.md"]
 
     assert Orphans.find(dir, all: true) ==
-             ["a.md", "inbox/2026-01-01.md", "meta/threads/2026-01-01-t.md"]
+             [
+               "a.md",
+               "inbox/2026-01-01.md",
+               "journal/2026-01-01.md",
+               "meta/threads/2026-01-01-t.md"
+             ]
   end
 
   test "reserved files are never reported as orphans", %{tmp_dir: dir} do

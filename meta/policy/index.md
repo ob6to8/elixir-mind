@@ -33,6 +33,8 @@ the start if siblings are plausible.
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
 - [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
+- [provenance-lives-in-metadata](/meta/policy/provenance-lives-in-metadata.md) — bodies and index glosses never restate sourcing the frontmatter already records; a source appears in prose only as a plain link when it is load-bearing content (the test: does removing it lose meaning, or only credit?)
+- [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md) — a negative statement earns its place only when the case it negates is explicit (raised in-document, a default the reader would assume, or a rule being overridden); otherwise state the rule positively, and an edit that removes a negation's referent recasts the negation in the same motion
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values

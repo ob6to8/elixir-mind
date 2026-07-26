@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, 2026-07-13 session"
 verified: false
 sense: common
 tags: [glossary, functional-programming, agent-architecture, terminology]
-timestamp: 2026-07-16
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-13T00:00:00Z
   channel: glossary
@@ -19,6 +19,6 @@ attribution:
 
 Concretely, that forward pass is `(weights, context, seed) → tokens`, with the [KV cache](/beliefs/glossary/kv-cache.md) a performance optimization carrying no semantic state. The purity is architecturally load-bearing for agents: because the model holds no state between calls, all state must live in the context, which is what makes retries, forking, subagents, and caching coherent (in practice, serving-stack effects like batching and floating-point non-associativity make deployments only approximately deterministic).
 
-*Seen in:* [2026-07-13 second-mind-taxonomy thread](/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md)
+*Seen in:* [2026-07-13 second-mind-taxonomy thread](/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md), [journal 2026-07-25](/journal/2026-07-25.md) (treating a service as a pure function to ask how deep code understanding must go)
 
 *See also:* [functional core, imperative shell](/beliefs/glossary/functional-core-imperative-shell.md)
