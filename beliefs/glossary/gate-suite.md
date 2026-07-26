@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, pointer to the defining tutori
 verified: false
 tags: [glossary, enforcement, ci, tooling]
 sense: repo
-timestamp: 2026-07-16
+timestamp: 2026-07-23
 attribution:
   when: 2026-07-12T19:22:43+00:00
   channel: glossary
@@ -25,4 +25,4 @@ pre-commit hook, CI). Contrast a [warn pass](/beliefs/glossary/warn-pass.md),
 which reports without blocking. Canonically defined by
 [the gate-suite tutorial](/meta/tutorials/the-gate-suite-and-where-it-runs.md).
 
-*Seen in:* [2026-07-12 root-reorganization thread](/meta/threads/2026-07-12-root-reorganization-knowledge-and-beliefs.md), [2026-07-10 /todo-and-gate-suite thread](/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md), [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md)
+*Seen in:* [2026-07-12 root-reorganization thread](/meta/threads/2026-07-12-root-reorganization-knowledge-and-beliefs.md), [2026-07-10 /todo-and-gate-suite thread](/meta/threads/2026-07-10-todo-skill-and-gate-suite-tutorial.md), [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md), [2026-07-23 session-start-hook-gate thread](/meta/threads/2026-07-23-session-start-hook-gate-and-machinery-reference-plan.md)

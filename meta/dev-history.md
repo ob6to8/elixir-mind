@@ -14,6 +14,20 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #137](https://github.com/ob6to8/elixir-mind/pull/137) — Add the /journal skill, journal/ namespace, and first entry (2026-07-25) *(2026-07-26)*
+
+- add the /journal skill and journal/ namespace; file the first entry (2026-07-25)
+- persist agent responses beneath journal entries; append the 2026-07-25 response
+- capture the journal-skill session; glossary its terms; stamp attribution
+- stamp pr: 137 into the session thread doc
+- define oracle inline in the journal response's code-understanding section
+- persist the journal response's insights: doctrine, proposed eval, analysis
+- ratify provenance-lives-in-metadata policy; sweep the round's docs
+- ratify negate-only-explicit-cases policy; recast the orphaned negation
+- elaborate the crossing-signal sentence; answer the definition-hierarchy question
+- record definition-hierarchy beliefs; add hub paragraph; file database tutorial
+- glossary the late rounds; stamp the elaboration's from; regen dev-history
+
 ## [PR #138](https://github.com/ob6to8/elixir-mind/pull/138) — Intake Claude Code agent teams; analyze vs BEAM/Jido 2 *(2026-07-26)*
 
 - Intake Claude Code agent teams; analyze vs BEAM/Jido 2
