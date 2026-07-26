@@ -6,12 +6,12 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-22
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -89,8 +89,8 @@ attribution:
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
   `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
-  on-demand successor to the old SessionStart digest (no longer auto-injected at
-  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+  on-demand appraisal of open work, produced when asked rather than injected at
+  session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
 - **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
   `status` (default `open`). The issues-only slice of `/priorities`; read-only
   (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.
@@ -98,5 +98,16 @@ attribution:
   by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
   of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
   policy). See `.claude/skills/plan/SKILL.md`.
+- **`/journal`** — file the operator's daily journal entry: everything following the
+  invocation is the entry body, transcribed faithfully (only dictation noise cleaned —
+  the operator's voice is inviolable) into a dated `type: note` doc at
+  `journal/YYYY-MM-DD.md` (one file per day; same-day additions append). `journal/` is
+  a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
+  `attribution` (machine-enforced exempt), anchored by date rather than inbound
+  links, outside the taxonomy — the operator's synthesis practice, on the record
+  layer. `/journal list` reviews recent entries; a response to an entry is produced
+  only when asked, delivered in chat and persisted verbatim below the entry under a
+  marked `## Response` heading — operator voice above, agent voice below, never
+  interleaved. See `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.

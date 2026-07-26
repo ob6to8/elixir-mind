@@ -3,7 +3,7 @@ type: policy
 title: Quote primary sources verbatim
 description: When a response or document leans on a source, reproduce the load-bearing phrase verbatim and immediately cite the artifact it came from, so a reader never has to wonder whether a phrase is quotation or the agent's synthesis.
 section: filing
-order: 11
+order: 16
 status: active
 tags: [meta, governance, quotation, provenance, citation, writing]
 timestamp: 2026-07-26

@@ -2,12 +2,12 @@
 id: em:6a9e78
 type: concept
 title: doctrine
-description: The governance layer of guiding principles and accepted tenets — the "why" that shapes judgment — as distinct from policy, the layer of specific enforceable rules.
+description: A standing direction that informs judgment without prescribing an enforceable action — the governance layer of guiding principles (the "why"), as distinct from policy, the layer of specific enforceable rules.
 provenance: "Agent-distilled glossary definition; term introduced by operator question (doctrine vs. policy), 2026-07-11 session"
 verified: false
 tags: [glossary, governance, terminology]
 sense: dual
-timestamp: 2026-07-16
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-11T19:58:08+02:00
   channel: glossary
@@ -67,3 +67,16 @@ You're right that this is neither analysis nor concept — it's an *intention st
 **Doctrine vs. belief**
 
 The cleanest way to separate them is by **register** — what kind of statement each one *is*. A **belief** is descriptive (the *is* register): it answers "what is the case?", is truth-apt (true/false, verifiable), and if wrong it is *false* → corrected against evidence. A **doctrine** is normative (the *ought* register): it answers "what should guide design and priorities?", is a commitment (adhered-to, not verified), and if wrong it is *misguided* → the direction is re-decided. In the stack, belief *grounds* doctrine (the *is* that motivates the *ought*), and doctrine *sits above* policy (a policy implements it as an enforceable rule). "Belief" isn't a type while "doctrine" is — because the descriptive register is already covered by `claim`/`note`/`concept`; the normative-direction register had no type, and that gap is what `doctrine` fills. The bridge — each of your two bullets is shaped `descriptive premise → normative conclusion`, and that `→` is the is-to-ought step. Tidy statement of the contrast: **a belief is something the brain holds *true*; a doctrine is something the brain holds *to*.**
+
+### 2026-07-26-living-text-present-tense-policy (2026-07-26)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:6a9e78`]**  (co-feeds: `em:fa15e7`)
+
+**The formal definitions.** Both are in the controlled-type-vocabulary, verbatim:
+
+- **`policy`** — "a governance rule for how the brain operates; the source from which `CLAUDE.md` is compiled (lives under `meta/policy/`)."
+- **`doctrine`** — "a persisted **intention statement**: a guiding principle or direction that shapes how the brain and its agents are designed and prioritized — the 'why' that informs judgment **without prescribing a specific enforceable action**. Doctrine sits *above* policy: a `policy` **implements** doctrine as a concrete, machine- or operator-enforceable rule…"
+
+The discriminator is right there: **prescribes a specific enforceable action → policy; informs judgment without prescribing one → doctrine.** My draft's core ("rewrite living text to the new present; do not append a note about what it used to be") *is* a concrete, operator-enforceable-in-review action. By the definition, that's a policy. It also shares a parent lineage (merge-strategy, retire-hand-kept-logs) that is entirely policy. So applying the definition, policy is the correct fit — and notably, the "agents see it in the contract" argument I led with earlier is the *weaker* reason; the definitional one is the real one.

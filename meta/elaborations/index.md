@@ -27,3 +27,7 @@ mouthful in its context*.
   route-tag log materializer removing generated content whose source tags
   vanished, automatically and without a flag (proposed 2026-07-11, built
   2026-07-12).
+- [The crossing signal: the first query real work produces that grep plus generated indexes cannot express](/meta/elaborations/crossing-signal-learned-from-real-demand.md) —
+  unpacks the derived-views doctrine's crossing-signal sentence: what makes a
+  query inexpressible in the file-plus-index architecture, and why the doctrine
+  waits for a real one instead of constructing a test.

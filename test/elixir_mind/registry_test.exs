@@ -27,6 +27,7 @@ defmodule ElixirMind.RegistryTest do
     write_concept(dir, "deprecated/old.md", type: "note")
     write_concept(dir, "inbox/2026-01-01.md", type: "reference")
     write_concept(dir, "survey/bookmarks.md", type: "reference")
+    write_concept(dir, "journal/2026-01-01.md", type: "note")
 
     {entries, errors} = Registry.scan(dir)
 

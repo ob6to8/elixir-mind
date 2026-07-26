@@ -3,7 +3,7 @@ type: policy
 title: Prefer established terminology
 description: Name genres, types, artifacts, and concepts with standard terms of art; coin a bespoke term only when nothing established fits, define it in the glossary at first use, and never churn existing names retroactively without ratification.
 section: filing
-order: 12
+order: 17
 status: active
 tags: [meta, governance, terminology, naming, vocabulary]
 timestamp: 2026-07-26

@@ -11,15 +11,15 @@ defmodule ElixirMind.Registry do
 
   Scope: knowledge-bundle concepts only. Governance (`meta/`), skills
   (`.claude/`), tooling (`lib/`, `test/`), the archive (`deprecated/`), the
-  candidate feed (`inbox/`), the survey tier (`survey/`), and reserved/root
-  files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) are outside the
-  registry.
+  candidate feed (`inbox/`), the survey tier (`survey/`), the operator's
+  journal (`journal/`), and reserved/root files (`index.md`, `log.md`,
+  `README.md`, `CLAUDE.md`) are outside the registry.
   """
 
   alias ElixirMind.Frontmatter
 
   @id_format ~r/^em:[0-9a-f]{6}$/
-  @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test meta deprecated inbox survey)
+  @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test meta deprecated inbox survey journal)
   @excluded_files ~w(index.md log.md README.md CLAUDE.md)
 
   defmodule Entry do

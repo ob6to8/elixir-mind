@@ -23,8 +23,8 @@ defmodule ElixirMind.Attribution do
     * **`from` resolution** — every ref resolves: `em:` ids to a bundle
       concept, bundle-absolute paths to an existing file.
     * **Exemption placement** — exempt files (thread docs, `inbox/` digests,
-      `survey/` bookmark registers, `index.md` listings, generated artifacts)
-      must NOT carry `attribution`.
+      `survey/` bookmark registers, `journal/` entries, `index.md` listings,
+      generated artifacts) must NOT carry `attribution`.
     * **Presence** — once the backfill lands (`presence_enforced?/0` flips to
       `true`), every bundle concept and every governance doc carries
       `attribution`. `from`-presence on ratification-flow docs is advisory
@@ -55,12 +55,13 @@ defmodule ElixirMind.Attribution do
   All governance-side `.md` paths (relative), partitioned into
   `%{governance: [...], exempt: [...]}`. Governance docs live under `meta/`;
   exempt files are thread docs, `inbox/` digests, the `survey/` tier (bookmark
-  registers), `index.md` listings, and generated artifacts
+  registers), the `journal/` tier (dated operator entries), `index.md`
+  listings, and generated artifacts
   (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`,
   `meta/dev-history.md`).
   """
   def governance_paths(root \\ File.cwd!()) do
-    ["meta/**/*.md", "inbox/**/*.md", "survey/**/*.md"]
+    ["meta/**/*.md", "inbox/**/*.md", "survey/**/*.md", "journal/**/*.md"]
     |> Enum.flat_map(fn glob ->
       root |> Path.join(glob) |> Path.wildcard() |> Enum.map(&Path.relative_to(&1, root))
     end)
@@ -74,6 +75,7 @@ defmodule ElixirMind.Attribution do
       String.starts_with?(rel_path, "meta/threads/") or
       String.starts_with?(rel_path, "inbox/") or
       String.starts_with?(rel_path, "survey/") or
+      String.starts_with?(rel_path, "journal/") or
       rel_path in ~w(meta/registry.md meta/preamble.md meta/flows/lineage.md meta/dev-history.md)
   end
 
@@ -93,8 +95,8 @@ defmodule ElixirMind.Attribution do
       |> Enum.filter(&has_attribution?(root, &1))
       |> Enum.map(fn path ->
         "#{path}: exempt file carries `attribution` — thread docs, inbox digests, " <>
-          "survey registers, index listings, and generated artifacts are outside " <>
-          "the attribution scope"
+          "survey registers, journal entries, index listings, and generated " <>
+          "artifacts are outside the attribution scope"
       end)
 
     governance_errors =

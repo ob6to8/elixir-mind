@@ -478,6 +478,191 @@ agent session.
 
 _Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
+**Provenance lives in metadata, not body prose.** A document's sourcing is
+already recorded structurally — `provenance` (where the content came from),
+`attribution` (how it entered, including the `from` back-link to its thread) —
+so the body must not restate it. No "from the first journal entry", no
+"distilled from thread X", no "at operator direction" in body prose, and none
+in the `index.md` gloss that lists the doc. The body states the knowledge;
+the metadata states the origin.
+
+- **The test: does the sentence lose meaning, or only credit, if the reference
+  is removed?** A *credit-only* reference is metadata and belongs in
+  frontmatter. A *load-bearing* reference — a citation supporting a claim, the
+  grounding analysis a doctrine is judged against, a document the reader must
+  follow to understand the argument — stays, as a plain cross-link per
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md),
+  without acknowledgement framing around it.
+- **Why.** Acknowledgement prose is a shadow copy of the attribution record:
+  unchecked where the metadata is machine-verified, stale-prone where
+  governance `from` is append-only, and a leak of record-layer content into
+  the knowledge layer (see
+  [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md)).
+  One origin, one home.
+- **Scope.** Bundle documents, governance docs, and their index glosses alike.
+  Thread docs are exempt — they *are* the record, and their narrative sections
+  legitimately speak in terms of who said and did what. Frontmatter fields
+  (`provenance`, `attribution.why`) are the sanctioned home for origin prose
+  and are untouched by this rule.
+
+_Source: [`meta/policy/provenance-lives-in-metadata.md`](/meta/policy/provenance-lives-in-metadata.md)_
+
+**Negate only an explicit case.** A negative statement — "no X", "never Y",
+"not by Z-ing" — is a reference: it points at the case it rules out. It earns
+its place only when that case is **explicit**: raised in the same document, a
+live alternative the reader would otherwise assume, or a standing rule being
+overridden. Absent an explicit case, state the rule positively — an unanchored
+negation is an orphaned reference, gesturing at an argument the reader cannot
+see.
+
+- **The test: can the reader point at what is being negated?** If the case is
+  named nearby, assumed by default, or contract-bound elsewhere (link it), the
+  negation is anchored and does real work. If answering "who said anything
+  about that?" requires context outside the document, recast the sentence as
+  the positive rule.
+- **Negations fossilize.** An anchored negation loses its anchor when a later
+  edit removes the referent — a provenance sweep, a trim, a refactor — and the
+  stump reads as an argument with a missing party. An edit that removes a
+  negation's referent must recast the negation in the same motion, not leave
+  the stump.
+- **Scope.** Document bodies, index glosses, and agent responses alike —
+  wherever the agent composes prose. Thread renders are exempt (verbatim
+  record). Anchored negations remain fully legitimate and load-bearing —
+  contrast pairs ("cache, never know"), guardrails negating a named temptation,
+  and overrides of stated defaults are the pattern working as intended.
+
+_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
+
+**Choosing the artifact is a second question, not the first.**
+[plan-vs-capture](/meta/policy/plan-vs-capture.md) answers *whether* to persist
+anything: when this session holds the context and can finish the work, the commit
+and the thread capture are the record, and a doc is a redundant third copy. Only
+once persistence is warranted does this policy apply — *which* governance type.
+
+**The discriminator.** Ask what the thing fundamentally **is**, not how big it is:
+
+| If the thing is… | File it as | Lives in |
+|---|---|---|
+| a reasoned judgment answering a question, against evidence | `analysis` | [`meta/analysis/`](/meta/analysis/index.md) |
+| a durable explainer meant to be read start to finish | `tutorial` | [`meta/tutorials/`](/meta/tutorials/index.md) |
+| something *wrong* — a defect, or a live concern about how the brain behaves | `issue` | [`meta/issues/`](/meta/issues/index.md) |
+| a plain task to complete, approach already obvious | `todo` | [`meta/todos/`](/meta/todos/index.md) |
+| a *proposed change* whose design/decisions must be recorded before executing | `plan` | [`meta/plans/`](/meta/plans/index.md) |
+| a standing *direction* that shapes judgment without prescribing an action | `doctrine` | [`meta/doctrine/`](/meta/doctrine/index.md) |
+| an enforceable *rule* for how the brain operates | `policy` | [`meta/policy/`](/meta/policy/index.md) |
+
+**The pairs that actually get confused:**
+
+- **issue vs. todo** — an issue is a *problem to diagnose* (something behaves
+  wrongly; the fix may not be known). A todo is a *task to do* (the approach is
+  known; it just needs doing). "Merges keep conflicting" is an issue; "wire the
+  hook in the session-start script" is a todo.
+- **todo vs. plan** — if the *approach* needs deciding, it is a plan; if only the
+  *doing* remains, it is a todo. A plan that would contain no decisions is a todo.
+- **analysis vs. plan** — an analysis concludes with a *judgment* ("X is the
+  better shape, and here is why"); a plan commits to *work* ("build X in this
+  order"). An analysis whose residue is action may be retyped as a plan rather
+  than duplicated.
+- **plan vs. policy** — a plan is a *one-off intended change*; a policy is a
+  *standing rule*. If it should bind future sessions, it is a policy.
+
+**Persistence and reach are different axes — choose deliberately.** A `policy`
+compiles into `CLAUDE.md` and is therefore in **every** fresh agent's context
+automatically; every other governance type is discovered only when something goes
+looking ([`/priorities`](/.claude/skills/priorities/SKILL.md),
+[`/issue`](/.claude/skills/issue/SKILL.md), [`/plan`](/.claude/skills/plan/SKILL.md),
+or a link). So a rule that must fire **unprompted, mid-work** — where an agent
+would not know to go looking — belongs in a policy; filing it as a plan or tutorial
+leaves it inert. Conversely, keep policies **terse**: the contract is loaded in
+full every session, so put the rule in the policy and the reasoning, worked
+examples, and background in a cross-linked `tutorial` or `analysis`.
+
+**One artifact per matter.** Per [update-in-place](/meta/policy/update-in-place.md),
+search before filing: extend the existing doc when one already covers the matter,
+rather than creating a near-duplicate in a different genre.
+
+_Source: [`meta/policy/governance-artifact-routing.md`](/meta/policy/governance-artifact-routing.md)_
+
+**When a turn produces work, report it as a ledger.** A response that creates or
+modifies artifacts, or reaches a decision point, closes with tabular sections
+rather than narrating the same facts in prose. Tables make what-happened and
+what's-open scannable; prose buries them.
+
+**Applies when** the turn created/modified files, took consequential actions, or
+needs an operator decision. **Does not apply** to conversational turns, quick
+factual answers, or single trivial edits — five empty tables are ceremony. Include
+only the sections that have content.
+
+| Section | Holds | Columns |
+|---|---|---|
+| **What I created** | new artifacts | type · doc · why this type |
+| **What I modified** | changed files | file · thrust of the change (one line) |
+| **Actions I have taken** | what was already done | action · result |
+| **Questions you need to answer** | **blocking** — work cannot proceed without an answer | # · question · my recommendation |
+| **Your options from here** | **non-blocking** — directions the operator may pick | # · option · what it entails |
+
+**The rules that make it work:**
+
+- **Prose still carries judgment.** Tables are the ledger of *what happened* and
+  *what's open*; analysis, reasoning, and recommendations stay in prose. Never
+  compress an argument into a cell.
+- **Questions and options are different tables.** A question is *blocking* — the
+  agent is stuck without an answer. An option is *non-blocking* — the agent could
+  proceed and is offering a direction. Collapsing them hides which one it is.
+- **Report in the past tense, not the future.** Work the agent is authorized to do
+  is **done before the response**, then reported as completed with its result —
+  not announced as an intention ("I'll now…") that makes the operator wait a turn
+  for nothing.
+- **Past-tense reporting never widens authorization.** The act-then-report rule
+  applies only to already-authorized work. Anything irreversible, outward-facing,
+  or outside what the operator asked for still requires asking **first** — and per
+  [session-capture](/meta/policy/session-capture.md), that ask is ordinary chat
+  text, never a UI dialog element.
+- **State every recommendation.** Each question carries the agent's recommended
+  answer, so the operator can ratify rather than re-derive.
+- **No duplication.** A matter appears in exactly one section — a blocking
+  question is not restated as an option, and a completed action is not repeated in
+  prose above the table.
+
+_Source: [`meta/policy/response-work-report-format.md`](/meta/policy/response-work-report-format.md)_
+
+**Living text states the present; git narrates the past.** A **living surface** —
+code, code comments, operational skills, reference docs, the compiled contract —
+is read to act on the system *as it is now*, so every sentence in it should be
+true of the present. The commit graph is already the brain's single
+change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
+[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
+narration embedded in living text — "this used to X", "the old Y", "was removed
+in favor of Z" — is a second, hand-kept history layer at comment scale, and it
+fails the same way the purged `log.md` files did — it goes stale silently and
+gets retrieved and trusted as current state. This is that lesson generalized from
+dedicated log *files* down to inline narration.
+
+**The rule.** When you change the system, rewrite the living text to describe the
+new present — do not append a note about what it used to be. Git holds the
+before; the commit message carries the why-it-changed. The living surface carries
+only what is.
+
+**The carve-outs — what is *not* retrospective narration:**
+
+- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
+  reader where the functionality *is now* — load-bearing, keep. Test: does the
+  sentence tell the reader something they must know to act *today*, or only what
+  changed?
+- **Chesterton's-fence justifications.** A comment explaining why live code still
+  exists ("kept only as the migration reader for X") justifies present code and
+  reads as *this is why this exists*, not as a changelog. Keep.
+- **Explanatory surfaces where the history is the subject.** A `tutorial` or
+  `doctrine` may carry a clearly-marked, bounded history aside when the change
+  itself is what it explains. That permission is exactly why operational and
+  reference surfaces — read to act, not to learn the backstory — get none.
+
+Records that are historical *by construction* — `plan`, `analysis`, `issue`,
+thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
+not living surfaces and are out of scope; narrating the past is their job.
+
+_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
+
 **Quote primary sources verbatim; mark the boundary between quotation and
 synthesis.** When a delivered response or a document body leans on what a
 source says — a policy, a doctrine, an external article or post, a code
@@ -776,8 +961,8 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
   `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
-  on-demand successor to the old SessionStart digest (no longer auto-injected at
-  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+  on-demand appraisal of open work, produced when asked rather than injected at
+  session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
 - **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
   `status` (default `open`). The issues-only slice of `/priorities`; read-only
   (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.
@@ -785,6 +970,17 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
   of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
   policy). See `.claude/skills/plan/SKILL.md`.
+- **`/journal`** — file the operator's daily journal entry: everything following the
+  invocation is the entry body, transcribed faithfully (only dictation noise cleaned —
+  the operator's voice is inviolable) into a dated `type: note` doc at
+  `journal/YYYY-MM-DD.md` (one file per day; same-day additions append). `journal/` is
+  a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
+  `attribution` (machine-enforced exempt), anchored by date rather than inbound
+  links, outside the taxonomy — the operator's synthesis practice, on the record
+  layer. `/journal list` reviews recent entries; a response to an entry is produced
+  only when asked, delivered in chat and persisted verbatim below the entry under a
+  marked `## Response` heading — operator voice above, agent voice below, never
+  interleaved. See `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
@@ -815,15 +1011,20 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
-- **Ask the operator in the chat, not the dialog box.** Pose every question to
-  the operator as ordinary `## Assistant` chat text — never through the
-  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
-  delivered message stream, so a question raised in the dialog box, and the
-  answer the operator selects in it, never enter that stream: both are lost from
+- **Interact with the operator in the chat, not a UI element — this covers
+  permission requests too.** Pose every question, and every request for
+  permission or approval, to the operator as ordinary `## Assistant` chat
+  text — never rely on a UI dialog element (the `AskUserQuestion` question box,
+  or a tool-permission popup) as the channel. `/capture` renders only the
+  delivered message stream, so anything raised in a dialog element, and the
+  answer the operator gives in it, never enter that stream: both are lost from
   the thread doc and every downstream artifact routed from it. Keeping the
-  exchange inline is what lets capture retain the question and its answer
-  verbatim. (The dialog UI has also proven flaky in these sessions — a second
-  reason to keep questions in the chat.)
+  exchange inline is what lets capture retain it verbatim. The UI elements have
+  also proven **flaky** in these sessions — a tool-permission popup can misfire
+  and register as a rejection the operator never made — so routine tools are
+  allowlisted in [`.claude/settings.json`](/.claude/settings.json)
+  (`permissions.allow`) to keep that popup out of the loop, and any decision the
+  agent still needs is asked in text.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
