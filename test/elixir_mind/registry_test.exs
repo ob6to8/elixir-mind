@@ -168,5 +168,22 @@ defmodule ElixirMind.RegistryTest do
       assert joined =~ "captured.md: `verified` on type \"reference\""
       assert joined =~ "only for agent statements"
     end
+
+    test "keeps `belief` outside the verification ladder", %{tmp_dir: dir} do
+      # A bare belief is a valid bundle concept…
+      write_concept(dir, "beliefs/held-prior.md", type: "belief", id: "em:abc123")
+      assert Verifier.run(dir) == :ok
+
+      # …but `verified` on it (either value) is rejected: beliefs are not
+      # settled by evidence — an empirically checkable one refiles as a claim.
+      write_concept(dir, "beliefs/checked-prior.md",
+        type: "belief",
+        id: "em:def456",
+        verified: false
+      )
+
+      assert {:error, errors} = Verifier.run(dir)
+      assert Enum.join(errors, "\n") =~ "checked-prior.md: `verified` on type \"belief\""
+    end
   end
 end

@@ -12,6 +12,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 
 | id | concept | type | verified |
 |----|---------|------|----------|
+| `em:0c4913` | [beliefs/dont-review-code-length-specs](/beliefs/dont-review-code-length-specs.md) | belief |  |
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `em:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
@@ -365,6 +366,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
+| `em:a96688` | [beliefs/plan-artifacts-compress-decisions-not-bodies](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) | belief |  |
+| `em:6c7e85` | [beliefs/plan-artifacts-surface-implicit-review-decisions](/beliefs/plan-artifacts-surface-implicit-review-decisions.md) | belief |  |
+| `em:1eebdf` | [beliefs/spec-detail-approaches-code-length](/beliefs/spec-detail-approaches-code-length.md) | belief |  |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
 | `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |

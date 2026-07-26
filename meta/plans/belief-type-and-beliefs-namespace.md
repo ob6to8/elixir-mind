@@ -2,7 +2,7 @@
 type: plan
 title: "The belief layer: a `belief` type and a real /beliefs/ namespace"
 description: Introduce a belief type for operator-held, value-laden decision priors — epistemic-teleological statements outside the verification ladder, citable by plans and analyses the way doctrine is — and make /beliefs/ its actual home; keep doctrine governance-scoped, extend the verifier to exclude belief from verified, and add the epistemic/teleological filing test to the vocabulary.
-status: proposed
+status: done
 provenance: "Claude Code session (2026-07-13) — actionable residue of the second-mind taxonomy analysis, from an operator dialogue over a shared ChatGPT conversation seeded with this bundle's doctrine definition"
 attribution:
   when: 2026-07-13T00:00:00Z
@@ -11,14 +11,27 @@ attribution:
   why: "persists the belief-type design per the persist-plans policy, so the ratification decision is made against a concrete shape"
   from: [/meta/analysis/second-mind-taxonomy-and-the-belief-gap.md, /meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md]
 tags: [meta, plan, beliefs, doctrine, type-vocabulary, taxonomy, second-mind]
-timestamp: 2026-07-13
+timestamp: 2026-07-26
 ---
 
 # The belief layer: a `belief` type and a real /beliefs/ namespace
 
 ## Status & provenance
 
-**Proposed** — not yet ratified. Adding a type to the controlled vocabulary and
+**Done — ratified and executed 2026-07-26.** The operator ratified by directing
+the first beliefs to be filed ("add the following to the belief list", in the
+pseudocode-plans session). Executed the same day, per the build order: `belief`
+entry + filing test added to the
+[controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) (with
+the mirrored filing-test line on `doctrine`), contract recompiled,
+[`/beliefs/index.md`](/beliefs/index.md) rewritten as the belief layer's home,
+the layer seeded with four beliefs (`em:1eebdf`, `em:0c4913`, `em:6c7e85`,
+`em:a96688` — the structured-plan-format priors), and a verifier regression
+test added pinning that `verified` on a `belief` is rejected (rule 6's
+statement-type allowlist, unchanged). Original design record below, unedited.
+
+**Original status: Proposed** — not yet ratified. Adding a type to the
+controlled vocabulary and
 changing what a namespace means are both shape changes the operator ratifies
 (taxonomy-evolution protocol); this plan records the design so that decision is
 made against something concrete. It is the actionable residue of
