@@ -19,4 +19,10 @@ attribution:
 
 Conventionally split into four kinds: short-term (the context window itself), long-term (facts and preferences surviving across sessions), procedural (codified workflows), and working memory (in-task scratchpad). Implementations range from plain markdown files under version control to managed [vector databases](/beliefs/glossary/vector-database.md); this brain is itself a file-based instance of the pattern.
 
-*Seen in:* [2026-07-11 deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md), [AI agent memory management — when markdown files are all you need](/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md), [2026-07-13 second-mind-taxonomy thread](/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md) (the RAM/disk/ROM hierarchy mapping), [journal 2026-07-25](/journal/2026-07-25.md) (markdown-as-memory as the pre-database consensus; the derived-and-disposable criterion for the database line)
+What makes a file system the recurring default is not capacity but that the agent
+already has tools to operate it, so no new interface has to be learned — the same
+observation that turns
+[context offloading](/beliefs/glossary/context-offloading.md) from a workaround
+into an architecture.
+
+*Seen in:* [2026-07-11 deprecated-triage thread](/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md), [AI agent memory management — when markdown files are all you need](/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md), [2026-07-13 second-mind-taxonomy thread](/meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md) (the RAM/disk/ROM hierarchy mapping), [Context engineering lessons from building Manus](/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md) (the sandbox file system as the memory tier), [journal 2026-07-25](/journal/2026-07-25.md) (markdown-as-memory as the pre-database consensus; the derived-and-disposable criterion for the database line)
