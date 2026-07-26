@@ -3,7 +3,7 @@ type: policy
 title: Negate only an explicit case
 description: A negative statement ("no X", "never Y", "not Z") earns its place only when the case it negates is explicit — raised in the same document, a live alternative the reader would otherwise assume, or a rule being overridden; otherwise state the rule positively, because an unanchored negation is an orphaned reference to a case the reader cannot see.
 section: filing
-order: 11
+order: 12
 status: active
 tags: [meta, governance, filing, composition, communication]
 timestamp: 2026-07-25

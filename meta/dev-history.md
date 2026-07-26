@@ -14,6 +14,14 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #141](https://github.com/ob6to8/elixir-mind/pull/141) — version-control audit, workflow tutorial, and the routing/response-format policies *(2026-07-26)*
+
+- Audit the version-control workflow; file the actionable residue
+- Wire local gates in web sessions; allowlist tools; text-first permission rule
+- Add governance-artifact-routing and response-work-report-format policies
+- Capture the version-control-audit session; glossary and stamp its artifacts
+- Stamp pr: 141 into the session's thread doc
+
 ## [PR #140](https://github.com/ob6to8/elixir-mind/pull/140) — Ratify living-text-is-present-tense policy; trim retrospective narration *(2026-07-26)*
 
 - Ratify living-text-is-present-tense policy; trim retrospective narration

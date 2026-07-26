@@ -3,7 +3,7 @@ type: policy
 title: Plan ahead or capture after
 description: A prospective plan doc is warranted only when work is deferred, cold-context, or a cross-session build order; work executed in-session needs no plan — its commit graph and thread capture are the durable record.
 section: filing
-order: 8
+order: 9
 status: active
 tags: [meta, governance, plans, threads, workflow, handoff]
 timestamp: 2026-07-19

@@ -3,7 +3,7 @@ type: policy
 title: Report work in tables, not prose
 description: The delivered-response format for a turn that produces or modifies artifacts or reaches a decision point — created/modified tables, actions already taken reported in the past tense, blocking questions and non-blocking options as separate tables — with prose reserved for reasoning and the confirm-before-irreversible boundary explicitly preserved.
 section: filing
-order: 13
+order: 14
 status: active
 tags: [meta, governance, responses, format, workflow, permissions]
 timestamp: 2026-07-26

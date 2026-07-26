@@ -3,7 +3,7 @@ type: policy
 title: Living text states the present; git narrates the past
 description: A living surface — code, comments, operational skills, reference docs, the compiled contract — describes the system as it is now; retrospective narration ("this used to X", "the old Y") is a second hand-kept history layer that belongs in the commit graph, not inline.
 section: filing
-order: 12
+order: 15
 status: active
 tags: [meta, governance, provenance, documentation, dry, single-source-of-truth]
 timestamp: 2026-07-26

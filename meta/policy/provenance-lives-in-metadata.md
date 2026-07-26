@@ -3,7 +3,7 @@ type: policy
 title: Provenance lives in metadata, not body prose
 description: When a document's frontmatter already records where its content came from (provenance, attribution and its from back-links), the body and index glosses must not restate the sourcing — no "from the journal entry", no "at operator direction"; a source appears in prose only as a plain link when it is load-bearing content, never as acknowledgement.
 section: filing
-order: 10
+order: 11
 status: active
 tags: [meta, governance, filing, attribution, provenance, composition]
 timestamp: 2026-07-25
