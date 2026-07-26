@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, concurrency, actor-model, beam]
 sense: common
-timestamp: 2026-07-21
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-12T09:05:38+00:00
   channel: glossary
@@ -19,7 +19,7 @@ attribution:
 
 Ownership is what makes the model a natural idiom for write governance — one process owning mutation of a namespace, as in the [librarian write-broker](/beliefs/glossary/librarian-write-broker.md). The [BEAM](/beliefs/glossary/beam.md) is the canonical industrial implementation.
 
-*Seen in:* [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md), [2026-07-21 ECS intake thread](/meta/threads/2026-07-21-ecs-intake-and-agent-entity-substitution.md) (the actor/ECS tension: ECS makes entities passive data, actors own their behavior), [Dynamic Workflows vs. BEAM/Jido 2 analysis](/meta/analysis/dynamic-workflows-vs-beam-jido.md)
+*Seen in:* [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md), [2026-07-21 ECS intake thread](/meta/threads/2026-07-21-ecs-intake-and-agent-entity-substitution.md) (the actor/ECS tension: ECS makes entities passive data, actors own their behavior), [Dynamic Workflows vs. BEAM/Jido 2 analysis](/meta/analysis/dynamic-workflows-vs-beam-jido.md), [agent teams vs. BEAM/Jido analysis](/meta/analysis/agent-teams-vs-beam-jido.md) (Claude Code agent teams as an independently converged, runtime-less actor shape)
 
 ## Thread excerpts — route-tagged log
 

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, data-structures, immutability, provenance]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-13T15:30:00Z
   channel: glossary
@@ -21,4 +21,9 @@ A structure that grows by **addition alone**: new entries may be appended, but e
 
 In this brain it is the one carve-out in [attribution](/beliefs/glossary/attribution.md)'s immutability: the event sub-keys are write-once, but a governance doc's `from` back-links are append-only, because feature [lineage](/beliefs/glossary/lineage.md) accretes — each later session that substantively revises a doc appends its own thread, never removing the earlier ones. That monotonic growth is exactly what lets `mix brain.lineage` derive a multi-session chain from the field.
 
-*Seen in:* [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md)
+The property also carries a performance consequence outside data storage: an agent
+context grown by appending alone keeps its leading tokens byte-stable, which is
+the precondition for [prefix caching](/beliefs/glossary/prefix-caching.md) — so
+"append-only" is simultaneously a provenance discipline and a cost discipline.
+
+*Seen in:* [2026-07-13 resource-attribution property thread](/meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md), [Context engineering lessons from building Manus](/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md) (append-only context as a cache invariant)
