@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 4.8, then Claude Opus 5), 2026-07-
 tags: [meta, thread, governance, policy, provenance, documentation, doctrine-vs-policy]
 timestamp: 2026-07-26
 session: https://claude.ai/code/session_016HqEGUGboxBj3A9FKcvkjz
+pr: 140
 ---
 
 # 2026-07-26-living-text-present-tense-policy
