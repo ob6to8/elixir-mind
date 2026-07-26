@@ -5,6 +5,7 @@ description: Audited the repo's version-control workflow against the Atlassian t
 provenance: "Claude Code session, 2026-07-26; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, git, version-control, trunk-based-development, ci, gates, policy, response-format, permissions]
 timestamp: 2026-07-26
+pr: 141
 session: https://claude.ai/code/session_018pjRKH3Vy4MuG7iLqp5PPu
 ---
 
