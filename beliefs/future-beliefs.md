@@ -4,7 +4,7 @@ type: note
 title: Future beliefs
 description: A running scratch list of facts and observations about the brain's tooling and governance worth formalizing later (into a tutorial, policy, or concept).
 tags: [meta, governance, scratch]
-timestamp: 2026-07-22
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-09T12:18:50+00:00
   channel: backfill
@@ -109,6 +109,28 @@ worth remembering but not yet formalized into a tutorial, policy, or concept.
   off-repo output admits only the former. Sibling of "an artifact states what it
   is" above — both are cases where the durable lever is structural (tool, commit
   graph), not exhortation._
+- **"The policy defines by role in the governance stack; the glossary defines
+  by function."** The two definition surfaces answer different questions about
+  the same term: the
+  [controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md)
+  states what a `type` is distinct from and where it sits among its siblings
+  (role), while a glossary `description` states what the thing does
+  (function) — and defining by function is what makes the fast-read surface
+  clear (the [doctrine](/beliefs/glossary/doctrine.md) entry's description is
+  the worked example: "a standing direction that informs judgment without
+  prescribing an enforceable action"). Descriptive observation; formalized in
+  the [glossary hub](/beliefs/glossary.md)'s "Where definitions bind"
+  paragraph.
+- **"The policy is the authority; the glossary entry and index are
+  restatements that defer to it."** Grounded in two recorded rules: the
+  vocabulary grows only by operator ratification (contract §4), and
+  [`/add-to-glossary`](/.claude/skills/add-to-glossary/SKILL.md)'s pointer rule
+  forbids duplicating a canonical definition. Nuance: for `dual`-sense entries
+  the deference is conventional rather than mechanically marked — the entry
+  defines the common sense and points at local machinery in its *In this
+  brain* passage, but no field declares the contract as its authority. Stated
+  verbatim in the [glossary hub](/beliefs/glossary.md)'s "Where definitions
+  bind" paragraph.
 
 ## Thread excerpts — route-tagged log
 
@@ -147,6 +169,14 @@ That's the right challenge — a per-session promise dies with this session, so 
 **[`em:1b3c79`]**
 
 Both done, committed and pushed. **1. Belief captured** — *A rule over off-repo output must be made correct in the tooling it mandates, not merely asserted in prose — because it cannot be CI-gated.* Grounded in the 2026-07-22 link bug as its proof case, flagged as an *ought* destined for doctrine, and linked as the sibling of the "artifact states what it is" belief — both cases where the durable lever is structural (tool, commit graph), not exhortation. **2. Policy demoted the hand-mapping** — `response-resource-links` now leads with "Get the URL from the tool, never by hand" and reframes `P.md → …P.html` as "what the site does at build time, not a recipe to apply in a response." The trap I fell into is now labeled as the trap, in the compiled contract every session reads.
+
+### 2026-07-25-journal-skill-and-first-entry (2026-07-25)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:1b3c79`]**  (co-feeds: `em:0b648f`)
+
+- **Not recorded — my synthesis:** the framing "the policy defines by role in the governance stack, the glossary defines by function," and the blanket sentence "the policy is the authority; the glossary entry and index are restatements that defer to it." Both are stitched from the recorded rules above, and I should have labeled them as synthesis when I said them. One nuance the synthesis papered over: the `doctrine` glossary entry is not formally a pointer entry — it is a dual-sense definition with an "In this brain" passage — so its deference to the vocabulary policy is conventional, not mechanically marked. If you want the hierarchy recorded verbatim, it is a one-paragraph addition to the glossary hub doc (`beliefs/glossary.md`); say so and I'll file it.
 
 ### 2026-07-26-living-text-present-tense-policy (2026-07-26)
 

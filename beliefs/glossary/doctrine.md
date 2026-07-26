@@ -2,12 +2,12 @@
 id: em:6a9e78
 type: concept
 title: doctrine
-description: The governance layer of guiding principles and accepted tenets — the "why" that shapes judgment — as distinct from policy, the layer of specific enforceable rules.
+description: A standing direction that informs judgment without prescribing an enforceable action — the governance layer of guiding principles (the "why"), as distinct from policy, the layer of specific enforceable rules.
 provenance: "Agent-distilled glossary definition; term introduced by operator question (doctrine vs. policy), 2026-07-11 session"
 verified: false
 tags: [glossary, governance, terminology]
 sense: dual
-timestamp: 2026-07-16
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-11T19:58:08+02:00
   channel: glossary

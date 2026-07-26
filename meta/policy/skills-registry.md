@@ -6,12 +6,12 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-15
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -54,6 +54,16 @@ attribution:
   a new top-level domain are deferred for operator ratification) and attributed
   `channel: auto-intake` for the operator's post-intake editorial pass. See
   `.claude/skills/research/SKILL.md`.
+- **`/bookmarks`** — process the **survey tier**: links the operator wants kept but not
+  yet fully ingested. The operator drops raw URLs under **Pending** in the register
+  (`survey/bookmarks.md`); a bare `/bookmarks` fetches each, writes a one-line summary
+  and topical tags, and moves it to **Surveyed** (`status: surveyed`) — a non-bundle
+  namespace (no `em:` ids) like `inbox/`. `/bookmarks list [surveyed|promoted|all]`
+  reviews the register; `/bookmarks promote <url>` runs `/intake` to distill and file
+  the link as a bundle `reference`, then records the graduation on the row. The
+  lower-effort staging sibling of `/intake` (see the
+  [link-processing](/meta/policy/link-processing.md) survey-tier carve-out). See
+  `.claude/skills/bookmarks/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
   over the captured thread doc, **stamp the thread into `attribution.from`** (append
   the just-captured thread's path to the `from` list of every governance doc the
@@ -88,5 +98,16 @@ attribution:
   by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
   of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
   policy). See `.claude/skills/plan/SKILL.md`.
+- **`/journal`** — file the operator's daily journal entry: everything following the
+  invocation is the entry body, transcribed faithfully (only dictation noise cleaned —
+  the operator's voice is inviolable) into a dated `type: note` doc at
+  `journal/YYYY-MM-DD.md` (one file per day; same-day additions append). `journal/` is
+  a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
+  `attribution` (machine-enforced exempt), anchored by date rather than inbound
+  links, outside the taxonomy — the operator's synthesis practice, on the record
+  layer. `/journal list` reviews recent entries; a response to an entry is produced
+  only when asked, delivered in chat and persisted verbatim below the entry under a
+  marked `## Response` heading — operator voice above, agent voice below, never
+  interleaved. See `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
