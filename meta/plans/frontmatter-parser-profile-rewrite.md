@@ -5,7 +5,7 @@ description: Rewrite ElixirMind.Frontmatter as an explicit recursive-descent par
 status: proposed
 provenance: "Claude Code session (claude-fable-5), 2026-07-20 — grew out of the operator's storage-format question (is markdown still right vs JSON/database); the format verdict was keep markdown, harden the structured layer, and this plan is hardening move 1"
 tags: [meta, plan, tooling, frontmatter, parser, serializer, yaml]
-timestamp: 2026-07-20
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-20T00:00:00Z
   channel: agent-authored
@@ -80,6 +80,96 @@ becomes a spec the verifier can enforce, not an accident of implementation.
 
 No date coercion: ISO timestamps stay strings, matching current behavior and
 avoiding the YAML-1.1 trap.
+
+## The shape, structured
+
+*Retrofitted 2026-07-26 as the pilot of the
+[structured-plan-bodies](/meta/policy/structured-plan-bodies.md) format; the
+prose sections above are unchanged — these artifacts encode the same change as
+reviewable structure. Per that policy's refresh rule, execution starts by
+re-deriving these against `HEAD`.*
+
+**File-tree diff:**
+
+```diff
+ lib/elixir_mind
+ ├── frontmatter.ex                 # REWRITTEN in place — same parse/1 / parse!/1
+~│                                  #   surface; recursive-descent profile parser
++│                                  #   + ordered representation + dump/update
+ └── attribution
+~    └── backfill.ex                # MODIFIED — append_from/3 regex surgery
++                                   #   becomes Frontmatter.update/2
+ test/elixir_mind
+~├── frontmatter_test.exs           # EXTENDED — golden profile tests, incl. the
++│                                  #   rejection set (inputs that must fail)
++├── frontmatter_differential_test.exs  # NEW, transient — old vs. new parser over
++│                                  #   every bundle doc, asserting identical maps
++└── frontmatter_roundtrip_test.exs # NEW — parse_pairs |> dump == original bytes
++                                   #   across the bundle
+```
+
+**Signatures** (the read surface is frozen; the write surface is new):
+
+```elixir
+# read surface — unchanged for the 10 consuming modules / 16 call sites
+@spec parse(content :: binary()) ::
+        {:ok, %{frontmatter: map(), body: binary()}}
+        | {:error, {line :: pos_integer(), reason :: term()}}
+@spec parse!(content :: binary()) :: %{frontmatter: map(), body: binary()}
+
+# ordered representation — order lives here, not in the map
+@typep value :: binary() | integer() | boolean() | [value()] | pairs()
+@typep pairs :: [{key :: binary(), value()}]
+
+# write surface — new; the only order-sensitive path
+@spec parse_pairs(content :: binary()) ::
+        {:ok, %{frontmatter: pairs(), body: binary()}}
+        | {:error, {line :: pos_integer(), reason :: term()}}
+@spec dump(pairs()) :: binary()
+@spec update(
+        content :: binary(),
+        transform :: (pairs() -> pairs())
+      ) :: {:ok, binary()} | {:error, term()}
+```
+
+**Call trees** — the write path is what changes; shown production then test:
+
+```diff
+ # production: attribution stamping (/create-pull-request from-stamp, backfill)
+ Backfill.append_from
+-  Regex surgery on raw text          # assumes two-space-indented block
++  Frontmatter.update(content, transform)
++    parse_pairs                      # ordered recursive-descent
++    transform.(pairs)                # append thread ref to attribution.from
++    dump(pairs)                      # order-preserving serialize
+```
+
+```
+# test topology: three suites, three seams
+frontmatter_test.exs            → grammar directly (golden + rejection set)
+frontmatter_differential_test   → corpus → old parse/1 vs new parse/1 (equal maps)
+frontmatter_roundtrip_test      → corpus → parse_pairs |> dump (byte equality)
+```
+
+**Boundary decisions:**
+
+- **Order lives in the internal `pairs` representation only.** `parse/1` keeps
+  returning a plain map so all 16 existing call sites stay untouched; anything
+  that *writes* goes through `parse_pairs`/`update`, the one order-sensitive
+  path.
+- **Strictness lives in the parser, not the verifier.** The verifier gains the
+  round-trip check for free but the grammar rejections fire at parse time, as
+  loud `{:error, {line, reason}}`.
+- **The differential harness is transient.** It exists to pin the migration
+  and is deleted with the old parser (build-order step 5).
+
+**Anchors** (attached last, per the policy): `lib/elixir_mind/frontmatter.ex`
+(rewrite), `lib/elixir_mind/attribution/backfill.ex` `append_from/3` +
+`insert_attribution` (refactor onto `update/2`),
+`test/elixir_mind/frontmatter_test.exs` (extend); reuse
+`ElixirMind.Registry.scan/1`'s bundle walk for the corpus-wide tests; the
+[frontmatter-schema policy](/meta/policy/frontmatter-schema.md) is the doc-side
+anchor build-order step 6 amends.
 
 ## The serializer — the half that fixes the writes
 
