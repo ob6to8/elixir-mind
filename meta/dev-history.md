@@ -14,6 +14,12 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #136](https://github.com/ob6to8/elixir-mind/pull/136) — Intake: Manus context-engineering post with 2026 currency check and 20 glossary terms *(2026-07-25)*
+
+- intake Manus context-engineering post with 2026 currency check and 20 glossary terms
+- capture the Manus-intake session and glossary its thread
+- stamp pr: 136 into the session thread doc
+
 ## [PR #135](https://github.com/ob6to8/elixir-mind/pull/135) — Capture the dev-history drift session; glossary the terms it used *(2026-07-23)*
 
 - capture: dev-history drift and regeneration-flow session

@@ -22,6 +22,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:dbaf55` | [beliefs/glossary/agent-as-presenter](/beliefs/glossary/agent-as-presenter.md) | concept | false |
 | `em:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `em:76ccba` | [beliefs/glossary/agent-swarm](/beliefs/glossary/agent-swarm.md) | concept | false |
+| `em:4e18d8` | [beliefs/glossary/agent-teams](/beliefs/glossary/agent-teams.md) | concept | false |
 | `em:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
 | `em:45fda5` | [beliefs/glossary/ai-drift](/beliefs/glossary/ai-drift.md) | concept | false |
 | `em:e24e40` | [beliefs/glossary/ai-native](/beliefs/glossary/ai-native.md) | concept | false |
@@ -228,6 +229,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5554e8` | [beliefs/glossary/lora](/beliefs/glossary/lora.md) | concept | false |
 | `em:1b3160` | [beliefs/glossary/lost-in-the-middle](/beliefs/glossary/lost-in-the-middle.md) | concept | false |
 | `em:19d8db` | [beliefs/glossary/macro](/beliefs/glossary/macro.md) | concept | false |
+| `em:e76937` | [beliefs/glossary/mailbox](/beliefs/glossary/mailbox.md) | concept | false |
 | `em:541206` | [beliefs/glossary/margin-collapse](/beliefs/glossary/margin-collapse.md) | concept | false |
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
@@ -345,6 +347,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:efad31` | [beliefs/glossary/static-site-generator](/beliefs/glossary/static-site-generator.md) | concept | false |
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
+| `em:025b76` | [beliefs/glossary/supervision-tree](/beliefs/glossary/supervision-tree.md) | concept | false |
 | `em:60e22c` | [beliefs/glossary/survey-tier](/beliefs/glossary/survey-tier.md) | concept | false |
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
 | `em:f5710f` | [beliefs/glossary/teleport](/beliefs/glossary/teleport.md) | concept | false |
@@ -406,6 +409,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
 | `em:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
 | `em:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
+| `em:33e0c7` | [knowledge/SWE/agentic/anthropic/claude-code/agent-teams](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md) | reference |  |
 | `em:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
 | `em:02731b` | [knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | reference |  |
 | `em:564b8e` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
