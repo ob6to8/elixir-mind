@@ -597,8 +597,8 @@ then the structural backstop that fails if the two ever diverge.
 The session-init digest: a point-in-time scan of the brain's open work,
 rendered as markdown for the operator's priority appraisal. Produced on
 demand by the `/priorities` skill, which runs `mix brain.session_init` and
-relays the output (it is no longer auto-injected at session start — the
-SessionStart hook now only provisions the toolchain).
+relays the output; it is not injected into a session's opening context (the
+SessionStart hook only provisions the toolchain).
 
 Four sources, all already maintained by existing policy:
 

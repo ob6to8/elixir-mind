@@ -514,6 +514,43 @@ rather than creating a near-duplicate in a different genre.
 
 _Source: [`meta/policy/governance-artifact-routing.md`](/meta/policy/governance-artifact-routing.md)_
 
+**Living text states the present; git narrates the past.** A **living surface** —
+code, code comments, operational skills, reference docs, the compiled contract —
+is read to act on the system *as it is now*, so every sentence in it should be
+true of the present. The commit graph is already the brain's single
+change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
+[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
+narration embedded in living text — "this used to X", "the old Y", "was removed
+in favor of Z" — is a second, hand-kept history layer at comment scale, and it
+fails the same way the purged `log.md` files did — it goes stale silently and
+gets retrieved and trusted as current state. This is that lesson generalized from
+dedicated log *files* down to inline narration.
+
+**The rule.** When you change the system, rewrite the living text to describe the
+new present — do not append a note about what it used to be. Git holds the
+before; the commit message carries the why-it-changed. The living surface carries
+only what is.
+
+**The carve-outs — what is *not* retrospective narration:**
+
+- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
+  reader where the functionality *is now* — load-bearing, keep. Test: does the
+  sentence tell the reader something they must know to act *today*, or only what
+  changed?
+- **Chesterton's-fence justifications.** A comment explaining why live code still
+  exists ("kept only as the migration reader for X") justifies present code and
+  reads as *this is why this exists*, not as a changelog. Keep.
+- **Explanatory surfaces where the history is the subject.** A `tutorial` or
+  `doctrine` may carry a clearly-marked, bounded history aside when the change
+  itself is what it explains. That permission is exactly why operational and
+  reference surfaces — read to act, not to learn the backstory — get none.
+
+Records that are historical *by construction* — `plan`, `analysis`, `issue`,
+thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
+not living surfaces and are out of scope; narrating the past is their job.
+
+_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
+
 **When a turn produces work, report it as a ledger.** A response that creates or
 modifies artifacts, or reaches a decision point, closes with tabular sections
 rather than narrating the same facts in prose. Tables make what-happened and
@@ -784,8 +821,8 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
   `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
-  on-demand successor to the old SessionStart digest (no longer auto-injected at
-  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+  on-demand appraisal of open work, produced when asked rather than injected at
+  session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
 - **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
   `status` (default `open`). The issues-only slice of `/priorities`; read-only
   (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.

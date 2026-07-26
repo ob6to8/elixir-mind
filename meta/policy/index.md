@@ -37,6 +37,7 @@ the start if siblings are plausible.
 - [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md) — a negative statement earns its place only when the case it negates is explicit (raised in-document, a default the reader would assume, or a rule being overridden); otherwise state the rule positively, and an edit that removes a negation's referent recasts the negation in the same motion
 - [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/todo/plan/doctrine/policy), downstream of plan-vs-capture
 - [response-work-report-format](/meta/policy/response-work-report-format.md) — report work in tables (created/modified/actions/questions/options), past tense, prose for judgment
+- [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md) — living surfaces state the present; retrospective "used to…" narration belongs in the commit graph, not inline
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
