@@ -32,23 +32,82 @@ ingested documents:
 - **Status** — `ingested (N)` when N filed documents cite it · `known` when the channel
   is worth watching but nothing has been drawn from it yet
 - **Ingested** — bundle-absolute links to the documents sourced from that channel
+- **Nominated as** — on a `known` channel only: who vouched for it and on what grounds,
+  since that is all the evidence there is until something is drawn from it
 
 ---
 
 ## Video
 
-No video channel has produced a filed document yet. The entries below are `known`
-candidates, kept here so the medium is represented rather than silently absent.
+No video channel has produced a filed document yet — every entry below is `known`.
+The list is seeded from
+[r/LLMDevs, "Recommended Non-BS Youtube Channels"](https://www.reddit.com/r/LLMDevs/comments/1v6zxz3/recommended_nonbs_youtube_channels/),
+kept here as a pointer and deliberately **not ingested** as a bundle `reference`.
 
-### r/LLMDevs — "Recommended non-BS YouTube channels"
-- **Medium:** forum · **Status:** known · **Tags:** `llm` `recommendations` `video` `seed`
-- The [recommendation thread](https://www.reddit.com/r/LLMDevs/comments/1v6zxz3/recommended_nonbs_youtube_channels/)
-  this register's video section is meant to be seeded from. Recorded as a pointer only —
-  deliberately **not ingested** as a bundle `reference`.
-- **Pending:** the thread's channel list is not yet transcribed here. Reddit refuses
-  automated fetches from this environment (HTTP 403 to direct, JSON, and mirror
-  endpoints), so the recommendations must be supplied by the operator rather than
-  guessed at.
+The thread's selection criterion is worth keeping with the list, because it is the
+standard these channels were nominated against: a channel qualifies if it does or
+reports **independent testing of released models** rather than restating vendor
+launch claims — the working test being whether it has published something of the
+"Opus 5 is AGI" variety. One commenter's heuristic: skip anything posting more than
+twice a week, because that cadence is set by the algorithm rather than by having
+something to say; the durable channels tend to be small and methodologically dull.
+A dissenting reply held that top AI channels have no choice but to talk that way.
+
+Each entry's characterization is the channel's **own** description, retrieved from
+the channel page; the nominating comment's reasoning is quoted separately where it
+adds something. Every handle below was checked live and resolves.
+
+### [Codacus](https://www.youtube.com/@Codacus)
+- **Medium:** video · **Status:** known · **Tags:** `local-llm` `self-hosting` `homelab` `small-models`
+- Self-described as running real AI on hardware you already own — small models, self-hosted stacks, and homelab tooling, positioned explicitly against sponsored tool reviews.
+- **Nominated as:** niche to local LLM hosting and very informative on the basics. The strongest-signal entry in the thread — it is the one recommendation the asker acted on.
+
+### [xCreate](https://www.youtube.com/@xcreate)
+- **Medium:** video · **Status:** known · **Tags:** `model-reviews` `macos` `local-inference`
+- Coding-focused channel; the author also builds Inferencer, a macOS inference-harness app.
+- **Nominated as:** entertaining reviews of new models, in a macOS-oriented pair of recommendations.
+
+### [No place like localhost](https://www.youtube.com/@NoPlaceLikeLocalhost)
+- **Medium:** video · **Status:** known · **Tags:** `local-llm` `tutorials` `tool-evals`
+- Self-described as entirely about standing up an LLM on local hardware.
+- **Nominated as:** short no-nonsense tutorials (voice cloning) plus model and tool evaluations, opencode among them.
+
+### [Protorikis](https://www.youtube.com/@Protorikis)
+- **Medium:** video · **Status:** known · **Tags:** `makers` `practical-ai` `self-hosting`
+- Short, practical videos for makers and developers on practical AI, coding, creative tools, and self-hosting.
+- **Nominated as:** a bare name-drop, with no stated reasoning.
+
+### [SenTeGuard](https://www.youtube.com/@SenTeGuard)
+- **Medium:** video · **Status:** known · **Tags:** `ai-security` `policy` `national-security`
+- The collision of AI with power, national security, and civic life, hosted by a former US Army cyber officer and Harvard Kennedy School policy-technologist. Companion newsletter: [letters.senteguard.com](https://www.letters.senteguard.com/).
+- **Nominated as:** self-promotion — posted by the channel's own author, who described it as a work in progress. Weigh it accordingly; it is also the only entry aimed at policy rather than engineering.
+
+### Bulk-listed AI channels
+
+Nine channels arrived as a single unannotated list, under the framing that genuinely
+grounded AI coverage tends to read as negative on AI. No per-channel reasoning was
+given, and the list mixes news-and-commentary channels in with the technical ones —
+so it sits loosely against the thread's independent-testing criterion and should be
+sampled before any of it is trusted.
+
+- [Rod Miller](https://www.youtube.com/@RodMillerAI) — "AI News for People Who Ain't Stupid".
+- [Eli the Computer Guy](https://www.youtube.com/@elithecomputerguy) — long-running general IT and technology channel; no channel description published.
+- [Matt Wolfe](https://www.youtube.com/@mreflow) — weekly sifting of AI news and tools; runs the futuretools.io directory and newsletter.
+- [AI Search](https://www.youtube.com/@theAIsearch) — explanatory AI news, trends, and tool coverage aimed at a general audience.
+- [Alex Ziskind](https://www.youtube.com/@AZisk) — developer with 20+ years in software, covering coding and hardware topics in depth.
+- [Matthew Berman](https://www.youtube.com/@matthew_berman) — high-volume AI news and model coverage aimed at broad accessibility.
+- [House of El: AI](https://www.youtube.com/@houseofel-ai) — a CS PhD and geopolitical analyst decoding AI with a stated no-hype, no-jargon stance.
+- [Mo Bitar](https://www.youtube.com/@atmoio) — "exploring what AI actually is"; creator of Standard Notes (acquired by Proton, 2024), now building Shape.
+- [STARTUP HAKK](https://www.youtube.com/@STARTUPHAKK_sh) — a .NET bootcamp and software consultancy's channel; commercially oriented rather than independent.
+
+### Unresolved nominations
+
+Two channels were recommended by name only, for testing model capability through
+real-world code tasks — building familiar things like video games — rather than
+amplifying launch claims. Neither name resolves confidently, so no URL is recorded:
+
+- **tef** — `youtube.com/@tef` exists but is an unrelated clips channel, so the handle is almost certainly not this one.
+- **lancypoo** — two near-matches exist (`@lancypoo`, an untitled channel, and `@LanceyPooAi`, "AI. Learning. Technology."), and the thread gives nothing to choose between them.
 
 ---
 
@@ -237,7 +296,7 @@ candidates, kept here so the medium is represented rather than silently absent.
 
 ### [Reddit — r/LLMDevs](https://www.reddit.com/r/LLMDevs/)
 - **Medium:** forum · **Status:** known · **Tags:** `llm` `practitioner-discussion` `recommendations`
-- Practitioner discussion on building with LLMs. Nothing filed from it yet; it is the channel behind the video-section seed thread above.
+- Practitioner discussion on building with LLMs. Nothing filed from it yet, but it is the channel that seeded all sixteen entries in the [Video](#video) section above — a demonstration of what a forum is good for here: naming channels worth watching, at a granularity no single article supplies.
 
 ### Shared chat transcripts
 - **Medium:** forum · **Status:** known · **Tags:** `conversation` `staging`
