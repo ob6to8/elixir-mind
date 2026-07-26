@@ -79,8 +79,8 @@ attribution:
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
   `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
-  on-demand successor to the old SessionStart digest (no longer auto-injected at
-  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+  on-demand appraisal of open work, produced when asked rather than injected at
+  session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
 - **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
   `status` (default `open`). The issues-only slice of `/priorities`; read-only
   (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.

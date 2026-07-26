@@ -33,6 +33,7 @@ the start if siblings are plausible.
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
 - [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
+- [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md) — living surfaces state the present; retrospective "used to…" narration belongs in the commit graph, not inline
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
