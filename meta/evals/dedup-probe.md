@@ -73,6 +73,7 @@ being mechanically rewritten.
 | the founders playbook - building an ai native startup | em:54cf3c | target | anthropic founder playbook; ai-native startup playbook; startup lifecycle playbook | harvested at intake 2026-07-20 |
 | guarding against ai drift | em:8d9b89 | target | ai code quality drift; guardrails against ai degradation; automated quality checks for ai coding | harvested at intake 2026-07-23 |
 | coding standards worth absorbing | em:1ec778 | target | elixir coding conventions; @spec argument naming; typespec and documentation standards | harvested at intake 2026-07-23 |
+| agent teams | em:33e0c7 | target | claude code teammates; multi-agent team sessions; shared task list mailbox coordination | harvested at intake 2026-07-26 |
 
 ## Baseline
 
@@ -86,8 +87,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 5 | 14 |
-| expanded | 14 | 14 |
+| plain | 6 | 15 |
+| expanded | 15 | 15 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to
