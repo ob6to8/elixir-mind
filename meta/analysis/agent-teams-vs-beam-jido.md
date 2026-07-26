@@ -10,6 +10,7 @@ attribution:
   channel: intake
   agent: "operator via /intake, Claude Code session"
   why: "operator asked to intake the agent-teams doc and evaluate it in comparison to the same architecture on the BEAM using the Jido 2 agent framework — advantages for each"
+  from: [/meta/threads/2026-07-26-agent-teams-intake-and-beam-jido-comparison.md]
 ---
 
 # The actor model without its runtime: Claude Code agent teams vs. BEAM/Jido 2

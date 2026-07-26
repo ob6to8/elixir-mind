@@ -107,3 +107,20 @@ session or subagents are preferred.
   `TaskCompleted`), costs (agent-team token costs).
 - Analyzed against BEAM/Jido 2 in
   [agent teams vs. BEAM/Jido](/meta/analysis/agent-teams-vs-beam-jido.md).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:33e0c7">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-26-agent-teams-intake-and-beam-jido-comparison (2026-07-26)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:33e0c7`]**  (co-feeds: `meta/analysis/agent-teams-vs-beam-jido.md`)
+
+Intake complete — two documents filed and pushed to `claude/agent-architecture-comparison-7xwd2o` (branch blob links; Pages URLs go live on merge):
+
+- **[Claude Code agent teams](https://github.com/ob6to8/elixir-mind/blob/claude/agent-architecture-comparison-7xwd2o/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md)** — `reference`, `em:33e0c7`, filed under the existing `claude-code/` directory. Summarized capture of the official docs page (fetched in full), keeping the URL as `resource`.
+- **[The actor model without its runtime: agent teams vs. BEAM/Jido 2](https://github.com/ob6to8/elixir-mind/blob/claude/agent-architecture-comparison-7xwd2o/meta/analysis/agent-teams-vs-beam-jido.md)** — `analysis`, joining the existing family (Managed Agents, Dynamic Workflows, the base Jido evaluation, the caveats expansion). Jido facts inherit the verified 2026-07-12 baseline, with two fresh spot-checks today: `jido_cluster` is *still* unpublished on hex (404), and jido.run confirms the coordination primitives are intra-node signals + parent-child hierarchies + a DAG planner.
+
+Both indexes and the registry were regenerated; `mix brain.verify`, `brain.route_tags`, and `brain.contract --check` all pass. A gold row ("agent teams" → `em:33e0c7`) was harvested and the dedup baseline refreshed — no recall regression.
