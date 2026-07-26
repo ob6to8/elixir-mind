@@ -3,7 +3,7 @@ type: policy
 title: Which governance artifact to file
 description: The discriminator for choosing among the governance types once work is worth persisting — analysis for a reasoned judgment, tutorial for a durable explainer, issue for a problem, todo for a plain task, plan for a proposed change needing design — sitting downstream of plan-vs-capture's prior question of whether to persist at all.
 section: filing
-order: 9
+order: 12
 status: active
 tags: [meta, governance, filing, routing, issues, todos, plans, analysis, tutorials]
 timestamp: 2026-07-26

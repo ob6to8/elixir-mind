@@ -6,7 +6,7 @@ description: Hub for the cross-domain glossary — one concept file per term und
 provenance: "Agent-distilled definitions; each term's file cites the sources it was seen in"
 verified: false
 tags: [glossary, terminology, cross-domain]
-timestamp: 2026-07-13
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-10T22:24:41+00:00
   channel: backfill
@@ -50,6 +50,18 @@ something non-standard?" — the local-jargon primer. The convention is defined
 in the [`/add-to-glossary` skill](/.claude/skills/add-to-glossary/SKILL.md); the
 decision record is the
 [glossary sense-disambiguation plan](/meta/plans/glossary-sense-disambiguation.md).
+
+**Where definitions bind.** For a term the operating contract also defines — a
+controlled `type`, a term of the policy layer — the
+[controlled-type vocabulary](/meta/policy/controlled-type-vocabulary.md) (and
+the policy layer generally) is the **authority**: the operator-ratified wording
+agents are contract-bound to, defining by *role* — what the thing is distinct
+from and where it sits in the governance stack. The glossary entry, and the
+index gloss derived from it, are **restatements that defer to it**, defining by
+*function* — what the thing does — for fast reading. Where the two diverge, the
+policy wording wins and the glossary is corrected to match. For a term with no
+contract definition, the glossary entry is itself the canonical overview (or a
+pointer, per the pointer-entry rule above).
 
 ## Thread excerpts — route-tagged log
 
@@ -250,3 +262,11 @@ What landed:
 Deferred (noted in the plan): badging the index lines with sense markers, and a sense column in the compiled registry — both derivable from the field whenever wanted.
 
 I didn't open a PR since you didn't ask; `/create-pull-request` will also capture this session and glossary it in the same PR. If any individual classification looks wrong to you, it's a one-line frontmatter edit — the mapping is deliberately easy to overrule.
+
+### 2026-07-25-journal-skill-and-first-entry (2026-07-25)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:0b648f`]**  (co-feeds: `em:1b3c79`)
+
+- **Not recorded — my synthesis:** the framing "the policy defines by role in the governance stack, the glossary defines by function," and the blanket sentence "the policy is the authority; the glossary entry and index are restatements that defer to it." Both are stitched from the recorded rules above, and I should have labeled them as synthesis when I said them. One nuance the synthesis papered over: the `doctrine` glossary entry is not formally a pointer entry — it is a dual-sense definition with an "In this brain" passage — so its deference to the vocabulary policy is conventional, not mechanically marked. If you want the hierarchy recorded verbatim, it is a one-paragraph addition to the glossary hub doc (`beliefs/glossary.md`); say so and I'll file it.

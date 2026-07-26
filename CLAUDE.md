@@ -172,12 +172,21 @@ _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-ev
 
 ## 3. Filing conventions
 
-**Distill, don't dump.** Capture the *knowledge*, not the raw noise. A document has
-a clear title, a one-sentence `description`, and a clean body. Keep the original
-material as a `resource` URI and/or under a `# Citations` section — not as the
-whole document.
+**Capture the knowledge, cite the source.** When you file a knowledge document,
+capture the *knowledge*, not the raw noise. A document has a clear title, a
+one-sentence `description`, and a clean body. Keep the original material as a
+`resource` URI and/or under a `# Citations` section — not as the whole document.
 
-_Source: [`meta/policy/distill-dont-dump.md`](/meta/policy/distill-dont-dump.md)_
+This is the knowledge-layer half of
+[fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md):
+a document consulted to *understand a subject* is fit for purpose when it is
+concise and queryable, so here you distill hard and relegate the raw source to a
+citation. The record-layer half — where fidelity, not concision, is the goal, and
+material is kept verbatim-minus-noise — is governed separately by
+[session-capture](/meta/policy/session-capture.md); do not apply this filing rule
+to thread docs.
+
+_Source: [`meta/policy/capture-knowledge-cite-the-source.md`](/meta/policy/capture-knowledge-cite-the-source.md)_
 
 **Update in place; don't fragment.** Before creating a file, **search the bundle**
 for an existing document on the same subject. If one exists, update it (merge new
@@ -209,16 +218,31 @@ in chat; the live URL is a click away.
   (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
   source of truth, and this contract's copy of it is compiled in from that config —
   a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
-- **The mapping.** Take the resource's bundle path and swap the base and extension:
-  bundle path `P.md` → `https://ob6to8.github.io/elixir-mind/P.html`. So
-  `/knowledge/knowledge-management/open-knowledge-format.md` is cited as
-  `https://ob6to8.github.io/elixir-mind/knowledge/knowledge-management/open-knowledge-format.html`,
-  and a directory's `index.md` as `…/<dir>/index.html`. This covers governance docs
-  too (`meta/…`), which are rendered as well. `mix brain.url <path>` prints the
-  mapped URL for a bundle path — the mechanical way to get it right.
+- **Get the URL from the tool, never by hand. `mix brain.url <path>` prints the
+  working URL** for any bundle path — always run it; do **not** construct a URL
+  yourself. The correct URL depends on state you have to check (is the doc live on
+  `main` yet? see below), not on the path alone, so hand-construction is exactly
+  what produces dead links. *Under the hood* the tool maps a live, rendered doc by
+  swapping base and extension — `P.md` → `https://ob6to8.github.io/elixir-mind/P.html` (a directory's
+  `index.md` → `…/<dir>/index.html`; governance `meta/…` docs render too) — but
+  that mapping is **what the site does at build time, not a recipe to apply in a
+  response**. Reproducing it by hand is the anti-pattern this policy exists to
+  stop.
+- **Live only after merge — cite unmerged docs by branch.** Pages deploys **only
+  from the default branch** (`pages.yml` → `push: branches: [main]`), so a document
+  *created or modified on an unmerged branch has no live page yet*: its Pages URL
+  **404s** (new doc) or shows **stale** content (modified doc) until the PR merges
+  and Pages rebuilds. Cite such a doc by its GitHub **blob URL at the branch ref**
+  (`<repo>/blob/<branch>/<path>.md`), which resolves immediately and shows the
+  current content. `mix brain.url` does this automatically — it emits the live
+  Pages URL when the doc is rendered *and* unchanged vs `origin/main`, and the
+  branch blob URL otherwise (new, modified, or under a non-rendered directory).
+  The Pages URL is the canonical form once merged; a branch blob link is fine in
+  ephemeral chat (branches are deleted post-merge, so never hardcode a blob URL
+  into a durable doc body).
 - **Not rendered → no live URL.** Resources under directories the site excludes
-  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page; cite those by repo path
-  (or link the file on GitHub) rather than fabricating a Pages URL.
+  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever; `mix brain.url`
+  cites those by their GitHub blob URL instead of fabricating a Pages URL.
 - **This is the response-side rule only.** Cross-links *inside* document bodies stay
   bundle-absolute markdown paths per
   [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
@@ -228,10 +252,31 @@ in chat; the live URL is a click away.
 
 _Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
-- **Links must be processed, not parked.** A web resource enters the brain only once it
-  has been **processed into a `reference`** (fetched and summarized/captured). Do not
-  file bare, unprocessed URLs as their own documents — process it now, or don't file it.
-  (There is deliberately no lightweight "bookmark" type.)
+- **No bare URLs as bundle documents.** A link becomes a bundle
+  [`reference`](/meta/policy/controlled-type-vocabulary.md) — filed into the taxonomy,
+  distilled, cross-linked, carrying an `em:` id — only once it has been **processed**
+  (fetched and summarized/captured). Never file a bare, unprocessed URL as a bundle
+  document: distill it into a reference, or park it in the survey tier below. The two
+  levels are the point — a link is either *ingested* (a filed reference) or *surveyed*
+  (a bookmark), never dumped raw into the taxonomy.
+- **The survey tier — the one sanctioned staging exception.** Links worth keeping but
+  not worth fully ingesting yet live in [`survey/`](/survey/index.md) as **bookmarks**:
+  rows in a register (`survey/bookmarks.md`), each **fetched, one-line-summarized, and
+  tagged** by [`/bookmarks`](/.claude/skills/bookmarks/SKILL.md) — enough metadata to be
+  surfaced by a topic query, without the distill-file-cross-link cost of a reference. A
+  bookmark is *surveyed, not parked bare*; the summary + tags are mandatory, so the tier
+  never degrades into a link graveyard. `survey/` is a **non-bundle namespace** (no `em:`
+  ids, never verified, outside the taxonomy) like `inbox/` and `meta/`, so a bookmark
+  makes no claim on the tree. It is a distinct staging level, **not** a new bundle
+  `type` — bookmarks are register rows, and the register reuses `type: reference` (as
+  `inbox/` digests do).
+- **Promotion is the bridge back to the taxonomy.** A surveyed bookmark graduates to a
+  filed `reference` via [`/intake`](/.claude/skills/intake/SKILL.md) (driven by
+  `/bookmarks promote`); that is the single point where the full distill pass runs and
+  the knowledge-layer filing rule
+  ([capture the knowledge, cite the source](/meta/policy/capture-knowledge-cite-the-source.md))
+  re-engages. The register row records the graduation (`status: promoted → <link>`) so
+  the staging debt stays visible and countable rather than all-or-nothing.
 - **Oversized linked resources**: if a linked source is too large to reasonably copy,
   **write a faithful summary** as the document body and **persist the link** in the
   `resource` frontmatter field (and/or `# Citations`) so nothing is lost.
@@ -316,6 +361,108 @@ survive. Ask "will the executor share this session's context?" — if yes, execu
 and let the commit and capture record it; if no, persist the plan first.
 
 _Source: [`meta/policy/plan-vs-capture.md`](/meta/policy/plan-vs-capture.md)_
+
+**Merge with a true merge commit; never squash or rebase.** The commit graph is
+a **provenance layer**, not an implementation detail: session-authored commits
+carry the session trailer linking them to the agent session that produced them,
+durable docs
+(plans, thread docs, logs) cite commits by SHA, and `git blame` is the answer to
+"which session changed this and why". A squash-merge lands a brand-new commit
+and abandons the originals — severing commit → session traceability and turning
+cited SHAs into garbage once the branch is deleted; a rebase-merge rewrites them.
+A true merge wires the branch's real history into `main`'s ancestry, so the
+cited SHAs stay reachable forever and the branch is safe to delete (see
+[why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)).
+
+- Agents merging a PR (UI, MCP tools, or API) must use the **merge** method —
+  never `squash` or `rebase`, even when they are enabled in repo settings.
+- Never rewrite shared history; the usual noise argument for squashing does not
+  apply here — agent commits are already atomic and deliberately messaged.
+- For a one-line-per-PR reading of `main`, use `git log --first-parent` instead
+  of flattening history at the merge boundary.
+
+**The session trailer is harness-injected — protect the setting.** The
+`Claude-Session: <url>` git trailer that links a commit to the cloud session
+that produced it is added automatically by Claude Code (v2.1.179+) to commits
+Claude authors in web sessions, and the PR body gets the session URL on its own
+line — no agent action required. Since v2.1.182 the setting
+`attribution.sessionUrl: false` disables both. One innocuous-looking line in a
+committed settings file would therefore silently sever commit → session
+traceability for every future session:
+
+- **Never set `attribution.sessionUrl` to `false`** in any committed settings
+  file (`.claude/settings.json` or similar). An agent that finds it set does not
+  "clean it up" in either direction silently — it surfaces the finding and
+  proposes removal to the operator.
+
+**Known coverage gaps — the trailer is strong evidence, not an invariant.**
+Three classes of commit legitimately lack the trailer: commits predating the
+feature's arrival in this repo (before 2026-07-07); auto-generated merge
+commits (`git merge` default messages, the GitHub merge button) — the harness
+injects the trailer only into commit messages Claude authors; and commits from
+local-terminal sessions, which are authored under the operator's local git
+identity and have no cloud transcript URL. For all of these the **PR is the
+fallback anchor**: the PR body carries the session URL, and the thread doc's
+`pr:` stamp (see the session-capture policy) links the session record back to
+how it landed. Do not treat a missing trailer as evidence a commit bypassed an
+agent session.
+
+_Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
+
+**Provenance lives in metadata, not body prose.** A document's sourcing is
+already recorded structurally — `provenance` (where the content came from),
+`attribution` (how it entered, including the `from` back-link to its thread) —
+so the body must not restate it. No "from the first journal entry", no
+"distilled from thread X", no "at operator direction" in body prose, and none
+in the `index.md` gloss that lists the doc. The body states the knowledge;
+the metadata states the origin.
+
+- **The test: does the sentence lose meaning, or only credit, if the reference
+  is removed?** A *credit-only* reference is metadata and belongs in
+  frontmatter. A *load-bearing* reference — a citation supporting a claim, the
+  grounding analysis a doctrine is judged against, a document the reader must
+  follow to understand the argument — stays, as a plain cross-link per
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md),
+  without acknowledgement framing around it.
+- **Why.** Acknowledgement prose is a shadow copy of the attribution record:
+  unchecked where the metadata is machine-verified, stale-prone where
+  governance `from` is append-only, and a leak of record-layer content into
+  the knowledge layer (see
+  [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md)).
+  One origin, one home.
+- **Scope.** Bundle documents, governance docs, and their index glosses alike.
+  Thread docs are exempt — they *are* the record, and their narrative sections
+  legitimately speak in terms of who said and did what. Frontmatter fields
+  (`provenance`, `attribution.why`) are the sanctioned home for origin prose
+  and are untouched by this rule.
+
+_Source: [`meta/policy/provenance-lives-in-metadata.md`](/meta/policy/provenance-lives-in-metadata.md)_
+
+**Negate only an explicit case.** A negative statement — "no X", "never Y",
+"not by Z-ing" — is a reference: it points at the case it rules out. It earns
+its place only when that case is **explicit**: raised in the same document, a
+live alternative the reader would otherwise assume, or a standing rule being
+overridden. Absent an explicit case, state the rule positively — an unanchored
+negation is an orphaned reference, gesturing at an argument the reader cannot
+see.
+
+- **The test: can the reader point at what is being negated?** If the case is
+  named nearby, assumed by default, or contract-bound elsewhere (link it), the
+  negation is anchored and does real work. If answering "who said anything
+  about that?" requires context outside the document, recast the sentence as
+  the positive rule.
+- **Negations fossilize.** An anchored negation loses its anchor when a later
+  edit removes the referent — a provenance sweep, a trim, a refactor — and the
+  stump reads as an argument with a missing party. An edit that removes a
+  negation's referent must recast the negation in the same motion, not leave
+  the stump.
+- **Scope.** Document bodies, index glosses, and agent responses alike —
+  wherever the agent composes prose. Thread renders are exempt (verbatim
+  record). Anchored negations remain fully legitimate and load-bearing —
+  contrast pairs ("cache, never know"), guardrails negating a named temptation,
+  and overrides of stated defaults are the pattern working as intended.
+
+_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
 
 **Choosing the artifact is a second question, not the first.**
 [plan-vs-capture](/meta/policy/plan-vs-capture.md) answers *whether* to persist
@@ -409,53 +556,6 @@ only the sections that have content.
   prose above the table.
 
 _Source: [`meta/policy/response-work-report-format.md`](/meta/policy/response-work-report-format.md)_
-
-**Merge with a true merge commit; never squash or rebase.** The commit graph is
-a **provenance layer**, not an implementation detail: session-authored commits
-carry the session trailer linking them to the agent session that produced them,
-durable docs
-(plans, thread docs, logs) cite commits by SHA, and `git blame` is the answer to
-"which session changed this and why". A squash-merge lands a brand-new commit
-and abandons the originals — severing commit → session traceability and turning
-cited SHAs into garbage once the branch is deleted; a rebase-merge rewrites them.
-A true merge wires the branch's real history into `main`'s ancestry, so the
-cited SHAs stay reachable forever and the branch is safe to delete (see
-[why a true merge keeps cited commits reachable](/meta/tutorials/why-a-true-merge-keeps-cited-commits-reachable.md)).
-
-- Agents merging a PR (UI, MCP tools, or API) must use the **merge** method —
-  never `squash` or `rebase`, even when they are enabled in repo settings.
-- Never rewrite shared history; the usual noise argument for squashing does not
-  apply here — agent commits are already atomic and deliberately messaged.
-- For a one-line-per-PR reading of `main`, use `git log --first-parent` instead
-  of flattening history at the merge boundary.
-
-**The session trailer is harness-injected — protect the setting.** The
-`Claude-Session: <url>` git trailer that links a commit to the cloud session
-that produced it is added automatically by Claude Code (v2.1.179+) to commits
-Claude authors in web sessions, and the PR body gets the session URL on its own
-line — no agent action required. Since v2.1.182 the setting
-`attribution.sessionUrl: false` disables both. One innocuous-looking line in a
-committed settings file would therefore silently sever commit → session
-traceability for every future session:
-
-- **Never set `attribution.sessionUrl` to `false`** in any committed settings
-  file (`.claude/settings.json` or similar). An agent that finds it set does not
-  "clean it up" in either direction silently — it surfaces the finding and
-  proposes removal to the operator.
-
-**Known coverage gaps — the trailer is strong evidence, not an invariant.**
-Three classes of commit legitimately lack the trailer: commits predating the
-feature's arrival in this repo (before 2026-07-07); auto-generated merge
-commits (`git merge` default messages, the GitHub merge button) — the harness
-injects the trailer only into commit messages Claude authors; and commits from
-local-terminal sessions, which are authored under the operator's local git
-identity and have no cloud transcript URL. For all of these the **PR is the
-fallback anchor**: the PR body carries the session URL, and the thread doc's
-`pr:` stamp (see the session-capture policy) links the session record back to
-how it landed. Do not treat a missing trailer as evidence a commit bypassed an
-agent session.
-
-_Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
 ---
 
@@ -649,6 +749,16 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   a new top-level domain are deferred for operator ratification) and attributed
   `channel: auto-intake` for the operator's post-intake editorial pass. See
   `.claude/skills/research/SKILL.md`.
+- **`/bookmarks`** — process the **survey tier**: links the operator wants kept but not
+  yet fully ingested. The operator drops raw URLs under **Pending** in the register
+  (`survey/bookmarks.md`); a bare `/bookmarks` fetches each, writes a one-line summary
+  and topical tags, and moves it to **Surveyed** (`status: surveyed`) — a non-bundle
+  namespace (no `em:` ids) like `inbox/`. `/bookmarks list [surveyed|promoted|all]`
+  reviews the register; `/bookmarks promote <url>` runs `/intake` to distill and file
+  the link as a bundle `reference`, then records the graduation on the row. The
+  lower-effort staging sibling of `/intake` (see the
+  [link-processing](/meta/policy/link-processing.md) survey-tier carve-out). See
+  `.claude/skills/bookmarks/SKILL.md`.
 - **`/create-pull-request`** — run `/capture` to completion, run `/add-to-glossary`
   over the captured thread doc, **stamp the thread into `attribution.from`** (append
   the just-captured thread's path to the `from` list of every governance doc the
@@ -683,6 +793,17 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   by `status` (default `active` = proposed/accepted/in-progress). The plans-only slice
   of `/priorities`; read-only (persisting a plan stays inline per the persist-plans
   policy). See `.claude/skills/plan/SKILL.md`.
+- **`/journal`** — file the operator's daily journal entry: everything following the
+  invocation is the entry body, transcribed faithfully (only dictation noise cleaned —
+  the operator's voice is inviolable) into a dated `type: note` doc at
+  `journal/YYYY-MM-DD.md` (one file per day; same-day additions append). `journal/` is
+  a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
+  `attribution` (machine-enforced exempt), anchored by date rather than inbound
+  links, outside the taxonomy — the operator's synthesis practice, on the record
+  layer. `/journal list` reviews recent entries; a response to an entry is produced
+  only when asked, delivered in chat and persisted verbatim below the entry under a
+  marked `## Response` heading — operator voice above, agent voice below, never
+  interleaved. See `.claude/skills/journal/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
@@ -881,3 +1002,72 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
   operator to ratify, as with any destructive change.
 
 _Source: [`meta/policy/git-branch-deletion.md`](/meta/policy/git-branch-deletion.md)_
+
+---
+
+## 10. Elixir tooling — coding standards
+
+**This contract is the coding-standards file.** The Elixir tooling (`lib/`,
+`test/`, the `mix brain.*` tasks) is held to the same anti-drift bar as the
+bundle it maintains: an agent reaches for whatever pattern it has already seen,
+so yesterday's substandard addition becomes tomorrow's precedent unless a
+standard announces the violation. The repo's answer is the one it applies to
+knowledge: every standard with a **mechanical oracle** is a
+[gate](/meta/tutorials/the-gate-suite-and-where-it-runs.md); standards without
+one are written here. **A recurring agent miss is fixed by updating this policy
+and recompiling the contract, never only in the offending change** — a miss
+fixed only in-line is a miss re-fixed forever. (Absorbed from
+[Guarding Against AI Drift](/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md)
+and the transferable half of
+[Zornek's LocalCents standards](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md).)
+
+**The structural layer — build gates.** Warnings are non-negotiable in both
+compilation and tests (`mix compile --warnings-as-errors`,
+`mix test --warnings-as-errors`); source is canonically formatted
+(`mix format --check-formatted`); and compile-time coupling between modules is
+banned outright (`mix xref graph --label compile-connected --fail-above 0` —
+the count is zero today and the gate keeps it there). CI additionally lints its
+own workflow files with **actionlint**.
+
+**Admission rule for new guardrails.** A check earns a gate when its **signal
+beats its upkeep** *and* it runs offline as a plain `mix` task with no
+dependencies (per
+[why the toolchain runs offline](/meta/tutorials/why-the-toolchain-runs-offline.md)).
+One carve-out: hygiene checks on CI's own configuration (actionlint) run
+CI-only, since their subject exists only there. The **intentional gaps** are
+deliberate, not oversights: no Credo, no Dialyzer, no Sobelow/mix_audit, no
+CI-gated coverage — each would break the zero-dependency stance for signal the
+small `lib/` doesn't yet warrant (and coverage stays exploratory, never a gate,
+on the merits). Re-evaluate if the toolchain ever takes on dependencies or
+`lib/` grows past what review holds.
+
+**Conventions (editorial — no oracle, so hold the line in review):**
+
+- **`@impl` names the behaviour; never `@impl true`.** Every `run/1` carries
+  `@impl Mix.Task` (the codebase already conforms); a future behaviour callback
+  names its behaviour the same way.
+- **Name `@spec` arguments whose type doesn't reveal their role.** The test:
+  can a reader tell what the argument is from its type alone? If not
+  (`binary()`, `String.t()`, `integer()`, `map()`, `keyword()`, `term()`),
+  write `name :: type`, matching the function's actual parameter name. Leave a
+  self-describing domain type bare (`Policy.t()`, `DateTime.t()`) unless two of
+  the same type sit side by side. When a spec wraps, stack one argument per
+  line with the return type on its own line after `::`.
+- **Moduledocs are load-bearing.** `mix brain.codemap` compiles
+  [`meta/code-map.md`](/meta/code-map.md) from them, so a moduledoc is written
+  summary-first and carries the *why*, not a restatement of the code; editing
+  one means regenerating the code map (the freshness gate catches the miss).
+- **Don't restate what a `@spec` already states.** `@doc` prose carries
+  behavior and the *condition* under which each branch happens — named
+  semantically ("a `:stale` result when the artifact lags its sources"), never
+  a transcription of the return tuple.
+- **Comments carry durable *why* and never restate the signature.** Future-work
+  asides become `meta/todos/` or `meta/issues/` entries, not `TODO` comments.
+- **Discard an ignored return with `_ = expr`** so the disinterest is explicit,
+  never a bare dangling expression.
+- **Test through the narrowest public surface** — a module's API or the mix
+  task boundary — reaching into internals only for a guarantee the surface
+  can't express; flows get scenario tests (see the
+  [testing methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md)).
+
+_Source: [`meta/policy/elixir-coding-standards.md`](/meta/policy/elixir-coding-standards.md)_
