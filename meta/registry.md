@@ -87,6 +87,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:04c057` | [beliefs/glossary/cron-expression](/beliefs/glossary/cron-expression.md) | concept | false |
 | `em:1c53dc` | [beliefs/glossary/cross-reference-drift](/beliefs/glossary/cross-reference-drift.md) | concept | false |
 | `em:c2a18e` | [beliefs/glossary/cross-site-scripting](/beliefs/glossary/cross-site-scripting.md) | concept | false |
+| `em:466011` | [beliefs/glossary/crossing-signal](/beliefs/glossary/crossing-signal.md) | concept | false |
 | `em:197b02` | [beliefs/glossary/dark-factory](/beliefs/glossary/dark-factory.md) | concept | false |
 | `em:cd979f` | [beliefs/glossary/decision-graph](/beliefs/glossary/decision-graph.md) | concept | false |
 | `em:a215af` | [beliefs/glossary/decision-prior](/beliefs/glossary/decision-prior.md) | concept | false |
@@ -98,6 +99,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c68b6d` | [beliefs/glossary/dependency-directed-backtracking](/beliefs/glossary/dependency-directed-backtracking.md) | concept | false |
 | `em:aa3e46` | [beliefs/glossary/dependency-free](/beliefs/glossary/dependency-free.md) | concept | false |
 | `em:048bca` | [beliefs/glossary/deploy-gating](/beliefs/glossary/deploy-gating.md) | concept | false |
+| `em:dcffa5` | [beliefs/glossary/derived-view](/beliefs/glossary/derived-view.md) | concept | false |
 | `em:f9d319` | [beliefs/glossary/description-logic](/beliefs/glossary/description-logic.md) | concept | false |
 | `em:ca7b27` | [beliefs/glossary/descriptive-premise](/beliefs/glossary/descriptive-premise.md) | concept | false |
 | `em:805816` | [beliefs/glossary/design-rationale](/beliefs/glossary/design-rationale.md) | concept | false |

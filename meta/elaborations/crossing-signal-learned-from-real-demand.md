@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, /elaborate"
   why: "the operator asked for a plain-language expansion of the doctrine's crossing-signal sentence"
+  from: [/meta/threads/2026-07-25-journal-skill-and-first-entry.md]
 ---
 
 # The crossing signal: the first query real work produces that grep plus generated indexes cannot express
