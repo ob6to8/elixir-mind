@@ -14,6 +14,13 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #139](https://github.com/ob6to8/elixir-mind/pull/139) — Explain the session-start.sh core.hooksPath gate; plan the machinery reference *(2026-07-26)*
+
+- Plan: repo-map and machinery reference (proposed)
+- Capture 2026-07-23 session: tutorial, glossary terms, plan from-stamp
+- Stamp pr: 139 into the 2026-07-23 thread doc
+- Sync with main (#137) and regenerate dev-history
+
 ## [PR #137](https://github.com/ob6to8/elixir-mind/pull/137) — Add the /journal skill, journal/ namespace, and first entry (2026-07-25) *(2026-07-26)*
 
 - add the /journal skill and journal/ namespace; file the first entry (2026-07-25)

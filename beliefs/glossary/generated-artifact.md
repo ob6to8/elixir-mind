@@ -37,4 +37,4 @@ docstrings), and the derived dev-history (whose check is
 what may be a generated artifact is [write-time vs build-time](/beliefs/glossary/write-time-vs-build-time.md):
 compilers derive, checkers compare, and only authored judgment is written by hand.
 
-*Seen in:* [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md), [2026-07-23 dev-history-drift thread](/meta/threads/2026-07-23-dev-history-drift-and-regeneration-flow.md)
+*Seen in:* [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md), [2026-07-23 dev-history-drift thread](/meta/threads/2026-07-23-dev-history-drift-and-regeneration-flow.md), [2026-07-23 session-start-hook-gate thread](/meta/threads/2026-07-23-session-start-hook-gate-and-machinery-reference-plan.md)
