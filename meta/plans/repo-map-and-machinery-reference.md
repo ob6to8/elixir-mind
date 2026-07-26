@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session (session-start hook comment → machinery-reference design)"
   why: "operator asked to create glossaries for the repo's directories/files/variables/data-structures/commands; design reshaped to fit the generated-artifact ethos and escalated to a plan (new mix task + CI gate = shape change)"
+  from: [/meta/threads/2026-07-23-session-start-hook-gate-and-machinery-reference-plan.md]
 ---
 
 # Repo-map and machinery reference
