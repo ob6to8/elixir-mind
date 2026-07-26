@@ -310,6 +310,11 @@ the session ends.
   travels with the plan. Deferred phases (things planned but not yet built) stay in
   the same doc under an explicit "deferred" heading until they graduate into their
   own plan when built.
+- **How the shape is written.** When the plan's subject has structure (code, a
+  skill's flow, the bundle tree), its shape sections follow
+  [structured-plan-bodies](/meta/policy/structured-plan-bodies.md): trees,
+  file-tree diffs, and signatures for the shape; prose for the problem,
+  rationale, alternatives, and open questions.
 - **Lifecycle.** A plan carries a `status` (`proposed` · `accepted` · `in-progress`
   · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
   decision history is the point.
@@ -317,6 +322,70 @@ the session ends.
   [`meta/plans/index.md`](/meta/plans/index.md), same as any filed document.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
+
+**Encode a plan's shape as structured artifacts; keep prose for the why.** When
+a plan's subject has structure — code, a skill's control flow, the bundle tree,
+a frontmatter schema — the *shape of the change* is written as compact
+structured artifacts, not described in paragraphs. Prose still carries the
+problem, the rationale, the alternatives weighed, and the open questions
+(unchanged from [persist-plans](/meta/policy/persist-plans.md)); the artifacts
+carry the shape. Rationale, held as beliefs: each artifact
+"is a decision you'd otherwise be making implicitly during code review — at the
+most expensive possible time to change your mind"
+([em:6c7e85](/beliefs/plan-artifacts-surface-implicit-review-decisions.md),
+quoting [wsff.md](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md)),
+and the artifacts "compress the *decisions* (interfaces, layout, call order)
+while leaving function bodies to the agent"
+([em:a96688](/beliefs/plan-artifacts-compress-decisions-not-bodies.md)).
+
+**The artifact kit** — use what the change calls for, in this order:
+
+1. **Current-state tree, then desired-state tree** — the flow or structure as it
+   is, then as it should be (behavior → layer → anchor per level). Equivalent
+   encoding: one tree in `diff` syntax (`+`/`-`/`~` lines) when the delta is
+   small. For changes to an existing flow, the flow doc under
+   [`meta/flows/`](/meta/flows/index.md) *is* the current-state record — cite
+   it instead of restating it.
+2. **File-tree diff** — where new and modified files live (`# NEW` / `# MODIFIED`
+   annotations with a one-clause purpose each).
+3. **Call/flow trees** — for control-flow changes, the production topology *and*
+   the test topology (which seams are substituted under test), separately.
+4. **Signatures** — types and specs for the key new functions; in the Elixir
+   tooling, literal `@spec` lines per the
+   [coding standards](/meta/policy/elixir-coding-standards.md).
+5. **Boundary decisions** — one bullet per layered responsibility: which layer
+   detects the condition, owns side effects, persists state.
+6. **Anchors last** — concrete file paths, function names, abstractions to
+   reuse, and the tests that should cover the flow are attached *after* the
+   trees, never before, so the plan is anchored to intended behavior rather
+   than incidental existing code.
+7. **Decision list** — recommended shape, alternatives rejected, open questions
+   and assumptions. This closes every structured plan.
+
+**The granularity bound.** Artifacts stay at signature/tree/outline level —
+interfaces, layout, call order — and stop there, because "a spec that is
+sufficiently detailed to generate code with a reliable degree of quality is
+roughly the same length and detail as the code itself"
+([em:1eebdf](/beliefs/spec-detail-approaches-code-length.md), quoting
+[Dex Horthy](https://x.com/dexhorthy/status/2033980486813684181)) — and such a
+spec gets no separate review pass
+([em:0c4913](/beliefs/dont-review-code-length-specs.md)). A plan whose
+pseudocode has crept to code granularity is over-specified, not thorough.
+
+**The refresh rule.** A structured plan binds to concrete names, so a deferred
+plan's anchors can go stale as `main` moves. Executing any structured plan
+therefore begins with a **refresh step**: re-derive the current-state tree
+against `HEAD`, diff it against the plan's, and update anchors before building.
+Anchors-last (item 6) is what keeps this step cheap — the stale layer is
+segregated, not woven through the prose.
+
+**Scope.** Applies to plans whose subject has structure; a plan for a pure
+policy or doctrine change may be all prose (its "shape" is the rule text
+itself). Retrofit of pre-existing plans is governed by the
+[retrofit plan](/meta/plans/retrofit-plans-to-structured-bodies.md), not
+demanded by this policy.
+
+_Source: [`meta/policy/structured-plan-bodies.md`](/meta/policy/structured-plan-bodies.md)_
 
 **Two records of a change sit in different tenses.** A `type: plan`
 ([persist-plans](/meta/policy/persist-plans.md)) is **prospective** — decisions
@@ -409,6 +478,62 @@ agent session.
 
 _Source: [`meta/policy/merge-strategy.md`](/meta/policy/merge-strategy.md)_
 
+**Quote primary sources verbatim; mark the boundary between quotation and
+synthesis.** When a delivered response or a document body leans on what a
+source says — a policy, a doctrine, an external article or post, a code
+comment, an operator message — reproduce the load-bearing phrase **verbatim**,
+in quotation marks or a blockquote, and follow it immediately with a citation
+of the artifact it was quoted from. A reader must never have to wonder whether
+a phrase is the source's claim or the agent's synthesis: quoted text is the
+source's, everything outside the quotes is the agent's, and the citation makes
+the boundary checkable.
+
+- **Citation form follows the surface.** Inside document bodies, cite by
+  bundle-absolute markdown link (per
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md));
+  in delivered responses, link per
+  [response-resource-links](/meta/policy/response-resource-links.md) (live URL
+  via `mix brain.url`, never a bare repo path); external sources cite their
+  URL.
+- **Never blend.** Do not paraphrase inside quotation marks, splice two
+  passages into one quote, or silently normalize wording. An elision is marked
+  (`…`); an insertion is bracketed. If only a paraphrase will fit, drop the
+  quotation marks and let it stand as synthesis — attributed, but visibly not
+  verbatim.
+- **Quote at the phrase, not the page.** The rule serves precision, not bulk:
+  lift the shortest span that carries the claim. Wholesale copying stays
+  governed by [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md).
+- **Beliefs and claims extracted from sources** always retain the verbatim
+  source phrase in their body alongside the citation (see the seed beliefs
+  under [`/beliefs/`](/beliefs/index.md) for the pattern), so the extraction
+  remains auditable against its origin.
+
+_Source: [`meta/policy/quote-primary-sources.md`](/meta/policy/quote-primary-sources.md)_
+
+**Prefer established terminology; coin bespoke terms only when nothing
+established fits.** When naming a genre, a `type`, an artifact, a mix task, or
+a concept, reach for the standard term of art (*flow*, *plan*, *glossary*,
+*digest*) before inventing repo-specific vocabulary. Every bespoke term is a
+tax on future readers and agents: it must be learned, glossaried, and
+disambiguated against the standard term it displaced — and an agent
+encountering it cold will guess its meaning from the nearest established sense
+anyway.
+
+- **The test.** Before coining, ask: does an established term denote this
+  thing, even approximately? An approximate standard term with a one-line
+  qualification beats an exact bespoke one (*"flow doc — the touch-sequence of
+  a canonical run"* over a novel coinage).
+- **When bespoke is warranted** — the concept is genuinely novel to this
+  bundle (e.g. *route tag*) — define it in the
+  [glossary](/beliefs/glossary/index.md) at first use, with `sense: repo`.
+- **No retroactive churn.** An existing name is not renamed to a "better" term
+  without operator ratification: renames are shape changes
+  ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)),
+  and a rename's cost (links, skills, muscle memory) usually exceeds a
+  marginal terminology gain.
+
+_Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -476,7 +601,22 @@ Seed vocabulary:
   doctrine as the direction they serve. Distinct from a `policy` (an enforceable
   *rule*), an `analysis` (a *reasoned judgment on a question*), and a `note` (a
   distilled *idea*) — a doctrine is a *standing direction* (lives under
-  `meta/doctrine/`).
+  `meta/doctrine/`). Filing test: teleological (*what standing direction the brain
+  serves*) files as `doctrine`; a value-laden prior about the world files as
+  `belief`.
+- `belief` — an operator-held, value-laden **decision prior**: a statement held
+  *true enough to guide action* even where unverifiable, uncertain, or normative.
+  Sits **parallel to `doctrine`**, not beneath it — a belief is
+  epistemic-with-values ("I hold that the world works this way"), a doctrine is
+  teleological (the brain's own standing direction). A `belief` stays **outside
+  the verification ladder**: it never carries `verified`; one that turns out to be
+  empirically checkable is refiled as a `claim` (and may then graduate) — the type
+  boundary *is* the test. Distinct from a `claim` (on the verification ladder,
+  expects evidence) and a `note` (not citable as a prior). Filing test:
+  *epistemic (what is true) files as `claim`/`concept`; value-laden prior (what I
+  act as if is true) files as `belief`; teleological (what standing direction)
+  files as `doctrine`.* Beliefs are bundle documents with `em:` ids (live under
+  `/beliefs/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 

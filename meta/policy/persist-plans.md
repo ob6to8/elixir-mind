@@ -6,7 +6,7 @@ section: filing
 order: 7
 status: active
 tags: [meta, governance, plans, persistence]
-timestamp: 2026-07-09
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-09T23:11:18+00:00
   channel: backfill
@@ -32,6 +32,11 @@ the session ends.
   travels with the plan. Deferred phases (things planned but not yet built) stay in
   the same doc under an explicit "deferred" heading until they graduate into their
   own plan when built.
+- **How the shape is written.** When the plan's subject has structure (code, a
+  skill's flow, the bundle tree), its shape sections follow
+  [structured-plan-bodies](/meta/policy/structured-plan-bodies.md): trees,
+  file-tree diffs, and signatures for the shape; prose for the problem,
+  rationale, alternatives, and open questions.
 - **Lifecycle.** A plan carries a `status` (`proposed` · `accepted` · `in-progress`
   · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
   decision history is the point.

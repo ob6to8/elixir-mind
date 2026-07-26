@@ -31,8 +31,11 @@ the start if siblings are plausible.
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` after filing; the commit carries the change narrative
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat
+- [structured-plan-bodies](/meta/policy/structured-plan-bodies.md) — a plan's shape is encoded as trees, file-tree diffs, and signatures at outline level; prose keeps the problem, rationale, alternatives, and open questions
 - [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
+- [quote-primary-sources](/meta/policy/quote-primary-sources.md) — load-bearing source phrases are reproduced verbatim and immediately cited, so quotation and synthesis are never confusable
+- [prefer-established-terminology](/meta/policy/prefer-established-terminology.md) — standard terms of art over bespoke coinages; bespoke terms are glossaried at first use and never churned retroactively
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
