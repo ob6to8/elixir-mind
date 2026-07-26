@@ -3,14 +3,15 @@ type: plan
 title: "Gate-suite hardening — review depth and pre-deploy verification"
 description: A proposed change to add substance-level checks the deterministic gate suite structurally cannot provide — an independent second-model/Copilot changelist review, a pre-deploy link-crawl of the built site (the "click through the artifact" analog), and optional banned-word and cyclomatic-complexity scans (the "dictionary check against the binary" analog) — imported from the two-tier reference workflow while keeping the single-trunk, offline-toolchain model; motivation, per-item design, the offline-CI tension, scope boundaries, and a build order.
 status: proposed
-provenance: "Claude Code session (2026-07-22) — recommendations from the version-control workflow audit, gathered into a design/decision record for operator ratification"
+provenance: "Claude Code session (2026-07-26) — recommendations from the version-control workflow audit, gathered into a design/decision record for operator ratification"
 tags: [meta, plan, git, ci, gates, code-review, deployment, banned-words, complexity]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "the audit's review-depth and pre-deploy recommendations are proposed changes that need design and operator ratification before executing — persisted as a plan rather than executed in-session"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 # Plan — gate-suite hardening: review depth and pre-deploy verification

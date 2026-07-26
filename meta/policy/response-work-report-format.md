@@ -6,12 +6,13 @@ section: filing
 order: 10
 status: active
 tags: [meta, governance, responses, format, workflow, permissions]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "operator found the audit's What-I-created table more comprehensible than prose and asked to enshrine the shape as a formalized workflow across work topics; written as a policy rather than a plan so it reaches fresh sessions automatically"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 **When a turn produces work, report it as a ledger.** A response that creates or

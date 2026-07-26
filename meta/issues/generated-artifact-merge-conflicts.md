@@ -3,14 +3,15 @@ type: issue
 title: "Generated/shared artifacts are recurring merge-conflict magnets across parallel sessions"
 description: Worktree isolation prevents working-tree collisions but not merge-level ones — parallel sessions that each regenerate the same generated artifact (CLAUDE.md, registry.md, code-map.md, derived index.md files) 3-way-conflict at merge time, as seen in PRs #97/#98; the fix is to rebuild these files on merge rather than merge them line-by-line, and to lane sessions by domain where they are independent.
 status: open
-provenance: "Claude Code session (2026-07-22) — surfaced by the version-control workflow audit"
+provenance: "Claude Code session (2026-07-26) — surfaced by the version-control workflow audit"
 tags: [meta, issue, git, merge, generated-artifacts, ci, parallel-sessions]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "the audit identified a recurring merge-conflict class worth tracking as a problem, distinct from the recommended fix"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 # Generated/shared artifacts are recurring merge-conflict magnets

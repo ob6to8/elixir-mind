@@ -3,12 +3,13 @@ type: tutorial
 title: The git workflow — single-trunk, true-merge, gate-before-deploy
 description: The end-to-end version-control workflow the brain runs — one durable trunk (main) that is the production version, a short-lived session branch per unit of work in an isolated worktree, a local pre-commit gate then an authoritative CI gate on every push and PR, a true-merge that preserves session→commit provenance, head-branch deletion, and continuous deployment to the live site gated by re-verification — plus where it sits against trunk-based development and the two-tier reference it was audited against, and the hardening directions still open.
 tags: [meta, tooling, git, version-control, workflow, ci, gates, trunk-based-development, deployment, provenance]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "operator requested a tutorial describing the whole git workflow arrived at in the version-control audit"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 # The git workflow — single-trunk, true-merge, gate-before-deploy

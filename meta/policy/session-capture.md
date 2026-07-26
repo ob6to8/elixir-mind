@@ -6,7 +6,7 @@ section: session-workflow
 order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill

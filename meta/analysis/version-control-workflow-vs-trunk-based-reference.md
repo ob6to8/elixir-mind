@@ -2,14 +2,15 @@
 type: analysis
 title: "The brain's git workflow vs. trunk-based development and a two-tier reference: which practices to import"
 description: Audits elixir-mind's actual single-trunk, true-merge, gate-on-every-change workflow against the Atlassian trunk-based-development model and an external two-tier (dev→master, batched-release) reference workflow — finds the repo is already more trunk-based than the reference it's benchmarked against, that main = production makes it continuous deployment with one gate tier, and recommends importing a small set of the reference's practices (pre-commit auto-wiring, generated-artifact merge handling, a pre-deploy link-crawl, banned-word/complexity/second-model review) while explicitly not importing the reference's long-lived dev/master branches or batched daily releases.
-provenance: "Claude Code session (2026-07-22) — operator asked for a version-control workflow audit against the Atlassian trunk-based-development article and an external reference workflow (dev→master two-tier, Playwright deep gate, banned-word/complexity gates, presubmit/postsubmit/changelist-review/dictionary-check/daily-release practices); clarified that the reference is someone else's setup used as a benchmark, and this repo is the single production version"
+provenance: "Claude Code session (2026-07-26) — operator asked for a version-control workflow audit against the Atlassian trunk-based-development article and an external reference workflow (dev→master two-tier, Playwright deep gate, banned-word/complexity gates, presubmit/postsubmit/changelist-review/dictionary-check/daily-release practices); clarified that the reference is someone else's setup used as a benchmark, and this repo is the single production version"
 tags: [meta, analysis, git, version-control, trunk-based-development, ci, gates, code-review, deployment]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "operator requested a version-control workflow audit and ratified persisting the reasoning and its recommendations so they survive the session"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 # The brain's git workflow vs. trunk-based development and a two-tier reference

@@ -55,6 +55,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ee8dfd` | [beliefs/glossary/candidate-feed](/beliefs/glossary/candidate-feed.md) | concept | false |
 | `em:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
 | `em:0568b3` | [beliefs/glossary/capture-problem](/beliefs/glossary/capture-problem.md) | concept | false |
+| `em:b6cee0` | [beliefs/glossary/changelist-review](/beliefs/glossary/changelist-review.md) | concept | false |
 | `em:21854a` | [beliefs/glossary/ci-smoke-check](/beliefs/glossary/ci-smoke-check.md) | concept | false |
 | `em:bee09c` | [beliefs/glossary/claude-agent-sdk](/beliefs/glossary/claude-agent-sdk.md) | concept | false |
 | `em:04b9a8` | [beliefs/glossary/claude-managed-agents](/beliefs/glossary/claude-managed-agents.md) | concept | false |
@@ -76,6 +77,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8ef17d` | [beliefs/glossary/content-word-containment](/beliefs/glossary/content-word-containment.md) | concept | false |
 | `em:a9bb1d` | [beliefs/glossary/context-mesh](/beliefs/glossary/context-mesh.md) | concept | false |
 | `em:cc0302` | [beliefs/glossary/context-rot](/beliefs/glossary/context-rot.md) | concept | false |
+| `em:0bfe41` | [beliefs/glossary/continuous-deployment](/beliefs/glossary/continuous-deployment.md) | concept | false |
 | `em:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `em:f3e4cb` | [beliefs/glossary/control-plane](/beliefs/glossary/control-plane.md) | concept | false |
 | `em:b467a5` | [beliefs/glossary/council-round](/beliefs/glossary/council-round.md) | concept | false |
@@ -243,8 +245,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:78580d` | [beliefs/glossary/plugin](/beliefs/glossary/plugin.md) | concept | false |
 | `em:393e3d` | [beliefs/glossary/pointer-entry](/beliefs/glossary/pointer-entry.md) | concept | false |
 | `em:fa15e7` | [beliefs/glossary/policy-type](/beliefs/glossary/policy-type.md) | concept | false |
+| `em:c6868c` | [beliefs/glossary/postsubmit](/beliefs/glossary/postsubmit.md) | concept | false |
 | `em:1ddce3` | [beliefs/glossary/posttooluse-hook](/beliefs/glossary/posttooluse-hook.md) | concept | false |
+| `em:69676f` | [beliefs/glossary/pre-commit-hook](/beliefs/glossary/pre-commit-hook.md) | concept | false |
 | `em:cc47d1` | [beliefs/glossary/preregistration](/beliefs/glossary/preregistration.md) | concept | false |
+| `em:3a8b96` | [beliefs/glossary/presubmit](/beliefs/glossary/presubmit.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |
@@ -330,6 +335,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8798e8` | [beliefs/glossary/tree-is-the-taxonomy](/beliefs/glossary/tree-is-the-taxonomy.md) | concept | false |
 | `em:1efc5e` | [beliefs/glossary/tree-sitter](/beliefs/glossary/tree-sitter.md) | concept | false |
 | `em:a10e18` | [beliefs/glossary/true-merge](/beliefs/glossary/true-merge.md) | concept | false |
+| `em:20b7a1` | [beliefs/glossary/trunk-based-development](/beliefs/glossary/trunk-based-development.md) | concept | false |
 | `em:cd2537` | [beliefs/glossary/truth-maintenance-system](/beliefs/glossary/truth-maintenance-system.md) | concept | false |
 | `em:6e6dd5` | [beliefs/glossary/tui](/beliefs/glossary/tui.md) | concept | false |
 | `em:60d394` | [beliefs/glossary/tutorial-type](/beliefs/glossary/tutorial-type.md) | concept | false |

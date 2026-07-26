@@ -3,14 +3,15 @@ type: todo
 title: "Auto-wire the pre-commit hook in session-start.sh (git config core.hooksPath .githooks)"
 description: The pre-commit gate exists at .githooks/pre-commit but is opt-in per clone and is not enabled in fresh web-session sandboxes, so its local-first benefit is unrealized in the dominant flow; have the session-start hook set core.hooksPath so every session gets the local gate automatically.
 status: open
-provenance: "Claude Code session (2026-07-22) — surfaced by the version-control workflow audit"
+provenance: "Claude Code session (2026-07-26) — surfaced by the version-control workflow audit"
 tags: [meta, todo, git, pre-commit, hooks, ci, session-start]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "the audit's highest-leverage quick win — a one-line change that makes the local-first gate real for web sessions"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 # Auto-wire the pre-commit hook in `session-start.sh`

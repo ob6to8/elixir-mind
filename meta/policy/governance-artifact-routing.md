@@ -6,12 +6,13 @@ section: filing
 order: 9
 status: active
 tags: [meta, governance, filing, routing, issues, todos, plans, analysis, tutorials]
-timestamp: 2026-07-22
+timestamp: 2026-07-26
 attribution:
-  when: 2026-07-22T00:00:00Z
+  when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "operator asked whether the file-an-issue-vs-todo-vs-plan decision flow was spelled out anywhere; it was distributed across the type vocabulary with no single procedure, and the decision fires mid-work so it belongs in always-loaded contract context"
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
 ---
 
 **Choosing the artifact is a second question, not the first.**
