@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 4.8), 2026-07-23; verbatim retaine
 tags: [meta, thread, git-hooks, sessionstart-hook, pre-commit, code-map, glossary, tooling, plan]
 timestamp: 2026-07-23
 session: https://claude.ai/code/session_01AnZeVjrSipVeACzMb6K7MC
+pr: 139
 ---
 
 # 2026-07-23-session-start-hook-gate-and-machinery-reference-plan
