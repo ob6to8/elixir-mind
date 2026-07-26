@@ -6,6 +6,7 @@ provenance: "Claude Code session (claude-fable-5), 2026-07-26; verbatim retained
 tags: [meta, thread, plans, program-design, pseudocode, beliefs, policy, glossary]
 timestamp: 2026-07-26
 session: https://claude.ai/code/session_01Ji7y7jxonnaiRBJfZjAEnH
+pr: 142
 ---
 
 # 2026-07-26-structured-plan-bodies-and-belief-layer
