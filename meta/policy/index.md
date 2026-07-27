@@ -22,6 +22,7 @@ the start if siblings are plausible.
 - [directory-hierarchy](/meta/policy/directory-hierarchy.md) — unix-like, kebab-case; create the natural path even for one document
 - [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) — the tree + `index.md` files are the canonical taxonomy
 - [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md) — subdirs autonomous; new top-level dirs ratified
+- [project-namespace](/meta/policy/project-namespace.md) — external systems incubate under `/projects/`; generalizable findings file to the knowledge taxonomy
 
 ## filing
 - [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md) — capture the distilled knowledge, keep the raw source as a citation (the knowledge-layer half of [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md))
