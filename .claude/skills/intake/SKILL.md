@@ -23,6 +23,29 @@ they want to capture.
   - If it is **too large to reasonably copy**, write a faithful **summary** and
     **persist the link** in the `resource` frontmatter field (and under `# Citations`).
     Never drop the source.
+- **Go to the owning host, and enumerate before searching.** A vendor's
+  authoritative documentation is usually split across several hosts along lines
+  that are not obvious from outside, and redirects hide the split — so a
+  `site:`-scoped search encodes a guess about the topology that fails silently
+  when wrong.
+  - **Identify which host owns the subject** before searching. For Anthropic,
+    the seven-host map is in
+    [Anthropic's primary-source surfaces](/meta/analysis/anthropic-primary-source-surfaces.md).
+  - **Prefer an index over a search.** Many doc sites publish a machine-readable
+    `llms.txt` page index (`code.claude.com/docs/llms.txt`,
+    `modelcontextprotocol.io/llms.txt`). Fetching one enumerates the surface
+    instead of guessing at it; do this first where it exists.
+  - **A program is not a product.** Certification, training, and partner
+    material live in the program's own portal (for Anthropic, the Partner
+    Academy), which no product-doc search reaches. A login control on the page
+    is not evidence that its linked assets are gated — check.
+  - **Dated specs: confirm the revision.** A revision-pathed spec serves an old
+    revision indefinitely without signalling staleness. Record the revision
+    captured, and check whether a newer one exists.
+  - **Report absence relative to what you searched**, per
+    [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md).
+    "Not on the docs site" is a finding; "does not exist" needs an enumerated
+    search space.
 
 ### 2. Segment into concepts
 - Decide whether the paste is **one concept or several**. If it covers distinct
