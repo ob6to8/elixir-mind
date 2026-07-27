@@ -36,6 +36,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3f16ba` | [beliefs/glossary/architecture-decision-record](/beliefs/glossary/architecture-decision-record.md) | concept | false |
 | `em:43244e` | [beliefs/glossary/argumentation-framework](/beliefs/glossary/argumentation-framework.md) | concept | false |
 | `em:54ea6d` | [beliefs/glossary/artifact](/beliefs/glossary/artifact.md) | concept | false |
+| `em:10c25d` | [beliefs/glossary/artificial-general-intelligence](/beliefs/glossary/artificial-general-intelligence.md) | concept | false |
 | `em:ac22a3` | [beliefs/glossary/assertion-graph](/beliefs/glossary/assertion-graph.md) | concept | false |
 | `em:7a467d` | [beliefs/glossary/assumption](/beliefs/glossary/assumption.md) | concept | false |
 | `em:6cf17b` | [beliefs/glossary/assurance-case](/beliefs/glossary/assurance-case.md) | concept | false |
@@ -177,6 +178,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
+| `em:2fa34c` | [beliefs/glossary/frontier-lab](/beliefs/glossary/frontier-lab.md) | concept | false |
 | `em:640701` | [beliefs/glossary/frontmatter](/beliefs/glossary/frontmatter.md) | concept | false |
 | `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
@@ -282,6 +284,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:78580d` | [beliefs/glossary/plugin](/beliefs/glossary/plugin.md) | concept | false |
 | `em:393e3d` | [beliefs/glossary/pointer-entry](/beliefs/glossary/pointer-entry.md) | concept | false |
 | `em:fa15e7` | [beliefs/glossary/policy-type](/beliefs/glossary/policy-type.md) | concept | false |
+| `em:ae26bf` | [beliefs/glossary/post-training](/beliefs/glossary/post-training.md) | concept | false |
 | `em:c6868c` | [beliefs/glossary/postsubmit](/beliefs/glossary/postsubmit.md) | concept | false |
 | `em:1ddce3` | [beliefs/glossary/posttooluse-hook](/beliefs/glossary/posttooluse-hook.md) | concept | false |
 | `em:69676f` | [beliefs/glossary/pre-commit-hook](/beliefs/glossary/pre-commit-hook.md) | concept | false |
