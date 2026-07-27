@@ -26,6 +26,14 @@ beliefs are extracted from compound statements per the
 - [Plan artifacts compress the decisions and leave the bodies to the agent](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) —
   structured plan artifacts encode interfaces, layout, and call order exactly,
   while leaving function bodies to implementation. `em:a96688`
+- [Coverage and quality must be measured jointly, or degradation hides behind availability](/beliefs/coverage-and-quality-must-be-measured-jointly.md) —
+  an evaluation scoring only whether a system answered cannot see a system whose
+  answers got worse; multiply the quality factor in and let unusable output score
+  zero. `em:06de36`
+- [Review is not an oracle](/beliefs/review-is-not-an-oracle.md) — inspecting
+  generated output cannot establish correctness however often it is repeated;
+  only a check independent of the output settles it. Governs *what counts as
+  checked*, where the coverage belief governs *what to measure*. `em:2ecdd2`
 
 ## Vocabulary & scratch
 

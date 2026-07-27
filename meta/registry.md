@@ -12,9 +12,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 
 | id | concept | type | verified |
 |----|---------|------|----------|
+| `em:06de36` | [beliefs/coverage-and-quality-must-be-measured-jointly](/beliefs/coverage-and-quality-must-be-measured-jointly.md) | belief |  |
 | `em:0c4913` | [beliefs/dont-review-code-length-specs](/beliefs/dont-review-code-length-specs.md) | belief |  |
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `em:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
+| `em:b78fb8` | [beliefs/glossary/abliteration](/beliefs/glossary/abliteration.md) | concept | false |
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
 | `em:8f37a6` | [beliefs/glossary/actor-model](/beliefs/glossary/actor-model.md) | concept | false |
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
@@ -45,6 +47,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:57c7d1` | [beliefs/glossary/attribution](/beliefs/glossary/attribution.md) | concept | false |
 | `em:99aa8c` | [beliefs/glossary/attribution-shadow](/beliefs/glossary/attribution-shadow.md) | concept | false |
 | `em:f8ae3a` | [beliefs/glossary/auto-intake](/beliefs/glossary/auto-intake.md) | concept | false |
+| `em:fb77a7` | [beliefs/glossary/automated-program-repair](/beliefs/glossary/automated-program-repair.md) | concept | false |
 | `em:9fc7da` | [beliefs/glossary/backfill](/beliefs/glossary/backfill.md) | concept | false |
 | `em:6c7e32` | [beliefs/glossary/backpressure](/beliefs/glossary/backpressure.md) | concept | false |
 | `em:6ced60` | [beliefs/glossary/baseline](/beliefs/glossary/baseline.md) | concept | false |
@@ -71,6 +74,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5b3608` | [beliefs/glossary/code-map](/beliefs/glossary/code-map.md) | concept | false |
 | `em:d676f0` | [beliefs/glossary/cognitive-debt](/beliefs/glossary/cognitive-debt.md) | concept | false |
 | `em:d07ed9` | [beliefs/glossary/commoditize-your-complement](/beliefs/glossary/commoditize-your-complement.md) | concept | false |
+| `em:2ac1be` | [beliefs/glossary/common-weakness-enumeration](/beliefs/glossary/common-weakness-enumeration.md) | concept | false |
 | `em:25711c` | [beliefs/glossary/compile-time-coupling](/beliefs/glossary/compile-time-coupling.md) | concept | false |
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
@@ -138,6 +142,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `em:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
 | `em:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
+| `em:48b2f1` | [beliefs/glossary/dual-use](/beliefs/glossary/dual-use.md) | concept | false |
 | `em:b528d9` | [beliefs/glossary/durable-execution](/beliefs/glossary/durable-execution.md) | concept | false |
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
@@ -186,6 +191,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
+| `em:9e945b` | [beliefs/glossary/gguf](/beliefs/glossary/gguf.md) | concept | false |
 | `em:15fa92` | [beliefs/glossary/git-dependency](/beliefs/glossary/git-dependency.md) | concept | false |
 | `em:8272bc` | [beliefs/glossary/git-filter-repo](/beliefs/glossary/git-filter-repo.md) | concept | false |
 | `em:80c65c` | [beliefs/glossary/git-hook](/beliefs/glossary/git-hook.md) | concept | false |
@@ -223,6 +229,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e08db0` | [beliefs/glossary/invisible-degradation](/beliefs/glossary/invisible-degradation.md) | concept | false |
 | `em:f978aa` | [beliefs/glossary/is-ought-gap](/beliefs/glossary/is-ought-gap.md) | concept | false |
 | `em:e9a82b` | [beliefs/glossary/issue-type](/beliefs/glossary/issue-type.md) | concept | false |
+| `em:1374e6` | [beliefs/glossary/jailbreak](/beliefs/glossary/jailbreak.md) | concept | false |
 | `em:44f899` | [beliefs/glossary/jido](/beliefs/glossary/jido.md) | concept | false |
 | `em:eee9e2` | [beliefs/glossary/journal-namespace](/beliefs/glossary/journal-namespace.md) | concept | false |
 | `em:7d7a88` | [beliefs/glossary/justification](/beliefs/glossary/justification.md) | concept | false |
@@ -236,6 +243,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
 | `em:564fb9` | [beliefs/glossary/living-surface](/beliefs/glossary/living-surface.md) | concept | false |
+| `em:4b5735` | [beliefs/glossary/llama-cpp](/beliefs/glossary/llama-cpp.md) | concept | false |
 | `em:7ecfb6` | [beliefs/glossary/llm-as-judge](/beliefs/glossary/llm-as-judge.md) | concept | false |
 | `em:27ea1b` | [beliefs/glossary/llm-gateway](/beliefs/glossary/llm-gateway.md) | concept | false |
 | `em:6a6b46` | [beliefs/glossary/lockfile](/beliefs/glossary/lockfile.md) | concept | false |
@@ -276,9 +284,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a9113e` | [beliefs/glossary/orphaned-branch](/beliefs/glossary/orphaned-branch.md) | concept | false |
 | `em:5d40bf` | [beliefs/glossary/otp](/beliefs/glossary/otp.md) | concept | false |
 | `em:c98541` | [beliefs/glossary/out-of-band](/beliefs/glossary/out-of-band.md) | concept | false |
+| `em:c42550` | [beliefs/glossary/over-refusal](/beliefs/glossary/over-refusal.md) | concept | false |
 | `em:410879` | [beliefs/glossary/owl](/beliefs/glossary/owl.md) | concept | false |
 | `em:f984a5` | [beliefs/glossary/paraconsistency](/beliefs/glossary/paraconsistency.md) | concept | false |
 | `em:7adc45` | [beliefs/glossary/parse-the-log](/beliefs/glossary/parse-the-log.md) | concept | false |
+| `em:83c71b` | [beliefs/glossary/patch-validation-funnel](/beliefs/glossary/patch-validation-funnel.md) | concept | false |
 | `em:8048c6` | [beliefs/glossary/pipe-table](/beliefs/glossary/pipe-table.md) | concept | false |
 | `em:bf0524` | [beliefs/glossary/plan-type](/beliefs/glossary/plan-type.md) | concept | false |
 | `em:78580d` | [beliefs/glossary/plugin](/beliefs/glossary/plugin.md) | concept | false |
@@ -294,6 +304,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |
+| `em:a924c4` | [beliefs/glossary/prompt-sensitivity](/beliefs/glossary/prompt-sensitivity.md) | concept | false |
+| `em:b79e02` | [beliefs/glossary/proof-of-vulnerability](/beliefs/glossary/proof-of-vulnerability.md) | concept | false |
 | `em:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
 | `em:573229` | [beliefs/glossary/proto-belief-document](/beliefs/glossary/proto-belief-document.md) | concept | false |
 | `em:ea7acc` | [beliefs/glossary/provenance](/beliefs/glossary/provenance.md) | concept | false |
@@ -312,6 +324,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d8f3bb` | [beliefs/glossary/recursive-descent-parser](/beliefs/glossary/recursive-descent-parser.md) | concept | false |
 | `em:ae9b26` | [beliefs/glossary/red-test](/beliefs/glossary/red-test.md) | concept | false |
 | `em:eb67ce` | [beliefs/glossary/reducer](/beliefs/glossary/reducer.md) | concept | false |
+| `em:a1a6e2` | [beliefs/glossary/refusal-direction](/beliefs/glossary/refusal-direction.md) | concept | false |
 | `em:0dd178` | [beliefs/glossary/regression-testing](/beliefs/glossary/regression-testing.md) | concept | false |
 | `em:7247f3` | [beliefs/glossary/remote-procedure-call](/beliefs/glossary/remote-procedure-call.md) | concept | false |
 | `em:1dbcc9` | [beliefs/glossary/rendered-aggregation](/beliefs/glossary/rendered-aggregation.md) | concept | false |
@@ -332,6 +345,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:570e22` | [beliefs/glossary/routing-ledger](/beliefs/glossary/routing-ledger.md) | concept | false |
 | `em:e55bda` | [beliefs/glossary/run](/beliefs/glossary/run.md) | concept | false |
 | `em:371597` | [beliefs/glossary/safe](/beliefs/glossary/safe.md) | concept | false |
+| `em:52184b` | [beliefs/glossary/safety-state](/beliefs/glossary/safety-state.md) | concept | false |
+| `em:c56e31` | [beliefs/glossary/same-lineage-comparison](/beliefs/glossary/same-lineage-comparison.md) | concept | false |
 | `em:c50864` | [beliefs/glossary/satisfaction-metric](/beliefs/glossary/satisfaction-metric.md) | concept | false |
 | `em:4f4f5c` | [beliefs/glossary/scenario-test](/beliefs/glossary/scenario-test.md) | concept | false |
 | `em:9fdaf8` | [beliefs/glossary/second-mind](/beliefs/glossary/second-mind.md) | concept | false |
@@ -402,6 +417,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:2ecd37` | [beliefs/glossary/vibe-architecting](/beliefs/glossary/vibe-architecting.md) | concept | false |
 | `em:4aa691` | [beliefs/glossary/vllm](/beliefs/glossary/vllm.md) | concept | false |
 | `em:34fbe3` | [beliefs/glossary/von-neumann-architecture](/beliefs/glossary/von-neumann-architecture.md) | concept | false |
+| `em:a570a4` | [beliefs/glossary/vulnerability-localization](/beliefs/glossary/vulnerability-localization.md) | concept | false |
 | `em:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `em:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
@@ -413,6 +429,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
 | `em:a96688` | [beliefs/plan-artifacts-compress-decisions-not-bodies](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) | belief |  |
 | `em:6c7e85` | [beliefs/plan-artifacts-surface-implicit-review-decisions](/beliefs/plan-artifacts-surface-implicit-review-decisions.md) | belief |  |
+| `em:2ecdd2` | [beliefs/review-is-not-an-oracle](/beliefs/review-is-not-an-oracle.md) | belief |  |
 | `em:1eebdf` | [beliefs/spec-detail-approaches-code-length](/beliefs/spec-detail-approaches-code-length.md) | belief |  |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
@@ -463,6 +480,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `em:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `em:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
+| `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
+| `em:a1ec42` | [knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports](/knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports.md) | reference |  |
 | `em:f03f9c` | [knowledge/SWE/software-design/entity-component-systems-in-elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | reference |  |
 | `em:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
 | `em:b1ba4b` | [knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
