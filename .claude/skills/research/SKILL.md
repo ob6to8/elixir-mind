@@ -52,6 +52,12 @@ convention. Previous days are **never rewritten** — they persist as the archiv
   to an existing margin-collapse `reference`).
 
 ### 2. Search, per domain
+- **Start from the channels register** ([`/survey/channels.md`](/survey/channels.md)):
+  scan the standing sources for items in the current window that map to a domain's
+  interest signals. Respect each entry's access note — a free channel is fetched
+  directly; a login/paid channel is surfaced only from what is publicly readable
+  (titles, teasers, public posts) — never synthesize a synopsis for content that
+  couldn't be read.
 - For each domain, run a few targeted searches (`WebSearch`; `discover_papers`
   for academic domains; fetch specific pages only when a synopsis needs it).
 - Cast for the current window (recent days/weeks). Prefer primary and

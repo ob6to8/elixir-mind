@@ -67,6 +67,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:50efa2` | [beliefs/glossary/capability-matched-model-selection](/beliefs/glossary/capability-matched-model-selection.md) | concept | false |
 | `em:0568b3` | [beliefs/glossary/capture-problem](/beliefs/glossary/capture-problem.md) | concept | false |
 | `em:b6cee0` | [beliefs/glossary/changelist-review](/beliefs/glossary/changelist-review.md) | concept | false |
+| `em:9495ee` | [beliefs/glossary/channel](/beliefs/glossary/channel.md) | concept | false |
 | `em:869ba1` | [beliefs/glossary/chestertons-fence](/beliefs/glossary/chestertons-fence.md) | concept | false |
 | `em:21854a` | [beliefs/glossary/ci-smoke-check](/beliefs/glossary/ci-smoke-check.md) | concept | false |
 | `em:bee09c` | [beliefs/glossary/claude-agent-sdk](/beliefs/glossary/claude-agent-sdk.md) | concept | false |
@@ -260,6 +261,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:9be927` | [beliefs/glossary/maturity-model](/beliefs/glossary/maturity-model.md) | concept | false |
 | `em:45649c` | [beliefs/glossary/mental-model](/beliefs/glossary/mental-model.md) | concept | false |
+| `em:715a40` | [beliefs/glossary/metered-paywall](/beliefs/glossary/metered-paywall.md) | concept | false |
 | `em:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
 | `em:577155` | [beliefs/glossary/minimal-inconsistent-subset](/beliefs/glossary/minimal-inconsistent-subset.md) | concept | false |
 | `em:102785` | [beliefs/glossary/mix-task](/beliefs/glossary/mix-task.md) | concept | false |
