@@ -531,3 +531,4 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
 | `em:0d4f26` | [projects/secure-financial-agent/architecture](/projects/secure-financial-agent/architecture.md) | plan |  |
+| `em:6e97e5` | [projects/secure-financial-agent/spec-completion](/projects/secure-financial-agent/spec-completion.md) | plan |  |

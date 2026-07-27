@@ -76,6 +76,9 @@ impossible rather than merely discouraged.
 
 ## Open questions
 
+Tracked with their resolution paths and blocking relationships in
+[spec-completion](/projects/secure-financial-agent/spec-completion.md).
+
 - Which document-VLM variant wins **on the operator's own documents** — a
   benchmark to run at build time against a held-back set of real pages, not a
   spec-time decision.
@@ -86,6 +89,8 @@ impossible rather than merely discouraged.
 
 ## Documents
 
+- [Architecture](/projects/secure-financial-agent/architecture.md) — the v1 shape
+- [Finish the spec before code](/projects/secure-financial-agent/spec-completion.md) — what remains, and who owns each item
 - [Project docs](/projects/secure-financial-agent/index.md)
 
 ## Knowledge this project draws on
