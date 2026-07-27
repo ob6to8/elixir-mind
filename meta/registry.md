@@ -491,8 +491,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `em:f5914d` | [knowledge/SWE/llm-engineering/local-inference-serving-stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md) | reference |  |
+| `em:a01073` | [knowledge/SWE/llm-engineering/local-inference-workstation-tiers](/knowledge/SWE/llm-engineering/local-inference-workstation-tiers.md) | reference |  |
 | `em:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `em:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
+| `em:cc0c87` | [knowledge/SWE/security/air-gapped-operations](/knowledge/SWE/security/air-gapped-operations.md) | concept | false |
 | `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
 | `em:f96824` | [knowledge/SWE/security/confidential-computing-for-llm-inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md) | concept | false |
 | `em:7da513` | [knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md) | concept | false |

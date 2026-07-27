@@ -1233,7 +1233,13 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
   reachable through the merge, and GitHub can restore the branch). Deletion is part
   of the merge motion: prefer the repository's **"Automatically delete head
   branches"** setting; failing that, delete the branch manually right after
-  merging. A merged branch discovered lingering later is deleted on sight.
+  merging.
+- **Deletion belongs to the merge motion, not to later sessions.** A merged
+  branch noticed in passing is left alone: cleaning up someone else's leftovers
+  is not part of the work at hand, and surveying branches to find them turns an
+  unrelated session into an audit. Sweeping merged branches is its own
+  deliberate cleanup task, run when the operator asks for one — and a session
+  that is not that task does not survey, propose, or report on branch state.
 - **Never delete without the operator:** the default branch (never), and any branch
   carrying **unmerged** commits — including branches whose PR was closed without
   merging. Those hold work with no other home; propose deletion and wait for the

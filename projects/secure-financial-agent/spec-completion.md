@@ -53,8 +53,8 @@ An agent cannot close these; each needs a fact only the operator holds.
 
 | # | Decision | What resolves it | Blocks |
 |---|---|---|---|
-| D1 | **Hardware** — DGX Spark (128GB unified, CUDA, $4,699), RTX PRO 6000 Blackwell (96GB GDDR7, ~$8.5k + host), or Mac Studio M3 Ultra (up to 512GB, no CUDA) | Budget, and whether interactive latency matters or overnight batch suffices. The CUDA question is load-bearing: Apple Silicon rules out vLLM and SGLang, leaving MLX or llama.cpp | build steps 2–3 |
-| D2 | **Isolation posture** — full physical air gap, or a default-deny host with no network interface on the inference and agent processes | Tolerance for sneakernet updates and a transfer workstation. The pragmatic case is that operational burden, not attack surface, is what ends personal security systems | build step 1 |
+| D1 | **Hardware** — DGX Spark (128GB unified, CUDA, $4,699), RTX PRO 6000 Blackwell (96GB GDDR7, ~$8.5k + host), or Mac Studio M3 Ultra (up to 512GB, no CUDA) | Budget, and whether interactive latency matters or overnight batch suffices — see [the tier comparison](/knowledge/SWE/llm-engineering/local-inference-workstation-tiers.md). The CUDA question is load-bearing: Apple Silicon rules out vLLM and SGLang, leaving MLX or llama.cpp | build steps 2–3 |
+| D2 | **Isolation posture** — full physical air gap, or a default-deny host with no network interface on the inference and agent processes | Tolerance for sneakernet updates and a transfer workstation — see [air-gapped operations](/knowledge/SWE/security/air-gapped-operations.md). The pragmatic case is that operational burden, not attack surface, is what ends personal security systems | build step 1 |
 | D3 | **Gate placement** — where operator approval sits in the real workflow, and its friction cost per document | Only observable against actual volume: how many documents per session, and how many directives per document would queue | build step 4 |
 
 D1 and D2 are cheap to defer no further — both gate the first build step. D3 can
