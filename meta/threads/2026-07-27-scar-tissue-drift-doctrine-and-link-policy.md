@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5, then Claude Fable 5), 2026-07
 tags: [meta, thread, scar-tissue, drift, doctrine, ratification, glossary, link-policy, intake]
 timestamp: 2026-07-27
 session: https://claude.ai/code/session_01N3ctK6MzJGLH5uMZLiUndq
+pr: 147
 ---
 
 # 2026-07-27-scar-tissue-drift-doctrine-and-link-policy
