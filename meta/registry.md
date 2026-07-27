@@ -18,6 +18,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
 | `em:b78fb8` | [beliefs/glossary/abliteration](/beliefs/glossary/abliteration.md) | concept | false |
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
+| `em:dffd70` | [beliefs/glossary/active-parameters](/beliefs/glossary/active-parameters.md) | concept | false |
 | `em:8f37a6` | [beliefs/glossary/actor-model](/beliefs/glossary/actor-model.md) | concept | false |
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
 | `em:27e6ac` | [beliefs/glossary/admission-rule](/beliefs/glossary/admission-rule.md) | concept | false |
@@ -222,6 +223,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f07159` | [beliefs/glossary/id-namespace-migration](/beliefs/glossary/id-namespace-migration.md) | concept | false |
 | `em:942b13` | [beliefs/glossary/in-context-learning](/beliefs/glossary/in-context-learning.md) | concept | false |
 | `em:5b2e0f` | [beliefs/glossary/inbox-namespace](/beliefs/glossary/inbox-namespace.md) | concept | false |
+| `em:91e7bb` | [beliefs/glossary/indirect-prompt-injection](/beliefs/glossary/indirect-prompt-injection.md) | concept | false |
 | `em:1c0310` | [beliefs/glossary/inference-belief-role](/beliefs/glossary/inference-belief-role.md) | concept | false |
 | `em:2015c6` | [beliefs/glossary/inkling](/beliefs/glossary/inkling.md) | concept | false |
 | `em:331f41` | [beliefs/glossary/inspect](/beliefs/glossary/inspect.md) | concept | false |
@@ -363,6 +365,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
 | `em:4b1d6d` | [beliefs/glossary/session-transcript](/beliefs/glossary/session-transcript.md) | concept | false |
 | `em:71f38a` | [beliefs/glossary/sessionstart-hook](/beliefs/glossary/sessionstart-hook.md) | concept | false |
+| `em:9e4920` | [beliefs/glossary/sglang](/beliefs/glossary/sglang.md) | concept | false |
 | `em:7580df` | [beliefs/glossary/shallow-clone](/beliefs/glossary/shallow-clone.md) | concept | false |
 | `em:eacc3f` | [beliefs/glossary/shared-state-dual-interfaces](/beliefs/glossary/shared-state-dual-interfaces.md) | concept | false |
 | `em:30dc3f` | [beliefs/glossary/single-overview-convention](/beliefs/glossary/single-overview-convention.md) | concept | false |
@@ -404,6 +407,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1efc5e` | [beliefs/glossary/tree-sitter](/beliefs/glossary/tree-sitter.md) | concept | false |
 | `em:a10e18` | [beliefs/glossary/true-merge](/beliefs/glossary/true-merge.md) | concept | false |
 | `em:20b7a1` | [beliefs/glossary/trunk-based-development](/beliefs/glossary/trunk-based-development.md) | concept | false |
+| `em:97f0c3` | [beliefs/glossary/trusted-execution-environment](/beliefs/glossary/trusted-execution-environment.md) | concept | false |
 | `em:cd2537` | [beliefs/glossary/truth-maintenance-system](/beliefs/glossary/truth-maintenance-system.md) | concept | false |
 | `em:6e6dd5` | [beliefs/glossary/tui](/beliefs/glossary/tui.md) | concept | false |
 | `em:60d394` | [beliefs/glossary/tutorial-type](/beliefs/glossary/tutorial-type.md) | concept | false |
@@ -480,9 +484,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
+| `em:f5914d` | [knowledge/SWE/llm-engineering/local-inference-serving-stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md) | reference |  |
 | `em:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `em:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
 | `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
+| `em:f96824` | [knowledge/SWE/security/confidential-computing-for-llm-inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md) | concept | false |
+| `em:7da513` | [knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md) | concept | false |
 | `em:a1ec42` | [knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports](/knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports.md) | reference |  |
 | `em:f03f9c` | [knowledge/SWE/software-design/entity-component-systems-in-elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | reference |  |
 | `em:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
@@ -514,4 +521,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:24bd1e` | [knowledge/knowledge-management/open-knowledge-format](/knowledge/knowledge-management/open-knowledge-format.md) | reference |  |
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
+| `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
+| `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
+| `em:0d4f26` | [projects/secure-financial-agent/architecture](/projects/secure-financial-agent/architecture.md) | plan |  |

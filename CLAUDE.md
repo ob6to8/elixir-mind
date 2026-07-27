@@ -168,6 +168,59 @@ The taxonomy-evolution protocol (important):
 
 _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-evolution-protocol.md)_
 
+**A system built outside this repo still incubates here.** Specs, research, and
+design decisions for an external system are filed as a `type: project` hub under
+[`/projects/`](/projects/index.md), so the knowledge accrues to the brain while
+the system is still forming — and does not have to be re-derived once it breaks
+out into its own repository.
+
+**Shape** — hub doc beside a directory, mirroring the
+[glossary](/beliefs/glossary.md) pattern:
+
+```
+projects/<slug>.md        # type: project — the hub: charter, status, links out
+projects/<slug>/          # supporting docs: architecture, threat model, plans
+projects/<slug>/index.md  # reserved listing
+```
+
+The hub is a **bundle document** — it carries an `em:` id and `attribution` like
+any other, because the id is exactly what survives the eventual break-out to
+another repo when the path will not. It carries a `status`
+(`incubating` · `active` · `broken-out` · `dormant` · `abandoned`).
+
+**The split rule — this is the whole point.** Every finding produced while
+working a project is filed by *what it is*, not by *what prompted it*:
+
+| The finding is… | Files to | Test |
+|---|---|---|
+| true regardless of this project | the knowledge taxonomy, with an `em:` id | a model's parameter count; an attack class; how a protocol works |
+| true only *for this system* | `projects/<slug>/` | why *this* system chose *that* model; its threat model; its build order |
+
+The hub **links out** to the knowledge documents rather than restating them.
+Research done for a project therefore pays twice — once into the project, once
+into the taxonomy where the next project reads it instead of re-researching —
+and duplication is prevented at the point of filing rather than reconciled
+later. This is
+[fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md)
+applied across the project/knowledge boundary.
+
+**Project-scoped design records stay in the project.** A `type: plan` for an
+external system lives at `projects/<slug>/`, not
+[`meta/plans/`](/meta/plans/index.md): `meta/` governs *this brain*, and a
+design record for something built elsewhere is not governance of the brain.
+[persist-plans](/meta/policy/persist-plans.md),
+[structured-plan-bodies](/meta/policy/structured-plan-bodies.md), and
+[plan-vs-capture](/meta/policy/plan-vs-capture.md) bind such a plan unchanged —
+only its address differs.
+
+**Break-out is the success condition, not an exit.** When a project graduates to
+its own repository, `projects/<slug>/` is what ports; the knowledge documents it
+cites stay here and keep serving every other project. Mark the hub
+`status: broken-out` and record where it went — the hub remains the brain's
+durable pointer to a system it no longer holds.
+
+_Source: [`meta/policy/project-namespace.md`](/meta/policy/project-namespace.md)_
+
 ---
 
 ## 3. Filing conventions
@@ -737,7 +790,13 @@ Seed vocabulary:
   video, thread). A bare URL becomes a `reference` only once processed.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
-- `project` — an active, goal-bounded effort.
+- `project` — an active, goal-bounded effort. Used for a system built *outside*
+  this repo that incubates here: the hub doc for its specs, research, and design
+  decisions, carrying a `status` (`incubating`/`active`/`broken-out`/`dormant`/
+  `abandoned`). Distinct from an `area` (ongoing, no end state) and a `plan` (one
+  intended change, not a whole system) — a project is a *bounded effort with its
+  own body of work* (lives at `projects/<slug>.md`, beside a `projects/<slug>/`
+  directory; see the projects-namespace policy).
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
@@ -758,7 +817,9 @@ Seed vocabulary:
   and open questions, so a future session can execute it. Carries a `status`
   (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
   (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
-  *one-off intended change* (lives under `meta/plans/`).
+  *one-off intended change*. Addressed by what it governs: a plan for **this brain
+  or its tooling** lives under `meta/plans/`; a plan for a system built **outside**
+  this repo lives under `projects/<slug>/` (see the projects-namespace policy).
 - `analysis` — a point-in-time evaluation or decision-support write-up: a question
   investigated against evidence (often the live bundle itself), yielding findings and
   a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
