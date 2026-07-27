@@ -66,3 +66,17 @@ without following from it: that prior governs *what to measure*, this one govern
 - Karsten Hahn, "LLMs in Malware Analysis: Doing Things Right is Difficult",
   G DATA blog, 3 March 2026 —
   <https://blog.gdatasoftware.com/2026/03/38381-llm-malware-analysis>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:2ecdd2">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-llm-security-intakes-and-two-evaluation-beliefs (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:2ecdd2`]**
+
+3 - yes, commit to a belief
+2 - approved
+1 - proceed when done with above, then merg

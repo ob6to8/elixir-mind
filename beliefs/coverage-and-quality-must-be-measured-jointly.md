@@ -60,3 +60,64 @@ score claims rather than responses.
 - Li, Qiu, Peng, Fan, Fu, Ding & Feng, "Beyond Refusal: A Same-Lineage Study of
   Aligned and Abliterated LLMs for Vulnerability Analysis", arXiv:2607.05842v1
   [cs.SE], 7 Jul 2026 — <https://arxiv.org/abs/2607.05842>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:06de36">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-llm-security-intakes-and-two-evaluation-beliefs (2026-07-27)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:06de36`]**
+
+1 - approve
+2 - create
+3 - proceed
+
+then /intake https://blog.gdatasoftware.com/2026/03/38381-llm-malware-analysis
+
+---
+
+**[`em:06de36`]**  (co-feeds: `em:a1ec42`)
+
+All three items landed, plus the second intake. Pushed to `claude/arxiv-2607-05842-intake-4w8hv3`.
+
+The G DATA post turned out to be a strong pairing with the paper rather than an unrelated capture. Both find the same gap from opposite directions: the paper measures models answering security questions ~97% of the time while varying widely in whether the answers are right; Hahn hits that from inside a real workflow and — this is the part worth keeping — names the subset where the gap closes. Generated scripts either run or throw. Reports don't, and his five verification passes still left frequent errors in exactly the fields a report exists to convey. That makes "review is not an oracle" the load-bearing finding, and it slots directly into the belief you asked me to extract.
+
+Two judgment calls I'd flag rather than bury:
+
+I did **not** use the layered `/summarize-technical` body for the G DATA post. Its value is workflow judgment and concrete failure modes, not a jargon-dense formalism that the plain-summary→terms→technical-summary structure exists to unpack. Forcing it would have padded a field report into a shape it doesn't have. Say the word if you'd rather it match the paper's structure for consistency within the directory.
+
+I also left `invisible-degradation` untouched. The malware post's "silent degradation" is arguably the same concept applied to model output rather than corpus rot, but that entry's description is specifically scoped to corpus rot, and broadening it would have rewritten an existing canonical overview rather than extending it. I cross-linked to it from the new belief and from `proof-of-vulnerability` instead.
+
+**What I created**
+
+| Type | Doc | Why this type |
+|---|---|---|
+| `belief` | Coverage and quality must be measured jointly (`em:06de36`) | Normative evaluation prior, not an empirical claim — it prescribes how to measure, so it sits outside the verification ladder |
+| `reference` | LLMs in malware analysis (`em:a1ec42`) | External material captured and summarized |
+| 15 × `concept` | Glossary terms under `/beliefs/glossary/` | One file per term, individually linkable |
+
+The glossary terms, by cluster — safety state: `abliteration`, `refusal-direction`, `over-refusal`, `safety-state`, `jailbreak`, `dual-use`. Security/repair: `common-weakness-enumeration`, `proof-of-vulnerability`, `automated-program-repair`, `patch-validation-funnel`, `vulnerability-localization`. Evaluation: `same-lineage-comparison`, `prompt-sensitivity`. Serving stack: `llama-cpp`, `gguf`.
+
+**Actions I have taken**
+
+| Action | Result |
+|---|---|
+| Ratified `knowledge/SWE/security/` | Now holds two documents |
+| Fetched the G DATA post twice | Second pass for technical specifics the first summarized away |
+| Dedup search on malware/reverse-engineering/oracle phrasings | No existing coverage |
+| `mix brain.id`, `registry`, `glossary --materialize`, `verify` | 17 ids minted total; bundle verifies clean |
+| `mix brain.dedup_probe --update-baseline` | 6/15 plain — steady across both intakes, no regression |
+| Three commits pushed | Full gate suite green each time |
+
+No new glossary entry tripped the body-repetition check — the warnings listed are all pre-existing files.
+
+**Your options from here**
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | `/create-pull-request` | Capture the session, glossary the thread, stamp `attribution.from`, open the PR |
+| 2 | Review the belief's phrasing | It's the first belief not sourced from a wsff/Horthy lineage; worth checking it reads as yours |
+| 3 | Extract a second belief on oracles | "Review is not an oracle" is arguably a distinct prior from the coverage×quality one, currently only prose in `em:a1ec42` |
