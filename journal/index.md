@@ -9,6 +9,11 @@ operator's voice is kept faithful; only dictation noise is cleaned.
 
 ## Entries
 
+- [2026-07-26](/journal/2026-07-26.md) — Day two on the operator–agent
+  intermediary layer — speed vs. comprehension, embodied consequence and
+  evolutionary constancy vs. engineered agentic personality, the unfounded
+  fears that shaped AI's trajectory, intelligence commoditizing, and the
+  journal as the operator's defense of their own contribution.
 - [2026-07-25](/journal/2026-07-25.md) — Rediscovering the Manus
   context-engineering article — markdown-as-memory as the pre-database consensus
   and where the database line sits, Manus's todo recitation as a focusing

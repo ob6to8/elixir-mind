@@ -14,6 +14,15 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #142](https://github.com/ob6to8/elixir-mind/pull/142) — Structured plan bodies, the belief layer, and three dogfooding plans *(2026-07-26)*
+
+- Ratify and seed the belief layer
+- Adopt structured plan bodies, verbatim quotation, and terminology policies
+- Retrofit the frontmatter-parser plan as the structured-bodies pilot
+- Plan the retrofit sweep, /extract-into-belief skill, and policy-canonical skills
+- Capture the session: thread doc, glossary terms, from-stamps, dev-history
+- Stamp pr: 142 into the session thread doc
+
 ## [PR #141](https://github.com/ob6to8/elixir-mind/pull/141) — version-control audit, workflow tutorial, and the routing/response-format policies *(2026-07-26)*
 
 - Audit the version-control workflow; file the actionable residue
