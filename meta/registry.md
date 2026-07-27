@@ -54,6 +54,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6ced60` | [beliefs/glossary/baseline](/beliefs/glossary/baseline.md) | concept | false |
 | `em:5787b0` | [beliefs/glossary/batch-invariance](/beliefs/glossary/batch-invariance.md) | concept | false |
 | `em:b2dc54` | [beliefs/glossary/beam](/beliefs/glossary/beam.md) | concept | false |
+| `em:3e872b` | [beliefs/glossary/behavioral-fingerprinting](/beliefs/glossary/behavioral-fingerprinting.md) | concept | false |
 | `em:d131c1` | [beliefs/glossary/belief-network](/beliefs/glossary/belief-network.md) | concept | false |
 | `em:d351a5` | [beliefs/glossary/belief-type](/beliefs/glossary/belief-type.md) | concept | false |
 | `em:dcbb9e` | [beliefs/glossary/bipartite-graph](/beliefs/glossary/bipartite-graph.md) | concept | false |
@@ -318,6 +319,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ca9f72` | [beliefs/glossary/quantization](/beliefs/glossary/quantization.md) | concept | false |
 | `em:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |
 | `em:a95adb` | [beliefs/glossary/ratification](/beliefs/glossary/ratification.md) | concept | false |
+| `em:1434d9` | [beliefs/glossary/ratification-mutable](/beliefs/glossary/ratification-mutable.md) | concept | false |
 | `em:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
 | `em:f5c2bd` | [beliefs/glossary/react](/beliefs/glossary/react.md) | concept | false |
 | `em:99ec79` | [beliefs/glossary/reason-tags](/beliefs/glossary/reason-tags.md) | concept | false |
@@ -352,6 +354,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:52184b` | [beliefs/glossary/safety-state](/beliefs/glossary/safety-state.md) | concept | false |
 | `em:c56e31` | [beliefs/glossary/same-lineage-comparison](/beliefs/glossary/same-lineage-comparison.md) | concept | false |
 | `em:c50864` | [beliefs/glossary/satisfaction-metric](/beliefs/glossary/satisfaction-metric.md) | concept | false |
+| `em:2ad710` | [beliefs/glossary/scar-tissue](/beliefs/glossary/scar-tissue.md) | concept | false |
 | `em:4f4f5c` | [beliefs/glossary/scenario-test](/beliefs/glossary/scenario-test.md) | concept | false |
 | `em:9fdaf8` | [beliefs/glossary/second-mind](/beliefs/glossary/second-mind.md) | concept | false |
 | `em:23844f` | [beliefs/glossary/section-terminator](/beliefs/glossary/section-terminator.md) | concept | false |
@@ -407,6 +410,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1efc5e` | [beliefs/glossary/tree-sitter](/beliefs/glossary/tree-sitter.md) | concept | false |
 | `em:a10e18` | [beliefs/glossary/true-merge](/beliefs/glossary/true-merge.md) | concept | false |
 | `em:20b7a1` | [beliefs/glossary/trunk-based-development](/beliefs/glossary/trunk-based-development.md) | concept | false |
+| `em:9ab7c5` | [beliefs/glossary/trust-state-inversion](/beliefs/glossary/trust-state-inversion.md) | concept | false |
 | `em:97f0c3` | [beliefs/glossary/trusted-execution-environment](/beliefs/glossary/trusted-execution-environment.md) | concept | false |
 | `em:cd2537` | [beliefs/glossary/truth-maintenance-system](/beliefs/glossary/truth-maintenance-system.md) | concept | false |
 | `em:6e6dd5` | [beliefs/glossary/tui](/beliefs/glossary/tui.md) | concept | false |
@@ -453,6 +457,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f02167` | [knowledge/SWE/agentic/agentic-loop/parc-self-reflective-long-horizon-agent](/knowledge/SWE/agentic/agentic-loop/parc-self-reflective-long-horizon-agent.md) | reference |  |
 | `em:276c61` | [knowledge/SWE/agentic/agentic-loop/ralph-infinite-bash-loop-coding-agent](/knowledge/SWE/agentic/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) | reference |  |
 | `em:f63910` | [knowledge/SWE/agentic/agentic-loop/react-reasoning-and-acting](/knowledge/SWE/agentic/agentic-loop/react-reasoning-and-acting.md) | reference |  |
+| `em:60242a` | [knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents](/knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md) | reference |  |
 | `em:f948df` | [knowledge/SWE/agentic/agentic-loop/smolagents-agent-loop-as-code](/knowledge/SWE/agentic/agentic-loop/smolagents-agent-loop-as-code.md) | reference |  |
 | `em:3fd44a` | [knowledge/SWE/agentic/agentic-loop/the-agent-execution-loop](/knowledge/SWE/agentic/agentic-loop/the-agent-execution-loop.md) | reference |  |
 | `em:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
@@ -481,6 +486,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `em:9b5d41` | [knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md) | snippet |  |
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
+| `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
