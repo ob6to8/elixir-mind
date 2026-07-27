@@ -53,61 +53,44 @@ twice a week, because that cadence is set by the algorithm rather than by having
 something to say; the durable channels tend to be small and methodologically dull.
 A dissenting reply held that top AI channels have no choice but to talk that way.
 
-Each entry's characterization is the channel's **own** description, retrieved from
-the channel page; the nominating comment's reasoning is quoted separately where it
-adds something. Every handle below was checked live and resolves.
+The thread produced sixteen candidates; the five below are what survived applying
+that criterion. Each was assessed against its **actual recent output**, read from
+the channel's RSS feed, rather than against its self-description or the strength of
+the comment recommending it — a channel's own blurb and its upload list disagree
+often enough that the blurb is not evidence.
 
 ### [Codacus](https://www.youtube.com/@Codacus)
 - **Medium:** video · **Status:** known · **Tags:** `local-llm` `self-hosting` `homelab` `small-models`
-- Self-described as running real AI on hardware you already own — small models, self-hosted stacks, and homelab tooling, positioned explicitly against sponsored tool reviews.
-- **Nominated as:** niche to local LLM hosting and very informative on the basics. The strongest-signal entry in the thread — it is the one recommendation the asker acted on.
-
-### [xCreate](https://www.youtube.com/@xcreate)
-- **Medium:** video · **Status:** known · **Tags:** `model-reviews` `macos` `local-inference`
-- Coding-focused channel; the author also builds Inferencer, a macOS inference-harness app.
-- **Nominated as:** entertaining reviews of new models, in a macOS-oriented pair of recommendations.
-
-### [No place like localhost](https://www.youtube.com/@NoPlaceLikeLocalhost)
-- **Medium:** video · **Status:** known · **Tags:** `local-llm` `tutorials` `tool-evals`
-- Self-described as entirely about standing up an LLM on local hardware.
-- **Nominated as:** short no-nonsense tutorials (voice cloning) plus model and tool evaluations, opencode among them.
+- Local AI on hardware you already own, explicitly positioned against sponsored tool reviews. Recent output is comparative and hands-on: whether a 3.5GB model can displace a 35B daily driver, building a fully private local stack, using an agent to patch llama.cpp. One recent video covers OKF and a shared local-model memory — the format this brain is built on.
+- **Nominated as:** informative on local LLM hosting fundamentals. The thread's strongest signal — the only recommendation the asker acted on.
 
 ### [Protorikis](https://www.youtube.com/@Protorikis)
-- **Medium:** video · **Status:** known · **Tags:** `makers` `practical-ai` `self-hosting`
-- Short, practical videos for makers and developers on practical AI, coding, creative tools, and self-hosting.
-- **Nominated as:** a bare name-drop, with no stated reasoning.
+- **Medium:** video · **Status:** known · **Tags:** `benchmarking` `local-inference` `runtimes` `quantization`
+- The most methodologically rigorous of the set: runtime and quantization benchmarking with stated conditions — MLX against llama.cpp across four runtimes, NVFP4 against Q4 on speed *and* quality, sustained-load thermal tests, multi-token prediction measured rather than asserted.
+- **Nominated as:** a bare name-drop with no reasoning. Its output, not its nomination, is why it is here.
 
-### [SenTeGuard](https://www.youtube.com/@SenTeGuard)
-- **Medium:** video · **Status:** known · **Tags:** `ai-security` `policy` `national-security`
-- The collision of AI with power, national security, and civic life, hosted by a former US Army cyber officer and Harvard Kennedy School policy-technologist. Companion newsletter: [letters.senteguard.com](https://www.letters.senteguard.com/).
-- **Nominated as:** self-promotion — posted by the channel's own author, who described it as a work in progress. Weigh it accordingly; it is also the only entry aimed at policy rather than engineering.
+### [No place like localhost](https://www.youtube.com/@NoPlaceLikeLocalhost)
+- **Medium:** video · **Status:** known · **Tags:** `local-llm` `tool-evals` `performance-tuning`
+- Standing up and tuning LLMs on local hardware: performance tuning, multi-GPU setups, head-to-head model comparisons, and workflow evaluations such as spec-driven development against one-shot prompting.
+- **Nominated as:** short no-nonsense tutorials plus model and tool evaluations, opencode among them.
 
-### Bulk-listed AI channels
+### [Alex Ziskind](https://www.youtube.com/@AZisk)
+- **Medium:** video · **Status:** known · **Tags:** `hardware` `local-inference` `benchmarking`
+- Hardware-side testing of local inference — vendor capability claims checked against measurement, cheap high-VRAM builds, laptop and Apple-silicon inference limits. Arrived in the bulk list but is the one entry in it doing first-hand testing.
 
-Nine channels arrived as a single unannotated list, under the framing that genuinely
-grounded AI coverage tends to read as negative on AI. No per-channel reasoning was
-given, and the list mixes news-and-commentary channels in with the technical ones —
-so it sits loosely against the thread's independent-testing criterion and should be
-sampled before any of it is trusted.
+### [xCreate](https://www.youtube.com/@xcreate)
+- **Medium:** video · **Status:** known · **Tags:** `model-reviews` `macos` `local-inference` `coding-evals`
+- Independent reviews of newly released open-weight models, scored on real coding tasks rather than benchmark tables; the author also builds Inferencer, a macOS inference harness, so the tooling is first-hand.
+- **Caveat:** the substance meets the criterion but the packaging is the exact genre the thread was filtering against — superlative-and-emoji titles claiming one model "destroys" another. Kept for what the videos measure, not how they are sold; drop it if the framing grates.
 
-- [Rod Miller](https://www.youtube.com/@RodMillerAI) — "AI News for People Who Ain't Stupid".
-- [Eli the Computer Guy](https://www.youtube.com/@elithecomputerguy) — long-running general IT and technology channel; no channel description published.
-- [Matt Wolfe](https://www.youtube.com/@mreflow) — weekly sifting of AI news and tools; runs the futuretools.io directory and newsletter.
-- [AI Search](https://www.youtube.com/@theAIsearch) — explanatory AI news, trends, and tool coverage aimed at a general audience.
-- [Alex Ziskind](https://www.youtube.com/@AZisk) — developer with 20+ years in software, covering coding and hardware topics in depth.
-- [Matthew Berman](https://www.youtube.com/@matthew_berman) — high-volume AI news and model coverage aimed at broad accessibility.
-- [House of El: AI](https://www.youtube.com/@houseofel-ai) — a CS PhD and geopolitical analyst decoding AI with a stated no-hype, no-jargon stance.
-- [Mo Bitar](https://www.youtube.com/@atmoio) — "exploring what AI actually is"; creator of Standard Notes (acquired by Proton, 2024), now building Shape.
-- [STARTUP HAKK](https://www.youtube.com/@STARTUPHAKK_sh) — a .NET bootcamp and software consultancy's channel; commercially oriented rather than independent.
+### Assessed and dropped
 
-### Unresolved nominations
+Eleven of the sixteen nominations were cut after sampling their recent uploads, and
+are recorded here so the same thread does not re-seed them:
 
-Two channels were recommended by name only, for testing model capability through
-real-world code tasks — building familiar things like video games — rather than
-amplifying launch claims. Neither name resolves confidently, so no URL is recorded:
-
-- **tef** — `youtube.com/@tef` exists but is an unrelated clips channel, so the handle is almost certainly not this one.
-- **lancypoo** — two near-matches exist (`@lancypoo`, an untitled channel, and `@LanceyPooAi`, "AI. Learning. Technology."), and the thread gives nothing to choose between them.
+- **AI news and commentary, not testing** — Rod Miller, Eli the Computer Guy ("NVIDIA is DEAD" / "OpenAI is DEAD" as a recurring headline formula), Matt Wolfe, AI Search, Matthew Berman, House of El, Mo Bitar. Several were nominated as grounded and anti-hype; their upload lists say otherwise, which is the disagreement that made output-sampling the test.
+- **Promotional** — STARTUP HAKK (a bootcamp's shorts feed) and SenTeGuard (posted by its own author; shorts-format AI-policy commentary rather than engineering).
+- **Unresolvable** — **tef** and **lancypoo**, recommended for testing models on real coding tasks. Neither name resolves confidently: `@tef` is an unrelated clips channel, and `lancypoo` has two near-matches with nothing to choose between them. Good-sounding nominations that a source register cannot use, since an unfindable channel cannot be watched.
 
 ---
 
@@ -296,7 +279,7 @@ amplifying launch claims. Neither name resolves confidently, so no URL is record
 
 ### [Reddit — r/LLMDevs](https://www.reddit.com/r/LLMDevs/)
 - **Medium:** forum · **Status:** known · **Tags:** `llm` `practitioner-discussion` `recommendations`
-- Practitioner discussion on building with LLMs. Nothing filed from it yet, but it is the channel that seeded all sixteen entries in the [Video](#video) section above — a demonstration of what a forum is good for here: naming channels worth watching, at a granularity no single article supplies.
+- Practitioner discussion on building with LLMs. Nothing filed from it yet; it seeded the [Video](#video) section, yielding five keepers out of sixteen nominations. That ratio is the useful thing to remember about the channel: it surfaces names at a granularity no article supplies, but the recommendations need checking against the channels' actual output before any of them is trusted.
 
 ### Shared chat transcripts
 - **Medium:** forum · **Status:** known · **Tags:** `conversation` `staging`
