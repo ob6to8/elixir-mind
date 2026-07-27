@@ -37,6 +37,9 @@ emerges as knowledge is filed and evolves collaboratively; see the
   - [machine-learning](/knowledge/machine-learning/index.md) — technical ML knowledge: models, architectures, and training methods
   - [knowledge-management](/knowledge/knowledge-management/index.md) — knowledge representation, PKM, and knowledge formats (incl. OKF, the format this brain uses)
   - [startups](/knowledge/startups/index.md) — startup-building methodology and founder playbooks: the lifecycle of building and growing a company
+- [projects](/projects/index.md) — systems built *outside* this repo that
+  incubate here: their specs, research, and design records, with every
+  generalizable finding filed to the knowledge taxonomy instead
 - [beliefs](/beliefs/index.md) — the brain's own working vocabulary and
   observations
   - [glossary](/beliefs/glossary/index.md) — running glossary of technical terms used

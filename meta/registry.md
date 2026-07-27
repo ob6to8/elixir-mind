@@ -513,3 +513,4 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
+| `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
