@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-27; verbatim retained 
 tags: [meta, thread, intake, security, llm-safety, evaluation, beliefs, glossary]
 timestamp: 2026-07-27
 session: https://claude.ai/code/session_0113yunPXwKMEQQbUw8Tnzf5
+pr: 144
 ---
 
 # 2026-07-27-llm-security-intakes-and-two-evaluation-beliefs
