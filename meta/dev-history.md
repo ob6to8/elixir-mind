@@ -14,6 +14,25 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #147](https://github.com/ob6to8/elixir-mind/pull/147) — Scar-tissue drift: two intakes, defenses analysis, bound-adaptation doctrine, two plans, link-policy resolution *(2026-07-27)*
+
+- Intake: trust-state inversion (GSD framework governance incident)
+- Migrate trust-state-inversion id to em: namespace
+- Intake: scar tissue / behavioral drift in long-running agents
+- Analyze scar-tissue drift against the bundle; file the term as a glossary concept
+- Redo the scar-tissue analysis, absorbing the operator's follow-up questions
+- Ratify bound-adaptation doctrine; define ratification-mutable; file two plans
+- Ratify link-scheme split: Pages links in docs, GitHub links in agent threads
+- Capture the scar-tissue session; glossary and stamp its artifacts
+- Stamp pr: 147 into the session thread doc
+
+## [PR #146](https://github.com/ob6to8/elixir-mind/pull/146) — Channels register: nine AI standing sources, wired into /research *(2026-07-27)*
+
+- add the channels register with nine AI standing sources
+- link per-row provenance in the channels register; wire it into /research
+- capture: 2026-07-27 channels-register session; glossary + dev-history
+- Stamp pr: 146 into the session thread doc
+
 ## [PR #145](https://github.com/ob6to8/elixir-mind/pull/145) — Open the projects namespace; spec the secure financial agent *(2026-07-27)*
 
 - ratify: the projects namespace, and open the secure-financial-agent project

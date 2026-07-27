@@ -33,7 +33,7 @@ affirmation). Third, a
 ratification batch: the
 [bound-adaptation doctrine](/meta/doctrine/bound-adaptation.md) (quote-seeded
 from the MacFall-7 comment), the
-[ratification-mutable](/beliefs/glossary/ratification-mutable.md) definition
+[ratification-immutable](/beliefs/glossary/ratification-immutable.md) definition
 (`em:1434d9`), the [tag-governance](/meta/plans/tag-governance.md) and
 [brain.*→mind.*](/meta/plans/rename-brain-tasks-to-mind.md) plans, and a
 link-policy amendment ("Pages links in docs, GitHub links in agent threads")
@@ -56,7 +56,7 @@ context at its position, marked inline.*
 | Scar-tissue post intake (300-hour run, behavioral drift) | closed | [scar-tissue capture](/knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md) | - |
 | Scar-tissue defenses analysis (three countermeasures vs. this repo; redone on Fable) | closed | [defenses analysis](/meta/analysis/scar-tissue-drift-defenses-and-persistence.md) | - |
 | Bound-adaptation doctrine (MacFall-7 invariant, quote-seeded) | closed | [bound-adaptation](/meta/doctrine/bound-adaptation.md) | - |
-| ratification-mutable / ratification-immutable definition | paused | [ratification-mutable](/beliefs/glossary/ratification-mutable.md) | operator may prefer the entry titled "ratification-immutable" — offered, unanswered |
+| ratification-mutable / ratification-immutable definition | paused | [ratification-immutable](/beliefs/glossary/ratification-immutable.md) | operator may prefer the entry titled "ratification-immutable" — offered, unanswered |
 | Scar tissue as belief vs. glossary (analogy decomposition; coinage re-marking) | closed | [scar tissue](/beliefs/glossary/scar-tissue.md) | - |
 | Seed-belief candidate (lens-adoption prior) queued in the belief plan | open | [belief plan](/meta/plans/belief-type-and-beliefs-namespace.md) | the `belief` type landed on main mid-session (plan now done); the prior is filable once the operator affirms holding it |
 | Tag governance (epistemic axis vs. mechanical sprawl) | open | [tag-governance plan](/meta/plans/tag-governance.md) | ratify the (a)+(c) direction and open questions |

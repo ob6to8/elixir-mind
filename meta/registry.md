@@ -319,7 +319,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ca9f72` | [beliefs/glossary/quantization](/beliefs/glossary/quantization.md) | concept | false |
 | `em:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |
 | `em:a95adb` | [beliefs/glossary/ratification](/beliefs/glossary/ratification.md) | concept | false |
-| `em:1434d9` | [beliefs/glossary/ratification-mutable](/beliefs/glossary/ratification-mutable.md) | concept | false |
+| `em:1434d9` | [beliefs/glossary/ratification-immutable](/beliefs/glossary/ratification-immutable.md) | concept | false |
 | `em:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
 | `em:f5c2bd` | [beliefs/glossary/react](/beliefs/glossary/react.md) | concept | false |
 | `em:99ec79` | [beliefs/glossary/reason-tags](/beliefs/glossary/reason-tags.md) | concept | false |
@@ -440,6 +440,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a96688` | [beliefs/plan-artifacts-compress-decisions-not-bodies](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) | belief |  |
 | `em:6c7e85` | [beliefs/plan-artifacts-surface-implicit-review-decisions](/beliefs/plan-artifacts-surface-implicit-review-decisions.md) | belief |  |
 | `em:2ecdd2` | [beliefs/review-is-not-an-oracle](/beliefs/review-is-not-an-oracle.md) | belief |  |
+| `em:f35b8f` | [beliefs/scar-tissue-lens-for-agent-failure](/beliefs/scar-tissue-lens-for-agent-failure.md) | belief |  |
 | `em:1eebdf` | [beliefs/spec-detail-approaches-code-length](/beliefs/spec-detail-approaches-code-length.md) | belief |  |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |

@@ -2,7 +2,7 @@
 type: plan
 title: "Tag governance: decide what the tags axis is, then keep it consistent"
 description: Resolve the never-ratified status of the tags frontmatter field — currently an ungoverned second taxonomy axis whose sprawl erodes intake-dedup recall — by measuring sprawl first (a tags report in the style-fingerprint instrument), normalizing near-duplicate tags mechanically, and deferring the heavier controlled-vocabulary question until trend data exists.
-status: proposed
+status: accepted
 provenance: "Claude Code session (2026-07-27) — operator directed the plan's creation after the scar-tissue analysis decomposed tag sprawl into an epistemic root (ungoverned axis) and a mechanical symptom (tagging-practice inconsistency)"
 tags: [meta, plan, tags, taxonomy, governance, dedup, fingerprinting]
 timestamp: 2026-07-27
@@ -87,7 +87,11 @@ or none (singleton tags dominating → (d)).
 4. **Revisit** — with two or more baselines of trend data, decide (b)/(d) or
    close as governed-folksonomy.
 
-## Open questions (for ratification)
+**Ratified 2026-07-27** — the operator accepted the recommendation as written
+(the (a)+(c) sequence; (b) deferred, (d) held). The open questions below were
+not individually answered and carry to execution.
+
+## Open questions (carried to execution)
 
 - Should tag *semantics* be documented anywhere short of a controlled
   vocabulary — e.g. a conventions note defining the handful of load-bearing
