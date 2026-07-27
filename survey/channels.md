@@ -83,15 +83,6 @@ often enough that the blurb is not evidence.
 - Independent reviews of newly released open-weight models, scored on real coding tasks rather than benchmark tables; the author also builds Inferencer, a macOS inference harness, so the tooling is first-hand.
 - **Caveat:** the substance meets the criterion but the packaging is the exact genre the thread was filtering against — superlative-and-emoji titles claiming one model "destroys" another. Kept for what the videos measure, not how they are sold; drop it if the framing grates.
 
-### Assessed and dropped
-
-Eleven of the sixteen nominations were cut after sampling their recent uploads, and
-are recorded here so the same thread does not re-seed them:
-
-- **AI news and commentary, not testing** — Rod Miller, Eli the Computer Guy ("NVIDIA is DEAD" / "OpenAI is DEAD" as a recurring headline formula), Matt Wolfe, AI Search, Matthew Berman, House of El, Mo Bitar. Several were nominated as grounded and anti-hype; their upload lists say otherwise, which is the disagreement that made output-sampling the test.
-- **Promotional** — STARTUP HAKK (a bootcamp's shorts feed) and SenTeGuard (posted by its own author; shorts-format AI-policy commentary rather than engineering).
-- **Unresolvable** — **tef** and **lancypoo**, recommended for testing models on real coding tasks. Neither name resolves confidently: `@tef` is an unrelated clips channel, and `lancypoo` has two near-matches with nothing to choose between them. Good-sounding nominations that a source register cannot use, since an unfindable channel cannot be watched.
-
 ---
 
 ## Independent blogs & newsletters
