@@ -463,6 +463,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `em:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `em:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
+| `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
 | `em:f03f9c` | [knowledge/SWE/software-design/entity-component-systems-in-elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | reference |  |
 | `em:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
 | `em:b1ba4b` | [knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
