@@ -238,12 +238,17 @@ quote-seeded** — for three reasons:
    in one policy would misfile the why inside a what, and the contract's own
    layering says doctrine sits above policy precisely so the why is citable
    on its own.
-2. **Not into an existing doctrine.** The roster has two:
+2. **Not into an existing doctrine.** No entry in the roster governs
+   adaptation:
    [engineer-as-orchestrator](/meta/doctrine/engineer-as-orchestrator.md)
-   (the human's role) and
+   names the human's role,
    [capability-matched model selection](/meta/doctrine/capability-matched-model-selection.md)
-   (model-tier allocation). Adaptation governance is a third direction,
-   orthogonal to both. Notably, the doctrine layer already has a vacancy in
+   model-tier allocation, and the 2026-07 additions
+   ([comprehension-of-generated-code](/meta/doctrine/comprehension-of-generated-code.md),
+   [intent-is-the-source](/meta/doctrine/intent-is-the-source.md) and its
+   companions) the comprehension and artifact-status directions — none says
+   what governs an agent's *self-modification*. Notably, the doctrine layer
+   already has a vacancy in
    this region: the escape-rate plan's `## Doctrine` section cites "measured
    trust before scaled autonomy" — a direction argued in an analysis but
    filed nowhere. Adaptation governance and measured trust are two faces of

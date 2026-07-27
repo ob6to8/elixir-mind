@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, kv-cache, llm-inference, transformers, attention]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-25
 attribution:
   when: 2026-07-11T18:01:58+00:00
   channel: glossary
@@ -21,4 +21,9 @@ KV caching trades memory — which grows linearly with context length and often
 dominates long-context serving — for speed, which is why KV-cache **compression**
 (quantization, eviction, low-rank) and lossless-verification schemes target it.
 
-*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [VeriCache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md), [A brief history of KV cache compression](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md)
+Reuse *across* requests rather than within one is what turns it into an agent
+concern: see [prefix caching](/beliefs/glossary/prefix-caching.md) for the
+exact-match mechanism and [KV-cache hit rate](/beliefs/glossary/kv-cache-hit-rate.md)
+for the metric agent operators actually track.
+
+*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [VeriCache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md), [A brief history of KV cache compression](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md), [Context engineering lessons from building Manus](/knowledge/SWE/agentic/context-engineering/context-engineering-lessons-from-manus.md) (cache hit rate as the primary production metric)

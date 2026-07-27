@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, beam, erlang, elixir, runtime]
 sense: common
-timestamp: 2026-07-12
+timestamp: 2026-07-16
 attribution:
   when: 2026-07-12T09:05:38+00:00
   channel: glossary
@@ -19,4 +19,4 @@ attribution:
 
 The virtual machine that runs Erlang and Elixir. Its signature design is huge numbers of lightweight processes — each with its own isolated heap, preemptively scheduled, communicating only by message passing (the [actor model](/beliefs/glossary/actor-model.md)) — which makes fault containment, per-process supervision, and hot code upgrades natural properties rather than add-ons. Those affordances pay off for long-running concurrent services; a one-shot batch program uses none of them, which is why this brain's [dependency-free](/beliefs/glossary/dependency-free.md) tooling runs *on* the BEAM without being *a BEAM system*.
 
-*Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md)
+*Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md), [Dynamic Workflows vs. BEAM/Jido 2 analysis](/meta/analysis/dynamic-workflows-vs-beam-jido.md)

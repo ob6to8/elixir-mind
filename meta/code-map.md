@@ -47,7 +47,8 @@ Rules (surfaced through `ElixirMind.Verifier`):
   * **`from` resolution** — every ref resolves: `em:` ids to a bundle
     concept, bundle-absolute paths to an existing file.
   * **Exemption placement** — exempt files (thread docs, `inbox/` digests,
-    `index.md` listings, generated artifacts) must NOT carry `attribution`.
+    `survey/` bookmark registers, `journal/` entries, `index.md` listings,
+    generated artifacts) must NOT carry `attribution`.
   * **Presence** — once the backfill lands (`presence_enforced?/0` flips to
     `true`), every bundle concept and every governance doc carries
     `attribution`. `from`-presence on ratification-flow docs is advisory
@@ -62,7 +63,7 @@ sees one snapshot, not a diff) — git review is the safety net.
 - `bundle_errors/4` — Attribution errors for one bundle concept (a `Registry.Entry`). Pass `presence: true` to require the field (the post-backfill regime).
 - `channels/0`
 - `governance_errors/3` — All attribution errors for the governance namespace, given the bundle's id index (for `from` ref resolution). Pass `presence: true` to also require `attribution` on every governance doc (the post-backfill regime).
-- `governance_paths/1` — All governance-side `.md` paths (relative), partitioned into `%{governance: [...], exempt: [...]}`. Governance docs live under `meta/`; exempt files are thread docs, `inbox/` digests, `index.md` listings, and generated artifacts (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`, `meta/dev-history.md`).
+- `governance_paths/1` — All governance-side `.md` paths (relative), partitioned into `%{governance: [...], exempt: [...]}`. Governance docs live under `meta/`; exempt files are thread docs, `inbox/` digests, the `survey/` tier (bookmark registers), the `journal/` tier (dated operator entries), `index.md` listings, and generated artifacts (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`, `meta/dev-history.md`).
 - `list/2` — List every attributed doc as a row map (`path`/`id`/`when`/`channel`/ `agent`/`why`/`from`), newest first. Options:
 - `presence_enforced?/0`
 - `warnings/1` — Advisory warnings (never fail the gate): ratification-flow governance docs (plan/analysis/elaboration/issue) whose `attribution` lacks a `from` back-link to the thread or doc they were extracted from.
@@ -408,6 +409,8 @@ Unlike `Registry.scan/1` this walks the governance namespaces too (`meta/`,
 
 - `check/1` — Run both warning families over the tree rooted at `root`.
 - `doc_paths/1` — All `.md` docs in scope (relative paths), sorted.
+- `internal_targets/1` — Internal markdown link targets in `body`, minus code spans/blocks and external/mailto/anchor/placeholder targets — the same set the resolution check walks. Raw targets (a `#fragment` may still be attached); normalize with `resolve_target/2`.
+- `resolve_target/2` — Normalize an internal link `target` found in `from_path` to a repo-relative path (leading `#fragment` dropped): bundle-absolute targets lose their leading `/`, relative ones resolve against the source doc's directory.
 
 
 ### `ElixirMind.Markdown`
@@ -436,6 +439,36 @@ result so the link works from the page's depth in the output tree. External URLs
 
 - `slug/1` — Slugify a heading the way GitHub does: downcase, drop punctuation other than spaces and hyphens, then turn spaces into hyphens. Used for in-page `#anchor` targets so bundle links like `[x](#grounding)` resolve.
 - `to_html/2` — Render a markdown `body` to an HTML fragment.
+
+
+### `ElixirMind.Orphans`
+
+`lib/elixir_mind/orphans.ex`
+
+Find docs with **no inbound internal link** — filed but never referenced from
+another doc's prose.
+
+An *inbound link* is an internal markdown link in some other doc that resolves
+to the candidate (extraction and normalization are reused from
+`ElixirMind.Links`, so this can't drift from the link-resolution check).
+
+Two scoping decisions make the default output meaningful rather than noisy:
+
+  * **`index.md` links don't count** by default. Every filed doc is listed in
+    its directory's `index.md`, so counting those listings as inbound links
+    would mask every real orphan. Pass `include_index: true` to count them.
+  * **Anchored-by-design namespaces are not candidates** by default:
+    `meta/threads/` (anchored by `pr:`), `inbox/` (dated digests),
+    `survey/` (bookmark registers), and `journal/` (dated operator entries)
+    are unreferenced on purpose, not orphaned. Pass `all: true` to include
+    them.
+
+A doc that links *out* but has nothing linking *in* is still an orphan — only
+inbound edges matter here.
+
+**Functions**
+
+- `find/2` — Repo-relative paths (sorted) of candidate docs with no inbound link.
 
 
 ### `ElixirMind.Policy`
@@ -474,9 +507,10 @@ regenerated via `mix brain.registry`. References between concepts — e.g.
 breaks an edge: only the registry view changes.
 
 Scope: knowledge-bundle concepts only. Governance (`meta/`), skills
-(`.claude/`), tooling (`lib/`, `test/`), the archive (`deprecated/`), and
-reserved/root files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) are
-outside the registry.
+(`.claude/`), tooling (`lib/`, `test/`), the archive (`deprecated/`), the
+candidate feed (`inbox/`), the survey tier (`survey/`), the operator's
+journal (`journal/`), and reserved/root files (`index.md`, `log.md`,
+`README.md`, `CLAUDE.md`) are outside the registry.
 
 **Functions**
 
@@ -563,8 +597,8 @@ then the structural backstop that fails if the two ever diverge.
 The session-init digest: a point-in-time scan of the brain's open work,
 rendered as markdown for the operator's priority appraisal. Produced on
 demand by the `/priorities` skill, which runs `mix brain.session_init` and
-relays the output (it is no longer auto-injected at session start — the
-SessionStart hook now only provisions the toolchain).
+relays the output; it is not injected into a session's opening context (the
+SessionStart hook only provisions the toolchain).
 
 Four sources, all already maintained by existing policy:
 
@@ -676,6 +710,7 @@ re-run `mix brain.contract` and `mix brain.site`.
 **Functions**
 
 - `base_url/0` — The canonical base URL the site is published under, normalized to a single trailing slash. Reads `:elixir_mind, :site_base_url`, defaulting to the GitHub Pages URL.
+- `blob_url/2` — Map a bundle path to its file view on GitHub at a given ref (branch, tag, or SHA): `repo_url/0` + `/blob/<ref>/<path>`.
 - `excluded_dirs/0` — Top-level directories the site excludes (no page, no live URL).
 - `expand_tokens/1` — Expand deploy tokens in a markdown body. Currently `{{site_base_url}}` → `base_url/0`. Applied by both the contract compiler and the site renderer so the one config value reaches every rendered surface.
 - `live_url/1` — Map a bundle path to its page on the deployed site.
@@ -877,6 +912,23 @@ the cross-flow flowchart index at `meta/flows/lineage.md`.
 
 
 
+### `Mix.Tasks.Brain.Orphans`
+
+`lib/mix/tasks/brain.orphans.ex`
+
+Report docs that nothing else links to — filed but never cross-referenced.
+
+    mix brain.orphans                 # knowledge + governance docs, index listings ignored
+    mix brain.orphans --include-index # also count links inside index.md listings
+    mix brain.orphans --all           # include meta/threads/ and inbox/ (anchored by design)
+
+By default `index.md` listings don't count as inbound links (every filed doc is
+listed in one, which would hide every real orphan), and the anchored-by-design
+namespaces `meta/threads/` and `inbox/` are excluded from candidates. See
+`ElixirMind.Orphans` for the scoping rules. Read-only.
+
+
+
 ### `Mix.Tasks.Brain.Registry`
 
 `lib/mix/tasks/brain.registry.ex`
@@ -945,16 +997,30 @@ GitHub Pages by `.github/workflows/pages.yml`.
 
 `lib/mix/tasks/brain.url.ex`
 
-Map a bundle path to its page on the deployed Pages site.
+Map a bundle path to a URL that **actually resolves right now**, so a link in a
+response is never dead.
 
-    mix brain.url knowledge/knowledge-management/open-knowledge-format.md
+    mix brain.url meta/doctrine/fit-each-layer-to-its-purpose.md
     mix brain.url /meta/policy/response-resource-links.md
+    mix brain.url --pages meta/policy/response-resource-links.md   # force canonical Pages URL
 
-The mechanical form of the response-resource-links policy: use it to cite a brain
-resource by its live URL instead of hand-constructing one. The base URL comes from
-config (`ElixirMind.SiteConfig.base_url/0`). Paths under non-rendered directories
-(`deprecated/`, `.claude/`, `lib/`, `test/`, …) have no page and print a notice —
-cite those by repo path.
+The mechanical form of the response-resource-links policy. Pages deploys **only
+from the default branch** (`pages.yml`), so a document created or modified on an
+unmerged branch has no live page yet — its Pages URL would 404 (new) or show
+stale content (modified) until the branch merges. This task resolves that
+automatically:
+
+  * **Rendered and unchanged vs `origin/main`** → the live Pages URL
+    (`ElixirMind.SiteConfig.live_url/1`) — canonical and current.
+  * **New or modified on this branch, or under a non-rendered directory**
+    (`deprecated/`, `.claude/`, `lib/`, `test/`, …) → the GitHub **blob URL** at
+    the ref whose tree holds the current content (this branch, else `main`) —
+    `ElixirMind.SiteConfig.blob_url/2`.
+
+`--pages` forces the canonical Pages URL regardless of branch state (use when
+citing something you know will be merged). When `origin/main` is unavailable
+(bare checkout with no remote) the task can't judge liveness and falls back to
+the blob URL at the current branch.
 
 
 

@@ -41,3 +41,16 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 **The conceptual difference**
 
 In ordinary governance usage, **doctrine** is the layer of *beliefs and principles* — the "why," a body of accepted tenets that guides judgment but doesn't prescribe specific action. **Policy** is the layer of *enforceable rules* — the "what you must do," specific and operational. Doctrine shapes policies; policies implement doctrine. In this brain's terms, the closest thing to "doctrine" is arguably the *preamble + the compiled operating contract as a whole* (the worldview: "the tree is the taxonomy," "distill, don't dump"), while each `type: policy` file is a concrete, enforceable rule — several of them literally machine-enforced by `mix brain.verify`.
+
+### 2026-07-26-living-text-present-tense-policy (2026-07-26)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:fa15e7`]**  (co-feeds: `em:6a9e78`)
+
+**The formal definitions.** Both are in the controlled-type-vocabulary, verbatim:
+
+- **`policy`** — "a governance rule for how the brain operates; the source from which `CLAUDE.md` is compiled (lives under `meta/policy/`)."
+- **`doctrine`** — "a persisted **intention statement**: a guiding principle or direction that shapes how the brain and its agents are designed and prioritized — the 'why' that informs judgment **without prescribing a specific enforceable action**. Doctrine sits *above* policy: a `policy` **implements** doctrine as a concrete, machine- or operator-enforceable rule…"
+
+The discriminator is right there: **prescribes a specific enforceable action → policy; informs judgment without prescribing one → doctrine.** My draft's core ("rewrite living text to the new present; do not append a note about what it used to be") *is* a concrete, operator-enforceable-in-review action. By the definition, that's a policy. It also shares a parent lineage (merge-strategy, retire-hand-kept-logs) that is entirely policy. So applying the definition, policy is the correct fit — and notably, the "agents see it in the contract" argument I led with earlier is the *weaker* reason; the definitional one is the real one.

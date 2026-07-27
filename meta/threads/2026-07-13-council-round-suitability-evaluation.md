@@ -5,6 +5,7 @@ description: Evaluated the operator-supplied "council round" adversarial draft-P
 provenance: "Claude Code session (Claude Fable, then Claude Sonnet 5 after a mid-session /model switch), 2026-07-13; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped; earlier turns parsed from the host session log with one gap reinstated from live context, later turns (main-reconciliation, PR merge, plan authoring) rendered from live context"
 tags: [meta, thread, council, review, adversarial, analysis, distillation]
 timestamp: 2026-07-13
+session: https://claude.ai/code/session_017LXaQmsBGVNofviVhtTLp9
 pr: 72
 ---
 
@@ -195,7 +196,7 @@ When it is distilled, not dumped, and where is it defined?
 
 ## Assistant
 
-<routes ref="meta/policy/distill-dont-dump.md meta/policy/session-capture.md">
+<routes ref="meta/policy/capture-knowledge-cite-the-source.md meta/policy/session-capture.md">
 There are two definitions — one in the council prompt, one in this repo — plus a deliberately different third sense worth distinguishing.
 
 **In the council prompt**, it's ground rule 2: "The durable record is distilled, not dumped." It's *defined* in the ground-rules section and *executed* at exactly one moment: the **close motion, after the disposition gate passes**. Nothing is distilled while the round is live — findings, replies, and dispositions accumulate as raw PR comments. Only once every finding has a disposition does distillation happen, and it takes a precise form: agreed findings become concrete items in the distillation target, rejected alternatives become a dated "rejected: X because Y" block in that same document, and the raw exchange is cited by PR link and commit SHA only — never pasted. So "when" = at convergence, and the gate is what makes the distillation trustworthy: you can't summarize around an undispositioned finding because the round refuses to close with one open.

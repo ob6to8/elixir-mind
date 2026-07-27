@@ -6,12 +6,12 @@ section: session-workflow
 order: 1
 status: active
 tags: [meta, governance, threads, capture, workflow]
-timestamp: 2026-07-12
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-08T11:54:45+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md]
+  from: [/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md, /meta/threads/2026-07-19-session-url-persistence-and-plan-vs-capture-policy.md, /meta/threads/2026-07-20-code-as-compilation-target-and-dsp-testing-model.md]
 ---
 A working session (a **thread**) is non-linear: it touches many matters, pauses
 some on open questions, and routes each matter's synthesized content into a
@@ -34,15 +34,20 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
-- **Ask the operator in the chat, not the dialog box.** Pose every question to
-  the operator as ordinary `## Assistant` chat text — never through the
-  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
-  delivered message stream, so a question raised in the dialog box, and the
-  answer the operator selects in it, never enter that stream: both are lost from
+- **Interact with the operator in the chat, not a UI element — this covers
+  permission requests too.** Pose every question, and every request for
+  permission or approval, to the operator as ordinary `## Assistant` chat
+  text — never rely on a UI dialog element (the `AskUserQuestion` question box,
+  or a tool-permission popup) as the channel. `/capture` renders only the
+  delivered message stream, so anything raised in a dialog element, and the
+  answer the operator gives in it, never enter that stream: both are lost from
   the thread doc and every downstream artifact routed from it. Keeping the
-  exchange inline is what lets capture retain the question and its answer
-  verbatim. (The dialog UI has also proven flaky in these sessions — a second
-  reason to keep questions in the chat.)
+  exchange inline is what lets capture retain it verbatim. The UI elements have
+  also proven **flaky** in these sessions — a tool-permission popup can misfire
+  and register as a rejection the operator never made — so routine tools are
+  allowlisted in [`.claude/settings.json`](/.claude/settings.json)
+  (`permissions.allow`) to keep that popup out of the loop, and any decision the
+  agent still needs is asked in text.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it
@@ -56,6 +61,43 @@ record so it can be resumed from the record instead of from memory.
   and the pre-policy squash era left the original branch commits unreachable
   entirely — so the PR number is the only stable link from a thread back to how
   it landed. The branch name is deliberately **not** recorded.
+  - **`pr:` is write-once — it records the *origin* PR, and a session that spans
+    several PRs keeps that origin.** When a session is captured and PR'd, then
+    continues — later turns extend the *same* thread doc in place (per the
+    [session-capture](/meta/policy/session-capture.md) update-in-place rule) and
+    land in a *follow-up* PR — the thread's `pr:` is **not** rewritten to the new
+    number. It stays the PR in which the thread doc was first opened and stamped;
+    the follow-up PR(s) are recorded in the thread's **narrative prose**, not in
+    frontmatter. The reasoning: the origin `pr:` is already relied upon downstream
+    — governance docs cite the thread by its origin landing, cross-links and git
+    history reference it — so overwriting it would orphan that linkage and defeat
+    the anchor's one job, a stable link back to how the thread first landed.
+    Follow-up PRs stay discoverable through the thread doc's own commit history,
+    and naming them in prose keeps the human reader oriented without a
+    multi-valued frontmatter field. (This refines `/create-pull-request`'s
+    "stamp `pr:`" step: stamp on the *first* PR that opens the thread; on a
+    later PR that only re-touches an already-stamped thread, record it in prose
+    instead.)
+- **The thread also records its session (`session:`) — the full-fidelity escape
+  hatch.** At capture time, `/capture` stamps the cloud session's transcript URL
+  into the thread's frontmatter as `session: <url>`, derived from the
+  `CLAUDE_CODE_REMOTE_SESSION_ID` environment variable (the id's `cse_` prefix
+  becomes the URL's `session_` prefix:
+  `https://claude.ai/code/session_<tail>`). The thread doc is the *distilled*
+  record; the session URL points at the *raw* transcript on claude.ai — useful
+  precisely when the distillation turns out to have dropped something later
+  needed. It is deliberately the **weaker anchor**: account-bound (viewable only
+  by the operator logged into claude.ai, unreadable by agents), and deletable —
+  it complements `pr:`, never substitutes for it. Write-once at capture, never
+  rewritten. When the variable is unset (local-terminal sessions have no cloud
+  transcript), the key is **omitted** — never invented, never guessed.
+  Threads captured before this rule were backfilled **only from recorded
+  evidence** — a thread's own capture commit carries the `Claude-Session:`
+  trailer, and a squash-era thread whose trailer was lost recovers the URL from
+  its PR body (found via the thread's `pr:` anchor). A thread predating the
+  trailer feature entirely, or produced by a local-terminal session, has no
+  recorded URL and correctly stays bare. Backfill from recorded evidence only;
+  never infer or guess a URL for a thread that lacks one.
 - **Freeze then tag.** Because capture runs once at close, the body is frozen
   when written; tagging and ledger upkeep are one finalization motion over that
   frozen body, not a per-turn rewrite.
