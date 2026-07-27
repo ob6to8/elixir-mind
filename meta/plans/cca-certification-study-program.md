@@ -1,7 +1,7 @@
 ---
 type: plan
 title: "A CCA study program: an education/ curriculum overlay, primary-only grounding, and a mechanical /cca-practice"
-description: Build a study program for the Claude Certified Architect exam as a curriculum overlay over the existing taxonomy rather than a parallel knowledge silo — a new top-level education/ holding the course spine, structured on Anthropic's own four-pillar scope statement, with a curated question bank whose every item cites the bundle document grounding it and a deliberately mechanical /cca-practice skill backed by mix brain.practice.
+description: Build a study program for the Claude Certified Architect – Foundations exam as a curriculum overlay over the existing taxonomy rather than a parallel knowledge silo — a new top-level education/ holding the course spine, structured on Anthropic's published five-domain blueprint and its 29 task statements, with an independently-authored question bank whose every item cites the bundle document grounding it and a deliberately mechanical /cca-practice skill backed by mix brain.practice.
 status: accepted
 provenance: "Claude Code session, 2026-07-27 — operator asked how to intake CCA course resources, whether to create an education/certification heading, and for a /cca-practice drill skill; shape ratified inline"
 tags: [meta, plan, education, certification, cca, anthropic, skills, tooling]
@@ -23,226 +23,250 @@ attribution:
 
 ## Problem
 
-The [Claude Certified Architect](https://www.pearsonvue.com/us/en/anthropic.html)
-(CCA) exam is Anthropic's first technical certification. The operator wants to
-study toward it inside this brain, with "a balance of synthesis and referencing
-primary documents", and to drill with a `/cca-practice` skill presenting one
-scenario question at a time.
+The operator wants to study toward the **Claude Certified Architect –
+Foundations** exam (code `CCAR-F`) inside this brain, with "a balance of
+synthesis and referencing primary documents", and to drill with a
+`/cca-practice` skill presenting one scenario question at a time.
 
-The naive shape — a folder of exam notes — fails this bundle's own rules, and
-the naive *structure* fails a sharper one. Most published CCA blueprints
-(five weighted domains, a scaled pass mark, a question count) come from
-third-party prep sites, not from Anthropic. **The operator's standing constraint
-is that no third-party number enters the bundle.** Anthropic's own public
-statement of scope is a single sentence:
+The naive shape — a folder of exam notes — fails this bundle's own rules.
+Writing standalone study notes would duplicate what the brain already holds and
+file the rest in the wrong place, which
+[update-in-place](/meta/policy/update-in-place.md) and
+[tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) both forbid.
 
-> "tests foundational knowledge across Claude Code, the Claude Agent SDK, the
-> Claude API, and Model Context Protocol (MCP)"
->
-> — [Anthropic Academy, CCA Foundations](https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification)
+A coverage sweep against the exam's subject matter found the brain **strong on
+agent concepts and near-empty on the product surfaces the exam names**:
+`agentic-loop/` (~18 docs) and `context-engineering/` (8 docs) against **zero**
+documents in `anthropic/claude-code-sdk/`, none on the Claude API, and no MCP
+directory at all. Those are different things, and conflating them flatters the
+brain. Closing that gap is the largest phase here and has standing value
+independent of the exam.
 
-So the course is structured on **those four pillars**, and on nothing else,
-until the official **Exam guide PDF** (linked from that page, behind Claude
-Partner Network access) is obtained.
+## The authoritative blueprint
 
-A coverage sweep re-keyed to those four pillars shows the brain is much thinner
-than a concept-level reading suggests:
+**Anthropic publishes a complete 39-page exam guide, publicly.** It is linked
+from the [Partner Academy certifications
+catalog](https://anthropic-partners.skilljar.com/page/partner-certifications)
+and served from a public S3 path — no login required:
 
-| Pillar | Filed knowledge today | Verdict |
+> [Claude Certified Architect – Foundations Exam Guide](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2F6nizmqk8tpzpfjvt6qmmav7rh%2Fpublic%2F1783542750%2FClaude+Certified+Architect+%E2%80%93+Foundations+Exam+Guide.pdf) — Version 1.0, effective July 2026
+
+Everything below is quoted or derived from that guide and is **primary**.
+
+| Fact | Value |
+|---|---|
+| Exam code | `CCAR-F` |
+| Number of items | 60 |
+| Item format | **multiple-choice *and* multiple-response**; each item states how many responses to select |
+| Exam structure | **4 scenarios drawn from a bank of 6** |
+| Time limit | 120 minutes |
+| Passing score | scaled 720 on a 100–1,000 range |
+| Fee | $125 USD |
+| Validity | 12 months from award |
+| Scoring | criterion-referenced; per-domain percent-correct reported but not used for pass/fail |
+| Renewal | free non-proctored assessment on Partner Academy; a lapsed credential requires the full exam at full fee |
+
+### The five domains
+
+| # | Domain | Weight |
 |---|---|---|
-| Claude Code | 8 docs under `anthropic/claude-code/`, mostly cloud-environment sources; ambient mentions repo-wide | thin on configuration specifics |
-| Claude Agent SDK | **0 docs** in `anthropic/claude-code-sdk/`; 11 passing mentions | near-empty |
-| Claude API | **~0** — no filed knowledge of the API surface | empty |
-| MCP | no dedicated directory; 25 incidental mentions, 6 using the full name | near-empty |
+| 1 | Agentic Architecture & Orchestration | 27% |
+| 2 | Tool Design & MCP Integration | 18% |
+| 3 | Claude Code Configuration & Workflows | 20% |
+| 4 | Prompt Engineering & Structured Output | 20% |
+| 5 | Context Management & Reliability | 15% |
 
-The brain is strong on agentic **concepts** — `agentic-loop/` (~18 docs),
-`context-engineering/` (8 docs), `frameworks/`, `multi-model/` — and near-empty
-on the four **product surfaces** the exam names. Those are different things, and
-conflating them is what makes a concept-level coverage estimate flatter the
-brain. Filling the product-surface gap is the largest phase of this plan and has
-standalone value even if the exam never happens.
+The guide expands these into **29 task statements**, each with explicit
+*Knowledge of* and *Skills in* bullets — "Exam items are written against these
+objectives." Those task statements, not the domain headings, are the real unit
+of study and the natural key for question coverage.
+
+### The six scenarios
+
+Every item sits inside one of six production contexts: customer support
+resolution agent; code generation with Claude Code; multi-agent research system;
+developer productivity tooling; Claude Code in CI/CD; structured data
+extraction. Each names its primary domains. Practice questions should be written
+*into* these contexts rather than as free-floating trivia.
+
+## The NDA constraint — binding on the question bank
+
+Section 14 of the guide:
+
+> "By accepting, you agree that all exam content, including questions, answer
+> options, and scenarios, is the confidential and proprietary property of
+> Anthropic, and that you will not disclose, reproduce, or distribute any
+> portion of it."
+
+Three consequences, all binding on this plan:
+
+1. **The bank is authored from the published objectives, never reconstructed
+   from real items.** The 29 task statements and six scenario descriptions are
+   public and are the legitimate source; a recalled exam item is not.
+2. **Third-party question banks are not ingestible.** A commercial "400-question"
+   bank may itself be a reconstruction of real items. This is a second,
+   independent reason to keep the prep sites quarantined in the survey tier —
+   licence and NDA risk on top of the epistemic reason.
+3. **The bank stays unpublished.** `education/**/practice/questions/` is excluded
+   from the Pages build. This was already recommended on scraping grounds; the
+   NDA makes it settled.
+
+Anyone who sits the exam and then writes questions must be scrupulous about the
+line: objectives-derived content is fine, recall is not.
 
 ## Decisions ratified in-session
 
 1. **`education/` is a new top-level directory.** Ratified by the operator (a
    shape change under
    [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)).
-   Rationale: `knowledge/` is *what the brain knows*; a curriculum is a
-   *sequenced path through* what it knows plus assessment machinery, and the
-   namespace generalizes to future certifications and book studies.
-2. **Curated question bank, not generate-on-demand.** Questions are authored and
-   filed so they are auditable, improvable, and linkable.
+   `knowledge/` is *what the brain knows*; a curriculum is a *sequenced path
+   through* it plus assessment machinery, and the namespace generalizes to
+   future certifications and book studies.
+2. **Curated question bank, not generate-on-demand** — auditable, improvable,
+   linkable.
 3. **Two-stage `E) Explain`.** First invocation briefs the concepts and
-   re-offers A–D; a second reveals the answer with full rationale. The retrieval
-   attempt is where the learning is.
+   re-offers the options; a second reveals the answer with full rationale.
 4. **Answering happens in chat text.** Never `AskUserQuestion` — per
    [session-capture](/meta/policy/session-capture.md), dialog elements never
    enter the delivered message stream, so `/capture` would render a study
    session blank.
-5. **Primary sources only, and no third-party numbers anywhere.** Third-party
-   prep sites may be *surveyed*, never cited. No weighting, pass mark, duration,
-   question count, or domain taxonomy enters the bundle or the tooling config
-   unless Anthropic states it.
-6. **`/cca-practice` is mechanical.** The skill selects, presents, grades, and
-   logs. It is not the source of truth for the *why* of the program — that lives
-   in `education/`. This mirrors the contract's split between terse policies and
-   cross-linked explanatory docs.
+5. **Primary sources only.** Third-party prep sites may be surveyed, never cited
+   as provenance for bundle knowledge.
+6. **`/cca-practice` is mechanical.** Select, present, grade, log. The *why* of
+   the program lives in `education/`, mirroring the contract's split between
+   terse policies and cross-linked explanatory docs.
 
 ## The shape: two layers, deliberately separated
 
-**Layer 1 — subject knowledge stays in the existing taxonomy.** The pillar gaps
-get proper homes under already-established top-level domains, so they are created
-autonomously without further ratification:
+**Layer 1 — subject knowledge stays in the existing taxonomy**, under
+already-established top-level domains (autonomous, no ratification needed):
+`knowledge/SWE/agentic/mcp/`, `anthropic/claude-api/`,
+`anthropic/claude-code-sdk/`, `anthropic/claude-code/`, and a new
+`knowledge/SWE/prompt-engineering/`.
 
-- `knowledge/SWE/agentic/anthropic/claude-code-sdk/` — exists, empty; fill it
-- `knowledge/SWE/agentic/anthropic/claude-api/` — new
-- `knowledge/SWE/agentic/mcp/` — new
-- `knowledge/SWE/agentic/anthropic/claude-code/` — exists, thin on configuration
+**Layer 2 — the course spine maps and sequences, never restates.** A per-domain
+guide holds the domain's task statements, an ordered reading path of
+bundle-absolute links into Layer 1, and an explicit gap list.
 
-**Layer 2 — the course spine maps and sequences, never restates.** A per-pillar
-study guide holds: what Anthropic says the pillar covers, an ordered reading path
-of bundle-absolute links into Layer 1, and an explicit gap list.
-
-> **The guardrail, stated as a test:** if a pillar guide starts *explaining what
-> MCP is*, it has failed — that belongs in `knowledge/SWE/agentic/mcp/`. A pillar
-> guide stripped of its outbound links should lose almost all its content.
-
-The payoff: the course stays thin and current, and every hour of study is also a
-permanent improvement to the brain.
+> **The guardrail, stated as a test:** if a domain guide starts *explaining what
+> MCP is*, it has failed — that belongs in `knowledge/SWE/agentic/mcp/`. A
+> domain guide stripped of its outbound links should lose almost all its
+> content.
 
 ## Resource intake: the provenance quarantine
 
-Decision 5 needs *structural* enforcement, not discipline. The survey tier
-supplies one.
+| Source class | Destination |
+|---|---|
+| Anthropic primary — the exam guide, Claude Code docs, Agent SDK docs, Claude API docs, MCP spec, Partner Academy | `/intake` → filed `reference` / `source` documents |
+| Third-party prep sites | `/bookmarks` → `survey/bookmarks.md`, never cited |
 
-| Source class | Destination | Why |
-|---|---|---|
-| Anthropic primary — Claude Code docs, Agent SDK docs, Claude API docs, MCP spec, certification and partner-network posts, Pearson VUE exam page, the official Exam guide PDF | `/intake` → filed `reference` / `source` documents under `knowledge/` | authoritative; eligible to ground claims and questions |
-| Third-party prep sites — claudecertifiedarchitects.com, certdemand, claudecertificationguide, Udemy listings | `/bookmarks` → `survey/bookmarks.md` | signal about the exam's *shape*, never authority |
+Survey rows are non-bundle and carry **no `em:` id**. Since `verified_by` targets
+must be ids that resolve, a surveyed prep site is *structurally incapable* of
+grounding a claim — enforced by the verifier, not by memory.
 
-Survey-tier rows are **non-bundle: they carry no `em:` id**. Since `verified_by`
-targets must be stable ids that resolve, a surveyed prep site is *structurally
-incapable* of grounding a claim. The quarantine is enforced by the existing
-verifier, not by an agent remembering the rule.
-
-**The blueprint doc states primary facts only** — the four credentials, proctored
-delivery via Pearson Professional Assessments, Credly badging, the retake ladder
-and 12-month term, partner-network eligibility, and Anthropic's four-pillar scope
-sentence quoted verbatim. It records the official Exam guide PDF as the
-**outstanding grounding target**, with acquiring Partner Network access as the
-prerequisite. It states no weighting, no pass mark, no duration, and no question
-count.
-
-**Sampling carries no imported numbers either.** With no published weighting, the
-practice tool samples **uniformly across the four pillars, biased toward measured
-weakness** derived from the operator's own attempt log. That is a property of the
-operator's performance, not a claim about the exam — so it stays inside the
-constraint. If Anthropic later publishes weightings, they become a config value
-and nothing needs retracting.
+**Sampling weights are now the published ones** (27/18/20/20/15), biased by
+measured weakness from the operator's attempt log.
 
 ## Current state → desired state
 
 ```
 CURRENT
   knowledge/SWE/agentic/{agentic-loop,context-engineering,...}   # strong on agent CONCEPTS
-  anthropic/{claude-code-sdk,claude-api,mcp}                     # three of four PILLARS near-empty
+  mcp/, claude-api/, claude-code-sdk/                            # first pass filed 2026-07-27
   (no curriculum layer)                                          # no sequencing, no assessment
 
 DESIRED
   education/                        # curriculum overlay — sequences, never restates
-    └─ pillar guide ──────▶ knowledge/**            (links out, Layer 1)
-    └─ question ──────────▶ grounding doc em: ids   (every item cites its source)
-    └─ attempt log ───────▶ weakness-biased sampling
-  knowledge/SWE/agentic/anthropic/claude-code-sdk/   # filled from Anthropic primary
-  knowledge/SWE/agentic/anthropic/claude-api/        # filled from Anthropic primary
-  knowledge/SWE/agentic/mcp/                         # filled from Anthropic primary
+    └─ domain guide ──────▶ knowledge/**           (links out, Layer 1)
+    └─ question ──────────▶ task statement + grounding doc em: ids
+    └─ attempt log ───────▶ weakness-biased sampling over published weights
 ```
 
 ## File-tree diff
 
 ```
 + education/                                                  # NEW top-level (ratified)
-+   index.md                                                  # namespace intro; bundle + non-bundle split
++   index.md
 +   certifications/
 +     index.md
 +     claude-certified-architect/
 +       index.md                                              # the course entry point
-+       exam-blueprint.md                                     # NEW  primary-sourced facts ONLY
-+       study-plan.md                                         # NEW  the spine: ordered path + gap list
-+       pillars/                                              # Anthropic's four named pillars
++       exam-blueprint.md                                     # NEW  from the official guide
++       study-plan.md                                         # NEW  ordered path + gap list
++       domains/
 +         index.md
-+         claude-code.md                                      # NEW  scope + reading path + gaps
-+         claude-agent-sdk.md                                 # NEW      ""
-+         claude-api.md                                       # NEW      ""
-+         model-context-protocol.md                           # NEW      ""
++         agentic-architecture-and-orchestration.md           # NEW  27% — 7 task statements
++         tool-design-and-mcp-integration.md                  # NEW  18% — 5 task statements
++         claude-code-configuration-and-workflows.md          # NEW  20% — 6 task statements
++         prompt-engineering-and-structured-output.md         # NEW  20% — 6 task statements
++         context-management-and-reliability.md               # NEW  15% — 6 task statements
++       scenarios.md                                          # NEW  the six production contexts
 +       practice/                                             # NON-BUNDLE (no em: ids)
 +         index.md
 +         attempts.md                                         # NEW  append-only attempt record
-+         questions/<pillar>/q-NNNN.md                        # NEW  one question per file
++         questions/<domain>/q-NNNN.md                        # NEW  one question per file
 +
-+ knowledge/SWE/agentic/mcp/index.md                          # NEW  autonomous subdir
-+ knowledge/SWE/agentic/anthropic/claude-api/index.md         # NEW  autonomous subdir
++ knowledge/SWE/prompt-engineering/index.md                   # NEW  autonomous subdir
 +
-+ .claude/skills/cca-practice/SKILL.md                        # NEW  mechanical: select/present/grade/log
-+ lib/elixir_mind/practice.ex                                 # NEW  bank load, weighted select, log I/O
++ .claude/skills/cca-practice/SKILL.md                        # NEW  mechanical
++ lib/elixir_mind/practice.ex                                 # NEW  bank load, select, log I/O
 + lib/mix/tasks/brain.practice.ex                             # NEW  CLI surface
-+ test/elixir_mind/practice_test.exs                          # NEW  selection + log parsing
++ test/elixir_mind/practice_test.exs                          # NEW
 +
 ~ index.md                                                    # list education/ as a top-level domain
-~ meta/policy/skills-registry.md                              # register /cca-practice → recompile contract
-~ lib/elixir_mind/verifier.ex                                 # exempt education/**/practice/ from id+attribution
-~ config/config.exs                                           # exclude practice/questions/ from the site build
+~ meta/policy/skills-registry.md                              # register /cca-practice → recompile
+~ lib/elixir_mind/verifier.ex                                 # exempt education/**/practice/
+~ config/config.exs                                           # exclude practice/questions/ from site
 ```
 
-`practice/attempts.md` is deliberately **not** named `log.md`:
-[reserved-filenames](/meta/policy/reserved-filenames.md) bans that name bundle-wide.
+`practice/attempts.md` is deliberately **not** `log.md`:
+[reserved-filenames](/meta/policy/reserved-filenames.md) bans that name.
 
 ## Question record shape
 
-One question per file, reusing the existing `ElixirMind.Frontmatter` parser — no
-new parser, clean diffs, trivially appendable:
+One question per file, reusing `ElixirMind.Frontmatter` — no new parser:
 
 ```
 ---
-pillar: model-context-protocol
+domain: tool-design-and-mcp-integration
+task_statement: "2.2"           # ties the item to a published objective
+scenario: 1                     # one of the six published contexts
+format: multi-select            # single | multi-select — the exam uses both
 difficulty: 2
-answer: C
-grounds: [em:xxxxxx, em:yyyyyy]     # bundle docs supporting the correct answer
+answer: [B, D]
+grounds: [em:3b0352]            # bundle docs supporting the correct answer
 ---
 
 ## Scenario
-<production-context stem>
-
 ## Options
-A. …   B. …   C. …   D. …
-
-## Explain
-<stage-1 concept briefing — no answer revealed>
-
-## Rationale
-<stage-2 — why C, and why each distractor fails>
+## Explain     <- stage-1 concept briefing, no answer revealed
+## Rationale   <- stage-2, why each option does or does not hold
 ```
 
-**`grounds` is the load-bearing field.** It makes the explanation traceable to
-filed knowledge rather than model recall, and it inverts into a coverage
-instrument: a question that cannot be grounded is a gap in the brain, routing
-straight back to `/intake`. A build-time check that every `grounds` id resolves
-is the natural gate.
+Two fields earn their place. **`grounds`** makes the explanation traceable to
+filed knowledge rather than model recall, and inverts into a coverage
+instrument: an ungroundable question is a gap in the brain, routing back to
+`/intake`. **`task_statement`** gives coverage a denominator — 29 objectives,
+so "which objectives have no question yet" is a straight query.
+
+`format: multi-select` exists because the guide says items are "multiple-choice
+and multiple-response". A bank of only single-answer items would drill the wrong
+shape.
 
 ## Call/flow trees
 
 ```
 PRODUCTION — /cca-practice (mechanical)
   parse arg                     → skill
-  mix brain.practice --pillar P → Practice.select/3
+  mix brain.practice --domain D → Practice.select/3
       load bank                     Practice.load_questions/1
-      read attempts                 Practice.accuracy_by_pillar/1
-      sample                        uniform over pillars × weakness bias × recency filter
-  present stem + A–D + E)Explain → skill  (chat text, never AskUserQuestion)
+      read attempts                 Practice.accuracy_by_domain/1
+      sample                        published weights × weakness bias × recency filter
+  present stem + options + E)Explain → skill  (chat text, never AskUserQuestion)
   operator answers in chat       → skill
-    A–D  → grade, show Rationale, link grounds via mix brain.url
-    E    → stage 1: show Explain, re-offer A–D
-           E again → stage 2: reveal answer + Rationale
+    option(s) → grade, show Rationale, link grounds via mix brain.url
+    E         → stage 1: show Explain, re-offer
+                E again → stage 2: reveal answer + Rationale
   mix brain.practice --record   → Practice.append_attempt/2
 
 TEST
@@ -262,142 +286,113 @@ TEST
         opts :: keyword()
       ) :: {:ok, Question.t()} | {:error, :empty_bank}
 
-@spec accuracy_by_pillar(attempts :: [Attempt.t()]) ::
+@spec accuracy_by_domain(attempts :: [Attempt.t()]) ::
         %{optional(String.t()) => float()}
+
+@spec coverage_by_task_statement(questions :: [Question.t()]) ::
+        %{optional(String.t()) => non_neg_integer()}
 
 @spec append_attempt(log :: Path.t(), Attempt.t()) :: :ok | {:error, term()}
 ```
 
 ## Boundary decisions
 
-- **`ElixirMind.Practice` owns selection and log parsing.** Pure functions over
-  loaded data; a single I/O seam for reading the bank and appending an attempt.
-  Sampling is deterministic under an injected seed.
-- **`mix brain.practice` owns the CLI only.** Argument parsing and printing; no
-  selection logic.
-- **`/cca-practice` owns the dialogue.** Presentation, the two-stage explain, and
-  grading conversation. It carries **no pedagogy and no pillar content** —
-  decision 6.
-- **`education/` owns the *why*.** Pillar framing, reading paths, rationale, gaps.
-- **The verifier owns the namespace rules.** `education/**/practice/` is exempt
-  from `em:` ids and `attribution`; the rest of `education/` is a normal bundle
-  namespace.
-- **The site build owns exposure.** `practice/questions/` is excluded from
-  publication (open question 1).
+- **`ElixirMind.Practice`** owns selection, log parsing, and coverage. Pure
+  functions over loaded data; one I/O seam. Deterministic under an injected seed.
+- **`mix brain.practice`** owns the CLI only — no selection logic.
+- **`/cca-practice`** owns the dialogue: presentation, two-stage explain,
+  grading. No pedagogy, no domain content (decision 6).
+- **`education/`** owns the *why*: domain framing, reading paths, gap lists.
+- **The verifier** owns namespace rules — `education/**/practice/` exempt from
+  `em:` ids and `attribution`.
+- **The site build** owns exposure — `practice/questions/` excluded (NDA).
 
 ## Build order
 
-Phase 2 is complete; **phase 1 had a first pass only and is still the largest
+Phase 2 is complete; **phase 1 had a first pass only and remains the largest
 open phase.** The rest is the fresh-context handoff.
 
-1. **Fill the pillar gaps.** `/intake` Anthropic primary documentation across the
-   four pillars. Independently valuable, and a prerequisite for `grounds` — a
-   question can only be filed once something exists to ground it against.
+1. **Fill the domain gaps.** `/intake` Anthropic primary documentation.
+   Prerequisite for `grounds` — a question can only be filed once something
+   exists to ground it against.
 
-   *First pass filed (2026-07-27), one document per pillar:*
+   *First pass filed (2026-07-27):*
 
-   | Pillar | Filed | `em:` |
+   | Area | Filed | `em:` |
    |---|---|---|
    | MCP | architecture; tools primitive | `121acc`, `3b0352` |
    | Agent SDK | SDK overview | `b4a91a` |
    | Claude API | tool use | `038169` |
    | Claude Code | settings and permissions | `53f32a` |
 
-   *Still unfiled — the remainder of phase 1:*
+   *Still unfiled:*
 
-   - **MCP:** resources and prompts primitives; transports (stdio, streamable
-     HTTP); lifecycle and initialization; authorization; sampling and elicitation.
-   - **Agent SDK:** hooks in depth; the permission callback surface; subagent
-     configuration; session forking; custom tools via in-process MCP servers.
-   - **Claude API:** the Messages API proper (blocks, streaming, stop reasons);
-     prompt caching; extended thinking; batch; Anthropic-schema tools
-     (memory, bash, text editor); the `tool_search` surface.
-   - **Claude Code:** slash commands; hooks; memory and `CLAUDE.md` resolution;
-     MCP server configuration; skills and plugins.
-   - **Prompt engineering:** unrepresented in the brain and not one of the four
-     pillars by name, but load-bearing across all of them — Anthropic's prompt
-     engineering guide is the primary source, filing into a new
-     `knowledge/SWE/prompt-engineering/` (autonomous subdir).
+   - **The exam guide itself** — file as a `source` capture; it is the single
+     most load-bearing primary document for this program.
+   - **MCP:** resources and prompts primitives; transports; lifecycle;
+     authorization; sampling and elicitation.
+   - **Agent SDK:** hooks; permission callbacks; subagent/`AgentDefinition`
+     configuration; session forking; custom tools.
+   - **Claude API:** the Messages API proper; prompt caching; extended thinking;
+     the Message Batches API; Anthropic-schema tools.
+   - **Claude Code:** slash commands; skills and `.claude/rules/`; plan mode;
+     memory resolution; MCP server config; CI/CD integration.
+   - **Prompt engineering:** unrepresented in the brain; 20% of the exam.
+     New `knowledge/SWE/prompt-engineering/`.
 
-2. **Survey the prep landscape.** ✅ Done 2026-07-27 — four third-party CCA sites
-   surveyed into `survey/bookmarks.md`, blueprint figures explicitly marked as
-   absent from every Anthropic and Pearson source.
+2. **Survey the prep landscape.** ✅ Done 2026-07-27 — four third-party sites in
+   `survey/bookmarks.md`.
 3. **Stand up `education/`.** Namespace, indexes, root-index entry, verifier
-   exemptions. Everything after this depends on it.
-4. **Write the blueprint and the four pillar guides.** Primary facts only;
-   reading paths over phase 1's output; explicit gap lists.
-5. **Build the tooling.** `ElixirMind.Practice`, `mix brain.practice`, tests, and
-   the `grounds`-resolution check.
+   exemptions.
+4. **Write the blueprint, scenarios, and five domain guides** from the exam
+   guide's task statements, with reading paths over phase 1's output.
+5. **Build the tooling** — `ElixirMind.Practice`, `mix brain.practice`, tests,
+   and the `grounds`/`task_statement` resolution checks.
 6. **Write `/cca-practice`.** Thin and mechanical. Register in the
    skills-registry policy and recompile the contract.
-7. **Seed the bank,** starting with whichever pillar phase 1 grounded most
-   thoroughly — this validates the `grounds` mechanism before the bank scales.
+7. **Seed the bank,** one question per task statement as the first milestone —
+   29 items covering every published objective, before depth anywhere.
 
 ## Anchors
 
-- `ElixirMind.Frontmatter` (`lib/elixir_mind/frontmatter.ex`) — reused verbatim
-  for question files; no new parser. Note the pending
-  [parser rewrite](/meta/plans/frontmatter-parser-profile-rewrite.md) — question
+- `ElixirMind.Frontmatter` (`lib/elixir_mind/frontmatter.ex`) — reused for
+  question files. Note the pending
+  [parser rewrite](/meta/plans/frontmatter-parser-profile-rewrite.md): question
   frontmatter must stay inside the current profile (flat keys, inline lists).
-- `ElixirMind.Verifier` (`lib/elixir_mind/verifier.ex`) — namespace exemptions
-  follow the existing `inbox/` and `survey/` precedent.
+- `ElixirMind.Verifier` (`lib/elixir_mind/verifier.ex`) — exemptions follow the
+  `inbox/` and `survey/` precedent.
 - `ElixirMind.SiteConfig` (`lib/elixir_mind/site_config.ex`) — the exclusion list.
-- `mix brain.url` — every response-side link to a bundle doc, per
+- `mix brain.url` — response-side links, per
   [response-resource-links](/meta/policy/response-resource-links.md).
-- [`/bookmarks`](/.claude/skills/bookmarks/SKILL.md) and the
-  [survey-tier plan](/meta/plans/bookmarks-survey-tier.md) — the pattern the
-  provenance quarantine reuses.
 - [`/todo` SKILL.md](/.claude/skills/todo/SKILL.md) — the dispatch-on-subcommand
   shape `/cca-practice` should copy.
 
 ## Open questions
 
-1. **Should the question bank be published to the Pages site?** The site is
-   public. Recommend **excluding `practice/questions/`** from the build — a
-   public bank invites scraping, and questions modeled on a live commercial
-   certification are better kept unpublished. The course spine still publishes.
-2. **Acquiring the official Exam guide PDF — and with it, exam access.** This is
-   the plan's largest external dependency, and it is an operator decision, not an
-   agent one.
+1. **Can an individual certify, or is Partner Network membership required?**
+   Anthropic states "Any organization that is bringing Claude to market is
+   eligible to join the Claude Partner Network"; the Academy catalog shows
+   per-exam pricing ($99 Associate, $125 Developer, $125 Architect Foundations,
+   $175 Architect Professional) and registration runs Academy → Pearson VUE. No
+   primary source states whether an unaffiliated individual may register. This
+   needs a human — apply, or ask Anthropic's partner team.
+2. **Do the other three exam guides warrant filing?** All four are public on the
+   same S3 path. The Architect – Professional guide in particular describes the
+   next credential up. Recommend filing at least its blueprint.
+3. **Question authoring cadence.** 29 task statements is the coverage
+   denominator; whether to author breadth-first (one per objective) or
+   depth-first per domain is an execution choice. Recommend breadth-first —
+   it surfaces grounding gaps fastest.
 
-   *What Anthropic states:* "Any organization that is bringing Claude to market
-   is eligible to join the Claude Partner Network"
-   ([announcement](https://www.anthropic.com/news/claude-partner-network)).
-   Membership is free, applications are open at
-   [claude.com/partners](https://claude.com/partners), and members get the
-   Partner Portal, Anthropic Academy training, and certification access. The
-   [certification post](https://claude.com/blog/four-role-based-claude-certifications)
-   states exams "are currently available to Claude Partner Network members",
-   with prep courses free for partners; Pearson VUE's
-   [Anthropic page](https://www.pearsonvue.com/us/en/anthropic.html) likewise
-   says the exams are "open to organizations in the Claude Partner Network" and
-   that registration runs through Anthropic Partner Academy.
+## Deferred
 
-   *What is not stated anywhere primary:* whether an **individual practitioner
-   or sole proprietor** can join or sit the exam without an organization. The
-   eligibility sentence is written in terms of organizations throughout, and
-   `claude.com/partners` publishes no tier table, eligibility criteria, or
-   individual path. The widely-repeated **$125 individual price is third-party
-   only** and appears in no Anthropic or Pearson source — it must not be treated
-   as fact.
-
-   *The consequence for this plan:* the Exam guide PDF is the only primary
-   blueprint, and it sits behind that gate. Until it is obtained the course
-   stands on the four-pillar sentence alone — which is sufficient for phases 1
-   and 3–7, since those build knowledge and machinery, not exam-shaped
-   guesswork. The blueprint doc stays deliberately thin rather than being
-   padded with third-party structure.
-
-   *Resolving it takes a human:* submit the partner application, or contact
-   Anthropic's partner team, and ask directly whether an individual may certify.
-   Both channels are outside what an agent should do unprompted.
-3. **One file per question, or one file per pillar?** Recommend per-question
-   (free parsing, clean diffs) despite the file count; per-pillar would need a
-   bespoke record parser.
-4. **Does the bank need a `sources` field distinct from `grounds`?** `grounds`
-   points at bundle documents. If a question is written from an Anthropic doc not
-   yet filed, that is a signal to file it rather than to add a second field.
-   Recommend no second field — keep the forcing function.
-5. **Renewal cadence.** The certification carries a 12-month term. Whether the
-   spine tracks renewal, and whether questions expire when the underlying
-   Anthropic docs change, is deferred until after the first sitting.
+**A source-inventory spike.** This plan's blueprint premise was wrong for one
+revision because a search scoped to `anthropic.com` and `claude.com` never
+reached the Partner Academy tenant. Anthropic's primary surfaces span at least
+six hosts — `anthropic.com`, `claude.com`, `platform.claude.com`,
+`code.claude.com`, `support.claude.com`, and
+`anthropic-partners.skilljar.com` — plus `modelcontextprotocol.io`. Filing an
+`analysis` that enumerates them and what each authoritatively covers would turn
+future primary-source intake into a checklist rather than a search gamble. Not
+required to execute this plan; recommended before the next research-heavy
+program.

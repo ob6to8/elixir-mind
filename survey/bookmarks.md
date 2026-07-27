@@ -826,7 +826,7 @@ re-engages.
 
 ### [CCA exam guide — claudecertifiedarchitects.com](https://www.claudecertifiedarchitects.com/cca-exam-guide/)
 - **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-blueprint` `third-party` `unverified-claims`
-- The most-cited third-party CCA blueprint — five weighted domains, 60 questions in 120 minutes, a 720/1000 scaled pass mark; **none of these figures appear in any Anthropic or Pearson source**, so they are treated here as exam-shape signal only and never as bundle knowledge.
+- The most-cited third-party CCA blueprint. Anthropic's own [public exam guide](https://anthropic-partners.skilljar.com/page/partner-certifications) confirms the weightings, 60 items, 120 minutes and 720/1000 cut score, but this page gets two structural facts wrong: items are **multiple-choice *and* multiple-response** (not "one correct answer"), and the exam presents **4 scenarios drawn from a bank of 6** (not 6). Cite the official guide, never this.
 
 ### [Claude Certification Guide — free mock exams and study guides](https://claudecertificationguide.com/)
 - **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-prep` `free` `third-party`
