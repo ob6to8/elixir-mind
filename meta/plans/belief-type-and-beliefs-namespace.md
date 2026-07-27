@@ -9,7 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, second-mind taxonomy session"
   why: "persists the belief-type design per the persist-plans policy, so the ratification decision is made against a concrete shape"
-  from: [/meta/analysis/second-mind-taxonomy-and-the-belief-gap.md, /meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
+  from: [/meta/analysis/second-mind-taxonomy-and-the-belief-gap.md, /meta/threads/2026-07-13-second-mind-taxonomy-analysis-and-belief-plan.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
 tags: [meta, plan, beliefs, doctrine, type-vocabulary, taxonomy, second-mind]
 timestamp: 2026-07-26
 ---

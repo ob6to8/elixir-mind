@@ -46,3 +46,15 @@ quote.
 *Seen in:* [scar-tissue defenses analysis](/meta/analysis/scar-tissue-drift-defenses-and-persistence.md), [bound-adaptation doctrine](/meta/doctrine/bound-adaptation.md)
 
 *See also:* [ratification](/beliefs/glossary/ratification.md), [compiled contract](/beliefs/glossary/compiled-contract.md), [scar tissue](/beliefs/glossary/scar-tissue.md), [append-only](/beliefs/glossary/append-only.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1434d9">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-scar-tissue-drift-doctrine-and-link-policy (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:1434d9`]**
+
+**"Ratification-immutable" — defined, in the glossary.** That's its home: it's this brain's own governance vocabulary (`sense: repo`), same shelf as `compiled contract` and `generated artifact`. One judgment call to flag: I titled the entry [**ratification-mutable**](https://ob6to8.github.io/elixir-mind/beliefs/glossary/ratification-mutable.html) (`em:1434d9`) because that's the form already committed in the analysis and doctrine — but the body explicitly records your formulation as the same property seen from the guarantee side: *ratification-immutable* = what agents can rely on; *ratification-mutable* = how the operator evolves it. One channel, one approver, either way. The entry also places it on the bundle's three-regime gradient: immutable history (attribution events — not even ratification touches them), ratification-mutable law (the contract), mutable content (ordinary documents). If you'd rather the title carry your form, it's a one-word flip — say so.

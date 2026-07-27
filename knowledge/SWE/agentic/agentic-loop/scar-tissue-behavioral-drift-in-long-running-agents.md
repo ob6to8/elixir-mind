@@ -93,3 +93,17 @@ and smaller fraction of what's actually in context (a top comment's framing).
 - "I ran an agent autonomously for 300 hours. The way it slowly mutated is
   honestly terrifying" — r/AgentsOfAI —
   https://www.reddit.com/r/AgentsOfAI/comments/1uz8m6s/i_ran_an_agent_autonomously_for_300_hours_the_way/
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:60242a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-scar-tissue-drift-doctrine-and-link-policy (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:60242a`]**
+
+**Filed:** `knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md` (`em:60242a`, `type: reference`) — a 300-hour autonomous-agent run where coding style drifted through four individually-rational local fixes (dependency pinning → aggressive retries → vague error messages → a hallucinated hybrid workaround when they collided) that compounded into an incoherent global policy. Captures the "scar tissue" framing plus the substantive countermeasures from top comments: an immutable hour-zero baseline, forced "receipts" logging why a behavior changed, behavioral fingerprinting, context-share erosion as a root cause, parent/child agent auditing, and durable structured memory. Filed autonomously into the existing "Reliability & long-horizon" section of `agentic-loop` alongside the related METR time-horizons and PARC docs — no new directory needed.
+
+**Dedup:** searched synonym-expanded terms (scar tissue, behavioral/session drift, behavioral fingerprint, immutable baseline, long-horizon agent, context pollution/rot, agent memory) — nothing existing covers this, so it's a new file, not a merge. Cross-linked to the existing `context-rot` glossary entry to distinguish the two failure modes.

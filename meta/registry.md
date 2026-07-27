@@ -53,6 +53,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6ced60` | [beliefs/glossary/baseline](/beliefs/glossary/baseline.md) | concept | false |
 | `em:5787b0` | [beliefs/glossary/batch-invariance](/beliefs/glossary/batch-invariance.md) | concept | false |
 | `em:b2dc54` | [beliefs/glossary/beam](/beliefs/glossary/beam.md) | concept | false |
+| `em:3e872b` | [beliefs/glossary/behavioral-fingerprinting](/beliefs/glossary/behavioral-fingerprinting.md) | concept | false |
 | `em:d131c1` | [beliefs/glossary/belief-network](/beliefs/glossary/belief-network.md) | concept | false |
 | `em:d351a5` | [beliefs/glossary/belief-type](/beliefs/glossary/belief-type.md) | concept | false |
 | `em:dcbb9e` | [beliefs/glossary/bipartite-graph](/beliefs/glossary/bipartite-graph.md) | concept | false |
@@ -404,6 +405,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1efc5e` | [beliefs/glossary/tree-sitter](/beliefs/glossary/tree-sitter.md) | concept | false |
 | `em:a10e18` | [beliefs/glossary/true-merge](/beliefs/glossary/true-merge.md) | concept | false |
 | `em:20b7a1` | [beliefs/glossary/trunk-based-development](/beliefs/glossary/trunk-based-development.md) | concept | false |
+| `em:9ab7c5` | [beliefs/glossary/trust-state-inversion](/beliefs/glossary/trust-state-inversion.md) | concept | false |
 | `em:cd2537` | [beliefs/glossary/truth-maintenance-system](/beliefs/glossary/truth-maintenance-system.md) | concept | false |
 | `em:6e6dd5` | [beliefs/glossary/tui](/beliefs/glossary/tui.md) | concept | false |
 | `em:60d394` | [beliefs/glossary/tutorial-type](/beliefs/glossary/tutorial-type.md) | concept | false |

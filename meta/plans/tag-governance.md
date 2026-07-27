@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on the code-cleanliness-trust branch"
   why: "operator directed: create tag governance plan — persisting the epistemic question the scar-tissue analysis surfaced but could not settle"
-  from: [/meta/analysis/scar-tissue-drift-defenses-and-persistence.md]
+  from: [/meta/analysis/scar-tissue-drift-defenses-and-persistence.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
 ---
 
 # Tag governance: decide what the tags axis is, then keep it consistent

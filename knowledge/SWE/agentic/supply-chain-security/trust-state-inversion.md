@@ -68,3 +68,20 @@ governance collapse like GSD's happens anyway.
 - Hans de Raad, "When the Code Stays Clean and the Trust Collapses Anyway,"
   LinkedIn Pulse, 2026-05-27 —
   https://www.linkedin.com/pulse/when-code-stays-clean-trust-collapses-anyway-opennovations-sdmof
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f3beb0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-scar-tissue-drift-doctrine-and-link-policy (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:f3beb0`]**
+
+Filed one new concept:
+
+- **`knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md`** (`sb:f3beb0`, `type: reference`) — captures Hans de Raad's "trust-state inversion" concept: a dependency can become unsafe not because its code changed but because the governance/trust relationships around it collapsed. Distills the May 2026 GSD framework incident (maintainer disappearance + ~$500K rug-pull, with clean code throughout, but retained npm publish control), the seven-dimension maturity framework for agentic-era open source, and the recommended operational loops. Source link and citation preserved.
+
+**New directory created (autonomous, per taxonomy protocol — a subdirectory under the established `SWE` domain, no ratification needed):**
+- `knowledge/SWE/agentic/supply-chain-security/` — trust/governance risk in the agentic-AI dependency supply chain. Added its `index.md` and linked it from the parent `knowledge/SWE/agentic/index.md`.

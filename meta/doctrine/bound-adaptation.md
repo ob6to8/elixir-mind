@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on the code-cleanliness-trust branch"
   why: "operator ratified filing the MacFall-7 invariant as a standalone quote-seeded doctrine, per the scar-tissue analysis's recommendation"
-  from: [em:60242a, /meta/analysis/scar-tissue-drift-defenses-and-persistence.md]
+  from: [em:60242a, /meta/analysis/scar-tissue-drift-defenses-and-persistence.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
 ---
 
 # Bound adaptation: no local fix becomes standing behavior unratified
@@ -38,7 +38,7 @@ This bundle adopts the invariant with one substitution: its behavioral
 contract is not immutable but
 [**ratification-mutable**](/beliefs/glossary/ratification-mutable.md) —
 immutable to agent adaptation, mutable through exactly one channel, operator
-ratification. A truly immutable contract cannot learn; an freely mutable one
+ratification. A truly immutable contract cannot learn; a freely mutable one
 cannot resist [scar tissue](/beliefs/glossary/scar-tissue.md). The direction
 is therefore: **change to standing behavior is distinguished from drift by
 who approved it**, never by whether it looked locally rational.

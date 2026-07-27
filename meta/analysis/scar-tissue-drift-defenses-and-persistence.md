@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on the code-cleanliness-trust branch"
   why: "operator asked how the scar-tissue post's three action items and comment insights map onto this repo, and how the framing itself should be persisted — perhaps as a belief"
-  from: [em:60242a]
+  from: [em:60242a, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
 ---
 
 # Does scar-tissue drift threaten this bundle, and where should the framing live?
@@ -281,6 +281,17 @@ one line in the [belief-layer plan](/meta/plans/belief-type-and-beliefs-namespac
 controlled-type-vocabulary policy upon ratification. Today it binds nothing;
 this analysis applies it as the best available decision rule because the
 operator invoked "belief" in that plan's sense.
+
+> **Post-merge note (2026-07-27, same day).** The closing `origin/main` sync
+> brought the belief layer in ratified and seeded by parallel sessions: the
+> belief plan is now `status: done`, the `belief` type and its filing test are
+> in the [controlled vocabulary](/meta/policy/controlled-type-vocabulary.md),
+> and six operator-ratified beliefs are filed under `/beliefs/`. The test this
+> section applied as a draft heuristic is contract law as of the merge —
+> unchanged in content, so the decomposition below stands. One consequence
+> updates: the lens-adoption prior (statement 3) no longer waits on the *type*
+> existing — it is filable as a `type: belief` the moment the operator affirms
+> holding it.
 
 The operator then pressed the real objection: scar tissue is a *creative
 analogy*, not a colloquial term — and adopting an analogy is arguably an act

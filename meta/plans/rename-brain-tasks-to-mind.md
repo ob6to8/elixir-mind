@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on the code-cleanliness-trust branch"
   why: "operator directed: create plan to move brain to mind — the task-namespace alignment the elixir-mind rename deliberately deferred"
-  from: [/meta/analysis/scar-tissue-drift-defenses-and-persistence.md, /meta/plans/rename-second-brain-to-elixir-mind.md]
+  from: [/meta/analysis/scar-tissue-drift-defenses-and-persistence.md, /meta/plans/rename-second-brain-to-elixir-mind.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
 ---
 
 # Rename the mix task namespace: `brain.*` → `mind.*`
