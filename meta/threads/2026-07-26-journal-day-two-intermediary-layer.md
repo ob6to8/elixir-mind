@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-07-26; verbatim retained
 tags: [meta, thread, journal, operator-agent-collaboration, human-constancy, ai-evolution]
 timestamp: 2026-07-26
 session: https://claude.ai/code/session_01B8BP2gb1g3f6FcNVShSqtG
+pr: 143
 ---
 
 # 2026-07-26-journal-day-two-intermediary-layer
@@ -141,4 +142,4 @@ The branch now carries both today's entry and the response. When you're ready fo
 
 ## User
 
-*(/create-pull-request merge invoked — slash-command wrapper stripped; the skill ran capture, glossary, dev-history regeneration, commit, push, opened the PR, stamped `pr:` into this doc, and drove the merge per the merge argument.)*
+*(/create-pull-request merge invoked — slash-command wrapper stripped; the skill ran capture, glossary, dev-history regeneration, commit, push, opened PR #143, stamped `pr: 143` into this doc, and drove the merge per the merge argument.)*
