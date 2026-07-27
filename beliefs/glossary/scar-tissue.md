@@ -3,7 +3,7 @@ id: em:2ad710
 type: concept
 title: scar tissue
 description: The accumulation of individually-rational local fixes in a long-running agent that silently promote themselves into standing behavior, until the agent's effective policy reflects its failure history rather than its goal.
-provenance: "Field vocabulary from a 2026 r/AgentsOfAI post on a 300-hour autonomous run; agent-distilled definition"
+provenance: "Nascent coinage from a 2026 r/AgentsOfAI post on a 300-hour autonomous run — adopted within its comment thread, not yet established field vocabulary; agent-distilled definition"
 verified: false
 tags: [glossary, agentic, drift, reliability, long-horizon]
 sense: common
@@ -30,6 +30,11 @@ drifts too), receipts binding every adaptation to its trigger condition, and
 rolling fingerprints of style metrics that surface drift before it breaks
 logic — see the [captured source](/knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md)
 and this bundle's [defenses analysis](/meta/analysis/scar-tissue-drift-defenses-and-persistence.md).
+The term is a **nascent coinage** — one source post and its approving
+commenters — filed here before it has wide currency; the aptness of its
+underlying analogy, and the operator's adoption of the lens as a working
+frame, are treated as separate statements in the defenses analysis's
+persistence section.
 Distinct from [context rot](/beliefs/glossary/context-rot.md) (retrieval
 degrades over a long context — scar tissue survives retrieval perfectly well)
 and from [cognitive debt](/beliefs/glossary/cognitive-debt.md) (the *operator's*

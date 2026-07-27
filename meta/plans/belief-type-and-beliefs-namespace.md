@@ -95,7 +95,12 @@ or asking every time (see the analysis, Finding 3).
    scratch note stay listed).
 4. Seed the layer: intake 2–3 real operator priors as the first `belief`
    concepts, minting ids, so the type exists as instances rather than only as
-   vocabulary.
+   vocabulary. (Candidate identified 2026-07-27: the scar-tissue
+   lens-adoption prior — "act as if the trauma/scar-tissue lens is the right
+   frame for reasoning about agent failure modes" — which the
+   [scar-tissue analysis](/meta/analysis/scar-tissue-drift-defenses-and-persistence.md)
+   found genuinely belief-shaped: rival frames fit the same facts, so the
+   choice of frame guides action without being settled by evidence.)
 5. Confirm `mix brain.verify` rejects `verified` on a `belief` (rule 6 already
    keys on the statement-type allowlist; add a regression test).
 
