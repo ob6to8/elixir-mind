@@ -820,6 +820,22 @@ re-engages.
 
 ### Claude & Anthropic Tools
 
+### [CCA Practice Platforms — claudecertifiedarchitects.com](https://www.claudecertifiedarchitects.com/)
+- **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-prep` `third-party` `not-anthropic-affiliated`
+- Paid third-party CCA prep ($49): 400 scenario questions across five claimed domains, timed sessions, a full mock exam, and a diagnostic; states plainly it is "not affiliated with or endorsed by Anthropic" and does not disclose its operators.
+
+### [CCA exam guide — claudecertifiedarchitects.com](https://www.claudecertifiedarchitects.com/cca-exam-guide/)
+- **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-blueprint` `third-party` `unverified-claims`
+- The most-cited third-party CCA blueprint — five weighted domains, 60 questions in 120 minutes, a 720/1000 scaled pass mark; **none of these figures appear in any Anthropic or Pearson source**, so they are treated here as exam-shape signal only and never as bundle knowledge.
+
+### [Claude Certification Guide — free mock exams and study guides](https://claudecertificationguide.com/)
+- **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-prep` `free` `third-party`
+- Free, no-signup community prep for CCAR-F — 30 lessons, 250+ practice questions, a full mock exam and diagnostic, structured on the same unofficial five-domain blueprint; the other three credentials listed as coming soon.
+
+### [CCA Certification Guide (2026) — Cert Demand](https://certdemand.com/guides/claude-certified-architect-guide)
+- **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `career` `market-signal` `third-party`
+- Third-party study guide notable less for its blueprint restatement than for its market read: judges the credential "low-cost, directly relevant" for Claude builders but currently lacking hiring-market recognition — "early-mover positioning" rather than a gatekeeper in 2026.
+
 ### [How I Use Every Claude Code Feature](https://blog.sshh.io/p/how-i-use-every-claude-code-feature)
 - **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `claude-code` `features` `automation` `workflows` `hooks`
 - Comprehensive guide to Claude Code features emphasizing CLAUDE.md as agent constitution, hooks for validation, and scalable agent workflows.

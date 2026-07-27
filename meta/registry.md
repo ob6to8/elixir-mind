@@ -452,7 +452,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
 | `em:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
 | `em:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
+| `em:038169` | [knowledge/SWE/agentic/anthropic/claude-api/claude-api-tool-use](/knowledge/SWE/agentic/anthropic/claude-api/claude-api-tool-use.md) | reference |  |
+| `em:b4a91a` | [knowledge/SWE/agentic/anthropic/claude-code-sdk/claude-agent-sdk-overview](/knowledge/SWE/agentic/anthropic/claude-code-sdk/claude-agent-sdk-overview.md) | reference |  |
 | `em:33e0c7` | [knowledge/SWE/agentic/anthropic/claude-code/agent-teams](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md) | reference |  |
+| `em:53f32a` | [knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions](/knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions.md) | reference |  |
 | `em:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
 | `em:02731b` | [knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | reference |  |
 | `em:564b8e` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
@@ -473,6 +476,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:649457` | [knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
+| `em:121acc` | [knowledge/SWE/agentic/mcp/mcp-architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) | reference |  |
+| `em:3b0352` | [knowledge/SWE/agentic/mcp/mcp-tools-primitive](/knowledge/SWE/agentic/mcp/mcp-tools-primitive.md) | reference |  |
 | `em:9b5d41` | [knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md) | snippet |  |
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
