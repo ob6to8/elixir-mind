@@ -287,14 +287,41 @@ TEST
 
 ## Build order
 
-Phases 1–2 are executed in the originating session; the rest is the fresh-context
-handoff.
+Phase 2 is complete; **phase 1 had a first pass only and is still the largest
+open phase.** The rest is the fresh-context handoff.
 
-1. **Fill the pillar gaps.** `/intake` Anthropic primary documentation for the
-   Agent SDK, the Claude API, and MCP, plus Claude Code configuration specifics.
-   The largest phase, independently valuable, and a prerequisite for `grounds`.
-2. **Survey the prep landscape.** `/bookmarks` the third-party CCA sites so the
-   exam's likely shape is visible without any of it entering the bundle.
+1. **Fill the pillar gaps.** `/intake` Anthropic primary documentation across the
+   four pillars. Independently valuable, and a prerequisite for `grounds` — a
+   question can only be filed once something exists to ground it against.
+
+   *First pass filed (2026-07-27), one document per pillar:*
+
+   | Pillar | Filed | `em:` |
+   |---|---|---|
+   | MCP | architecture; tools primitive | `121acc`, `3b0352` |
+   | Agent SDK | SDK overview | `b4a91a` |
+   | Claude API | tool use | `038169` |
+   | Claude Code | settings and permissions | `53f32a` |
+
+   *Still unfiled — the remainder of phase 1:*
+
+   - **MCP:** resources and prompts primitives; transports (stdio, streamable
+     HTTP); lifecycle and initialization; authorization; sampling and elicitation.
+   - **Agent SDK:** hooks in depth; the permission callback surface; subagent
+     configuration; session forking; custom tools via in-process MCP servers.
+   - **Claude API:** the Messages API proper (blocks, streaming, stop reasons);
+     prompt caching; extended thinking; batch; Anthropic-schema tools
+     (memory, bash, text editor); the `tool_search` surface.
+   - **Claude Code:** slash commands; hooks; memory and `CLAUDE.md` resolution;
+     MCP server configuration; skills and plugins.
+   - **Prompt engineering:** unrepresented in the brain and not one of the four
+     pillars by name, but load-bearing across all of them — Anthropic's prompt
+     engineering guide is the primary source, filing into a new
+     `knowledge/SWE/prompt-engineering/` (autonomous subdir).
+
+2. **Survey the prep landscape.** ✅ Done 2026-07-27 — four third-party CCA sites
+   surveyed into `survey/bookmarks.md`, blueprint figures explicitly marked as
+   absent from every Anthropic and Pearson source.
 3. **Stand up `education/`.** Namespace, indexes, root-index entry, verifier
    exemptions. Everything after this depends on it.
 4. **Write the blueprint and the four pillar guides.** Primary facts only;
@@ -329,10 +356,41 @@ handoff.
    public. Recommend **excluding `practice/questions/`** from the build — a
    public bank invites scraping, and questions modeled on a live commercial
    certification are better kept unpublished. The course spine still publishes.
-2. **Acquiring the official Exam guide PDF.** It is the only primary blueprint
-   and sits behind Claude Partner Network membership. Until it is obtained the
-   course is structured on the four-pillar sentence alone. Whether the operator
-   pursues partner access is an operator decision, not an agent one.
+2. **Acquiring the official Exam guide PDF — and with it, exam access.** This is
+   the plan's largest external dependency, and it is an operator decision, not an
+   agent one.
+
+   *What Anthropic states:* "Any organization that is bringing Claude to market
+   is eligible to join the Claude Partner Network"
+   ([announcement](https://www.anthropic.com/news/claude-partner-network)).
+   Membership is free, applications are open at
+   [claude.com/partners](https://claude.com/partners), and members get the
+   Partner Portal, Anthropic Academy training, and certification access. The
+   [certification post](https://claude.com/blog/four-role-based-claude-certifications)
+   states exams "are currently available to Claude Partner Network members",
+   with prep courses free for partners; Pearson VUE's
+   [Anthropic page](https://www.pearsonvue.com/us/en/anthropic.html) likewise
+   says the exams are "open to organizations in the Claude Partner Network" and
+   that registration runs through Anthropic Partner Academy.
+
+   *What is not stated anywhere primary:* whether an **individual practitioner
+   or sole proprietor** can join or sit the exam without an organization. The
+   eligibility sentence is written in terms of organizations throughout, and
+   `claude.com/partners` publishes no tier table, eligibility criteria, or
+   individual path. The widely-repeated **$125 individual price is third-party
+   only** and appears in no Anthropic or Pearson source — it must not be treated
+   as fact.
+
+   *The consequence for this plan:* the Exam guide PDF is the only primary
+   blueprint, and it sits behind that gate. Until it is obtained the course
+   stands on the four-pillar sentence alone — which is sufficient for phases 1
+   and 3–7, since those build knowledge and machinery, not exam-shaped
+   guesswork. The blueprint doc stays deliberately thin rather than being
+   padded with third-party structure.
+
+   *Resolving it takes a human:* submit the partner application, or contact
+   Anthropic's partner team, and ask directly whether an individual may certify.
+   Both channels are outside what an agent should do unprompted.
 3. **One file per question, or one file per pillar?** Recommend per-question
    (free parsing, clean diffs) despite the file count; per-pillar would need a
    bespoke record parser.
