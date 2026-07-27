@@ -292,6 +292,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f02167` | [knowledge/SWE/agentic/agentic-loop/parc-self-reflective-long-horizon-agent](/knowledge/SWE/agentic/agentic-loop/parc-self-reflective-long-horizon-agent.md) | reference |  |
 | `em:276c61` | [knowledge/SWE/agentic/agentic-loop/ralph-infinite-bash-loop-coding-agent](/knowledge/SWE/agentic/agentic-loop/ralph-infinite-bash-loop-coding-agent.md) | reference |  |
 | `em:f63910` | [knowledge/SWE/agentic/agentic-loop/react-reasoning-and-acting](/knowledge/SWE/agentic/agentic-loop/react-reasoning-and-acting.md) | reference |  |
+| `em:60242a` | [knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents](/knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md) | reference | false |
 | `em:f948df` | [knowledge/SWE/agentic/agentic-loop/smolagents-agent-loop-as-code](/knowledge/SWE/agentic/agentic-loop/smolagents-agent-loop-as-code.md) | reference |  |
 | `em:3fd44a` | [knowledge/SWE/agentic/agentic-loop/the-agent-execution-loop](/knowledge/SWE/agentic/agentic-loop/the-agent-execution-loop.md) | reference |  |
 | `em:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
