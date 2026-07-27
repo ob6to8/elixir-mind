@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-ratified in session"
   why: "operator ratified a home for the long-idle `project` type so external-system specs can incubate here without duplicating research across repos"
+  from: [/meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md]
 ---
 **A system built outside this repo still incubates here.** Specs, research, and
 design decisions for an external system are filed as a `type: project` hub under

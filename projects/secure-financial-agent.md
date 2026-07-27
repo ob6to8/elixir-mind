@@ -90,13 +90,62 @@ impossible rather than merely discouraged.
 
 ## Knowledge this project draws on
 
-Already filed:
+Filed to the taxonomy because each is true independent of this system — the hub
+links out rather than restating:
 
+- [Indirect prompt injection in document pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md)
+  — the threat model the design answers
+- [Confidential computing for LLM inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md)
+  — the escape hatch if a model too large to own becomes necessary
+- [Open-weight frontier models, mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md)
+  — why the frontier tier is out of scope for a self-hosted system
+- [Local inference serving stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md)
+  — the serving layer and its sizing constraints
 - [Jido](/beliefs/glossary/jido.md) · [llama.cpp](/beliefs/glossary/llama-cpp.md)
 - [Would deploying to the BEAM — or integrating Jido 2 — benefit this brain?](/meta/analysis/beam-deployment-and-jido-2-evaluation.md)
   — the prior evaluation whose "nothing to grip" finding this workload inverts
 
-Researched and awaiting intake to the taxonomy, each true independent of this
-system: open-weight frontier models as of mid-2026; local inference serving
-stacks; indirect prompt injection in document pipelines; confidential computing
-for LLM inference.
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f6de6f">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-secure-financial-agent-and-projects-namespace (2026-07-27)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:f6de6f`]**  (co-feeds: `em:7da513`)
+
+You asked for "completely secure." The honest answer is that a local model buys you **one** of the two security properties you need here, and it's not the harder one.
+
+---
+
+**[`em:f6de6f`]**  (co-feeds: `em:44f899 em:0d4f26`)
+
+Your brain already concluded Jido was a poor fit *for the brain's own tooling* — see [the BEAM/Jido evaluation](https://ob6to8.github.io/elixir-mind/meta/analysis/beam-deployment-and-jido-2-evaluation.html). But read *why* it said no:
+
+> "the BEAM's distinctive strengths (supervision of long-lived state, massive concurrency, fault-tolerant services) have nothing to grip"
+
+**A financial document pipeline gives them everything to grip.** It's resident, stateful, long-lived, concurrent, and needs an audit trail. This is the workload that analysis said was missing. Every blocker it listed was about *this repo* — the pinned 1.14/OTP 24 floor and the zero-dependency constraint — and none applies to a separate project.
+
+More than that, Jido's primitives map onto the security requirements almost suspiciously well:
+
+**1. The reducer is your audit trail.** A Jido agent is pure immutable data through a single `cmd(agent, {Action, params}) → {updated_agent, directives}`. That means every decision is **replayable without an LLM and without a network call**. For financial work — where "why did it categorize this deduction that way?" is a question you may have to answer to a human — a deterministic replay of the decision sequence is worth a great deal.
+
+**2. Actions are the capability boundary.** Actions are schema-validated functions that double as LLM tools. The model cannot invoke what no Action exposes, and params are validated *before* execution. That's OWASP's privilege minimization enforced in the type system rather than requested in a prompt — which is the whole difference, because a prompt is exactly the thing an injection attack overrides.
+
+**3. Directives make the human-in-the-loop gate a first-class primitive.** This is the one that matters most. Side effects in Jido aren't executed inline — they're returned as **Directives**, structs the runtime interprets. So you can inspect a proposed side effect *as data* and gate it before anything happens. The recommended defense for high-consequence actions is [human confirmation that interposes a break in the automated attack chain](https://www.getmaxim.ai/articles/prompt-injection-defense-for-production-ai-agents-a-complete-2026-guide/) — a break "that cannot be bypassed by manipulating the model alone." Jido hands you the seam for free.
+
+**4. Supervision contains a poisoned agent.** Let-it-crash means an agent whose context got contaminated dies and restarts from clean persisted state. Injection doesn't persist across a restart unless you persisted it.
+
+---
+
+**[`em:f6de6f`]**
+
+The standard patterns are real: a **designated transfer workstation** for all external ingestion (deployments lacking one [introduce inconsistency and security gaps](https://www.zmanda.com/blog/air-gapped-backup-architecture-design/)), signed media with chain-of-custody, offline package mirrors, and data flowing **outward only** from the isolated zone. Verify hashes on the *air-gapped* side, so a compromised transfer box can't silently swap a file. Use an encrypted external SSD — [sneakernet gets painful past 50GB per bundle](https://localaimaster.com/blog/air-gapped-ai-deployment), and model weights blow through that.
+
+**But I'd argue against a true physical air gap here.** Operational burden is what kills personal security systems — you'll stop using it by March. The pragmatic version gets you the same confidentiality property for a fraction of the friction:
+
+- Run the inference server and agent in a **network namespace with no interface at all** — not firewalled, literally no route. On Linux that's `PrivateNetwork=yes` in a systemd unit; one line, and stronger than any firewall rule because there's nothing to misconfigure.
+- Updates are a deliberate, manual, *separate* step where you temporarily run a networked unit to fetch and verify.
+- **Backups can go to ordinary cloud storage** — encrypt at rest (LUKS/FileVault) with a key only you hold, and the provider stores ciphertext. This doesn't violate confidentiality, and it solves the hardest air-gap problem. Rehearse restores; untested backups aren't backups.
+- Statements come in the way they already do — download on your normal machine, move via encrypted USB, parse in the sandbox.

@@ -7,4 +7,6 @@ Project-scoped by construction: anything true regardless of this system files to
 
 ## Design records
 
-_None yet — the architecture spec and threat model are the next artifacts._
+- [Architecture](/projects/secure-financial-agent/architecture.md) — the v1 two-zone
+  shape: sandboxed parsing, a pure reducer whose side effects are data, an operator
+  gate on the consequential ones, and a host with no route out. `em:0d4f26` _(plan)_
