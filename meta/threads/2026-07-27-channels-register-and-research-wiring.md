@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-07-27; verbatim retained
 tags: [meta, thread, survey, channels, research]
 timestamp: 2026-07-27
 session: https://claude.ai/code/session_01X7U6kdqGtfcXBCYFs1ErNe
+pr: 146
 ---
 
 # 2026-07-27-channels-register-and-research-wiring
