@@ -1,7 +1,7 @@
 ---
 type: plan
 title: "A CCA study program: an education/ curriculum overlay, primary-only grounding, and a mechanical /cca-practice"
-description: Build a study program for the Claude Certified Architect – Foundations exam as a curriculum overlay over the existing taxonomy rather than a parallel knowledge silo — a new top-level education/ holding the course spine, structured on Anthropic's published five-domain blueprint and its 29 task statements, with an independently-authored question bank whose every item cites the bundle document grounding it and a deliberately mechanical /cca-practice skill backed by mix brain.practice.
+description: Build a study program for the Claude Certified Architect – Foundations exam as a curriculum overlay over the existing taxonomy rather than a parallel knowledge silo — a new top-level education/ holding the course spine, structured on Anthropic's published five-domain blueprint and its 30 task statements, with an independently-authored question bank whose every item cites the bundle document grounding it and a deliberately mechanical /cca-practice skill backed by mix brain.practice.
 status: accepted
 provenance: "Claude Code session, 2026-07-27 — operator asked how to intake CCA course resources, whether to create an education/certification heading, and for a /cca-practice drill skill; shape ratified inline"
 tags: [meta, plan, education, certification, cca, anthropic, skills, tooling]
@@ -76,7 +76,7 @@ Everything below is quoted or derived from that guide and is **primary**.
 | 4 | Prompt Engineering & Structured Output | 20% |
 | 5 | Context Management & Reliability | 15% |
 
-The guide expands these into **29 task statements**, each with explicit
+The guide expands these into **30 task statements**, each with explicit
 *Knowledge of* and *Skills in* bullets — "Exam items are written against these
 objectives." Those task statements, not the domain headings, are the real unit
 of study and the natural key for question coverage.
@@ -101,7 +101,7 @@ Section 14 of the guide:
 Three consequences, all binding on this plan:
 
 1. **The bank is authored from the published objectives, never reconstructed
-   from real items.** The 29 task statements and six scenario descriptions are
+   from real items.** The 30 task statements and six scenario descriptions are
    public and are the legitimate source; a recalled exam item is not.
 2. **Third-party question banks are not ingestible.** A commercial "400-question"
    bank may itself be a reconstruction of real items. This is a second,
@@ -246,7 +246,7 @@ grounds: [em:3b0352]            # bundle docs supporting the correct answer
 Two fields earn their place. **`grounds`** makes the explanation traceable to
 filed knowledge rather than model recall, and inverts into a coverage
 instrument: an ungroundable question is a gap in the brain, routing back to
-`/intake`. **`task_statement`** gives coverage a denominator — 29 objectives,
+`/intake`. **`task_statement`** gives coverage a denominator — 30 objectives,
 so "which objectives have no question yet" is a straight query.
 
 `format: multi-select` exists because the guide says items are "multiple-choice
@@ -351,7 +351,7 @@ open phase.** The rest is the fresh-context handoff.
 6. **Write `/cca-practice`.** Thin and mechanical. Register in the
    skills-registry policy and recompile the contract.
 7. **Seed the bank,** one question per task statement as the first milestone —
-   29 items covering every published objective, before depth anywhere.
+   30 items covering every published objective, before depth anywhere.
 
 ## Anchors
 
@@ -379,7 +379,7 @@ open phase.** The rest is the fresh-context handoff.
 2. **Do the other three exam guides warrant filing?** All four are public on the
    same S3 path. The Architect – Professional guide in particular describes the
    next credential up. Recommend filing at least its blueprint.
-3. **Question authoring cadence.** 29 task statements is the coverage
+3. **Question authoring cadence.** 30 task statements is the coverage
    denominator; whether to author breadth-first (one per objective) or
    depth-first per domain is an execution choice. Recommend breadth-first —
    it surfaces grounding gaps fastest.

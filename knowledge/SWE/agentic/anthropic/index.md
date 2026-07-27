@@ -9,6 +9,7 @@ in its own node rather than being conflated.
 
 - [claude](/knowledge/SWE/agentic/anthropic/claude/index.md) — the Claude assistant and its product surfaces (e.g. Artifacts) across web, desktop, and mobile
 - [claude-api](/knowledge/SWE/agentic/anthropic/claude-api/index.md) — the developer API: the Messages API and its tool-use surface, the layer beneath the Agent SDK
+- [certification](/knowledge/SWE/agentic/anthropic/certification/index.md) — the Claude Certification Program: the four role-based credentials, their published blueprints, and exam mechanics
 - [claude-code](/knowledge/SWE/agentic/anthropic/claude-code/index.md) — the Claude Code agent: CLI, cloud runtime, hooks, and configuration
 - [claude-code-sdk](/knowledge/SWE/agentic/anthropic/claude-code-sdk/index.md) — the Claude Agent SDK for building custom agents on the Claude Code harness
 - [claude-managed-agents](/knowledge/SWE/agentic/anthropic/claude-managed-agents/index.md) — Anthropic's server-hosted "managed agents" running in a managed sandbox

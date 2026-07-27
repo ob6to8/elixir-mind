@@ -452,6 +452,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
 | `em:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
 | `em:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
+| `em:214aa4` | [knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint](/knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint.md) | source |  |
+| `em:bdfa05` | [knowledge/SWE/agentic/anthropic/certification/claude-certification-program](/knowledge/SWE/agentic/anthropic/certification/claude-certification-program.md) | reference |  |
 | `em:038169` | [knowledge/SWE/agentic/anthropic/claude-api/claude-api-tool-use](/knowledge/SWE/agentic/anthropic/claude-api/claude-api-tool-use.md) | reference |  |
 | `em:b4a91a` | [knowledge/SWE/agentic/anthropic/claude-code-sdk/claude-agent-sdk-overview](/knowledge/SWE/agentic/anthropic/claude-code-sdk/claude-agent-sdk-overview.md) | reference |  |
 | `em:33e0c7` | [knowledge/SWE/agentic/anthropic/claude-code/agent-teams](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md) | reference |  |

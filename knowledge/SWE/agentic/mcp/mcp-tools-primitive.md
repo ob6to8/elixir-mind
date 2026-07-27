@@ -16,6 +16,12 @@ attribution:
 
 # The MCP tools primitive
 
+> **Revision captured: 2025-06-18.** The current specification revision is
+> **2025-11-25**; dated revision paths stay live indefinitely, so this capture
+> does not become invalid, but it may lag. Re-verify against the current
+> revision before relying on normative detail — see
+> [the source-surface map](/meta/analysis/anthropic-primary-source-surfaces.md).
+
 Tools are the MCP primitive that lets a model act. The spec frames them as
 **model-controlled**:
 
