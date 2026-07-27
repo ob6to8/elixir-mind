@@ -5,6 +5,7 @@ description: Specced a locally-hosted agentic system for sensitive financial doc
 provenance: "Claude Code session (Claude Opus 5), 2026-07-27; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, security, local-inference, jido, projects, elixir, toolchain]
 timestamp: 2026-07-27
+pr: 145
 session: https://claude.ai/code/session_01VDZ4JhC3FsNTwkcs1ci5uo
 ---
 
