@@ -1,10 +1,10 @@
 ---
 type: analysis
 title: "Ontology guardrails vs. schema validation for agent loops: what a reasoner buys, and what Coyle's examples actually need"
-description: Evaluates Frank Coyle's "Pydantic at the door, ontology at the ledger" against Jido 2 and against a custom Elixir enforcement layer; finds Jido occupies the door and the effect boundary but not the ledger, that OWL's open-world and no-unique-name semantics actively fight the talk's flagship double-refund catch (SHACL is the formalism that encodes it), that the talk never implements the ledger at all, and that none of its three motivating examples need inference — so the recommendation is a split enforcement stack (schemas and Elixir's type system at level 2, a closed-world constraint layer at level 3) with OWL reserved for derived knowledge and vocabulary reuse.
+description: Evaluates Frank Coyle's "Pydantic at the door, ontology at the ledger" against Jido 2 and against a custom Elixir enforcement layer; finds Jido occupies the door and the effect boundary but not the ledger, that OWL's open-world and no-unique-name semantics actively fight the talk's flagship double-refund catch (SHACL is the formalism that encodes it), that the talk never implements the ledger at all, and that none of its three motivating examples need inference — so the recommendation is a split enforcement stack (schemas and Elixir's type system at level 2, a closed-world constraint layer at level 3) with OWL reserved for derived knowledge and vocabulary reuse — a split `mix brain.verify` already implements as a shipped instance, which closes the SHACL-port question as declined rather than deferred.
 provenance: "Claude Code session, 2026-07-28 — operator asked whether Jido 2's directives/actions implement the validator pattern from the Coyle talk, then whether Jido is better compared to Pydantic, what Coyle's ledger is written in, and what adopting OWL as the enforcement layer offers over a custom Elixir one. Talk claims verified against the video's own transcript; Jido mechanics against the agentjido docs (jido, jido_action) 2026-07-28; Elixir RDF ecosystem against rdf-elixir.dev, GitHub, and hex"
 tags: [meta, analysis, ontology, owl, shacl, rdf, jido, elixir, agents, guardrails, validation, neurosymbolic-ai, knowledge-representation]
-timestamp: 2026-07-28T08:05:00Z
+timestamp: 2026-07-28T09:20:00Z
 attribution:
   when: 2026-07-28T08:05:00Z
   channel: intake
@@ -27,7 +27,8 @@ the business, not of the loop. But the sharper finding is about the ledger
 itself: **OWL does not encode the talk's flagship example**, the talk never
 implements the ledger at all, and none of its three motivating catches require
 inference. The enforcement stack should therefore split by *world assumption*,
-not adopt one formalism for both levels.
+not adopt one formalism for both levels — a split this repo's own
+`mix brain.verify` already runs as a working instance.
 
 ## Finding 1 — Jido is a door-and-effects framework; Directives are not validation
 
@@ -159,6 +160,51 @@ none of them require.
 For this bundle, nothing here changes the standing "not now" on a resident
 runtime; it narrows what a future enforcement layer should be built from if one
 is ever wanted.
+
+## The host is the existence proof
+
+The recommendation above was first written as a hypothetical — *if* a level-3
+layer were ever built, here is its shape. That framing was wrong: this repo
+already runs one. `mix brain.verify` (see
+[`ElixirMind.Verifier`](/meta/code-map.md)) is a closed-world constraint checker
+over a typed graph, and it implements every category of catch the talk uses
+ontologies to motivate. The bundle is the graph, `em:` ids are the individuals,
+and the verifier is the reasoner:
+
+| Coyle's catch | His formalism | `brain.verify` rule | SHACL analogue |
+|---|---|---|---|
+| `"probably shipped"` — closed value set | `owl:oneOf` | 7: `sense` ∈ {`common`,`repo`,`dual`}; `attribution.channel` from a controlled list | `sh:in` |
+| Payout to the support desk — disjointness | `owl:disjointWith` | 6: `verified` may appear *only* on `claim`/`note`/`concept`; attribution-exempt files must carry none | `sh:targetClass` + `sh:not` |
+| Second refund — conditional cardinality | *(fails — see above)* | 5: `verified: true` ⇒ non-empty `verified_by`; 4: `verified: true` ⊕ `resource` | `sh:minCount` under a condition |
+| — | — | 3, 8: `verified_by` and `attribution.from` refs must resolve | referential integrity |
+
+Two consequences follow.
+
+**The recommendation is validated, not speculative.** A future session reading
+this analysis is not being told what it *might* build; it is being pointed at a
+running instance with a known cost — on the order of a hundred-odd lines of
+dependency-free Elixir per rule family, a mix task, and a numbered moduledoc that
+serves as the shapes file. The
+[route-tag](/meta/policy/route-tagging.md) and glossary verifiers extend the same
+layer to their own sub-graphs. This is [why the toolchain runs
+offline](/meta/tutorials/why-the-toolchain-runs-offline.md) applied to
+constraint checking.
+
+**Re-expressing these rules as SHACL is declined, not deferred.** The open
+question was whether SHACL-over-SPARQL.ex merited a spike *if* a constraint layer
+were built. The layer exists, so the real question is whether to port it — and the
+[coding standards](/meta/policy/elixir-coding-standards.md) admission rule answers
+it: a check earns a gate when its "signal beats its upkeep" *and* it runs offline
+with no dependencies. A port would add `rdf` and `sparql`, require materializing
+the bundle as an RDF graph on every run, and buy declarativeness the Elixir
+already has in readable form. It belongs with Credo and Dialyzer in the named
+intentional gaps.
+
+**The boundary that keeps that "no" durable.** It holds for *this* rule set —
+few shapes, stable, authored by the same people who write the verifier. It does
+not generalize to a system with hundreds of churning domain constraints authored
+by non-programmers, which is exactly where a declarative shapes file repays its
+dependency. Re-open the question if that description ever fits.
 
 # Citations
 
