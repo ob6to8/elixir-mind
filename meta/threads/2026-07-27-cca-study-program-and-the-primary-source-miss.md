@@ -5,6 +5,7 @@ description: Designed a CCA study program as an education/ curriculum overlay an
 provenance: "Claude Code session, 2026-07-27; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, cca, certification, education, evals, research-methodology, primary-sources]
 timestamp: 2026-07-27
+pr: 149
 session: https://claude.ai/code/session_01Ri7NUzzCx6Pb7Jb2vrmU2a
 ---
 
