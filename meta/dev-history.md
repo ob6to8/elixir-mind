@@ -14,6 +14,51 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #149](https://github.com/ob6to8/elixir-mind/pull/149) — CCA study program, the primary-source miss, and the eval that could falsify the fix *(2026-07-27)*
+
+- Plan the CCA study program; fill the four pillar gaps from primary sources
+- Correct the plan's phase-1 status and expand the partner-access dependency
+- Replace the plan's blueprint premise with Anthropic's published exam guide
+- Run the source-inventory spike; file the certification program and blueprint
+- Add the negative-findings-name-their-scope policy; amend /intake for primary sources
+- File the source-recall probe; defer mix brain.staleness behind a trigger
+- Capture the CCA session; glossary it; stamp thread back-links
+- Stamp pr: 149 into the captured thread doc
+
+## [PR #147](https://github.com/ob6to8/elixir-mind/pull/147) — Scar-tissue drift: two intakes, defenses analysis, bound-adaptation doctrine, two plans, link-policy resolution *(2026-07-27)*
+
+- Intake: trust-state inversion (GSD framework governance incident)
+- Migrate trust-state-inversion id to em: namespace
+- Intake: scar tissue / behavioral drift in long-running agents
+- Analyze scar-tissue drift against the bundle; file the term as a glossary concept
+- Redo the scar-tissue analysis, absorbing the operator's follow-up questions
+- Ratify bound-adaptation doctrine; define ratification-mutable; file two plans
+- Ratify link-scheme split: Pages links in docs, GitHub links in agent threads
+- Capture the scar-tissue session; glossary and stamp its artifacts
+- Stamp pr: 147 into the session thread doc
+
+## [PR #146](https://github.com/ob6to8/elixir-mind/pull/146) — Channels register: nine AI standing sources, wired into /research *(2026-07-27)*
+
+- add the channels register with nine AI standing sources
+- link per-row provenance in the channels register; wire it into /research
+- capture: 2026-07-27 channels-register session; glossary + dev-history
+- Stamp pr: 146 into the session thread doc
+
+## [PR #145](https://github.com/ob6to8/elixir-mind/pull/145) — Open the projects namespace; spec the secure financial agent *(2026-07-27)*
+
+- ratify: the projects namespace, and open the secure-financial-agent project
+- Spec the secure financial agent; file its research to the taxonomy
+- capture: stamp pr 145 into the thread doc
+
+## [PR #144](https://github.com/ob6to8/elixir-mind/pull/144) — LLM-security intakes: new SWE/security directory, 15 glossary terms, two evaluation beliefs *(2026-07-26)*
+
+- intake Beyond Refusal (arXiv:2607.05842) under a new SWE/security directory
+- glossary the Beyond Refusal paper; file the coverage×quality belief
+- intake the G DATA field report on LLM malware analysis
+- file review-is-not-an-oracle as a belief
+- capture: 2026-07-27 LLM-security intakes session; dev-history
+- Stamp pr: 144 into the session thread doc
+
 ## [PR #143](https://github.com/ob6to8/elixir-mind/pull/143) — Journal 2026-07-26: day two on the operator–agent intermediary layer, with response and capture *(2026-07-26)*
 
 - journal: file 2026-07-26 entry — day two on the operator–agent intermediary layer
