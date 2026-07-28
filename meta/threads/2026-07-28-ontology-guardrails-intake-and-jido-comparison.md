@@ -95,6 +95,18 @@ needed no decision to close the thread: it is persisted as an `issue` with its
 three candidate fixes, discoverable via `/issue` and `/priorities`, and whichever
 fix is chosen later becomes the plan.
 
+That decision arrived from elsewhere before this thread closed. Merging current
+`main` brought in a parallel session's ratification of a **fourth** answer,
+recorded in
+[reconcile dangling routing-ledger strands](/meta/plans/reconcile-dangling-ledger-strands.md):
+remove the `State` and `Dangling` columns from routing ledgers entirely, moving a
+strand's status onto the `plan`/`todo`/`issue` its new `Action` column links to.
+That *dissolves* the gap rather than picking among the three candidates — a row
+carrying only pointers stays true forever, so no later session needs to touch it.
+The issue stays `open` until the plan's remaining steps rewrite the policy. The
+in-place `State` edits this session made become moot rather than wrong, and are
+left as-is.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
