@@ -127,12 +127,16 @@ defmodule ElixirMind.DevHistoryTest do
   end
 
   describe "against the live repo" do
-    test "derivation and check run green on this checkout" do
+    test "derivation runs, and check reports stale because the view is not committed" do
       # Guard: sandboxes may hand us a shallow clone; derivation is untestable there.
       unless ElixirMind.DevHistory.shallow?() do
         assert {:ok, entries} = DevHistory.entries()
         assert Enum.any?(entries, &(&1.pr != nil))
-        assert :ok = DevHistory.check()
+
+        # The view is generated at deploy time and gitignored, so there is no
+        # committed copy for `check/1` to agree with. It stays useful against a
+        # locally generated copy; here it correctly reports the absent one stale.
+        assert {:stale, "meta/dev-history.md"} = DevHistory.check()
       end
     end
   end

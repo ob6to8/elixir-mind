@@ -9,11 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # No git history needed: every check below reads the working tree, and the
+      # one task that walks the merge graph (mix brain.dev_history) runs only in
+      # pages.yml, which fetches full history for it.
       - uses: actions/checkout@v4
-        with:
-          # Full history: mix brain.dev_history derives the per-PR view from the
-          # first-parent merge graph (its --check skips itself on shallow clones).
-          fetch-depth: 0
 
       # Workflow hygiene: lint the workflow files themselves. CI-only by design —
       # the subject exists only here, so the offline-mix-suite rule doesn't apply
@@ -60,9 +59,6 @@ jobs:
 
       - name: Flow lineage views are derived and current
         run: mix brain.lineage --check
-
-      - name: Dev history is consistent with the merge graph (lag-tolerant)
-        run: mix brain.dev_history --check
 
       - name: Dedup recall probe (report only — recall is a trend metric, non-gating)
         continue-on-error: true

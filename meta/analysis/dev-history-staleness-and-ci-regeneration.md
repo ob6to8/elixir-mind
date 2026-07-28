@@ -22,6 +22,17 @@ derived file drift, and if it needs a fix, why can't that fix just be a CI hook 
 regenerates and commits it automatically, triggered by the merge itself rather than by
 any particular PR?
 
+> **Correction, 2026-07-28.** Two claims below are wrong about the code, and are
+> marked rather than rewritten (this is a point-in-time record). The check is
+> **not** bounded to one PR: `lagging_but_consistent?/2` passes whenever the disk
+> copy is a *suffix* of a fresh render, so **any** number of missing newest
+> sections passes — measured directly, six missing sections pass clean. It
+> follows that "Evidence 2" cannot be right that lag *count* caused the CI
+> failure; some other divergence (a reordering, an out-of-order merge, a hand
+> edit) must have broken the suffix relation, and what it was is not established.
+> The recommendation still stands on its other merits. See the
+> [issue closed on this](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md).
+
 ## Evidence 1: "derived" means generated-once-and-committed, not computed live
 
 `meta/dev-history.md` follows the same discipline as `CLAUDE.md`, `meta/registry.md`,
