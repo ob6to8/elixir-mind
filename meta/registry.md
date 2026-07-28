@@ -543,6 +543,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
+| `em:ae82a8` | [knowledge/SWE/llm-engineering/defeating-nondeterminism-in-llm-inference](/knowledge/SWE/llm-engineering/defeating-nondeterminism-in-llm-inference.md) | reference |  |
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
 | `em:f5914d` | [knowledge/SWE/llm-engineering/local-inference-serving-stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md) | reference |  |
 | `em:a01073` | [knowledge/SWE/llm-engineering/local-inference-workstation-tiers](/knowledge/SWE/llm-engineering/local-inference-workstation-tiers.md) | reference |  |
@@ -554,6 +555,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7da513` | [knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md) | concept | false |
 | `em:a1ec42` | [knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports](/knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports.md) | reference |  |
 | `em:f03f9c` | [knowledge/SWE/software-design/entity-component-systems-in-elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | reference |  |
+| `em:414265` | [knowledge/SWE/software-design/the-architect-as-amplifier](/knowledge/SWE/software-design/the-architect-as-amplifier.md) | reference |  |
 | `em:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
 | `em:b1ba4b` | [knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
 | `em:f6e843` | [knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md) | reference |  |
@@ -591,6 +593,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:24bd1e` | [knowledge/knowledge-management/open-knowledge-format](/knowledge/knowledge-management/open-knowledge-format.md) | reference |  |
 | `em:31fed1` | [knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md) | snippet |  |
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
+| `em:dfadfb` | [knowledge/knowledge-management/technical-communication/phantom-sketch-artist-method](/knowledge/knowledge-management/technical-communication/phantom-sketch-artist-method.md) | methodology |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
