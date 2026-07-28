@@ -106,6 +106,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b3f6bd` | [beliefs/glossary/context-window](/beliefs/glossary/context-window.md) | concept | false |
 | `em:0bfe41` | [beliefs/glossary/continuous-deployment](/beliefs/glossary/continuous-deployment.md) | concept | false |
 | `em:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
+| `em:8510f4` | [beliefs/glossary/control-case](/beliefs/glossary/control-case.md) | concept | false |
 | `em:f3e4cb` | [beliefs/glossary/control-plane](/beliefs/glossary/control-plane.md) | concept | false |
 | `em:ffbaec` | [beliefs/glossary/core-hookspath](/beliefs/glossary/core-hookspath.md) | concept | false |
 | `em:b467a5` | [beliefs/glossary/council-round](/beliefs/glossary/council-round.md) | concept | false |

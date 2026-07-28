@@ -94,7 +94,7 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-07-28-kimi-k3-weight-release-implications (2026-07-28)
 
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`em:763494`]**
 
@@ -107,3 +107,13 @@ Four things were stale, and one thing had not persisted at all.
 The third is the generalizable one and it has no home: a measurement harness needs a control case, or you cannot tell a finding from a bug in your instrument. That failure is invisible by construction — a broken harness produces plausible results, and I acted on them for a full round before the control exposed it.
 
 It also has a live consumer: the fidelity probe plan specifies a scorer with no control row in its gold set. If that belief existed, the plan would be built differently.
+
+---
+
+**[`em:763494`]**
+
+**What had not persisted:** the pattern behind three measurement errors in one session. Now [`em:763494` — an instrument without a control measures itself](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/an-instrument-without-a-control-measures-itself.md). The individual mistakes were already in commits and the issue; what was missing was the generalization — that a broken harness returns *plausible* results, so the failure mode is silence, and only a known-answer case distinguishes a finding from a defect in your instrument.
+
+**What was stale:** a glossary entry and a todo still describing the committed dev-history arrangement, a todos-index gloss calling the drift a defect, and another session's gate-suite todo counting a CI gate this session removed. All corrected, the historical ones marked rather than silently rewritten.
+
+**One thing I got wrong and the machine caught:** I stamped `attribution.from` on the new belief. The verifier rejected it — that back-link is governance-only, and a belief is a bundle document. Fitting, given the belief it was attached to.
