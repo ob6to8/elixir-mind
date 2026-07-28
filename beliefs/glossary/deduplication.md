@@ -21,7 +21,14 @@ Detecting whether a candidate item already exists in a corpus before adding it, 
 
 **In this brain:** the specific `/intake` step enforcing the update-in-place / don't-fragment rule, performed at intake time by searching for a semantically equivalent existing concept — whose reliability depends on search [recall](/beliefs/glossary/recall.md), measured by the [recall probe](/beliefs/glossary/recall-probe.md) and improved at the entry gate by [synonym expansion](/beliefs/glossary/synonym-expansion.md) over the [lexical search](/beliefs/glossary/lexical-search.md) backend. The field comparison names intake dedup recall as the one semantic gate this brain's CI cannot cover: no [detector](/beliefs/glossary/detector.md) exists for a near-duplicate, so a dedup miss is the entry point of the 500+ concept failure chain (duplicates fragment super-linearly — every future related fact lands on one twin arbitrarily, and the pair diverges).
 
-*Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md), [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [comparison with the 2026 second-brain field](/meta/analysis/comparison-with-the-2026-second-brain-field.md), [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md)
+**The scope is intake, and that is a boundary rather than a detail.** Governance
+artifacts — `todo`, `plan`, `issue` — have no equivalent dedup step and no
+recall probe measuring one, so a near-duplicate `meta/` doc is caught by review
+or not at all. Parallel sessions defeat even a perfect search: each checks the
+shared default branch, each correctly finds nothing, and both file (see
+[parallel sessions file duplicate governance artifacts](/meta/issues/parallel-sessions-file-duplicate-artifacts.md)).
+
+*Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md), [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [comparison with the 2026 second-brain field](/meta/analysis/comparison-with-the-2026-second-brain-field.md), [2026-07-12 dedup recall probe thread](/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md), [2026-07-12 docs-audit thread](/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md), [2026-07-28 orphan sweep and record/queue split thread](/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md)
 
 ## Thread excerpts — route-tagged log
 

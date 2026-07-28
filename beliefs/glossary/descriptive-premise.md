@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition; term introduced by operator re
 verified: false
 tags: [glossary, epistemics, normativity, governance]
 sense: dual
-timestamp: 2026-07-22
+timestamp: 2026-07-27
 attribution:
   when: 2026-07-22T00:00:00Z
   channel: glossary
@@ -25,16 +25,20 @@ logically entailing it: a fact plus a system's purpose makes a direction
 reasonable, but no fact alone forces a value.
 
 **In this brain:** descriptive work lives in the epistemic types —
-`claim`, `note`, [concept](/beliefs/glossary/concept-type.md) — and in the
-`beliefs/` namespace,
-where truth can be tracked via `verified`/`verified_by`. "Belief" is this
-descriptive register, not a controlled `type` (a dedicated type would collide
-with the existing epistemic ones). A belief is something the brain holds *true*; a
-[doctrine](/beliefs/glossary/doctrine.md) is something it holds *to*.
+`claim`, `note`, [concept](/beliefs/glossary/concept-type.md) — where truth is
+tracked via `verified`/`verified_by`. A premise may also be a
+[`belief`](/beliefs/glossary/belief-type.md) under
+[`/beliefs/`](/beliefs/index.md), the *unverifiable* case: a
+[decision prior](/beliefs/glossary/decision-prior.md) held true enough to act
+on where evidence cannot settle it. Which home a premise takes is decided by
+whether evidence *could* settle it — one that turns out checkable is refiled
+as a `claim`. Either way it grounds rather than directs: a premise is
+something the brain holds *true*; a [doctrine](/beliefs/glossary/doctrine.md)
+is something it holds *to*.
 
 *Seen in:* [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md), [future beliefs](/beliefs/future-beliefs.md)
 
-*See also:* [normative conclusion](/beliefs/glossary/normative-conclusion.md), [doctrine](/beliefs/glossary/doctrine.md)
+*See also:* [normative conclusion](/beliefs/glossary/normative-conclusion.md), [doctrine](/beliefs/glossary/doctrine.md), [belief type](/beliefs/glossary/belief-type.md), [decision prior](/beliefs/glossary/decision-prior.md)
 
 ## Thread excerpts — route-tagged log
 

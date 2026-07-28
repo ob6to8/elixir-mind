@@ -26,7 +26,7 @@ RDF-Based Semantics for OWL 2 Full, plus the EL/QL/RL profiles trading
 expressiveness for complexity guarantees. Canonically covered in
 [FOL and OWL: fully formal knowledge representation](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md).
 
-*Seen in:* [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)
+*Seen in:* [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md), [ontology guardrails vs. schema validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) (OWA/UNA make a functional property infer identity, not an error), [why agentic systems need ontologies](/knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies.md)
 
 ## Thread excerpts — route-tagged log
 

@@ -2,17 +2,17 @@
 type: policy
 title: Quote primary sources verbatim
 description: When a response or document leans on a source, reproduce the load-bearing phrase verbatim and immediately cite the artifact it came from, so a reader never has to wonder whether a phrase is quotation or the agent's synthesis.
-section: filing
-order: 16
+section: communication
+order: 3
 status: active
 tags: [meta, governance, quotation, provenance, citation, writing]
-timestamp: 2026-07-26
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-26T21:51:55Z
   channel: agent-authored
   agent: "Claude Code agent, pseudocode-plans session"
   why: "operator ratified making verbatim-quotation-with-citation a standing rule after flagging an exemplary instance in a delivered response"
-  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
+  from: [/meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md]
 ---
 **Quote primary sources verbatim; mark the boundary between quotation and
 synthesis.** When a delivered response or a document body leans on what a
@@ -36,6 +36,14 @@ the boundary checkable.
   (`…`); an insertion is bracketed. If only a paraphrase will fit, drop the
   quotation marks and let it stand as synthesis — attributed, but visibly not
   verbatim.
+- **Take the quote from the source's own text, never from a summary of it.** A
+  fetch that answers a question in prose can interpolate a comparison the source
+  never made, and the interpolation is indistinguishable from a quotation once
+  it is in your notes. Before a figure is quoted, or is used to back
+  `verified: true`, re-read the source demanding the **verbatim span**; a span
+  that cannot be produced does not get quotation marks. Whether the demand
+  actually changes what a fetch returns is measured by the
+  [fetch fidelity probe](/meta/evals/fetch-fidelity-probe.md).
 - **Quote at the phrase, not the page.** The rule serves precision, not bulk:
   lift the shortest span that carries the claim. Wholesale copying stays
   governed by [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md).

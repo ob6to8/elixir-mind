@@ -48,11 +48,18 @@ inbound links (`mix brain.orphans` excludes them by design).
    does **not** apply here — like thread docs, the journal is a record layer where
    fidelity beats concision. When a cleanup is a judgment call, keep the operator's
    wording.
-3. **One file per day** at `journal/YYYY-MM-DD.md` (today's date — the inherently
+3. **Ask when the dictation is genuinely ambiguous.** If a passage is garbled
+   enough that any faithful reading is a guess — dropped words, a mishearing
+   with more than one plausible intent — file the entry with the most
+   conservative minimal reading, then flag each such spot to the operator with
+   a clarifying question (quote the dictated text and the reading chosen).
+   Never silently guess a meaning, and never block filing on the answer:
+   correct the entry in place when the operator replies.
+4. **One file per day** at `journal/YYYY-MM-DD.md` (today's date — the inherently
    time-ordered case of the filenames policy). If today's entry already exists,
    **append** the new material under a `---` rule inside the same file and bump
    `timestamp` — update in place, don't fragment the day.
-4. **Shape:**
+5. **Shape:**
    ```
    ---
    type: note
@@ -68,14 +75,14 @@ inbound links (`mix brain.orphans` excludes them by design).
    ```
    No `em:` id, no `attribution`, no `verified` — ever. `provenance` (e.g.
    "dictated by the operator") is optional and rarely needed.
-5. **Cross-link lightly.** Where the entry names a document that already exists in
+6. **Cross-link lightly.** Where the entry names a document that already exists in
    the bundle, link it (bundle-absolute path) at first mention — a navigation aid,
    not an edit. Do not create documents, glossary terms, or todos from the entry
    unasked; if an entry contains something that plainly wants to be a
    [`todo`](/.claude/skills/todo/SKILL.md) or an intake, *offer* it after filing.
-6. **Maintain reserved files.** Add the entry (newest first) to
+7. **Maintain reserved files.** Add the entry (newest first) to
    [`journal/index.md`](/journal/index.md): date link + the one-line description.
-7. **Verify & report.** Run `mix brain.verify`. Report the path written and any
+8. **Verify & report.** Run `mix brain.verify`. Report the path written and any
    cleanups you made that were more than mechanical.
 
 ## List

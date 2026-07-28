@@ -70,7 +70,7 @@ Key observations from the live corpus:
    Reconstructing a decision's lineage means hopping thread → `pr:` → merge
    commit → `git blame`, by convention. `mix brain.lineage` (from
    `attribution.from` + `pr:` edges) and the derived
-   [dev-history](/meta/dev-history.md) mechanize fragments, but **nothing
+   [dev-history](https://ob6to8.github.io/elixir-mind/meta/dev-history.html) mechanize fragments, but **nothing
    answers "what decision governs X, and why" as a single artifact**, and
    nothing connects doctrine → analysis → plan → PR → commit as one graph.
 
@@ -166,7 +166,7 @@ and [agent-memory](/knowledge/SWE/agentic/agent-memory/index.md)):
 4. **The repo's own doctrine points to a derived view, not a new genre.** The
    established pattern for exactly this kind of artifact is
    compiled-and-CI-verified (`CLAUDE.md`, `meta/registry.md`,
-   [dev-history](/meta/dev-history.md), route-tag logs), and the
+   [dev-history](https://ob6to8.github.io/elixir-mind/meta/dev-history.html), route-tag logs), and the
    retire-hand-kept-logs lesson is that hand-maintained history layers rot. A
    third *authored* rationale layer would collide with plans and the commit
    graph; a **compiled decision graph** whose nodes point into the existing

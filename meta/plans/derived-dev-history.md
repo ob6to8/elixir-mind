@@ -37,7 +37,7 @@ same discipline as `CLAUDE.md`, `meta/registry.md`, and
 `meta/flows/lineage.md`:
 
 - **`mix brain.dev_history`** (`ElixirMind.DevHistory`) derives
-  [`meta/dev-history.md`](/meta/dev-history.md): one section per merged PR,
+  [`meta/dev-history.md`](https://ob6to8.github.io/elixir-mind/meta/dev-history.html): one section per merged PR,
   newest first — linked PR number, title, merge date — bulleted with the merged
   branch's commit subjects in order. Nothing is authored; everything re-derives
   from the graph.
