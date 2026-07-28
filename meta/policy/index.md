@@ -22,12 +22,13 @@ the start if siblings are plausible.
 - [directory-hierarchy](/meta/policy/directory-hierarchy.md) — unix-like, kebab-case; create the natural path even for one document
 - [tree-is-the-taxonomy](/meta/policy/tree-is-the-taxonomy.md) — the tree + `index.md` files are the canonical taxonomy
 - [taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md) — subdirs autonomous; new top-level dirs ratified
+- [project-namespace](/meta/policy/project-namespace.md) — external systems incubate under `/projects/`; generalizable findings file to the knowledge taxonomy
 
 ## filing
 - [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md) — capture the distilled knowledge, keep the raw source as a citation (the knowledge-layer half of [fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md))
 - [update-in-place](/meta/policy/update-in-place.md) — search first; update rather than fragment
 - [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — kebab-case slugs; bundle-absolute links
-- [response-resource-links](/meta/policy/response-resource-links.md) — in delivered responses, cite resources by their deployed Pages URL, not repo paths
+- [response-resource-links](/meta/policy/response-resource-links.md) — Pages links in docs, GitHub links in agent threads: delivered responses cite the GitHub blob URL (branch while unmerged, `main` after), viewable at any merge state; doc bodies keep bundle-absolute paths the site renders, with the Pages URL as the durable citation for merged docs
 - [link-processing](/meta/policy/link-processing.md) — links enter only once processed; summarize oversized sources
 - [maintain-reserved-files](/meta/policy/maintain-reserved-files.md) — update `index.md` after filing; the commit carries the change narrative
 - [persist-plans](/meta/policy/persist-plans.md) — approved plans are persisted as `type: plan` docs under `meta/plans/`, not left in chat

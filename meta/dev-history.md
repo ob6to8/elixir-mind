@@ -14,6 +14,21 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #145](https://github.com/ob6to8/elixir-mind/pull/145) — Open the projects namespace; spec the secure financial agent *(2026-07-27)*
+
+- ratify: the projects namespace, and open the secure-financial-agent project
+- Spec the secure financial agent; file its research to the taxonomy
+- capture: stamp pr 145 into the thread doc
+
+## [PR #144](https://github.com/ob6to8/elixir-mind/pull/144) — LLM-security intakes: new SWE/security directory, 15 glossary terms, two evaluation beliefs *(2026-07-26)*
+
+- intake Beyond Refusal (arXiv:2607.05842) under a new SWE/security directory
+- glossary the Beyond Refusal paper; file the coverage×quality belief
+- intake the G DATA field report on LLM malware analysis
+- file review-is-not-an-oracle as a belief
+- capture: 2026-07-27 LLM-security intakes session; dev-history
+- Stamp pr: 144 into the session thread doc
+
 ## [PR #143](https://github.com/ob6to8/elixir-mind/pull/143) — Journal 2026-07-26: day two on the operator–agent intermediary layer, with response and capture *(2026-07-26)*
 
 - journal: file 2026-07-26 entry — day two on the operator–agent intermediary layer
