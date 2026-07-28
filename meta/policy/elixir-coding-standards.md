@@ -48,6 +48,20 @@ small `lib/` doesn't yet warrant (and coverage stays exploratory, never a gate,
 on the merits). Re-evaluate if the toolchain ever takes on dependencies or
 `lib/` grows past what review holds.
 
+**The bundle's constraint checks stay hand-written Elixir; no declarative
+shapes layer.** `mix brain.verify` (with the route-tag and glossary verifiers)
+already *is* a closed-world constraint checker over the bundle's typed graph —
+controlled value sets, type-disjointness, conditional cardinality, and
+referential integrity across `em:` ids. Re-expressing those rules in a
+declarative constraint language ([SHACL](/beliefs/glossary/shacl.md) over
+RDF.ex/SPARQL.ex, or any equivalent) is **declined**, not deferred: it would add
+dependencies and a graph-materialization step to buy declarativeness the numbered
+moduledoc already provides. This gap is bounded by *authorship*, not size — it
+holds while the shapes are few, stable, and written by the same people who write
+the verifier, and is worth re-opening only if domain constraints ever churn
+rapidly or come from authors who do not write Elixir. Grounded in the
+[ontology-guardrails analysis](/meta/analysis/ontology-guardrails-vs-schema-validation.md).
+
 **Conventions (editorial — no oracle, so hold the line in review):**
 
 - **`@impl` names the behaviour; never `@impl true`.** Every `run/1` carries

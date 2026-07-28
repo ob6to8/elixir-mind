@@ -40,7 +40,7 @@ defmodule ElixirMind.ContractScenarioTest do
     assert String.starts_with?(rendered, "<!--")
     assert rendered =~ "Preamble prose."
     assert rendered =~ "## 3. Filing conventions"
-    assert rendered =~ "## 9. Git workflow"
+    assert rendered =~ "## 10. Git workflow"
 
     assert rendered =~
              "Delete merged head branches.\n\n" <>

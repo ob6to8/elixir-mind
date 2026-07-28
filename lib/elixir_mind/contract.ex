@@ -22,6 +22,7 @@ defmodule ElixirMind.Contract do
     {"composition", "What the brain is made of"},
     {"directory-structure", "Directory structure — unix-like, domain-agnostic, evolving"},
     {"filing", "Filing conventions"},
+    {"communication", "Communication — composing responses and prose"},
     {"type-vocabulary", "Controlled `type` vocabulary"},
     {"verification", "Identity & verification"},
     {"conformance", "Conformance (keep the bundle valid)"},
