@@ -57,7 +57,7 @@ thread.
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
 | Similarities between the bundle and the RDF/RDFS layer — ids as IRIs, frontmatter as triples, `type` as an RDFS-style schema, verification rules as domain/range constraints | closed | [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | - |
-| A derived RDF/SKOS/JSON-LD export of the bundle as a disposable view | open | `unrouted` | Is a `mix brain.rdf` export worth building, and against which vocabulary (SKOS for the taxonomy, AIF for a future belief graph)? |
+| A derived RDF/SKOS/JSON-LD export of the bundle as a disposable view | open | [evaluate a derived RDF/SKOS export](/meta/todos/evaluate-a-derived-rdf-skos-export.md) | Is a `mix brain.rdf` export worth building, and against which vocabulary (SKOS for the taxonomy, AIF for a future belief graph)? |
 | What SKOS is, and why it fits a prose-first concept scheme better than OWL | closed | [SKOS](/beliefs/glossary/skos.md) | - |
 | Whether a reintroduced formalized belief layer is a case for OWL | closed | [OWL and the belief layer](/meta/analysis/owl-and-the-belief-layer.md) | - |
 | Concurrent sessions duplicating the same terms and adjacent analyses, caught at merge | closed | [parallel sessions file duplicate artifacts](/meta/issues/parallel-sessions-file-duplicate-artifacts.md) | - |
