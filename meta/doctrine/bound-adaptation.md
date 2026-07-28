@@ -1,7 +1,7 @@
 ---
 type: doctrine
 title: "Bound adaptation: no local fix becomes standing behavior unratified"
-description: The standing direction that every material adaptation to agent behavior must be bound to its trigger, tested, and revalidated against the behavioral contract before it becomes standing behavior — quoted verbatim from the GSD-era commentary on agent scar tissue, with this bundle's one amendment, that the contract is ratification-mutable rather than immutable, so learning and drift are distinguished by who approves.
+description: The standing direction that every material adaptation to agent behavior must be bound to its trigger, tested, and revalidated against the behavioral contract before it becomes standing behavior — quoted verbatim from the GSD-era commentary on agent scar tissue, with this bundle's one amendment, that the contract is ratification-immutable — immutable except through operator ratification — rather than absolutely immutable, so learning and drift are distinguished by who approves.
 resource: https://www.reddit.com/r/AgentsOfAI/comments/1uz8m6s/i_ran_an_agent_autonomously_for_300_hours_the_way/
 provenance: "Reddit comment by u/MacFall-7 on the 300-hour-run post (captured as em:60242a); ratified as doctrine by the operator, 2026-07-27"
 tags: [meta, doctrine, adaptation, drift, ratification, direction, agents]
@@ -35,10 +35,10 @@ it.
 ## The amendment
 
 This bundle adopts the invariant with one substitution: its behavioral
-contract is not immutable but
-[**ratification-mutable**](/beliefs/glossary/ratification-mutable.md) —
-immutable to agent adaptation, mutable through exactly one channel, operator
-ratification. A truly immutable contract cannot learn; a freely mutable one
+contract is not absolutely immutable but
+[**ratification-immutable**](/beliefs/glossary/ratification-immutable.md) —
+immutable to agents through every channel, mutable through exactly one,
+operator ratification. A truly immutable contract cannot learn; a freely mutable one
 cannot resist [scar tissue](/beliefs/glossary/scar-tissue.md). The direction
 is therefore: **change to standing behavior is distinguished from drift by
 who approved it**, never by whether it looked locally rational.

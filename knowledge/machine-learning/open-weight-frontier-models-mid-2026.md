@@ -23,13 +23,18 @@ says nothing about whether you can run them.**
 
 | Model | Lab | Released | Architecture | License |
 |---|---|---|---|---|
-| **Kimi K3** | Moonshot AI | 2026-07-26 | 2.8T total, 16 of 896 experts active, Kimi Delta Attention + Attention Residuals, native vision, 1M context | unrestricted download |
+| **Kimi K3** | Moonshot AI | 2026-07-26 | 2.8T total, 16 of 896 experts active, Kimi Delta Attention + Attention Residuals, native vision, 1M context | Kimi K3 License — revenue-tiered, "Commercial Use Restricted" |
 | **Inkling** | Thinking Machines Lab | 2026-07-15 | 975B total / 41B active, 66-layer decoder-only, 6 of 256 experts + 2 shared, text/image/audio, 1M context | Apache 2.0 |
 | **GLM-5.2** | Zhipu / Z.ai | 2026-06-13 | 753B MoE (~40B active), 1M context, 131K output | MIT |
 
-Kimi K3 is the first open model in the 3-trillion-parameter class, reported by
-Moonshot to land ahead of GPT-5.5 and Claude Opus 4.8 but behind Claude Fable 5.
-Its Stable LatentMoE framework claims ~2.5× the scaling efficiency of K2.
+Kimi K3 is the first open model in the 3-trillion-parameter class, scoring 57 on
+the Artificial Analysis Intelligence Index — third overall, comparable to GPT-5.5
+and Claude Opus 4.8, behind Claude Fable 5 and GPT-5.6 Sol. Its Stable LatentMoE
+framework claims ~2.5× the scaling efficiency of K2. Its weights download freely
+but its license is not permissive at scale, and its API prices at Claude Sonnet 5
+parity — see
+[Kimi K3](/knowledge/machine-learning/kimi-k3.md) for the model card, the
+revenue-tiered license, and what the release changes.
 Inkling is positioned differently — it debuted at 41 on the Artificial Analysis
 Intelligence Index, and its pitch is not raw capability but suitability as a
 **customization base**: multimodal, efficient thinking, and available for
@@ -72,6 +77,23 @@ Four of the five leading open-weight families now come from Chinese labs —
 DeepSeek, Moonshot, Zhipu, and Alibaba — and they have collectively closed the
 coding and reasoning gap with the closed frontier.
 
+## The tier that actually fits one machine
+
+Named concretely, because "the smaller tier" is where every self-hosted system
+actually lands. **Qwen3-VL** (Apache 2.0) is the dominant open document/vision
+family: dense at 2B/4B/8B/32B, MoE at 30B-A3B and 235B-A22B, native 256K context
+expandable to 1M, 32 languages, robust to low light, blur, and tilt. Its
+built-in tasks are the document workload directly — parsing, text localization,
+information extraction, table parsing, formula recognition. The flagship
+235B-A22B is reported to rival Gemini 2.5 Pro on OCR and document comprehension,
+but the 8B and 32B variants are the ones that fit a workstation. **Qwen3.5**
+(February 2026) extends the family with a 0.8B–27B dense lineup plus MoE
+variants at 35B-A3B, 122B-A10B, and a 397B-A17B flagship, also Apache 2.0.
+
+For dedicated OCR rather than general vision-language work, GOT-OCR2 covers
+plain text, formatted text, formulas, and tables in 580M parameters, and
+LightOnOCR targets the smallest-and-fastest end.
+
 ## The consequence
 
 Open weights at this scale are open to **whoever can afford the hardware to keep
@@ -93,6 +115,9 @@ compromise.
 - <https://www.eigent.ai/blog/glm-5-2> — GLM-5.2 specifications
 - <https://www.digitalapplied.com/blog/open-weight-models-h1-2026-retrospective-deepseek-qwen-llama> — H1 2026 open-weight retrospective and the Meta pivot
 - <https://www.spheron.network/blog/best-open-source-llms-self-host-2026-vram-guide/> — VRAM sizing and the active-parameter error
+- <https://github.com/QwenLM/Qwen3-VL> — Qwen3-VL family and sizes
+- <https://www.mindstudio.ai/blog/what-is-qwen-3-5-alibaba-open-weight-model> — the Qwen 3.5 lineup
+- <https://presenc.ai/research/best-open-weight-ocr-document-ai-models-2026> — open-weight OCR and document-AI landscape
 
 ## Thread excerpts — route-tagged log
 
@@ -119,3 +144,11 @@ I checked each. They're real, they're recent, and none of them is what you want.
 **[`em:28fac6`]**
 
 **Start with the latest, yes** — [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) (Apache 2.0; dense 2B/4B/8B/32B, MoE 30B-A3B/235B-A22B), or [Qwen3.5-VL](https://docs.nvidia.com/nemo/megatron-bridge/nightly/models/vlm/qwen35-vl.html) from the Feb 2026 family. Plan around **32B**; drop to 8B if it benchmarks equivalently on your documents, which it may well.
+
+### 2026-07-28-kimi-k3-weight-release-implications (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:28fac6`]**
+
+One correction to the brain: [`em:28fac6`](https://github.com/ob6to8/elixir-mind/blob/claude/kimi-k3-weights-analysis-c9oqxn/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) recorded K3's license as "unrestricted download," sitting in a column next to Apache 2.0 and MIT. The download is unrestricted; the license is not. Fixed.

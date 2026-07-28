@@ -26,4 +26,4 @@ guaranteed termination. The formal basis of
 description logic, which is why decades of DL reasoning research apply to web
 ontologies directly.
 
-*Seen in:* [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)
+*Seen in:* [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md), [ontology guardrails vs. schema validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) (OWL 2 DL as SROIQ(D), the formal-logic half of the schema-vs-logic distinction)

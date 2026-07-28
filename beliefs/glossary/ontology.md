@@ -25,4 +25,4 @@ is the W3C standard language for publishing them. The authoring cost of formal
 ontologies — every distinction must be legislated up front — is the standing
 argument for semiformal alternatives that keep content in natural language.
 
-*Seen in:* [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md)
+*Seen in:* [FOL and OWL reference](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md), [why agentic systems need ontologies](/knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies.md), [ontology guardrails vs. schema validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md)

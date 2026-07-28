@@ -35,8 +35,6 @@ mix brain.glossary
 echo "pre-commit: mix brain.lineage --check"
 mix brain.lineage --check
 
-echo "pre-commit: mix brain.dev_history --check"
-mix brain.dev_history --check
 
 echo "pre-commit: mix test --warnings-as-errors"
 mix test --warnings-as-errors

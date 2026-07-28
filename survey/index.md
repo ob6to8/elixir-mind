@@ -19,5 +19,6 @@ to distill and file it, then records the graduation on the row.
 - [bookmarks](/survey/bookmarks.md) — the survey register: pending dropzone + surveyed
   entries. Shards by top-level domain (e.g. `survey/ai.md`) only if it grows large.
 - [channels](/survey/channels.md) — the standing-sources register: recurring
-  publications (newsletters, blogs, author feeds, archives) monitored for new
-  material, each with a focus line and an access note (free / login / paid).
+  publications (newsletters, blogs, author feeds, vendor docs, archives, video,
+  forums) monitored for new material, each with a focus line, an access note
+  (free / login / paid), and the documents already ingested from it.

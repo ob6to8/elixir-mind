@@ -258,50 +258,50 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
 _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-and-cross-linking.md)_
 
-**In responses, link resources to the deployed site, not to repo paths.** When an
-agent's **delivered response** (chat to the operator, a PR body, an issue comment —
-anything read outside a checkout) references a document in the brain, cite it as a
-link to that document's page on the **deployed Pages site**, not as a bundle-absolute
-(`/knowledge/…md`) or relative repo path. A repo path is not navigable for a reader
-in chat; the live URL is a click away.
+**Pages links in docs, GitHub links in agent threads.** Two surfaces, two link
+schemes (operator-ratified 2026-07-27):
 
-- **The site.** The bundle is published to GitHub Pages at
-  **`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, one page per document and
-  per `index.md`). That base URL lives in config
-  (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
-  source of truth, and this contract's copy of it is compiled in from that config —
-  a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
-- **Get the URL from the tool, never by hand. `mix brain.url <path>` prints the
-  working URL** for any bundle path — always run it; do **not** construct a URL
-  yourself. The correct URL depends on state you have to check (is the doc live on
-  `main` yet? see below), not on the path alone, so hand-construction is exactly
-  what produces dead links. *Under the hood* the tool maps a live, rendered doc by
-  swapping base and extension — `P.md` → `https://ob6to8.github.io/elixir-mind/P.html` (a directory's
-  `index.md` → `…/<dir>/index.html`; governance `meta/…` docs render too) — but
-  that mapping is **what the site does at build time, not a recipe to apply in a
-  response**. Reproducing it by hand is the anti-pattern this policy exists to
-  stop.
-- **Live only after merge — cite unmerged docs by branch.** Pages deploys **only
-  from the default branch** (`pages.yml` → `push: branches: [main]`), so a document
-  *created or modified on an unmerged branch has no live page yet*: its Pages URL
-  **404s** (new doc) or shows **stale** content (modified doc) until the PR merges
-  and Pages rebuilds. Cite such a doc by its GitHub **blob URL at the branch ref**
-  (`<repo>/blob/<branch>/<path>.md`), which resolves immediately and shows the
-  current content. `mix brain.url` does this automatically — it emits the live
-  Pages URL when the doc is rendered *and* unchanged vs `origin/main`, and the
-  branch blob URL otherwise (new, modified, or under a non-rendered directory).
-  The Pages URL is the canonical form once merged; a branch blob link is fine in
-  ephemeral chat (branches are deleted post-merge, so never hardcode a blob URL
-  into a durable doc body).
-- **Not rendered → no live URL.** Resources under directories the site excludes
-  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever; `mix brain.url`
-  cites those by their GitHub blob URL instead of fabricating a Pages URL.
-- **This is the response-side rule only.** Cross-links *inside* document bodies stay
+- **Agent threads → GitHub links, always.** When an agent's **delivered
+  response** (chat to the operator, a PR body, an issue comment — anything
+  read outside a checkout) references a document in the brain, cite its
+  GitHub **blob URL** — at `main` for a merged, unchanged document, at the
+  session branch otherwise — never a bundle-absolute or relative repo path,
+  and never a Pages URL. A blob URL is viewable at **any** merge state, which
+  is exactly when the operator audits; a Pages URL is live only after merge
+  and deploy. (A branch blob link dies when the merged branch is deleted;
+  that is accepted — the thread's moment has passed, and the document's
+  durable home is its Pages URL.)
+- **Docs → Pages links.** Cross-links *inside* document bodies stay
   bundle-absolute markdown paths per
-  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
-  site rewrites those `.md` links to the right relative `.html` at build time. Do not
-  hardcode live URLs into document bodies; use them when speaking to a human outside
-  the bundle.
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md);
+  the site rewrites them to relative `.html` at build time, so on the
+  rendered site every doc link *is* a Pages link. Never hardcode live URLs
+  into document bodies. The Pages URL is the **durable, canonical form for a
+  merged document** cited outside a session (sharing, external references).
+
+**Get the URL from the tool, never by hand.** `mix brain.url` prints the
+right URL for each surface — always run it; hand-construction is exactly what
+produces dead links:
+
+- **`mix brain.url --thread <path>`** — the agent-thread form: the blob URL
+  at the ref whose tree holds the current content (`main` when merged and
+  unchanged, else the current branch).
+- **`mix brain.url --pages <path>`** — the canonical Pages URL for durable
+  external citation of merged docs (bundle path `P.md` →
+  `https://ob6to8.github.io/elixir-mind/P.html`; a directory's `index.md` → `…/<dir>/index.html`;
+  governance `meta/…` docs render too).
+- **Bare `mix brain.url <path>`** — whichever resolves and shows the current
+  content (Pages when live and unchanged vs `origin/main`, else blob).
+
+**Mechanics.** The bundle is published to GitHub Pages at
+**`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, deploying **only from
+the default branch** — the reason unmerged docs have no live page). The base
+URL lives in config (`config/config.exs` →
+`ElixirMind.SiteConfig.base_url/0`); it is the single source of truth, and
+this contract's copy is compiled in from it. Resources under directories the
+site excludes (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever;
+`mix brain.url` cites those by blob URL in every mode rather than fabricating
+a Pages URL.
 
 _Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
@@ -560,32 +560,6 @@ the metadata states the origin.
 
 _Source: [`meta/policy/provenance-lives-in-metadata.md`](/meta/policy/provenance-lives-in-metadata.md)_
 
-**Negate only an explicit case.** A negative statement — "no X", "never Y",
-"not by Z-ing" — is a reference: it points at the case it rules out. It earns
-its place only when that case is **explicit**: raised in the same document, a
-live alternative the reader would otherwise assume, or a standing rule being
-overridden. Absent an explicit case, state the rule positively — an unanchored
-negation is an orphaned reference, gesturing at an argument the reader cannot
-see.
-
-- **The test: can the reader point at what is being negated?** If the case is
-  named nearby, assumed by default, or contract-bound elsewhere (link it), the
-  negation is anchored and does real work. If answering "who said anything
-  about that?" requires context outside the document, recast the sentence as
-  the positive rule.
-- **Negations fossilize.** An anchored negation loses its anchor when a later
-  edit removes the referent — a provenance sweep, a trim, a refactor — and the
-  stump reads as an argument with a missing party. An edit that removes a
-  negation's referent must recast the negation in the same motion, not leave
-  the stump.
-- **Scope.** Document bodies, index glosses, and agent responses alike —
-  wherever the agent composes prose. Thread renders are exempt (verbatim
-  record). Anchored negations remain fully legitimate and load-bearing —
-  contrast pairs ("cache, never know"), guardrails negating a named temptation,
-  and overrides of stated defaults are the pattern working as intended.
-
-_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
-
 **Choosing the artifact is a second question, not the first.**
 [plan-vs-capture](/meta/policy/plan-vs-capture.md) answers *whether* to persist
 anything: when this session holds the context and can finish the work, the commit
@@ -636,6 +610,108 @@ rather than creating a near-duplicate in a different genre.
 
 _Source: [`meta/policy/governance-artifact-routing.md`](/meta/policy/governance-artifact-routing.md)_
 
+**Living text states the present; git narrates the past.** A **living surface** —
+code, code comments, operational skills, reference docs, the compiled contract —
+is read to act on the system *as it is now*, so every sentence in it should be
+true of the present. The commit graph is already the brain's single
+change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
+[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
+narration embedded in living text — "this used to X", "the old Y", "was removed
+in favor of Z" — is a second, hand-kept history layer at comment scale, and it
+fails the same way the purged `log.md` files did — it goes stale silently and
+gets retrieved and trusted as current state. This is that lesson generalized from
+dedicated log *files* down to inline narration.
+
+**The rule.** When you change the system, rewrite the living text to describe the
+new present — do not append a note about what it used to be. Git holds the
+before; the commit message carries the why-it-changed. The living surface carries
+only what is.
+
+**The carve-outs — what is *not* retrospective narration:**
+
+- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
+  reader where the functionality *is now* — load-bearing, keep. Test: does the
+  sentence tell the reader something they must know to act *today*, or only what
+  changed?
+- **Chesterton's-fence justifications.** A comment explaining why live code still
+  exists ("kept only as the migration reader for X") justifies present code and
+  reads as *this is why this exists*, not as a changelog. Keep.
+- **Explanatory surfaces where the history is the subject.** A `tutorial` or
+  `doctrine` may carry a clearly-marked, bounded history aside when the change
+  itself is what it explains. That permission is exactly why operational and
+  reference surfaces — read to act, not to learn the backstory — get none.
+
+Records that are historical *by construction* — `plan`, `analysis`, `issue`,
+thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
+not living surfaces and are out of scope; narrating the past is their job.
+
+_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
+
+**Prefer established terminology; coin bespoke terms only when nothing
+established fits.** When naming a genre, a `type`, an artifact, a mix task, or
+a concept, reach for the standard term of art (*flow*, *plan*, *glossary*,
+*digest*) before inventing repo-specific vocabulary. Every bespoke term is a
+tax on future readers and agents: it must be learned, glossaried, and
+disambiguated against the standard term it displaced — and an agent
+encountering it cold will guess its meaning from the nearest established sense
+anyway.
+
+- **The test.** Before coining, ask: does an established term denote this
+  thing, even approximately? An approximate standard term with a one-line
+  qualification beats an exact bespoke one (*"flow doc — the touch-sequence of
+  a canonical run"* over a novel coinage).
+- **When bespoke is warranted** — the concept is genuinely novel to this
+  bundle (e.g. *route tag*) — define it in the
+  [glossary](/beliefs/glossary/index.md) at first use, with `sense: repo`.
+- **No retroactive churn.** An existing name is not renamed to a "better" term
+  without operator ratification: renames are shape changes
+  ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)),
+  and a rename's cost (links, skills, muscle memory) usually exceeds a
+  marginal terminology gain.
+
+_Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
+
+---
+
+## 4. Communication — composing responses and prose
+
+**Lead with a plainspeak orientation; keep the technical register after it.**
+A delivered response of any density — one that reports work, presents a
+finding, or leans on artifacts and concepts the operator is not already
+holding in mind from the immediate conversation — opens with a short
+**plainspeak orientation**: what just happened, where things now stand, and
+what (if anything) needs deciding, in common words. The technical
+presentation follows at full density, unchanged — the orientation is a
+runway to it, never a replacement for it.
+
+- **Onboard before terminology.** The reader must meet the general thrust
+  before meeting the terms. Within the orientation, name an artifact by what
+  it does before (or alongside) its repo name — "the file that lists every
+  merged PR (`meta/dev-history.md`)" — and defer repo coinages to the
+  technical half entirely where the plain description carries the point.
+- **One presentation, then the other — never interleaved phrase-by-phrase.**
+  The orientation is a whole, short account (a paragraph or two), after which
+  the technical presentation stands on its own. Phrase-level unpacking is a
+  different tool and stays on demand:
+  [`/elaborate`](/.claude/skills/elaborate/SKILL.md).
+- **The orientation is a derivation, not a second account.** It restates the
+  technical content at lower resolution; it must not introduce claims,
+  caveats, or decisions the technical half lacks. This is the response-surface
+  form of the *one canonical level plus anchored derivations* rule from the
+  [three-level documentation plan](/meta/plans/three-level-documentation.md),
+  whose committed plain tier serves the same reader on the document surface.
+- **Calibrate by density, not length.** Conversational turns, simple answers,
+  and responses whose terms are all live in the current exchange need no
+  separate orientation — an orientation over three plain sentences is
+  ceremony. The trigger is referential density: when following the response
+  requires holding artifacts or concepts the conversation has not just
+  established, orient first.
+- **Placement.** The orientation opens the response, above any
+  [work-report tables](/meta/policy/response-work-report-format.md); tables
+  and technical prose keep their existing form beneath it.
+
+_Source: [`meta/policy/plainspeak-orientation.md`](/meta/policy/plainspeak-orientation.md)_
+
 **When a turn produces work, report it as a ledger.** A response that creates or
 modifies artifacts, or reaches a decision point, closes with tabular sections
 rather than narrating the same facts in prose. Tables make what-happened and
@@ -679,43 +755,6 @@ only the sections that have content.
 
 _Source: [`meta/policy/response-work-report-format.md`](/meta/policy/response-work-report-format.md)_
 
-**Living text states the present; git narrates the past.** A **living surface** —
-code, code comments, operational skills, reference docs, the compiled contract —
-is read to act on the system *as it is now*, so every sentence in it should be
-true of the present. The commit graph is already the brain's single
-change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
-[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
-narration embedded in living text — "this used to X", "the old Y", "was removed
-in favor of Z" — is a second, hand-kept history layer at comment scale, and it
-fails the same way the purged `log.md` files did — it goes stale silently and
-gets retrieved and trusted as current state. This is that lesson generalized from
-dedicated log *files* down to inline narration.
-
-**The rule.** When you change the system, rewrite the living text to describe the
-new present — do not append a note about what it used to be. Git holds the
-before; the commit message carries the why-it-changed. The living surface carries
-only what is.
-
-**The carve-outs — what is *not* retrospective narration:**
-
-- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
-  reader where the functionality *is now* — load-bearing, keep. Test: does the
-  sentence tell the reader something they must know to act *today*, or only what
-  changed?
-- **Chesterton's-fence justifications.** A comment explaining why live code still
-  exists ("kept only as the migration reader for X") justifies present code and
-  reads as *this is why this exists*, not as a changelog. Keep.
-- **Explanatory surfaces where the history is the subject.** A `tutorial` or
-  `doctrine` may carry a clearly-marked, bounded history aside when the change
-  itself is what it explains. That permission is exactly why operational and
-  reference surfaces — read to act, not to learn the backstory — get none.
-
-Records that are historical *by construction* — `plan`, `analysis`, `issue`,
-thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
-not living surfaces and are out of scope; narrating the past is their job.
-
-_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
-
 **Quote primary sources verbatim; mark the boundary between quotation and
 synthesis.** When a delivered response or a document body leans on what a
 source says — a policy, a doctrine, an external article or post, a code
@@ -738,6 +777,14 @@ the boundary checkable.
   (`…`); an insertion is bracketed. If only a paraphrase will fit, drop the
   quotation marks and let it stand as synthesis — attributed, but visibly not
   verbatim.
+- **Take the quote from the source's own text, never from a summary of it.** A
+  fetch that answers a question in prose can interpolate a comparison the source
+  never made, and the interpolation is indistinguishable from a quotation once
+  it is in your notes. Before a figure is quoted, or is used to back
+  `verified: true`, re-read the source demanding the **verbatim span**; a span
+  that cannot be produced does not get quotation marks. Whether the demand
+  actually changes what a fetch returns is measured by the
+  [fetch fidelity probe](/meta/evals/fetch-fidelity-probe.md).
 - **Quote at the phrase, not the page.** The rule serves precision, not bulk:
   lift the shortest span that carries the claim. Wholesale copying stays
   governed by [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md).
@@ -748,33 +795,234 @@ the boundary checkable.
 
 _Source: [`meta/policy/quote-primary-sources.md`](/meta/policy/quote-primary-sources.md)_
 
-**Prefer established terminology; coin bespoke terms only when nothing
-established fits.** When naming a genre, a `type`, an artifact, a mix task, or
-a concept, reach for the standard term of art (*flow*, *plan*, *glossary*,
-*digest*) before inventing repo-specific vocabulary. Every bespoke term is a
-tax on future readers and agents: it must be learned, glossaried, and
-disambiguated against the standard term it displaced — and an agent
-encountering it cold will guess its meaning from the nearest established sense
-anyway.
+**Negative findings name their scope.** A statement that something *does not
+exist*, *is not stated anywhere*, or *could not be found* is a claim about a
+search space, not about the world. Report it **relative to the space actually
+searched**. "I found no pricing on the docs site or the corporate site" is
+honest and actionable; "no primary source states the price" is a claim about
+every source, and is sayable only when the sources were enumerated first.
 
-- **The test.** Before coining, ask: does an established term denote this
-  thing, even approximately? An approximate standard term with a one-line
-  qualification beats an exact bespoke one (*"flow doc — the touch-sequence of
-  a canonical run"* over a novel coinage).
-- **When bespoke is warranted** — the concept is genuinely novel to this
-  bundle (e.g. *route tag*) — define it in the
-  [glossary](/beliefs/glossary/index.md) at first use, with `sense: repo`.
-- **No retroactive churn.** An existing name is not renamed to a "better" term
-  without operator ratification: renames are shape changes
-  ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)),
-  and a rename's cost (links, skills, muscle memory) usually exceeds a
-  marginal terminology gain.
+- **The test: could the reader reconstruct what was checked?** If yes, the
+  finding is scoped and a reader can extend the search. If the sentence would
+  survive unchanged no matter how little was looked at, it is overclaiming.
+- **Escalate before a decision rests on it.** When a negative finding is
+  load-bearing — it justifies building something, retracting something, or
+  telling the operator a thing is unavailable — enumerate the search space
+  first, or say plainly that the enumeration was not done. An unscoped negative
+  that turns out false corrupts every artifact built on it.
+- **Search returns a finite result set.** Absence within it is evidence about
+  the query, not about what exists. Scoped tools — a `site:`-filtered search, a
+  grep over one directory, a single fetched page — silently encode a guess
+  about where the answer lives; when the guess is wrong the tool reports
+  nothing and the guess never surfaces.
+- **Scope.** Delivered responses and document bodies alike, including a filed
+  `claim` whose content is a non-existence assertion — its body carries the
+  search space. Thread renders are exempt (verbatim record).
 
-_Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
+Distinct from
+[negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md), which
+governs *rhetorical* negation in prose (whether a negative sentence has an
+anchor). This governs *epistemic* negation: whether a negative claim has been
+earned. A worked example, and the seven-host source map that motivated it, is
+in
+[Anthropic's primary-source surfaces](/meta/analysis/anthropic-primary-source-surfaces.md).
+
+_Source: [`meta/policy/negative-findings-name-their-scope.md`](/meta/policy/negative-findings-name-their-scope.md)_
+
+**Negate only an explicit case.** A negative statement — "no X", "never Y",
+"not by Z-ing" — is a reference: it points at the case it rules out. It earns
+its place only when that case is **explicit**: raised in the same document, a
+live alternative the reader would otherwise assume, or a standing rule being
+overridden. Absent an explicit case, state the rule positively — an unanchored
+negation is an orphaned reference, gesturing at an argument the reader cannot
+see.
+
+- **The test: can the reader point at what is being negated?** If the case is
+  named nearby, assumed by default, or contract-bound elsewhere (link it), the
+  negation is anchored and does real work. If answering "who said anything
+  about that?" requires context outside the document, recast the sentence as
+  the positive rule.
+- **Negations fossilize.** An anchored negation loses its anchor when a later
+  edit removes the referent — a provenance sweep, a trim, a refactor — and the
+  stump reads as an argument with a missing party. An edit that removes a
+  negation's referent must recast the negation in the same motion, not leave
+  the stump.
+- **Scope.** Document bodies, index glosses, and agent responses alike —
+  wherever the agent composes prose. Thread renders are exempt (verbatim
+  record). Anchored negations remain fully legitimate and load-bearing —
+  contrast pairs ("cache, never know"), guardrails negating a named temptation,
+  and overrides of stated defaults are the pattern working as intended.
+
+_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
+
+**Certain words and phrases are banned from agent-composed prose.** The
+register below lists each banned phrase with the *pattern* it exemplifies and
+the reason it fails; the ban covers close variants of the pattern, not only the
+literal string. Before delivering a response or filing a document, prose that
+matches an entry is recast — usually by deleting the framing and stating the
+content directly.
+
+- **The register grows organically.** When the operator flags a phrase in
+  conversation, [`/ban-phrase`](/.claude/skills/ban-phrase/SKILL.md) appends it
+  here with the reasoning from that exchange and recompiles the contract. The
+  operator's invocation *is* the ratification — no separate approval pass.
+  Agents may propose entries but never add one unflagged.
+- **Entries carry their reasoning.** A bare blacklist teaches nothing and
+  invites near-miss variants; the reason is what lets an agent recognize the
+  pattern in a phrasing the register has never seen.
+- **Scope.** Delivered responses, document bodies, and index glosses — wherever
+  the agent composes prose. Thread renders are exempt (verbatim record), and so
+  is quoted material: a banned phrase inside a verbatim quote stays as its
+  source wrote it.
+
+### The register
+
+- **"worth flagging rather than burying" / "worth noting rather than
+  burying"** — pattern: *"worth X-ing rather than Y-ing"*, and more broadly
+  any framing that advertises the act of communicating instead of
+  communicating. If the content were not worth mentioning it would not be in
+  the response, so "worth flagging" asserts nothing; and "rather than burying"
+  calls attention to a negative case not taken — a failing nobody raised — which
+  is the phrase-level form of
+  [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md).
+  Recast: state the items directly, under a heading if they need prominence.
+
+- **"One process blemish to be transparent about"** — two patterns in one
+  phrase, each banned with its variants. *"To be transparent about"* (also "to
+  be honest/candid/straight/upfront", "in the interest of transparency", and
+  the enumerated-preamble form "two things I want to be straight about:")
+  announces the virtue of a disclosure instead of just disclosing: a
+  transparent account shows its transparency in the content, so the
+  announcement asserts nothing — and it
+  implies concealment was a live alternative, an unraised case (the same
+  advertising failure as the entry above). *"Blemish"* (also "wart",
+  "wrinkle", "minor blip") is the agent pre-grading its own defect as
+  cosmetic; severity is the operator's judgment to make, not the author's to
+  soften. Recast: name the defect plainly with its concrete consequence, and
+  let the facts carry both the candor and the severity.
+
+- **"Before I do this: it's a bigger change than I called it, and it has a
+  real cost"** — pattern: *"Before I do X: \<hedge\>"* — pre-action hedging
+  that announces revised scope or cost while proceeding anyway, performing
+  deliberation without transferring the decision. A revision that could
+  change the decision is a **blocking question** (the questions table of
+  [response-work-report-format](/meta/policy/response-work-report-format.md);
+  at close time,
+  [concerns-block-the-close](/meta/policy/concerns-block-the-close.md));
+  one that couldn't change it is not said mid-motion. *"It has a real
+  cost"* is the sub-pattern of unquantified gravity: asserting a cost
+  exists with "real" doing the work a number should. Recast: either halt —
+  "this touches ~N files, not the 2 I estimated; proceed?" — or proceed and
+  report the measured cost afterward.
+
+- **"That last row is the honest headline."** — pattern: *"that X is the
+  honest/real \<headline/story/takeaway\>"* — post-hoc editorial pointing at
+  one's own just-delivered content. Two failures. *"Honest"* as a
+  discriminator is self-indicting: if the whole response is honest the
+  adjective asserts nothing, and if it discriminates, it concedes the rest
+  was framed — the self-directed twin of the announced-candor entry above.
+  And naming something the headline instead of *making* it the headline
+  narrates a structure defect rather than fixing it — per
+  [plainspeak-orientation](/meta/policy/plainspeak-orientation.md), the
+  outcome leads the response. Recast: move the load-bearing fact into the
+  lead and delete the pointer — placement, not commentary, carries emphasis.
+
+- **"let me audit rather than answer from memory"** — pattern: *"let me X
+  rather than Y"* where Y is an inferior practice nobody proposed (also
+  "verified against merged main rather than assumed") — announcing diligence
+  against an unraised lazy alternative, the process-narration form of the
+  seed entry's advertising failure. The distinction the phrase gestures at is
+  real and is governed by
+  [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md):
+  epistemic basis is carried uniformly by citations and plain markers, and a
+  case-by-case announcement is precisely what makes the unannounced remainder
+  illegible. Recast: do the check silently, then state the fact with its
+  basis — "CI is green (both runs completed 08:52)".
+
+_Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
+
+**A closing flow ends clean or not at all.** Invoking
+[`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) is the
+operator closing the thread. From that moment, every concern the session
+still holds — a process irregularity, an improvisation no policy sanctions, a
+check that was skipped, a judgment call left open — is a **blocker**: the
+flow halts before the irreversible step and the concern is put to the
+operator, instead of surfacing in the report after the merge ("one thing I'd
+flag…", "two notes on how I worked…"), which converts a finished close back
+into an open thread.
+
+- **The test: would the closing report present it as something the operator
+  must react to?** Then it blocks now. Before opening the PR — and again
+  before merging, for anything that emerged in between — inventory such
+  items; if any exist, stop the flow and present them as blocking questions
+  with recommendations, per
+  [response-work-report-format](/meta/policy/response-work-report-format.md).
+- **The disposition is the operator's.** Fix it now, file it as an
+  issue/todo, or proceed accepting it — the agent recommends but does not
+  choose. Unilaterally filing an issue and mentioning it post-merge is the
+  pattern this policy exists to stop.
+- **The session's driving question is answered before the close, not after.**
+  When the operator's ask has a success criterion ("does a fresh session now
+  see it?"), verifying it is part of the work: it runs before `/capture`, so
+  the answer lands in the thread doc and the PR. A post-merge "the answer is
+  now yes" is work delivered outside every record.
+- **Post-capture chat is outside every record — so the close persists or
+  points, never deposits.** The closing report postdates the thread capture:
+  nothing said only there is discoverable later, and the operator's memory is
+  exactly what this system exists to offload. Beyond the completion facts,
+  every sentence in a closing report must point at a durable home — the plan,
+  a todo, an issue, the thread doc. Next-session context ("for whenever you
+  pick this up, step 2 is…") is the failure signature: that content belongs in
+  the artifact [`/priorities`](/.claude/skills/priorities/SKILL.md) reads,
+  filed before the close, with the close at most pointing at it. A statement
+  with no durable home that doesn't warrant one goes unsaid. The operator
+  never has to ask "is this persisted, or does it only exist in this thread?"
+- **Merged means done.** The post-merge report announces the completed close —
+  PR number, merge SHA, thread doc name — and introduces nothing new. A
+  trailing wakeup (a CI wait timer, a stray notification) that fires after
+  the merge and only confirms completion is cleared silently, with no report
+  at all when nothing is actionable.
+- **Scope.** Operator-invoked closing flows. Mid-session reporting keeps its
+  existing shape — findings raised while work is still open are ordinary
+  content, and raising them *early* is exactly what this policy rewards.
+
+_Source: [`meta/policy/concerns-block-the-close.md`](/meta/policy/concerns-block-the-close.md)_
+
+**An assertion the operator might act on names its basis — checked or
+recalled.** When a delivered response states a fact, the prose makes the
+basis legible: **checked** in this session — cite what was checked ("CI is
+green — both `verify` runs completed at 08:52"); or **recalled** from
+memory/training — mark it plainly ("from memory, unchecked: …"). The
+distinction is carried **uniformly and structurally**, by citations and
+markers, so the reader can trust the *absence* of a marker exactly as much
+as its presence.
+
+- **The trigger is actionability, not completeness.** Conversational prose,
+  reasoning, and recommendations need no markers; a fact that could change
+  what the operator does next — a state of CI, a file's contents, a price, a
+  version, a "that already merged" — does. When such a fact is cheap to
+  check, check it rather than mark it recalled.
+- **Uniform practice, never episodic narration.** Announcing the diligence
+  case-by-case ("let me audit rather than answer from memory" — see the
+  banned-phrases register) is the anti-pattern this rule replaces: selective
+  announcement implies every unannounced statement has unknown basis, which
+  is the opposite of what a basis convention is for.
+- **Relation to the neighboring rules.** This is the general case of a
+  family:
+  [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md)
+  is its negative-claim instance (the basis of a "not found" is the space
+  searched);
+  [quote-primary-sources](/meta/policy/quote-primary-sources.md) marks the
+  quotation/synthesis boundary;
+  [verification-grounding](/meta/policy/verification-grounding.md) encodes
+  basis for *filed* statements (`verified`/`verified_by`). This policy covers
+  the remaining surface: ephemeral assertions in delivered responses.
+
+_Source: [`meta/policy/assertions-name-their-basis.md`](/meta/policy/assertions-name-their-basis.md)_
 
 ---
 
-## 4. Controlled `type` vocabulary
+## 5. Controlled `type` vocabulary
 
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -870,7 +1118,7 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 
 ---
 
-## 5. Identity & verification
+## 6. Identity & verification
 
 - **Every bundle document carries a stable `id`** in frontmatter: the bundle's
   id-namespace prefix + 6 lowercase hex chars — currently `em:` (e.g. `em:4c9e1f`).
@@ -929,7 +1177,7 @@ _Source: [`meta/policy/verification-grounding.md`](/meta/policy/verification-gro
 
 ---
 
-## 6. Conformance (keep the bundle valid)
+## 7. Conformance (keep the bundle valid)
 
 A bundle conforms to OKF v0.1 when:
 
@@ -944,7 +1192,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 
 ---
 
-## 7. Skills
+## 8. Skills
 
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -1042,6 +1290,13 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   only when asked, delivered in chat and persisted verbatim below the entry under a
   marked `## Response` heading — operator voice above, agent voice below, never
   interleaved. See `.claude/skills/journal/SKILL.md`.
+- **`/ban-phrase`** — add an operator-flagged word or phrase to the
+  [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
+  generalized pattern, the reasoning from the flagging exchange, and a recast),
+  dedup against existing patterns, and recompile the contract so the entry binds
+  every future session; the operator's invocation is the ratification.
+  `/ban-phrase list` renders the register read-only. See
+  `.claude/skills/ban-phrase/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 
@@ -1049,7 +1304,7 @@ _Source: [`meta/policy/skills-registry.md`](/meta/policy/skills-registry.md)_
 
 ---
 
-## 8. Session capture, routing & route tags
+## 9. Session capture, routing & route tags
 
 A working session (a **thread**) is non-linear: it touches many matters, pauses
 some on open questions, and routes each matter's synthesized content into a
@@ -1091,6 +1346,17 @@ record so it can be resumed from the record instead of from memory.
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
+- **Update in place: a continued session appends to its existing thread doc.**
+  A session that is captured and PR'd, then continues, extends that **same**
+  file rather than opening a second one — the blocks already written stay
+  frozen, and only the un-captured exchanges are appended.
+  **Derive the append boundary; never recall it.** The doc's final rendered
+  block *is* the boundary: `mix brain.thread_tail <path>` prints it, and
+  locating that text in the session log yields exactly the remainder. Recalling
+  where the previous capture stopped is what silently drops exchanges — the
+  render stays well-formed either way, so the miss is invisible until someone
+  counts. (Filed as the general case in
+  [a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md).)
 - **The thread records its PR (`pr:`), not its branch.** Once the session's PR
   is opened, its number is stamped into the thread's frontmatter as `pr: <N>`
   (set by `/create-pull-request`, not `/capture` — the number doesn't exist
@@ -1222,7 +1488,7 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
 
 ---
 
-## 9. Git workflow
+## 10. Git workflow
 
 - **Session branches are ephemeral; the default branch is durable.** Work enters
   the repo on a short-lived head branch (e.g. `claude/<slug>`) and lands in the
@@ -1233,7 +1499,13 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
   reachable through the merge, and GitHub can restore the branch). Deletion is part
   of the merge motion: prefer the repository's **"Automatically delete head
   branches"** setting; failing that, delete the branch manually right after
-  merging. A merged branch discovered lingering later is deleted on sight.
+  merging.
+- **Deletion belongs to the merge motion, not to later sessions.** A merged
+  branch noticed in passing is left alone: cleaning up someone else's leftovers
+  is not part of the work at hand, and surveying branches to find them turns an
+  unrelated session into an audit. Sweeping merged branches is its own
+  deliberate cleanup task, run when the operator asks for one — and a session
+  that is not that task does not survey, propose, or report on branch state.
 - **Never delete without the operator:** the default branch (never), and any branch
   carrying **unmerged** commits — including branches whose PR was closed without
   merging. Those hold work with no other home; propose deletion and wait for the
@@ -1243,7 +1515,7 @@ _Source: [`meta/policy/git-branch-deletion.md`](/meta/policy/git-branch-deletion
 
 ---
 
-## 10. Elixir tooling — coding standards
+## 11. Elixir tooling — coding standards
 
 **This contract is the coding-standards file.** The Elixir tooling (`lib/`,
 `test/`, the `mix brain.*` tasks) is held to the same anti-drift bar as the
@@ -1278,6 +1550,20 @@ CI-gated coverage — each would break the zero-dependency stance for signal the
 small `lib/` doesn't yet warrant (and coverage stays exploratory, never a gate,
 on the merits). Re-evaluate if the toolchain ever takes on dependencies or
 `lib/` grows past what review holds.
+
+**The bundle's constraint checks stay hand-written Elixir; no declarative
+shapes layer.** `mix brain.verify` (with the route-tag and glossary verifiers)
+already *is* a closed-world constraint checker over the bundle's typed graph —
+controlled value sets, type-disjointness, conditional cardinality, and
+referential integrity across `em:` ids. Re-expressing those rules in a
+declarative constraint language ([SHACL](/beliefs/glossary/shacl.md) over
+RDF.ex/SPARQL.ex, or any equivalent) is **declined**, not deferred: it would add
+dependencies and a graph-materialization step to buy declarativeness the numbered
+moduledoc already provides. This gap is bounded by *authorship*, not size — it
+holds while the shapes are few, stable, and written by the same people who write
+the verifier, and is worth re-opening only if domain constraints ever churn
+rapidly or come from authors who do not write Elixir. Grounded in the
+[ontology-guardrails analysis](/meta/analysis/ontology-guardrails-vs-schema-validation.md).
 
 **Conventions (editorial — no oracle, so hold the line in review):**
 

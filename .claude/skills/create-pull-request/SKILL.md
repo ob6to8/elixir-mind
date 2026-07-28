@@ -1,6 +1,6 @@
 ---
 name: create-pull-request
-description: Run /capture to completion, glossary the captured thread via /add-to-glossary, stamp the thread into the attribution.from of every governance doc this session created or revised, regenerate the dev-history view, then commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
+description: Run /capture to completion, glossary the captured thread via /add-to-glossary, stamp the thread into the attribution.from of every governance doc this session created or revised, then commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
 ---
 
 # /create-pull-request — capture, glossary, commit, push, open a PR
@@ -20,7 +20,7 @@ still holds for every other flow.)
 **Merge is opt-in, off by default.** A bare invocation ends with the PR **open and
 handed back** for the operator to merge. Pass the bare `merge` argument
 (`/create-pull-request merge`) to have the skill drive CI to green and true-merge it
-as well — see step 10.
+as well — see step 9.
 
 ## Procedure
 
@@ -65,49 +65,51 @@ as well — see step 10.
   never remove or rewrite existing `from` entries. If step 1 was skipped
   (nothing captured), skip this step too.
 
-### 4. Regenerate the dev-history view
-- Run `mix brain.dev_history` to catch `meta/dev-history.md` up to the current
-  base branch's merge graph, and stage the result if it changed.
-- **Why this lives here, and why it's best-effort.** `meta/dev-history.md` is a
-  generated-but-committed doc like `CLAUDE.md`/registry/code-map, but a PR's
-  branch can never contain its own merge commit, so CI's check on it
-  (`mix brain.dev_history --check`) is deliberately lag-tolerant by exactly one
-  PR (see the
-  [dev-history staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)).
-  Regenerating here doesn't make this PR self-consistent (it can't be), but it
-  catches the file up through the *previous* merge — so if every PR does this,
-  the checked-in copy never drifts past that unavoidable one-PR lag. Skip only
-  if `mix brain.dev_history` reports a shallow clone (fetch full history first
-  if that's fixable; otherwise proceed without this step and say so).
-
-### 5. Survey the change
+### 4. Survey the change
 - `git status` and `git diff` (plus `git diff --staged`) to see exactly what would
   be committed — this now includes the `/capture` output from step 1, any
-  glossary updates from step 2, the elaboration back-links from step 3, and the
-  dev-history regeneration from step 4. If there is genuinely nothing to commit
-  and the branch is already pushed, skip to step 8 (open the PR on the existing
-  commits).
+  glossary updates from step 2, and the elaboration back-links from step 3. If
+  there is genuinely nothing to commit and the branch is already pushed, skip to
+  step 7 (open the PR on the existing commits).
 - Confirm the current branch is the designated feature branch, not a default branch
   (`main`/`master`). If on a default branch, **stop and ask** which branch to use —
   never commit straight to the default.
 
-### 6. Commit
+### 5. Commit
 - Stage the relevant files (prefer explicit paths over `git add -A` when the tree has
-  unrelated changes). Include the captured thread doc, the glossary updates,
-  the dev-history regeneration, and reserved-file updates.
+  unrelated changes). Include the captured thread doc, the glossary updates, and
+  reserved-file updates.
 - Write a clear, descriptive commit message: a concise summary line, then a short
   body explaining the *why* when it isn't obvious. Match the surrounding history's
   style. Capture may reasonably be its own commit or folded into the change commit —
   keep each commit atomic.
 - If the repo enforces trailers or a commit template, honour it.
 
-### 7. Push
+### 6. Push
 - `git push -u origin <branch-name>`.
 - On **network** failures only, retry up to 4 times with exponential backoff
   (2s, 4s, 8s, 16s). Don't retry on a non-network rejection (e.g. protected branch) —
   surface it.
 
-### 8. Open the PR
+### 7. Open the PR
+- **Concerns gate — runs first, before the PR exists.** Inventory everything
+  this session would otherwise disclose in its closing report: process
+  irregularities, improvisations no policy sanctions, checks skipped or
+  worked around, open decisions and judgment calls the operator hasn't seen.
+  If any item exists, **stop the flow here** — no PR — and put each item to
+  the operator as a blocking question with a recommendation; resume only on
+  their answer (per the
+  [concerns-block-the-close policy](/meta/policy/concerns-block-the-close.md):
+  the operator chooses fix-now / file-and-proceed / accept, never the agent).
+- **Two more inventory classes, same gate.** (a) *An unverified success
+  criterion*: if the operator's ask has a checkable "did it work?", verify it
+  now — before capture and the PR — so the answer ships in the record, not in
+  post-merge chat. (b) *Unfiled handoff context*: anything a future session
+  would need ("step 2 is…, the open questions are…") is filed into the plan /
+  todo / issue it belongs to **before** the close; the closing report may
+  point at it, never carry it. Post-capture chat is outside every record —
+  content that exists only in the closing message is content the system has
+  already lost.
 - Check for a PR template before writing the body:
   `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, a root
   `PULL_REQUEST_TEMPLATE.md`, or `docs/PULL_REQUEST_TEMPLATE.md` (and the
@@ -134,23 +136,31 @@ as well — see step 10.
     rewriting it would orphan that linkage (see the
     [session-capture policy](/meta/policy/session-capture.md)).
 - **Do not merge here.** Opening + stamping is the end of the default flow. Merging
-  is gated behind the explicit opt-in in step 10 — without it, the open PR is handed
+  is gated behind the explicit opt-in in step 9 — without it, the open PR is handed
   back for the operator to merge.
 - **Report the captured thread doc's assigned name.** After everything is done,
   state the `meta/threads/YYYY-MM-DD-<slug>.md` path that step 1 wrote (or note
   that capture was skipped), so the operator has the record's final name without
   digging for it.
 
-### 9. Offer to watch it
+### 8. Offer to watch it
 - After opening, offer to monitor the PR for CI failures and review comments via
   `subscribe_pr_activity` — don't subscribe unless the operator asks.
 
-### 10. Merge — only with the `merge` argument
+### 9. Merge — only with the `merge` argument
 - **Gated on an explicit opt-in.** Merge as part of this skill *only* when it was
   invoked with the bare `merge` argument (`/create-pull-request merge`, matched
-  case-insensitively). **Without that argument, stop after step 9** — the open PR is
+  case-insensitively). **Without that argument, stop after step 8** — the open PR is
   handed back and the operator merges it when ready. A bare invocation never merges
   (invoking authorizes *opening*, not merging).
+- **The concerns gate runs again here.** Anything that emerged between opening
+  the PR and merging — a new irregularity, a surprise in CI, a judgment call
+  made mid-flow — blocks the merge exactly as step 7's gate blocks the open:
+  stop and ask. After the merge, the closing report announces completion (PR
+  number, merge SHA, thread doc name) and **introduces nothing new**: it
+  consists of completion facts plus pointers to persisted artifacts, with any
+  next-step context already filed where `/priorities` reads. A trailing
+  wakeup that only confirms completion is cleared silently.
 - **Never merge red.** When the argument *is* present: poll the PR's checks
   (`mcp__github__pull_request_read` with `get_check_runs`) until CI is green, then
   merge with a **true merge commit** — `merge_method: "merge"`, never `squash` or
@@ -158,6 +168,13 @@ as well — see step 10.
   commit graph is a provenance layer of session trailers and SHA citations, and
   squashing severs it). If a check fails, **stop and surface it** — do not merge a
   red PR.
+- **Confirm a non-terminal status before concluding CI is still running.**
+  `get_check_runs` can report `queued`/`in_progress` for a job that has already
+  completed, so a run that looks stuck may simply be a stale read. Check the job
+  itself (`mcp__github__actions_get` with `get_workflow_job` on the check-run id)
+  before waiting further — its `status`/`conclusion` and per-step timings are
+  authoritative. This only ever converts a false "still running" into the real
+  result; a genuinely red or pending check still blocks the merge.
 - After merging, report the merge SHA and confirm the head branch deleted (or delete
   it if auto-delete is off).
 
@@ -168,16 +185,15 @@ as well — see step 10.
   so the session record, the terms it introduced, *and* the trace from each
   governance doc back to its session all ship in the same PR; don't commit the
   change and leave any of them for later.
-- **Regenerate dev-history every time (step 4), even on unrelated changes.** It's
-  the one generated doc CI won't hard-fail on by itself (see the
-  [dev-history staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)),
-  so this skill is what keeps it from drifting — skipping it is how the drift
-  happens.
 - **The invocation authorizes *opening*, not merging.** Running this skill is the
   operator's yes to capture, commit, push, and open the PR — no separate
   confirmation for those. **Merging is a separate opt-in:** it happens only when the
-  skill is invoked with the `merge` argument (step 10). A bare invocation ends with
+  skill is invoked with the `merge` argument (step 9). A bare invocation ends with
   the PR open and handed back — never self-merge it.
+- **Concerns block the close.** A closing report never introduces findings the
+  operator hasn't already dispositioned — anything that would have appeared
+  there as "one thing to note" halts the flow at step 7 (or the step-9
+  recheck) as a blocking question instead. Merged means done.
 - **Never commit to a default branch.** Develop on the designated feature branch.
 - **Never squash- or rebase-merge.** Merges are true merge commits only — see the
   [merge-strategy policy](/meta/policy/merge-strategy.md).

@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md]
 ---
 
 # Dedup recall probe — gold set
@@ -74,6 +74,9 @@ being mechanically rewritten.
 | guarding against ai drift | em:8d9b89 | target | ai code quality drift; guardrails against ai degradation; automated quality checks for ai coding | harvested at intake 2026-07-23 |
 | coding standards worth absorbing | em:1ec778 | target | elixir coding conventions; @spec argument naming; typespec and documentation standards | harvested at intake 2026-07-23 |
 | agent teams | em:33e0c7 | target | claude code teammates; multi-agent team sessions; shared task list mailbox coordination | harvested at intake 2026-07-26 |
+| a mind implies agency and awareness | em:68787e | target | second brain vs second mind; extended mind thesis; knowledge store with an executor | harvested at intake 2026-07-27 |
+| implications of kimi k3 releasing its weights | em:68d1b3 | target | kimi k3 open weights; moonshot 2.8T open-weight model; kimi k3 license | harvested at intake 2026-07-28 |
+| debugging on weaker models is more informative; top models cover your harness bugs | em:7309de | target | weaker models; harness; cheapest model; tool interface | harvested at intake 2026-07-28 |
 
 ## Baseline
 
@@ -87,8 +90,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 6 | 15 |
-| expanded | 15 | 15 |
+| plain | 6 | 18 |
+| expanded | 16 | 18 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to
