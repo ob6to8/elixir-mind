@@ -51,7 +51,7 @@ history, and [the fetch fallback](/meta/todos/handle-hosts-that-refuse-automated
 and [the generated Ingested column](/meta/todos/generate-the-channels-ingested-column.md)
 were filed — the first framed around substitution rather than blockage as the real
 risk, the second recording the editorial channel-identity problem that blocks it. Those
-two todos ship in a follow-up PR; this doc's `pr:` stays at its origin.
+two todos ship in PR 154; this doc's `pr:` stays at its origin, 152.
 
 ## Routing
 
