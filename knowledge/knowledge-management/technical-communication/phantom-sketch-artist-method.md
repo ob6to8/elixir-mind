@@ -87,3 +87,30 @@ It pairs with
 [escalating-example exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md):
 that method is for *presenting* an idea the author already holds, this one is
 for *extracting* one the author does not.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:dfadfb">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-architecture-practice-and-nondeterminism-intakes (2026-07-28)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:dfadfb`]**  (co-feeds: `em:414265`)
+
+The video is a 65-minute Beyond Coding podcast episode with Gregor Hohpe — the ex-Google/AWS architect who wrote *The Software Architect Elevator* — on what separates good software architects from bad ones. YouTube's normal page fetch returns nothing usable, so I pulled the actual transcript with the recipe already filed in the brain for exactly this situation, then distilled 12,500 words into two documents and committed them to your branch.
+
+I split it into two rather than one. The episode itself became a capture; but one piece of it — a repeatable technique for getting a system model out of someone who can't articulate it — stands on its own independent of the episode, so it became a separate methodology doc. That mirrors what the brain already did with the ECS article, where a presentation playbook was extracted alongside the reference.
+
+---
+
+**[`em:dfadfb`]**  (co-feeds: `em:414265 em:31fed1`)
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| Fetched the source | `yt-dlp` recipe from `em:31fed1` worked as documented — DRM blocked every video format, subtitles came through anyway |
+| Dedup pass (expanded phrasings) | Searched Hohpe, architect elevator, phantom sketch, court jester, political capital, big ball of mud, modular monolith, plus architecture/trade-off/complexity terms across `*.md`. No existing coverage; nearest neighbour is `architecture-without-architects` (`em:7fa867`), a different subject, now cross-linked |
+| Minted ids, verified, committed, pushed | `5f04ef3` on `claude/intake-video-review-bpqqft`; full gate suite green (188 tests, verify, route tags, glossary, contract, codemap) |
+| Dedup baseline | plain 6/18 — unchanged, no regression. No gold row harvested: a bare URL carries no natural phrasing |

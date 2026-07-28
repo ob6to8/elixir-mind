@@ -205,3 +205,37 @@ endpoint whose batch composition you do not control.
   (22 September 2025) — the follow-on work extending determinism past greedy
   decoding via seeded sampling, cited in the bundle's existing glossary entry
   rather than in this article.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ae82a8">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-architecture-practice-and-nondeterminism-intakes (2026-07-28)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:ae82a8`]**  (co-feeds: `em:5787b0`)
+
+This one turned out to be a gap-filling intake rather than a new subject. The brain already *knew about* this article — it's cited from three places, including a glossary entry that summarizes its result in a paragraph — but it had never actually been read into a document. Per the brain's own rule, a URL that gets cited isn't the same as a source that's been processed, so this closes that gap: the full article is now distilled into a filed reference, and the glossary term points at it instead of at the raw link.
+
+The article's own argument is a correction, which is what makes it worth having in full. The common explanation for why an AI model gives different answers to the same question — GPUs do math in parallel, parallel math finishes in random order, so the numbers wobble — is wrong. The actual cause is that your answer depends on how many other people were querying the server at the same moment, because the arithmetic routines quietly switch strategies based on how much work they're handed. The one-paragraph glossary entry asserted the conclusion; it didn't carry the mechanism or the falsification.
+
+---
+
+**[`em:ae82a8`]**  (co-feeds: `em:5787b0`)
+
+**What I modified**
+
+| file | thrust of the change |
+|---|---|
+| `beliefs/glossary/batch-invariance.md` (`em:5787b0`) | now defers to the filed reference for mechanism and experiments, keeping its own definition; the bare URL in *Seen in:* replaced with the document link |
+| `knowledge/SWE/llm-engineering/index.md` | listed the new doc; gloss widened to admit reproducibility and serving-stack numerics |
+| `meta/registry.md` | regenerated after minting |
+
+---
+
+**[`em:ae82a8`]**
+
+One consistency check worth reporting: I verified the existing glossary entry and the swarm-eval analysis against the article's actual text before writing, in case the brain had drifted from its source. Both hold up — including the analysis's caveat that determinism is a property of the deployment rather than the model, which the article supports and I carried into the new document.
+
+Two numbers from the article are worth having in front of you, since they bound how practical this is: 1,000 temperature-0 completions of one prompt produced **80 distinct outputs**, all sharing their first 102 tokens before splitting; and the deterministic kernels cost **26s → 42s** on the benchmark, most of that attributed to an unoptimized attention integration rather than to batch invariance itself.

@@ -294,3 +294,40 @@ mis-transcribe some words. Quotes above were selected where the captions are
 unambiguous; a bracketed insertion marks the one place a caption garble was
 repaired. The single quote drawn from the publisher's own written episode
 description (the opening pull-quote) is exact.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:414265">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-architecture-practice-and-nondeterminism-intakes (2026-07-28)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:414265`]**  (co-feeds: `em:dfadfb`)
+
+The video is a 65-minute Beyond Coding podcast episode with Gregor Hohpe — the ex-Google/AWS architect who wrote *The Software Architect Elevator* — on what separates good software architects from bad ones. YouTube's normal page fetch returns nothing usable, so I pulled the actual transcript with the recipe already filed in the brain for exactly this situation, then distilled 12,500 words into two documents and committed them to your branch.
+
+I split it into two rather than one. The episode itself became a capture; but one piece of it — a repeatable technique for getting a system model out of someone who can't articulate it — stands on its own independent of the episode, so it became a separate methodology doc. That mirrors what the brain already did with the ECS article, where a presentation playbook was extracted alongside the reference.
+
+---
+
+**[`em:414265`]**  (co-feeds: `em:dfadfb em:31fed1`)
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| Fetched the source | `yt-dlp` recipe from `em:31fed1` worked as documented — DRM blocked every video format, subtitles came through anyway |
+| Dedup pass (expanded phrasings) | Searched Hohpe, architect elevator, phantom sketch, court jester, political capital, big ball of mud, modular monolith, plus architecture/trade-off/complexity terms across `*.md`. No existing coverage; nearest neighbour is `architecture-without-architects` (`em:7fa867`), a different subject, now cross-linked |
+| Minted ids, verified, committed, pushed | `5f04ef3` on `claude/intake-video-review-bpqqft`; full gate suite green (188 tests, verify, route tags, glossary, contract, codemap) |
+| Dedup baseline | plain 6/18 — unchanged, no regression. No gold row harvested: a bare URL carries no natural phrasing |
+
+---
+
+**[`em:414265`]**
+
+Two judgment calls worth your eye. **On filing location**: the reference went into `software-design` rather than a new `architecture-practice/` sibling, because one document doesn't justify a directory whose boundary against `software-design` would be permanently fuzzy — I widened that directory's gloss instead. Say the word if you'd rather it sat on its own.
+
+**On quotation fidelity**: no official transcript exists, so the quoted speech comes from auto-generated captions, which garble words (they render "heuristics" as "rustics" and "LLM" as "Liam"). I selected quotes only where the captions are unambiguous, bracketed the single repair, and stated the caveat in the document body. The one exact quote is the opening pull-quote, which comes from the publisher's own written description rather than the captions.
+
+I did not use `/summarize-technical` for the body. Its three-part structure exists for dense specs with jargon needing a glossary tier; this is a practitioner interview whose "key terms" are metaphors that only mean anything inside their stories, so distilled prose under topical headings serves better.
