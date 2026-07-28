@@ -11,6 +11,10 @@ refiled as a `claim`. The layer was ratified from the
 [belief-layer plan](/meta/plans/belief-type-and-beliefs-namespace.md); atomic
 beliefs are extracted from compound statements per the
 [/extract-into-belief skill plan](/meta/plans/extract-into-belief-skill.md).
+Where this layer sits relative to the descriptive types and to doctrine — and
+why a *value-laden* belief type escapes the collision that ruled out a
+*descriptive* one — is worked out in the
+[is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md).
 
 ## Beliefs
 
