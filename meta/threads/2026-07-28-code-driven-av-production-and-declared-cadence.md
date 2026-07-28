@@ -6,6 +6,7 @@ provenance: "Claude Code session (claude-opus-5 and claude-fable-5), 2026-07-28;
 tags: [meta, thread, media-production, supercollider, ffmpeg, gen, dsl, swarm, auditability, sonification]
 timestamp: 2026-07-28
 session: https://claude.ai/code/session_01NuityXosePVXhQEQ3Cyq8t
+pr: 185
 ---
 
 # 2026-07-28-code-driven-av-production-and-declared-cadence
