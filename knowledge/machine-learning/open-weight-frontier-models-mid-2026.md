@@ -144,3 +144,11 @@ I checked each. They're real, they're recent, and none of them is what you want.
 **[`em:28fac6`]**
 
 **Start with the latest, yes** — [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) (Apache 2.0; dense 2B/4B/8B/32B, MoE 30B-A3B/235B-A22B), or [Qwen3.5-VL](https://docs.nvidia.com/nemo/megatron-bridge/nightly/models/vlm/qwen35-vl.html) from the Feb 2026 family. Plan around **32B**; drop to 8B if it benchmarks equivalently on your documents, which it may well.
+
+### 2026-07-28-kimi-k3-weight-release-implications (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:28fac6`]**
+
+One correction to the brain: [`em:28fac6`](https://github.com/ob6to8/elixir-mind/blob/claude/kimi-k3-weights-analysis-c9oqxn/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) recorded K3's license as "unrestricted download," sitting in a column next to Apache 2.0 and MIT. The download is unrestricted; the license is not. Fixed.

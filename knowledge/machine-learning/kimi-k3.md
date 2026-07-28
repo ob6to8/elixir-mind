@@ -131,18 +131,13 @@ months." Every architecture decision that assumed a closed model was necessary
 for frontier-grade agentic work now needs re-justifying on grounds other than
 capability.
 
-**2. Open no longer implies cheap — and that inverts the margin-collapse
-thesis.** This is the most consequential and least-reported change. K3's API
-prices at **$3.00 / $15.00 per MTok**, exactly Claude Sonnet 5's pricing and
-roughly 3–4× its own predecessor K2.6 ($0.95 / $4.00). The
-[margin-collapse argument](/knowledge/ai-industry/ai-margin-collapse-glm-5-2.md)
-rested on open models matching frontier quality "at a fraction of the price" with
-frictionless switching; K3 matches the quality and declines the discount. Chinese
-labs are repositioning frontier models as premium goods rather than loss-leading
-commoditizers. The pressure on closed-lab margins is now a *floor* effect — a
-credible fallback exists — rather than the price collapse the thesis predicted.
-The cheap tier still exists (DeepSeek V4 Pro at $0.04/task against K3's $0.94 on
-the same index) but it is no longer where the open frontier lives.
+**2. Open no longer implies cheap.** K3's API prices at **$3.00 / $15.00 per
+MTok**, exactly Claude Sonnet 5's pricing and roughly 3–4× its own predecessor
+K2.6. What that does to the industry economics — and to the margin-collapse
+thesis it revises — is the subject of
+[open weights stopped being a price weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md);
+the model-level fact is simply that the leading open model is now priced as a
+peer of the closed frontier rather than as an undercut.
 
 **3. "Open weights" and "self-hostable" have fully separated.** At 1.4TB the
 model needs roughly eighteen 80GB accelerators just to load, before any context
@@ -155,25 +150,16 @@ than reverses the pattern already recorded in
 For anyone sizing a self-hosted system, K3 changes nothing: the runnable frontier
 is still the 7B–120B tier.
 
-**4. The license is a business model aimed at the intermediaries, not the
-users.** The revenue gate and branding clause bite precisely on the
-model-as-a-service resellers the release depends on for distribution, while the
-internal-use exemption leaves ordinary enterprise deployment untouched. This is
-Meta's old 700M-MAU clause generalized into a revenue tier, and it is a coherent
-answer to the free-rider problem in open-weight releases: give the weights away,
-monetize whoever builds a business on serving them. Expect imitation. The
-practical consequence for most readers is that K3 is effectively permissive; the
-practical consequence for the ecosystem is that "open-weight" now spans a
-license spectrum wide enough that the term alone carries no legal information.
+**4. The license leaves ordinary deployment untouched.** The revenue gate and
+branding clause bite on model-as-a-service resellers and 100M-user products;
+purely internal use is exempt. For most readers K3 is therefore effectively
+permissive, and downloadable weights plus that exemption answer the standing
+data-residency objection to Chinese frontier models — a compliance blocker
+becomes a hardware-budget problem. The licensing move read as *strategy* belongs
+to
+[open weights stopped being a price weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md).
 
-**5. Downloadable weights resolve the data-residency objection.** The standing
-enterprise counterargument to Chinese frontier models — that inference runs in a
-jurisdiction with unacceptable data-handling exposure — is answered by weights
-you can run in your own. Combined with the internal-use exemption, this is a real
-unlock for regulated sectors that could not touch the API. It converts a
-compliance blocker into a hardware-budget problem.
-
-**6. The architecture disclosure may outlast the weights.** KDA, Attention
+**5. The architecture disclosure may outlast the weights.** KDA, Attention
 Residuals, Stable LatentMoE, and MXFP4 QAT-from-SFT are now public and
 studyable, and Lambert notes the ~2.5× scaling-efficiency gain was achieved with
 "orders of magnitude less capital" than American labs deploy. Weights depreciate
@@ -182,18 +168,11 @@ else's next training run. Shipping a frontier model natively in 4-bit also sets 
 distribution norm — the question moves from "how much does this quant cost you?"
 to "was it trained this way?"
 
-**7. Read the index score and the reliability separately.** K3 climbed the
+**6. Read the index score and the reliability separately.** K3 climbed the
 leaderboard while its hallucination rate rose 39% → 51%. A model that is third in
 the world and confidently wrong half the time it is wrong is a specific
 operational hazard, and it argues for domain-specific evaluation before
 deployment rather than leaderboard-driven selection.
-
-**The open question.** Whether an expensive open model exerts the same pressure a
-cheap one does. If Moonshot's pricing holds and other Chinese labs follow it
-upward, the open frontier stops being a price weapon and becomes an
-optionality guarantee — valuable as insurance against lock-in and for jurisdictional
-control, but far less corrosive to closed-lab economics than the 2025–early-2026
-trajectory implied.
 
 # Citations
 
@@ -207,3 +186,33 @@ trajectory implied.
 - <https://kili-technology.com/blog/kimi-k3s-benchmarks-and-hallucinations----what-that-tells-us-about-ai-evaluation> — AA-Omniscience hallucination rates and the benchmark-reliability gap
 - <https://www.techi.com/kimi-k3-open-weights-inference-economics/> — the 1.4TB footprint and accelerator requirements
 - <https://www.digitalapplied.com/blog/kimi-k3-open-weights-shipped-license-restrictions-2026> — license restrictions in context
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:68d1b3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-kimi-k3-weight-release-implications (2026-07-28)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:68d1b3`]**
+
+**The implications**
+
+Seven, in rough order of how much they should change your priors.
+
+**The open-to-closed gap is now months.** K3 scores 57 on the AA Intelligence Index — third overall, comparable to Opus 4.8 and GPT-5.5, behind only Fable 5 and GPT-5.6 Sol — and 1543 Elo on AA-Briefcase, second only to Fable 5 and *above* Opus 4.8 (1347). Lambert's read: "the open-to-closed or American-to-Chinese model performance gap has been reduced from the debated 6-9 months to something shorter, say 3-5 months."
+
+---
+
+**[`em:68d1b3`]**
+
+**"Open weights" and "self-hostable" have fully separated.** 1.4TB in MXFP4 → ~18× 80GB accelerators just to load. An 8-card Blackwell node (1.5TB) "barely fits the weights with almost nothing to spare." The beneficiaries are inference providers and clouds, not individuals. For your own sizing decisions this changes nothing — the runnable frontier is still 7B–120B.
+
+---
+
+**[`em:68d1b3`]**
+
+**The architecture disclosure probably outlasts the weights.** KDA, Attention Residuals, Stable LatentMoE, and MXFP4 QAT-from-the-SFT-stage are now public — and per Lambert the ~2.5× scaling-efficiency gain came with "orders of magnitude less capital." Weights depreciate in months; a demonstrated efficiency technique propagates into everyone's next training run.
+
+**Read the score and the reliability separately.** K3 climbed the leaderboard while its AA-Omniscience hallucination rate went 39% → 51% of non-correct responses, even as accuracy rose 33% → 46%.
