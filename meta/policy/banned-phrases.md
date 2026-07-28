@@ -12,7 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, communication-guidance session"
   why: "the operator asked for a formalized, organically-growing list of banned communication phrases, seeded from a phrase flagged in the 2026-07-27 session"
-  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
+  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-banned-phrases-disclosure-favor-and-preamble-valuation.md]
 ---
 
 **Certain words and phrases are banned from agent-composed prose.** The
