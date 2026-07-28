@@ -53,7 +53,7 @@ step each unblocks. Two smaller findings were judged not worth a governance
 artifact — a one-off stale read from the GitHub `get_check_runs` endpoint, whose
 fix belongs in the `/create-pull-request` skill rather than in `meta/issues/`,
 and a branch survey that the git-branch-deletion policy had already answered.
-This continuation landed in a follow-up PR; `pr:` above records the origin.
+The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 this closing capture; `pr:` above records the origin and is not rewritten.
 
 A closing round settled three smaller matters. A coverage audit — run because
 the operator asked whether everything discussed had been persisted — found the
