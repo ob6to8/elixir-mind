@@ -69,7 +69,7 @@ than rewritten (an analysis is a point-in-time record), and a corrected
 four-tier stack — statement / belief / doctrine / policy — putting belief
 *parallel to* doctrine. What the original missed was a third register: a prior
 the operator acts on that is neither checkable fact nor standing direction.
-That pass landed in a third PR.
+That pass landed in **PR 153**.
 
 *Nine `alb.reddit.com` promoted-content tracker URLs inside the operator's
 verbatim Reddit paste are replaced with `elided-ad-tracker-url`; all post and
