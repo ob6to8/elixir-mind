@@ -26,7 +26,9 @@ design tolerates and *who* closes the remaining gap.
 
 `meta/dev-history.md`'s [lag-tolerant check](/beliefs/glossary/lag-tolerant-check.md)
 accepts exactly one PR of this lag, because a PR's branch structurally cannot
-contain its own merge commit. Moving the regeneration to a CI bot firing on the
+contain its own merge commit. The lag is now sidestepped rather than tolerated:
+the view is generated at deploy time and not committed at all, so nothing is
+snapshotting history into a commit. Moving the regeneration to a CI bot firing on the
 merge itself, outside any PR, shrinks the lag (from "until the next PR" to "until
 the bot's own follow-up commit") but does not eliminate it — the bot's commit is
 subject to the same constraint. The ceiling is a property of the recursion, not of
