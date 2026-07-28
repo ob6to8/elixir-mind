@@ -23,13 +23,18 @@ says nothing about whether you can run them.**
 
 | Model | Lab | Released | Architecture | License |
 |---|---|---|---|---|
-| **Kimi K3** | Moonshot AI | 2026-07-26 | 2.8T total, 16 of 896 experts active, Kimi Delta Attention + Attention Residuals, native vision, 1M context | unrestricted download |
+| **Kimi K3** | Moonshot AI | 2026-07-26 | 2.8T total, 16 of 896 experts active, Kimi Delta Attention + Attention Residuals, native vision, 1M context | Kimi K3 License — revenue-tiered, "Commercial Use Restricted" |
 | **Inkling** | Thinking Machines Lab | 2026-07-15 | 975B total / 41B active, 66-layer decoder-only, 6 of 256 experts + 2 shared, text/image/audio, 1M context | Apache 2.0 |
 | **GLM-5.2** | Zhipu / Z.ai | 2026-06-13 | 753B MoE (~40B active), 1M context, 131K output | MIT |
 
-Kimi K3 is the first open model in the 3-trillion-parameter class, reported by
-Moonshot to land ahead of GPT-5.5 and Claude Opus 4.8 but behind Claude Fable 5.
-Its Stable LatentMoE framework claims ~2.5× the scaling efficiency of K2.
+Kimi K3 is the first open model in the 3-trillion-parameter class, scoring 57 on
+the Artificial Analysis Intelligence Index — third overall, comparable to GPT-5.5
+and Claude Opus 4.8, behind Claude Fable 5 and GPT-5.6 Sol. Its Stable LatentMoE
+framework claims ~2.5× the scaling efficiency of K2. Its weights download freely
+but its license is not permissive at scale, and its API prices at Claude Sonnet 5
+parity — see
+[Kimi K3](/knowledge/machine-learning/kimi-k3.md) for the model card, the
+revenue-tiered license, and what the release changes.
 Inkling is positioned differently — it debuted at 41 on the Artificial Analysis
 Intelligence Index, and its pitch is not raw capability but suitability as a
 **customization base**: multimodal, efficient thinking, and available for

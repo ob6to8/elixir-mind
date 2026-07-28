@@ -553,6 +553,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:24bd1e` | [knowledge/knowledge-management/open-knowledge-format](/knowledge/knowledge-management/open-knowledge-format.md) | reference |  |
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
+| `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
