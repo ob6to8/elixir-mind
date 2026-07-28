@@ -148,7 +148,7 @@ More than that, Jido's primitives map onto the security requirements almost susp
 
 ---
 
-**[`em:f6de6f`]**
+**[`em:f6de6f`]**  (co-feeds: `em:cc0c87`)
 
 The standard patterns are real: a **designated transfer workstation** for all external ingestion (deployments lacking one [introduce inconsistency and security gaps](https://www.zmanda.com/blog/air-gapped-backup-architecture-design/)), signed media with chain-of-custody, offline package mirrors, and data flowing **outward only** from the isolated zone. Verify hashes on the *air-gapped* side, so a compromised transfer box can't silently swap a file. Use an encrypted external SSD — [sneakernet gets painful past 50GB per bundle](https://localaimaster.com/blog/air-gapped-ai-deployment), and model weights blow through that.
 

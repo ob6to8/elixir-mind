@@ -77,3 +77,22 @@ state explicitly, not a default to assume.
 - <https://localaimaster.com/blog/air-gapped-ai-deployment> — sneakernet bundles and the volume ceiling
 - <https://corvusintell.com/blog/secure-cloud/air-gapped-deployment-defense/> — update-delivery patterns and best practices
 - <https://owlcyberdefense.com/blog/how-can-siem-work-with-air-gapped-networks/> — unidirectional egress from isolated zones
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:cc0c87">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-secure-financial-agent-and-projects-namespace (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:cc0c87`]**  (co-feeds: `em:f6de6f`)
+
+The standard patterns are real: a **designated transfer workstation** for all external ingestion (deployments lacking one [introduce inconsistency and security gaps](https://www.zmanda.com/blog/air-gapped-backup-architecture-design/)), signed media with chain-of-custody, offline package mirrors, and data flowing **outward only** from the isolated zone. Verify hashes on the *air-gapped* side, so a compromised transfer box can't silently swap a file. Use an encrypted external SSD — [sneakernet gets painful past 50GB per bundle](https://localaimaster.com/blog/air-gapped-ai-deployment), and model weights blow through that.
+
+**But I'd argue against a true physical air gap here.** Operational burden is what kills personal security systems — you'll stop using it by March. The pragmatic version gets you the same confidentiality property for a fraction of the friction:
+
+- Run the inference server and agent in a **network namespace with no interface at all** — not firewalled, literally no route. On Linux that's `PrivateNetwork=yes` in a systemd unit; one line, and stronger than any firewall rule because there's nothing to misconfigure.
+- Updates are a deliberate, manual, *separate* step where you temporarily run a networked unit to fetch and verify.
+- **Backups can go to ordinary cloud storage** — encrypt at rest (LUKS/FileVault) with a key only you hold, and the provider stores ciphertext. This doesn't violate confidentiality, and it solves the hardest air-gap problem. Rehearse restores; untested backups aren't backups.
+- Statements come in the way they already do — download on your normal machine, move via encrypted USB, parse in the sandbox.
