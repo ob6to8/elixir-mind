@@ -1215,6 +1215,17 @@ record so it can be resumed from the record instead of from memory.
   order: frontmatter, a short narrative section (what the session was, where it
   landed), the **routing ledger** (`## Routing`), then the `## User`/`##
   Assistant` render body. Route tags are applied last, over the now-frozen body.
+- **Update in place: a continued session appends to its existing thread doc.**
+  A session that is captured and PR'd, then continues, extends that **same**
+  file rather than opening a second one — the blocks already written stay
+  frozen, and only the un-captured exchanges are appended.
+  **Derive the append boundary; never recall it.** The doc's final rendered
+  block *is* the boundary: `mix brain.thread_tail <path>` prints it, and
+  locating that text in the session log yields exactly the remainder. Recalling
+  where the previous capture stopped is what silently drops exchanges — the
+  render stays well-formed either way, so the miss is invisible until someone
+  counts. (Filed as the general case in
+  [a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md).)
 - **The thread records its PR (`pr:`), not its branch.** Once the session's PR
   is opened, its number is stamped into the thread's frontmatter as `pr: <N>`
   (set by `/create-pull-request`, not `/capture` — the number doesn't exist

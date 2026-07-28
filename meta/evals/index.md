@@ -58,5 +58,5 @@ not by pressure from the backlog's size.
 - [Re-derivation vs. recall under context pressure](/meta/evals/re-derivation-vs-recall.md) —
   when a fact is both in context and cheaply re-derivable from an artifact, does the
   agent re-derive or recall, and does the ratio move as a session lengthens? Design
-  only; the evidence base is three self-reported instances from one session and the
-  doc says so. `status: proposed`.
+  only; four instances across two sessions, one of them recorded independently by an
+  earlier session that reached the same conclusion. `status: proposed`.
