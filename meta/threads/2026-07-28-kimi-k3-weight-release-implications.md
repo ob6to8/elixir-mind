@@ -89,7 +89,7 @@ also found the session's own recurring failure unpersisted: three measurement
 errors, the last caught only by a control case. That generalized into the belief
 [an instrument without a control measures itself](/beliefs/an-instrument-without-a-control-measures-itself.md)
 (`em:763494`), which binds the fidelity-probe plan's gold set as its first
-consumer. Both of
+consumer. That closing pass landed in PR 171; `pr:` stays at its origin, 157. Both of
 the earlier rounds landed together in PR 164 — the plan round was committed and pushed
 without a PR of its own, since the operator had not asked for one, and the
 diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
