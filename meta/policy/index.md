@@ -63,7 +63,7 @@ the start if siblings are plausible.
 - [route-tagging](/meta/policy/route-tagging.md) — `<routes ref="em:…">` tags materialize a re-derivable excerpt log into each referenced document
 
 ## git-workflow
-- [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted on PR merge; the default branch and unmerged branches need operator approval
+- [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted as part of the merge motion; later sessions leave lingering branches alone and never survey them; the default branch and unmerged branches need operator approval
 
 ## tooling-standards
 - [elixir-coding-standards](/meta/policy/elixir-coding-standards.md) — coding conventions for the Elixir tooling and the admission rule for new guardrails; a recurring agent miss updates this policy, never only the offending change

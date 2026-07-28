@@ -55,6 +55,21 @@ fix belongs in the `/create-pull-request` skill rather than in `meta/issues/`,
 and a branch survey that the git-branch-deletion policy had already answered.
 This continuation landed in a follow-up PR; `pr:` above records the origin.
 
+A closing round settled three smaller matters. A coverage audit — run because
+the operator asked whether everything discussed had been persisted — found the
+hardware comparison and the air-gap operational patterns living only in the
+thread render and a plan's decision rows; both were generalizable, so both
+filed to the taxonomy and the plan's rows now link out to them. The
+git-branch-deletion policy dropped "deleted on sight" for lingering merged
+branches, widened past the operator's literal ask because the failing behavior
+had been the *survey*, not the deletion. And the `/create-pull-request` skill
+gained a guard against the stale `get_check_runs` read, written as a live
+property of the endpoint rather than an incident note — the Chesterton's-fence
+carve-out in
+[living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md),
+which keeps a justification in a living surface while the event itself stays in
+the commit graph and this record.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -66,7 +81,9 @@ This continuation landed in a follow-up PR; `pr:` above records the origin.
 | The system's charter, decisions, and shape | paused | [secure-financial-agent](/projects/secure-financial-agent.md) | Hardware pick, isolation posture, and gate placement — all three now tracked as operator-owned decisions in the spec-completion plan |
 | Jido as the runtime; why this workload inverts the prior evaluation | closed | [architecture](/projects/secure-financial-agent/architecture.md) | - |
 | What remains before code begins | paused | [spec-completion](/projects/secure-financial-agent/spec-completion.md) | Three operator decisions (hardware, isolation posture, gate placement) and three drafts (threat model, record schema, benchmark protocol) |
-| Stale `get_check_runs` data during CI polling | closed | `unrouted` | - |
+| Stale `get_check_runs` data during CI polling | closed | [/create-pull-request skill](/.claude/skills/create-pull-request/SKILL.md) | - |
+| Scoping branch deletion to deliberate cleanup | closed | [git-branch-deletion](/meta/policy/git-branch-deletion.md) | - |
+| Hardware tiers and air-gap operations, surfaced by a coverage audit | closed | [workstation tiers](/knowledge/SWE/llm-engineering/local-inference-workstation-tiers.md) · [air-gapped operations](/knowledge/SWE/security/air-gapped-operations.md) | - |
 | Jido primitives mapped to security requirements | closed | [Jido](/beliefs/glossary/jido.md) | - |
 | A home for the idle `project` type | closed | [project-namespace](/meta/policy/project-namespace.md) | - |
 | Raising the Elixir/OTP floor | paused | [raise-elixir-otp-toolchain-floor](/meta/plans/raise-elixir-otp-toolchain-floor.md) | Install method, exact-vs-range pin, and whether a second environment needs the same script |
@@ -443,7 +460,7 @@ Your workload is a few hundred pages a few times a year plus ad-hoc queries. Lat
 
 ### Updates, backups, transfer — and a recommendation against full air-gapping
 
-<routes ref="em:f6de6f">
+<routes ref="em:f6de6f em:cc0c87">
 The standard patterns are real: a **designated transfer workstation** for all external ingestion (deployments lacking one [introduce inconsistency and security gaps](https://www.zmanda.com/blog/air-gapped-backup-architecture-design/)), signed media with chain-of-custody, offline package mirrors, and data flowing **outward only** from the isolated zone. Verify hashes on the *air-gapped* side, so a compromised transfer box can't silently swap a file. Use an encrypted external SSD — [sneakernet gets painful past 50GB per bundle](https://localaimaster.com/blog/air-gapped-ai-deployment), and model weights blow through that.
 
 **But I'd argue against a true physical air gap here.** Operational burden is what kills personal security systems — you'll stop using it by March. The pragmatic version gets you the same confidentiality property for a fraction of the friction:
@@ -639,4 +656,153 @@ Having established that, the correct move was to say nothing. Instead I reported
 ## 3. Transition plan
 
 Working on it now.
+
+## Assistant
+
+PR [#148](https://github.com/ob6to8/elixir-mind/pull/148) is open. Left unmerged — you said close out the thread, and merge is opt-in.
+
+### What I created
+
+| Type | Doc | Why this type |
+|---|---|---|
+| `plan` | spec-completion `em:6e97e5` | Deferred work with a cold-context handoff — the two conditions `plan-vs-capture` names for escalating past commit-and-capture |
+
+### What I modified
+
+| File | Thrust |
+|---|---|
+| Thread doc | Extended in place with the closing exchanges; ledger settled — architecture strand `closed`, charter and spec strands `paused` with their questions now tracked in the plan |
+| Project hub | Open questions point at the plan that owns them; Documents section lists both design records |
+| `secure-financial-agent/index.md` | Listed the plan |
+
+### Actions I have taken
+
+| Action | Result |
+|---|---|
+| Restarted branch from `main` | #145 had merged, so per the merged-PR rule this is a fresh change, not a stack. Base is now `d08abf2` (#147 landed meanwhile) |
+| Full gate suite | Green — 328 route-tag regions, 98 sink appends, 183 tests, 0 failures |
+| Opened PR #148 | Not merged |
+
+One judgment worth surfacing: I set the two remaining hub questions to `paused` rather than `closed`, because they aren't resolved — they're **relocated** into the plan with owners and blocking relationships attached. Marking them closed would claim progress that didn't happen.
+
+The plan's own ordering makes one substantive claim you may want to check: that the threat model has to precede the record schema. The reasoning is that provenance-per-field and a confidence signal are only justifiable against stated threats, so drafting the schema first would produce fields chosen by intuition. If you'd rather get the schema down first as the more concrete artifact, that's a defensible inversion — it just means accepting those fields provisionally.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Merge #148 | One word |
+| 2 | Amend `/create-pull-request` step 10 | The `get_check_runs` cross-check — small, and the only place it'd be read |
+| 3 | Answer D1/D2 | Both gate build step 1; D1 is mostly budget, D2 is mostly friction tolerance |
+| 4 | Have me draft S1 (threat model) | The first agent-ownable item, unblocked today |
+
+## User
+
+re:"So my recommendation is a one-clause amendment to that step — confirm a non-terminal status against actions_get on the job before concluding CI is still running — and no separate artifact. Living surface, present tense, read at the moment it matters. If it recurs after that, then it has earned an issue." - would this be stronger with provenance attribution that spawned its creation (ie. this event?)
+
+i think we should avoid a general "delete merged branches on site" and save it for cleanup sessions. lets make that change
+
+1 - not yet
+2 - unsure
+3 - not seeing d2/d2, relist
+4 - is this persisted in a plan or todo? trying to wrap this session up, while also making certain everything covered has been persisted
+
+## Assistant
+
+Pushed to PR #148. Answers to your four:
+
+## 1. Provenance on the skill amendment — yes, but as a *why*, not an attribution
+
+Good instinct, and the contract already draws the line. Two policies collide here and one carves out the answer.
+
+`living-text-is-present-tense` forbids retrospective narration in operational surfaces — a skill file shouldn't say "added after a 2026-07-27 incident." But it explicitly carves out **Chesterton's-fence justifications**:
+
+> "A comment explaining why live code still exists ... justifies present code and reads as *this is why this exists*, not as a changelog. Keep."
+
+That's exactly this case. A bare "cross-check with `actions_get`" reads as arbitrary ceremony and invites a future agent to trim it. So the amendment should carry its reason **as a present-tense fact about the endpoint**, not as an event:
+
+> …poll the PR's checks until CI is green — the `get_check_runs` endpoint can report `in_progress` for a job that has already completed, so confirm a non-terminal status against `actions_get` on the job before concluding CI is still running.
+
+The *event* provenance lives where `provenance-lives-in-metadata` puts it: the commit message and the thread doc. One origin, one home. Putting the date in the skill body would be a shadow copy of the record layer.
+
+## 2. Branch deletion — changed
+
+`meta/policy/git-branch-deletion.md` no longer says "deleted on sight." Replaced with:
+
+> **Deletion belongs to the merge motion, not to later sessions.** A merged branch noticed in passing is left alone: cleaning up someone else's leftovers is not part of the work at hand, and surveying branches to find them turns an unrelated session into an audit. Sweeping merged branches is its own deliberate cleanup task, run when the operator asks for one — and a session that is not that task does not survey, propose, or report on branch state.
+
+I widened it past what you literally asked. Your fix addresses deletion; my actual failure was the *survey* — I ran the check, then reported it. Barring deletion alone would have left the noise intact. Contract recompiled.
+
+## 3. D1–D3, relisted
+
+<routes ref="em:6e97e5 em:a01073">
+They're in `spec-completion.md`, which is on the unmerged PR #148 branch — not on `main` yet, which is likely why you couldn't find them.
+</routes>
+
+| | Decision | The real question | Blocks |
+|---|---|---|---|
+| **D1** | **Hardware** — DGX Spark (128GB unified, CUDA, $4,699) · RTX PRO 6000 Blackwell (96GB GDDR7, ~$8.5k + host) · Mac Studio M3 Ultra (up to 512GB, **no CUDA**) | Budget, and batch vs. interactive. The CUDA axis is the trap: Apple rules out vLLM and SGLang, so it's a serving-stack choice disguised as a hardware one | build steps 2–3 |
+| **D2** | **Isolation posture** — full physical air gap vs. a host where the inference and agent processes have no network interface at all | How much operational friction you'll actually sustain. Encrypted-at-rest backups to ordinary cloud storage resolve the hardest flow, since the provider holds only ciphertext | build step 1 |
+| **D3** | **Gate placement** — where approval sits in your real workflow, and its cost per document | Only answerable against volume: documents per session, directives per document | build step 4 |
+
+## 4. S1 is in the plan, and the audit found two real gaps
+
+S1 (threat model) is item S1 of `spec-completion.md` (`em:6e97e5`) — a plan, not a todo, correctly: the *approach* still needs deciding, which is the plan/todo discriminator.
+
+But your instinct to check coverage was right, because the audit **found two things discussed at length and never persisted outside the thread render**:
+
+| Gap | Now filed |
+|---|---|
+| Hardware tier comparison | `local-inference-workstation-tiers.md` `em:a01073` |
+| Air-gap update/backup/transfer patterns | `air-gapped-operations.md` `em:cc0c87` |
+| Qwen3-VL / Qwen3.5 sizes and OCR capability | Extended the existing landscape doc in place, rather than fragmenting |
+
+Both were generalizable, so by the split rule they belonged in the taxonomy, not buried in a plan's decision rows. D1 and D2 now link out to them instead of carrying the reasoning inline. Everything substantive from this session is now on disk.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Merge #148 | Now carries the plan, the branch policy change, and the coverage close-out |
+| 2 | The skill amendment | I'd add it with the why-clause above — say the word |
+| 3 | Answer D1/D2 | Both gate build step 1 |
+| 4 | Draft S1 | Unblocked today, but it's the natural start of a *next* session rather than this one |
+
+## User
+
+2, then merge
+is there anything about 3/4 that needs to be persisted in this pr?
+
+## Assistant
+
+Merged as `9f63491`. Head branch auto-deleted (that setting was confirmed working on #145).
+
+## On 3/4 — no, nothing needs persisting
+
+I checked rather than assuming, and both are already fully captured:
+
+**D1–D3** exist as decision rows in `spec-completion.md`, each carrying its owner, the question that resolves it, and what it blocks. The *reasoning* behind them now lives in the two knowledge docs they link out to — so a cold-context session reads the hardware tiers and air-gap patterns from the taxonomy rather than re-deriving them. Leaving the decisions unanswered isn't a gap; holding them open across sessions with their context attached is precisely the plan's job.
+
+**S1** exists as its own row with the content sketch already written — adversaries in scope, adversaries explicitly out, trust boundaries, and the note that the accepted-risk list is the point. Drafting it is next-session work, and nothing about *not having drafted it* is information worth recording.
+
+The one thing I looked for specifically: anything said in chat about these that never reached a doc. The closest candidate was my D1 recommendation (Spark as the default for batch workloads), and the general form of that reasoning is in the hardware doc — *"a batch pipeline that runs overnight is capacity-bound and barely notices bandwidth"* — so the inference is reproducible from what's filed. The specific pick stays yours by design.
+
+## Session complete
+
+| Landed | |
+|---|---|
+| PR [#145](https://github.com/ob6to8/elixir-mind/pull/145) → `5654a39` | The projects namespace, its policy, the project hub, four knowledge docs, the architecture spec, the toolchain plan, the thread capture, four glossary terms |
+| PR [#148](https://github.com/ob6to8/elixir-mind/pull/148) → `9f63491` | The spec-completion plan, two more knowledge docs closing the coverage gap, the branch-deletion policy change, the CI-polling amendment, the thread close-out |
+
+Three governance changes came out of your corrections rather than the original task — the branch-deletion scoping, the CI-polling guard, and the `plan` scoping rule. All three are now in the contract or the skill, so they bind future sessions rather than living in this transcript.
+
+When you pick this up, the entry point is `projects/secure-financial-agent.md` → `spec-completion.md`. D1 and D2 are the cheapest unlocks; S1 is the first thing I can draft without you.
+
+## Assistant
+
+All timers cleared. Nothing changed since my last report — both PRs are merged (`5654a39`, `9f63491`) and the working tree is clean.
+
+Worth noting for next time: I over-scheduled those waits. I fired a fresh sleep timer before each CI poll, which left four armed at once when CI finished on the first or second check — hence the trailing notifications. One timer at a time, re-armed only if the poll shows work still in flight, would have been the right shape.
+
+Session is complete. The pickup point is `projects/secure-financial-agent.md` → `spec-completion.md`, where D1 and D2 are the cheapest unlocks and S1 is the first item I can draft without you.
 

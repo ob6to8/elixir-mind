@@ -107,3 +107,15 @@ them speculatively.
   the safer default but adds persistence the v1 may not otherwise need.
 - Should extraction confidence gate automatic categorization, or only surface in
   review? Bears on whether low-confidence extractions can reach an Action at all.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:6e97e5">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-secure-financial-agent-and-projects-namespace (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:6e97e5`]**  (co-feeds: `em:a01073`)
+
+They're in `spec-completion.md`, which is on the unmerged PR #148 branch — not on `main` yet, which is likely why you couldn't find them.

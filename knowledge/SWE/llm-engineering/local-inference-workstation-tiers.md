@@ -67,3 +67,15 @@ exactly to a model's file size will fail on the first long document.
 - <https://www.vaditaslim.com/blog/ai/local-llm-benchmarks-rtx-pro-6000> — measured throughput across eight models
 - <https://pinggy.io/blog/best_hardware_for_self_hosting_local_llms/> — tier selection guidance
 - <https://www.digitalapplied.com/blog/best-hardware-run-local-ai-models-2026-price-brackets-guide> — price-bracket buyer guide
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a01073">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-secure-financial-agent-and-projects-namespace (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:a01073`]**  (co-feeds: `em:6e97e5`)
+
+They're in `spec-completion.md`, which is on the unmerged PR #148 branch — not on `main` yet, which is likely why you couldn't find them.
