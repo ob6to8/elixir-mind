@@ -11,7 +11,7 @@ attribution:
   channel: intake
   agent: "operator via /intake, Claude Code session"
   why: "operator ratified filing the ledger-upkeep gap as an issue after it blocked a clean strand closure"
-  from: [/meta/threads/2026-07-28-ontology-guardrails-intake-and-jido-comparison.md]
+  from: [/meta/threads/2026-07-28-ontology-guardrails-intake-and-jido-comparison.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Routing ledger has no post-capture upkeep path

@@ -14,6 +14,23 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #169](https://github.com/ob6to8/elixir-mind/pull/169) — State the update-in-place rule; correct the eval's evidence base *(2026-07-28)*
+
+- State the update-in-place rule; correct the eval's evidence base
+- capture: name PR 169 in the thread's landing sequence
+
+## [PR #168](https://github.com/ob6to8/elixir-mind/pull/168) — The host is the existence proof: close both ontology-guardrails strands, decline the SHACL port *(2026-07-28)*
+
+- analysis: the host is the existence proof; decline the SHACL port
+
+## [PR #165](https://github.com/ob6to8/elixir-mind/pull/165) — Communication guidance: banned-phrases register, plainspeak orientation, and a dedicated contract section *(2026-07-28)*
+
+- Add communication guidance: banned-phrases register and plainspeak orientation
+- Give communication rules their own contract section
+- Merge origin/main into claude/communication-guidance-style-gtucgm
+- Capture the session and glossary its thread doc
+- capture: stamp pr: 165 into the thread doc
+
 ## [PR #164](https://github.com/ob6to8/elixir-mind/pull/164) — Plan the fidelity-probe build, ratify the eval backlog, and diagnose the dev-history silent skip *(2026-07-28)*
 
 - plan the fetch-fidelity probe build; ratify the proposed-eval backlog
