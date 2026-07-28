@@ -91,7 +91,7 @@ cross-check — warn and trend, don't fail).
 | mode | hits | targets |
 |------|------|---------|
 | plain | 6 | 18 |
-| expanded | 16 | 18 |
+| expanded | 17 | 18 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to
