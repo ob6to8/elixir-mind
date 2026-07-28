@@ -75,3 +75,31 @@ On the textual form:
 > "This simplified C-like language is called GenExpr."
 
 > "Easy to port existing DSP code (e.g. musicdsp.org) to GenExpr!"
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:98a026">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-code-driven-av-production-and-declared-cadence (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:98a026`]**  (co-feeds: `em:d5ca81`)
+
+The pedagogy, from the Cycling '74 interview, is that a large repertoire collapses to a small one — "so many synthesis and sound processing techniques come down to a pretty small number of common circuits and patterns," presented as a "bestiary of simple and reusable ideas that can be recombined" ([Cycling '74](https://cycling74.com/articles/generating-sound-and-organizing-time-an-interview-with-graham-wakefield-and-gregory-taylor-1)).
+
+Wakefield's course notes put numbers on the primitive set:
+
+> "< 100 operators in total, mostly inspired by Max/MSP objects
+> Objects are mostly low-level"
+
+and name the single mechanism the whole thing pivots on:
+
+> "instead of operating on a block of samples, we're working with one sample at a time – which lets us do things with single-sample feedback that we could never do before."
+> "[history] - The Z-1 of gen patching - Provides one sample of delay - Allows feedback patching - Essential to filter design, signal analysis etc."
+> — [Wakefield, *Gen* course notes](https://artificialnature.net/courses/gen/Gen.pdf)
+
+The reduction you're intuiting is real and visible in what gen~ emits. This is his own example of a nested comb-filter patch after compilation:
+
+
+A physical-model resonator is straight-line scalar arithmetic plus two delay-line reads and writes. That's the claim in its strongest form: **multiply, add, compare, and one sample of memory**. Everything else is arrangement. The framing that makes it work is treating the patch "as specification for compiler, rather than interpreted network of black-box objects."

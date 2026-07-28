@@ -57,3 +57,38 @@ Two properties give the model reach beyond audio:
   derivations of the same phase, inheriting the same swing, polymeter, and
   phrase structure as the music. Time is data, and a single declared phase is
   the one clock every renderer reads.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b50c01">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-code-driven-av-production-and-declared-cadence (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:b50c01`]**
+
+**The part that transfers to your pipeline**
+
+Not the primitives. This:
+
+> "the authors wanted to encourage thinking of cyclical 'time' as having a modular nature by using ramp functions instead of individual triggers, and starting from a ramp, they show how to create sample-accurate rhythms, modular patterns, swing, divisions and ratchets, polymeter and phasing, beat chopping, deriving rhythmic LFOs"
+
+Wakefield's notes state the same rule as a hard constraint of the language: **"No messages means no [trigger] etc.; use 0/1 signals."**
+
+In my previous answer I gave you a grid of *event lists* — kick at indices 0, 4, 8, 12. That's the trigger model. The ramp model replaces the lists with one continuous function of time, and derives everything from it:
+
+
+Every rhythmic transformation becomes arithmetic on one ramp:
+
+| Operation on the ramp | Musical result | Same thing, on picture |
+|---|---|---|
+| multiply | divisions, ratchets | cut density |
+| add a constant | swing, phase offset | cuts landing ahead of / behind the beat |
+| non-integer multiply | polymeter | picture cycling against the music's cycle |
+| slowly drift the multiplier | phasing | edit gradually sliding out of and back into lock |
+| feed the ramp back through itself | accelerando, rubato | cuts speeding up into a drop |
+
+`cuts = edge(phase * 3)` is the payoff. Three cuts per bar over a four-on-the-floor beat is picture-polymeter — the edit and the music resolve together every three bars. Doing that by hand in Premiere means placing cut points that look wrong individually and only cohere in aggregate; nobody drags that. From a ramp it's the digit `3`.
+
+And it generalizes past cuts. `ffmpeg` accepts expressions in filter parameters, so a ramp can drive *continuous* picture — zoom, speed, crop, opacity — from the identical function that's generating the drums. Cut points become one consumer of the timeline among several, which is exactly the conceptual move the book is making about audio.

@@ -39,3 +39,24 @@ A structural choice sits above the seams: rendering one chunk per cut and
 concatenating is slower than a single large `filter_complex`, but each chunk is
 individually inspectable — when cut 37 is wrong, chunk 37 shows why — which is
 the right default for computed edits that will be revised.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:507eb9">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-code-driven-av-production-and-declared-cadence (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:507eb9`]**
+
+Two gotchas that will bite:
+
+- **Seek accuracy.** `-ss` *before* `-i` is fast but snaps to the nearest keyframe — potentially 500 ms off, a full beat at this tempo. Use `-ss` after `-i` for exact seeking, or transcode all-intra proxies first (which also makes the render far faster overall).
+- **Stream uniformity.** `concat` of mismatched fps / resolution / pixel format / SAR either errors or produces garbage. One normalize pass per source into a proxy directory fixes it permanently.
+
+Assembly: chunk-per-cut then `concat` demuxer is slower than a single monster `filter_complex`, but it's the right default because it's *debuggable* — when cut 37 looks wrong you can open chunk 37 and see why.
+
+**4. Mux**
+
+Guide track + drum bus + optionally the clips' own audio. Decide the last one explicitly — jaw harp performance audio at low level adds realism, but if the guide already contains the recorded take it's flam and phase mush. Use `amix=inputs=2:duration=longest:normalize=0`; without `normalize=0`, amix silently halves everything and you'll wonder why the render is quiet.

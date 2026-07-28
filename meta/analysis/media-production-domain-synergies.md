@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive web session"
   why: "operator asked where the media-production investigation overlaps the domains the brain already covers — sonification, AI-driven production, BEAM swarm auditability, and beyond"
+  from: [/meta/threads/2026-07-28-code-driven-av-production-and-declared-cadence.md]
 ---
 
 # Where the media-production domain meets the rest of the brain

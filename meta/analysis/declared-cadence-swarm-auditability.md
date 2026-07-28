@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive web session"
   why: "operator asked for a breakout of the BEAM/swarm/gen~ synergy, presented in plainspeak alongside the technical level"
+  from: [/meta/threads/2026-07-28-code-driven-av-production-and-declared-cadence.md]
 ---
 
 # Declared cadence for agent swarms

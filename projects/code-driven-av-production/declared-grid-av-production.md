@@ -118,3 +118,18 @@ arrangement structure becomes the single source of truth for both media, which
 is precisely what makes a small timing language attractive — the question
 [the DSL analysis](/projects/code-driven-av-production/gen-inspired-music-dsl.md)
 takes up.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:78d356">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-code-driven-av-production-and-declared-cadence (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:78d356`]**  (co-feeds: `em:2cbef7`)
+
+**The architecture: one arrangement, three renderers**
+
+
+The video-only pipeline derived timestamps from audio via onset detection, which carries measurement error. Here the grid is *declared*, so the cuts land on the same integers the kick does by construction. No drift, no rounding disagreement between the two halves.

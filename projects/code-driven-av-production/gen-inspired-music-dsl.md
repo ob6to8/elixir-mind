@@ -172,3 +172,23 @@ small DSL would be *redundant*. Committing to the build graduates this
 analysis's sketch into a `type: plan` in this project with the artifact kit the
 [structured-plan-bodies policy](/meta/policy/structured-plan-bodies.md)
 prescribes — grammar, backend interfaces, and build order.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:708db6">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-code-driven-av-production-and-declared-cadence (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:708db6`]**
+
+**A gen~-style methodology for generating sound**
+
+If you want me generating sound rather than just sequencing your samples, the gen~ architecture is a good spec to copy, with one constraint it forces:
+
+**Per-sample DSP in Python is unusably slow.** A 4-minute stereo render is 21 million samples; a Python inner loop puts that in minutes-to-tens-of-minutes per iteration, which destroys the fast-revision property that makes the whole approach worth having. gen~'s own answer is the right one — *it compiles to C*. So the realistic targets are:
+
+1. **Write SuperCollider SynthDefs.** The UGen graph is already the "small vocabulary + feedback" model, `LocalIn`/`LocalOut` is `history`, and scsynth is the compiler. Highest leverage, and it's installed and proven here.
+2. **Generate C and compile it.** Closest to gen~ literally — a straight-line scalar loop like that comb-filter excerpt, `cc -O2`, run it. Total control, no dependencies beyond a compiler, and genuinely fast.
+3. **Python only for the control layer** — the ramp, the arrangement, the cut list, sample placement. That layer is cheap and stays stdlib.
