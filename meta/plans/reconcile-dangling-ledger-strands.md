@@ -128,11 +128,13 @@ human already settled.
 That is a mechanical property with a real oracle — a row whose `State` is
 `open`/`paused` must have a `Routed to` that (a) resolves to an existing
 document, and (b) if that document is a `plan`/`todo`/`issue`, is not
-`done`/`resolved`/`superseded`. On today's corpus it fires on **52 rows**: the 3
-dead paths, the 6 closed-tracker parks, and the 33 unrouted (the `analysis` and
-knowledge-doc targets are a softer sub-case, since routing synthesized content
-there is correct — what is missing is a *second* tracker ref, not a different
-one).
+`done`/`resolved`/`superseded`. Scoped to the 76 `open`/`paused` rows (a
+`closed` row is out of the check's reach by construction), it fires on **34**:
+28 unrouted, plus 6 pointing at a dead path or a finished tracker. The
+`analysis` and knowledge-doc targets deliberately do **not** fire — routing
+synthesized content there is correct, and what those rows lack is a *second*
+tracker ref rather than a different one; folding them in would make the check
+argue with the routing policy.
 
 **It must warn, never fail.** Two independent reasons:
 
@@ -141,13 +143,12 @@ one).
    only way to green a failing row on a merged thread is to edit a frozen body
    — so until the freezing question above is ratified, a blocking gate demands
    the very mutation the contract forbids.
-2. **It would fail the build on day one**, for 52 pre-existing rows, most of
+2. **It would fail the build on day one**, for 34 pre-existing rows, most of
    which are stale rather than wrong. A gate that must be suppressed to land any
    change teaches agents to suppress it.
 
-This matches the plan's own "No new gate" scope boundary, and the precedent is
-in place: `mix brain.route_tags` already carries a warn-level **ledger
-cross-check** (`check_ledger_coverage/3`, `{:warn, …}`) over these same
+The precedent is already in place: `mix brain.route_tags` carries a warn-level
+**ledger cross-check** (`check_ledger_coverage/3`, `{:warn, …}`) over these same
 `## Routing` rows. The tracker-backing check belongs beside it, reusing
 `ledger_doc_sinks/3`'s parsing rather than adding a second ledger reader.
 
@@ -181,9 +182,15 @@ session has ended can only report; it cannot decide.
 - **No auto-promotion.** The tool reports and the agent/operator disposition;
   it never files todos/plans on its own — "is this strand real open work or
   session chatter" is a judgment call, like intake dedup.
-- **No new gate.** This is an on-demand review sweep, not a CI check. A strand
-  left un-reconciled is a warning at most, never a build failure (coverage of
-  deferred work has no mechanical oracle, same as route-tag coverage).
+- **No new gate — but a warning is not a gate.** A strand left un-reconciled is
+  a warning at most, never a build failure. The line is *blocking vs.
+  reporting*, not *CI vs. not-CI*: `mix brain.route_tags` already runs a
+  warn-level ledger cross-check in CI, so the tracker-backing check (build order
+  5) sits beside it without crossing this boundary. What stays out is anything
+  that reds the build over a ledger row.
+- **The check never judges actionability.** It asserts only that a pending row
+  points at something that can still receive work — never that the row *is*
+  real work, which has no mechanical oracle (§ enforceability).
 - **Not a `/priorities` rewrite.** `/priorities` keeps its role; this factors
   out and extends the strand-scanning it already does.
 
