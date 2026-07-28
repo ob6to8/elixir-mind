@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5, Claude Sonnet 5), 2026-07-28; v
 tags: [meta, thread, communication, banned-phrases]
 timestamp: 2026-07-28
 session: https://claude.ai/code/session_014NJwuyVGKGypHxnmipK7Ue
+pr: 184
 ---
 
 # 2026-07-28-banned-phrases-disclosure-favor-and-preamble-valuation
