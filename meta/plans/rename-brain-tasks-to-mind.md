@@ -2,7 +2,7 @@
 type: plan
 title: "Rename the mix task namespace: brain.* → mind.*"
 description: Retire the brain.* mix-task namespace — deliberately kept by the elixir-mind rename plan as domain-neutral — in favor of mind.*, via one canonical big-bang flip (task modules, skills, CI, hooks, policies, and live doc references) with thin brain.* delegating shims kept for one deprecation window, mirroring the verifier-atomic pattern of the id-namespace migration.
-status: proposed
+status: accepted
 provenance: "Claude Code session (2026-07-27) — operator directed the plan's creation, reversing the rename plan's keep-brain.* scope decision"
 tags: [meta, plan, tooling, rename, mix-tasks, migration]
 timestamp: 2026-07-27
@@ -63,7 +63,11 @@ safe by the gates rather than by gradualism.
 - **No skill renames** (skills are named by function, not by the task
   namespace).
 
-## Open questions (for ratification)
+**Ratified 2026-07-27** — the operator accepted the plan as written, including
+the Q1 proposal (shims removed in the PR after the flip). The external-caller
+audit and the alias-vs-clean-break call carry to execution.
+
+## Open questions (carried to execution)
 
 - **Window length** for the `brain.*` shims — one merged PR later? A dated
   window? (Proposal: remove in the PR that follows the flip, once the

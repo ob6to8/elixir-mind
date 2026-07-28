@@ -1,31 +1,31 @@
 defmodule Mix.Tasks.Brain.Url do
-  @shortdoc "Print the working URL for a bundle path (live Pages page, or branch blob until merged)"
+  @shortdoc "Print the working URL for a bundle path (--thread: GitHub blob; --pages: Pages; bare: whichever resolves)"
 
   @moduledoc """
   Map a bundle path to a URL that **actually resolves right now**, so a link in a
   response is never dead.
 
-      mix brain.url meta/doctrine/fit-each-layer-to-its-purpose.md
-      mix brain.url /meta/policy/response-resource-links.md
+      mix brain.url --thread meta/policy/response-resource-links.md  # agent threads: GitHub blob URL
+      mix brain.url meta/doctrine/fit-each-layer-to-its-purpose.md   # whichever resolves (Pages when live)
       mix brain.url --pages meta/policy/response-resource-links.md   # force canonical Pages URL
 
-  The mechanical form of the response-resource-links policy. Pages deploys **only
-  from the default branch** (`pages.yml`), so a document created or modified on an
-  unmerged branch has no live page yet — its Pages URL would 404 (new) or show
-  stale content (modified) until the branch merges. This task resolves that
-  automatically:
+  The mechanical form of the response-resource-links policy — *Pages links in
+  docs, GitHub links in agent threads*:
 
-    * **Rendered and unchanged vs `origin/main`** → the live Pages URL
-      (`ElixirMind.SiteConfig.live_url/1`) — canonical and current.
-    * **New or modified on this branch, or under a non-rendered directory**
-      (`deprecated/`, `.claude/`, `lib/`, `test/`, …) → the GitHub **blob URL** at
-      the ref whose tree holds the current content (this branch, else `main`) —
-      `ElixirMind.SiteConfig.blob_url/2`.
+    * `--thread` — the form for **agent-delivered responses** (chat, PR bodies,
+      issue comments): always the GitHub **blob URL**, at `main` when the doc is
+      merged and unchanged there, else at the current branch
+      (`ElixirMind.SiteConfig.blob_url/2`). Viewable at any merge state.
+    * **Bare** — whichever resolves and shows the current content: the live Pages
+      URL when the doc is rendered and unchanged vs `origin/main`
+      (`ElixirMind.SiteConfig.live_url/1`), else the blob URL as above. Pages
+      deploys **only** from the default branch (`pages.yml`), so an unmerged
+      doc's Pages URL would 404 or show stale content.
+    * `--pages` — force the canonical Pages URL regardless of branch state (the
+      durable form for external sharing of merged docs).
 
-  `--pages` forces the canonical Pages URL regardless of branch state (use when
-  citing something you know will be merged). When `origin/main` is unavailable
-  (bare checkout with no remote) the task can't judge liveness and falls back to
-  the blob URL at the current branch.
+  When `origin/main` is unavailable (bare checkout with no remote) the task
+  can't judge liveness and falls back to the blob URL at the current branch.
   """
 
   use Mix.Task
@@ -34,17 +34,32 @@ defmodule Mix.Tasks.Brain.Url do
 
   @impl Mix.Task
   def run(argv) do
-    {opts, args} = OptionParser.parse!(argv, strict: [pages: :boolean])
+    {opts, args} = OptionParser.parse!(argv, strict: [pages: :boolean, thread: :boolean])
 
-    case args do
-      [path | _] when is_binary(path) -> emit(path, opts)
-      _ -> usage()
+    cond do
+      opts[:pages] && opts[:thread] -> usage()
+      match?([p | _] when is_binary(p), args) -> emit(hd(args), opts)
+      true -> usage()
     end
   end
 
   defp emit(path, opts) do
-    result = if opts[:pages], do: SiteConfig.live_url(path), else: resolve(path)
+    result =
+      cond do
+        opts[:pages] -> SiteConfig.live_url(path)
+        opts[:thread] -> thread_url(path)
+        true -> resolve(path)
+      end
+
     print(result, path)
+  end
+
+  # The agent-thread form: always a blob URL, at the ref holding the current
+  # content (main when merged and unchanged there, else this branch).
+  defp thread_url(path) do
+    rel = path |> to_string() |> String.trim_leading("/")
+
+    if rel == "", do: {:error, :empty}, else: SiteConfig.blob_url(rel, content_ref(rel))
   end
 
   # Pick the URL that resolves AND shows the content being referred to.
@@ -105,7 +120,7 @@ defmodule Mix.Tasks.Brain.Url do
   defp print({:error, :empty}, _path), do: usage()
 
   defp usage do
-    Mix.shell().error("usage: mix brain.url [--pages] <bundle-path>")
+    Mix.shell().error("usage: mix brain.url [--thread | --pages] <bundle-path>")
     exit({:shutdown, 1})
   end
 end

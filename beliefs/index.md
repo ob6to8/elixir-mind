@@ -34,6 +34,10 @@ beliefs are extracted from compound statements per the
   generated output cannot establish correctness however often it is repeated;
   only a check independent of the output settles it. Governs *what counts as
   checked*, where the coverage belief governs *what to measure*. `em:2ecdd2`
+- [The scar-tissue lens is the right frame for reasoning about agent failure modes](/beliefs/scar-tissue-lens-for-agent-failure.md) —
+  the operator's adopted working frame: agent failure as trauma-like accumulation
+  of adaptive local fixes, chosen over rival frames that fit the same facts;
+  the bound-adaptation doctrine is its governance-side consequence. `em:f35b8f`
 
 ## Vocabulary & scratch
 
