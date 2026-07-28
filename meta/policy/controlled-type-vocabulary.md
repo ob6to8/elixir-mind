@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md]
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -27,7 +27,13 @@ Seed vocabulary:
   video, thread). A bare URL becomes a `reference` only once processed.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
-- `project` — an active, goal-bounded effort.
+- `project` — an active, goal-bounded effort. Used for a system built *outside*
+  this repo that incubates here: the hub doc for its specs, research, and design
+  decisions, carrying a `status` (`incubating`/`active`/`broken-out`/`dormant`/
+  `abandoned`). Distinct from an `area` (ongoing, no end state) and a `plan` (one
+  intended change, not a whole system) — a project is a *bounded effort with its
+  own body of work* (lives at `projects/<slug>.md`, beside a `projects/<slug>/`
+  directory; see the projects-namespace policy).
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
@@ -48,7 +54,9 @@ Seed vocabulary:
   and open questions, so a future session can execute it. Carries a `status`
   (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
   (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
-  *one-off intended change* (lives under `meta/plans/`).
+  *one-off intended change*. Addressed by what it governs: a plan for **this brain
+  or its tooling** lives under `meta/plans/`; a plan for a system built **outside**
+  this repo lives under `projects/<slug>/` (see the projects-namespace policy).
 - `analysis` — a point-in-time evaluation or decision-support write-up: a question
   investigated against evidence (often the live bundle itself), yielding findings and
   a recommendation, filed so the reasoning and its conclusion persist. Distinct from a

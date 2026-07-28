@@ -168,6 +168,59 @@ The taxonomy-evolution protocol (important):
 
 _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-evolution-protocol.md)_
 
+**A system built outside this repo still incubates here.** Specs, research, and
+design decisions for an external system are filed as a `type: project` hub under
+[`/projects/`](/projects/index.md), so the knowledge accrues to the brain while
+the system is still forming — and does not have to be re-derived once it breaks
+out into its own repository.
+
+**Shape** — hub doc beside a directory, mirroring the
+[glossary](/beliefs/glossary.md) pattern:
+
+```
+projects/<slug>.md        # type: project — the hub: charter, status, links out
+projects/<slug>/          # supporting docs: architecture, threat model, plans
+projects/<slug>/index.md  # reserved listing
+```
+
+The hub is a **bundle document** — it carries an `em:` id and `attribution` like
+any other, because the id is exactly what survives the eventual break-out to
+another repo when the path will not. It carries a `status`
+(`incubating` · `active` · `broken-out` · `dormant` · `abandoned`).
+
+**The split rule — this is the whole point.** Every finding produced while
+working a project is filed by *what it is*, not by *what prompted it*:
+
+| The finding is… | Files to | Test |
+|---|---|---|
+| true regardless of this project | the knowledge taxonomy, with an `em:` id | a model's parameter count; an attack class; how a protocol works |
+| true only *for this system* | `projects/<slug>/` | why *this* system chose *that* model; its threat model; its build order |
+
+The hub **links out** to the knowledge documents rather than restating them.
+Research done for a project therefore pays twice — once into the project, once
+into the taxonomy where the next project reads it instead of re-researching —
+and duplication is prevented at the point of filing rather than reconciled
+later. This is
+[fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md)
+applied across the project/knowledge boundary.
+
+**Project-scoped design records stay in the project.** A `type: plan` for an
+external system lives at `projects/<slug>/`, not
+[`meta/plans/`](/meta/plans/index.md): `meta/` governs *this brain*, and a
+design record for something built elsewhere is not governance of the brain.
+[persist-plans](/meta/policy/persist-plans.md),
+[structured-plan-bodies](/meta/policy/structured-plan-bodies.md), and
+[plan-vs-capture](/meta/policy/plan-vs-capture.md) bind such a plan unchanged —
+only its address differs.
+
+**Break-out is the success condition, not an exit.** When a project graduates to
+its own repository, `projects/<slug>/` is what ports; the knowledge documents it
+cites stay here and keep serving every other project. Mark the hub
+`status: broken-out` and record where it went — the hub remains the brain's
+durable pointer to a system it no longer holds.
+
+_Source: [`meta/policy/project-namespace.md`](/meta/policy/project-namespace.md)_
+
 ---
 
 ## 3. Filing conventions
@@ -205,50 +258,50 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
 _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-and-cross-linking.md)_
 
-**In responses, link resources to the deployed site, not to repo paths.** When an
-agent's **delivered response** (chat to the operator, a PR body, an issue comment —
-anything read outside a checkout) references a document in the brain, cite it as a
-link to that document's page on the **deployed Pages site**, not as a bundle-absolute
-(`/knowledge/…md`) or relative repo path. A repo path is not navigable for a reader
-in chat; the live URL is a click away.
+**Pages links in docs, GitHub links in agent threads.** Two surfaces, two link
+schemes (operator-ratified 2026-07-27):
 
-- **The site.** The bundle is published to GitHub Pages at
-  **`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, one page per document and
-  per `index.md`). That base URL lives in config
-  (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
-  source of truth, and this contract's copy of it is compiled in from that config —
-  a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
-- **Get the URL from the tool, never by hand. `mix brain.url <path>` prints the
-  working URL** for any bundle path — always run it; do **not** construct a URL
-  yourself. The correct URL depends on state you have to check (is the doc live on
-  `main` yet? see below), not on the path alone, so hand-construction is exactly
-  what produces dead links. *Under the hood* the tool maps a live, rendered doc by
-  swapping base and extension — `P.md` → `https://ob6to8.github.io/elixir-mind/P.html` (a directory's
-  `index.md` → `…/<dir>/index.html`; governance `meta/…` docs render too) — but
-  that mapping is **what the site does at build time, not a recipe to apply in a
-  response**. Reproducing it by hand is the anti-pattern this policy exists to
-  stop.
-- **Live only after merge — cite unmerged docs by branch.** Pages deploys **only
-  from the default branch** (`pages.yml` → `push: branches: [main]`), so a document
-  *created or modified on an unmerged branch has no live page yet*: its Pages URL
-  **404s** (new doc) or shows **stale** content (modified doc) until the PR merges
-  and Pages rebuilds. Cite such a doc by its GitHub **blob URL at the branch ref**
-  (`<repo>/blob/<branch>/<path>.md`), which resolves immediately and shows the
-  current content. `mix brain.url` does this automatically — it emits the live
-  Pages URL when the doc is rendered *and* unchanged vs `origin/main`, and the
-  branch blob URL otherwise (new, modified, or under a non-rendered directory).
-  The Pages URL is the canonical form once merged; a branch blob link is fine in
-  ephemeral chat (branches are deleted post-merge, so never hardcode a blob URL
-  into a durable doc body).
-- **Not rendered → no live URL.** Resources under directories the site excludes
-  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever; `mix brain.url`
-  cites those by their GitHub blob URL instead of fabricating a Pages URL.
-- **This is the response-side rule only.** Cross-links *inside* document bodies stay
+- **Agent threads → GitHub links, always.** When an agent's **delivered
+  response** (chat to the operator, a PR body, an issue comment — anything
+  read outside a checkout) references a document in the brain, cite its
+  GitHub **blob URL** — at `main` for a merged, unchanged document, at the
+  session branch otherwise — never a bundle-absolute or relative repo path,
+  and never a Pages URL. A blob URL is viewable at **any** merge state, which
+  is exactly when the operator audits; a Pages URL is live only after merge
+  and deploy. (A branch blob link dies when the merged branch is deleted;
+  that is accepted — the thread's moment has passed, and the document's
+  durable home is its Pages URL.)
+- **Docs → Pages links.** Cross-links *inside* document bodies stay
   bundle-absolute markdown paths per
-  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
-  site rewrites those `.md` links to the right relative `.html` at build time. Do not
-  hardcode live URLs into document bodies; use them when speaking to a human outside
-  the bundle.
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md);
+  the site rewrites them to relative `.html` at build time, so on the
+  rendered site every doc link *is* a Pages link. Never hardcode live URLs
+  into document bodies. The Pages URL is the **durable, canonical form for a
+  merged document** cited outside a session (sharing, external references).
+
+**Get the URL from the tool, never by hand.** `mix brain.url` prints the
+right URL for each surface — always run it; hand-construction is exactly what
+produces dead links:
+
+- **`mix brain.url --thread <path>`** — the agent-thread form: the blob URL
+  at the ref whose tree holds the current content (`main` when merged and
+  unchanged, else the current branch).
+- **`mix brain.url --pages <path>`** — the canonical Pages URL for durable
+  external citation of merged docs (bundle path `P.md` →
+  `https://ob6to8.github.io/elixir-mind/P.html`; a directory's `index.md` → `…/<dir>/index.html`;
+  governance `meta/…` docs render too).
+- **Bare `mix brain.url <path>`** — whichever resolves and shows the current
+  content (Pages when live and unchanged vs `origin/main`, else blob).
+
+**Mechanics.** The bundle is published to GitHub Pages at
+**`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, deploying **only from
+the default branch** — the reason unmerged docs have no live page). The base
+URL lives in config (`config/config.exs` →
+`ElixirMind.SiteConfig.base_url/0`); it is the single source of truth, and
+this contract's copy is compiled in from it. Resources under directories the
+site excludes (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever;
+`mix brain.url` cites those by blob URL in every mode rather than fabricating
+a Pages URL.
 
 _Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
@@ -685,6 +738,14 @@ the boundary checkable.
   (`…`); an insertion is bracketed. If only a paraphrase will fit, drop the
   quotation marks and let it stand as synthesis — attributed, but visibly not
   verbatim.
+- **Take the quote from the source's own text, never from a summary of it.** A
+  fetch that answers a question in prose can interpolate a comparison the source
+  never made, and the interpolation is indistinguishable from a quotation once
+  it is in your notes. Before a figure is quoted, or is used to back
+  `verified: true`, re-read the source demanding the **verbatim span**; a span
+  that cannot be produced does not get quotation marks. Whether the demand
+  actually changes what a fetch returns is measured by the
+  [fetch fidelity probe](/meta/evals/fetch-fidelity-probe.md).
 - **Quote at the phrase, not the page.** The rule serves precision, not bulk:
   lift the shortest span that carries the claim. Wholesale copying stays
   governed by [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md).
@@ -719,6 +780,40 @@ anyway.
 
 _Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
 
+**Negative findings name their scope.** A statement that something *does not
+exist*, *is not stated anywhere*, or *could not be found* is a claim about a
+search space, not about the world. Report it **relative to the space actually
+searched**. "I found no pricing on the docs site or the corporate site" is
+honest and actionable; "no primary source states the price" is a claim about
+every source, and is sayable only when the sources were enumerated first.
+
+- **The test: could the reader reconstruct what was checked?** If yes, the
+  finding is scoped and a reader can extend the search. If the sentence would
+  survive unchanged no matter how little was looked at, it is overclaiming.
+- **Escalate before a decision rests on it.** When a negative finding is
+  load-bearing — it justifies building something, retracting something, or
+  telling the operator a thing is unavailable — enumerate the search space
+  first, or say plainly that the enumeration was not done. An unscoped negative
+  that turns out false corrupts every artifact built on it.
+- **Search returns a finite result set.** Absence within it is evidence about
+  the query, not about what exists. Scoped tools — a `site:`-filtered search, a
+  grep over one directory, a single fetched page — silently encode a guess
+  about where the answer lives; when the guess is wrong the tool reports
+  nothing and the guess never surfaces.
+- **Scope.** Delivered responses and document bodies alike, including a filed
+  `claim` whose content is a non-existence assertion — its body carries the
+  search space. Thread renders are exempt (verbatim record).
+
+Distinct from
+[negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md), which
+governs *rhetorical* negation in prose (whether a negative sentence has an
+anchor). This governs *epistemic* negation: whether a negative claim has been
+earned. A worked example, and the seven-host source map that motivated it, is
+in
+[Anthropic's primary-source surfaces](/meta/analysis/anthropic-primary-source-surfaces.md).
+
+_Source: [`meta/policy/negative-findings-name-their-scope.md`](/meta/policy/negative-findings-name-their-scope.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -737,7 +832,13 @@ Seed vocabulary:
   video, thread). A bare URL becomes a `reference` only once processed.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
-- `project` — an active, goal-bounded effort.
+- `project` — an active, goal-bounded effort. Used for a system built *outside*
+  this repo that incubates here: the hub doc for its specs, research, and design
+  decisions, carrying a `status` (`incubating`/`active`/`broken-out`/`dormant`/
+  `abandoned`). Distinct from an `area` (ongoing, no end state) and a `plan` (one
+  intended change, not a whole system) — a project is a *bounded effort with its
+  own body of work* (lives at `projects/<slug>.md`, beside a `projects/<slug>/`
+  directory; see the projects-namespace policy).
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
@@ -758,7 +859,9 @@ Seed vocabulary:
   and open questions, so a future session can execute it. Carries a `status`
   (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
   (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
-  *one-off intended change* (lives under `meta/plans/`).
+  *one-off intended change*. Addressed by what it governs: a plan for **this brain
+  or its tooling** lives under `meta/plans/`; a plan for a system built **outside**
+  this repo lives under `projects/<slug>/` (see the projects-namespace policy).
 - `analysis` — a point-in-time evaluation or decision-support write-up: a question
   investigated against evidence (often the live bundle itself), yielding findings and
   a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
@@ -1172,7 +1275,13 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
   reachable through the merge, and GitHub can restore the branch). Deletion is part
   of the merge motion: prefer the repository's **"Automatically delete head
   branches"** setting; failing that, delete the branch manually right after
-  merging. A merged branch discovered lingering later is deleted on sight.
+  merging.
+- **Deletion belongs to the merge motion, not to later sessions.** A merged
+  branch noticed in passing is left alone: cleaning up someone else's leftovers
+  is not part of the work at hand, and surveying branches to find them turns an
+  unrelated session into an audit. Sweeping merged branches is its own
+  deliberate cleanup task, run when the operator asks for one — and a session
+  that is not that task does not survey, propose, or report on branch state.
 - **Never delete without the operator:** the default branch (never), and any branch
   carrying **unmerged** commits — including branches whose PR was closed without
   merging. Those hold work with no other home; propose deletion and wait for the

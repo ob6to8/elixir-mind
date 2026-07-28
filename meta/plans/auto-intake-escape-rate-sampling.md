@@ -5,13 +5,13 @@ description: Build mix brain.escape_rate — a zero-dependency, offline eval tha
 status: proposed
 provenance: "Claude Code session (Claude Opus 4.8), 2026-07-17 — the parked follow-up strand of the tier-3/4 interface-and-trust analysis"
 tags: [meta, plan, evals, escape-rate, auto-intake, trust, verification, tooling]
-timestamp: 2026-07-17
+timestamp: 2026-07-27
 attribution:
   when: 2026-07-17T18:50:00Z
   channel: agent-authored
   agent: "Claude Code session, tier-3/4 trust analysis follow-up"
   why: "operator asked to file the parked follow-up: instrument /research auto-intake escape-rate sampling, the trust experiment the gate suite is built to support"
-  from: [/meta/threads/2026-07-17-escape-rate-plan-and-genserver-agent-minds.md]
+  from: [/meta/threads/2026-07-17-escape-rate-plan-and-genserver-agent-minds.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
 ---
 
 # Auto-intake escape-rate sampling: measure the quality of what `/research` files
@@ -97,6 +97,29 @@ silence must not look like the happy path.
 2. **`mix brain.escape_rate`** — the parser, git-history disposition walker, scorer
    (reviewed-escape-rate + coverage), `--update-baseline`, tests, and the CI report
    step. First baseline recorded.
+
+## Rider: the style fingerprint (operator-approved 2026-07-27)
+
+The trend-view companion to this plan's defect view, added per the
+[scar-tissue defenses analysis](/meta/analysis/scar-tissue-drift-defenses-and-persistence.md):
+where the escape rate judges each doc against an oracle (binary, per-doc), the
+[behavioral fingerprint](/beliefs/glossary/behavioral-fingerprinting.md)
+watches *distributions* that move before any single doc is bad enough to count
+as an escape. Same enumeration walk (the `channel: auto-intake` document set,
+extendable to the other agent-writing channels), same committed-baseline idiom
+(dedup-probe pattern: baseline table, delta per run, trend in git history,
+warn-never-fail). Three surfaces, per the analysis's anatomy:
+
+1. **Description register** — description/body length distributions by channel.
+2. **Tag consistency** — the tags report specified in the
+   [tag-governance plan](/meta/plans/tag-governance.md) (distinct-tag growth,
+   singleton fraction, near-duplicate pairs), which rides here rather than
+   standing alone.
+3. **Distillation depth** — summary-to-source ratio and citation-block share,
+   the continuous complements of escape classes 3 and 6.
+
+Lands as part of the `mix brain.escape_rate` build or as a sibling task
+sharing its walker — an implementation choice for the executing session.
 
 ## Deferred
 

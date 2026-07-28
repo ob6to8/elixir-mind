@@ -91,6 +91,31 @@ Concretely:
      to at least one live `attestation`; flag any concept whose deps point at a
      superseded/missing node. Boolean pass/fail, in the spirit of `mix brain.verify`.
 
+**Update (2026-07-28) — the open question was preempted in the wild.** A third
+answer shipped without being chosen: `depends_on` now exists on filed documents
+(`em:0c4913 → em:1eebdf`, belief→belief, at operator direction; `em:d1ba60 →
+em:189d88`, belief→**concept**, extending it across a type boundary). It arrived
+ahead of the machine consumer this plan says earns a typed edge — *"Until it
+exists, these edges stay prose."* Three consequences, each verified against the
+tree rather than assumed:
+
+- **Unregistered.** `depends_on` appears in no policy; the
+  [frontmatter-schema](/meta/policy/frontmatter-schema.md) field table does not
+  list it, so it survives only under the "arbitrary extra keys are allowed and
+  must be preserved" clause.
+- **Unchecked.** `depends_on` appears nowhere in `lib/` or `test/`. Unlike
+  `verified_by`, whose targets must resolve, a `depends_on` pointing at a
+  nonexistent id passes every gate silently. It looks like a typed edge and
+  behaves like a comment.
+- **Unspecified.** Which type pairs are legal is undecided. Both uses are
+  defensible; nothing says so.
+
+This narrows the open question rather than answering it — the field name is now
+in use, so "widen `verified_by` vs. add a broader `deps`/`grounds`" has a third
+option (adopt `depends_on` as-is) and a new obligation: whichever shape wins
+inherits the existing edges and must either validate or migrate them. Executing
+this plan should begin by resolving `depends_on`, not by designing beside it.
+
 ## Scope boundaries (what this plan deliberately excludes)
 
 These are the exact places CB's generality outran a committed purpose. Excluding them is

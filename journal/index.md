@@ -9,6 +9,12 @@ operator's voice is kept faithful; only dictation noise is cleaned.
 
 ## Entries
 
+- [2026-07-27](/journal/2026-07-27.md) — Second brains as avatars of their
+  operators — the brain/mind distinction as framework-induced alignment,
+  abandoning the product framing in favor of a single-operator avatar, why
+  generalization keeps failing to justify itself, and the irony of a publicly
+  reproducible system whose value returns to the operator's guidance and
+  verification.
 - [2026-07-26](/journal/2026-07-26.md) — Day two on the operator–agent
   intermediary layer — speed vs. comprehension, embodied consequence and
   evolutionary constancy vs. engineered agentic personality, the unfounded

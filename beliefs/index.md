@@ -11,6 +11,10 @@ refiled as a `claim`. The layer was ratified from the
 [belief-layer plan](/meta/plans/belief-type-and-beliefs-namespace.md); atomic
 beliefs are extracted from compound statements per the
 [/extract-into-belief skill plan](/meta/plans/extract-into-belief-skill.md).
+Where this layer sits relative to the descriptive types and to doctrine — and
+why a *value-laden* belief type escapes the collision that ruled out a
+*descriptive* one — is worked out in the
+[is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md).
 
 ## Beliefs
 
@@ -34,6 +38,15 @@ beliefs are extracted from compound statements per the
   generated output cannot establish correctness however often it is repeated;
   only a check independent of the output settles it. Governs *what counts as
   checked*, where the coverage belief governs *what to measure*. `em:2ecdd2`
+- [The scar-tissue lens is the right frame for reasoning about agent failure modes](/beliefs/scar-tissue-lens-for-agent-failure.md) —
+  the operator's adopted working frame: agent failure as trauma-like accumulation
+  of adaptive local fixes, chosen over rival frames that fit the same facts;
+  the bound-adaptation doctrine is its governance-side consequence. `em:f35b8f`
+- [A surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) —
+  the prior behind preferring generation over discipline: an obligation to update
+  a hand-kept surface is carried by memory, which fails silently, while a derived
+  surface cannot fall out of date because nothing is being remembered. Depends on
+  [freshness gate](/beliefs/glossary/freshness-gate.md).
 
 ## Vocabulary & scratch
 
