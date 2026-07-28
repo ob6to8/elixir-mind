@@ -153,6 +153,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `em:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
 | `em:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
+| `em:e1a8ee` | [beliefs/glossary/dual-llm-pattern](/beliefs/glossary/dual-llm-pattern.md) | concept | false |
 | `em:48b2f1` | [beliefs/glossary/dual-use](/beliefs/glossary/dual-use.md) | concept | false |
 | `em:b528d9` | [beliefs/glossary/durable-execution](/beliefs/glossary/durable-execution.md) | concept | false |
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
@@ -256,6 +257,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:056746` | [beliefs/glossary/label-atms](/beliefs/glossary/label-atms.md) | concept | false |
 | `em:731c59` | [beliefs/glossary/lag-tolerant-check](/beliefs/glossary/lag-tolerant-check.md) | concept | false |
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
+| `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
 | `em:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
@@ -297,6 +299,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:617977` | [beliefs/glossary/observer-agent](/beliefs/glossary/observer-agent.md) | concept | false |
 | `em:8c9ef1` | [beliefs/glossary/observer-effect](/beliefs/glossary/observer-effect.md) | concept | false |
 | `em:a267ab` | [beliefs/glossary/okf-frontmatter-profile](/beliefs/glossary/okf-frontmatter-profile.md) | concept | false |
+| `em:6e1259` | [beliefs/glossary/on-behalf-of-delegation](/beliefs/glossary/on-behalf-of-delegation.md) | concept | false |
 | `em:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `em:02dc95` | [beliefs/glossary/open-weights](/beliefs/glossary/open-weights.md) | concept | false |
 | `em:d845c0` | [beliefs/glossary/open-world-assumption](/beliefs/glossary/open-world-assumption.md) | concept | false |
@@ -524,12 +527,14 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:784985` | [knowledge/SWE/agentic/context-engineering/conversation-tree-architecture](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md) | reference |  |
 | `em:649457` | [knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
+| `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `em:121acc` | [knowledge/SWE/agentic/mcp/mcp-architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) | reference |  |
 | `em:3b0352` | [knowledge/SWE/agentic/mcp/mcp-tools-primitive](/knowledge/SWE/agentic/mcp/mcp-tools-primitive.md) | reference |  |
 | `em:9b5d41` | [knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md) | snippet |  |
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
+| `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
