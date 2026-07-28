@@ -86,3 +86,15 @@ content directly.
   [plainspeak-orientation](/meta/policy/plainspeak-orientation.md), the
   outcome leads the response. Recast: move the load-bearing fact into the
   lead and delete the pointer — placement, not commentary, carries emphasis.
+
+- **"let me audit rather than answer from memory"** — pattern: *"let me X
+  rather than Y"* where Y is an inferior practice nobody proposed (also
+  "verified against merged main rather than assumed") — announcing diligence
+  against an unraised lazy alternative, the process-narration form of the
+  seed entry's advertising failure. The distinction the phrase gestures at is
+  real and is governed by
+  [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md):
+  epistemic basis is carried uniformly by citations and plain markers, and a
+  case-by-case announcement is precisely what makes the unannounced remainder
+  illegible. Recast: do the check silently, then state the fact with its
+  basis — "CI is green (both runs completed 08:52)".
