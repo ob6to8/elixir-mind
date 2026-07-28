@@ -193,6 +193,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
+| `em:189d88` | [beliefs/glossary/freshness-gate](/beliefs/glossary/freshness-gate.md) | concept | false |
 | `em:2fa34c` | [beliefs/glossary/frontier-lab](/beliefs/glossary/frontier-lab.md) | concept | false |
 | `em:640701` | [beliefs/glossary/frontmatter](/beliefs/glossary/frontmatter.md) | concept | false |
 | `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |

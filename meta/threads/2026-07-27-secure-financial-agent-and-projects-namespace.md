@@ -70,6 +70,21 @@ carve-out in
 which keeps a justification in a living surface while the event itself stays in
 the commit graph and this record.
 
+A final persistence audit, prompted by the operator asking what the thread had
+left unpersisted, surfaced one real gap and rejected two candidates. The gap:
+the index-gloss drift observed earlier was never written down as a rule, and the
+audit confirmed why nothing catches it —
+[maintain-reserved-files](/meta/policy/maintain-reserved-files.md) governs
+*filing* a new doc rather than editing an existing one, and every freshness gate
+targets a generated artifact, leaving the hand-kept policy index outside all of
+them. Filed as
+[an issue](/meta/issues/policy-index-glosses-drift-on-policy-edits.md) with
+three candidate fixes weighed. Rejected: the session's repeated
+background-timer stacking, whose whole cost was redundant notifications and
+which would tax every future session if added to a contract that loads in full;
+and the uncaptured tail of the session itself, which is structural — a capture
+can never contain the message announcing it.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -87,6 +102,7 @@ the commit graph and this record.
 | Jido primitives mapped to security requirements | closed | [Jido](/beliefs/glossary/jido.md) | - |
 | A home for the idle `project` type | closed | [project-namespace](/meta/policy/project-namespace.md) | - |
 | Raising the Elixir/OTP floor | paused | [raise-elixir-otp-toolchain-floor](/meta/plans/raise-elixir-otp-toolchain-floor.md) | Install method, exact-vs-range pin, and whether a second environment needs the same script |
+| Policy index glosses drifting on policy edits | open | [policy-index-glosses-drift-on-policy-edits](/meta/issues/policy-index-glosses-drift-on-policy-edits.md) | Which fix shape — state the rule, add a check, or generate the gloss from `description` |
 | Harness choice for building vs. running | closed | `unrouted` | - |
 
 ## User
@@ -805,4 +821,90 @@ All timers cleared. Nothing changed since my last report — both PRs are merged
 Worth noting for next time: I over-scheduled those waits. I fired a fresh sleep timer before each CI poll, which left four armed at once when CI finished on the first or second check — hence the trailing notifications. One timer at a time, re-armed only if the poll shows work still in flight, would have been the right shape.
 
 Session is complete. The pickup point is `projects/secure-financial-agent.md` → `spec-completion.md`, where D1 and D2 are the cheapest unlocks and S1 is the first item I can draft without you.
+
+## Assistant
+
+PR [#155](https://github.com/ob6to8/elixir-mind/pull/155) merged as `f46b7b9`. Timers cleared this time before they could fire stale.
+
+**Thread doc:** `meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md`
+
+### Actions I have taken
+
+| Step | Result |
+|---|---|
+| `/capture` | Branch restarted from `main` (#148 had merged); appended the closing 6 exchanges verbatim; settled 3 ledger strands with real routing targets |
+| Route tags | Introduced two malformed tags and fixed both — a nested `<routes>` over an already-tagged paragraph (merged into one multi-ref tag) and a tag opened inside a table cell. `mix brain.route_tags` caught each |
+| `/add-to-glossary` | **No-op** — `chestertons-fence` and `living-surface` already exist |
+| `attribution.from` | No new governance docs this round; nothing to stamp |
+| `mix brain.dev_history` | **Skipped** — shallow clone |
+| Commits `640beb1`, `c6a1b92` | Full gate suite green both times; 183 tests, 0 failures |
+| CI on `c6a1b92` | All 19 steps green |
+| Merge | True merge commit |
+
+### What I modified
+
+| File | Thrust |
+|---|---|
+| Thread doc | Closing exchanges + ledger settled; the three PRs named in narrative (`pr:` stays 145, write-once) |
+| `meta/policy/index.md` | **A defect I introduced in #148** — the branch-deletion gloss still described the superseded rule |
+
+That gloss is worth stating plainly rather than leaving in a table: when I changed the branch-deletion policy last round, I updated the policy body and its `description`, but not the index entry that a session actually reads when orienting. An agent consulting `meta/policy/index.md` between then and now would have gotten the old rule — which is precisely the staleness failure `living-text-is-present-tense` exists to prevent. The lesson generalizes: a policy edit isn't complete until its index gloss matches, and nothing mechanical checks that today.
+
+This session landed across three PRs — [#145](https://github.com/ob6to8/elixir-mind/pull/145) `5654a39`, [#148](https://github.com/ob6to8/elixir-mind/pull/148) `9f63491`, [#155](https://github.com/ob6to8/elixir-mind/pull/155) `f46b7b9`. Pickup point remains `projects/secure-financial-agent.md` → `spec-completion.md`.
+
+## Assistant
+
+All timers cleared. Nothing changed since my last report.
+
+Session is complete — three PRs merged (`5654a39`, `9f63491`, `f46b7b9`), working tree clean, everything discussed persisted.
+
+I did repeat the timer-stacking mistake I'd already named: I armed a new wait before each CI poll instead of waiting on the one already running. Cheap here, but it's the second time in one session, which makes it a habit rather than a slip — the correct shape is one timer, re-armed only when a poll shows work still in flight.
+
+Pickup point: `projects/secure-financial-agent.md` → `spec-completion.md`. D1 and D2 are the cheapest unlocks; S1 is the first item I can draft without you.
+
+## User
+
+anything in this thread not persisted in prs?
+
+## Assistant
+
+Three things, and one is a real gap. **Scope of what I searched:** `meta/policy/maintain-reserved-files.md` (full body), `lib/` for any index-freshness gate, `meta/issues/` for an existing entry, and the thread doc's tail on real `main`.
+
+## 1. The index-gloss finding — genuinely unpersisted
+
+I said in chat that "a policy edit isn't complete until its index gloss matches, and nothing mechanical checks that today." I checked both halves and both hold:
+
+- **`maintain-reserved-files` doesn't cover it.** Its rule is *"after filing, update the directory's `index.md`"* — scoped to **filing a new doc**. Editing an existing doc's substance, which is what silently orphaned the branch-deletion gloss, isn't addressed.
+- **No gate covers it.** The only index-sync check in `lib/` is `Glossary.index sync`, which re-derives `## Terms` from the term files. Nothing compares `meta/policy/index.md` glosses against the policies they describe.
+
+So the failure mode is live: change a policy's rule, and its index entry keeps advertising the old one to every session that orients from the index. That's the same class of defect as the purged `log.md` files — a hand-kept surface drifting silently.
+
+By `governance-artifact-routing` it's an **`issue`**, not a todo, because the fix isn't obvious. There are at least three shapes: state the rule in `maintain-reserved-files`, add a check, or — most in keeping with the repo's generate-don't-hand-keep ethos — make the policy index gloss a *generated* artifact like the glossary's `## Terms`. Choosing among those is diagnosis, which is what makes it an issue.
+
+## 2. The last few exchanges — structural, not a gap
+
+The `#155` capture ends at "Session is complete. The pickup point is…". Everything after — the merge report, the timer cleanup, this exchange — is uncaptured. That's inherent: a capture can never contain the message announcing it, so any capture-then-report cycle leaves its own tail behind. Chasing it means another PR whose report is also uncaptured. Not worth pursuing unless something substantive lands in that tail, which here it did (item 1).
+
+## 3. The timer-stacking miss — I recommend against filing
+
+It happened twice, which by the `elixir-coding-standards` principle ("a recurring agent miss updates this policy, never only in the offending change") argues for persisting. But that policy governs the Elixir tooling, and this isn't that. Filing it as brain governance would put a narrow harness-discipline rule into a contract that loads in full every session, taxing every future run for a miss whose entire cost was some redundant notifications. The contract's own guidance is to keep policies terse. I'd let the thread record carry it.
+
+---
+
+One correction on my own work just now: I ran `git checkout main` and landed on a **stale local `main` 20 commits behind** `origin/main`, then read policy files and reported on old content. I caught it when the thread doc turned up missing, reset to `origin/main`, and re-ran everything above against the real tree. The findings I'm reporting are from the corrected read — but it's worth flagging that a stale local branch produced confidently wrong intermediate answers about what's persisted.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | File the index-gloss issue | One `type: issue` under `meta/issues/`, naming the three candidate fixes. Small PR |
+| 2 | File it *and* fix it | If you favor the generated-gloss shape, that's a `mix brain.policyindex --check` alongside the glossary one — a bigger change wanting its own plan |
+| 3 | Leave it | The thread doc records the observation; it resurfaces if it bites again |
+
+I'd take **1** — it's cheap, and the failure is silent, which is the kind that doesn't resurface on its own.
+
+## User
+
+1
+then /create-pull-request merge
 
