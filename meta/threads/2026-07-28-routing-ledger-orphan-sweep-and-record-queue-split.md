@@ -5,6 +5,7 @@ description: Scanned all 109 thread routing ledgers for orphaned action items, f
 provenance: "Claude Code session (Opus 5), 2026-07-28; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, routing-ledger, priorities, strands, governance, enforcement]
 timestamp: 2026-07-28
+pr: 162
 session: https://claude.ai/code/session_01V3yS3Ei8yWo51C1mnA55zi
 ---
 
