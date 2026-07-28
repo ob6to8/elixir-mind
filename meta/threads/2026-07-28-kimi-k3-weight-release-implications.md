@@ -68,7 +68,10 @@ exactly when it unshallowed — ruling out sporadic agent-skip as the dominant
 cause. An earlier count that included merge commits produced two false positives
 and was corrected before the finding was written. The todo closed to
 [an issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
-carrying the evidence and three candidate fixes, none chosen.
+carrying the evidence and three candidate fixes, none chosen. Both of those
+rounds landed together in PR 164 — the plan round was committed and pushed
+without a PR of its own, since the operator had not asked for one, and the
+diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
 
 ## Routing
 
