@@ -1,0 +1,62 @@
+---
+id: em:2cbef7
+type: project
+title: Code-driven AV production
+description: A scriptable music-and-video production pipeline — ffmpeg for frame-accurate picture cuts, SuperCollider in non-realtime mode for sample-accurate sound, both rendered from one declared timing grid — built and run on the operator's local machine, incubating here.
+status: incubating
+tags: [projects, music, video, dsp, supercollider, ffmpeg, gen, timing, dsl]
+timestamp: 2026-07-28
+attribution:
+  when: 2026-07-28T21:10:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, interactive web session"
+  why: "operator asked for the session's verified findings on grid-driven music+video rendering to be written up as actionable documents runnable locally"
+---
+
+# Code-driven AV production
+
+A production pipeline in which a music video's *edit* and its *music* are both
+rendered by code from a single declared timing structure — no timeline UI, no
+DAW in the render path. Picture cuts are executed by ffmpeg from a computed cut
+list; drums and synthesized parts are rendered by SuperCollider's synthesis
+server in non-realtime mode; both consume the same grid, so they cannot drift
+apart. The system runs on the operator's macOS machine; this repo incubates its
+design records, verified measurements, and research.
+
+The predecessor workflow measured its timeline (onset-detecting a rendered stem
+to recover 53 cut points); this system inverts that: the timeline is *declared*
+first — at 120 BPM every event is an integer multiple of 0.125 s — and audio and
+picture are two renderings of it.
+
+## Design records
+
+- [Recreating the headless SuperCollider grid render](/projects/code-driven-av-production/headless-supercollider-grid-render.md)
+  — the runnable tutorial: install, render a verified 120 BPM beat to WAV with
+  no audio hardware, measure that every hit is sample-exact, wire the result
+  into ffmpeg.
+- [Declared grids vs. measured timelines](/projects/code-driven-av-production/declared-grid-av-production.md)
+  — the analysis grounding the whole approach: what declaring the grid buys,
+  the measured error budget, and where the approach stops (it cannot hear).
+- [A gen~-inspired music-programming DSL](/projects/code-driven-av-production/gen-inspired-music-dsl.md)
+  — what the *Generating Sound & Organizing Time* reductions (small operator
+  vocabulary, single-sample feedback, ramps instead of triggers) offer a DSL
+  for timing/MIDI/automation and for DSP generation, and which half is worth
+  building.
+
+## Status and open ends
+
+- **Incubating.** The render path is verified end to end for sound
+  (SuperCollider NRT → WAV → onset-checked against the grid) inside a Linux
+  container; local macOS recreation is the tutorial's job. The picture half
+  (ffmpeg cut execution) is designed and its failure modes are catalogued, but
+  has not been run against real footage.
+- **Knowledge candidates without a home.** The generalizable findings —
+  ramp-based time organization, the gen~ operator-vocabulary claim, scsynth
+  NRT block-size behavior — are project-filed for now because the knowledge
+  taxonomy has no media-production domain; creating one is a shape change
+  awaiting operator ratification per the
+  [taxonomy-evolution protocol](/meta/policy/taxonomy-evolution-protocol.md).
+- **Next decision.** Whether to commit to building the timing DSL the
+  [DSL analysis](/projects/code-driven-av-production/gen-inspired-music-dsl.md)
+  recommends; committing graduates that analysis's sketch into a `type: plan`
+  here.
