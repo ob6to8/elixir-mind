@@ -39,8 +39,8 @@ AA-Briefcase articles, and the LICENSE file — wired through `verified_by` to f
 the claim to `verified: true`. These are the bundle's first real primary-source
 captures; the grounding pass also caught two figures asserted beyond what the
 sources stated, both corrected. Second, `mix brain.dev_history` was regenerated
-from an unshallowed clone, clearing a lag that had reached six PRs rather than
-the one the design tolerates.
+from an unshallowed clone, clearing a lag that had reached six PRs (believed at
+the time to exceed the design's tolerance; a later round established it did not).
 
 A third round then turned the grounding pass's own lesson into artifacts. The
 fetch-synthesis failure it caught — a summarizing fetch asserting a comparison
@@ -68,8 +68,29 @@ exactly when it unshallowed — ruling out sporadic agent-skip as the dominant
 cause. An earlier count that included merge commits produced two false positives
 and was corrected before the finding was written. The todo closed to
 [an issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
-carrying the evidence and three candidate fixes, none chosen. Both of those
-rounds landed together in PR 164 — the plan round was committed and pushed
+carrying the evidence and three candidate fixes, none chosen. A final round then
+**deflated that issue**: measured directly, the check is suffix-tolerant without
+any bound (six missing newest sections pass clean), and `pages.yml` re-derives
+the page from full history on every push to `main` — so the committed copy is a
+lagging cache and its drift is the design. The issue closed `wontfix`, three docs
+that overstated the tolerance as one PR were corrected, and the shallow-clone
+no-op was reclassified as cosmetic. A sixth round then went further at the
+operator's direction and **removed the committed copy entirely** — the view is
+generated at deploy time and gitignored, `--check` leaves CI and the pre-commit
+hook, and `/create-pull-request` loses its regeneration step; the issue closed
+`resolved` rather than `wontfix`, at the accepted cost of the page being
+site-only; that removal and the correction preceding it landed in PR 167.
+
+A closing audit then found four stale claims left by those rounds — a glossary
+entry and a todo still describing the committed-and-one-PR-bounded arrangement, a
+todos-index gloss calling the drift a confirmed defect, and another session's
+gate-suite todo counting a CI gate this session had removed — all corrected. It
+also found the session's own recurring failure unpersisted: three measurement
+errors, the last caught only by a control case. That generalized into the belief
+[an instrument without a control measures itself](/beliefs/an-instrument-without-a-control-measures-itself.md)
+(`em:763494`), which binds the fidelity-probe plan's gold set as its first
+consumer. That closing pass landed in PR 171; `pr:` stays at its origin, 157. Both of
+the earlier rounds landed together in PR 164 — the plan round was committed and pushed
 without a PR of its own, since the operator had not asked for one, and the
 diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
 
@@ -81,8 +102,9 @@ diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
 | The pricing inversion and what it does to the margin-collapse thesis | open | [open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | whether Moonshot's premium pricing holds, or a competitor takes the top open slot at DeepSeek-tier pricing and restores the undercut mechanism |
 | Grounding the claim on primary sources — the bundle's first `type: source` captures | closed | [sources](/knowledge/ai-industry/sources/index.md) | - |
 | Dev-history regeneration — the lag, then its diagnosis | closed | [dev-history-regeneration-silently-skipped-on-shallow-clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md) | - |
-| Which of the three candidate fixes to adopt for the silent skip | paused | `unrouted` | loud skip, unshallow in `/create-pull-request` step 4, or regenerate outside the session — recommendation is 1+2 composed, but the choice is the operator's |
-| Building the fetch fidelity probe | paused | [build-the-fetch-fidelity-probe](/meta/plans/build-the-fetch-fidelity-probe.md) | plan is `proposed`; the policy bullet it tests stays unfalsifiable until the instrument exists |
+| Which fix to adopt for the silent skip | closed | [dev-history-regeneration-silently-skipped-on-shallow-clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md) | - |
+| Building the fetch fidelity probe | paused | [build-the-fetch-fidelity-probe](/meta/plans/build-the-fetch-fidelity-probe.md) | plan is `proposed`; the policy bullet it tests stays unfalsifiable until the instrument exists, and its gold set needs a control row per `em:763494` |
+| The session's own measurement failures, generalized | closed | [an-instrument-without-a-control-measures-itself](/beliefs/an-instrument-without-a-control-measures-itself.md) | - |
 | Whether the fetch-synthesis failure is eval fodder | closed | [fetch-fidelity-probe](/meta/evals/fetch-fidelity-probe.md) | - |
 | The verbatim-before-quoting rule that probe measures | closed | [quote-primary-sources](/meta/policy/quote-primary-sources.md) | - |
 | License-column error in the open-weight landscape snapshot | closed | [open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | - |
@@ -343,5 +365,88 @@ So the risk the diagnosis addresses is about *other* sessions, on *other* days. 
 
 ## Assistant
 
-*(the closing report of this turn was delivered after this section was written;
-the PR it landed in is named in the narrative above.)*
+[PR #164](https://github.com/ob6to8/elixir-mind/pull/164) merged as `6bb5bd4`, branch deleted.
+
+The pattern is close to perfect. Every session either regenerated the file every single time, or never did — with one exception, and that exception is the proof rather than a hole in it: this session failed at PR #157, then succeeded at #159 and #160, flipping at exactly the moment I ran `git fetch --unshallow`. One branch missed 5 for 5. Two others hit 3 for 3 and 2 for 2.
+
+That's what settles it. If agents were forgetting the step, misses would scatter randomly across sessions. Instead the outcome is fixed for a session's entire life, which is the signature of something decided when the container starts — the clone depth. So it isn't a discipline problem, and no amount of reminding agents would have fixed it.
+
+**I caught myself over-claiming again, mid-diagnosis.** My first measurement used `git diff` across each merge, which counted "the branch merged main in and picked up someone else's regeneration" as a regeneration. Two PRs were false positives. I re-measured counting only commits actually authored on the branch before writing anything down.
+
+## User
+
+what are the options for 1?
+
+## Assistant
+
+<routes ref="/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md">
+I need to correct something before answering — the premise in my filed issue is wrong, and I just proved it.
+
+**CI does have full history and does run the check.** So the six-PR gap should have failed CI. It didn't. I tested why: I deleted the six newest sections from the file and ran the check. It passed clean, exit 0.
+
+The check tolerates *any* amount of missing history, not one PR's worth. It only verifies that what's in the file is correct — anything missing off the top is fine by it. The skill doc says "lag-tolerant by exactly one PR" and that's what I repeated into the issue, but the code enforces no bound at all. That's the third time this session I've asserted something the evidence didn't support, and this time I propagated it into a filed document.
+
+So there are **two separate holes**, not one: sessions don't regenerate (the shallow clone, silent), and nothing detects it (CI checks with full history and passes anyway). The second is the more important, and my earlier options list didn't address it at all.
+</routes>
+
+## User
+
+4
+
+## Assistant
+
+<routes ref="/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md">
+Option 4 turned out to be a ratification rather than a build: the design already works that way, and the investigation deflated my own issue.
+
+Two further measurements settled it. A second test harness of mine was itself buggy — it mangled section headers, so its FAILs were formatting artifacts; the untouched control passing is what proves the corrected reconstruction faithful. With that fixed, the check accepts any number of missing *newest* sections and fails on a removed middle or oldest section. It is suffix-tolerant, unbounded, and exists to catch hand edits and reorderings rather than staleness. And `pages.yml` checks out with `fetch-depth: 0` and re-derives the page on every push to `main`, so the live site is always current.
+
+So the committed copy is a lagging cache, exactly as [lag-tolerant check](/beliefs/glossary/lag-tolerant-check.md) already described — that glossary entry was right the whole time, while three other docs overstated the tolerance as one PR. The issue closed `wontfix`, the overstatements were corrected in the skill and marked in the analysis, and the shallow-clone no-op was reclassified as cosmetic.
+</routes>
+
+## User
+
+2, then 1
+
+## Assistant
+
+<routes ref="/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md">
+Taken to its conclusion, option 2 removed the category rather than patching it: `meta/dev-history.md` is untracked and gitignored, generated at deploy time by `pages.yml` and rendered into the site, so there is no committed copy to drift. That pulled `--check` out of CI and the pre-commit hook (nothing to check), removed step 4 from `/create-pull-request` with its steps renumbered, and corrected `meta/index.md` plus three glossary entries that described a checked-in CI-gated artifact.
+
+Two test failures surfaced as expected fallout and were fixed rather than worked around: a route tag still back-linked the removed path, and the live-repo test asserted the old contract (`check/1` returns `:ok` against the committed copy) — rewritten to assert the new one, that an absent copy correctly reports stale. Six markdown links were repointed at the published page.
+
+The accepted cost was stated before the change and stands: the dev history no longer exists in a checkout, only on the site. The issue closed `resolved` rather than `wontfix`, since the root cause is gone rather than tolerated.
+</routes>
+
+[PR #167](https://github.com/ob6to8/elixir-mind/pull/167) merged as `a110206`. Branch deleted, and `meta/dev-history.md` is confirmed untracked on main.
+
+You picked the smaller-sounding branch and it ended up being the one that removes the problem. The committed copy was carrying no guarantee — the check that guarded it was unbounded in staleness, and the published page was already re-derived on every push. So the file was a copy nobody could rely on, guarded by a check that couldn't catch the thing it appeared to catch.
+
+**I called this "a small change" and it wasn't.** It touched CI, the pre-commit hook, the skill (removing a step and renumbering six others), the gitignore, an index, three glossary entries, two tests, and six links.
+
+**The conflict was self-inflicted, in a predictable way.** Another session regenerated and committed the file on main while I was deleting it — because its copy of the skill still had step 4. The gitignore that landed with this PR stops any future session from staging it.
+
+## User
+
+what needs to be done before closing this thread? what exists here but has not persisted? I am trying to close out this thread
+
+## Assistant
+
+<routes ref="em:763494">
+Audit done. Nothing is uncommitted or broken — working tree clean, main current, all five PRs merged, gates green.
+
+Four things were stale, and one thing had not persisted at all.
+
+**Three measurement errors in one session, each caught by a different mechanism, and the pattern is nowhere on disk.** Individually they're in the record. But the *pattern* isn't filed, and the pattern is the finding: a summarizing fetch invented a comparison, caught by demanding verbatim text; a `git diff` count included main-merges as regenerations, caught by asking what the number would mean if the method were wrong; and a test harness mangled section headers, producing failures that looked real, caught **only** because the untouched control passed.
+
+The third is the generalizable one and it has no home: a measurement harness needs a control case, or you cannot tell a finding from a bug in your instrument. That failure is invisible by construction — a broken harness produces plausible results, and I acted on them for a full round before the control exposed it.
+
+It also has a live consumer: the fidelity probe plan specifies a scorer with no control row in its gold set. If that belief existed, the plan would be built differently.
+</routes>
+
+## User
+
+1
+
+## Assistant
+
+*(the closing report of this turn was delivered after this section was written.)*

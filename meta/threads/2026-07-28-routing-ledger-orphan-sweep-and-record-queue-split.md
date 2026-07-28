@@ -37,7 +37,22 @@ enforcement upgrades from a warning to a blocking gate.
 
 Step 1 was then executed: all 27 orphans dispositioned — 14 promoted into 11
 todos and 1 plan, 13 recorded `none:` with a reason. Steps 2–5 remain in the
-plan, which moved to `in-progress`.
+plan, which moved to `in-progress`. That landed in **PR 162**.
+
+The session then continued past that merge. Asked whether a future session would
+know to pick up step 2, the digest was *run* rather than reasoned about: the plan
+sat 4th of 29 active plans and never reached the heuristic top-3, and its digest
+line described the whole plan rather than its position. Both were fixed —
+description leading with "step 1 done; steps 2–5 remain", and `priority: 2`
+rather than `1`, which would have tied with the operator's existing pin and
+outranked it on recency. Two further findings came out of the same check: the
+plans-index gloss still described the superseded `mix brain.strands` design, and
+a parallel session had filed the identical matter as
+[an issue](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) hours
+earlier, reaching the same diagnosis from the opposite direction — its three
+candidates superseded by the ratified design, cross-linked both ways, and kept
+`open` because the gap is live in the shipped policy until step 5 rewrites it.
+This follow-up landed in **PR 170**.
 
 ## Routing
 
@@ -50,6 +65,8 @@ plan, which moved to `in-progress`.
 | Step 1 sweep — 27 orphans dispositioned | closed | [sweep dispositions](/meta/plans/reconcile-dangling-ledger-strands.md) | - |
 | Spec→code traceability promoted to its own plan | closed | [spec-to-code-traceability](/meta/plans/spec-to-code-traceability.md) | - |
 | Steps 2–5: backfill, switch, gate, policies | open | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | Execution deferred to fresh sessions per the plan's build order |
+| Cold-session discoverability of step 2 — digest position and self-describing line | closed | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | - |
+| Duplicate matter filed as an issue by a parallel session | closed | [routing-ledger-has-no-post-capture-upkeep-path](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) | - |
 | Do `project` hubs count as valid `Action` targets? | paused | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | Raised by two secure-financial-agent strands held in the project's own Open questions; recorded `none:` for now |
 
 _All routing targets are governance docs (no `em:` ids), so no route tags are
@@ -292,3 +309,78 @@ My recommendation: PR this branch now so the plan lands, then start a fresh sess
 confirm dropping dangling
 commit, then proceed step 1
 then make sure 2-5 are persisted in a plan, and /create-pull-request merge
+
+## Assistant
+
+Merged and done.
+
+| | |
+|---|---|
+| **Merge SHA** | `dd29e7c` — true merge commit, per merge-strategy |
+| **CI** | green on both `verify` runs before merging |
+| **Head branch** | auto-deleted (confirmed gone from `origin`) |
+| **Thread doc** | `meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md`, `pr: 162` |
+
+### What landed
+
+The scan (89 pending strands, 62 without a live tracker, staleness as the dominant failure mode), the record/queue separation that dissolves the freezing question, and step 1 executed — 27 orphans dispositioned into 11 todos and 1 plan, 13 recorded `none:` with a reason.
+
+The plan is now `in-progress` with steps 2–5 remaining and its appendix carrying every disposition, so the migration is mechanical from here.
+
+### Where to pick up
+
+Step 2 (backfill `Action` across 109 ledgers) is the natural next fresh session — it's the one step nothing else can start before, and the plan is written to be executed cold. Steps 3–5 follow it in order.
+
+Two things I recorded rather than decided, both waiting on you and both cheap to answer before step 2 runs:
+
+- **Do `project` hubs count as valid `Action` targets?** Two secure-financial-agent strands are genuinely held by that project's own `## Open questions` — a bundle doc, not a tracker. They're `none:` with a pointer for now, but if you widen the rule, step 2 should write them as links instead of re-touching those ledgers later.
+- **The grandfathering boundary** for the gate: threads dated after adoption, or only threads in the diff. Step 4 needs it, not step 2 — less urgent.
+
+I did not subscribe to PR activity; the PR is merged and closed, so there's nothing left to watch.
+
+## User
+
+if i close this session will a future session know to pick up step 2?
+
+## Assistant
+
+Tested it rather than assumed. **Findable, but not pointed at** — and the gap is bigger than I'd have guessed.
+
+Running `mix brain.session_init` against merged `main`:
+
+| Section | Count | Where the plan sits |
+|---|---:|---|
+| Open issues | 6 | — |
+| Open todos | 17 | — |
+| **Active plans** | **29** | **4th** |
+| Dangling strands | 99 | — |
+| **Heuristic top-3** | — | **absent** |
+
+The top-3 is a `priority: 1`-flagged plan and two open issues. Issues outrank in-progress plans by class weight, and `main` gained two more issues while we worked.
+
+So three concrete gaps:
+
+**It's 4th of 29 in a list nobody reads to the bottom.** The digest is a wall — 151 items across four sections. A reader scanning for what to do next takes the top-3, and the plan isn't there.
+
+**Its digest line doesn't say where it is.** The line shows title + `in-progress` + description, and the description describes the *whole* plan. Nothing signals "step 1 is done, step 2 is next." That only appears once you open the file and read the build order. A fresh agent has no reason to open the 4th of 29 plans.
+
+**Discovery is pull, not push.** Nothing runs `/priorities` automatically. The SessionStart hook nudges — `run /priorities to review open work` — but a session that starts with a task goes straight to the task.
+
+One thing worth naming: dangling strands went **89 → 99**. Some of that is `main`'s other threads, but two rows are mine — my own capture added to the backlog this plan exists to eliminate. That's the inflow problem demonstrating itself in the same session that diagnosed it, and it's exactly what steps 2–5 close.
+
+### Two fixes
+
+| Fix | Effect | Whose call |
+|---|---|---|
+| Amend the plan's `description` to state the position — "step 1 done; steps 2–5 remain, starting with the ledger backfill" | The digest line becomes self-describing, so a reader learns the state without opening the file | mine to do, if you want it |
+| Set `priority: 1` on the plan | Pins it above every heuristic class — it becomes the top-3 item a fresh session sees first | yours — the contract calls this the operator's escape hatch |
+
+I'd do both. The description fix is the one that actually helps a cold reader, since a pin gets it *seen* but still doesn't say what's next.
+
+Both need a fresh branch and PR — the merged branch is gone. Say the word and I'll restart `claude/routing-ledger-orphaned-todos-8fdzcg` from `main` and land them together; it's a two-line change, so it'd be one small PR rather than a session's worth of work.
+
+## User
+
+do both
+then
+/create-pull-request  merge

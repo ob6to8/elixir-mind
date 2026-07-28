@@ -49,8 +49,8 @@ concern held at close time blocks the irreversible step as a question the
 operator dispositions; the driving question is verified before the close;
 the close persists-or-points because post-capture chat is outside every
 record; "for whenever you pick this up" is the named failure signature —
-wired into `/create-pull-request` as a concerns gate at step 8 and before
-the step-10 merge. The "OR" in the final flag resolved as both: the phrase
+wired into `/create-pull-request` as a concerns gate at the open step and
+again before the merge step. The "OR" in the final flag resolved as both: the phrase
 banned, and
 [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md)
 adopted (checked facts cite what was checked, recalled facts are marked,

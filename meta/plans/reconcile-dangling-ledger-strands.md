@@ -1,8 +1,9 @@
 ---
 type: plan
 title: "Reconcile dangling routing-ledger strands into tracked work"
-description: Separate the record layer from the work queue — strip state out of thread routing ledgers, make every strand link to a plan/todo/issue at PR time, and stop /priorities from reading ledgers at all, so deferred work can no longer dangle inside a frozen thread body.
+description: "Step 1 done (27 orphans dispositioned); steps 2-5 remain, starting with the ledger backfill. Separates the record layer from the work queue — strip state out of thread routing ledgers, make every strand link to a plan/todo/issue at PR time, and stop /priorities from reading ledgers at all, so deferred work can no longer dangle inside a frozen thread body."
 status: in-progress
+priority: 2
 provenance: "Claude Code session, 2026-07-13 — operator asked, after noticing two offered intakes tracked only as paused ledger strands, for a plan to scan all routing ledgers for danglers needing promotion to todos/plans"
 attribution:
   when: 2026-07-13T00:00:00Z
@@ -70,6 +71,13 @@ of those 62 splits them three ways, and the split is the finding:
 rows describe work that is *already tracked somewhere else* — so the ledger's
 defect is not primarily that work escapes it, but that it has **no way to say
 "discharged"**, and `/priorities` therefore re-surfaces settled matters forever.
+
+The same gap was filed independently as
+[routing ledger has no post-capture upkeep path](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md)
+by a parallel session on the same day, reaching the same diagnosis from the
+opposite direction — a strand resolved in a later session with no sanctioned way
+to update its row. That issue's three candidate resolutions are superseded by
+the design below, and it stays open until step 5 lands.
 
 ## The resolution: the ledger is a record, not a queue
 
