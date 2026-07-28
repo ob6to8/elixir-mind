@@ -14,6 +14,16 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #152](https://github.com/ob6to8/elixir-mind/pull/152) — Extend the channels register with ingested-document joins and a vetted video set *(2026-07-27)*
+
+- Add the channels source register
+- Populate the channels register's video section
+- Prune the video channels to the five that meet the criterion
+- Drop the assessed-and-dropped list from the channels register
+- State the channels register's two-directional scope
+- Capture the channels-register session and glossary its terms
+- Stamp pr: 152 into the captured thread doc
+
 ## [PR #151](https://github.com/ob6to8/elixir-mind/pull/151) — Journal day three: avatars, and the extended-mind grounding it produced *(2026-07-27)*
 
 - journal: file 2026-07-27 entry — second brains as operator avatars
