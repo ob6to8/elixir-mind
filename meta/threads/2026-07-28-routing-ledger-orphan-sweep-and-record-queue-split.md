@@ -67,6 +67,16 @@ path, so git sees no conflict and no gate fires; both were caught by accident.
 An earlier judgment that a third instance was needed before calling it a pattern
 was reversed on re-reading the two. This third round landed in **PR 176**.
 
+A fourth round wrote the generated-block mistake up as
+[its own tutorial](/meta/tutorials/editing-part-authored-part-generated-documents.md):
+128 documents carry a generated excerpt log beneath an authored body, so their
+editing rule is conditional rather than the absolute *never hand-edit* that
+`CLAUDE.md` and the registry get, and a text-anchored edit cannot see the
+boundary. Re-verifying the tutorial's own figures before opening the PR caught
+a wrong one — a working-tree `grep` had swept up untracked test fixtures under
+`tmp/`, inflating a count that is 128 tracked documents, not 122. The corrected
+figure ships with the command that recomputes it. This fourth round landed in **PR 181**.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -82,6 +92,7 @@ was reversed on re-reading the two. This third round landed in **PR 176**.
 | Duplicate matter filed as an issue by a parallel session | closed | [routing-ledger-has-no-post-capture-upkeep-path](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) | - |
 | Step 2's dependency on the `project`-hub question, uncross-referenced | closed | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | - |
 | Parallel sessions filing duplicate artifacts, undetectable by git | closed | [parallel-sessions-file-duplicate-artifacts](/meta/issues/parallel-sessions-file-duplicate-artifacts.md) | - |
+| Generated-block edit hazard, written up as a tutorial | closed | [editing-part-authored-part-generated-documents](/meta/tutorials/editing-part-authored-part-generated-documents.md) | - |
 | Do `project` hubs count as valid `Action` targets? | paused | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | Raised by two secure-financial-agent strands held in the project's own Open questions; recorded `none:` for now |
 
 _All routing targets are governance docs (no `em:` ids), so no route tags are
@@ -548,3 +559,70 @@ meta/plans/reconcile-dangling-ledger-strands.md              +6   (the step 2 no
 So: it's saved, it's pushed, it's not lost — and it becomes real when you merge it. [Open the PR here.](https://github.com/ob6to8/elixir-mind/pull/new/claude/routing-ledger-orphaned-todos-8fdzcg)
 
 If you'd rather I open the PR myself, say so and I will — I held off only because you said you'd author it.
+
+## Assistant
+
+PR [#176](https://github.com/ob6to8/elixir-mind/pull/176) is open, CI running. I'll merge it once green — that's the last step.
+
+**Thread doc:** `meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md` — extended in place, `pr:` still 162 (its origin), with PRs 170 and 176 named in the narrative.
+
+One thing from this round worth telling you, because it's a small demonstration of the machinery working. When I went to widen the `deduplication` glossary entry, my edit landed **inside a generated block** — the route-tag excerpt log, which quotes thread passages verbatim. I'd anchored on a sentence that turned out to exist only as a quotation, not as body prose. The log-fidelity gate caught it immediately and refused the commit. I moved the paragraph into the real body and regenerated. Nothing shipped wrong, but it's exactly the class of mistake that would have been invisible without that check.
+
+The glossary widening itself is small and follows from the new issue: `deduplication` defined dedup purely as an `/intake` step, which reads as if that's the whole of it. It isn't — governance documents have no equivalent step and no probe measuring one, and that gap is what both of today's duplicates fell through.
+
+## Assistant
+
+Merged. Everything from this session is now on `main`.
+
+| | |
+|---|---|
+| **Merge SHA** | `6a5d21f` — true merge commit |
+| **CI** | green on both runs before merging |
+| **Head branch** | deleted |
+| **Working tree** | clean |
+
+Verified on merged `main`, not assumed: the duplicate-artifact issue exists as a real file, and step 2's cross-reference is live in the plan.
+
+**Answering your earlier question directly: yes, the second one is now written down *in the repo*** — not just on a branch. A future session will find it.
+
+### Where the session ends
+
+Three PRs: **#162** (the scan, the design, step 1), **#170** (discoverability fixes), **#176** (the duplicate-artifact issue and step 2's cross-reference).
+
+What a fresh session sees when it runs `/priorities`: the strand plan at **#2** in the top-3, its line leading with *"Step 1 done; steps 2-5 remain, starting with the ledger backfill."* Sitting nearby are the ledger-upkeep issue (cross-linked, its candidates marked superseded) and now the duplicate-artifact issue.
+
+Everything left is written down where the tooling will surface it — steps 2–5 with the sweep-before-switch constraint, the three open questions each with a recommended answer, the 27 dispositions in the appendix so the migration is mechanical, and the 11 todos plus 2 plans the sweep promoted.
+
+Nothing is held only in this conversation. You can close it.
+
+## User
+
+create a tutorial that walks through this in detail:
+
+One thing from this round worth telling you, because it's a small demonstration of the machinery working. When I went to widen the deduplication glossary entry, my edit landed inside a generated block — the route-tag excerpt log, which quotes thread passages verbatim. I'd anchored on a sentence that turned out to exist only as a quotation, not as body prose. The log-fidelity gate caught it immediately and refused the commit. I moved the paragraph into the real body and regenerated. Nothing shipped wrong, but it's exactly the class of mistake that would have been invisible without that check.
+
+## Assistant
+
+Tutorial written, committed, and pushed to the branch. No PR opened — that's yours.
+
+| | |
+|---|---|
+| **What I created** | `meta/tutorials/editing-part-authored-part-generated-documents.md` |
+| **What I modified** | `meta/tutorials/index.md` — entry added |
+| **Actions I have taken** | Verified every quoted figure against the real files; gates green (188 tests); committed and pushed |
+
+### What's in it
+
+The framing that made it worth a tutorial rather than a note: **the danger isn't that the file is generated — it's that it's only generated below a certain line.** `CLAUDE.md`, the registry, and the code map are generated end to end, so the rule is absolute and you can't half-follow it. **122 documents** carry a generated excerpt log beneath an authored body, and there the rule is conditional. A conditional rule is one you break by accident.
+
+Three things I dug up rather than recalled:
+
+- **The boundary is invisible to a text search**, and worse, the log exists specifically to collect prose *about the same subject as the entry* — so the two halves read alike. That's not incidental; it's what makes the log useful and what makes it a trap.
+- **The gate prevented two failures, not one.** I'd only described one to you. The second is nastier: at the next `--materialize` — a routine `/capture` step — the block gets rewritten and the inserted paragraph vanishes silently. So the falsified quotation would ship *and* the intended edit would disappear days later with nothing linking the two.
+- **Why this check can block when most editorial checks here only warn:** it has a perfect oracle. The correct content is computable, so there's no judgment call and no false positive to train agents into ignoring it.
+
+It quotes the actual `check_log_fidelity` comprehension and the real failure output, and closes with a concrete anchoring procedure — grep for the heading, confirm your anchor's line number sits above it, prefer structural markers over prose, and fix the thread's tag rather than the block when an excerpt looks wrong.
+
+The closing point is the one I'd stand behind: an agent holding the policy in context, mid-session on a task *about* generated artifacts and staleness, still made this edit. Knowing the rule wasn't enough. The check was.
+
+[Open a PR from the branch](https://github.com/ob6to8/elixir-mind/pull/new/claude/routing-ledger-orphaned-todos-8fdzcg) when you want it in, or tell me to and I will.
