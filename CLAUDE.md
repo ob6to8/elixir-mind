@@ -915,6 +915,18 @@ content directly.
   "this touches ~N files, not the 2 I estimated; proceed?" — or proceed and
   report the measured cost afterward.
 
+- **"That last row is the honest headline."** — pattern: *"that X is the
+  honest/real \<headline/story/takeaway\>"* — post-hoc editorial pointing at
+  one's own just-delivered content. Two failures. *"Honest"* as a
+  discriminator is self-indicting: if the whole response is honest the
+  adjective asserts nothing, and if it discriminates, it concedes the rest
+  was framed — the self-directed twin of the announced-candor entry above.
+  And naming something the headline instead of *making* it the headline
+  narrates a structure defect rather than fixing it — per
+  [plainspeak-orientation](/meta/policy/plainspeak-orientation.md), the
+  outcome leads the response. Recast: move the load-bearing fact into the
+  lead and delete the pointer — placement, not commentary, carries emphasis.
+
 _Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
 
 **A closing flow ends clean or not at all.** Invoking
