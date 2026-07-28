@@ -6,12 +6,12 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-25
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -109,5 +109,12 @@ attribution:
   only when asked, delivered in chat and persisted verbatim below the entry under a
   marked `## Response` heading — operator voice above, agent voice below, never
   interleaved. See `.claude/skills/journal/SKILL.md`.
+- **`/ban-phrase`** — add an operator-flagged word or phrase to the
+  [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
+  generalized pattern, the reasoning from the flagging exchange, and a recast),
+  dedup against existing patterns, and recompile the contract so the entry binds
+  every future session; the operator's invocation is the ratification.
+  `/ban-phrase list` renders the register read-only. See
+  `.claude/skills/ban-phrase/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.

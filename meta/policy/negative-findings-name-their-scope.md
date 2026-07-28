@@ -2,8 +2,8 @@
 type: policy
 title: Negative findings name their scope
 description: A claim that something does not exist, is not stated, or was not found is a claim about a search space, so it must name the space actually searched — "I found no X in A or B" is reportable, "no X exists" is not, unless the search space was enumerated first.
-section: filing
-order: 18
+section: communication
+order: 4
 status: active
 tags: [meta, governance, filing, research, epistemics, communication]
 timestamp: 2026-07-27
