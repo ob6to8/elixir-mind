@@ -158,6 +158,13 @@ as well — see step 10.
   commit graph is a provenance layer of session trailers and SHA citations, and
   squashing severs it). If a check fails, **stop and surface it** — do not merge a
   red PR.
+- **Confirm a non-terminal status before concluding CI is still running.**
+  `get_check_runs` can report `queued`/`in_progress` for a job that has already
+  completed, so a run that looks stuck may simply be a stale read. Check the job
+  itself (`mcp__github__actions_get` with `get_workflow_job` on the check-run id)
+  before waiting further — its `status`/`conclusion` and per-step timings are
+  authoritative. This only ever converts a false "still running" into the real
+  result; a genuinely red or pending check still blocks the merge.
 - After merging, report the merge SHA and confirm the head branch deleted (or delete
   it if auto-delete is off).
 

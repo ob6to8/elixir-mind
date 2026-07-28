@@ -243,7 +243,7 @@ auditable and reversible.
 | `deprecated/` triage — 33 files still present | [todo](/meta/todos/triage-what-remains-in-deprecated.md) |
 | Surface `sense` in the glossary index and registry | [todo](/meta/todos/surface-glossary-sense-in-index-and-registry.md) |
 | `source-recall-probe` + `priorities-recitation` evals unbuilt | [todo](/meta/todos/build-the-two-proposed-eval-instruments.md) |
-| `mix brain.channels` generator for the `Ingested` column | [todo](/meta/todos/generate-the-channels-register-ingested-column.md) |
+| `mix brain.channels` generator for the `Ingested` column | [todo](/meta/todos/generate-the-channels-ingested-column.md) — filed independently on `main`; the sweep's duplicate was dropped |
 | Broaden `invisible-degradation` for the model-output sense | [todo](/meta/todos/broaden-invisible-degradation-for-model-output-sense.md) |
 | Cross-model PR review Action: target repo + reviewer model | [todo](/meta/todos/decide-cross-model-pr-review-action-target.md) |
 | Taxonomy stubs + tolerated broken links | [todo](/meta/todos/confirm-taxonomy-stub-folders-and-tolerated-broken-links.md) |

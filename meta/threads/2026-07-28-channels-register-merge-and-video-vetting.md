@@ -44,6 +44,15 @@ nominated as anti-hype, publish collapse-and-panic commentary. The eleven reject
 first recorded with their reasons, then dropped at the operator's direction with the
 reasoning left in git history.
 
+That work landed as PR 152. The session then continued past that merge: the operator
+asked for both strands the routing ledger had left paused to be filed as todos, so the
+branch was restarted from the new default-branch tip rather than stacked on merged
+history, and [the fetch fallback](/meta/todos/handle-hosts-that-refuse-automated-fetches.md)
+and [the generated Ingested column](/meta/todos/generate-the-channels-ingested-column.md)
+were filed — the first framed around substitution rather than blockage as the real
+risk, the second recording the editorial channel-identity problem that blocks it. Those
+two todos ship in PR 154; this doc's `pr:` stays at its origin, 152.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -51,8 +60,8 @@ reasoning left in git history.
 | Channels register: shape, placement, and the merge with the version PR #146 landed | closed | [channels register](/survey/channels.md) | - |
 | The `channel` concept widened to cover the register's retrospective half | closed | [channel](/beliefs/glossary/channel.md) | - |
 | Video-channel vetting: sixteen nominations judged on RSS output, five kept | closed | [channels register](/survey/channels.md) | - |
-| Reddit is unfetchable from this sandbox; the thread was pasted by the operator instead | paused | `unrouted` | Worth a tracked issue if `/research` or `/bookmarks` ever needs Reddit as a source? |
-| Register is hand-maintained; the `Ingested` column is re-derivable but not generated | paused | [channels register](/survey/channels.md) | Should a `mix brain.channels` generator own the column, as contract/registry/code-map do? |
+| Reddit is unfetchable from this sandbox; the thread was pasted by the operator instead | closed | [fetch-fallback todo](/meta/todos/handle-hosts-that-refuse-automated-fetches.md) | - |
+| Register is hand-maintained; the `Ingested` column is re-derivable but not generated | closed | [generate-Ingested todo](/meta/todos/generate-the-channels-ingested-column.md) | - |
 
 ## User
 
@@ -361,3 +370,53 @@ I also wrote down what the column *isn't*: a join, not a record. Each document a
 One thing worth flagging: **the pre-commit hook caught a gate I hadn't run.** Editing the term's description staled `beliefs/glossary/index.md`, and `mix brain.glossary` failed on index sync. Regenerated with `--materialize` and it passes. Full suite is green — format, xref, contract/registry/code-map/lineage freshness, `brain.verify`, route tags, glossary, and 183 tests.
 
 Branch is at `b7fa71c`, six commits, merged with current `main`. Still no PR — say the word and I'll open one, or run `/create-pull-request` if you want the session captured and glossaried into it first.
+
+## Assistant
+
+CI still running. Waiting on the background watcher rather than polling.
+
+## Assistant
+
+**Merged.** [PR #152](https://github.com/ob6to8/elixir-mind/pull/152) → `main` at `08a0c85`, true merge commit, head branch auto-deleted.
+
+**Thread doc:** `meta/threads/2026-07-28-channels-register-merge-and-video-vetting.md` — [on main](https://github.com/ob6to8/elixir-mind/blob/main/meta/threads/2026-07-28-channels-register-merge-and-video-vetting.md), stamped `pr: 152`.
+
+| Step | Result |
+|---|---|
+| Capture | Rendered by parsing the host session log and applying the drop rule mechanically — 6 exchanges kept, exact rather than recalled. 2 route-tagged regions feed `em:9495ee`. |
+| Glossary | `add/add conflict` (`em:b7b5d8`) added; `channel` (`em:9495ee`) extended with this thread's citation. |
+| `attribution.from` | No-op — the only `meta/` path touched was `meta/threads/`, which the policy exempts. |
+| Dev history | Regenerated; required `git fetch --unshallow` first, since the earlier run refused to derive a truncated history. |
+| CI | Both `verify` runs green before merging. |
+
+**Two things worth knowing.** Main moved twice during this session — once before the PR (PR #146's channels register, the add/add conflict this whole PR reconciles) and again mid-capture (PR #151). I merged the second one too; only `meta/threads/index.md` conflicted, where both sides had appended an entry, and I kept both in date order.
+
+And the register itself now sits at 51 rows with the `Ingested` column live, so `/research` reads a table that says both where to look and what looking there has produced.
+
+**Two strands are paused rather than closed**, recorded in the routing ledger for whoever picks them up:
+
+1. Reddit is unfetchable from this sandbox — worth a tracked issue if `/research` or `/bookmarks` ever needs it as a source.
+2. The `Ingested` column is hand-maintained and re-derivable but not generated — a `mix brain.channels` generator could own it the way `contract`/`registry`/`code-map` own theirs.
+
+I didn't file either as an issue or todo, since neither was asked for. Say the word on either and it's a small change.
+
+## User
+
+file both as todos
+
+## Assistant
+
+Both filed and pushed. PR #152 was already merged, so per the merged-PR rule I restarted the branch fresh from `main` (`08a0c85`) rather than stacking on merged history.
+
+| Todo | Status |
+|---|---|
+| [Give the fetching skills a stated fallback for hosts that refuse automated fetches](https://github.com/ob6to8/elixir-mind/blob/claude/channels-document-sources-f2qjvu/meta/todos/handle-hosts-that-refuse-automated-fetches.md) | open |
+| [Generate the channels register's `Ingested` column with `mix brain.channels`](https://github.com/ob6to8/elixir-mind/blob/claude/channels-document-sources-f2qjvu/meta/todos/generate-the-channels-ingested-column.md) | open |
+
+Both carry `attribution.from` pointing at the thread doc, so each traces back to the session that raised it.
+
+**On the fetch one** — I wrote it around the failure that nearly happened rather than the inconvenience that did. Being blocked isn't the risk; *substituting* is. When Reddit refused, a web search offered generic "best LLM channels" listicles, and filing those would have put unread content in the brain under a `resource` URI that asserts it was read — with nothing downstream ever flagging it. The rule to encode is: record the block, ask the operator to paste, never substitute. It also carries a cancel condition, since a transient IP-reputation block wouldn't justify a standing rule.
+
+**On the generator** — I recorded what blocks it, not just the idea. It clears the offline half of the admission rule where `mix brain.staleness` fails it (bundle-only, no network). But channel identity is editorial: Anthropic spans four rows, the *Artificial Intelligence* journal is keyed by DOI prefix, and one row is "author preprint pages" — a category, not a host. A naive host-based grouping would fragment those and fight the register. So it needs a stated URI→row mapping first, and only one column of the table is derivable at all — a different shape from the fully-generated artifacts, worth confirming before building.
+
+Full gate suite green; branch pushed with one commit. No PR opened — say the word if you want one.

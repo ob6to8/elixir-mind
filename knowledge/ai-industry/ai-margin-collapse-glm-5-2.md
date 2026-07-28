@@ -15,6 +15,11 @@ attribution:
 
 # GLM-5.2 and the coming AI margin collapse (Martin Alderson)
 
+The price half of this argument is revised by
+[open weights stopped being a price weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md),
+which reads the Kimi K3 release as the open frontier repricing to closed-lab
+parity.
+
 ## Core argument
 
 Frontier labs (OpenAI, Anthropic) built their business model on cheap-to-amortize
