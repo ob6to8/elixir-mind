@@ -23,6 +23,14 @@ they want to capture.
   - If it is **too large to reasonably copy**, write a faithful **summary** and
     **persist the link** in the `resource` frontmatter field (and under `# Citations`).
     Never drop the source.
+  - **A fetch that returns only page chrome is a wrong fetch shape, not an
+    unavailable source.** Client-rendered pages (video hosts especially) yield
+    nav and footer with no content. Reach for the host's own metadata endpoint
+    or an extraction tool before concluding the material can't be had — for
+    YouTube, the verified path is in
+    [getting a YouTube transcript when the page fetch is blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md).
+    Techniques for other resistant hosts belong beside it in
+    [`source-acquisition/`](/knowledge/knowledge-management/source-acquisition/index.md).
 - **Go to the owning host, and enumerate before searching.** A vendor's
   authoritative documentation is usually split across several hosts along lines
   that are not obvious from outside, and redirects hide the split — so a

@@ -576,6 +576,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8255b8` | [knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | reference |  |
 | `em:401ff6` | [knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems](/knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems.md) | reference |  |
 | `em:24bd1e` | [knowledge/knowledge-management/open-knowledge-format](/knowledge/knowledge-management/open-knowledge-format.md) | reference |  |
+| `em:31fed1` | [knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md) | snippet |  |
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |

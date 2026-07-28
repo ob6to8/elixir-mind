@@ -82,6 +82,19 @@ sessions unprompted, and file the ledger-upkeep gap as an
 write-once rule this thread keeps `pr: 163` as its origin anchor; the follow-up
 landed in a second PR.
 
+**Closing (a third PR).** A final pass asked what remained unpersisted. The
+substantive work was all merged, but the `yt-dlp` incantation that defeated
+YouTube's bot check existed only in the session transcript — so it was filed as a
+`type: snippet` (`em:31fed1`) in a new
+[`source-acquisition/`](/knowledge/knowledge-management/source-acquisition/index.md)
+subdirectory, with a pointer added to `/intake`'s link-resolution step, which is
+the surface actually in context when a fetch fails. The load-bearing detail is
+that subtitle tracks are not media formats, so `--ignore-no-formats-error` lets
+them through even when every video format is DRM-blocked. The ledger-upkeep issue
+needed no decision to close the thread: it is persisted as an `issue` with its
+three candidate fixes, discoverable via `/issue` and `/priorities`, and whichever
+fix is chosen later becomes the plan.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -96,7 +109,7 @@ landed in a second PR.
 | `mix brain.verify` as a shipped level-3 constraint layer | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
 | Bind the SHACL refusal into the coding standards | closed | [elixir-coding-standards](/meta/policy/elixir-coding-standards.md) | - |
 | Routing ledger has no post-capture upkeep path | open | [routing-ledger-has-no-post-capture-upkeep-path](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) | Which of the three fixes to adopt — permit State edits, forward-only, or derive the column |
-| YouTube fetch blocked; yt-dlp alternate player client | closed | `unrouted` | Whether the intake skill should document a video-transcript path |
+| YouTube fetch blocked; yt-dlp alternate player client | closed | [youtube-transcript-when-fetch-is-blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md) | - |
 
 ## User
 
@@ -332,3 +345,37 @@ One question I'd rather surface than assume: the routing ledger lives in a **fro
 ## User
 
 1, 2 and 3
+
+## Assistant
+
+All three landed. PR #168 merged as `8e235647`, head branch auto-deleted. The analysis gained a "The host is the existence proof" section with the `brain.verify`↔SHACL mapping table, the coding-standards policy now binds the SHACL refusal (bounded by authorship rather than size), and the ledger-upkeep gap is filed as an issue with three candidate fixes and none chosen.
+
+One thing worth flagging: the new issue documents a gap that this session then walked straight into — I edited the frozen thread's `State` column with no policy sanctioning it. The issue names that as the improvisation it is and proposes permitting exactly that edit as the cheapest correct fix, but the choice between permitting it, going forward-only, or deriving the column is yours and remains open.
+
+## User
+
+are we clear to run /create-pull-request? is there anything you need from me? is everything persisted outside this thread?
+
+## Assistant
+
+<routes ref="em:31fed1">
+Checked rather than recalled. The substantive work is entirely persisted: working tree clean, `git log origin/main..HEAD` returns zero commits, both PRs in `main`'s history. Two things are not — the conversation turns since the last commit (a work report, timer cleanup, this exchange), none carrying knowledge not already in the merged artifacts; and the scratchpad, which dies with the container by design since the source URL is in `resource` and the load-bearing quotes are in the reference and analysis bodies.
+
+One genuine small gap: the yt-dlp incantation that defeated YouTube's bot check exists nowhere durable. The plain fetch returned only page chrome, and the working path is recorded only in this conversation. Re-deriving it next time costs a few minutes of trial and error.
+
+Running `/create-pull-request` is clear but would produce a capture-only PR, since the tree is clean. The one argument for it is that the render currently ends on an operator instruction with no assistant response after it.
+</routes>
+
+## User
+
+how might we persist the yt-dip incantation so that future agents might find it?
+is the ledger-upkeep issue persisted in a plan, or does it need to be decided here?
+trying to close this thread
+
+## Assistant
+
+<routes ref="em:31fed1">
+The ledger-upkeep issue needs no decision here. It's already persisted as a `type: issue` under `meta/issues/`, `status: open`, with all three candidate fixes written into the body. It's not a plan and shouldn't be one — per the routing policy a plan commits to work, and nothing is committed yet; when you pick a fix, *that* becomes the plan. It surfaces automatically via `/issue` and `/priorities`, and the repo's precedent matches (the dev-history and policy-index issues both carry weighed-but-unchosen fixes). Nothing is lost by closing this thread.
+
+For the yt-dlp recipe: the right home is a `type: snippet` in the taxonomy (durable, has an `em:` id, queryable) **plus a pointer in `/intake`'s link-resolution step** — because that step is what's in an agent's context at the moment a fetch fails, which is the only moment the recipe matters.
+</routes>
