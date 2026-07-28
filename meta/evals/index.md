@@ -26,3 +26,12 @@ Each eval is a prose-bearing markdown doc (a gold set's table is parsed by a
   the harness's built-in task-state reminders? Designed with candidate metrics
   (open-strand pickup, first-action alignment, redirections, drift) and an explicit
   falsification condition; instrument not yet built.
+- [Source recall probe](/meta/evals/source-recall-probe.md) — `status: proposed`.
+  When an agent researches a subject, does its search surface the subject's
+  *known-complete* primary-source set, and does an enumerated host map improve that
+  recall? The upstream measurement for
+  [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md):
+  a caveat rule is only addressable if the agent can know what it missed. Behavioral
+  A/B (unaided vs map-equipped), gold set seeded with a real observed miss, and a
+  falsification condition that would retire the source map and revert the `/intake`
+  amendment.

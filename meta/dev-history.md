@@ -14,6 +14,17 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #149](https://github.com/ob6to8/elixir-mind/pull/149) — CCA study program, the primary-source miss, and the eval that could falsify the fix *(2026-07-27)*
+
+- Plan the CCA study program; fill the four pillar gaps from primary sources
+- Correct the plan's phase-1 status and expand the partner-access dependency
+- Replace the plan's blueprint premise with Anthropic's published exam guide
+- Run the source-inventory spike; file the certification program and blueprint
+- Add the negative-findings-name-their-scope policy; amend /intake for primary sources
+- File the source-recall probe; defer mix brain.staleness behind a trigger
+- Capture the CCA session; glossary it; stamp thread back-links
+- Stamp pr: 149 into the captured thread doc
+
 ## [PR #147](https://github.com/ob6to8/elixir-mind/pull/147) — Scar-tissue drift: two intakes, defenses analysis, bound-adaptation doctrine, two plans, link-policy resolution *(2026-07-27)*
 
 - Intake: trust-state inversion (GSD framework governance incident)
