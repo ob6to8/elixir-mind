@@ -70,6 +70,10 @@ the ledger behaving as specified. The upkeep gap concerns strands that
 resolved. The issue's instance count is unaffected, and no filed document
 carried the claim.
 
+This capture extension, carrying the rounds from the concerns-gate halt
+through the todo filing, landed in PR 182 — the third of the thread, after
+178 (its origin, stamped in `pr:`) and 180.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
