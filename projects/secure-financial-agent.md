@@ -76,6 +76,9 @@ impossible rather than merely discouraged.
 
 ## Open questions
 
+Tracked with their resolution paths and blocking relationships in
+[spec-completion](/projects/secure-financial-agent/spec-completion.md).
+
 - Which document-VLM variant wins **on the operator's own documents** — a
   benchmark to run at build time against a held-back set of real pages, not a
   spec-time decision.
@@ -86,6 +89,8 @@ impossible rather than merely discouraged.
 
 ## Documents
 
+- [Architecture](/projects/secure-financial-agent/architecture.md) — the v1 shape
+- [Finish the spec before code](/projects/secure-financial-agent/spec-completion.md) — what remains, and who owns each item
 - [Project docs](/projects/secure-financial-agent/index.md)
 
 ## Knowledge this project draws on
@@ -101,6 +106,10 @@ links out rather than restating:
   — why the frontier tier is out of scope for a self-hosted system
 - [Local inference serving stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md)
   — the serving layer and its sizing constraints
+- [Single-machine inference hardware, mid-2026](/knowledge/SWE/llm-engineering/local-inference-workstation-tiers.md)
+  — the tiers the hardware decision picks from
+- [Operating an air-gapped workstation](/knowledge/SWE/security/air-gapped-operations.md)
+  — the operational patterns behind the isolation-posture decision
 - [Jido](/beliefs/glossary/jido.md) · [llama.cpp](/beliefs/glossary/llama-cpp.md)
 - [Would deploying to the BEAM — or integrating Jido 2 — benefit this brain?](/meta/analysis/beam-deployment-and-jido-2-evaluation.md)
   — the prior evaluation whose "nothing to grip" finding this workload inverts

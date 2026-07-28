@@ -44,6 +44,17 @@ for the toolchain raise. That last artifact tested the boundary the policy had
 just drawn: the operator assumed it belonged to the project, but raising *this
 repo's* pin is brain governance, so it filed to `meta/plans/`.
 
+The session closed by transitioning to
+[spec-completion](/projects/secure-financial-agent/spec-completion.md), which
+records what remains before code: three decisions only the operator can close
+(hardware, isolation posture, gate placement) and three documents an agent can
+draft (threat model, record schema, benchmark protocol), ordered by which build
+step each unblocks. Two smaller findings were judged not worth a governance
+artifact — a one-off stale read from the GitHub `get_check_runs` endpoint, whose
+fix belongs in the `/create-pull-request` skill rather than in `meta/issues/`,
+and a branch survey that the git-branch-deletion policy had already answered.
+This continuation landed in a follow-up PR; `pr:` above records the origin.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -52,8 +63,10 @@ repo's* pin is brain governance, so it filed to `meta/plans/`.
 | Open-weight frontier scale vs. self-hostability | closed | [open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | - |
 | Serving engines and sizing constraints | closed | [local-inference-serving-stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md) | - |
 | Confidential computing as the middle tier | closed | [confidential-computing-for-llm-inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md) | - |
-| The system's charter, decisions, and shape | open | [secure-financial-agent](/projects/secure-financial-agent.md) | Air gap or default-deny host? Which VLM variant on the operator's own documents? |
-| Jido as the runtime; why this workload inverts the prior evaluation | open | [architecture](/projects/secure-financial-agent/architecture.md) | Approval-gate placement and its friction cost per document |
+| The system's charter, decisions, and shape | paused | [secure-financial-agent](/projects/secure-financial-agent.md) | Hardware pick, isolation posture, and gate placement — all three now tracked as operator-owned decisions in the spec-completion plan |
+| Jido as the runtime; why this workload inverts the prior evaluation | closed | [architecture](/projects/secure-financial-agent/architecture.md) | - |
+| What remains before code begins | paused | [spec-completion](/projects/secure-financial-agent/spec-completion.md) | Three operator decisions (hardware, isolation posture, gate placement) and three drafts (threat model, record schema, benchmark protocol) |
+| Stale `get_check_runs` data during CI polling | closed | `unrouted` | - |
 | Jido primitives mapped to security requirements | closed | [Jido](/beliefs/glossary/jido.md) | - |
 | A home for the idle `project` type | closed | [project-namespace](/meta/policy/project-namespace.md) | - |
 | Raising the Elixir/OTP floor | paused | [raise-elixir-otp-toolchain-floor](/meta/plans/raise-elixir-otp-toolchain-floor.md) | Install method, exact-vs-range pin, and whether a second environment needs the same script |
@@ -529,4 +542,101 @@ options:
 2. yes
 3. yes, but a todo within the project correct?
 4. proceed, and merge
+
+## Assistant
+
+All nine carry unmerged commits, so the policy bars me from touching them — surfacing rather than acting.
+
+**PR [#145](https://github.com/ob6to8/elixir-mind/pull/145) merged as `5654a39`; head branch auto-deleted.**
+
+Thread doc: `meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md`
+
+### Actions I have taken
+
+| Action | Result |
+|---|---|
+| `/capture` | Parsed the session log; drop rule (`len < 300 and followed_by_tool`) retained 9 blocks verbatim — 5 operator, 4 agent |
+| Route tags + `--materialize` | 8 regions over the frozen body; +1 ref after fixing a ledger cross-check warning. 321 regions / 94 sink appends, fidelity re-derived |
+| `/add-to-glossary` | 4 new terms: indirect prompt injection, TEE, SGLang, active parameters. None tripped the description-overlap warning |
+| `attribution.from` stamping | 3 governance docs — 2 created, 1 appended |
+| `mix brain.contract` / `registry` / `glossary --materialize` | Regenerated; all `--check` gates green |
+| `mix brain.dev_history` | **Skipped** — refused on shallow clone (the sanctioned skip) |
+| Commits `0b863b0`, `5523c20` | Full pre-commit suite green both times; 183 tests, 0 failures |
+| CI on `5523c20` | All 19 steps green |
+| Merge | `merge_method: "merge"` — true merge commit, per the merge-strategy policy |
+
+### What shipped
+
+| Type | Doc |
+|---|---|
+| `policy` | project-namespace |
+| `project` | secure-financial-agent `em:f6de6f` |
+| `plan` | architecture `em:0d4f26` (project-scoped) · raise-elixir-otp-toolchain-floor (brain-scoped) |
+| `reference` | open-weight-frontier-models-mid-2026 `em:28fac6` · local-inference-serving-stacks `em:f5914d` |
+| `concept` | indirect-prompt-injection-in-document-pipelines `em:7da513` · confidential-computing-for-llm-inference `em:f96824` · 4 glossary terms |
+
+Two notes worth flagging. **The check-runs endpoint served stale data** — it reported `in_progress` for ~5 minutes after the job had actually finished at 23:13:05; `actions_get` on the job showed the truth. Worth knowing if a future session polls that endpoint and concludes CI is hung.
+
+And the `plan` scoping decision you ratified got tested immediately, in the direction you didn't expect: the toolchain plan filed to `meta/plans/`, not the project. Raising *this repo's* Elixir pin is governance of this brain, so the policy's own rule sent it there.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Execute the toolchain plan | Step 1 is yours — pick the install method based on what your local machine uses. I can't reach the environment setup script |
+| 2 | Review the 9 unmerged branches | All carry work with no other home; the policy requires your ratification before any deletion. Oldest is 9 commits ahead |
+| 3 | Continue the project spec | Threat model, or the parse-worker record schema — the first build-order item |
+| 4 | Resolve the two open questions on the hub | Air gap vs. default-deny host; where the approval gate sits in your workflow |
+
+## Assistant
+
+Stale timers cleared. Nothing changed from my last report — PR #145 is merged as `5654a39`, head branch deleted, working tree clean.
+
+The four options from my previous message still stand whenever you want to pick one up:
+
+| # | Option |
+|---|---|
+| 1 | Execute the toolchain plan (step 1 is yours — the install method, based on what your local machine uses) |
+| 2 | Review the 9 unmerged `claude/*` branches — all carry work with no other home, so deletion needs your call |
+| 3 | Continue the project spec — threat model, or the parse-worker record schema |
+| 4 | Resolve the hub's two open questions — air gap vs. default-deny host; where the approval gate sits |
+
+## User
+
+where would something like "The check-runs endpoint served stale data — it reported in_progress for ~5 minutes after the job had actually finished at 23:13:05; actions_get on the job showed the truth. Worth knowing if a future session polls that endpoint and concludes CI is hung." be filed, if worth filing?
+
+"	Review the 9 unmerged branches" - these are previous or open dev branches, why is this being surfaced here?
+
+keep the plan, don't execute
+disregard the branches
+
+for further dev, we want to transition to a plan describing what needs to be done next and close out this thread
+
+## Assistant
+
+Three answers, then I'll do the transition work.
+
+## 1. Where the check-runs finding goes
+
+By the routing table it looks like an `issue` — "a live concern about how the brain behaves." But I'd argue against filing a governance doc at all, for two reasons.
+
+**It's n=1 on an external API.** GitHub's check-runs endpoint served stale data once. That could be ordinary eventual consistency rather than a durable defect, and a `meta/issues/` doc asserts more confidence than one observation supports. The failure mode is also benign — a session stalls waiting, it doesn't merge red.
+
+**More importantly, an issue doc would be inert.** The contract's own reasoning applies: *"a rule that must fire unprompted, mid-work — where an agent would not know to go looking — belongs in a policy; filing it as a plan or tutorial leaves it inert."* An agent polling CI mid-PR is not going to browse `meta/issues/` first. The place it would actually be read is [`/create-pull-request`](https://github.com/ob6to8/elixir-mind/blob/main/.claude/skills/create-pull-request/SKILL.md) step 10, which is the very instruction that sends agents to the stale endpoint:
+
+> "poll the PR's checks (`mcp__github__pull_request_read` with `get_check_runs`) until CI is green"
+
+So my recommendation is **a one-clause amendment to that step** — confirm a non-terminal status against `actions_get` on the job before concluding CI is still running — and no separate artifact. Living surface, present tense, read at the moment it matters. If it recurs after that, *then* it has earned an issue.
+
+I haven't made that edit; you asked where it would go, not to do it. It's in the options table below.
+
+## 2. The branches — you're right, that was noise
+
+I ran that check because the git-branch-deletion policy has a clause about merged branches being "deleted on sight," and I wanted to know whether it applied. It didn't — all nine were unmerged, which is exactly the case the policy says to leave alone and never propose deleting without you.
+
+Having established that, the correct move was to say nothing. Instead I reported the negative result as an agenda item, which converted "not my business" into something you had to spend a line dismissing. Ordinary open dev branches are not a finding.
+
+## 3. Transition plan
+
+Working on it now.
 

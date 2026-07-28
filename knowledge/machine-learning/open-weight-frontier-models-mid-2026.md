@@ -72,6 +72,23 @@ Four of the five leading open-weight families now come from Chinese labs —
 DeepSeek, Moonshot, Zhipu, and Alibaba — and they have collectively closed the
 coding and reasoning gap with the closed frontier.
 
+## The tier that actually fits one machine
+
+Named concretely, because "the smaller tier" is where every self-hosted system
+actually lands. **Qwen3-VL** (Apache 2.0) is the dominant open document/vision
+family: dense at 2B/4B/8B/32B, MoE at 30B-A3B and 235B-A22B, native 256K context
+expandable to 1M, 32 languages, robust to low light, blur, and tilt. Its
+built-in tasks are the document workload directly — parsing, text localization,
+information extraction, table parsing, formula recognition. The flagship
+235B-A22B is reported to rival Gemini 2.5 Pro on OCR and document comprehension,
+but the 8B and 32B variants are the ones that fit a workstation. **Qwen3.5**
+(February 2026) extends the family with a 0.8B–27B dense lineup plus MoE
+variants at 35B-A3B, 122B-A10B, and a 397B-A17B flagship, also Apache 2.0.
+
+For dedicated OCR rather than general vision-language work, GOT-OCR2 covers
+plain text, formatted text, formulas, and tables in 580M parameters, and
+LightOnOCR targets the smallest-and-fastest end.
+
 ## The consequence
 
 Open weights at this scale are open to **whoever can afford the hardware to keep
@@ -93,6 +110,9 @@ compromise.
 - <https://www.eigent.ai/blog/glm-5-2> — GLM-5.2 specifications
 - <https://www.digitalapplied.com/blog/open-weight-models-h1-2026-retrospective-deepseek-qwen-llama> — H1 2026 open-weight retrospective and the Meta pivot
 - <https://www.spheron.network/blog/best-open-source-llms-self-host-2026-vram-guide/> — VRAM sizing and the active-parameter error
+- <https://github.com/QwenLM/Qwen3-VL> — Qwen3-VL family and sizes
+- <https://www.mindstudio.ai/blog/what-is-qwen-3-5-alibaba-open-weight-model> — the Qwen 3.5 lineup
+- <https://presenc.ai/research/best-open-weight-ocr-document-ai-models-2026> — open-weight OCR and document-AI landscape
 
 ## Thread excerpts — route-tagged log
 
