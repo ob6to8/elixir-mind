@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-28; verbatim retained 
 tags: [meta, thread, intake, software-architecture, llm-inference, determinism, glossary, source-acquisition]
 timestamp: 2026-07-28T18:39:50Z
 session: https://claude.ai/code/session_01795Lb6cbwChgtJzyd6Bjiu
+pr: 183
 ---
 
 # 2026-07-28-architecture-practice-and-nondeterminism-intakes
