@@ -3,7 +3,8 @@ id: em:51aede
 type: claim
 title: "Open weights stopped being a price weapon — the Kimi K3 pricing inversion"
 description: The leading open-weight model now prices at Claude Sonnet 5 parity and licenses its resellers for revenue, so the open frontier has shifted from undercutting closed-lab margins to guaranteeing optionality against them.
-verified: false
+verified: true
+verified_by: [em:b6380e, em:8ad00c, em:0d3bac, em:6e26e0, em:fdf328]
 provenance: "Agent-authored argument, Claude Code session 2026-07-28, reasoning over the Kimi K3 release, Artificial Analysis benchmark economics, and Nathan Lambert's open-weights commentary"
 tags: [ai-industry, ai-economics, open-weights, inference-pricing, margins, licensing, competition]
 timestamp: 2026-07-28
@@ -29,20 +30,29 @@ from where the thesis was heading.
 
 ## The inversion
 
-K3 is the leading open-weight model by a wide margin: 57 on the Artificial
-Analysis Intelligence Index, third overall, against GLM-5.2's 51 and DeepSeek V4
-Pro's 44. It prices at **$3.00 / $15.00 per MTok** — identical to Claude Sonnet
-5, and roughly 3–4× its own predecessor K2.6 at $0.95 / $4.00.
+K3 is the leading open-weight model by a wide margin. Artificial Analysis:
+*"Kimi K3 scores 57 on the Artificial Analysis Intelligence Index. Its
+intelligence is comparable to Opus 4.8 and GPT-5.5 but remains behind Fable 5 and
+GPT-5.6 Sol"* — against *"GLM-5.2 (51) and DeepSeek v4 Pro (44)"* as the leading
+open alternatives. Moonshot lists it at **$3.00 input (cache miss) / $15.00
+output per 1M tokens** — identical to Claude Sonnet 5, and roughly 3–4× its own
+predecessor K2.6 at $0.95 / $4.00.
 
-The per-task figures cut deeper than the headline rate. On AA-Briefcase K3
-averages $10.57 and 56.4 minutes per task, burning 120k output tokens across 83
-turns, where Claude Fable 5 finishes in 67 turns at ~2.5× the speed. Across the
-Intelligence Index its $0.94 per task sits beside GPT-5.6 Sol's $1.04 — and two
-orders of magnitude above DeepSeek V4 Pro's $0.04.
+The per-task figures cut deeper than the headline rate. On AA-Briefcase — where
+K3 places second overall at 1543 Elo, behind Claude Fable 5's 1574 and ahead of
+GPT-5.6 Sol (1501) and Claude Opus 4.8 (1347) — it *"averages a cost of $10.57
+per task"* and *"an average Time per AA-Briefcase Task of 56.4 minutes"*, using
+*"120k output tokens per task and 83 turns per task"*. Across the Intelligence
+Index its cost per task is *"similar to GPT-5.6 Sol ($1.04), ~1/2 the price of
+Opus 4.8 ($1.80)"*, and Artificial Analysis's own summary is blunt: K3 is
+*"particularly expensive when comparing to other open weight models of similar
+size. It's also notably slow and very verbose."*
 
-So the cheap tier still exists. It is simply no longer where the open frontier
-lives. As the-decoder frames the shift: *"Chinese providers aren't offering their
-frontier models at rock-bottom prices anymore either."*
+So the cheap tier still exists — the-decoder reports DeepSeek V4 Pro running the
+same index at $0.04 per task, two orders of magnitude below K3. It is simply no
+longer where the open frontier lives. As that outlet frames the shift:
+*"Chinese providers aren't offering their frontier models at rock-bottom prices
+anymore either."*
 
 ## Why the labs did this
 
@@ -55,10 +65,13 @@ is now worth Sonnet money, which is a claim about market position rather than
 about compute.
 
 **The license monetizes the resellers.** The Kimi K3 License is permissive until
-a model-as-a-service business clears $20M in revenue over twelve months, at which
-point a separate agreement with Moonshot is required; products over 100M MAU or
-$20M monthly revenue must display "Kimi K3" branding. Internal use and certified
-partners are exempt. This is Meta's old 700M-MAU clause generalized into a
+*"the aggregate revenue of the Licensee and its affiliates exceeds 20 million US
+dollars"* over twelve months on a
+[model-as-a-service](/beliefs/glossary/model-as-a-service.md) business, at which
+point a separate agreement with Moonshot is required; products over 100M monthly
+active users or $20M monthly revenue must display "Kimi K3" on the interface.
+Internal use never exposed to third parties, and access through Moonshot's own
+products or certified inference partners, are exempt. This is Meta's old 700M-MAU clause generalized into a
 revenue tier, and it is aimed precisely at the intermediaries the release depends
 on for distribution — a coherent answer to the free-rider problem in open-weight
 releases: give the weights away, charge whoever builds a business serving them.
@@ -127,7 +140,7 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-07-28-kimi-k3-weight-release-implications (2026-07-28)
 
-4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+6 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`em:51aede`]**
 
@@ -150,3 +163,19 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 **[`em:51aede`]**
 
 **The open question I'd leave standing:** whether an *expensive* open model exerts the same pressure a cheap one does. If Moonshot's pricing holds and other Chinese labs follow it up, the open frontier stops being a price weapon and becomes an optionality guarantee — worth a lot for lock-in insurance and jurisdictional control, far less corrosive to closed-lab economics.
+
+---
+
+**[`em:51aede`]**
+
+On the split itself: separating the two docs sharpened the argument rather than just relocating it. Attached to the model card, the pricing observation read as a footnote about K3; standing on its own beside `em:07610c` it has to answer the thesis it contradicts, which forced the *floor effect vs. price collapse* distinction into the open and surfaced the jurisdictional-control channel the price framing had been hiding. The claim now carries a falsification condition — the next Chinese frontier release's price sheet — so it can be revisited rather than quietly aging.
+
+One judgment call worth flagging: I typed it `claim` rather than `note`, which puts it on the verification ladder at `verified: false`. Grounding it later means capturing the pricing pages and AA figures as `source` documents and wiring `verified_by`. That's real work and I didn't do it — the numbers currently rest on secondary reporting, not primary captures.
+
+---
+
+**[`em:51aede`]**
+
+The grounding pass did what grounding passes are for: it caught two figures I had asserted more confidently than the sources supported. I had written that K3 runs *"~2.5× Fable 5's wall-clock"* on AA-Briefcase and that Fable 5 finishes in 67 turns to K3's 83 — both came from a summarizing fetch, and neither survived re-reading the article for verbatim text. The article states K3's 56.4 minutes and 83 turns; it does not state Fable 5's comparative figures in the passages I could quote. Both are now gone, replaced by what Artificial Analysis actually says — including its own blunt summary, which is better evidence than my paraphrase was: K3 is *"particularly expensive when comparing to other open weight models of similar size. It's also notably slow and very verbose."*
+
+The DeepSeek V4 Pro $0.04-per-task figure survives, but attributed: it comes from the-decoder, not from Artificial Analysis, and secondary reporting does not belong in a `source` capture backing `verified: true`. It now reads as reported rather than as established.
