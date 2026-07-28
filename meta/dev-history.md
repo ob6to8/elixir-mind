@@ -14,6 +14,45 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #158](https://github.com/ob6to8/elixir-mind/pull/158) — File the generation-over-discipline prior; track the merge-verify hook noise *(2026-07-27)*
+
+- File the generation-over-discipline prior; track the merge-verify hook noise
+- capture: name PR 158 in the thread's landing sequence
+
+## [PR #157](https://github.com/ob6to8/elixir-mind/pull/157) — Kimi K3 intake: the model card, the pricing inversion, and ten terms *(2026-07-27)*
+
+- intake Kimi K3 model card with weight-release implications analysis
+- split the Kimi K3 economics into an ai-industry claim, glossary, capture
+- stamp pr: 157 into the Kimi K3 thread doc
+
+## [PR #156](https://github.com/ob6to8/elixir-mind/pull/156) — Track the policy-index gloss drift as an issue *(2026-07-27)*
+
+- Track the policy-index gloss drift as an issue
+- capture: name PR 156 in the thread's landing sequence
+
+## [PR #155](https://github.com/ob6to8/elixir-mind/pull/155) — Extend the thread capture through its closing round; fix a stale policy gloss *(2026-07-27)*
+
+- capture: extend the thread through its closing round
+- capture: name the three PRs this thread landed across
+
+## [PR #154](https://github.com/ob6to8/elixir-mind/pull/154) — File the channels-register session's two paused strands as todos *(2026-07-27)*
+
+- File the two paused strands from the channels-register session as todos
+- Re-capture the session to cover the post-merge continuation
+- Name the follow-up PR in the thread's narrative
+
+## [PR #148](https://github.com/ob6to8/elixir-mind/pull/148) — Transition the secure financial agent to spec-completion; close out the thread *(2026-07-27)*
+
+- Transition to spec-completion; close out the architecture thread
+- Close the coverage gap; scope branch deletion to cleanup sessions
+- create-pull-request: confirm a non-terminal check status before waiting
+
+## [PR #153](https://github.com/ob6to8/elixir-mind/pull/153) — Reconcile the is-to-ought analysis with the shipped belief type *(2026-07-27)*
+
+- Reconcile the is-to-ought analysis with the shipped belief type
+- Extend the capture through the is-to-ought reconciliation
+- Name the third PR in the thread's narrative prose
+
 ## [PR #152](https://github.com/ob6to8/elixir-mind/pull/152) — Extend the channels register with ingested-document joins and a vetted video set *(2026-07-27)*
 
 - Add the channels source register

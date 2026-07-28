@@ -12,4 +12,8 @@ software with or for AI; this domain is about the *business* of AI.
 
 ## Claims
 
-- [Open weights stopped being a price weapon — the Kimi K3 pricing inversion](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) — the leading open model now prices at Sonnet parity and licenses its resellers for revenue, so the open frontier caps closed-lab pricing instead of collapsing it. `em:51aede` _(claim)_
+- [Open weights stopped being a price weapon — the Kimi K3 pricing inversion](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) — the leading open model now prices at Sonnet parity and licenses its resellers for revenue, so the open frontier caps closed-lab pricing instead of collapsing it. `em:51aede` _(claim, verified)_
+
+## Contents
+
+- [sources](/knowledge/ai-industry/sources/index.md) — primary-source captures backing this domain's claims: verbatim passages with their `resource` URIs, pointed at by `verified_by`

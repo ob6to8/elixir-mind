@@ -402,6 +402,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
 | `em:1f7dca` | [beliefs/glossary/source-of-truth](/beliefs/glossary/source-of-truth.md) | concept | false |
 | `em:0c6f63` | [beliefs/glossary/source-recall](/beliefs/glossary/source-recall.md) | concept | false |
+| `em:c78837` | [beliefs/glossary/source-type](/beliefs/glossary/source-type.md) | concept | false |
 | `em:38d006` | [beliefs/glossary/speculative-decoding](/beliefs/glossary/speculative-decoding.md) | concept | false |
 | `em:c13e28` | [beliefs/glossary/spin-out](/beliefs/glossary/spin-out.md) | concept | false |
 | `em:c67f48` | [beliefs/glossary/spurious-warning](/beliefs/glossary/spurious-warning.md) | concept | false |
@@ -544,7 +545,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a3d27b` | [knowledge/SWE/version-control/git/sources/pro-git-remote-tracking-branches](/knowledge/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source |  |
 | `em:07610c` | [knowledge/ai-industry/ai-margin-collapse-glm-5-2](/knowledge/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `em:2867ac` | [knowledge/ai-industry/ai-roi-runway-outside-tech-sector](/knowledge/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
-| `em:51aede` | [knowledge/ai-industry/open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | claim | false |
+| `em:51aede` | [knowledge/ai-industry/open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | claim | true |
+| `em:6e26e0` | [knowledge/ai-industry/sources/artificial-analysis-kimi-k3-aa-briefcase](/knowledge/ai-industry/sources/artificial-analysis-kimi-k3-aa-briefcase.md) | source |  |
+| `em:0d3bac` | [knowledge/ai-industry/sources/artificial-analysis-kimi-k3-intelligence-index](/knowledge/ai-industry/sources/artificial-analysis-kimi-k3-intelligence-index.md) | source |  |
+| `em:fdf328` | [knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses](/knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses.md) | source |  |
+| `em:8ad00c` | [knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing.md) | source |  |
+| `em:b6380e` | [knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing.md) | source |  |
 | `em:59895a` | [knowledge/knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
 | `em:148cd9` | [knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments](/knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments.md) | source |  |
 | `em:d72938` | [knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks](/knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md) | reference |  |
