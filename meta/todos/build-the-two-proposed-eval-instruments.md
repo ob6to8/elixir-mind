@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from two untracked routing-ledger strands; both eval docs carry committed designs that no surface tracks toward execution"
-  from: [/meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md]
+  from: [/meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Build the two proposed eval instruments

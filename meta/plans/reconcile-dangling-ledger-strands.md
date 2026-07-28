@@ -9,7 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, dangling-strand reconciliation session"
   why: "persists the design for reconciling routing-ledger danglers into tracked work per the persist-plans policy, so the freezing question and tool shape survive the session"
-  from: [/meta/threads/2026-07-13-track-intake-todos-and-strand-reconciliation-plan.md]
+  from: [/meta/threads/2026-07-13-track-intake-todos-and-strand-reconciliation-plan.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 tags: [meta, plan, tooling, routing-ledger, priorities, provenance]
 timestamp: 2026-07-28
 ---
@@ -219,6 +219,9 @@ before step 3 begins.
 5. **Policies.** Rewrite [routing-ledger](/meta/policy/routing-ledger.md) to the
    pointers-only schema and [session-capture](/meta/policy/session-capture.md)
    to the new ledger step; update `/capture`'s § 3 table; recompile the contract.
+   Also update the [routing ledger](/beliefs/glossary/routing-ledger.md) and
+   [strand](/beliefs/glossary/strand.md) glossary entries, both of which define
+   the term by the four-column schema this step retires.
 
 ## Appendix — sweep dispositions (step 1, done 2026-07-28)
 

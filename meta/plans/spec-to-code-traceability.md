@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand whose approach needed deciding rather than only doing, so it files as a plan rather than a todo"
-  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md]
+  from: [/meta/threads/2026-07-20-intent-as-source-and-dark-factory-pricing.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Spec→code traceability

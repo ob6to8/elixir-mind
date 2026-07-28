@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; a small terminology decision that stays unmade while unfiled"
-  from: [/meta/threads/2026-07-27-llm-security-intakes-and-two-evaluation-beliefs.md]
+  from: [/meta/threads/2026-07-27-llm-security-intakes-and-two-evaluation-beliefs.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Broaden `invisible-degradation` for the model-output sense

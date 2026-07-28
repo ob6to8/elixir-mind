@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; the direction is already committed by a shipped plan, only the display surfaces are unbuilt"
-  from: [/meta/threads/2026-07-13-glossary-sense-disambiguation.md]
+  from: [/meta/threads/2026-07-13-glossary-sense-disambiguation.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Surface `sense` in the index and registry views

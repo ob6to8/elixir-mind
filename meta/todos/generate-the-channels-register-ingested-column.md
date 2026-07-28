@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; a re-derivable column kept by hand is the drift pattern this repo has already solved three times"
-  from: [/meta/threads/2026-07-28-channels-register-merge-and-video-vetting.md]
+  from: [/meta/threads/2026-07-28-channels-register-merge-and-video-vetting.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Generate the channels register's `Ingested` column

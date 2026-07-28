@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; the artifact is built and waiting on two decisions only the operator can make"
-  from: [/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md]
+  from: [/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Decide the cross-model PR review Action's target and reviewer

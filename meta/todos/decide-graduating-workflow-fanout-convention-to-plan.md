@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; an analysis carrying an explicit graduation question that no surface tracks"
-  from: [/meta/threads/2026-07-16-workflow-driven-plan-execution-convention.md]
+  from: [/meta/threads/2026-07-16-workflow-driven-plan-execution-convention.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Decide whether the Workflow fan-out convention graduates

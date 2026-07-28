@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; a long-standing backlog with real content and no recorded disposition"
-  from: [/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md]
+  from: [/meta/threads/2026-07-11-deprecated-directory-triage-and-machinery-deletion.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Triage what remains in `deprecated/`

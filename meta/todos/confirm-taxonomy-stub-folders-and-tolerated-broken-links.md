@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; two operator confirmations that were asked for at restructure time and never closed out"
-  from: [/meta/threads/2026-07-13-artifacts-concept-and-anthropic-node-restructure.md]
+  from: [/meta/threads/2026-07-13-artifacts-concept-and-anthropic-node-restructure.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Confirm the taxonomy stubs and tolerated broken links

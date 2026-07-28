@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; the drift is verified against CI and the fix is a single table edit"
-  from: [/meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
+  from: [/meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Refresh the gate-suite tutorial's gate table

@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; a policy proposal awaiting ratification that has been overtaken in part and needs an explicit decision either way"
-  from: [/meta/threads/2026-07-13-three-level-documentation-plan-and-model-doctrine.md]
+  from: [/meta/threads/2026-07-13-three-level-documentation-plan-and-model-doctrine.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Ratify or reject: provenance names the producing model

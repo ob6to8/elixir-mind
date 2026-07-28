@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "promoted from an untracked routing-ledger strand; a convention question that recurs on every entry while undecided"
-  from: [/meta/threads/2026-07-26-journal-day-two-intermediary-layer.md]
+  from: [/meta/threads/2026-07-26-journal-day-two-intermediary-layer.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Decide the journal carry-forward close convention
