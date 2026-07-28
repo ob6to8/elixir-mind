@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, communication-guidance session"
   why: "the operator flagged the recurring pattern of closing reports introducing new findings after the merge, and ratified treating them as merge blockers"
+  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
 ---
 
 **A closing flow ends clean or not at all.** Invoking

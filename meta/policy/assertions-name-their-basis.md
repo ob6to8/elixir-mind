@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, communication-guidance session"
   why: "the operator flagged 'let me audit rather than answer from memory' and ratified the general practice of always distinguishing memory-based from checked statements"
+  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
 ---
 
 **An assertion the operator might act on names its basis — checked or
