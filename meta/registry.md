@@ -39,6 +39,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:98ec38` | [beliefs/glossary/approval-gate](/beliefs/glossary/approval-gate.md) | concept | false |
 | `em:e2377d` | [beliefs/glossary/approximate-nearest-neighbor](/beliefs/glossary/approximate-nearest-neighbor.md) | concept | false |
 | `em:3f16ba` | [beliefs/glossary/architecture-decision-record](/beliefs/glossary/architecture-decision-record.md) | concept | false |
+| `em:367dbd` | [beliefs/glossary/argument-interchange-format](/beliefs/glossary/argument-interchange-format.md) | concept | false |
 | `em:43244e` | [beliefs/glossary/argumentation-framework](/beliefs/glossary/argumentation-framework.md) | concept | false |
 | `em:54ea6d` | [beliefs/glossary/artifact](/beliefs/glossary/artifact.md) | concept | false |
 | `em:fe9d4d` | [beliefs/glossary/artificial-analysis-intelligence-index](/beliefs/glossary/artificial-analysis-intelligence-index.md) | concept | false |
@@ -339,6 +340,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b79e02` | [beliefs/glossary/proof-of-vulnerability](/beliefs/glossary/proof-of-vulnerability.md) | concept | false |
 | `em:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
 | `em:573229` | [beliefs/glossary/proto-belief-document](/beliefs/glossary/proto-belief-document.md) | concept | false |
+| `em:e8818e` | [beliefs/glossary/prov-o](/beliefs/glossary/prov-o.md) | concept | false |
 | `em:ea7acc` | [beliefs/glossary/provenance](/beliefs/glossary/provenance.md) | concept | false |
 | `em:1341c6` | [beliefs/glossary/provider-lock-in](/beliefs/glossary/provider-lock-in.md) | concept | false |
 | `em:b74c61` | [beliefs/glossary/pure-function](/beliefs/glossary/pure-function.md) | concept | false |
@@ -348,6 +350,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |
 | `em:a95adb` | [beliefs/glossary/ratification](/beliefs/glossary/ratification.md) | concept | false |
 | `em:1434d9` | [beliefs/glossary/ratification-immutable](/beliefs/glossary/ratification-immutable.md) | concept | false |
+| `em:df9c77` | [beliefs/glossary/rdf](/beliefs/glossary/rdf.md) | concept | false |
 | `em:cf2db9` | [beliefs/glossary/rdfs](/beliefs/glossary/rdfs.md) | concept | false |
 | `em:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
 | `em:f5c2bd` | [beliefs/glossary/react](/beliefs/glossary/react.md) | concept | false |
@@ -410,6 +413,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:aa0003` | [beliefs/glossary/skill](/beliefs/glossary/skill.md) | concept | false |
 | `em:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
+| `em:8995e9` | [beliefs/glossary/skos](/beliefs/glossary/skos.md) | concept | false |
 | `em:ceca0b` | [beliefs/glossary/software-factory](/beliefs/glossary/software-factory.md) | concept | false |
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
 | `em:1f7dca` | [beliefs/glossary/source-of-truth](/beliefs/glossary/source-of-truth.md) | concept | false |
