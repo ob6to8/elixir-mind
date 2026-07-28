@@ -46,19 +46,22 @@ installs (a constraint that motivates the
 
 - **The MCP gateway is the differentiating piece.** OAuth on-behalf-of means a
   tool call carries the *end user's* identity to the downstream system rather
-  than a shared service credential, which is the difference between an agent
-  platform that can be given production access and one that cannot. The private
+  than a shared service credential — [on-behalf-of delegation](/beliefs/glossary/on-behalf-of-delegation.md)
+  — which is the difference between an agent platform that can be given
+  production access and one that cannot. The private
   registry and Kubernetes operator make MCP servers an operated fleet rather
   than per-developer config — the deployment story the
   [MCP architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) leaves to
   implementers.
 - **The guardrails are named after specific attack shapes, not generically.**
-  "Lethal Trifecta" is Simon Willison's term for an agent that simultaneously
-  has access to private data, exposure to untrusted content, and the ability to
-  exfiltrate — the conjunction that turns indirect prompt injection into data
-  loss. Dual-LLM is the companion mitigation pattern: a privileged model that
-  never sees untrusted content, driving a quarantined model that does. Building
-  both in as product features is the same structural bet as the
+  The [lethal trifecta](/beliefs/glossary/lethal-trifecta.md) is Simon Willison's
+  term for an agent that simultaneously has access to private data, exposure to
+  untrusted content, and the ability to exfiltrate — the conjunction that turns
+  indirect prompt injection into data loss. The
+  [dual-LLM pattern](/beliefs/glossary/dual-llm-pattern.md) is the companion
+  mitigation: a privileged model that never sees untrusted content, driving a
+  quarantined model that does. Building both in as product features is the same
+  structural bet as the
   [secure financial agent](/projects/secure-financial-agent.md) — that what the
   agent is *permitted* to do, rather than what the model decides, is the
   security boundary.
@@ -78,3 +81,15 @@ time: ~4,000 stars, ~1.1k forks. These are the project's own figures, unaudited.
 
 - `archestra-ai/archestra` README —
   <https://github.com/archestra-ai/archestra> (fetched 2026-07-28)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1b6814">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-debugging-agent-harnesses-on-weak-models (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:1b6814`]**
+
+Filed [archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) (`em:1b6814`, `type: reference`) under `knowledge/SWE/agentic/frameworks/` — the self-hosted MCP/agent platform whose harness the practice was developed against: an LLM gateway, an MCP gateway with OAuth on-behalf-of, a sandboxed agent runtime, and deterministic Dual-LLM/Lethal-Trifecta guardrails.

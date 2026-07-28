@@ -177,3 +177,15 @@ strong enough not to complain.
   (quoted comments by `donk8r`, `arsenyinfo`, `Smallpaul`, `rockstarRobin`)
 - [Archestra — open-source enterprise AI platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md)
   — the product whose harness this practice was developed against.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:7309de">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-debugging-agent-harnesses-on-weak-models (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:7309de`]**
+
+Filed [debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) (`em:7309de`, `type: methodology`) under `knowledge/SWE/evals/` — the practice of running an agent product's eval suite against the cheapest models on the roster because a frontier model silently works around harness defects that a weak model fails on immediately, distilling the article's found-and-fixed bug table (file handling, sandbox tooling, provider schemas, agent runtime), the r/LLMDevs thread's contract-bug/model-ceiling/provider-quirk triage rule, and the multi-weak-model defence against provider-specific overfitting.
