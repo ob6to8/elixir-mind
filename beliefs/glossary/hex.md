@@ -28,4 +28,4 @@ checksum-verified, and consumers resolve it by semantic-version requirement
 (`{:elixir_mind, "~> 1.0"}`) recorded in the project's
 [lockfile](/beliefs/glossary/lockfile.md).
 
-*Seen in:* [2026-07-17 library spin-out spec thread](/meta/threads/2026-07-17-library-spin-out-spec.md)
+*Seen in:* [2026-07-17 library spin-out spec thread](/meta/threads/2026-07-17-library-spin-out-spec.md), [2026-07-28 swappable-bundle spec and library naming thread](/meta/threads/2026-07-28-swappable-bundle-spec-and-library-naming.md)
