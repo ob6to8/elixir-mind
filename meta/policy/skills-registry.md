@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -89,8 +89,8 @@ attribution:
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
   `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
-  on-demand successor to the old SessionStart digest (no longer auto-injected at
-  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+  on-demand appraisal of open work, produced when asked rather than injected at
+  session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
 - **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
   `status` (default `open`). The issues-only slice of `/priorities`; read-only
   (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.

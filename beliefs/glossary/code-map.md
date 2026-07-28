@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, coined in the 2026-07-16 code-
 verified: false
 tags: [glossary, tooling, documentation, codegen]
 sense: repo
-timestamp: 2026-07-16
+timestamp: 2026-07-23
 attribution:
   when: 2026-07-16T12:13:13Z
   channel: glossary
@@ -32,4 +32,4 @@ The prose counterpart — how the modules compose — is the
 [tooling-architecture tutorial](/meta/tutorials/the-tooling-architecture.md);
 prose is authored, the code map is compiled, and they meet at the docstrings.
 
-*Seen in:* [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md)
+*Seen in:* [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md), [2026-07-23 session-start-hook-gate thread](/meta/threads/2026-07-23-session-start-hook-gate-and-machinery-reference-plan.md)

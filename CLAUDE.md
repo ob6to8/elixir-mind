@@ -168,6 +168,59 @@ The taxonomy-evolution protocol (important):
 
 _Source: [`meta/policy/taxonomy-evolution-protocol.md`](/meta/policy/taxonomy-evolution-protocol.md)_
 
+**A system built outside this repo still incubates here.** Specs, research, and
+design decisions for an external system are filed as a `type: project` hub under
+[`/projects/`](/projects/index.md), so the knowledge accrues to the brain while
+the system is still forming — and does not have to be re-derived once it breaks
+out into its own repository.
+
+**Shape** — hub doc beside a directory, mirroring the
+[glossary](/beliefs/glossary.md) pattern:
+
+```
+projects/<slug>.md        # type: project — the hub: charter, status, links out
+projects/<slug>/          # supporting docs: architecture, threat model, plans
+projects/<slug>/index.md  # reserved listing
+```
+
+The hub is a **bundle document** — it carries an `em:` id and `attribution` like
+any other, because the id is exactly what survives the eventual break-out to
+another repo when the path will not. It carries a `status`
+(`incubating` · `active` · `broken-out` · `dormant` · `abandoned`).
+
+**The split rule — this is the whole point.** Every finding produced while
+working a project is filed by *what it is*, not by *what prompted it*:
+
+| The finding is… | Files to | Test |
+|---|---|---|
+| true regardless of this project | the knowledge taxonomy, with an `em:` id | a model's parameter count; an attack class; how a protocol works |
+| true only *for this system* | `projects/<slug>/` | why *this* system chose *that* model; its threat model; its build order |
+
+The hub **links out** to the knowledge documents rather than restating them.
+Research done for a project therefore pays twice — once into the project, once
+into the taxonomy where the next project reads it instead of re-researching —
+and duplication is prevented at the point of filing rather than reconciled
+later. This is
+[fit each layer to its purpose](/meta/doctrine/fit-each-layer-to-its-purpose.md)
+applied across the project/knowledge boundary.
+
+**Project-scoped design records stay in the project.** A `type: plan` for an
+external system lives at `projects/<slug>/`, not
+[`meta/plans/`](/meta/plans/index.md): `meta/` governs *this brain*, and a
+design record for something built elsewhere is not governance of the brain.
+[persist-plans](/meta/policy/persist-plans.md),
+[structured-plan-bodies](/meta/policy/structured-plan-bodies.md), and
+[plan-vs-capture](/meta/policy/plan-vs-capture.md) bind such a plan unchanged —
+only its address differs.
+
+**Break-out is the success condition, not an exit.** When a project graduates to
+its own repository, `projects/<slug>/` is what ports; the knowledge documents it
+cites stay here and keep serving every other project. Mark the hub
+`status: broken-out` and record where it went — the hub remains the brain's
+durable pointer to a system it no longer holds.
+
+_Source: [`meta/policy/project-namespace.md`](/meta/policy/project-namespace.md)_
+
 ---
 
 ## 3. Filing conventions
@@ -205,50 +258,50 @@ _Source: [`meta/policy/update-in-place.md`](/meta/policy/update-in-place.md)_
 
 _Source: [`meta/policy/filenames-and-cross-linking.md`](/meta/policy/filenames-and-cross-linking.md)_
 
-**In responses, link resources to the deployed site, not to repo paths.** When an
-agent's **delivered response** (chat to the operator, a PR body, an issue comment —
-anything read outside a checkout) references a document in the brain, cite it as a
-link to that document's page on the **deployed Pages site**, not as a bundle-absolute
-(`/knowledge/…md`) or relative repo path. A repo path is not navigable for a reader
-in chat; the live URL is a click away.
+**Pages links in docs, GitHub links in agent threads.** Two surfaces, two link
+schemes (operator-ratified 2026-07-27):
 
-- **The site.** The bundle is published to GitHub Pages at
-  **`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, one page per document and
-  per `index.md`). That base URL lives in config
-  (`config/config.exs` → `ElixirMind.SiteConfig.base_url/0`); it is the single
-  source of truth, and this contract's copy of it is compiled in from that config —
-  a deploy move (e.g. a custom domain) is one config edit, not a doc rewrite.
-- **Get the URL from the tool, never by hand. `mix brain.url <path>` prints the
-  working URL** for any bundle path — always run it; do **not** construct a URL
-  yourself. The correct URL depends on state you have to check (is the doc live on
-  `main` yet? see below), not on the path alone, so hand-construction is exactly
-  what produces dead links. *Under the hood* the tool maps a live, rendered doc by
-  swapping base and extension — `P.md` → `https://ob6to8.github.io/elixir-mind/P.html` (a directory's
-  `index.md` → `…/<dir>/index.html`; governance `meta/…` docs render too) — but
-  that mapping is **what the site does at build time, not a recipe to apply in a
-  response**. Reproducing it by hand is the anti-pattern this policy exists to
-  stop.
-- **Live only after merge — cite unmerged docs by branch.** Pages deploys **only
-  from the default branch** (`pages.yml` → `push: branches: [main]`), so a document
-  *created or modified on an unmerged branch has no live page yet*: its Pages URL
-  **404s** (new doc) or shows **stale** content (modified doc) until the PR merges
-  and Pages rebuilds. Cite such a doc by its GitHub **blob URL at the branch ref**
-  (`<repo>/blob/<branch>/<path>.md`), which resolves immediately and shows the
-  current content. `mix brain.url` does this automatically — it emits the live
-  Pages URL when the doc is rendered *and* unchanged vs `origin/main`, and the
-  branch blob URL otherwise (new, modified, or under a non-rendered directory).
-  The Pages URL is the canonical form once merged; a branch blob link is fine in
-  ephemeral chat (branches are deleted post-merge, so never hardcode a blob URL
-  into a durable doc body).
-- **Not rendered → no live URL.** Resources under directories the site excludes
-  (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever; `mix brain.url`
-  cites those by their GitHub blob URL instead of fabricating a Pages URL.
-- **This is the response-side rule only.** Cross-links *inside* document bodies stay
+- **Agent threads → GitHub links, always.** When an agent's **delivered
+  response** (chat to the operator, a PR body, an issue comment — anything
+  read outside a checkout) references a document in the brain, cite its
+  GitHub **blob URL** — at `main` for a merged, unchanged document, at the
+  session branch otherwise — never a bundle-absolute or relative repo path,
+  and never a Pages URL. A blob URL is viewable at **any** merge state, which
+  is exactly when the operator audits; a Pages URL is live only after merge
+  and deploy. (A branch blob link dies when the merged branch is deleted;
+  that is accepted — the thread's moment has passed, and the document's
+  durable home is its Pages URL.)
+- **Docs → Pages links.** Cross-links *inside* document bodies stay
   bundle-absolute markdown paths per
-  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md) — the
-  site rewrites those `.md` links to the right relative `.html` at build time. Do not
-  hardcode live URLs into document bodies; use them when speaking to a human outside
-  the bundle.
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md);
+  the site rewrites them to relative `.html` at build time, so on the
+  rendered site every doc link *is* a Pages link. Never hardcode live URLs
+  into document bodies. The Pages URL is the **durable, canonical form for a
+  merged document** cited outside a session (sharing, external references).
+
+**Get the URL from the tool, never by hand.** `mix brain.url` prints the
+right URL for each surface — always run it; hand-construction is exactly what
+produces dead links:
+
+- **`mix brain.url --thread <path>`** — the agent-thread form: the blob URL
+  at the ref whose tree holds the current content (`main` when merged and
+  unchanged, else the current branch).
+- **`mix brain.url --pages <path>`** — the canonical Pages URL for durable
+  external citation of merged docs (bundle path `P.md` →
+  `https://ob6to8.github.io/elixir-mind/P.html`; a directory's `index.md` → `…/<dir>/index.html`;
+  governance `meta/…` docs render too).
+- **Bare `mix brain.url <path>`** — whichever resolves and shows the current
+  content (Pages when live and unchanged vs `origin/main`, else blob).
+
+**Mechanics.** The bundle is published to GitHub Pages at
+**`https://ob6to8.github.io/elixir-mind/`** (`mix brain.site` → `pages.yml`, deploying **only from
+the default branch** — the reason unmerged docs have no live page). The base
+URL lives in config (`config/config.exs` →
+`ElixirMind.SiteConfig.base_url/0`); it is the single source of truth, and
+this contract's copy is compiled in from it. Resources under directories the
+site excludes (`deprecated/`, `.claude/`, `lib/`, `test/`) have no page ever;
+`mix brain.url` cites those by blob URL in every mode rather than fabricating
+a Pages URL.
 
 _Source: [`meta/policy/response-resource-links.md`](/meta/policy/response-resource-links.md)_
 
@@ -310,6 +363,11 @@ the session ends.
   travels with the plan. Deferred phases (things planned but not yet built) stay in
   the same doc under an explicit "deferred" heading until they graduate into their
   own plan when built.
+- **How the shape is written.** When the plan's subject has structure (code, a
+  skill's flow, the bundle tree), its shape sections follow
+  [structured-plan-bodies](/meta/policy/structured-plan-bodies.md): trees,
+  file-tree diffs, and signatures for the shape; prose for the problem,
+  rationale, alternatives, and open questions.
 - **Lifecycle.** A plan carries a `status` (`proposed` · `accepted` · `in-progress`
   · `done` · `superseded`). Done and superseded plans are kept, not deleted — the
   decision history is the point.
@@ -317,6 +375,70 @@ the session ends.
   [`meta/plans/index.md`](/meta/plans/index.md), same as any filed document.
 
 _Source: [`meta/policy/persist-plans.md`](/meta/policy/persist-plans.md)_
+
+**Encode a plan's shape as structured artifacts; keep prose for the why.** When
+a plan's subject has structure — code, a skill's control flow, the bundle tree,
+a frontmatter schema — the *shape of the change* is written as compact
+structured artifacts, not described in paragraphs. Prose still carries the
+problem, the rationale, the alternatives weighed, and the open questions
+(unchanged from [persist-plans](/meta/policy/persist-plans.md)); the artifacts
+carry the shape. Rationale, held as beliefs: each artifact
+"is a decision you'd otherwise be making implicitly during code review — at the
+most expensive possible time to change your mind"
+([em:6c7e85](/beliefs/plan-artifacts-surface-implicit-review-decisions.md),
+quoting [wsff.md](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md)),
+and the artifacts "compress the *decisions* (interfaces, layout, call order)
+while leaving function bodies to the agent"
+([em:a96688](/beliefs/plan-artifacts-compress-decisions-not-bodies.md)).
+
+**The artifact kit** — use what the change calls for, in this order:
+
+1. **Current-state tree, then desired-state tree** — the flow or structure as it
+   is, then as it should be (behavior → layer → anchor per level). Equivalent
+   encoding: one tree in `diff` syntax (`+`/`-`/`~` lines) when the delta is
+   small. For changes to an existing flow, the flow doc under
+   [`meta/flows/`](/meta/flows/index.md) *is* the current-state record — cite
+   it instead of restating it.
+2. **File-tree diff** — where new and modified files live (`# NEW` / `# MODIFIED`
+   annotations with a one-clause purpose each).
+3. **Call/flow trees** — for control-flow changes, the production topology *and*
+   the test topology (which seams are substituted under test), separately.
+4. **Signatures** — types and specs for the key new functions; in the Elixir
+   tooling, literal `@spec` lines per the
+   [coding standards](/meta/policy/elixir-coding-standards.md).
+5. **Boundary decisions** — one bullet per layered responsibility: which layer
+   detects the condition, owns side effects, persists state.
+6. **Anchors last** — concrete file paths, function names, abstractions to
+   reuse, and the tests that should cover the flow are attached *after* the
+   trees, never before, so the plan is anchored to intended behavior rather
+   than incidental existing code.
+7. **Decision list** — recommended shape, alternatives rejected, open questions
+   and assumptions. This closes every structured plan.
+
+**The granularity bound.** Artifacts stay at signature/tree/outline level —
+interfaces, layout, call order — and stop there, because "a spec that is
+sufficiently detailed to generate code with a reliable degree of quality is
+roughly the same length and detail as the code itself"
+([em:1eebdf](/beliefs/spec-detail-approaches-code-length.md), quoting
+[Dex Horthy](https://x.com/dexhorthy/status/2033980486813684181)) — and such a
+spec gets no separate review pass
+([em:0c4913](/beliefs/dont-review-code-length-specs.md)). A plan whose
+pseudocode has crept to code granularity is over-specified, not thorough.
+
+**The refresh rule.** A structured plan binds to concrete names, so a deferred
+plan's anchors can go stale as `main` moves. Executing any structured plan
+therefore begins with a **refresh step**: re-derive the current-state tree
+against `HEAD`, diff it against the plan's, and update anchors before building.
+Anchors-last (item 6) is what keeps this step cheap — the stale layer is
+segregated, not woven through the prose.
+
+**Scope.** Applies to plans whose subject has structure; a plan for a pure
+policy or doctrine change may be all prose (its "shape" is the rule text
+itself). Retrofit of pre-existing plans is governed by the
+[retrofit plan](/meta/plans/retrofit-plans-to-structured-bodies.md), not
+demanded by this policy.
+
+_Source: [`meta/policy/structured-plan-bodies.md`](/meta/policy/structured-plan-bodies.md)_
 
 **Two records of a change sit in different tenses.** A `type: plan`
 ([persist-plans](/meta/policy/persist-plans.md)) is **prospective** — decisions
@@ -464,6 +586,226 @@ see.
 
 _Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
 
+**Choosing the artifact is a second question, not the first.**
+[plan-vs-capture](/meta/policy/plan-vs-capture.md) answers *whether* to persist
+anything: when this session holds the context and can finish the work, the commit
+and the thread capture are the record, and a doc is a redundant third copy. Only
+once persistence is warranted does this policy apply — *which* governance type.
+
+**The discriminator.** Ask what the thing fundamentally **is**, not how big it is:
+
+| If the thing is… | File it as | Lives in |
+|---|---|---|
+| a reasoned judgment answering a question, against evidence | `analysis` | [`meta/analysis/`](/meta/analysis/index.md) |
+| a durable explainer meant to be read start to finish | `tutorial` | [`meta/tutorials/`](/meta/tutorials/index.md) |
+| something *wrong* — a defect, or a live concern about how the brain behaves | `issue` | [`meta/issues/`](/meta/issues/index.md) |
+| a plain task to complete, approach already obvious | `todo` | [`meta/todos/`](/meta/todos/index.md) |
+| a *proposed change* whose design/decisions must be recorded before executing | `plan` | [`meta/plans/`](/meta/plans/index.md) |
+| a standing *direction* that shapes judgment without prescribing an action | `doctrine` | [`meta/doctrine/`](/meta/doctrine/index.md) |
+| an enforceable *rule* for how the brain operates | `policy` | [`meta/policy/`](/meta/policy/index.md) |
+
+**The pairs that actually get confused:**
+
+- **issue vs. todo** — an issue is a *problem to diagnose* (something behaves
+  wrongly; the fix may not be known). A todo is a *task to do* (the approach is
+  known; it just needs doing). "Merges keep conflicting" is an issue; "wire the
+  hook in the session-start script" is a todo.
+- **todo vs. plan** — if the *approach* needs deciding, it is a plan; if only the
+  *doing* remains, it is a todo. A plan that would contain no decisions is a todo.
+- **analysis vs. plan** — an analysis concludes with a *judgment* ("X is the
+  better shape, and here is why"); a plan commits to *work* ("build X in this
+  order"). An analysis whose residue is action may be retyped as a plan rather
+  than duplicated.
+- **plan vs. policy** — a plan is a *one-off intended change*; a policy is a
+  *standing rule*. If it should bind future sessions, it is a policy.
+
+**Persistence and reach are different axes — choose deliberately.** A `policy`
+compiles into `CLAUDE.md` and is therefore in **every** fresh agent's context
+automatically; every other governance type is discovered only when something goes
+looking ([`/priorities`](/.claude/skills/priorities/SKILL.md),
+[`/issue`](/.claude/skills/issue/SKILL.md), [`/plan`](/.claude/skills/plan/SKILL.md),
+or a link). So a rule that must fire **unprompted, mid-work** — where an agent
+would not know to go looking — belongs in a policy; filing it as a plan or tutorial
+leaves it inert. Conversely, keep policies **terse**: the contract is loaded in
+full every session, so put the rule in the policy and the reasoning, worked
+examples, and background in a cross-linked `tutorial` or `analysis`.
+
+**One artifact per matter.** Per [update-in-place](/meta/policy/update-in-place.md),
+search before filing: extend the existing doc when one already covers the matter,
+rather than creating a near-duplicate in a different genre.
+
+_Source: [`meta/policy/governance-artifact-routing.md`](/meta/policy/governance-artifact-routing.md)_
+
+**When a turn produces work, report it as a ledger.** A response that creates or
+modifies artifacts, or reaches a decision point, closes with tabular sections
+rather than narrating the same facts in prose. Tables make what-happened and
+what's-open scannable; prose buries them.
+
+**Applies when** the turn created/modified files, took consequential actions, or
+needs an operator decision. **Does not apply** to conversational turns, quick
+factual answers, or single trivial edits — five empty tables are ceremony. Include
+only the sections that have content.
+
+| Section | Holds | Columns |
+|---|---|---|
+| **What I created** | new artifacts | type · doc · why this type |
+| **What I modified** | changed files | file · thrust of the change (one line) |
+| **Actions I have taken** | what was already done | action · result |
+| **Questions you need to answer** | **blocking** — work cannot proceed without an answer | # · question · my recommendation |
+| **Your options from here** | **non-blocking** — directions the operator may pick | # · option · what it entails |
+
+**The rules that make it work:**
+
+- **Prose still carries judgment.** Tables are the ledger of *what happened* and
+  *what's open*; analysis, reasoning, and recommendations stay in prose. Never
+  compress an argument into a cell.
+- **Questions and options are different tables.** A question is *blocking* — the
+  agent is stuck without an answer. An option is *non-blocking* — the agent could
+  proceed and is offering a direction. Collapsing them hides which one it is.
+- **Report in the past tense, not the future.** Work the agent is authorized to do
+  is **done before the response**, then reported as completed with its result —
+  not announced as an intention ("I'll now…") that makes the operator wait a turn
+  for nothing.
+- **Past-tense reporting never widens authorization.** The act-then-report rule
+  applies only to already-authorized work. Anything irreversible, outward-facing,
+  or outside what the operator asked for still requires asking **first** — and per
+  [session-capture](/meta/policy/session-capture.md), that ask is ordinary chat
+  text, never a UI dialog element.
+- **State every recommendation.** Each question carries the agent's recommended
+  answer, so the operator can ratify rather than re-derive.
+- **No duplication.** A matter appears in exactly one section — a blocking
+  question is not restated as an option, and a completed action is not repeated in
+  prose above the table.
+
+_Source: [`meta/policy/response-work-report-format.md`](/meta/policy/response-work-report-format.md)_
+
+**Living text states the present; git narrates the past.** A **living surface** —
+code, code comments, operational skills, reference docs, the compiled contract —
+is read to act on the system *as it is now*, so every sentence in it should be
+true of the present. The commit graph is already the brain's single
+change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
+[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
+narration embedded in living text — "this used to X", "the old Y", "was removed
+in favor of Z" — is a second, hand-kept history layer at comment scale, and it
+fails the same way the purged `log.md` files did — it goes stale silently and
+gets retrieved and trusted as current state. This is that lesson generalized from
+dedicated log *files* down to inline narration.
+
+**The rule.** When you change the system, rewrite the living text to describe the
+new present — do not append a note about what it used to be. Git holds the
+before; the commit message carries the why-it-changed. The living surface carries
+only what is.
+
+**The carve-outs — what is *not* retrospective narration:**
+
+- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
+  reader where the functionality *is now* — load-bearing, keep. Test: does the
+  sentence tell the reader something they must know to act *today*, or only what
+  changed?
+- **Chesterton's-fence justifications.** A comment explaining why live code still
+  exists ("kept only as the migration reader for X") justifies present code and
+  reads as *this is why this exists*, not as a changelog. Keep.
+- **Explanatory surfaces where the history is the subject.** A `tutorial` or
+  `doctrine` may carry a clearly-marked, bounded history aside when the change
+  itself is what it explains. That permission is exactly why operational and
+  reference surfaces — read to act, not to learn the backstory — get none.
+
+Records that are historical *by construction* — `plan`, `analysis`, `issue`,
+thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
+not living surfaces and are out of scope; narrating the past is their job.
+
+_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
+
+**Quote primary sources verbatim; mark the boundary between quotation and
+synthesis.** When a delivered response or a document body leans on what a
+source says — a policy, a doctrine, an external article or post, a code
+comment, an operator message — reproduce the load-bearing phrase **verbatim**,
+in quotation marks or a blockquote, and follow it immediately with a citation
+of the artifact it was quoted from. A reader must never have to wonder whether
+a phrase is the source's claim or the agent's synthesis: quoted text is the
+source's, everything outside the quotes is the agent's, and the citation makes
+the boundary checkable.
+
+- **Citation form follows the surface.** Inside document bodies, cite by
+  bundle-absolute markdown link (per
+  [filenames-and-cross-linking](/meta/policy/filenames-and-cross-linking.md));
+  in delivered responses, link per
+  [response-resource-links](/meta/policy/response-resource-links.md) (live URL
+  via `mix brain.url`, never a bare repo path); external sources cite their
+  URL.
+- **Never blend.** Do not paraphrase inside quotation marks, splice two
+  passages into one quote, or silently normalize wording. An elision is marked
+  (`…`); an insertion is bracketed. If only a paraphrase will fit, drop the
+  quotation marks and let it stand as synthesis — attributed, but visibly not
+  verbatim.
+- **Quote at the phrase, not the page.** The rule serves precision, not bulk:
+  lift the shortest span that carries the claim. Wholesale copying stays
+  governed by [capture-knowledge-cite-the-source](/meta/policy/capture-knowledge-cite-the-source.md).
+- **Beliefs and claims extracted from sources** always retain the verbatim
+  source phrase in their body alongside the citation (see the seed beliefs
+  under [`/beliefs/`](/beliefs/index.md) for the pattern), so the extraction
+  remains auditable against its origin.
+
+_Source: [`meta/policy/quote-primary-sources.md`](/meta/policy/quote-primary-sources.md)_
+
+**Prefer established terminology; coin bespoke terms only when nothing
+established fits.** When naming a genre, a `type`, an artifact, a mix task, or
+a concept, reach for the standard term of art (*flow*, *plan*, *glossary*,
+*digest*) before inventing repo-specific vocabulary. Every bespoke term is a
+tax on future readers and agents: it must be learned, glossaried, and
+disambiguated against the standard term it displaced — and an agent
+encountering it cold will guess its meaning from the nearest established sense
+anyway.
+
+- **The test.** Before coining, ask: does an established term denote this
+  thing, even approximately? An approximate standard term with a one-line
+  qualification beats an exact bespoke one (*"flow doc — the touch-sequence of
+  a canonical run"* over a novel coinage).
+- **When bespoke is warranted** — the concept is genuinely novel to this
+  bundle (e.g. *route tag*) — define it in the
+  [glossary](/beliefs/glossary/index.md) at first use, with `sense: repo`.
+- **No retroactive churn.** An existing name is not renamed to a "better" term
+  without operator ratification: renames are shape changes
+  ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)),
+  and a rename's cost (links, skills, muscle memory) usually exceeds a
+  marginal terminology gain.
+
+_Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
+
+**Negative findings name their scope.** A statement that something *does not
+exist*, *is not stated anywhere*, or *could not be found* is a claim about a
+search space, not about the world. Report it **relative to the space actually
+searched**. "I found no pricing on the docs site or the corporate site" is
+honest and actionable; "no primary source states the price" is a claim about
+every source, and is sayable only when the sources were enumerated first.
+
+- **The test: could the reader reconstruct what was checked?** If yes, the
+  finding is scoped and a reader can extend the search. If the sentence would
+  survive unchanged no matter how little was looked at, it is overclaiming.
+- **Escalate before a decision rests on it.** When a negative finding is
+  load-bearing — it justifies building something, retracting something, or
+  telling the operator a thing is unavailable — enumerate the search space
+  first, or say plainly that the enumeration was not done. An unscoped negative
+  that turns out false corrupts every artifact built on it.
+- **Search returns a finite result set.** Absence within it is evidence about
+  the query, not about what exists. Scoped tools — a `site:`-filtered search, a
+  grep over one directory, a single fetched page — silently encode a guess
+  about where the answer lives; when the guess is wrong the tool reports
+  nothing and the guess never surfaces.
+- **Scope.** Delivered responses and document bodies alike, including a filed
+  `claim` whose content is a non-existence assertion — its body carries the
+  search space. Thread renders are exempt (verbatim record).
+
+Distinct from
+[negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md), which
+governs *rhetorical* negation in prose (whether a negative sentence has an
+anchor). This governs *epistemic* negation: whether a negative claim has been
+earned. A worked example, and the seven-host source map that motivated it, is
+in
+[Anthropic's primary-source surfaces](/meta/analysis/anthropic-primary-source-surfaces.md).
+
+_Source: [`meta/policy/negative-findings-name-their-scope.md`](/meta/policy/negative-findings-name-their-scope.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -482,7 +824,13 @@ Seed vocabulary:
   video, thread). A bare URL becomes a `reference` only once processed.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
-- `project` — an active, goal-bounded effort.
+- `project` — an active, goal-bounded effort. Used for a system built *outside*
+  this repo that incubates here: the hub doc for its specs, research, and design
+  decisions, carrying a `status` (`incubating`/`active`/`broken-out`/`dormant`/
+  `abandoned`). Distinct from an `area` (ongoing, no end state) and a `plan` (one
+  intended change, not a whole system) — a project is a *bounded effort with its
+  own body of work* (lives at `projects/<slug>.md`, beside a `projects/<slug>/`
+  directory; see the projects-namespace policy).
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
@@ -503,7 +851,9 @@ Seed vocabulary:
   and open questions, so a future session can execute it. Carries a `status`
   (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
   (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
-  *one-off intended change* (lives under `meta/plans/`).
+  *one-off intended change*. Addressed by what it governs: a plan for **this brain
+  or its tooling** lives under `meta/plans/`; a plan for a system built **outside**
+  this repo lives under `projects/<slug>/` (see the projects-namespace policy).
 - `analysis` — a point-in-time evaluation or decision-support write-up: a question
   investigated against evidence (often the live bundle itself), yielding findings and
   a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
@@ -531,7 +881,22 @@ Seed vocabulary:
   doctrine as the direction they serve. Distinct from a `policy` (an enforceable
   *rule*), an `analysis` (a *reasoned judgment on a question*), and a `note` (a
   distilled *idea*) — a doctrine is a *standing direction* (lives under
-  `meta/doctrine/`).
+  `meta/doctrine/`). Filing test: teleological (*what standing direction the brain
+  serves*) files as `doctrine`; a value-laden prior about the world files as
+  `belief`.
+- `belief` — an operator-held, value-laden **decision prior**: a statement held
+  *true enough to guide action* even where unverifiable, uncertain, or normative.
+  Sits **parallel to `doctrine`**, not beneath it — a belief is
+  epistemic-with-values ("I hold that the world works this way"), a doctrine is
+  teleological (the brain's own standing direction). A `belief` stays **outside
+  the verification ladder**: it never carries `verified`; one that turns out to be
+  empirically checkable is refiled as a `claim` (and may then graduate) — the type
+  boundary *is* the test. Distinct from a `claim` (on the verification ladder,
+  expects evidence) and a `note` (not citable as a prior). Filing test:
+  *epistemic (what is true) files as `claim`/`concept`; value-laden prior (what I
+  act as if is true) files as `belief`; teleological (what standing direction)
+  files as `doctrine`.* Beliefs are bundle documents with `em:` ids (live under
+  `/beliefs/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.
 
@@ -691,8 +1056,8 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
   `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
-  on-demand successor to the old SessionStart digest (no longer auto-injected at
-  session start). Read-only. See `.claude/skills/priorities/SKILL.md`.
+  on-demand appraisal of open work, produced when asked rather than injected at
+  session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
 - **`/issue`** — list `type: issue` tracked problems under `meta/issues/`, grouped by
   `status` (default `open`). The issues-only slice of `/priorities`; read-only
   (filing an issue stays inline per the contract). See `.claude/skills/issue/SKILL.md`.
@@ -741,15 +1106,20 @@ record so it can be resumed from the record instead of from memory.
   `len < 300 and followed_by_tool`. "Distilled" here means the *noise* is dropped,
   not that the kept text is condensed; `/capture` strips noise, not substance, and
   is the sole session-persistence skill.
-- **Ask the operator in the chat, not the dialog box.** Pose every question to
-  the operator as ordinary `## Assistant` chat text — never through the
-  dialog-box question UI (`AskUserQuestion`). `/capture` renders only the
-  delivered message stream, so a question raised in the dialog box, and the
-  answer the operator selects in it, never enter that stream: both are lost from
+- **Interact with the operator in the chat, not a UI element — this covers
+  permission requests too.** Pose every question, and every request for
+  permission or approval, to the operator as ordinary `## Assistant` chat
+  text — never rely on a UI dialog element (the `AskUserQuestion` question box,
+  or a tool-permission popup) as the channel. `/capture` renders only the
+  delivered message stream, so anything raised in a dialog element, and the
+  answer the operator gives in it, never enter that stream: both are lost from
   the thread doc and every downstream artifact routed from it. Keeping the
-  exchange inline is what lets capture retain the question and its answer
-  verbatim. (The dialog UI has also proven flaky in these sessions — a second
-  reason to keep questions in the chat.)
+  exchange inline is what lets capture retain it verbatim. The UI elements have
+  also proven **flaky** in these sessions — a tool-permission popup can misfire
+  and register as a rejection the operator never made — so routine tools are
+  allowlisted in [`.claude/settings.json`](/.claude/settings.json)
+  (`permissions.allow`) to keep that popup out of the loop, and any decision the
+  agent still needs is asked in text.
 - **The output is a thread doc** at `meta/threads/YYYY-MM-DD-<slug>.md`,
   `type: reference`, in the governance namespace (no `em:` id). It carries, in
   order: frontmatter, a short narrative section (what the session was, where it

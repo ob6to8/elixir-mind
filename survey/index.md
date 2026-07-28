@@ -1,6 +1,8 @@
 # Survey — the bookmark tier
 
-A **staging tier** for links: worth keeping, not yet worth fully ingesting. The
+A **staging tier** for links: worth keeping, not yet worth fully ingesting. It holds
+two registers — one-off links ([bookmarks](/survey/bookmarks.md)) and the recurring
+sources they tend to come from ([channels](/survey/channels.md)). The
 operator drops URLs in bulk; [`/bookmarks`](/.claude/skills/bookmarks/SKILL.md) fetches
 each, writes a one-line summary and topical tags, and parks it with `status: surveyed`.
 A surveyed link is queryable by topic (its tags and summary are indexed) without the
@@ -16,7 +18,7 @@ to distill and file it, then records the graduation on the row.
 
 - [bookmarks](/survey/bookmarks.md) — the survey register: pending dropzone + surveyed
   entries. Shards by top-level domain (e.g. `survey/ai.md`) only if it grows large.
-- [channels](/survey/channels.md) — the source register: the channels the brain draws
-  from (blogs, papers, vendor docs, repositories, video, forums), each listing the
-  documents ingested from it. Where `bookmarks` tracks individual links awaiting
-  intake, `channels` tracks the sources behind them and what each has produced.
+- [channels](/survey/channels.md) — the standing-sources register: recurring
+  publications (newsletters, blogs, author feeds, vendor docs, archives, video,
+  forums) monitored for new material, each with a focus line, an access note
+  (free / login / paid), and the documents already ingested from it.

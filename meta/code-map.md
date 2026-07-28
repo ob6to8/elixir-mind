@@ -597,8 +597,8 @@ then the structural backstop that fails if the two ever diverge.
 The session-init digest: a point-in-time scan of the brain's open work,
 rendered as markdown for the operator's priority appraisal. Produced on
 demand by the `/priorities` skill, which runs `mix brain.session_init` and
-relays the output (it is no longer auto-injected at session start — the
-SessionStart hook now only provisions the toolchain).
+relays the output; it is not injected into a session's opening context (the
+SessionStart hook only provisions the toolchain).
 
 Four sources, all already maintained by existing policy:
 
@@ -1000,27 +1000,27 @@ GitHub Pages by `.github/workflows/pages.yml`.
 Map a bundle path to a URL that **actually resolves right now**, so a link in a
 response is never dead.
 
-    mix brain.url meta/doctrine/fit-each-layer-to-its-purpose.md
-    mix brain.url /meta/policy/response-resource-links.md
+    mix brain.url --thread meta/policy/response-resource-links.md  # agent threads: GitHub blob URL
+    mix brain.url meta/doctrine/fit-each-layer-to-its-purpose.md   # whichever resolves (Pages when live)
     mix brain.url --pages meta/policy/response-resource-links.md   # force canonical Pages URL
 
-The mechanical form of the response-resource-links policy. Pages deploys **only
-from the default branch** (`pages.yml`), so a document created or modified on an
-unmerged branch has no live page yet — its Pages URL would 404 (new) or show
-stale content (modified) until the branch merges. This task resolves that
-automatically:
+The mechanical form of the response-resource-links policy — *Pages links in
+docs, GitHub links in agent threads*:
 
-  * **Rendered and unchanged vs `origin/main`** → the live Pages URL
-    (`ElixirMind.SiteConfig.live_url/1`) — canonical and current.
-  * **New or modified on this branch, or under a non-rendered directory**
-    (`deprecated/`, `.claude/`, `lib/`, `test/`, …) → the GitHub **blob URL** at
-    the ref whose tree holds the current content (this branch, else `main`) —
-    `ElixirMind.SiteConfig.blob_url/2`.
+  * `--thread` — the form for **agent-delivered responses** (chat, PR bodies,
+    issue comments): always the GitHub **blob URL**, at `main` when the doc is
+    merged and unchanged there, else at the current branch
+    (`ElixirMind.SiteConfig.blob_url/2`). Viewable at any merge state.
+  * **Bare** — whichever resolves and shows the current content: the live Pages
+    URL when the doc is rendered and unchanged vs `origin/main`
+    (`ElixirMind.SiteConfig.live_url/1`), else the blob URL as above. Pages
+    deploys **only** from the default branch (`pages.yml`), so an unmerged
+    doc's Pages URL would 404 or show stale content.
+  * `--pages` — force the canonical Pages URL regardless of branch state (the
+    durable form for external sharing of merged docs).
 
-`--pages` forces the canonical Pages URL regardless of branch state (use when
-citing something you know will be merged). When `origin/main` is unavailable
-(bare checkout with no remote) the task can't judge liveness and falls back to
-the blob URL at the current branch.
+When `origin/main` is unavailable (bare checkout with no remote) the task
+can't judge liveness and falls back to the blob URL at the current branch.
 
 
 

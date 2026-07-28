@@ -6,12 +6,12 @@ section: type-vocabulary
 order: 1
 status: active
 tags: [meta, governance, types, vocabulary]
-timestamp: 2026-07-15
+timestamp: 2026-07-26
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md]
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -27,7 +27,13 @@ Seed vocabulary:
   video, thread). A bare URL becomes a `reference` only once processed.
 - `source` — a primary source citation (paper, book, dataset).
 - `person` — a person.
-- `project` — an active, goal-bounded effort.
+- `project` — an active, goal-bounded effort. Used for a system built *outside*
+  this repo that incubates here: the hub doc for its specs, research, and design
+  decisions, carrying a `status` (`incubating`/`active`/`broken-out`/`dormant`/
+  `abandoned`). Distinct from an `area` (ongoing, no end state) and a `plan` (one
+  intended change, not a whole system) — a project is a *bounded effort with its
+  own body of work* (lives at `projects/<slug>.md`, beside a `projects/<slug>/`
+  directory; see the projects-namespace policy).
 - `area` — an ongoing responsibility or domain (no end state).
 - `snippet` — a reusable command, code fragment, or template.
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
@@ -48,7 +54,9 @@ Seed vocabulary:
   and open questions, so a future session can execute it. Carries a `status`
   (`proposed`/`accepted`/`in-progress`/`done`/`superseded`); distinct from an `issue`
   (a *problem* to track) and a `methodology` (a *repeatable* how-to) — a plan is a
-  *one-off intended change* (lives under `meta/plans/`).
+  *one-off intended change*. Addressed by what it governs: a plan for **this brain
+  or its tooling** lives under `meta/plans/`; a plan for a system built **outside**
+  this repo lives under `projects/<slug>/` (see the projects-namespace policy).
 - `analysis` — a point-in-time evaluation or decision-support write-up: a question
   investigated against evidence (often the live bundle itself), yielding findings and
   a recommendation, filed so the reasoning and its conclusion persist. Distinct from a
@@ -76,6 +84,21 @@ Seed vocabulary:
   doctrine as the direction they serve. Distinct from a `policy` (an enforceable
   *rule*), an `analysis` (a *reasoned judgment on a question*), and a `note` (a
   distilled *idea*) — a doctrine is a *standing direction* (lives under
-  `meta/doctrine/`).
+  `meta/doctrine/`). Filing test: teleological (*what standing direction the brain
+  serves*) files as `doctrine`; a value-laden prior about the world files as
+  `belief`.
+- `belief` — an operator-held, value-laden **decision prior**: a statement held
+  *true enough to guide action* even where unverifiable, uncertain, or normative.
+  Sits **parallel to `doctrine`**, not beneath it — a belief is
+  epistemic-with-values ("I hold that the world works this way"), a doctrine is
+  teleological (the brain's own standing direction). A `belief` stays **outside
+  the verification ladder**: it never carries `verified`; one that turns out to be
+  empirically checkable is refiled as a `claim` (and may then graduate) — the type
+  boundary *is* the test. Distinct from a `claim` (on the verification ladder,
+  expects evidence) and a `note` (not citable as a prior). Filing test:
+  *epistemic (what is true) files as `claim`/`concept`; value-laden prior (what I
+  act as if is true) files as `belief`; teleological (what standing direction)
+  files as `doctrine`.* Beliefs are bundle documents with `em:` ids (live under
+  `/beliefs/`).
 
 If nothing fits, propose a new type rather than forcing a bad one.

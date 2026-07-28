@@ -14,6 +14,102 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #149](https://github.com/ob6to8/elixir-mind/pull/149) — CCA study program, the primary-source miss, and the eval that could falsify the fix *(2026-07-27)*
+
+- Plan the CCA study program; fill the four pillar gaps from primary sources
+- Correct the plan's phase-1 status and expand the partner-access dependency
+- Replace the plan's blueprint premise with Anthropic's published exam guide
+- Run the source-inventory spike; file the certification program and blueprint
+- Add the negative-findings-name-their-scope policy; amend /intake for primary sources
+- File the source-recall probe; defer mix brain.staleness behind a trigger
+- Capture the CCA session; glossary it; stamp thread back-links
+- Stamp pr: 149 into the captured thread doc
+
+## [PR #147](https://github.com/ob6to8/elixir-mind/pull/147) — Scar-tissue drift: two intakes, defenses analysis, bound-adaptation doctrine, two plans, link-policy resolution *(2026-07-27)*
+
+- Intake: trust-state inversion (GSD framework governance incident)
+- Migrate trust-state-inversion id to em: namespace
+- Intake: scar tissue / behavioral drift in long-running agents
+- Analyze scar-tissue drift against the bundle; file the term as a glossary concept
+- Redo the scar-tissue analysis, absorbing the operator's follow-up questions
+- Ratify bound-adaptation doctrine; define ratification-mutable; file two plans
+- Ratify link-scheme split: Pages links in docs, GitHub links in agent threads
+- Capture the scar-tissue session; glossary and stamp its artifacts
+- Stamp pr: 147 into the session thread doc
+
+## [PR #146](https://github.com/ob6to8/elixir-mind/pull/146) — Channels register: nine AI standing sources, wired into /research *(2026-07-27)*
+
+- add the channels register with nine AI standing sources
+- link per-row provenance in the channels register; wire it into /research
+- capture: 2026-07-27 channels-register session; glossary + dev-history
+- Stamp pr: 146 into the session thread doc
+
+## [PR #145](https://github.com/ob6to8/elixir-mind/pull/145) — Open the projects namespace; spec the secure financial agent *(2026-07-27)*
+
+- ratify: the projects namespace, and open the secure-financial-agent project
+- Spec the secure financial agent; file its research to the taxonomy
+- capture: stamp pr 145 into the thread doc
+
+## [PR #144](https://github.com/ob6to8/elixir-mind/pull/144) — LLM-security intakes: new SWE/security directory, 15 glossary terms, two evaluation beliefs *(2026-07-26)*
+
+- intake Beyond Refusal (arXiv:2607.05842) under a new SWE/security directory
+- glossary the Beyond Refusal paper; file the coverage×quality belief
+- intake the G DATA field report on LLM malware analysis
+- file review-is-not-an-oracle as a belief
+- capture: 2026-07-27 LLM-security intakes session; dev-history
+- Stamp pr: 144 into the session thread doc
+
+## [PR #143](https://github.com/ob6to8/elixir-mind/pull/143) — Journal 2026-07-26: day two on the operator–agent intermediary layer, with response and capture *(2026-07-26)*
+
+- journal: file 2026-07-26 entry — day two on the operator–agent intermediary layer
+- journal: persist agent response below the 2026-07-26 entry
+- capture: 2026-07-26 journal-day-two session; glossary + dev-history
+- Stamp pr: 143 into the session thread doc
+
+## [PR #142](https://github.com/ob6to8/elixir-mind/pull/142) — Structured plan bodies, the belief layer, and three dogfooding plans *(2026-07-26)*
+
+- Ratify and seed the belief layer
+- Adopt structured plan bodies, verbatim quotation, and terminology policies
+- Retrofit the frontmatter-parser plan as the structured-bodies pilot
+- Plan the retrofit sweep, /extract-into-belief skill, and policy-canonical skills
+- Capture the session: thread doc, glossary terms, from-stamps, dev-history
+- Stamp pr: 142 into the session thread doc
+
+## [PR #141](https://github.com/ob6to8/elixir-mind/pull/141) — version-control audit, workflow tutorial, and the routing/response-format policies *(2026-07-26)*
+
+- Audit the version-control workflow; file the actionable residue
+- Wire local gates in web sessions; allowlist tools; text-first permission rule
+- Add governance-artifact-routing and response-work-report-format policies
+- Capture the version-control-audit session; glossary and stamp its artifacts
+- Stamp pr: 141 into the session's thread doc
+
+## [PR #140](https://github.com/ob6to8/elixir-mind/pull/140) — Ratify living-text-is-present-tense policy; trim retrospective narration *(2026-07-26)*
+
+- Ratify living-text-is-present-tense policy; trim retrospective narration
+- Capture the living-text-present-tense session; glossary its terms
+- Stamp pr: 140 into the living-text-present-tense thread doc
+
+## [PR #139](https://github.com/ob6to8/elixir-mind/pull/139) — Explain the session-start.sh core.hooksPath gate; plan the machinery reference *(2026-07-26)*
+
+- Plan: repo-map and machinery reference (proposed)
+- Capture 2026-07-23 session: tutorial, glossary terms, plan from-stamp
+- Stamp pr: 139 into the 2026-07-23 thread doc
+- Sync with main (#137) and regenerate dev-history
+
+## [PR #137](https://github.com/ob6to8/elixir-mind/pull/137) — Add the /journal skill, journal/ namespace, and first entry (2026-07-25) *(2026-07-26)*
+
+- add the /journal skill and journal/ namespace; file the first entry (2026-07-25)
+- persist agent responses beneath journal entries; append the 2026-07-25 response
+- capture the journal-skill session; glossary its terms; stamp attribution
+- stamp pr: 137 into the session thread doc
+- define oracle inline in the journal response's code-understanding section
+- persist the journal response's insights: doctrine, proposed eval, analysis
+- ratify provenance-lives-in-metadata policy; sweep the round's docs
+- ratify negate-only-explicit-cases policy; recast the orphaned negation
+- elaborate the crossing-signal sentence; answer the definition-hierarchy question
+- record definition-hierarchy beliefs; add hub paragraph; file database tutorial
+- glossary the late rounds; stamp the elaboration's from; regen dev-history
+
 ## [PR #138](https://github.com/ob6to8/elixir-mind/pull/138) — Intake Claude Code agent teams; analyze vs BEAM/Jido 2 *(2026-07-26)*
 
 - Intake Claude Code agent teams; analyze vs BEAM/Jido 2
