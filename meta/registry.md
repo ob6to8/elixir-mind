@@ -315,6 +315,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7adc45` | [beliefs/glossary/parse-the-log](/beliefs/glossary/parse-the-log.md) | concept | false |
 | `em:83c71b` | [beliefs/glossary/patch-validation-funnel](/beliefs/glossary/patch-validation-funnel.md) | concept | false |
 | `em:8048c6` | [beliefs/glossary/pipe-table](/beliefs/glossary/pipe-table.md) | concept | false |
+| `em:42b353` | [beliefs/glossary/plainspeak-orientation](/beliefs/glossary/plainspeak-orientation.md) | concept | false |
 | `em:bf0524` | [beliefs/glossary/plan-type](/beliefs/glossary/plan-type.md) | concept | false |
 | `em:78580d` | [beliefs/glossary/plugin](/beliefs/glossary/plugin.md) | concept | false |
 | `em:393e3d` | [beliefs/glossary/pointer-entry](/beliefs/glossary/pointer-entry.md) | concept | false |
@@ -354,6 +355,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ae9b26` | [beliefs/glossary/red-test](/beliefs/glossary/red-test.md) | concept | false |
 | `em:eb67ce` | [beliefs/glossary/reducer](/beliefs/glossary/reducer.md) | concept | false |
 | `em:a1a6e2` | [beliefs/glossary/refusal-direction](/beliefs/glossary/refusal-direction.md) | concept | false |
+| `em:388690` | [beliefs/glossary/register](/beliefs/glossary/register.md) | concept | false |
 | `em:0dd178` | [beliefs/glossary/regression-testing](/beliefs/glossary/regression-testing.md) | concept | false |
 | `em:7247f3` | [beliefs/glossary/remote-procedure-call](/beliefs/glossary/remote-procedure-call.md) | concept | false |
 | `em:1dbcc9` | [beliefs/glossary/rendered-aggregation](/beliefs/glossary/rendered-aggregation.md) | concept | false |

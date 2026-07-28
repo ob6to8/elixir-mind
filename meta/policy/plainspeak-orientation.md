@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, communication-guidance session"
   why: "the operator repeatedly had to request plainspeak restatements of dense responses (2026-07-27 and 2026-07-28 sessions) and asked for a standing balance between the two registers"
+  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
 ---
 
 **Lead with a plainspeak orientation; keep the technical register after it.**
