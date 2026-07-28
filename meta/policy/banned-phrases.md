@@ -46,3 +46,15 @@ content directly.
   is the phrase-level form of
   [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md).
   Recast: state the items directly, under a heading if they need prominence.
+
+- **"One process blemish to be transparent about"** — two patterns in one
+  phrase, each banned with its variants. *"To be transparent about"* (also "to
+  be honest/candid", "in the interest of transparency") announces the virtue
+  of a disclosure instead of just disclosing: a transparent account shows its
+  transparency in the content, so the announcement asserts nothing — and it
+  implies concealment was a live alternative, an unraised case (the same
+  advertising failure as the entry above). *"Blemish"* (also "wart",
+  "wrinkle", "minor blip") is the agent pre-grading its own defect as
+  cosmetic; severity is the operator's judgment to make, not the author's to
+  soften. Recast: name the defect plainly with its concrete consequence, and
+  let the facts carry both the candor and the severity.
