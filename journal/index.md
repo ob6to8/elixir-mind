@@ -9,6 +9,10 @@ operator's voice is kept faithful; only dictation noise is cleaned.
 
 ## Entries
 
+- [2026-07-28](/journal/2026-07-28.md) — The operator's methodology to date —
+  fast-paced, plan-punting, implementation-detail-accepting — and the
+  intentional transition to a comprehension-and-auditing approach that combs
+  the whole repo and bakes understanding into the knowledge base.
 - [2026-07-27](/journal/2026-07-27.md) — Second brains as avatars of their
   operators — the brain/mind distinction as framework-induced alignment,
   abandoning the product framing in favor of a single-operator avatar, why
