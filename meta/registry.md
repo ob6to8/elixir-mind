@@ -20,6 +20,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
 | `em:dffd70` | [beliefs/glossary/active-parameters](/beliefs/glossary/active-parameters.md) | concept | false |
 | `em:8f37a6` | [beliefs/glossary/actor-model](/beliefs/glossary/actor-model.md) | concept | false |
+| `em:b7b5d8` | [beliefs/glossary/add-add-conflict](/beliefs/glossary/add-add-conflict.md) | concept | false |
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
 | `em:27e6ac` | [beliefs/glossary/admission-rule](/beliefs/glossary/admission-rule.md) | concept | false |
 | `em:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |

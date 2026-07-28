@@ -14,6 +14,18 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #151](https://github.com/ob6to8/elixir-mind/pull/151) — Journal day three: avatars, and the extended-mind grounding it produced *(2026-07-27)*
+
+- journal: file 2026-07-27 entry — second brains as operator avatars
+- intake: extended-mind grounding for the brain/mind distinction; capture the journal session
+- capture: stamp pr: 151 on the journal-avatars thread doc
+
+## [PR #150](https://github.com/ob6to8/elixir-mind/pull/150) — Execute five ratifications: lens-adoption belief, two plans accepted, fingerprint rider, ratification-immutable, link-policy split *(2026-07-27)*
+
+- Execute the operator's five ratifications from the scar-tissue session
+- Extend the session capture through the ratification turns
+- Record the follow-up PR number in the thread's narrative prose
+
 ## [PR #149](https://github.com/ob6to8/elixir-mind/pull/149) — CCA study program, the primary-source miss, and the eval that could falsify the fix *(2026-07-27)*
 
 - Plan the CCA study program; fill the four pillar gaps from primary sources

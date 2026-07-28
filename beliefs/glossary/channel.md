@@ -37,4 +37,24 @@ Two repo senses, distinguished by what flows through them:
    that keeps producing, a bookmark a *document* already produced; `/research`
    scans the register as its first per-domain search step.
 
-*Seen in:* [2026-07-27 channels register and /research wiring](/meta/threads/2026-07-27-channels-register-and-research-wiring.md), [channels register](/survey/channels.md), [resource-attribution policy](/meta/policy/resource-attribution.md)
+*Seen in:* [2026-07-27 channels register and /research wiring](/meta/threads/2026-07-27-channels-register-and-research-wiring.md), [2026-07-28 channels register merge and video vetting](/meta/threads/2026-07-28-channels-register-merge-and-video-vetting.md), [channels register](/survey/channels.md), [resource-attribution policy](/meta/policy/resource-attribution.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:9495ee">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-channels-register-merge-and-video-vetting (2026-07-28)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:9495ee`]**  (co-feeds: `survey/channels.md`)
+
+**They answered different questions.** Main's is forward-looking — *what should I monitor, and what does it cost to read?* (9 rows, Focus/Access/From, seeded from codesupreme.ai). Mine was backward-looking — *what has each source already produced?* (43 channels derived from filed documents, plus the vetted video set).
+
+**I made main's shape win**, and not just because it landed first. It's ratified where mine was only proposed: the `channel` glossary concept (`em:9495ee`) defines a channel as a standing source with a focus line and an access note, and — the deciding factor — **`/research` scans this register as its first per-domain search step**, honoring the access note to decide what it may fetch. Restructuring around my medium-grouped `### heading` sections would have broken a live consumer.
+
+---
+
+**[`em:9495ee`]**  (co-feeds: `survey/channels.md`)
+
+**In the register**, the scope statement is explicit about running in both directions: prospectively the focus line and access note (what `/research` reads before deciding what it may fetch), retrospectively the documents drawn from that source. The reason they belong in one row is stated too — the second is the evidence for the first. A channel earns continued attention by having yielded something, and a row that stays empty is a watchlist entry nobody has had to justify.
