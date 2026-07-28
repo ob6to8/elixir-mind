@@ -215,7 +215,11 @@ before step 3 begins.
    The ~24 already-discharged and ~9 decision-closed rows map mechanically to
    their existing artifacts and cell text, and are applied in step 2.
 2. **Backfill `Action`.** Add the column to all 109 thread ledgers, populating
-   it from step 1's dispositions. A ratified, deterministic, one-pass migration
+   it from step 1's dispositions. **Settle the `project`-hub open question
+   first** — it is the only open question this step depends on, and it decides
+   whether the two secure-financial-agent rows are written `none:` (the current
+   default) or as links. Answering it after the migration means re-touching
+   those rows. A ratified, deterministic, one-pass migration
    over frozen bodies — the same shape as the `sb:` → `em:` id migration, and
    legitimate on the same grounds. The pre-migration `State` values stay
    recoverable from git, which is the brain's history layer regardless.
