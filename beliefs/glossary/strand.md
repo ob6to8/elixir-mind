@@ -19,7 +19,7 @@ attribution:
 
 A session touches many matters; each matter's thread — picked up, paused on an open question, resumed, resolved — is a distinct strand that the [routing ledger](/beliefs/glossary/routing-ledger.md) gives its own row. State and where the strand was filed are independent axes: a live strand may already be routed, and a resolved one may never be. A **dangling strand** is one whose state or unanswered question leaves work outstanding after the thread is frozen; the [session-init digest](/beliefs/glossary/session-init-digest.md) harvests these from all captured threads so they surface as open work in later sessions.
 
-*Seen in:* [routing-ledger policy](/meta/policy/routing-ledger.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md)
+*Seen in:* [routing-ledger policy](/meta/policy/routing-ledger.md), [2026-07-11 session-init thread](/meta/threads/2026-07-11-session-init-digest-and-priorities.md), [2026-07-28 orphan sweep and record/queue split thread](/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md)
 
 ## Thread excerpts — route-tagged log
 

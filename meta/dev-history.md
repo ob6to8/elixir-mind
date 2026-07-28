@@ -14,6 +14,15 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #161](https://github.com/ob6to8/elixir-mind/pull/161) — Make the capture boundary derivable; record three findings *(2026-07-28)*
+
+- Make the capture boundary derivable; record three findings
+- capture: name PR 161 in the thread's landing sequence
+
+## [PR #160](https://github.com/ob6to8/elixir-mind/pull/160) — A verbatim-quoting rule, the probe that tests it, and the dev-history lag as a todo *(2026-07-28)*
+
+- turn the fetch-synthesis miss into a rule and the probe that tests it
+
 ## [PR #159](https://github.com/ob6to8/elixir-mind/pull/159) — Ground the price-weapon claim on primary sources; clear the dev-history lag *(2026-07-27)*
 
 - ground em:51aede on primary sources; clear the dev-history lag
