@@ -1,71 +1,122 @@
 ---
-id: em:44f899
-type: concept
-title: Jido
-description: An Elixir agent framework (2.x, 2026) that models agents as pure immutable data processed through a single cmd/2 reducer, with schema-validated Actions doubling as LLM tools, CloudEvents-based Signals, runtime-interpreted Directives, and GenServer-backed supervision; its jido_ai layer adds LLM reasoning strategies.
-provenance: "Agent-distilled glossary definition"
-verified: false
-tags: [glossary, jido, elixir, agents, multi-agent, beam]
-sense: common
-timestamp: 2026-07-26
-attribution:
-  when: 2026-07-12T09:05:38+00:00
-  channel: glossary
-  agent: "Claude Code agent, /add-to-glossary"
-  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
+type: reference
+title: 2026-07-28-ontology-guardrails-intake-and-jido-comparison
+description: A YouTube intake of Frank Coyle's "Why Agentic Systems Need Ontologies" opened a comparison against Jido 2's actions/directives, which escalated into an analysis finding that OWL's open-world semantics invert the talk's flagship double-refund catch, that the talk never implements its ledger, and that none of its three examples need inference.
+provenance: "Claude Code session (Claude Opus 5), 2026-07-28; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
+tags: [meta, thread, intake, ontology, owl, shacl, jido, elixir, agents, guardrails, neurosymbolic-ai]
+timestamp: 2026-07-28
+session: https://claude.ai/code/session_01XJvjudVdVWHdCNdQLFxWap
 ---
 
-# Jido
+# 2026-07-28-ontology-guardrails-intake-and-jido-comparison
 
-An Elixir framework for autonomous agents and multi-agent systems (2.x stable since early 2026). Its core move is separating the agent from its runtime: an agent is **pure immutable data** — schema-validated state plus signal routes — processed through a single `cmd(agent, {Action, params}) → {updated_agent, directives}` reducer, so decision logic is replayable and testable without an LLM. Around that core: **Actions** (validated functions that double as LLM-callable tools), **Signals** ([CloudEvents](/beliefs/glossary/cloudevents.md)-compliant messages with trie-based routing), **Directives** (structs the runtime interprets for side effects like spawn/schedule/emit), and a GenServer-backed supervised runtime on the [BEAM](/beliefs/glossary/beam.md); the separate `jido_ai` layer adds LLM reasoning strategies ([ReAct](/beliefs/glossary/react.md) by default). Notable gap as of mid-2026: no cross-node distribution story.
+## Where this landed
 
-*Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md), [2026-07-14 Elixir AST/macros and Loomkin thread](/meta/threads/2026-07-14-elixir-ast-macros-and-loomkin-evaluation.md) (the Action macro's compile-time validation and `to_tool/0` verified against hexdocs; Loomkin as a production adopter), [2026-07-16 Jido-caveats thread](/meta/threads/2026-07-16-jido-caveats-and-build-agent-linter-loop.md) (the distribution gap and `req_llm` cognition dependency, unpacked), [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md) (Jido as the chassis of the proposed [thin brain host](/meta/plans/thin-jido-brain-host.md), contrasted with Vercel eve), [2026-07-21 ECS intake thread](/meta/threads/2026-07-21-ecs-intake-and-agent-entity-substitution.md) (Jido as independent rediscovery of ECS's composition half — composable Actions/Skills/Sensors over role hierarchies — while keeping agents active), [Dynamic Workflows vs. BEAM/Jido 2 analysis](/meta/analysis/dynamic-workflows-vs-beam-jido.md), [2026-07-26 agent-teams intake thread](/meta/threads/2026-07-26-agent-teams-intake-and-beam-jido-comparison.md) (fourth family comparison; `jido_cluster` re-checked still unpublished)
+A single `/intake` of a conference talk that turned into a design evaluation. The
+talk — Frank Coyle (UC Berkeley) at AI Engineer, 21 minutes — argues that agent
+failures like double refunds and invented order statuses are symptoms of one
+missing layer: a formal ontology outside the model, applied as a validator on the
+tool-use loop, under the slogan "Pydantic at the door, ontology at the ledger."
+YouTube's bot check blocked the ordinary fetch path, so the transcript came via
+`yt-dlp` with an alternate player client; the full 3,100-word transcript and the
+video description grounded the capture. Filed as `em:1df031` under
+`knowledge/SWE/agentic/agentic-loop/`, cross-linked to the existing FOL/OWL
+knowledge-representation capture.
 
-## Thread excerpts — route-tagged log
+The operator's follow-up — whether Jido 2's directives/actions already implement
+this pattern — is what made the session more than a capture. The answer split
+cleanly: Jido occupies the **door** (Action schemas, where `to_tool/0` derives the
+LLM's tool schema from the same declaration that validates at execution, so the
+two cannot drift as they can in the talk's Python) and the **effect boundary**
+(Directives return effects as data for the runtime to interpret, making Coyle's
+"no side effects" prescription structural rather than a discipline). It does not
+occupy the ledger, and Directives are the effect-deferral mechanism, not the
+checking one.
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:44f899">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+The operator then pressed on three points that reframed the verdict, and each held
+up against the sources. First, Jido is rightly compared to Pydantic, with the
+ledger floating above either — correct, because the ledger models the business,
+not the loop. Second, OWL does **not** encode the talk's flagship double-refund
+catch: under the no-unique-name assumption a functional property infers
+`owl:sameAs` between the two refunds rather than raising an error, and the open
+world assumption declines the "has this already happened" question entirely.
+SHACL's `sh:maxCount` is the formalism that encodes it, and the talk never
+mentions SHACL. Third, re-reading the transcript confirmed Coyle **never
+implements the ledger** — the code slide carries a red placeholder ("this is where
+I think the … ontologies and stuff can come in"), and the working code is a bare
+tool-use loop plus Pydantic.
 
-### 2026-07-16-jido-caveats-and-build-agent-linter-loop (2026-07-16)
+The recommendation that fell out: none of the three motivating catches need
+inference. An enum is a schema, disjointness is a type Elixir expresses better at
+compile time, once-only is a unique index. Split the enforcement stack by world
+assumption — schemas plus the type system at level 2, a closed-world
+(SHACL-shaped, often just a DB constraint) layer at level 3 — and reserve OWL for
+derived knowledge and vocabulary reuse. The absent BEAM reasoner (RDF.ex ships OWL
+as a vocabulary, not inference) lands as the same second-runtime blocker already
+standing against Jido's `req_llm` cognition dependency, so nothing here moves the
+repo's standing "not now."
 
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+The operator ratified filing the comparison as an analysis rather than folding it
+into the capture. A container clock skew was caught during capture and the two new
+docs' dates corrected from 07-27 to 07-28 before the PR landed.
 
-**[`em:44f899`]**
+## Routing
 
-Here's the expansion, which I'll also compile into the analysis doc.
+| Topic | State | Routed to | Dangling |
+|---|---|---|---|
+| Coyle talk — ontology as neurosymbolic loop guardrails | closed | [why-agentic-systems-need-ontologies](/knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies.md) | - |
+| Does Jido 2 implement the validator pattern? | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
+| Jido's actions/directives as door + effect boundary | closed | [Jido glossary](/beliefs/glossary/jido.md) | - |
+| OWL's OWA/UNA vs. the double-refund catch; SHACL as the right formalism | closed | [first-order-logic-and-owl](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | - |
+| Coyle never implements the ledger (transcript-verified) | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
+| Split enforcement stack by world assumption | open | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | Whether a level-3 closed-world constraint layer is ever wanted here, or stays hypothetical under the standing "not now" |
+| No mature OWL reasoner on the BEAM | paused | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | Whether SHACL-over-SPARQL.ex is worth a spike if a constraint layer is ever built |
+| YouTube fetch blocked; yt-dlp alternate player client | closed | `unrouted` | Whether the intake skill should document a video-transcript path |
 
-**1. "No distribution story (single-node; `jido_cluster` unpublished)"**
+## User
 
-The subtlety: the **BEAM has world-class distribution primitives** (transparent inter-node message passing, `:global`, `:pg`), but a *framework* only becomes distribution-aware if it makes deliberate choices on top of them. Jido makes the single-node choices:
+/intake https://www.youtube.com/watch?v=Sir59K8ZDPU
 
-- **Agent identity is node-local.** A Jido agent is a GenServer registered under an instance-scoped supervisor (`{Jido, name: MyApp.Jido}`) via a local Registry. That name resolves on *one* node. There's no cluster-wide registry that lets "agent Foo" be addressed from any node — so you can't transparently route to an agent that happens to live on a different machine.
-- **Recovery is single-node crash recovery, not cross-node failover.** Jido's durability model is "rehydrate from persisted state" (Redis adapter since 2.1.0). That handles *a process crashing and its supervisor restarting it on the same node*. It does **not** handle *a node dying and its agents coming back up elsewhere* — there's no handoff/migration orchestrator watching for a dead node and re-spawning its fleet on survivors.
-- **The signal bus is in-node.** Signals are trie-routed pub/sub over a per-node bus. Cluster-wide routing would need that bus to span nodes (via `:pg`, `phoenix_pubsub`, or `partisan`) — Jido doesn't ship it.
-- **`jido_cluster` is the intended answer, but it's vapor for now.** A repo exists in the agentjido org, but it's *unpublished on hex* — you can't `mix deps.get` it, and the brain flagged its maturity as unconfirmed. So the distribution layer is gestating, not shippable.
+## Assistant
 
-**Why this matters (and why it mostly doesn't, until it does):** one BEAM node holds *millions* of lightweight processes, so "single-node" is a very high ceiling — vertical scaling alone carries a big fleet. What you *give up* is (a) horizontal scale across machines, (b) HA — that one node is a single point of failure for the whole fleet; no HA across machines, and (c) geographic distribution. For a dark factory that "eventually spans nodes," you'd be **building the distribution layer yourself** on raw BEAM primitives: `libcluster` for node discovery, `Horde` (or a hand-rolled `:global`/CRDT registry) for distributed process registration + handoff, and a distributed pubsub for the signal bus. That's exactly the "that layer would be ours to build" caveat — and distribution is genuinely hard (split-brain/netsplit handling, CAP tradeoffs on the registry, state-handoff races), which is *why* a young framework reasonably punts on it.
+<routes ref="em:1df031">
+Intake complete. The video is **"Why Agentic Systems Need Ontologies" — Frank Coyle (UC Berkeley)**, a 21-minute AI Engineer conference talk (uploaded 2026-07-23). I pulled the full transcript and description via yt-dlp, found no existing document on this material (the closest neighbors — the FOL/OWL knowledge-representation capture and the agentic-loop references — cover adjacent but distinct subjects), and filed it as a new `reference` with a layered `/summarize-technical`-style body. The talk's thesis: agent failures like double refunds and invented statuses are symptoms of a missing formal layer — an RDFS/OWL ontology used as a neurosymbolic validator wrapped around the Claude tool-use loop, per his slogan "Pydantic at the door, ontology at the ledger."
 
-**2. "Makes `req_llm` load-bearing for all cognition"**
+**What I created**
 
-The architecture: Jido deliberately splits core `jido` (zero LLM code — the pure `cmd/2` reducer, agent-as-data) from `jido_ai` (the reasoning layer: ReAct/CoT/ToT strategies, tool-calling loops, structured output). `jido_ai` is built on `req_llm`, Jido's own in-house LLM client (they dropped LangChain). `req_llm` sits on `Req` (HTTP) and owns the provider adapters, the model catalog, streaming, and tool-call encoding.
+| type | doc | why this type |
+|---|---|---|
+| `reference` | why-agentic-systems-need-ontologies (`em:1df031`), filed in `knowledge/SWE/agentic/agentic-loop/` | external talk, fetched and summarized — the definition of a processed capture; filed with the loop-engineering references since its core move is a validation stage inside the tool-use loop |
 
-"Load-bearing for all cognition" means: the reducer core is LLM-free *by design* (that's the replayable-without-a-model auditability win) — but the instant an agent actually **thinks** (any inference, any reasoning strategy, any structured extraction, any tool-selection decision), it goes through `jido_ai` → `req_llm`. There is no first-class alternate cognition path in the framework. Consequences:
+**What I modified**
 
-- **One throat for every inference.** `req_llm`'s provider coverage, streaming correctness, tool-call encoding, retry/rate-limit semantics, and error handling *become your cognition's reliability envelope*. The single most volatile, most external, most expensive part of the system — model calls — has exactly one library standing under it.
-- **Coupling to a young, in-house library.** `req_llm` was written during the ~18-month Jido 2 rewrite; the brain flagged even its "665+ models" claim as unconfirmed. When a new model, param, or feature lands (prompt caching, extended thinking, a changed tool-call format), you wait on `req_llm` to support it or you patch it — versus calling the Anthropic SDK directly, where you own the request shape.
-- **It entangles with elixir-mind's zero-dep and duplicate-runtime blockers.** Adopting Jido's cognition pulls `req_llm` *and* a provider credential into the runtime tier — which is exactly why the verifier core must never depend on it and cognition must live in a separate mix project (blocker #2), and why a Jido deployment is "a second agent runtime with its own LLM credentials" (blocker #3).
-- **The flip side — it's a reasonable design.** Isolating cognition behind a swappable client is *good* architecture: it's what keeps LLM code out of the reducer and makes decisions testable without a model, and in principle the client is replaceable. "Load-bearing" is a caveat about **concentration of dependency**, not a design flaw.
+| file | thrust of the change |
+|---|---|
+| `knowledge/SWE/agentic/agentic-loop/index.md` | added the new reference under "Reliability & long-horizon" |
+| `meta/registry.md` | regenerated after minting `em:1df031` |
 
-**Tie-back to the linting loop from earlier:** a Jido lint-fixer calling a cheap model would route that call *through* `req_llm` — so your ability to pin `claude-haiku-4-5`, set `max_tokens`, etc., is bounded by what `req_llm` exposes. And the single-node ceiling is irrelevant to a lint-fixer specifically; it only bites once linting becomes a fleet-scale continuous workload.
+**Actions I have taken**
 
-### 2026-07-28-ontology-guardrails-intake-and-jido-comparison (2026-07-28)
+| action | result |
+|---|---|
+| Fetched video metadata + transcript (~3,100 words) + description | captured in full; oversized raw source relegated to `resource` + `# Citations` per the filing rule |
+| Synonym-expanded dedup search (ontology, neurosymbolic, RDFS/OWL, knowledge graph, guardrails, Pydantic, tool-use loop) | no duplicate; cross-linked the FOL/OWL capture and the glossary's ontology/OWL/knowledge-graph terms instead |
+| `mix brain.id`, `brain.registry`, `brain.verify`, `brain.dedup_probe --update-baseline` | all green; plain recall 6/15, no regression (gold-row harvest skipped — bare URL, no natural phrasing) |
+| Commit + push to `claude/intake-video-review-31aiyw` | landed as `2f0f433`, all pre-commit gates passed (183 tests, 0 failures) |
 
-2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+The branch is pushed with the intake complete; say the word if you'd like a PR opened (`/create-pull-request`).
+</routes>
 
-**[`em:44f899`]**  (co-feeds: `em:1df031`)
+## User
 
+re: "The operational pattern: wrap a Claude tool-use loop with a validator — when the model proposes a tool call, check the parameter types with Pydantic and the results against the ontology, and only then let the action through" - is this also how the elixir jido2 library works, specifically with directives/actions?
+
+## Assistant
+
+<routes ref="em:44f899 em:1df031">
 Partly — and the way it diverges is the interesting part. Jido 2 matches two of Coyle's three layers, one of them *better* than his Python version, but the layer his entire talk is about is the one Jido doesn't have.
 
-**Where the analogy holds**
+## Where the analogy holds
 
 **"Pydantic at the door" — Jido's Action schema, and it's a stronger design.** A `Jido.Action` declares a schema, and the documented hook order runs "parameters are processed, followed by `on_before_validate_params`, then schema validation, `on_after_validate_params`, and finally the `run` function," with output validation after. That is structurally Coyle's door check.
 
@@ -73,7 +124,7 @@ The improvement over his setup: the *same* schema declaration generates the LLM 
 
 **"No side effects" — that's what Directives actually are.** Coyle prescribes it as discipline: "your agents should try to have no side effects... they're not running off doing something that they're changing things in the database not yet." Jido makes it structural. An action's `run/1` returns *data describing* effects — `%Directive.Emit{}`, `Spawn`, `Schedule`, `Cron` — and the runtime interprets them. The pure `cmd(agent, {Action, params}) → {updated_agent, directives}` reducer never performs I/O, which is why it's replayable and testable without an LLM ([functional core, imperative shell](/beliefs/glossary/functional-core-imperative-shell.md)).
 
-**Where it breaks — Directives are not the validator**
+## Where it breaks — Directives are not the validator
 
 This is the crux: **Directives are the effect-deferral mechanism, not the checking mechanism.** They're the "don't touch the database yet" half. They are not the "and here's what decides whether you may" half. The runtime type-checks them structurally — a malformed instruction yields `%Jido.Agent.Directive.Error{}` — but nothing consults a domain model before interpreting one.
 
@@ -87,7 +138,7 @@ Jido's validation is **structural and local**; Coyle's ontology layer is **seman
 
 Note what separates row 1 from rows 2–3: row 1 is a constraint on **one field of one call**, which is exactly what NimbleOptions/Zoi express. Rows 2–3 are constraints over **entity classes and relationship histories** — OWL's disjointness and functional-property axioms. Jido's `output_schema` and agent state schema don't reach there either; they're per-record shape checks, just positioned later in the pipeline. There's no reasoner, no derived facts, no RDFS domain/range inference.
 
-**Where the ontology layer would go if you wanted it**
+## Where the ontology layer would go if you wanted it
 
 The natural seam is a custom **Strategy** — Strategies control how `cmd/2` executes, so that's Jido's analogue of Coyle's validator wrapping the loop, and it sits at the right altitude to see the instruction, the agent's state, and the returned directives together before the runtime interprets them. Per-action, `on_after_validate_output` is the cheaper hook. Either way you'd be writing the domain reasoner yourself; Elixir's RDF/OWL ecosystem is thin compared to Python's, and I haven't verified current options in this session.
 
@@ -100,18 +151,26 @@ The natural seam is a custom **Strategy** — Strategies control how `cmd/2` exe
 | 1 | File this as an `analysis` under `meta/analysis/` | A queryable comparison doc; fits alongside the existing Jido evaluations, and the thin-jido-brain-host plan would want to cite it if that host ever needs semantic guardrails |
 | 2 | Leave it in chat and let `/capture` record it | The comparison lives in the thread render; adequate if this was curiosity rather than a design input |
 | 3 | Extend the Coyle reference with a "Jido comparison" section | Keeps it attached to the source, but mixes a capture with derived analysis — I'd recommend option 1 over this |
+</routes>
 
----
+## User
 
-**[`em:44f899`]**  (co-feeds: `em:8255b8 em:1df031`)
+<routes ref="em:8255b8">
+so, to be fair, jido should be compared to pydantic, not the ledger, which floats above either of them?
+does the ledger encode the logic necessary to enforce catch 1 and 2? what exactly is coyle's ledger written in?
+Is owl/jido a formal logic? what would adopting it as the level 2/3 enforcement layer offer vs writing a custom one in elixir?
+</routes>
 
-**1. Yes — and the correction matters**
+## Assistant
+
+<routes ref="em:8255b8 em:44f899 em:1df031">
+## 1. Yes — and the correction matters
 
 Your framing is right, with one refinement: Jido spans *more* positions than Pydantic, just not the ledger one. Pydantic occupies only the door. Jido occupies the door (Action `schema:`), the loop (`cmd/2` + Strategies), and the effect boundary (Directives). What floats above all of them is a **domain model** — orthogonal to whichever framework carries the loop. Coyle's own layering says as much: "check your types with Pydantic and then check your results with the ontology." Types are a property of *the call*; the ontology is a property of *the world*. No agent framework can supply the latter, because it's your business's model, not the framework's.
 
 So the fair comparison is: Jido ⊃ Pydantic at the door, Jido = a purity mechanism Coyle only prescribes as discipline, and the ledger is unowned by either.
 
-**2. Does the ledger encode the logic for the two Jido misses? Only one cleanly.**
+## 2. Does the ledger encode the logic for the two Jido misses? Only one cleanly.
 
 **Misdirected payout (disjointness) — yes, cleanly.** `owl:disjointWith(Customer, SupportRep)` means no individual can be both; a reasoner reports the graph inconsistent the moment you assert one. That's real logical work.
 
@@ -124,7 +183,7 @@ But there's a hidden precondition: **the payee has to be a typed individual in t
 
 The formalism that does encode this is **SHACL** (W3C Rec, 2017) — closed-world constraint validation over RDF graphs, where `sh:maxCount 1` means what a programmer expects: a violation report. Coyle names RDFS and OWL and never mentions SHACL. His flagship example is the one his named tools handle worst.
 
-**3. Coyle's ledger is written in nothing — he never implements it**
+## 3. Coyle's ledger is written in nothing — he never implements it
 
 I went back through the transcript. He names no reasoner, no library, no triplestore. What's on the slide is a placeholder inside a comment block:
 
@@ -132,13 +191,13 @@ I went back through the transcript. He names no reasoner, no library, no triples
 
 and, at the close, "**you can have** a reasoner built on ontology to check keep the LLM on track." Both are subjunctive. The working code in the talk is the ordinary Claude tool-use loop plus Pydantic; the ledger is a red annotation on a slide marking where a thing would go. Worth knowing before costing out an implementation — you're not adopting his design, you're originating it.
 
-**4. OWL is a formal logic. Jido is not. That distinction decides the build question.**
+## 4. OWL is a formal logic. Jido is not. That distinction decides the build question.
 
 **OWL: yes, unambiguously.** OWL 2 DL is a syntactic variant of the description logic **SROIQ(D)** — a decidable fragment of first-order logic with model-theoretic semantics and sound-and-complete reasoners (HermiT, ELK, Pellet). The brain already holds this in [FOL and OWL](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) (`em:8255b8`), including the decidability trade-offs and the profile hierarchy.
 
 **Jido: no.** NimbleOptions/Zoi schemas are runtime predicates over values. There's no entailment relation, no semantics, no reasoner. The categorical difference: **a schema decides membership; a logic derives consequences.** A schema can reject `"probably shipped"` but can never tell you something you didn't assert.
 
-**What adopting OWL buys vs. custom Elixir**
+### What adopting OWL buys vs. custom Elixir
 
 | | OWL/RDF ledger | Custom Elixir |
 |---|---|---|
@@ -167,3 +226,9 @@ This has grown past a chat answer — there's a defensible judgment here (the ta
 | 1 | File as `analysis` — "ontology guardrails vs. schema validation for agent loops" (Recommended) | Captures the OWA/UNA finding, the level-2/3 split, and the recommendation; joins the Jido evaluation cluster in `meta/analysis/` |
 | 2 | Add a "Critique" section to the Coyle reference | Cheaper, but mixes derived judgment into a capture — the routing policy prefers option 1 |
 | 3 | Leave it in chat; `/capture` records it in the thread | Fine if this was orientation rather than a design input |
+</routes>
+
+## User
+
+1
+then /create-pull-request merge
