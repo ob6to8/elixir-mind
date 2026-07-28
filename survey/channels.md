@@ -15,8 +15,23 @@ material, as opposed to the one-off links parked in
 a bookmark is a *document* already produced. Individual pieces surfaced from a
 channel still enter the brain the normal way — via the
 [`/research`](/.claude/skills/research/SKILL.md) daily feed or
-[`/intake`](/.claude/skills/intake/SKILL.md) — this register records *where to
-look*, what it costs to look there, and what each source has actually yielded.
+[`/intake`](/.claude/skills/intake/SKILL.md).
+
+**The register holds both directions of a channel's relationship to the brain.**
+Prospectively it records *where to look and what it costs to look there* — the
+focus line and the access note `/research` reads before deciding what it may
+fetch. Retrospectively it records *what the looking produced* — the filed
+documents drawn from that source. The two belong in one row because the second
+is the evidence for the first: a channel earns continued attention by having
+yielded something, and a row that stays empty is a watchlist entry nobody has
+had to justify. Keeping the yield beside the intent is what makes the register
+a feedback loop rather than a list that only ever grows.
+
+The retrospective half is a **join, not a record of its own**. Each document
+already names its source in `resource` frontmatter; this column inverts that
+edge, which is the one thing a per-document field cannot express. Nothing here
+is authoritative — the documents are, and the column is re-derivable from them
+(see [Maintenance](#maintenance)).
 
 Like the rest of [`survey/`](/survey/index.md), this namespace sits outside the
 OKF bundle: no `em:` ids, never verified.

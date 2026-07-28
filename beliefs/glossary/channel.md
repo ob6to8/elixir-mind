@@ -2,12 +2,12 @@
 id: em:9495ee
 type: concept
 title: channel
-description: "In this brain, one word with two referents: the ingestion pathway recorded on a document (`attribution.channel`, from a controlled vocabulary), or a standing source — a recurring publication registered in `survey/channels.md` and monitored for new material."
+description: "In this brain, one word with two referents: the ingestion pathway recorded on a document (`attribution.channel`, from a controlled vocabulary), or a standing source — a recurring publication registered in `survey/channels.md`, monitored for new material and credited with what has been ingested from it."
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, attribution, survey, channels]
 sense: repo
-timestamp: 2026-07-27
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-27T00:00:00Z
   channel: glossary
@@ -27,10 +27,13 @@ Two repo senses, distinguished by what flows through them:
    [resource-attribution policy](/meta/policy/resource-attribution.md)).
 2. **Standing source** — a row in the
    [channels register](/survey/channels.md): a recurring publication
-   (newsletter, blog, author feed, archive) monitored for new material, carrying
-   a focus line, an access note (free / login / paid), and the origin of the
-   recommendation. Distinct from a bookmark in the
-   [survey tier](/beliefs/glossary/survey-tier.md) — a channel is a *source*
+   (newsletter, blog, author feed, vendor docs, archive, video channel, forum)
+   monitored for new material, carrying a focus line, an access note
+   (free / login / paid), the documents already ingested from it, and the origin
+   of the recommendation. The row runs in both directions — where to look and
+   what it cost, plus what the looking yielded — so a source's continued place
+   in the register is answerable from the register. Distinct from a bookmark in
+   the [survey tier](/beliefs/glossary/survey-tier.md) — a channel is a *source*
    that keeps producing, a bookmark a *document* already produced; `/research`
    scans the register as its first per-domain search step.
 
