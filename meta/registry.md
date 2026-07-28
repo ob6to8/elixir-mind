@@ -597,6 +597,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
+| `em:d5ca81` | [knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md) | concept | true |
+| `em:ff1ed5` | [knowledge/media-production/audio-synthesis/supercollider-nrt-rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md) | note | false |
+| `em:98a026` | [knowledge/media-production/audio-synthesis/wakefield-gen-course-notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md) | source |  |
+| `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |
+| `em:507eb9` | [knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md) | note | false |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
 | `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |

@@ -50,12 +50,15 @@ picture are two renderings of it.
   container; local macOS recreation is the tutorial's job. The picture half
   (ffmpeg cut execution) is designed and its failure modes are catalogued, but
   has not been run against real footage.
-- **Knowledge candidates without a home.** The generalizable findings —
-  ramp-based time organization, the gen~ operator-vocabulary claim, scsynth
-  NRT block-size behavior — are project-filed for now because the knowledge
-  taxonomy has no media-production domain; creating one is a shape change
-  awaiting operator ratification per the
-  [taxonomy-evolution protocol](/meta/policy/taxonomy-evolution-protocol.md).
+- **Knowledge filed.** The generalizable findings live in
+  [knowledge/media-production](/knowledge/media-production/index.md), per the
+  split rule:
+  [ramps as time](/knowledge/media-production/sequencing/ramps-as-time.md),
+  [the gen~ primitive reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md)
+  (both grounded in the
+  [Wakefield course-notes capture](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md)),
+  [SuperCollider NRT rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md),
+  and [ffmpeg frame-accurate assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md).
 - **Next decision.** Whether to commit to building the timing DSL the
   [DSL analysis](/projects/code-driven-av-production/gen-inspired-music-dsl.md)
   recommends; committing graduates that analysis's sketch into a `type: plan`
