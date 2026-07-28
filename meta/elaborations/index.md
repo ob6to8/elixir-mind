@@ -8,9 +8,9 @@ defining concepts rather than re-inventing them), and a less technical
 walkthrough of the concepts and actions described.
 
 Each elaboration is a `type: elaboration` doc in the governance namespace (no
-`em:` id). Once the session that prompted it is captured, the doc carries a
-**`thread`** frontmatter field back-linking the persisted thread under
-[`meta/threads/`](/meta/threads/index.md) — set by
+`em:` id). Once the session that prompted it is captured, the doc's
+**`attribution.from`** list back-links the persisted thread under
+[`meta/threads/`](/meta/threads/index.md) — appended by
 [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) after
 its `/capture` step, so every elaboration can be traced to the conversation
 that needed it.
@@ -31,3 +31,8 @@ mouthful in its context*.
   unpacks the derived-views doctrine's crossing-signal sentence: what makes a
   query inexpressible in the file-plus-index architecture, and why the doctrine
   waits for a real one instead of constructing a test.
+- [gloss, glossary, and the `index.md` gloss](/meta/elaborations/gloss-and-the-index-gloss.md) —
+  separates the general sense of "gloss" (a short explanatory note, historically
+  marginal or interlinear) from this bundle's contract-native sense (the one-line
+  description after the em dash in an `index.md` listing), and both from an index
+  file's own header prose.
