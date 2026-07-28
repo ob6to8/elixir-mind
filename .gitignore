@@ -14,3 +14,8 @@ erl_crash.dump
 
 # Generated static site (built by `mix brain.site`, deployed from CI)
 /_site/
+
+# Generated at deploy time by `mix brain.dev_history`, rendered into the site by
+# `mix brain.site`. Deliberately not committed: the merge graph is the source of
+# truth and a checked-in copy can only ever lag it (see the dev-history issue).
+/meta/dev-history.md

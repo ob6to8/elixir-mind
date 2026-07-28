@@ -55,7 +55,7 @@ The history has three eras I need to handle: true merge commits ("Merge pull req
 Everything's in place. The design writes itself from the repo's own conventions: a generated `meta/dev-history.md` (same discipline as `registry.md` and `lineage.md`), derived entirely from the merge graph — the very thing the merge-strategy policy preserves as the provenance layer. No hand-crafting; `mix brain.dev_history` re-derives it, and the Pages build regenerates it at deploy so the live site page is always current. Building it now.
 </routes>
 
-<routes ref="/meta/plans/derived-dev-history.md lib/elixir_mind/dev_history.ex meta/dev-history.md">
+<routes ref="/meta/plans/derived-dev-history.md lib/elixir_mind/dev_history.ex">
 Yes — and it's built and pushed to `claude/dev-history-log-0nfdtf`. The key insight is that the craft of the old log isn't needed, because the data already exists in exactly the shape you want: the true-merge policy means `git log --first-parent` reads as one commit per PR, and each merge keeps its branch's deliberately-messaged commits reachable forever. So the dev history is now a **derived artifact**, on the same discipline as `CLAUDE.md` and `meta/registry.md` — never hand-written, always regenerable.
 
 What shipped:

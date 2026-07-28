@@ -53,7 +53,7 @@ step each unblocks. Two smaller findings were judged not worth a governance
 artifact — a one-off stale read from the GitHub `get_check_runs` endpoint, whose
 fix belongs in the `/create-pull-request` skill rather than in `meta/issues/`,
 and a branch survey that the git-branch-deletion policy had already answered.
-The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 the closing capture, #156 the policy-index issue a final persistence audit surfaced, #158 the generation-over-discipline belief and the merge-verify hook issue, and #161 the derivable capture boundary; `pr:` above records the origin and is not rewritten.
+The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 the closing capture, #156 the policy-index issue a final persistence audit surfaced, #158 the generation-over-discipline belief and the merge-verify hook issue, #161 the derivable capture boundary, and #169 the update-in-place rule and eval correction; `pr:` above records the origin and is not rewritten.
 
 A closing round settled three smaller matters. A coverage audit — run because
 the operator asked whether everything discussed had been persisted — found the
@@ -140,6 +140,7 @@ defect its sibling issue tracks.
 | The prior behind preferring generation over discipline | closed | [remembered surfaces are forgotten surfaces](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) | - |
 | `depends_on` shipped as an unregistered, unchecked typed edge | open | [epistemic-overlay](/meta/plans/epistemic-overlay.md) | Widen `verified_by`, add `deps`/`grounds`, or adopt `depends_on` — whichever wins inherits the existing edges |
 | Capture boundary derived rather than recalled | closed | [`mix brain.thread_tail`](/lib/mix/tasks/brain.thread_tail.ex) · [/capture skill](/.claude/skills/capture/SKILL.md) | - |
+| `session-capture` cited an update-in-place rule it never stated | closed | [session-capture](/meta/policy/session-capture.md) | - |
 | Does an agent re-derive or recall available state? | paused | [re-derivation vs. recall](/meta/evals/re-derivation-vs-recall.md) | Separating genuine follow-ups from substitution before the metric means anything |
 | Merge commits flagged Unverified by the stop hook | open | [merge-commits-show-unverified](/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md) | Sign the merges, exempt multi-parent commits from the hook, or accept the noise |
 | Policy index glosses drifting on policy edits | open | [policy-index-glosses-drift-on-policy-edits](/meta/issues/policy-index-glosses-drift-on-policy-edits.md) | Which fix shape — state the rule, add a check, or generate the gloss from `description` |
@@ -1327,4 +1328,122 @@ Nothing is blocked on me except your call on **option 3** — whether `mix brain
 ## User
 
 yes to 3, do all 5 then /create-pull-request merge
+
+## Assistant
+
+PR [#161](https://github.com/ob6to8/elixir-mind/pull/161) merged as `b3cec1a`. All five items landed.
+
+**Thread doc:** `meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md`
+
+### What I created
+
+| Type | Artifact | Note |
+|---|---|---|
+| code | `ElixirMind.ThreadTail` + `mix brain.thread_tail` | 5 tests; 188 total (was 183) |
+| `reference` | [re-derivation-vs-recall](https://github.com/ob6to8/elixir-mind/blob/main/meta/evals/re-derivation-vs-recall.md) | `status: proposed`, evidence base stated as thin |
+
+### What I modified
+
+| File | Thrust |
+|---|---|
+| `.claude/skills/capture/SKILL.md` | Derive the append boundary via the new task; never recall it |
+| `meta/plans/epistemic-overlay.md` | Its typed-edge open question was preempted by `depends_on` shipping unregistered, unchecked, and with undecided type pairs |
+| `meta/issues/merge-commits-show-unverified-…` | Scope claim corrected — trigger is every unsigned commit, not the merge path. Title, description, and index gloss fixed together |
+| `meta/code-map.md` | Regenerated for the two new moduledocs |
+
+### Actions I have taken
+
+| Action | Result |
+|---|---|
+| `/capture` | Boundary derived with `mix brain.thread_tail` — 10 blocks, matched at index 29 |
+| `/add-to-glossary` | No-op — candidate terms were descriptive phrases, not terms of art |
+| `mix brain.dev_history` | Skipped — shallow clone |
+| CI on `516cbb7` | All 19 steps green |
+| Merge | True merge commit |
+
+Two things worth naming. **Item 3 changed shape entirely once I checked it** — I'd proposed extending `capture_scenario_test.exs`, and inspection showed it covers `route_tags --materialize` while the render has no code at all. So the fix had to create the derivable surface rather than test a nonexistent one, which made it a task instead of a test. And **item 4 reversed on re-reading the genre** — I'd called it too thin, but `status: proposed` exists precisely to hold a design ahead of its evidence, so my objection applied a bar the genre doesn't set.
+
+The capture for this PR used the new task on itself, which is the only real validation available for it right now.
+
+Session spans six PRs: `5654a39`, `9f63491`, `f46b7b9`, `a522eb6`, `b692feb`, `b3cec1a`. Pickup point remains `projects/secure-financial-agent.md` → `spec-completion.md`.
+
+## User
+
+is everything in thread persisted in the pr? anything left to persist?
+
+## Assistant
+
+**Yes — two things, neither of them transcript.** The un-captured tail is just my merge report and this question, which is structural. But the audit turned up two real gaps.
+
+## 1. `session-capture` cites a rule it never states
+
+The policy contains this self-reference:
+
+> "later turns extend the *same* thread doc in place (per the **[session-capture](/meta/policy/session-capture.md) update-in-place rule**)"
+
+That points at itself, and the rule isn't there. The actual statement — *"if this session already has a thread file, append the un-captured exchanges to it"* — lives only in the `/capture` skill, which is where I just edited it.
+
+The reach asymmetry matters: `CLAUDE.md` loads in **every** session; the skill loads only when `/capture` runs. So the authoritative rule for how thread docs are extended sits on the lower-reach surface, and the higher-reach surface points at it circularly. An agent reading the contract alone gets a dangling pointer.
+
+This is the **third** instance of one family this session — a rule and its advertised location drifting apart:
+
+| | Instance | Where it landed |
+|---|---|---|
+| 1 | Policy body changed, index gloss kept the old rule | filed as an issue |
+| 2 | `depends_on` shipped unregistered in the frontmatter schema | recorded in `epistemic-overlay` |
+| 3 | Policy cites an update-in-place rule it doesn't state | **unpersisted** |
+
+## 2. The eval understates its own evidence — and a prior session already recorded a fourth instance
+
+I filed `re-derivation-vs-recall` saying "three self-reported instances, one session," and flagged that as thin. `beliefs/future-beliefs.md` contains a fourth, from **2026-07-22**, recorded by a different session:
+
+> "the contract already said 'use `mix brain.url`', yet a dead Pages URL shipped, because the *tool* was wrong (not branch-aware) and the policy also taught a hand-mapping an agent could apply instead."
+
+That's the same signature — an authoritative source existed, a shortcut was taken — and it carries the same conclusion I reached independently: *"Asserting the rule harder in prose does not move reliability… The fix landed in the tool… never in a sterner sentence."*
+
+Which is [the belief I filed](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/remembered-surfaces-are-forgotten-surfaces.md), arrived at from a different direction, months-scale earlier. So the eval's evidence base is four instances across two sessions with one externally corroborated — meaningfully stronger than what its doc claims, and understating it is the kind of inaccuracy that makes a future reader discount the instrument.
+
+**I also should have found this before filing.** `update-in-place` says search the bundle first; I searched `meta/evals/` and `lib/` but not `beliefs/future-beliefs.md`, which is exactly the scratch list for observations-awaiting-formalization. Scoping my search that narrowly is itself an instance of the pattern.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Both fixes in one PR | State the update-in-place rule in `session-capture` (resolving the dangling self-reference), and correct the eval's evidence section to four instances with the 2026-07-22 citation |
+| 2 | Just the eval correction | The cheaper half; leaves the policy pointing at nothing |
+| 3 | Just the policy fix | Leaves a filed instrument understating its own basis |
+| 4 | Neither | Both are small; neither is load-bearing today |
+
+I'd take **1**. The policy fix closes a dangling reference in the contract itself, and the eval correction turns a self-reported hunch into a cross-session pattern — which is the difference between an instrument worth building and one worth ignoring.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+b3cec1a E noreply@github.com
+c9f33a4 E noreply@github.com
+f6acddc N noreply@anthropic.com
+2d813e4 E noreply@github.com
+f442b44 N noreply@anthropic.com
+2f33504 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+Clean tree, `0` ahead. Same answer as the previous three firings — all six are on `main`, three are merge commits, and the non-merge ones are from PRs #159 and #160, other sessions entirely.
+
+Worth one line because it's now measured rather than predicted: the list has gone **1 → 5 → 5 → 6** across four firings while my branch contributed **zero commits each time**. That's the reachable-from-vs-added-by defect recorded in the [issue](https://github.com/ob6to8/elixir-mind/blob/main/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md), behaving exactly as written — it grows with every merge by anyone, and will keep growing.
+
+Nothing to do. The two findings from the audit are still pending your call:
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Both fixes in one PR **(recommended)** | State the update-in-place rule in `session-capture` (it currently cites a rule it never states) + correct the eval to four instances across two sessions |
+| 2 | Just the eval correction | Leaves the contract pointing at nothing |
+| 3 | Just the policy fix | Leaves the instrument understating its basis |
+| 4 | Neither | Both small, neither load-bearing today |
+
+## User
+
+1
 

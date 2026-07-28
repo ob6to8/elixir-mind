@@ -11,7 +11,7 @@ attribution:
   channel: intake
   agent: "operator via /intake, Claude Code session"
   why: "operator ratified filing the ledger-upkeep gap as an issue after it blocked a clean strand closure"
-  from: [/meta/threads/2026-07-28-ontology-guardrails-intake-and-jido-comparison.md]
+  from: [/meta/threads/2026-07-28-ontology-guardrails-intake-and-jido-comparison.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 ---
 
 # Routing ledger has no post-capture upkeep path
@@ -63,9 +63,29 @@ existence-proof section. Both rows were edited to `closed` in place, because
 leaving them stale would misreport settled matters — but that edit is an
 improvisation the policy does not sanction, which is what surfaced this issue.
 
-## Candidate resolutions
+## Resolution ratified 2026-07-28 — implementation pending
 
-Not yet decided — this issue records the gap, not its fix.
+The operator ratified a fourth answer, recorded in
+[reconcile dangling routing-ledger strands](/meta/plans/reconcile-dangling-ledger-strands.md):
+**remove the `State` and `Dangling` columns entirely.** A strand's status moves
+onto the `plan`/`todo`/`issue` its new `Action` column links to, where a mutable
+`status` field already belongs, and `/priorities` stops reading ledgers.
+
+That **dissolves** this gap rather than resolving it. The question "who updates
+the row later?" only has force while the row carries state; once it carries only
+pointers, a frozen row stays true forever and no later session needs to touch it.
+The three candidates below are superseded — option 1's carve-out becomes
+unnecessary, option 2's stale `open` rows cease to exist, and option 3 has no
+column left to derive.
+
+This issue stays **open** because the gap is live in the shipped policy until the
+plan's steps 2–5 land. Close it when step 5 rewrites
+[routing-ledger](/meta/policy/routing-ledger.md); do not re-litigate the
+candidates in the meantime.
+
+## Candidate resolutions (superseded)
+
+Recorded as considered. Written before the ratification above.
 
 1. **Edit in place, explicitly permitted.** Add a carve-out to the
    routing-ledger policy: the **State** column is mutable by any later session
@@ -82,9 +102,9 @@ Not yet decided — this issue records the gap, not its fix.
    generated-artifact pattern and would make the column gate-able, but needs a
    machine-readable resolution marker that does not exist today.
 
-Option 1 is the cheapest correct fix and the one provisionally applied; option 3
-is the one consistent with how the brain handles every other freshness problem.
-The choice is the operator's.
+Option 1 was provisionally applied to the two rows named above. The ratified
+answer supersedes it: those edits become moot once the column they touched is
+removed, so they are left as-is rather than reverted.
 
 ## Related
 

@@ -1,7 +1,7 @@
 ---
 type: todo
 title: "Diagnose why meta/dev-history.md fell six PRs behind"
-description: The dev-history view is designed to lag by exactly one PR and its CI check skips silently on a shallow clone, which is what web sessions get; the observed lag reached six PRs, and whether that is the silent skip, the regeneration step being missed, or both is undiagnosed.
+description: Diagnosed and closed — the lag's cause is the shallow-clone silent no-op, established from the merge graph, but the drift turned out to be within design tolerance rather than a defect, and the committed view was ultimately removed; see the issue it graduated to.
 status: done
 provenance: "Claude Code session (2026-07-28) — observed while regenerating dev-history from an unshallowed clone"
 tags: [meta, todo, dev-history, generated-artifacts, ci, shallow-clone, gates]
@@ -16,14 +16,23 @@ attribution:
 
 # Diagnose why `meta/dev-history.md` fell six PRs behind
 
-[`meta/dev-history.md`](/meta/dev-history.md) is a generated-but-committed view of
-the default branch's merge graph. By design it lags by **exactly one PR** — a
-branch cannot contain its own merge commit — and the
+> **This todo describes an arrangement that no longer exists.** It was written
+> believing `meta/dev-history.md` was a committed view whose check tolerated
+> exactly one PR of lag, kept current by a regeneration step in
+> [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md). All
+> three are now false: the check was never bounded, the regeneration step is
+> gone, and the view is no longer committed at all. The premises are left as
+> written — this is the record of a task, not a live description — and what
+> replaced them is in
+> [the issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md).
+
+`meta/dev-history.md` was a generated-but-committed view of the default branch's
+merge graph. A branch cannot contain its own merge commit, and the
 [staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)
-makes `mix brain.dev_history --check` tolerant of precisely that one-PR gap.
-[`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) step 4 is
-what keeps it there: every PR regenerates the file, so the checked-in copy never
-drifts past the unavoidable lag.
+was read as making `mix brain.dev_history --check` tolerant of precisely that
+one-PR gap, with `/create-pull-request` step 4 keeping it there: every PR
+regenerated the file, so the checked-in copy would never drift past the
+unavoidable lag.
 
 On 2026-07-28 the file was **six PRs behind** — stale back through PR #152, missing
 #148 and #153 through #158 — and regenerating it from an unshallowed clone produced
@@ -60,4 +69,7 @@ session rather than by PR, and the one session that changed behavior mid-flight
 did so exactly when it unshallowed. That confirms a defect whose fix is a
 separate design decision, so the finding and its three candidate fixes are filed
 as [dev-history regeneration silently no-ops on shallow clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
-rather than resolved here.
+rather than resolved here. That issue then closed **`resolved`**: measurement
+showed the check was unbounded rather than one-PR-bounded and the deployed page
+was already re-derived on every push, so the committed copy was carrying no
+guarantee — and it was removed entirely rather than patched.

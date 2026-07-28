@@ -38,6 +38,11 @@ why a *value-laden* belief type escapes the collision that ruled out a
   generated output cannot establish correctness however often it is repeated;
   only a check independent of the output settles it. Governs *what counts as
   checked*, where the coverage belief governs *what to measure*. `em:2ecdd2`
+- [An instrument without a control measures itself](/beliefs/an-instrument-without-a-control-measures-itself.md) —
+  a harness never run against a known-answer case cannot tell a finding from a
+  defect in itself, because a broken instrument returns plausible results rather
+  than obviously wrong ones. The review-is-not-an-oracle prior turned on the
+  measuring apparatus. `em:763494`
 - [The scar-tissue lens is the right frame for reasoning about agent failure modes](/beliefs/scar-tissue-lens-for-agent-failure.md) —
   the operator's adopted working frame: agent failure as trauma-like accumulation
   of adaptive local fixes, chosen over rival frames that fit the same facts;

@@ -7,7 +7,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 
 - [analysis](/meta/analysis/index.md) — point-in-time evaluations and decision-support write-ups on questions about the brain (`type: analysis`)
 - [code-map.md](/meta/code-map.md) — **generated** module/function/type intent glossary for the `lib/` tooling, compiled from its docstrings (`mix brain.codemap`)
-- [dev-history.md](/meta/dev-history.md) — **generated** per-PR overview of development progress, derived from the merge graph (`mix brain.dev_history`)
+- **dev-history** — per-PR overview of development progress, derived from the merge graph by `mix brain.dev_history`. **Not committed**: it is generated at deploy time and exists only on the [published site](https://ob6to8.github.io/elixir-mind/meta/dev-history.html), because a checked-in copy can only ever lag the graph it derives from. Run the task locally to read it in a checkout (the result is gitignored).
 - [doctrine](/meta/doctrine/index.md) — standing intention statements: guiding principles and directions the brain's design serves, which policies implement (`type: doctrine`)
 - [elaborations](/meta/elaborations/index.md) — persisted expansions of technical phrases (`type: elaboration`, written by `/elaborate`; each back-links its originating thread via a `thread` field set by `/create-pull-request`)
 - [evals](/meta/evals/index.md) — repeatable eval gold sets and their baselines: the fixtures a `mix brain.*` task re-scores on every run (distinct from a point-in-time `analysis`)
@@ -50,7 +50,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
   - `mix brain.session_init` — compile the session-start digest: open issues and
     todos, active plans, dangling ledger strands, and a heuristic top-3 priority
     ranking.
-  - `mix brain.dev_history [--check]` — derive `/meta/dev-history.md` (per-PR
+  - `mix brain.dev_history [--check]` — derive the gitignored `meta/dev-history.md` (per-PR
     features and progress) from the default branch's first-parent merge graph;
     `--check` is lag-tolerant (the checked-in copy cannot contain the merge that
     ships it) and the Pages build re-derives the page at deploy time.

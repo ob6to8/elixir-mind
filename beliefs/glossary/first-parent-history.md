@@ -24,7 +24,7 @@ default branch where every change lands as a
 [true merge](/beliefs/glossary/true-merge.md), this reads as exactly one entry
 per pull request — which is what makes the merge graph directly usable as a
 per-PR change record (`mix brain.dev_history` derives
-[`meta/dev-history.md`](/meta/dev-history.md) from it). The skipped side
+[`meta/dev-history.md`](https://ob6to8.github.io/elixir-mind/meta/dev-history.html) from it). The skipped side
 commits stay reachable through each merge's second parent.
 
 *Seen in:* [2026-07-13 derived-dev-history thread](/meta/threads/2026-07-13-derived-dev-history-from-merge-graph.md), [merge-strategy policy](/meta/policy/merge-strategy.md)
