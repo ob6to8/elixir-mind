@@ -5,6 +5,7 @@ description: Built a channels source register, vetted the video channels from an
 provenance: "Claude Code session (Opus 5), 2026-07-26 to 2026-07-28; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, channels, survey, sources, provenance, merge-conflict]
 timestamp: 2026-07-28
+pr: 152
 session: https://claude.ai/code/session_01RH6XAeSrdkLp3wWAwkJ6xh
 ---
 
