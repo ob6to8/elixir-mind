@@ -20,11 +20,17 @@ absolute: `CLAUDE.md`, [`meta/registry.md`](/meta/registry.md), and
 [`meta/code-map.md`](/meta/code-map.md) are generated **end to end**, so the
 instruction is simply *never hand-edit this file*. You cannot get it half right.
 
-**122 documents are not like that.** Any document a thread route-tags carries a
-generated section partway down, under an authored one. The rule there is
-conditional — *edit above this line, never below it* — and a conditional rule is
-one you can follow by accident and break by accident. This tutorial walks
-through breaking it.
+**Most documents are not like that.** Any document a thread route-tags carries a
+generated section partway down, under an authored one — 128 of them at the time
+of writing, and the count only grows:
+
+```bash
+git grep -l 'Thread excerpts — route-tagged log' HEAD -- '*.md' | wc -l
+```
+
+The rule for those is conditional — *edit above this line, never below it* — and
+a conditional rule is one you can follow by accident and break by accident. This
+tutorial walks through breaking it.
 
 ## What happened
 

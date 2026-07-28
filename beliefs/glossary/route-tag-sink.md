@@ -21,4 +21,4 @@ In dataflow terminology, a sink is the endpoint that consumes or absorbs what fl
 
 **In this brain:** a [route tag](/beliefs/glossary/route-tag.md) sink freezes acceptance of new excerpt blocks when its matter resolves. A sink left **unfed** — no thread's tags reference it anymore — loses its [excerpt log](/beliefs/glossary/excerpt-log.md) section on the next [materialize](/beliefs/glossary/materialize.md), since the section only ever mirrors the tags that exist.
 
-*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md)
+*Seen in:* [2026-07-08 session-capture thread](/meta/threads/2026-07-08-adopt-session-capture-routing-and-route-tags.md), [code-review toolchain hardening plan](/meta/plans/code-review-toolchain-hardening.md), [2026-07-28 orphan sweep and record/queue split thread](/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md)
