@@ -955,6 +955,22 @@ content directly.
   the unraised alternative is the agent's laziness, here it is the operator's
   ignorance. Recast: state the thing and its consequence, with no preamble.
 
+- **"One thing that turned out to matter more than the mechanics:"** —
+  pattern: *"the thing that actually/really matters is X"* / *"what turned
+  out to matter more than Y was X"* — a self-assigned importance ranking
+  preambled before the content, instead of leaving the content and its
+  placement to demonstrate the ranking. A valuation is unnecessary if it
+  doesn't carry weight: if the point genuinely outweighs what preceded it,
+  the reader sees that once it's stated; the preamble either asserts nothing
+  (the weight was already going to land) or oversells a point that can't back
+  it up alone. The preamble-side twin of the seed entry's "worth flagging"
+  failure (self-graded worth asserted instead of shown) and the "honest
+  headline" entry's post-hoc twin (pointing at significance instead of
+  *making* something the headline via placement, per
+  [plainspeak-orientation](/meta/policy/plainspeak-orientation.md)). Recast:
+  state the point directly; if it needs prominence, lead with it or give it a
+  heading — structure carries the emphasis, not a verdict phrase.
+
 _Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
 
 **A closing flow ends clean or not at all.** Invoking
