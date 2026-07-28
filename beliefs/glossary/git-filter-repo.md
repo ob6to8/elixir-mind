@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git, tooling, migration]
 sense: common
-timestamp: 2026-07-17
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-17T18:10:00Z
   channel: glossary
@@ -19,7 +19,8 @@ attribution:
 
 The
 [spin-out plan](/meta/plans/library-spin-out-and-dependency-distribution.md)'s
-migration step 1 uses it to create `composable-beliefs-3` from this repo's
+migration step 1 uses it to create the spun-out `elixir-mind` library repo
+from this repo's
 `lib/`, `test/`, `mix.exs`, and workflow files — so the library's own
 commit → session provenance travels to its new home instead of starting from
 an orphan initial commit. Crucially the rewrite happens only in the extracted

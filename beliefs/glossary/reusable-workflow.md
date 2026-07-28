@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, ci, github-actions, tooling]
 sense: common
-timestamp: 2026-07-17
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-17T18:10:00Z
   channel: glossary
@@ -19,8 +19,8 @@ attribution:
 
 The
 [spin-out plan](/meta/plans/library-spin-out-and-dependency-distribution.md)'s
-preferred CI shape post-split: `composable-beliefs-3` publishes the gate
-suite as a reusable workflow, and each knowledge-base repo's `ci.yml` shrinks
+preferred CI shape post-split: the spun-out `elixir-mind` library publishes
+the gate suite as a reusable workflow, and each knowledge-base repo's `ci.yml` shrinks
 to a few lines referencing it — so gate-suite evolution ships with library
 releases rather than requiring an edit sweep across N bundle repos.
 `pages.yml` stays per-bundle (deploy target and cadence are bundle concerns)

@@ -11,7 +11,7 @@ attribution:
   why: "persists the operator's two-concerns framing and the doc-first delineation path per the persist-plans policy, so the boundary decision and the deferred spin-out survive the session"
   from: [/meta/threads/2026-07-15-bundle-library-separation-plan.md, /meta/threads/2026-07-17-library-spin-out-spec.md]
 tags: [meta, plan, architecture, separation-of-concerns, okf, tooling, governance]
-timestamp: 2026-07-15
+timestamp: 2026-07-28
 ---
 
 # Separate the two concerns: the OKF knowledge bundle and the Elixir Mind library
@@ -156,7 +156,10 @@ bundle keeps this repo while the code leaves):
    spin-out time. **Resolved 2026-07-17** (in the
    [spin-out plan](/meta/plans/library-spin-out-and-dependency-distribution.md)):
    this repo keeps **elixir-mind**; the library spins out as
-   **composable-beliefs-3**.
+   **composable-beliefs-3**. **Reversed 2026-07-28**: the library takes
+   **elixir-mind** — the outcome this question's first sentence anticipated —
+   and this repo renames at spin-out; its new name is the open remainder,
+   tracked in the spin-out plan's open question 1.
 2. **Where does the schema spec live post-spin-out?** In the library repo (it
    defines and enforces it) with the bundle citing a version, or duplicated as
    a governance doc here? Leaning library-side with a version pin here.

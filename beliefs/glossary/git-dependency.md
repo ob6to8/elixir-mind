@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, tooling, dependency, git]
 sense: common
-timestamp: 2026-07-17
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-17T18:10:00Z
   channel: glossary
@@ -18,7 +18,7 @@ attribution:
 # git dependency
 
 In Mix the form is
-`{:composable_beliefs_3, github: "ob6to8/composable-beliefs-3", tag: "v0.2.0"}`:
+`{:elixir_mind, github: "ob6to8/elixir-mind", tag: "v0.2.0"}`:
 cutting a release is just `git tag` + push, and the dep's `Mix.Tasks.*`
 modules become available in the consuming project exactly as a
 [Hex](/beliefs/glossary/hex.md) package's would. The
