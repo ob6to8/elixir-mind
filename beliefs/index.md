@@ -42,6 +42,11 @@ why a *value-laden* belief type escapes the collision that ruled out a
   the operator's adopted working frame: agent failure as trauma-like accumulation
   of adaptive local fixes, chosen over rival frames that fit the same facts;
   the bound-adaptation doctrine is its governance-side consequence. `em:f35b8f`
+- [A surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) —
+  the prior behind preferring generation over discipline: an obligation to update
+  a hand-kept surface is carried by memory, which fails silently, while a derived
+  surface cannot fall out of date because nothing is being remembered. Depends on
+  [freshness gate](/beliefs/glossary/freshness-gate.md).
 
 ## Vocabulary & scratch
 

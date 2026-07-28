@@ -63,8 +63,11 @@ issue tracks.
 | **Add a check** — flag a gloss whose policy's `timestamp` is newer than the gloss line's last change | a new gate, git-archaeology in the verifier | noisy: a typo fix bumps `timestamp` without invalidating the gloss |
 | **Generate the gloss** from each policy's `description`, as the glossary hub generates `## Terms` | a `mix brain.policyindex --materialize`/`--check` pair | glosses are currently hand-written and richer than `description`; generating them means accepting `description` as the gloss, or adding a dedicated field |
 
-The third is most in keeping with the repo's stated ethos — the freshness
-problem is structural, and this bundle's answer to structural freshness has
+The third is favoured by
+[a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md):
+the first two leave the obligation with memory, which fails silently, while
+generation removes the obligation entirely. That prior — not an appeal to
+consistency — is why this bundle's answer to structural freshness has
 consistently been to generate rather than hand-keep. It is also the largest
 change, and it forces a decision about whether `description` is allowed to *be*
 the gloss.

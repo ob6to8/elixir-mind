@@ -53,7 +53,7 @@ step each unblocks. Two smaller findings were judged not worth a governance
 artifact — a one-off stale read from the GitHub `get_check_runs` endpoint, whose
 fix belongs in the `/create-pull-request` skill rather than in `meta/issues/`,
 and a branch survey that the git-branch-deletion policy had already answered.
-The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 the closing capture, and #156 the policy-index issue a final persistence audit surfaced; `pr:` above records the origin and is not rewritten.
+The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 the closing capture, #156 the policy-index issue a final persistence audit surfaced, and #158 the generation-over-discipline belief and the merge-verify hook issue; `pr:` above records the origin and is not rewritten.
 
 A closing round settled three smaller matters. A coverage audit — run because
 the operator asked whether everything discussed had been persisted — found the
@@ -85,6 +85,23 @@ which would tax every future session if added to a contract that loads in full;
 and the uncaptured tail of the session itself, which is structural — a capture
 can never contain the message announcing it.
 
+Two closing artifacts came out of the operator decomposing that reasoning. Asked
+whether "a freshness gate can only cover something derivable" was a belief with
+"hand-kept prose is structurally ungateable" inferred from it, the answer was
+that the *structure* was right — `depends_on` is exactly the mechanism — but the
+*type* was not: both statements are analytic, true by what a freshness gate is,
+and both were already filed inside the `freshness-gate` concept. The belief sat
+one step further along, in the unstated jump from "ungateable" to "therefore
+prefer generating the surface", and was filed as
+[a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md)
+with a `depends_on` edge to that concept. Separately, a stop hook flagged the
+PR-156 merge commit as unverified and proposed amending it; the remedy was
+declined and the pattern filed as
+[an issue](/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md),
+since the commit was already on `main`, the condition is one
+[merge-strategy](/meta/policy/merge-strategy.md) already sanctions, and the fix
+would have rewritten the provenance it appeared to defend.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -102,6 +119,8 @@ can never contain the message announcing it.
 | Jido primitives mapped to security requirements | closed | [Jido](/beliefs/glossary/jido.md) | - |
 | A home for the idle `project` type | closed | [project-namespace](/meta/policy/project-namespace.md) | - |
 | Raising the Elixir/OTP floor | paused | [raise-elixir-otp-toolchain-floor](/meta/plans/raise-elixir-otp-toolchain-floor.md) | Install method, exact-vs-range pin, and whether a second environment needs the same script |
+| The prior behind preferring generation over discipline | closed | [remembered surfaces are forgotten surfaces](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) | - |
+| Merge commits flagged Unverified by the stop hook | open | [merge-commits-show-unverified](/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md) | Sign the merges, exempt multi-parent commits from the hook, or accept the noise |
 | Policy index glosses drifting on policy edits | open | [policy-index-glosses-drift-on-policy-edits](/meta/issues/policy-index-glosses-drift-on-policy-edits.md) | Which fix shape — state the rule, add a check, or generate the gloss from `description` |
 | Harness choice for building vs. running | closed | `unrouted` | - |
 
@@ -907,4 +926,162 @@ I'd take **1** — it's cheap, and the failure is silent, which is the kind that
 
 1
 then /create-pull-request merge
+
+## Assistant
+
+PR [#156](https://github.com/ob6to8/elixir-mind/pull/156) merged as `a522eb6`. Timer cleared before it could fire stale — one armed the whole round, which is the shape I said I'd hold to.
+
+**Thread doc:** `meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md`
+
+### What I created
+
+| Type | Doc | Why this type |
+|---|---|---|
+| `issue` | policy-index-glosses-drift-on-policy-edits | A problem whose fix isn't decided — three shapes weighed. A `todo` would claim the approach was settled |
+| `concept` | freshness-gate `em:189d88` | 16 uses in the repo, no definition, and the issue's argument turns on it |
+
+### Actions I have taken
+
+| Step | Result |
+|---|---|
+| `/capture` | Branch restarted from `main` (#155 merged); appended 5 exchanges; ledger gains the new open strand |
+| `/add-to-glossary` | One term — `freshness-gate`. `index-gloss` judged descriptive, not distinctive |
+| `attribution.from` | Thread stamped on the new issue |
+| `mix brain.dev_history` | Skipped — shallow clone |
+| Commits `76a7dd1`, `6b5fab3` | Full gate suite green; 183 tests, 0 failures |
+| CI on `6b5fab3` | All 19 steps green |
+| Merge | True merge commit |
+
+The issue's most useful finding isn't the gloss itself — it's the category boundary underneath it. A freshness gate can only cover something **derivable**, so hand-kept prose is structurally ungateable no matter how load-bearing. That reframes the fix: the question isn't "which check do we add" but "should this surface be generated at all." I wrote it up that way and left the choice open, since committing to generation forces a separate decision about whether `description` may *be* the gloss.
+
+Session landed across four PRs — [#145](https://github.com/ob6to8/elixir-mind/pull/145) `5654a39`, [#148](https://github.com/ob6to8/elixir-mind/pull/148) `9f63491`, [#155](https://github.com/ob6to8/elixir-mind/pull/155) `f46b7b9`, [#156](https://github.com/ob6to8/elixir-mind/pull/156) `a522eb6`. `pr:` stays at its origin, 145.
+
+Pickup point unchanged: `projects/secure-financial-agent.md` → `spec-completion.md`.
+
+## User
+
+do you see a repo skill involving extracting beliefs? if not it may not be committed yet
+
+would it be fair to say "A freshness gate can only cover something derivable" is a belief,  and "so hand-kept prose is structurally ungateable no matter how load-bearing" is an inferred belief that depends on the first belief?
+
+## Assistant
+
+## The skill: your guess is right
+
+No `/extract-belief` skill exists — `.claude/skills/` has nothing belief-related. But **three plans** do:
+
+| Plan | Status |
+|---|---|
+| [`extract-into-belief-skill`](https://github.com/ob6to8/elixir-mind/blob/main/meta/plans/extract-into-belief-skill.md) | proposed — deferred for fresh-context dogfooding |
+| [`belief-type-and-beliefs-namespace`](https://github.com/ob6to8/elixir-mind/blob/main/meta/plans/belief-type-and-beliefs-namespace.md) | executed — the layer and `/beliefs/` exist |
+| [`belief-decomposition-analysis-mode`](https://github.com/ob6to8/elixir-mind/blob/main/meta/plans/belief-decomposition-analysis-mode.md) | proposed — the derived-graph tool |
+
+That third one is worth knowing about here, because it plans to automate exactly the operation you just performed by hand: decompose an artifact into **attestation** nodes (asserted directly) and **inference** nodes (derived from other beliefs), then audit whether every inference is grounded. Your question is the manual version of its core move.
+
+## The decomposition: right shape, wrong type
+
+**The structure is correct**, and it maps onto machinery that already exists — `depends_on`, proven on `em:0c4913 → em:1eebdf` where the prescriptive consequence points at the thesis it rests on. If these were beliefs, that's exactly how they'd be wired.
+
+**But neither is a belief**, by the contract's own filing test:
+
+> *epistemic (what is true) files as `claim`/`concept`; value-laden prior (what I act as if is true) files as `belief`; teleological (what standing direction) files as `doctrine`*
+
+Both statements are **analytic** — true by what a freshness gate *is*. The mechanism re-derives an artifact and compares; with no source to re-derive from there is nothing to compare, so there is no coverage. That's a definition unfolding, not a prior I act as if is true. A belief is meant to be the kind of thing that could be wrong and that you commit to anyway; "a comparison needs two things to compare" isn't that.
+
+They're also **already filed** — I put both into the `freshness-gate` concept (`em:189d88`) an hour ago:
+
+> "a freshness gate can only cover an artifact that is **derivable**"
+> "Hand-kept prose — an `index.md` gloss, a body paragraph — has no re-derivation to compare against, so it falls outside every such gate no matter how load-bearing it is."
+
+Filing them again as beliefs would duplicate a concept, which `update-in-place` rules out.
+
+## Where the actual belief is
+
+<routes ref="em:d1ba60">
+Your instinct that something belief-shaped is in that passage is right — it's just one step further along than either sentence you quoted. Neither of those gets you to a recommendation. The jump I actually made was from *"ungateable"* to *"therefore prefer generating the surface,"* and that jump needs a prior the analytic statements don't supply:
+
+> **A surface that must be remembered will eventually be forgotten; a surface that is derived cannot be.**
+
+That one is value-laden, not empirically settled, and action-guiding — it's a claim about how agents and humans behave under a standing maintenance obligation, and it's what turns an observation about gate mechanics into an argument for generating the policy index.
+</routes>
+
+I checked whether it's already covered. The closest is the [`derived-views-stay-disposable`](https://github.com/ob6to8/elixir-mind/blob/main/meta/doctrine/derived-views-stay-disposable.md) doctrine — but it points the **other way**. It governs markdown→database: *"The files are the single source of truth; every database-shaped layer is a derived, disposable view,"* and the line is crossed *"the day a derived view stops being regenerable."* That's a guardrail against derived views becoming truth. Mine is the converse: prefer converting hand-kept surfaces *into* derived ones, because memory is the unreliable component. Adjacent, genuinely different, and unfiled.
+
+So the honest decomposition of that passage is three layers, not two:
+
+| Statement | Type | Status |
+|---|---|---|
+| A freshness gate can only cover something derivable | `concept` (analytic) | filed in `em:189d88` |
+| Hand-kept prose is therefore structurally ungateable | `concept` (analytic consequence) | filed in `em:189d88` |
+| A surface that must be remembered will be forgotten | **`belief`** (value-laden prior) | **unfiled** |
+
+Only the third earns a `depends_on` edge — and it would point at the concept, not at another belief.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | File the third statement as a `belief` | One doc under `/beliefs/`, `depends_on: [em:189d88]`, cross-linked from the policy-index issue as the prior behind its recommended fix |
+| 2 | Build `/extract-belief` from its plan | The plan is proposed and deferred; this exchange is a decent argument that the manual version needs the type test enforced, since the obvious reading files analytic statements as beliefs |
+| 3 | Nothing | The reasoning is in the issue and the concept; the belief is implicit but not load-bearing anywhere yet |
+
+I'd take **1** — it's cheap, and it's the statement that actually carries the recommendation in the open issue.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+a522eb6 E noreply@github.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+I'm not going to run that fix. Here's why.
+
+## What `a522eb6` actually is
+
+```
+a522eb6  parents: f46b7b9 6b5fab3     ← two parents
+         author:    MR <mreveley@gmail.com>
+         committer: GitHub <noreply@github.com>
+         "Merge pull request #156 from ob6to8/claude/secure-local-financial-agent-o1dm5a"
+```
+
+It's the **merge commit for PR #156**, created server-side by GitHub's merge button, authored under your identity. It's already on `origin/main`. My branch is `0` commits ahead with a clean tree — I have nothing of my own to amend.
+
+## Three reasons the remedy is wrong here
+
+**It would rewrite published history.** The `merge-strategy` policy states plainly: *"Never rewrite shared history."* `a522eb6` is on the default branch. `--amend --reset-author` or a rebase over it would produce a new SHA and require a force-push to `main`.
+
+**It would break the provenance layer it's meant to protect.** That commit graph is cited by SHA in the thread doc, in four PR bodies, and in my reports this session. Rewriting orphans every one of those citations — which is the *exact* failure the policy invokes to ban squash-merging. Running this fix would do by hand what the merge method was chosen to prevent.
+
+**The contract already sanctions this case.** From `merge-strategy`:
+
+> "Three classes of commit legitimately lack the trailer: commits predating the feature's arrival in this repo (before 2026-07-07); **auto-generated merge commits (`git merge` default messages, the GitHub merge button)** — the harness injects the trailer only into commit messages Claude authors; and commits from local-terminal sessions"
+
+An unsigned GitHub merge commit isn't a defect. It's a documented, expected gap, and the policy names the compensating anchor: the PR body carries the session URL, and the thread's `pr:` stamp links back to it.
+
+## My own commits are correctly attributed
+
+All seven I authored check out — right identity, and every one carries the session trailer:
+
+| Commit | Author/committer | Trailer |
+|---|---|---|
+| `2afc1c9` `0b863b0` `5523c20` `640beb1` `c6a1b92` `76a7dd1` `6b5fab3` | `noreply@anthropic.com` | ✓ present on all seven |
+
+So the traceability the hook exists to protect is intact. The one commit it flagged is the one commit neither of us authored and neither of us should rewrite.
+
+---
+
+If you want GitHub to show merge commits as verified, the fix is on the **repository** side, not in history — enabling signed commits for the merge button, or merging locally with a signing key instead of via the API. Both are settings changes, and neither touches commits that already landed. Worth noting the hook will fire again on every future PR merge until then, since every one produces the same kind of commit.
+
+I'd leave it. But if this recurs enough to be noise, it's a reasonable thing to file — the hook is currently reporting a condition the contract classifies as normal, which is a false-positive pattern worth either fixing at the source or teaching the hook to skip merge commits.
+
+## User
+
+persist "A surface that must be remembered will eventually be forgotten; a surface that is derived cannot be." as a belief
+
+commit "If you want GitHub to show merge commits as verified" somewhere
+
+then /create-pull-request and merge
 
