@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, in-session authoring"
   why: "operator-directed persistence of the OWL-vs-belief-layer judgment reached in-session"
+  from: [/meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md]
 ---
 
 # OWL and the belief layer: schema yes, reasoner no
@@ -75,6 +76,15 @@ validate. Every mechanical check this brain runs (`mix brain.verify`, the
 plan's groundedness audit) is closed-world rejection. Within the semantic-web
 stack that role belongs to SHACL, the closed-world shape-validation layer, not
 to OWL.
+
+This finding is reached independently, and on a different subject, by the
+sibling
+[ontology-guardrails analysis](/meta/analysis/ontology-guardrails-vs-schema-validation.md):
+there the question is what a reasoner buys at an *agent loop's* enforcement
+boundary, and the answer likewise splits the stack by world assumption, with
+`mix brain.verify` cited as a shipped closed-world instance. The two analyses
+divide by subject — enforcement of an executing loop there, epistemic audit of
+a belief corpus here — and agree on the boundary.
 
 ## Finding 4 — the lineage failed on authored-vs-derived, not on formality
 
