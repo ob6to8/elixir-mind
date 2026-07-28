@@ -74,7 +74,12 @@ any bound (six missing newest sections pass clean), and `pages.yml` re-derives
 the page from full history on every push to `main` — so the committed copy is a
 lagging cache and its drift is the design. The issue closed `wontfix`, three docs
 that overstated the tolerance as one PR were corrected, and the shallow-clone
-no-op was reclassified as cosmetic. Both of the earlier
+no-op was reclassified as cosmetic. A sixth round then went further at the
+operator's direction and **removed the committed copy entirely** — the view is
+generated at deploy time and gitignored, `--check` leaves CI and the pre-commit
+hook, and `/create-pull-request` loses its regeneration step; the issue closed
+`resolved` rather than `wontfix`, at the accepted cost of the page being
+site-only. Both of the earlier
 rounds landed together in PR 164 — the plan round was committed and pushed
 without a PR of its own, since the operator had not asked for one, and the
 diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
@@ -385,6 +390,20 @@ Option 4 turned out to be a ratification rather than a build: the design already
 Two further measurements settled it. A second test harness of mine was itself buggy — it mangled section headers, so its FAILs were formatting artifacts; the untouched control passing is what proves the corrected reconstruction faithful. With that fixed, the check accepts any number of missing *newest* sections and fails on a removed middle or oldest section. It is suffix-tolerant, unbounded, and exists to catch hand edits and reorderings rather than staleness. And `pages.yml` checks out with `fetch-depth: 0` and re-derives the page on every push to `main`, so the live site is always current.
 
 So the committed copy is a lagging cache, exactly as [lag-tolerant check](/beliefs/glossary/lag-tolerant-check.md) already described — that glossary entry was right the whole time, while three other docs overstated the tolerance as one PR. The issue closed `wontfix`, the overstatements were corrected in the skill and marked in the analysis, and the shallow-clone no-op was reclassified as cosmetic.
+</routes>
+
+## User
+
+2, then 1
+
+## Assistant
+
+<routes ref="/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md">
+Taken to its conclusion, option 2 removed the category rather than patching it: `meta/dev-history.md` is untracked and gitignored, generated at deploy time by `pages.yml` and rendered into the site, so there is no committed copy to drift. That pulled `--check` out of CI and the pre-commit hook (nothing to check), removed step 4 from `/create-pull-request` with its steps renumbered, and corrected `meta/index.md` plus three glossary entries that described a checked-in CI-gated artifact.
+
+Two test failures surfaced as expected fallout and were fixed rather than worked around: a route tag still back-linked the removed path, and the live-repo test asserted the old contract (`check/1` returns `:ok` against the committed copy) — rewritten to assert the new one, that an absent copy correctly reports stale. Six markdown links were repointed at the published page.
+
+The accepted cost was stated before the change and stands: the dev history no longer exists in a checkout, only on the site. The issue closed `resolved` rather than `wontfix`, since the root cause is gone rather than tolerated.
 </routes>
 
 *(the closing report of this turn was delivered after this section was written.)*

@@ -28,7 +28,7 @@ rule bites.
 Documents that recount the past by construction sit outside it and carry no such
 obligation: [`plan`](/beliefs/glossary/plan-type.md), `analysis`, `issue`,
 [thread docs](/beliefs/glossary/thread-doc.md), the `deprecated/` tree, and
-generated history like [dev-history](/meta/dev-history.md). Recounting what
+generated history like [dev-history](https://ob6to8.github.io/elixir-mind/meta/dev-history.html). Recounting what
 changed is precisely their job, so the same sentence that would be a liability in
 a moduledoc is the point of a plan.
 

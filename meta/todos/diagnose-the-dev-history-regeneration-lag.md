@@ -16,7 +16,7 @@ attribution:
 
 # Diagnose why `meta/dev-history.md` fell six PRs behind
 
-[`meta/dev-history.md`](/meta/dev-history.md) is a generated-but-committed view of
+[`meta/dev-history.md`](https://ob6to8.github.io/elixir-mind/meta/dev-history.html) is a generated-but-committed view of
 the default branch's merge graph. (This todo was written believing it lags by
 **exactly one PR**; the check is in fact unbounded — see the
 [issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md).)

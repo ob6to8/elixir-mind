@@ -1,6 +1,6 @@
 ---
 name: create-pull-request
-description: Run /capture to completion, glossary the captured thread via /add-to-glossary, stamp the thread into the attribution.from of every governance doc this session created or revised, regenerate the dev-history view, then commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
+description: Run /capture to completion, glossary the captured thread via /add-to-glossary, stamp the thread into the attribution.from of every governance doc this session created or revised, then commit the current working changes, push the branch, and open a pull request. Use when the operator says "/create-pull-request", "commit and PR this", or "open a PR". Invoking this skill IS the authorization to open the PR — no separate confirmation is needed.
 ---
 
 # /create-pull-request — capture, glossary, commit, push, open a PR
@@ -20,7 +20,7 @@ still holds for every other flow.)
 **Merge is opt-in, off by default.** A bare invocation ends with the PR **open and
 handed back** for the operator to merge. Pass the bare `merge` argument
 (`/create-pull-request merge`) to have the skill drive CI to green and true-merge it
-as well — see step 10.
+as well — see step 9.
 
 ## Procedure
 
@@ -65,52 +65,33 @@ as well — see step 10.
   never remove or rewrite existing `from` entries. If step 1 was skipped
   (nothing captured), skip this step too.
 
-### 4. Regenerate the dev-history view
-- Run `mix brain.dev_history` to catch `meta/dev-history.md` up to the current
-  base branch's merge graph, and stage the result if it changed.
-- **Why this lives here, and why it's genuinely optional.** The committed
-  `meta/dev-history.md` is a **lagging convenience copy**, not an authoritative
-  one: `pages.yml` re-derives the page from full history on every push to `main`,
-  so the live site is always current. CI's
-  [lag-tolerant check](/beliefs/glossary/lag-tolerant-check.md)
-  (`mix brain.dev_history --check`) accepts **any** number of missing newest
-  sections — it exists to catch hand edits and reorderings, not staleness — so
-  this step never unblocks a PR. Running it just keeps the cache tidier.
-- **It no-ops silently on a shallow clone**, which is what web sessions get, so
-  in those sessions the file simply lags further. That is accepted, not a
-  failure: skip the step and say nothing. `git fetch --unshallow` first if you
-  want the tidier copy and the fetch is cheap. See the
-  [issue closed on this](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
-  and the [staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md).
-
-### 5. Survey the change
+### 4. Survey the change
 - `git status` and `git diff` (plus `git diff --staged`) to see exactly what would
   be committed — this now includes the `/capture` output from step 1, any
-  glossary updates from step 2, the elaboration back-links from step 3, and the
-  dev-history regeneration from step 4. If there is genuinely nothing to commit
-  and the branch is already pushed, skip to step 8 (open the PR on the existing
-  commits).
+  glossary updates from step 2, and the elaboration back-links from step 3. If
+  there is genuinely nothing to commit and the branch is already pushed, skip to
+  step 7 (open the PR on the existing commits).
 - Confirm the current branch is the designated feature branch, not a default branch
   (`main`/`master`). If on a default branch, **stop and ask** which branch to use —
   never commit straight to the default.
 
-### 6. Commit
+### 5. Commit
 - Stage the relevant files (prefer explicit paths over `git add -A` when the tree has
-  unrelated changes). Include the captured thread doc, the glossary updates,
-  the dev-history regeneration, and reserved-file updates.
+  unrelated changes). Include the captured thread doc, the glossary updates, and
+  reserved-file updates.
 - Write a clear, descriptive commit message: a concise summary line, then a short
   body explaining the *why* when it isn't obvious. Match the surrounding history's
   style. Capture may reasonably be its own commit or folded into the change commit —
   keep each commit atomic.
 - If the repo enforces trailers or a commit template, honour it.
 
-### 7. Push
+### 6. Push
 - `git push -u origin <branch-name>`.
 - On **network** failures only, retry up to 4 times with exponential backoff
   (2s, 4s, 8s, 16s). Don't retry on a non-network rejection (e.g. protected branch) —
   surface it.
 
-### 8. Open the PR
+### 7. Open the PR
 - Check for a PR template before writing the body:
   `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, a root
   `PULL_REQUEST_TEMPLATE.md`, or `docs/PULL_REQUEST_TEMPLATE.md` (and the
@@ -137,21 +118,21 @@ as well — see step 10.
     rewriting it would orphan that linkage (see the
     [session-capture policy](/meta/policy/session-capture.md)).
 - **Do not merge here.** Opening + stamping is the end of the default flow. Merging
-  is gated behind the explicit opt-in in step 10 — without it, the open PR is handed
+  is gated behind the explicit opt-in in step 9 — without it, the open PR is handed
   back for the operator to merge.
 - **Report the captured thread doc's assigned name.** After everything is done,
   state the `meta/threads/YYYY-MM-DD-<slug>.md` path that step 1 wrote (or note
   that capture was skipped), so the operator has the record's final name without
   digging for it.
 
-### 9. Offer to watch it
+### 8. Offer to watch it
 - After opening, offer to monitor the PR for CI failures and review comments via
   `subscribe_pr_activity` — don't subscribe unless the operator asks.
 
-### 10. Merge — only with the `merge` argument
+### 9. Merge — only with the `merge` argument
 - **Gated on an explicit opt-in.** Merge as part of this skill *only* when it was
   invoked with the bare `merge` argument (`/create-pull-request merge`, matched
-  case-insensitively). **Without that argument, stop after step 9** — the open PR is
+  case-insensitively). **Without that argument, stop after step 8** — the open PR is
   handed back and the operator merges it when ready. A bare invocation never merges
   (invoking authorizes *opening*, not merging).
 - **Never merge red.** When the argument *is* present: poll the PR's checks
@@ -178,14 +159,10 @@ as well — see step 10.
   so the session record, the terms it introduced, *and* the trace from each
   governance doc back to its session all ship in the same PR; don't commit the
   change and leave any of them for later.
-- **Dev-history (step 4) is the one step you may skip without saying so.** The
-  committed copy is a cache and the deployed page is re-derived on every push to
-  `main`, so its drift is accepted by design — unlike `CLAUDE.md`, the registry,
-  and the code map, whose `--check` gates are strict and *do* block.
 - **The invocation authorizes *opening*, not merging.** Running this skill is the
   operator's yes to capture, commit, push, and open the PR — no separate
   confirmation for those. **Merging is a separate opt-in:** it happens only when the
-  skill is invoked with the `merge` argument (step 10). A bare invocation ends with
+  skill is invoked with the `merge` argument (step 9). A bare invocation ends with
   the PR open and handed back — never self-merge it.
 - **Never commit to a default branch.** Develop on the designated feature branch.
 - **Never squash- or rebase-merge.** Merges are true merge commits only — see the

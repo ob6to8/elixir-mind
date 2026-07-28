@@ -1,8 +1,8 @@
 ---
 type: issue
-title: "The committed dev-history copy drifts freely — and that is the design, not a defect"
-description: Investigated as a defect and closed as one; the check is suffix-tolerant without any bound by design, the deploy workflow re-derives the page from full history on every push to main, and the committed copy is a lagging convenience copy. What was real is that three docs overstated the tolerance as one PR.
-status: wontfix
+title: "The committed dev-history copy drifted freely — resolved by not committing it"
+description: Investigated as a defect and found not to be one — the check is suffix-tolerant without any bound and the deploy workflow re-derives the page on every push to main — then resolved at the root by removing the committed copy entirely, so the view is generated at deploy time and gitignored.
+status: resolved
 provenance: "Claude Code session, 2026-07-28 — opened on a diagnosis, then corrected against the code's actual behavior and the operator's ratification of the existing design"
 tags: [meta, issue, dev-history, generated-artifacts, ci, shallow-clone, gates, lag-tolerant-check]
 timestamp: 2026-07-28
@@ -14,11 +14,13 @@ attribution:
   from: [/meta/threads/2026-07-28-kimi-k3-weight-release-implications.md]
 ---
 
-# The committed dev-history copy drifts freely — and that is the design
+# The committed dev-history copy drifted freely — resolved by not committing it
 
 This issue was opened asserting a defect. Measured against the code, the defect
-is not there. Operator-ratified 2026-07-28: the committed copy is a lagging
-convenience copy, the live site is the current one, and no fix is being made.
+was not there: the drift was within a tolerance the design had always allowed.
+**Resolved 2026-07-28 by removing the committed copy**, which eliminates the
+category rather than patching it — the view is now generated at deploy time and
+gitignored.
 
 ## What is actually true
 
@@ -79,12 +81,38 @@ mid-flight did so exactly when it ran `git fetch --unshallow`. That rules out
 sporadic agent-skip as the dominant cause: a per-container property fails
 uniformly for a session's whole life.
 
-Under the ratified design this is **cosmetic**. Step 4 is best-effort tidiness
-that shrinks the cache's lag when it can; when the clone is shallow it does
-nothing, the cache lags further, and nothing downstream is wrong. It is closed on
-that basis, not because the behavior was disproven.
+This was real and is now **moot**: with no committed copy there is no step 4 and
+nothing for a shallow clone to skip. The finding is kept because it is the only
+part of the original diagnosis that survived, and because the measurement method
+— cluster the outcome by session, then look for a within-session flip — is worth
+reusing.
 
-## Why not "fix" it anyway
+## The resolution
+
+The committed copy is **gone**. `meta/dev-history.md` is untracked and
+gitignored; `pages.yml` derives it from full history before building, so the
+[published page](https://ob6to8.github.io/elixir-mind/meta/dev-history.html) is
+the artifact and it is always current. Run `mix brain.dev_history` to read it in
+a checkout — the result is ignored, not staged.
+
+What that removed, in order:
+
+- **`--check` from CI and the pre-commit hook.** With nothing committed there is
+  nothing to check. `check/1` and the flag stay, still meaningful against a
+  locally generated copy; the live-repo test now asserts the new contract
+  (absent copy reports stale) instead of the old one.
+- **Step 4 from [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md)**,
+  with steps renumbered — the shallow-clone no-op it worked around cannot
+  matter now.
+- **The generated-artifact framing.** `meta/index.md` and three glossary entries
+  described a checked-in, CI-gated artifact; corrected to describe a
+  deploy-generated page.
+
+The **accepted cost**: the dev history no longer exists in a checkout, so links
+to `/meta/dev-history.md` resolve on the site but not offline. That was raised
+before the change and accepted.
+
+## Why the smaller fixes were declined first
 
 Three fixes were weighed and declined:
 
@@ -98,6 +126,6 @@ Three fixes were weighed and declined:
   to, against the [merge-strategy](/meta/policy/merge-strategy.md) provenance
   model, and cannot eliminate the self-referential lag anyway.
 
-Reopen if the committed copy is ever treated as authoritative for something —
-cited by SHA, read by tooling, or relied on offline — because the cache framing
-is what makes the drift acceptable.
+Reopen if the offline gap bites — if a reader, a tool, or a session needs the
+per-PR view from a checkout rather than the site. The fix then is to restore a
+committed copy *and* the check together, not one without the other.
