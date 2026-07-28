@@ -52,7 +52,7 @@ execution rather than silently decided, the fingerprint rider added to the
 [response-resource-links policy](/meta/policy/response-resource-links.md)
 rewritten to *GitHub links always in agent threads, Pages links the durable
 docs-side form* — implemented by a new `mix brain.url --thread` mode. That
-follow-up work landed in **PR 148**; `pr:` deliberately still reads 147, the
+follow-up work landed in **PR 150**; `pr:` deliberately still reads 147, the
 origin PR that first opened this thread doc.
 
 *Nine `alb.reddit.com` promoted-content tracker URLs inside the operator's
