@@ -36,13 +36,17 @@ the start if siblings are plausible.
 - [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
 - [provenance-lives-in-metadata](/meta/policy/provenance-lives-in-metadata.md) — bodies and index glosses never restate sourcing the frontmatter already records; a source appears in prose only as a plain link when it is load-bearing content (the test: does removing it lose meaning, or only credit?)
-- [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md) — a negative statement earns its place only when the case it negates is explicit (raised in-document, a default the reader would assume, or a rule being overridden); otherwise state the rule positively, and an edit that removes a negation's referent recasts the negation in the same motion
 - [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/todo/plan/doctrine/policy), downstream of plan-vs-capture
-- [response-work-report-format](/meta/policy/response-work-report-format.md) — report work in tables (created/modified/actions/questions/options), past tense, prose for judgment
-- [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md) — a claim that something does not exist or is not stated is a claim about a search space, so it names the space actually searched; enumerate before a decision rests on it
 - [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md) — living surfaces state the present; retrospective "used to…" narration belongs in the commit graph, not inline
-- [quote-primary-sources](/meta/policy/quote-primary-sources.md) — load-bearing source phrases are reproduced verbatim and immediately cited, so quotation and synthesis are never confusable
 - [prefer-established-terminology](/meta/policy/prefer-established-terminology.md) — standard terms of art over bespoke coinages; bespoke terms are glossaried at first use and never churned retroactively
+
+## communication
+- [plainspeak-orientation](/meta/policy/plainspeak-orientation.md) — a dense response opens with a short plain-language orientation (what happened, where things stand, what needs deciding) before the full technical presentation; terms are introduced only after the plain statement they label
+- [response-work-report-format](/meta/policy/response-work-report-format.md) — report work in tables (created/modified/actions/questions/options), past tense, prose for judgment
+- [quote-primary-sources](/meta/policy/quote-primary-sources.md) — load-bearing source phrases are reproduced verbatim and immediately cited, so quotation and synthesis are never confusable
+- [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md) — a claim that something does not exist or is not stated is a claim about a search space, so it names the space actually searched; enumerate before a decision rests on it
+- [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md) — a negative statement earns its place only when the case it negates is explicit (raised in-document, a default the reader would assume, or a rule being overridden); otherwise state the rule positively, and an edit that removes a negation's referent recasts the negation in the same motion
+- [banned-phrases](/meta/policy/banned-phrases.md) — the register of words and phrases banned from agent-composed prose, each entry carrying its pattern and reasoning; grown via `/ban-phrase`, where the operator's invocation is the ratification
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
