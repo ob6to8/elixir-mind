@@ -54,6 +54,25 @@ filed as a [todo](/meta/todos/diagnose-the-dev-history-regeneration-lag.md)
 rather than diagnosed, with the shallow-clone silent-skip recorded explicitly as
 a hypothesis. That round landed in PR 160.
 
+Two further rounds followed. The probe's build was persisted as a
+[structured plan](/meta/plans/build-the-fetch-fidelity-probe.md) — its
+load-bearing decision being the split at the network boundary, so the scorer
+stays offline and a metric revision can be told apart from a vendor model change
+— and the operator ratified that a `proposed` eval backlog is the intended state
+rather than a debt to clear, recorded in
+[the evals index](/meta/evals/index.md) so no future session proposes a pruning
+sweep. Then the dev-history hypothesis was **tested and confirmed**: across the
+18 PRs since the regeneration step existed, the outcome clusters perfectly by
+session rather than by PR, and the one session that flipped mid-flight did so
+exactly when it unshallowed — ruling out sporadic agent-skip as the dominant
+cause. An earlier count that included merge commits produced two false positives
+and was corrected before the finding was written. The todo closed to
+[an issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
+carrying the evidence and three candidate fixes, none chosen. Both of those
+rounds landed together in PR 164 — the plan round was committed and pushed
+without a PR of its own, since the operator had not asked for one, and the
+diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -61,7 +80,9 @@ a hypothesis. That round landed in PR 160.
 | Kimi K3 model card — architecture, benchmarks, license, deployment | closed | [kimi-k3](/knowledge/machine-learning/kimi-k3.md) | - |
 | The pricing inversion and what it does to the margin-collapse thesis | open | [open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | whether Moonshot's premium pricing holds, or a competitor takes the top open slot at DeepSeek-tier pricing and restores the undercut mechanism |
 | Grounding the claim on primary sources — the bundle's first `type: source` captures | closed | [sources](/knowledge/ai-industry/sources/index.md) | - |
-| Dev-history regeneration and the size of the accumulated lag | closed | [diagnose-the-dev-history-regeneration-lag](/meta/todos/diagnose-the-dev-history-regeneration-lag.md) | - |
+| Dev-history regeneration — the lag, then its diagnosis | closed | [dev-history-regeneration-silently-skipped-on-shallow-clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md) | - |
+| Which of the three candidate fixes to adopt for the silent skip | paused | `unrouted` | loud skip, unshallow in `/create-pull-request` step 4, or regenerate outside the session — recommendation is 1+2 composed, but the choice is the operator's |
+| Building the fetch fidelity probe | paused | [build-the-fetch-fidelity-probe](/meta/plans/build-the-fetch-fidelity-probe.md) | plan is `proposed`; the policy bullet it tests stays unfalsifiable until the instrument exists |
 | Whether the fetch-synthesis failure is eval fodder | closed | [fetch-fidelity-probe](/meta/evals/fetch-fidelity-probe.md) | - |
 | The verbatim-before-quoting rule that probe measures | closed | [quote-primary-sources](/meta/policy/quote-primary-sources.md) | - |
 | License-column error in the open-weight landscape snapshot | closed | [open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | - |
@@ -259,6 +280,66 @@ I rebuilt the file. I did not try to work out why it fell so far behind. It migh
 
 3, then persist 4 as a todo
 then /create-pull-request  merge
+
+## Assistant
+
+Worth naming what the sequence actually produced, because it wasn't the plan going in. The Kimi K3 intake was the task; the durable output is a rule about how agents read sources. The chain ran: file a claim → ground it → discover the grounding falsified two of my own figures → convert that failure into a standing rule → file the instrument that can retire the rule. The knowledge document was the occasion, not the yield.
+
+One thing I want to flag rather than bury. The probe's falsification condition points at *my own bullet* — if demanding verbatim text doesn't lower the invention rate, the policy comes back out. That's deliberate, but it only works if someone actually builds and runs it. A `proposed` eval whose falsification condition is never exercised is just a rule with a plausible-sounding justification attached, and the brain now has three of them sitting at `proposed`. That's the shape worth watching, not any one of them.
+
+On the todo: I followed your call to file it as a todo rather than an issue. The routing table would push it toward `issue` — something behaves wrongly and the cause is unknown — but framed as *do the diagnosis*, the approach is known and the task is plain. I noted in the doc that it graduates to an issue if the diagnosis confirms a defect worth tracking separately from its fix, so the classification resolves on evidence instead of on my read now.
+
+## User
+
+restate in plainspeak
+
+## Assistant
+
+The pull request is merged. Three things went in.
+
+**What happened, in order.** The job was to file what I'd learned about Kimi K3. Along the way I wrote a claim about AI pricing, then went back to check it against the original sources. That check caught me: two of the numbers I'd written weren't in the sources at all. I'd asked a tool to read a web page and summarize it, and the summary had quietly made up a comparison the page never made. So the real result of all this isn't the Kimi K3 write-up. It's a rule about how to read sources, plus a test that could prove the rule worthless.
+
+**The rule.** Don't take a quote from a summary of a page. Go get the actual sentence. If you can't produce the actual sentence, don't put quote marks around it. This is now part of the standing instructions, which means every future session sees it automatically without anyone having to go look for it.
+
+**The test.** I designed — but did not build — a way to check whether that rule does anything. You'd save some web pages, then ask about them two ways: normally, and with "give me the exact sentence or tell me it isn't there." Then count how often each way invents something. If the strict version doesn't do better, the rule is useless and should be deleted.
+
+**The thing I'd rather say out loud than hide.** That test is deliberately built so it can kill my own rule. But that only means something if someone actually builds and runs it. There are now three tests sitting in this repo that were designed and never built. A test that never runs is just a rule with a nice-sounding excuse attached to it. That pattern is worth watching more than any single one of them is.
+
+**One judgment call.** You asked me to file the dev-history problem as a "todo." The repo's own filing rules would lean toward calling it an "issue," since something is behaving wrongly and nobody knows why. I filed it as a todo the way you asked, and wrote in the doc that it should be reclassified if the investigation turns up a real defect. That way the label gets settled by what's found, not by my guess today.
+
+**What's in the repo now:** the new rule, the test design, the todo, an updated session record, and the regenerated PR-history file. All checks passed, 183 tests, nothing failing. The working branch is gone, as it should be after merging.
+
+## User
+
+1 - persist into a plan
+2 - proceed, if doing this ensures the integrity of this pr
+3 - eval tests? let them pile up to be run later
+
+## Assistant
+
+Committed and pushed to the branch — but **I have not opened a PR**, since you didn't ask for one this time. Two of your three items are done; the middle one I'm declining on the condition you set.
+
+<routes ref="/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md">
+## On #2 — no, and here's the honest reason
+
+You said "proceed, **if** doing this ensures the integrity of this PR." It doesn't, so I didn't.
+
+The dev-history problem is a *generated summary file* falling behind. It has no bearing on whether any PR's actual content is correct — no knowledge document, no claim, no piece of code is affected by it. And specifically in this session it can't bite: I unshallowed the git history a few rounds back, so the rebuild command works here and its check genuinely passes rather than skipping. The commit I just made confirms that — `meta/dev-history.md is consistent with the merge graph`, not "skipped."
+
+So the risk the diagnosis addresses is about *other* sessions, on *other* days. It's real, and it's already written down as a task. Doing it now would be work you told me to do only if it protected this change, and it doesn't.
+</routes>
+
+<routes ref="/meta/plans/build-the-fetch-fidelity-probe.md">
+## What did get done
+
+**The build plan** for the fidelity probe is filed. The decision it exists to record is where the network sits. Every other tool in this repo runs offline with no dependencies, and this one can't, because it has to fetch web pages. So I split it: one command goes and fetches, and saves the raw answers to a file that gets committed. Everything else — the actual scoring — reads that saved file and does plain text comparison, offline, testable like everything else. The payoff is that when you later change how you score, you re-score the *same saved answers*, so you can tell a scoring change apart from the web tool having quietly gotten better or worse. Two things I ruled out and wrote down why: doing it in one pass that fetches and scores together (loses that distinction), and using an AI to judge whether an answer made something up (that's the exact failure being measured — you'd be using the broken thing to test the broken thing).
+
+**Your call on the backlog** is now written into the evals index: a pile of designed-but-unbuilt tests is the intended state, not a mess to clean up. I said the opposite last message — that the pile was the thing to watch — so this overrides me, and I wrote it in a way that tells a future session not to propose tidying them. I did add one carve-out: when an unbuilt test is the only thing that could disprove a live rule, that gets escalated by writing a build plan, which is exactly what #1 just did.
+</routes>
+
+## User
+
+2, then /create-pull-request  merge
 
 ## Assistant
 

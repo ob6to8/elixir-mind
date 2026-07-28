@@ -12,6 +12,16 @@ instrument exists.
 Each eval is a prose-bearing markdown doc (a gold set's table is parsed by a
 `mix brain.*` task); governance namespace (no `em:` id, like plans and threads).
 
+**A `proposed` backlog is the intended state, not a debt to clear**
+(operator-ratified 2026-07-28). Designs accumulate here and are built when a
+question actually needs answering, so a growing count of unbuilt instruments is
+not a trigger for a pruning sweep — do not propose one. The design *is* the
+artifact: it preserves the measurement intent, and an eval filed years before it
+runs still beats a question re-derived from scratch. Where an unbuilt probe
+guards a live rule, the build is escalated by filing a plan (see
+[build the fetch fidelity probe](/meta/plans/build-the-fetch-fidelity-probe.md)),
+not by pressure from the backlog's size.
+
 ## Contents
 
 - [Dedup recall probe](/meta/evals/dedup-probe.md) — the id-keyed gold set of

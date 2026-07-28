@@ -14,6 +14,21 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #163](https://github.com/ob6to8/elixir-mind/pull/163) — Ontology guardrails: Coyle talk intake and the Jido/OWL enforcement analysis *(2026-07-28)*
+
+- intake: Frank Coyle's 'Why Agentic Systems Need Ontologies' talk (AI Engineer)
+- analysis: ontology guardrails vs. schema validation, plus session capture
+- capture: stamp pr: 163 into the thread doc
+
+## [PR #162](https://github.com/ob6to8/elixir-mind/pull/162) — Routing-ledger orphan sweep: separate the record layer from the work queue *(2026-07-28)*
+
+- Measure the ledger-strand backlog and settle the enforcement question
+- Correct the check's fire count and resolve the scope-boundary contradiction
+- Rewrite the strand plan: separate the record layer from the work queue
+- Execute step 1: disposition all 27 orphaned ledger strands
+- Capture the session and glossary its thread doc
+- Stamp PR 162 into the thread doc
+
 ## [PR #161](https://github.com/ob6to8/elixir-mind/pull/161) — Make the capture boundary derivable; record three findings *(2026-07-28)*
 
 - Make the capture boundary derivable; record three findings
