@@ -79,7 +79,17 @@ operator's direction and **removed the committed copy entirely** — the view is
 generated at deploy time and gitignored, `--check` leaves CI and the pre-commit
 hook, and `/create-pull-request` loses its regeneration step; the issue closed
 `resolved` rather than `wontfix`, at the accepted cost of the page being
-site-only; that removal and the correction preceding it landed in PR 167. Both of
+site-only; that removal and the correction preceding it landed in PR 167.
+
+A closing audit then found four stale claims left by those rounds — a glossary
+entry and a todo still describing the committed-and-one-PR-bounded arrangement, a
+todos-index gloss calling the drift a confirmed defect, and another session's
+gate-suite todo counting a CI gate this session had removed — all corrected. It
+also found the session's own recurring failure unpersisted: three measurement
+errors, the last caught only by a control case. That generalized into the belief
+[an instrument without a control measures itself](/beliefs/an-instrument-without-a-control-measures-itself.md)
+(`em:763494`), which binds the fidelity-probe plan's gold set as its first
+consumer. That closing pass landed in PR 171; `pr:` stays at its origin, 157. Both of
 the earlier rounds landed together in PR 164 — the plan round was committed and pushed
 without a PR of its own, since the operator had not asked for one, and the
 diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
@@ -93,7 +103,8 @@ diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
 | Grounding the claim on primary sources — the bundle's first `type: source` captures | closed | [sources](/knowledge/ai-industry/sources/index.md) | - |
 | Dev-history regeneration — the lag, then its diagnosis | closed | [dev-history-regeneration-silently-skipped-on-shallow-clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md) | - |
 | Which fix to adopt for the silent skip | closed | [dev-history-regeneration-silently-skipped-on-shallow-clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md) | - |
-| Building the fetch fidelity probe | paused | [build-the-fetch-fidelity-probe](/meta/plans/build-the-fetch-fidelity-probe.md) | plan is `proposed`; the policy bullet it tests stays unfalsifiable until the instrument exists |
+| Building the fetch fidelity probe | paused | [build-the-fetch-fidelity-probe](/meta/plans/build-the-fetch-fidelity-probe.md) | plan is `proposed`; the policy bullet it tests stays unfalsifiable until the instrument exists, and its gold set needs a control row per `em:763494` |
+| The session's own measurement failures, generalized | closed | [an-instrument-without-a-control-measures-itself](/beliefs/an-instrument-without-a-control-measures-itself.md) | - |
 | Whether the fetch-synthesis failure is eval fodder | closed | [fetch-fidelity-probe](/meta/evals/fetch-fidelity-probe.md) | - |
 | The verbatim-before-quoting rule that probe measures | closed | [quote-primary-sources](/meta/policy/quote-primary-sources.md) | - |
 | License-column error in the open-weight landscape snapshot | closed | [open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | - |
@@ -405,5 +416,37 @@ Two test failures surfaced as expected fallout and were fixed rather than worked
 
 The accepted cost was stated before the change and stands: the dev history no longer exists in a checkout, only on the site. The issue closed `resolved` rather than `wontfix`, since the root cause is gone rather than tolerated.
 </routes>
+
+[PR #167](https://github.com/ob6to8/elixir-mind/pull/167) merged as `a110206`. Branch deleted, and `meta/dev-history.md` is confirmed untracked on main.
+
+You picked the smaller-sounding branch and it ended up being the one that removes the problem. The committed copy was carrying no guarantee — the check that guarded it was unbounded in staleness, and the published page was already re-derived on every push. So the file was a copy nobody could rely on, guarded by a check that couldn't catch the thing it appeared to catch.
+
+**I called this "a small change" and it wasn't.** It touched CI, the pre-commit hook, the skill (removing a step and renumbering six others), the gitignore, an index, three glossary entries, two tests, and six links.
+
+**The conflict was self-inflicted, in a predictable way.** Another session regenerated and committed the file on main while I was deleting it — because its copy of the skill still had step 4. The gitignore that landed with this PR stops any future session from staging it.
+
+## User
+
+what needs to be done before closing this thread? what exists here but has not persisted? I am trying to close out this thread
+
+## Assistant
+
+<routes ref="em:763494">
+Audit done. Nothing is uncommitted or broken — working tree clean, main current, all five PRs merged, gates green.
+
+Four things were stale, and one thing had not persisted at all.
+
+**Three measurement errors in one session, each caught by a different mechanism, and the pattern is nowhere on disk.** Individually they're in the record. But the *pattern* isn't filed, and the pattern is the finding: a summarizing fetch invented a comparison, caught by demanding verbatim text; a `git diff` count included main-merges as regenerations, caught by asking what the number would mean if the method were wrong; and a test harness mangled section headers, producing failures that looked real, caught **only** because the untouched control passed.
+
+The third is the generalizable one and it has no home: a measurement harness needs a control case, or you cannot tell a finding from a bug in your instrument. That failure is invisible by construction — a broken harness produces plausible results, and I acted on them for a full round before the control exposed it.
+
+It also has a live consumer: the fidelity probe plan specifies a scorer with no control row in its gold set. If that belief existed, the plan would be built differently.
+</routes>
+
+## User
+
+1
+
+## Assistant
 
 *(the closing report of this turn was delivered after this section was written.)*
