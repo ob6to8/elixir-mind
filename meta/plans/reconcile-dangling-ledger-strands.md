@@ -2,7 +2,7 @@
 type: plan
 title: "Reconcile dangling routing-ledger strands into tracked work"
 description: Separate the record layer from the work queue — strip state out of thread routing ledgers, make every strand link to a plan/todo/issue at PR time, and stop /priorities from reading ledgers at all, so deferred work can no longer dangle inside a frozen thread body.
-status: proposed
+status: in-progress
 provenance: "Claude Code session, 2026-07-13 — operator asked, after noticing two offered intakes tracked only as paused ledger strands, for a plan to scan all routing ledgers for danglers needing promotion to todos/plans"
 attribution:
   when: 2026-07-13T00:00:00Z
@@ -131,8 +131,7 @@ the tracker:
 
   A second column rather than an overloaded cell, so the gate's parse is
   unambiguous.
-- **`Dangling` is dropped.** *Recommended, pending operator confirmation.* An
-  open question with no tracker is exactly what this design forbids; with a
+- **`Dangling` is dropped** (operator-confirmed 2026-07-28). An open question with no tracker is exactly what this design forbids; with a
   tracker, the question belongs *in* the tracker. Keeping it in the row
   reintroduces the shadow copy the routing-ledger policy already bans —
   "Pointers and states only — never content" tightens to **pointers only**.
@@ -174,15 +173,18 @@ improvement worth landing with it.
 
 ## Open questions
 
-- **Drop the `Dangling` column?** Recommended above; needs operator
-  confirmation, since it is the one part of the schema their ratification did
-  not explicitly settle.
 - **`none:` marker syntax.** Any literal token works so long as it is
   mechanically distinguishable from a malformed link; `none:` is proposed for
   legibility.
 - **Grandfathering boundary.** Gate on threads dated after adoption, or only on
   threads touched by the diff? The latter is self-limiting and needs no date
   logic.
+- **Do `project` hubs count as valid `Action` targets?** Surfaced by the sweep:
+  two secure-financial-agent strands are genuinely held by that project's own
+  `## Open questions`, which is a bundle document rather than a tracker. They are
+  recorded `none:` with a pointer for now. Widening `Action` to accept a
+  `type: project` hub would be more honest, at the cost of a target `/priorities`
+  does not read.
 
 **Settled by the 2026-07-28 scan and ratification** (no longer open):
 
@@ -191,6 +193,7 @@ improvement worth landing with it.
   items from view the moment `/priorities` stops scanning.
 - Enforcement shape — **blocking gate at PR time**, keyed on `Action` presence.
 - The decision-closed state — **the `none:` carve-out**, not a new `State` value.
+- Dropping `Dangling` — **confirmed**; the schema is three columns.
 
 ## Build order
 
@@ -199,10 +202,10 @@ improvement worth landing with it.
 silently deletes ~27 items of live work from view. Steps 1–2 must complete
 before step 3 begins.
 
-1. **Sweep.** Disposition the appendix's 27 orphans with the operator — each
-   becomes a `todo`/`plan`/`issue`, or is judged not worth tracking. Then close
-   out the ~24 already-discharged and ~9 decision-closed rows, which is
-   bookkeeping rather than judgment.
+1. ~~**Sweep.**~~ **Done 2026-07-28.** All 27 orphans dispositioned — 14 promoted
+   into 11 todos and 1 plan, 13 recorded `none:` with a reason. See the appendix.
+   The ~24 already-discharged and ~9 decision-closed rows map mechanically to
+   their existing artifacts and cell text, and are applied in step 2.
 2. **Backfill `Action`.** Add the column to all 109 thread ledgers, populating
    it from step 1's dispositions. A ratified, deterministic, one-pass migration
    over frozen bodies — the same shape as the `sb:` → `em:` id migration, and
@@ -217,37 +220,52 @@ before step 3 begins.
    pointers-only schema and [session-capture](/meta/policy/session-capture.md)
    to the new ledger step; update `/capture`'s § 3 table; recompile the contract.
 
-## Appendix — the sweep worklist (27 orphans)
+## Appendix — sweep dispositions (step 1, done 2026-07-28)
 
-Live and untracked as of 2026-07-28. `[v]` marks a claim verified against the
-tree this session rather than taken from the ledger cell.
+All 27 orphans dispositioned. **14 promoted** into 11 todos and 1 plan;
+**13 recorded `none:`** with a reason. Step 2 writes the `Action` column from
+this table.
 
-| # | Matter | Source thread |
-|---:|---|---|
-| 1 | Derived SQLite index (`mix brain.index`) as hardening move 2 | 2026-07-20-storage-format-verdict-and-frontmatter-parser-plan |
-| 2 | Spec→code traceability: tasks citing the policy they enforce | 2026-07-20-intent-as-source-and-dark-factory-pricing |
-| 3 | nvim guided-tour skill, nvim MCP wrapper, hunk in the PR-review loop | 2026-07-18-agent-drivable-apps-warp-hunk-nvim |
-| 4 | Gate-suite tutorial table missing 4 gates CI runs `[v]` | 2026-07-23-ai-drift-intake-and-coding-standards-ratification |
-| 5 | `mix brain.channels` generator for the register's `Ingested` column | 2026-07-28-channels-register-merge-and-video-vetting |
-| 6 | Eval-ledger format as a public export | 2026-07-20-evals-harness-ledger-and-observation-records |
-| 7 | Routing ledger as a completion oracle for agent evals | 2026-07-20-evals-harness-ledger-and-observation-records |
-| 8 | Workflow fan-out execution convention — four open questions | 2026-07-16-workflow-driven-plan-execution-convention |
-| 9 | `source-recall-probe` instrument unbuilt (`status: proposed`) `[v]` | 2026-07-27-cca-study-program-and-the-primary-source-miss |
-| 10 | `priorities-recitation` eval unbuilt (`status: proposed`) `[v]` | 2026-07-25-journal-skill-and-first-entry |
-| 11 | Cross-model PR review Action: target repo + reviewer model | 2026-07-21-multi-model-dev-environment-and-cross-model-pr-review |
-| 12 | `defverb`-style zero-dep macro for the `brain.*` verbs | 2026-07-14-elixir-ast-macros-and-loomkin-evaluation |
-| 13 | secure-financial-agent: air gap vs. default-deny; VLM variant | 2026-07-27-secure-financial-agent-and-projects-namespace |
-| 14 | secure-financial-agent: approval-gate placement and friction cost | 2026-07-27-secure-financial-agent-and-projects-namespace |
-| 15 | `deprecated/` triage — 33 files still present `[v]` | 2026-07-11-deprecated-directory-triage-and-machinery-deletion |
-| 16 | Reddit as a source for `/research` or `/bookmarks` | 2026-07-28-channels-register-merge-and-video-vetting |
-| 17 | Security-directory body-format consistency | 2026-07-27-llm-security-intakes-and-two-evaluation-beliefs |
-| 18 | Broaden `invisible-degradation` for the model-output sense | 2026-07-27-llm-security-intakes-and-two-evaluation-beliefs |
-| 19 | Journal carry-forward close convention | 2026-07-26-journal-day-two-intermediary-layer |
-| 20 | Essay seed: fear cycles → commoditization | 2026-07-26-journal-day-two-intermediary-layer |
-| 21 | Empty `claude-managed-agents/` stub folder `[v]` | 2026-07-13-artifacts-concept-and-anthropic-node-restructure |
-| 22 | Surface `sense` in the glossary index and registry | 2026-07-13-glossary-sense-disambiguation |
-| 23 | `mix brain.recent` and the deferred recency surfaces | 2026-07-16-recreate-collection-view-by-date |
-| 24 | Code-anchor identity + code-sink freeze/aggregation semantics | 2026-07-20-localized-code-conversation-and-comprehension-doctrine |
-| 25 | Opt-in local pre-commit that renders and stages `CLAUDE.md` | 2026-07-16-render-contract-invocation-and-auto-render |
-| 26 | Attribution policy: provenance names the producing model | 2026-07-13-three-level-documentation-plan-and-model-doctrine |
-| 27 | Taxonomy stubs + tolerated broken links in frozen namespaces | 2026-07-13-artifacts-concept-and-anthropic-node-restructure |
+**The filing principle applied:** file an artifact when there is committed
+direction and identifiable work. Record `none:` when the matter is conditional
+on a trigger that has not fired, is an operator-personal decision, or is
+speculative with no committed direction — with the reason, so the judgment stays
+auditable and reversible.
+
+### Promoted
+
+| Matter | Filed as |
+|---|---|
+| Gate-suite tutorial table missing 4 gates CI runs | [todo](/meta/todos/refresh-gate-suite-tutorial-gate-table.md) |
+| `deprecated/` triage — 33 files still present | [todo](/meta/todos/triage-what-remains-in-deprecated.md) |
+| Surface `sense` in the glossary index and registry | [todo](/meta/todos/surface-glossary-sense-in-index-and-registry.md) |
+| `source-recall-probe` + `priorities-recitation` evals unbuilt | [todo](/meta/todos/build-the-two-proposed-eval-instruments.md) |
+| `mix brain.channels` generator for the `Ingested` column | [todo](/meta/todos/generate-the-channels-register-ingested-column.md) |
+| Broaden `invisible-degradation` for the model-output sense | [todo](/meta/todos/broaden-invisible-degradation-for-model-output-sense.md) |
+| Cross-model PR review Action: target repo + reviewer model | [todo](/meta/todos/decide-cross-model-pr-review-action-target.md) |
+| Taxonomy stubs + tolerated broken links | [todo](/meta/todos/confirm-taxonomy-stub-folders-and-tolerated-broken-links.md) |
+| Journal carry-forward close convention | [todo](/meta/todos/decide-journal-carry-forward-close-convention.md) |
+| Workflow fan-out convention — graduate to a plan? | [todo](/meta/todos/decide-graduating-workflow-fanout-convention-to-plan.md) |
+| Attribution policy: provenance names the producing model | [todo](/meta/todos/ratify-or-reject-provenance-names-producing-model.md) |
+| Spec→code traceability | [plan](/meta/plans/spec-to-code-traceability.md) |
+
+### Recorded `none:`
+
+| Matter | Reason |
+|---|---|
+| Derived SQLite index (`mix brain.index`) | trigger not fired — structured-query cost has not grown |
+| nvim guided-tour skill, MCP wrapper, hunk in PR-review loop | no committed direction; personal tooling outside the brain |
+| Eval-ledger format as a public export | speculative; the analysis holds it |
+| Routing ledger as a completion oracle for agent evals | speculative research direction |
+| `defverb`-style zero-dep macro | trigger not fired — no MCP surface wanted yet |
+| secure-financial-agent: air gap vs. default-deny; VLM variant | held by the project's own [Open questions](/projects/secure-financial-agent.md) |
+| secure-financial-agent: approval-gate placement | held by the project's own [Open questions](/projects/secure-financial-agent.md) |
+| Reddit as a source for `/research` or `/bookmarks` | trigger not fired — conditional on either needing it |
+| Security-directory body-format consistency | editorial; no committed direction |
+| Essay seed: fear cycles → commoditization | the operator's creative call, not brain work |
+| `mix brain.recent` and deferred recency surfaces | trigger not fired — no in-session recency need has appeared |
+| Code-anchor identity + code-sink semantics | deferred to ratification after a churn probe |
+| Opt-in local pre-commit rendering `CLAUDE.md` | trigger not fired — "if the manual round-trip friction actually recurs" |
+
+The two secure-financial-agent rows are the reason `project` hubs as valid
+`Action` targets is now an open question above.
