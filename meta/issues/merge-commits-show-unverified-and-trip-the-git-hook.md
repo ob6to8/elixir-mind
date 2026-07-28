@@ -1,7 +1,7 @@
 ---
 type: issue
-title: "GitHub merge commits show Unverified and trip the stop hook on every PR"
-description: Merge commits created by the GitHub merge button are committed as GitHub <noreply@github.com> and carry no session trailer, so the stop hook reports them as unverified and proposes amending them — a remedy that would rewrite published history the merge-strategy policy protects, on a condition that same policy already classifies as expected.
+title: "The stop hook flags every unsigned commit reachable from the branch"
+description: The stop hook flags every unsigned commit reachable from the branch — merge-button commits and ordinary agent commits alike, including other sessions' work already on main — and proposes amending them, a remedy that would rewrite the published history the merge-strategy policy protects, on a condition that same policy already classifies as expected.
 status: open
 tags: [meta, issue, git, hooks, merge-strategy, provenance, false-positive]
 timestamp: 2026-07-28
@@ -13,7 +13,7 @@ attribution:
   from: [/meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md]
 ---
 
-# GitHub merge commits show Unverified and trip the stop hook on every PR
+# The stop hook flags every unsigned commit reachable from the branch
 
 ## Summary
 
@@ -77,8 +77,38 @@ be worth doing.
 The second is the narrower fix and addresses the actual harm — the misleading
 instruction — while the first addresses the badge.
 
+## Second observation (2026-07-28) — the trigger is broader than merge commits
+
+Two firings later, on a **clean tree with the branch zero commits ahead of
+`main`**, the hook listed five commits instead of one:
+
+```
+b692feb  2 parents  committer=noreply@github.com     Merge PR #158   ← this session's merge
+b4301dc  2 parents  committer=noreply@github.com     Merge PR #157   ← another session's merge
+504dade  1 parent   committer=noreply@anthropic.com  stamp pr: 157 …
+5519662  1 parent   committer=noreply@anthropic.com  split the Kimi K3 economics …
+f5c33a1  1 parent   committer=noreply@anthropic.com  intake Kimi K3 model card …
+```
+
+That revises the diagnosis above in three ways:
+
+- **The trigger is not merge commits.** The last three are ordinary
+  agent-authored commits with the *correct* committer email, flagged only for
+  lacking a signature. The harness does not sign commits, so every commit this
+  environment produces qualifies — merges were simply the first instance seen.
+- **The remedy's blast radius now spans sessions.** Three of the five are PR
+  #157, an unrelated intake session. The proposed `git rebase --exec` would
+  rewrite another session's committed work.
+- **The mechanical defect is reachable-from, not added-by.** The branch added
+  zero commits and drew a five-item list, because the hook reports every commit
+  reachable from the branch rather than the commits the branch introduces. This
+  is why the list grew between firings and why it will keep growing with every
+  merge by anyone.
+
+It has since fired a third time, unchanged, on the same clean tree.
+
 ## Scope
 
-Observed on this repository's PR-merge path. Whether other hooks propose
-similarly destructive remedies on sanctioned conditions is **unexamined**; this
-issue does not survey them.
+Observed on this repository, across three firings, on both merge and non-merge
+commits. Whether *other* hooks propose similarly destructive remedies on
+sanctioned conditions is **unexamined**; this issue does not survey them.

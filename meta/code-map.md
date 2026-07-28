@@ -717,6 +717,30 @@ re-run `mix brain.contract` and `mix brain.site`.
 - `repo_url/0` — The repository's home on GitHub (no trailing slash), for PR/commit links in generated views. Reads `:elixir_mind, :repo_url`; `nil` when unconfigured (consumers then render plain `PR #N` text instead of links).
 
 
+### `ElixirMind.ThreadTail`
+
+`lib/elixir_mind/thread_tail.ex`
+
+Locate the last rendered exchange in a thread doc, so a resumed `/capture`
+derives its boundary instead of recalling it.
+
+Capture appends to an existing thread doc when a session continues past its
+first PR, which makes "where did the previous capture stop?" a question asked
+once per continuation. Answering it from memory drops exchanges silently —
+the render still looks well-formed, and only a manual read catches the gap.
+The answer is already in the file: the final `## User` or `## Assistant`
+block is the boundary, and matching it against the session log yields exactly
+the un-captured remainder.
+
+Route-tag markup is stripped from the returned text because the tags exist
+only in the thread doc — leaving them in would defeat the match against the
+log they are meant to enable.
+
+**Functions**
+
+- `last_block/1` — Split a thread doc body into the role and text of its final rendered exchange.
+
+
 ### `ElixirMind.Verifier`
 
 `lib/elixir_mind/verifier.ex`
@@ -990,6 +1014,23 @@ taxonomy, per-concept metadata panels (type, tags, verification, evidence edges)
 and a client-side search index. All links are relative, so the site works at a
 domain root or under a project subpath (e.g. `/elixir-mind/`). Deployed to
 GitHub Pages by `.github/workflows/pages.yml`.
+
+
+
+### `Mix.Tasks.Brain.ThreadTail`
+
+`lib/mix/tasks/brain.thread_tail.ex`
+
+Print the role and text of a thread doc's final `## User`/`## Assistant`
+block, so a resumed `/capture` locates that text in the session log and takes
+everything after it as the un-captured remainder.
+
+    mix brain.thread_tail meta/threads/2026-07-27-some-session.md
+
+Reading the boundary out of the file replaces recalling it, which is the step
+that silently drops exchanges when a session continues across several PRs.
+Route-tag markup is stripped, since it exists only in the thread doc and would
+never match the log.
 
 
 
