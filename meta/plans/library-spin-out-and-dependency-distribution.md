@@ -1,7 +1,7 @@
 ---
 type: plan
 title: "Library spin-out: knowledge-base repos consuming Elixir Mind as a packaged dependency"
-description: Spec for the end-state separation — the library extracts into its own repo, taking the elixir-mind name (this repo renames at spin-out to free the slug), and is pulled into each knowledge-base repo as a versioned Mix dependency (git-tag first, Hex when stable), while this repo sheds the code and remains the operator's knowledge base with its provenance anchors and per-bundle em: id namespace intact.
+description: Spec for the end-state separation — the library extracts into its own repo, taking the elixir-mind name (this repo renames to knowledge at spin-out to free the slug), and is pulled into each knowledge-base repo as a versioned Mix dependency (git-tag first, Hex when stable), while this repo sheds the code and remains the operator's knowledge base with its provenance anchors and its em: id namespace intact.
 status: proposed
 provenance: "Claude Code session, 2026-07-17 — operator asked to spec out the separation where the knowledge content (knowledge/, analyses, plans, threads) lives in a dedicated knowledge-base repo, the elixir-mind library is abstracted out, and knowledge repos depend on the library, asking specifically whether distribution would be via something like Hex"
 attribution:
@@ -31,8 +31,9 @@ but a one-to-many relationship:
 1. **The library repo** — **`elixir-mind`** (operator-decided 2026-07-28,
    reversing the 2026-07-17 call that named it `composable-beliefs-3`: the
    library carries the name outward, and this repo — which holds the
-   `ob6to8/elixir-mind` slug today — renames at spin-out to free it; see
-   open question 1): the Elixir package. Contains
+   `ob6to8/elixir-mind` slug today — renames to **`knowledge`** at spin-out
+   to free it; open question 1 records the naming history): the Elixir
+   package. Contains
    `lib/`, `mix.exs`, `test/` (running against a small fixture bundle), a
    demo OKF bundle for demonstration and tests, the versioned **metadata
    profile spec** (the parent plan's Phase 2 artifact), reusable CI workflow
@@ -60,8 +61,8 @@ dedicated knowledge-base repo. The direction matters for provenance:
   keep those reachable. A content exodus would orphan all of them.
 
 So: **the bundle keeps the repo; the code leaves — with the name.** The
-remaining repo renames at spin-out; what it renames *to* is open question 1
-below.
+remaining repo renames to **`knowledge`** at spin-out (operator-decided
+2026-07-28; open question 1 records the naming history).
 
 ## The dependency mechanism — yes, a Hex-style dep, staged
 
@@ -127,7 +128,7 @@ becomes in effect the **bundle manifest**:
 | Setting | Today | Post-split |
 |---------|-------|-----------|
 | Site base URL, repo URL | Already in `config/config.exs` | Unchanged — pattern to copy |
-| Id namespace prefix (`em:`) | Hardcoded across verifier, registry, route tags, dedup probe | `config :elixir_mind, id_prefix: "em"` — each bundle mints its own namespace (see the id-namespace section below) |
+| Id namespace prefix (`em:`) | Hardcoded across verifier, registry, route tags, dedup probe | `config :elixir_mind, id_prefix: "em"` — a per-bundle setting; `em` is the default and both known bundles use it (see the id-namespace section below) |
 | Bundle root | Assumed = cwd/repo root | Configurable path (default `.`) |
 | Excluded / non-bundle directories (`deprecated/`, `inbox/`, `.claude/`, …) | Hardcoded carve-out lists | Configurable list with the current values as defaults |
 | Controlled `type` vocabulary | In verifier + policy prose | Bundle-declared list; library enforces membership-in-declared-list, not a fixed list — vocabulary ratification stays a per-bundle governance act |
@@ -142,14 +143,19 @@ bundle that is not this one.**
 
 ## Id namespaces are per-bundle
 
-**Yes — the id namespace prefix is assigned per repo** (operator question,
-2026-07-17). Each bundle mints ids under its own prefix: this repo keeps
-`em:`; the library's demo bundle uses **`dm:`**. This is the design the
-[stable-identity policy](/meta/policy/stable-identity.md) already implies —
-the prefix is a namespace token, not part of a document's identity — and the
-config surface above makes it literal: the prefix becomes a bundle-manifest
-setting, and the library enforces *shape* (`<prefix>:[0-9a-f]{6}`), never a
-particular prefix.
+**The prefix is a bundle-manifest setting, and both known bundles set it to
+`em:`** (operator-decided 2026-07-28, superseding the interim `cb:`/`dm:`
+demo-prefix choices that tracked the library's earlier name). `em`
+mnemonically mirrors elixir-mind — now the *library's* name — so the prefix
+travels with the schema: the demo bundle mints under `em:`, and this repo's
+existing `em:` ids ride through both the spin-out and the repo's own rename
+to `knowledge` unchanged, with no migration. The
+[stable-identity policy](/meta/policy/stable-identity.md) is untouched: the
+prefix is a namespace token, not part of a document's identity, it stays
+opaque (nothing may depend on its letters carrying meaning), and the config
+surface above keeps it per-bundle — the library enforces *shape*
+(`<prefix>:[0-9a-f]{6}`) with `em` as the default, and a future bundle may
+still configure its own.
 
 Three refinements to the "documents split out to the lib get their own
 prefix" framing:
@@ -158,29 +164,23 @@ prefix" framing:
   belong to the library concern — tooling tutorials, the code map, plans and
   analyses about the machinery — live in the **governance namespace and carry
   no `em:` id at all**. Bundle documents with `em:` ids are knowledge
-  content, and they stay. So in practice `dm:` is not a re-labeling of
-  migrated documents; it is the namespace the library's demo/fixture bundle
-  mints **new** ids under.
+  content, and they stay. So the demo bundle is not a re-labeling of
+  migrated documents; it mints **new** ids, under the same `em:` prefix.
 - **Identity is bundle-scoped; it does not transfer across bundles.** If a
   document ever genuinely relocates from one bundle to another, it is filed
   as a new document in the destination (minting a fresh id under the
   destination prefix) and the source id retires — minted once, never reused,
   per the stable-identity policy. Tail uniqueness is likewise per-bundle:
-  two bundles may coincidentally mint the same 6-hex tail, and the prefix is
-  what keeps the fully-qualified ids distinct — which is exactly what makes
-  any future cross-bundle reference scheme possible without collision.
-- **The demo bundle's `dm:` prefix doubles as the Phase 3 oracle.** A fixture
-  bundle whose ids are *not* `em:` is the proof that the prefix is genuinely
-  lifted into config rather than hardcoded — the library's tests passing
-  against a `dm:` bundle is the configurability audit's acceptance test.
-
-The prefix stays **opaque** per policy: `dm` mnemonically mirrors the demo
-bundle the way `em` mirrors elixir-mind, but nothing may depend on its
-letters carrying meaning. (`cb` was the demo prefix while the library was to
-be named composable-beliefs-3; with the name change it was dropped — that
-token already denotes the
-[Composable Beliefs](/beliefs/glossary/composable-beliefs.md) reference
-system, and reusing it for the fixture would overload it.)
+  with both bundles minting under `em:`, two bundles may coincidentally
+  produce the same fully-qualified id, so any future cross-bundle reference
+  scheme must qualify refs by bundle rather than relying on prefixes to keep
+  them distinct.
+- **The prefix half of the Phase 3 oracle moves into the test suite.** With
+  the demo bundle on `em:`, a green run against the fixture no longer proves
+  the prefix is lifted into config — that proof becomes a dedicated test
+  overriding `id_prefix` over a small synthetic corpus. The fixture remains
+  the acceptance oracle for every other manifest field (paths, directory
+  lists, vocabularies).
 
 ## The shape, structured
 
@@ -238,8 +238,8 @@ argument.
 config :elixir_mind,
   bundle_root: ".",
   id_prefix: "em",                     # library enforces <prefix>:[0-9a-f]{6}
-  site_base_url: "https://ob6to8.github.io/elixir-mind/",
-  repo_url: "https://github.com/ob6to8/elixir-mind",
+  site_base_url: "https://ob6to8.github.io/knowledge/",  # post-rename Pages home
+  repo_url: "https://github.com/ob6to8/knowledge",
   type_vocabulary: ~w(note claim concept reference source person project area
                       snippet methodology policy tutorial issue plan analysis
                       todo elaboration doctrine belief),
@@ -302,15 +302,15 @@ elixir-mind/                       # the library repo, post name-swap
 │   │   └── …                     # existing modules, attrs → Bundle fields
 │   └── mix/tasks/                # the task suite (naming: open question 7)
 ├── test/                         # existing suite, retargeted at the fixture
-├── priv/demo_bundle/             # NEW — dm:-namespaced demo/fixture OKF bundle
+├── priv/demo_bundle/             # NEW — demo/fixture OKF bundle (mints em: ids)
 ├── profile/metadata-profile.md   # NEW — the versioned schema spec (parent Phase 2)
 └── .github/workflows/gates.yml   # NEW — reusable (workflow_call) gate suite
 ```
 
-This repo (renamed at spin-out; open question 1), after the removal PR:
+This repo (renamed to **`knowledge`** at spin-out), after the removal PR:
 
 ```diff
- <knowledge-repo>/                 # this repo, under its new name
+ knowledge/                        # this repo, under its new name
 -├── lib/                          # extracted
 -├── test/
 ~├── mix.exs                       # thin: app + {:elixir_mind, tag: …}
@@ -337,8 +337,10 @@ Test — the manifest is the seam; the production code path runs unmodified:
 
 ```
 ExUnit (in the library repo)
-└── Bundle.load(root: "priv/demo_bundle", id_prefix: "dm", …)
+└── Bundle.load(root: "priv/demo_bundle", …)   # id_prefix defaults to "em"
     └── <Module>.run(bundle, opts)  # same path as production, different manifest
+        # a separate test overrides id_prefix over a synthetic corpus —
+        # the prefix half of the Phase 3 oracle
 ```
 
 ### Boundary decisions
@@ -374,7 +376,10 @@ ExUnit (in the library repo)
   the first function to take `Bundle.t`, and the choke point where
   `excluded_dirs`/`bundle_doc?/2` apply.
 - **Tests that prove the property:** the full gate suite green against
-  `priv/demo_bundle` under `dm:` (the Phase 3 oracle); a regression asserting
+  `priv/demo_bundle` (the Phase 3 oracle for paths, directory lists, and
+  vocabularies); a prefix-override test running the verifier over a small
+  synthetic corpus with a non-`em` `id_prefix` (the prefix half of the
+  oracle); a regression asserting
   `Bundle.load/1` is the only `Application.get_env` caller; this repo's CI
   green on the removal PR with the manifest set to today's values (behavioral
   no-op).
@@ -398,7 +403,8 @@ ExUnit (in the library repo)
   `:elixir_mind` dep, nothing else. (With the library keeping the elixir-mind
   name, the extraction involves no OTP-app or module rename — `:elixir_mind`
   and `ElixirMind` travel as-is; only the knowledge repo's thin skeleton app
-  takes a new name, alongside the repo itself. The `mix brain.*` task names
+  takes a new name (for this repo, `:knowledge`), alongside the repo itself.
+  The `mix brain.*` task names
   are independent of app names and stay as they are, so the operator-facing
   command surface is unchanged.)
 - **`config/config.exs`** — the bundle manifest (table above).
@@ -424,17 +430,18 @@ ExUnit (in the library repo)
    the library's own commit → session provenance survives in its new home.
    No app or module rename — the code already carries the library's name.
    This rewrites nothing here — this repo's history is untouched.
-   The **name swap** is its own sequenced motion: rename this repo first
-   (freeing the `elixir-mind` slug; git remotes and web links redirect), then
-   create the library repo on the freed slug. The moment the library claims
-   it, GitHub's rename redirects for this repo's old URLs **retire** — old
-   clone URLs and blob links resolve to the library instead — so the two
-   steps land back-to-back, remotes are updated immediately, and this repo's
-   `site_base_url`/`repo_url` config plus a `mix brain.contract` +
+   The **name swap** is its own sequenced motion: rename this repo to
+   **`knowledge`** first (freeing the `elixir-mind` slug; git remotes and web
+   links redirect), then create the library repo on the freed slug. The
+   moment the library claims it, GitHub's rename redirects for this repo's
+   old URLs **retire** — old clone URLs and blob links resolve to the
+   library instead — so the two steps land back-to-back, remotes are updated
+   immediately, and this repo's `site_base_url`/`repo_url` config
+   (→ `https://ob6to8.github.io/knowledge/`) plus a `mix brain.contract` +
    `mix brain.site` recompile ship in the same motion (the Pages URL moves
    with the rename; it does not redirect).
 2. **Author the demo bundle** in the library repo: a dozen-document OKF
-   collection under the `dm:` id namespace, exercising every schema feature
+   collection minting `em:` ids, exercising every schema feature
    (ids, attribution, verification edges, route tags, glossary), doubling as
    the test fixture.
 3. **Land Phase 3** (config surface) in the library repo, gated on the
@@ -448,13 +455,12 @@ ExUnit (in the library repo)
 
 ## Scope boundaries
 
-- **Naming is decided; no rename executes now.** Operator call 2026-07-28
+- **Naming is decided; no rename executes now.** Operator calls 2026-07-28
   (reversing the 2026-07-17 resolution): the spun-out library takes
-  **`elixir-mind`**, and this repo renames at spin-out to free the slug —
-  its new name is an operator call (open question 1). Nothing renames until
-  the extraction executes; until then this repo's Pages URL and remote refs
-  stay put. No app or module rename happens at any point — the code already
-  carries the library's name.
+  **`elixir-mind`**, and this repo renames to **`knowledge`** at spin-out to
+  free the slug. Nothing renames until the extraction executes; until then
+  this repo's Pages URL and remote refs stay put. No app or module rename
+  happens at any point — the code already carries the library's name.
 - **No schema changes.** The split moves the schema's *enforcement point*,
   not its content.
 - **This plan does not execute anything.** It is the spec the parent plan's
@@ -463,19 +469,17 @@ ExUnit (in the library repo)
 
 ## Open questions
 
-1. **Naming — half reopened.** Resolved 2026-07-17 as "this repo keeps
-   `elixir-mind`; the library is `composable-beliefs-3`"; **reversed
-   2026-07-28**: the library takes **`elixir-mind`**. The library half is
-   settled; the knowledge-repo half is open again — this repo must rename at
-   spin-out (two repos cannot share the `ob6to8/elixir-mind` slug), and its
-   new name is an operator call. Costs to weigh when choosing the moment:
-   the Pages URL moves with the rename (a `site_base_url`/`repo_url` config
-   edit + recompiles), and once the library claims the freed slug, GitHub's
-   rename redirects for this repo's old links retire (see migration step 1).
-   A second-order call for that day: whether the bundle's `em:` prefix
-   should follow the new repo name — the `sb:` → `em:` migration set a
-   prefix-mirrors-repo-name precedent, but the prefix is opaque by policy
-   and no migration is forced.
+1. ~~**Naming** (inherited)~~ — **fully resolved, in two rounds.**
+   2026-07-17: this repo keeps `elixir-mind`; the library is
+   `composable-beliefs-3`. 2026-07-28 (operator, superseding that): the
+   library takes **`elixir-mind`**; this repo renames to **`knowledge`** at
+   spin-out (two repos cannot share the `ob6to8/elixir-mind` slug); and the
+   id prefix is **`em:`** across the board — the demo bundle mints under it,
+   this bundle's ids ride through the rename unchanged, and no prefix
+   migration accompanies the repo rename (the prefix now mirrors the
+   *library*, whose name is stable). The rename's costs are recorded in
+   migration step 1: the Pages URL moves to the new slug, and GitHub's
+   redirects for `ob6to8/elixir-mind` retire when the library claims it.
 2. **Public or private library?** Stage B (Hex) implies public; private
    forever means staying on git-tag deps, which is workable indefinitely.
    (If public, the Hex package name is naturally `elixir_mind`.)

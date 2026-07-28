@@ -158,8 +158,9 @@ bundle keeps this repo while the code leaves):
    this repo keeps **elixir-mind**; the library spins out as
    **composable-beliefs-3**. **Reversed 2026-07-28**: the library takes
    **elixir-mind** — the outcome this question's first sentence anticipated —
-   and this repo renames at spin-out; its new name is the open remainder,
-   tracked in the spin-out plan's open question 1.
+   and this repo renames to **knowledge** at spin-out, with the `em:` id
+   prefix unchanged for both bundles (details in the spin-out plan's open
+   question 1).
 2. **Where does the schema spec live post-spin-out?** In the library repo (it
    defines and enforces it) with the bundle citing a version, or duplicated as
    a governance doc here? Leaning library-side with a version pin here.
