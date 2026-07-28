@@ -52,7 +52,7 @@ a parallel session had filed the identical matter as
 earlier, reaching the same diagnosis from the opposite direction — its three
 candidates superseded by the ratified design, cross-linked both ways, and kept
 `open` because the gap is live in the shipped policy until step 5 rewrites it.
-This follow-up landed in a second PR.
+This follow-up landed in **PR 170**.
 
 ## Routing
 
