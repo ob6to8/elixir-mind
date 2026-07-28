@@ -101,7 +101,7 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-07-28-ontology-guardrails-intake-and-jido-comparison (2026-07-28)
 
-2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`em:31fed1`]**
 
@@ -118,3 +118,26 @@ Running `/create-pull-request` is clear but would produce a capture-only PR, sin
 The ledger-upkeep issue needs no decision here. It's already persisted as a `type: issue` under `meta/issues/`, `status: open`, with all three candidate fixes written into the body. It's not a plan and shouldn't be one — per the routing policy a plan commits to work, and nothing is committed yet; when you pick a fix, *that* becomes the plan. It surfaces automatically via `/issue` and `/priorities`, and the repo's precedent matches (the dev-history and policy-index issues both carry weighed-but-unchosen fixes). Nothing is lost by closing this thread.
 
 For the yt-dlp recipe: the right home is a `type: snippet` in the taxonomy (durable, has an `em:` id, queryable) **plus a pointer in `/intake`'s link-resolution step** — because that step is what's in an agent's context at the moment a fetch fails, which is the only moment the recipe matters.
+
+---
+
+**[`em:31fed1`]**
+
+Thread closed. Everything is merged and nothing is left on your plate.
+
+The recipe for pulling a transcript out of YouTube when the normal fetch fails is now written down in the knowledge base, and — more usefully — `/intake` itself points at it, so the next agent hits the pointer at the moment its fetch comes back empty rather than having to know the note exists. One thing shifted while I was working: a separate session settled the ledger question I'd told you was still open, and it picked an option none of us had listed.
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| Filed the fetch recipe | `youtube-transcript-when-fetch-is-blocked` (`em:31fed1`), in a new `source-acquisition/` subdirectory — autonomous under the taxonomy protocol |
+| Wired discoverability into `/intake` | New bullet in the link-resolution step: a fetch returning only page chrome is a wrong fetch shape, not an unavailable source |
+| Closed the thread record | Fetch-technique row moved `unrouted` → the snippet; closing exchanges appended; `pr:` left at its origin 163 |
+| Merged current `main`, corrected the narrative | PR #173 → `c2c328a`; branch auto-deleted; zero unmerged commits |
+
+The substance of the snippet is one non-obvious fact: subtitle tracks, the description, and the metadata JSON are not media formats, so `--ignore-no-formats-error` lets them through even when every video format is DRM-blocked. That is what turns a hard failure into a working transcript, and it is the part that would cost real time to rediscover.
+
+**The correction you should know about.** I told you the ledger-upkeep choice was yours and remained open. It no longer is. Merging `main` brought a parallel session's ratification of a fourth answer, recorded in reconcile dangling routing-ledger strands: remove the `State` and `Dangling` columns from routing ledgers altogether, moving a strand's status onto the `plan`/`todo`/`issue` its new `Action` column links to. That dissolves the gap rather than picking among my three candidates — a row carrying only pointers stays true forever, so no later session ever needs to touch it. The issue stays `open` until that plan's remaining steps rewrite the policy, and the in-place `State` edits I made become moot rather than wrong. I've recorded this in the thread narrative so the record doesn't misreport it.
+
+Two new communication policies also landed on `main` and now bind future sessions — one requiring a plain-language orientation ahead of dense responses, one a banned-phrases register. A phrase I used earlier in this session is in that register; my past uses sit in the frozen thread render, which is exempt as verbatim record.
