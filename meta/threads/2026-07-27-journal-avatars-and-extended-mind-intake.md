@@ -6,6 +6,7 @@ provenance: "Claude Code session (Opus 5), 2026-07-27; verbatim retained message
 tags: [meta, thread, journal, extended-cognition, second-mind, intake]
 timestamp: 2026-07-27
 session: https://claude.ai/code/session_01FnF7LB4nPVNjsDr7zvnR8A
+pr: 151
 ---
 
 # 2026-07-27-journal-avatars-and-extended-mind-intake
