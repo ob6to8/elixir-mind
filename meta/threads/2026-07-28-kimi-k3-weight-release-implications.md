@@ -96,7 +96,7 @@ whether to run `/create-pull-request`, it argued the remaining work was not wort
 capturing because capture can never reach its own fixed point. The operator
 rejected that — the one-turn stub is the *designed* boundary the flow already
 accepts, not a reason to skip persisting real work — and the render was extended
-through the closing rounds. `pr:` stays at its origin, 157. Both of
+through the closing rounds, landing in PR 174. `pr:` stays at its origin, 157. Both of
 the earlier rounds landed together in PR 164 — the plan round was committed and pushed
 without a PR of its own, since the operator had not asked for one, and the
 diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
