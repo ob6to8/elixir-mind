@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-28; verbatim retained 
 tags: [meta, thread, intake, ontology, owl, shacl, jido, elixir, agents, guardrails, neurosymbolic-ai]
 timestamp: 2026-07-28
 session: https://claude.ai/code/session_01XJvjudVdVWHdCNdQLFxWap
+pr: 163
 ---
 
 # 2026-07-28-ontology-guardrails-intake-and-jido-comparison
