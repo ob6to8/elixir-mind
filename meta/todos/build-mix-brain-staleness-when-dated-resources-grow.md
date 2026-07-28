@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, CCA certification session"
   why: "deferred rather than built: measured exposure is 2 of 78 resource-bearing docs, which does not clear the admission rule, but the failure mode is real and recurs silently"
+  from: [/meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md]
 ---
 
 # Build `mix brain.staleness` once dated-revision resources pass ~10 docs

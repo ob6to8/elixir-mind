@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, CCA certification session"
   why: "the operator asked whether the five primary-source checks could become evals; source recall is the one of the five with a constructible ground truth, and it measures whether the accompanying policy and skill amendment do anything"
+  from: [/meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md]
 ---
 
 # Source recall probe — gold set

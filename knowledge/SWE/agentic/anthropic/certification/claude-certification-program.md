@@ -140,3 +140,61 @@ catalog publishes per-exam consumer pricing.
 
 - [CCA Foundations exam blueprint](/knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint.md)
 - [Anthropic primary-source surfaces](/meta/analysis/anthropic-primary-source-surfaces.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:bdfa05">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-cca-study-program-and-the-primary-source-miss (2026-07-27)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:bdfa05`]**
+
+Here's the current picture as of late July 2026.
+
+**Program status**
+
+The **Claude Certified Architect (CCA)** is Anthropic's first official technical certification, launched **March 12, 2026** alongside the [Claude Partner Network](https://www.anthropic.com/news/claude-partner-network), which Anthropic backed with a **$100M investment for 2026**. The certification validates the ability to design and ship production-grade Claude applications — covering the Claude API, Agent SDK, MCP, and Claude Code.
+
+The program has since expanded into a [four-credential family](https://claude.com/blog/four-role-based-claude-certifications):
+
+| Credential | Code | Audience |
+|---|---|---|
+| Claude Certified Associate – Foundations | CCAO-F | Consultants, project leads, daily Claude users |
+| Claude Certified Developer – Foundations | CCDV-F | Engineers building on the API/tool use/agents |
+| Claude Certified Architect – Foundations | CCAR-F / CCA-F | Solution architects designing agent systems |
+| Claude Certified Architect – Professional | CCAR-P | Enterprise-scale integration, governance, evaluation |
+
+Key operational facts:
+
+- **Exam**: proctored, identity-verified, ~60 questions for the Foundations tier; badges issued via Credly. Prep courses live in Anthropic Partner Academy (free for partners); certification is currently **open to Claude Partner Network organizations**, and reported pricing is around **$125** (free via partner employers).
+- **Delivery moved to Pearson VUE** around **June 30, 2026** ([Pearson VUE's Anthropic page](https://www.pearsonvue.com/us/en/anthropic.html) now lists all four exams), bringing a formal retake policy (up to 4 attempts per rolling 12 months, with 14/30/90-day waits) and a 12-month certification term with free renewal.
+- **Uptake**: as of the latest official numbers, **36,000+ consultants across 1,300+ organizations** have earned a certification, and more than 40,000 firms applied to join the Partner Network since March.
+- **Roadmap**: advanced Architect specializations (security, enterprise integration, multimodal) are slated for later in 2026, with existing CCA holders getting priority access.
+
+**Industry reaction**
+
+**The consulting industry has embraced it at enormous scale.** The Global Premier partners made headline certification commitments — **Accenture 50,000, PwC 30,000, Capgemini 20,000, DXC 20,000, Deloitte 15,000, KPMG 15,000, Cognizant 10,000** — and several firms are reportedly prioritizing the credential in hiring. This is the strongest signal: the big SIs are treating it like the early AWS certification wave, a way to signal delivery capacity to enterprise buyers.
+
+**Individual developer sentiment is positive but with real caveats:**
+
+- *Pro*: it's the only credential backed by the model vendor itself, it forces breadth across the full stack (Claude Code + Agent SDK + API + MCP, where most practitioners have blind spots), and "experience building with Claude" is showing up as an explicit hiring requirement. Reviewers generally rate it as [most valuable for client-facing solution architects and career transitioners](https://www.claudecertifiedarchitects.com/blog/claude-certified-architect-certification-worth-it/), who benefit from third-party-validated proof of competence.
+- *Con*: the recurring skepticism is **shelf life** — the AI stack moves so fast that exam content could feel stale in 6–9 months (the 12-month term with free renewal is partly Anthropic's answer to that). Some also note the partner-gated access limits who can take it, and the Pearson VUE move raised the fee and dropped the practice exam.
+
+The overall read: enterprises and consultancies are treating CCA as the emerging standard credential for the Claude ecosystem, while independent developers see it as worthwhile mainly if their role involves selling or architecting Claude solutions rather than as a general-purpose résumé item.
+
+---
+
+**[`em:bdfa05`]**
+
+Confirmed — and those prices are now **primary-sourced**, which retires my earlier caveat. From Anthropic's own Partner Academy catalog:
+
+| Certification | Price |
+|---|---|
+| Claude Certified Associate – Foundations | $99 (does not count toward Partner Network tier eligibility) |
+| Claude Certified Developer – Foundations | $125 |
+| Claude Certified Architect – Foundations | $125 |
+| Claude Certified Architect – Professional | $175 |
+
+The PDF downloaded but didn't parse as text. Reading it directly:

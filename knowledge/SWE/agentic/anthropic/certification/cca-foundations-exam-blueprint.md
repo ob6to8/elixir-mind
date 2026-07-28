@@ -128,3 +128,37 @@ and tradeoffs in production deployments."
 
 - [The Claude Certification Program](/knowledge/SWE/agentic/anthropic/certification/claude-certification-program.md)
 - [CCA study program plan](/meta/plans/cca-certification-study-program.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:214aa4">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-cca-study-program-and-the-primary-source-miss (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:214aa4`]**
+
+Yes — official. Skilljar is the LMS vendor; `anthropic-partners.skilljar.com` is Anthropic's own Partner Academy tenant. And it doesn't just have prices — **the complete 39-page exam guide is public on that page**, served from an S3 `/public/` path with no login. That was the single largest open question in the plan, and it was one link from a page I had already read.
+
+**What went wrong, precisely**
+
+I fetched the Academy's *individual* CCA certification page, which states scope but no pricing or blueprint. My `site:` searches were scoped to `anthropic.com` and `claude.com`, so they never touched the skilljar host at all. I then concluded "no primary source states the price" from "the primary pages I happened to check don't state it."
+
+That's absence of evidence asserted as evidence of absence — and it's the exact failure the quarantine discipline exists to prevent. The discipline was sound; my classification of the facts was wrong, in the more damaging direction: I told you real primary data was third-party.
+
+**What the guide actually says**
+
+All primary now, and it corrects the third-party record in two ways that matter for building:
+
+| | |
+|---|---|
+| Code / version | `CCAR-F`, v1.0, effective July 2026 |
+| Items | 60 — **multiple-choice *and* multiple-response** (prep sites say "one correct answer" — wrong) |
+| Structure | **4 scenarios drawn from a bank of 6** (prep sites say 6 — wrong) |
+| Time / cut score | 120 min · scaled 720 on 100–1,000 · criterion-referenced |
+| Fee / validity | $125 · 12 months · free non-proctored renewal, lapse = full retake |
+
+Domains: Agentic Architecture & Orchestration 27%, Claude Code Configuration & Workflows 20%, Prompt Engineering & Structured Output 20%, Tool Design & MCP Integration 18%, Context Management & Reliability 15% — expanded into **30 task statements**, each with explicit *Knowledge of* / *Skills in* bullets. The guide says items "are written against these objectives," which makes task statements the real unit of study and gives question coverage a denominator.
+
+**One finding changes the project's constraints.** Section 14 binds candidates to an NDA covering "all exam content, including questions, answer options, and scenarios." So the bank must be authored from the published objectives, never reconstructed from recalled items; third-party question banks become *not ingestible* (they may themselves be reconstructions); and excluding the bank from the public site moves from prudent to settled. That's now written into the plan as binding design input.

@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session on CCA certification study"
   why: "operator ratified a new top-level education/ namespace and commissioned the study program; execution is a cold-context handoff to a fresh session, so the decisions are persisted first"
+  from: [/meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md]
 ---
 
 # A CCA study program: curriculum overlay, primary-only grounding, mechanical drill

@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, CCA certification session"
   why: "the operator ratified the rule after the agent reported that no primary source stated the CCA exam's price or blueprint, having searched two of Anthropic's seven documentation hosts while the authoritative guide sat public on a third"
+  from: [/meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md]
 ---
 
 **Negative findings name their scope.** A statement that something *does not

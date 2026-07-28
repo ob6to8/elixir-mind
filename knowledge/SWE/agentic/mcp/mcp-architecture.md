@@ -101,3 +101,24 @@ conversation — a direct consequence of design principle 3.
 - [MCP tools primitive](/knowledge/SWE/agentic/mcp/mcp-tools-primitive.md)
 - [Model Context Protocol (glossary)](/beliefs/glossary/model-context-protocol.md)
 - [Remote procedure call (glossary)](/beliefs/glossary/remote-procedure-call.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:121acc">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-cca-study-program-and-the-primary-source-miss (2026-07-27)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:121acc`]**  (co-feeds: `em:3b0352 em:b4a91a em:038169 em:53f32a`)
+
+That changes the picture materially. Re-keyed to Anthropic's own scope statement, the brain is far thinner than my earlier figure suggested — **that 42% was keyed to the third-party blueprint and to conceptual overlap, and it overstated readiness.** The real position:
+
+| Anthropic-named pillar | Filed knowledge | Verdict |
+|---|---|---|
+| Claude Code | 8 docs in its dir (mostly cloud-env sources); ambient mentions everywhere | thin on configuration specifics |
+| Claude Agent SDK | **0 docs** in its dir, 11 passing mentions | near-empty |
+| Claude API | **~0** — no filed knowledge on the API surface | empty |
+| MCP | no dedicated dir, 25 incidental mentions | near-empty |
+
+The brain is strong on agentic *concepts* and near-empty on the four *product surfaces* the exam actually names. That makes your ordering (gaps first) clearly right. Rewriting the plan against primary-sourced structure:

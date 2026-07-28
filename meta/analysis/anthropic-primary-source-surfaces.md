@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, interactive session on CCA certification study"
   why: "operator commissioned a source-inventory spike after the agent wrongly reported that no primary CCA blueprint or pricing existed, having searched only two of Anthropic's seven documentation hosts"
+  from: [/meta/threads/2026-07-27-cca-study-program-and-the-primary-source-miss.md]
 ---
 
 # Anthropic's primary-source surfaces
