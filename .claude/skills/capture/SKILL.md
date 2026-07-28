@@ -25,8 +25,16 @@ noise, it does not summarize what it keeps.
 - **Type**: `reference`, governance namespace (`meta/`) — **no `em:` id**; the
   registry and `mix brain.verify` ignore it. Threads are tag *sources*; the
   `concept` docs they route to (which carry `em:` ids) are the sinks.
-- **Update in place**: if this session already has a thread file, regenerate that
-  same file — do not create a second one.
+- **Update in place**: if this session already has a thread file, **append** the
+  un-captured exchanges to it — do not create a second one, and do not rewrite
+  the blocks already there (the body is frozen once written).
+- **Derive the append boundary; never recall it.** Run
+  **`mix brain.thread_tail <path>`** to print the doc's final rendered block,
+  locate that exact text in the session log, and take everything after it. The
+  boundary is a fact in the file, and reading it from the file is what keeps a
+  continuation from silently skipping exchanges — recalling "where I left off"
+  looks identical to getting it right, because the render stays well-formed
+  either way.
 
 ## Frontmatter
 

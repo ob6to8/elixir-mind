@@ -45,3 +45,8 @@ Each eval is a prose-bearing markdown doc (a gold set's table is parsed by a
   A/B (unaided vs map-equipped), gold set seeded with a real observed miss, and a
   falsification condition that would retire the source map and revert the `/intake`
   amendment.
+- [Re-derivation vs. recall under context pressure](/meta/evals/re-derivation-vs-recall.md) —
+  when a fact is both in context and cheaply re-derivable from an artifact, does the
+  agent re-derive or recall, and does the ratio move as a session lengthens? Design
+  only; the evidence base is three self-reported instances from one session and the
+  doc says so. `status: proposed`.

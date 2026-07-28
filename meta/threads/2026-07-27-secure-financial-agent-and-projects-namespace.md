@@ -53,7 +53,7 @@ step each unblocks. Two smaller findings were judged not worth a governance
 artifact — a one-off stale read from the GitHub `get_check_runs` endpoint, whose
 fix belongs in the `/create-pull-request` skill rather than in `meta/issues/`,
 and a branch survey that the git-branch-deletion policy had already answered.
-The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 the closing capture, #156 the policy-index issue a final persistence audit surfaced, and #158 the generation-over-discipline belief and the merge-verify hook issue; `pr:` above records the origin and is not rewritten.
+The thread landed across three PRs — #145 opened the namespace and stamped `pr:`, #148 carried the spec-completion transition, and #155 the closing capture, #156 the policy-index issue a final persistence audit surfaced, #158 the generation-over-discipline belief and the merge-verify hook issue, and #161 the derivable capture boundary; `pr:` above records the origin and is not rewritten.
 
 A closing round settled three smaller matters. A coverage audit — run because
 the operator asked whether everything discussed had been persisted — found the
@@ -102,6 +102,24 @@ since the commit was already on `main`, the condition is one
 [merge-strategy](/meta/policy/merge-strategy.md) already sanctions, and the fix
 would have rewritten the provenance it appeared to defend.
 
+A final round turned three loose observations into artifacts, two of them after
+checking overturned the recommendation that prompted them. The `depends_on`
+finding was not filed as a new issue: the
+[epistemic-overlay plan](/meta/plans/epistemic-overlay.md) already owned the
+matter and had even set the bar the edge skipped — *"Until it exists, these
+edges stay prose"* — so the finding updated that plan instead. A proposed
+scenario test was withdrawn once `capture_scenario_test.exs` turned out to cover
+`route_tags --materialize` rather than the render, meaning there was no capture
+code to test at all; the replacement was to make the boundary derivable
+([`mix brain.thread_tail`](/lib/mix/tasks/brain.thread_tail.ex)) so the skill
+step became *run this* rather than *recall that*. And a proposed eval that had
+been waved off as thin was filed after re-reading the genre definition, which
+exists precisely to hold a design ahead of its evidence — the objection had
+applied a bar the genre does not set. The hook issue's scope note, which claimed
+the trigger was the merge path, was corrected along with its title and index
+gloss in one motion, since leaving the gloss stale would have reproduced the
+defect its sibling issue tracks.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -120,6 +138,9 @@ would have rewritten the provenance it appeared to defend.
 | A home for the idle `project` type | closed | [project-namespace](/meta/policy/project-namespace.md) | - |
 | Raising the Elixir/OTP floor | paused | [raise-elixir-otp-toolchain-floor](/meta/plans/raise-elixir-otp-toolchain-floor.md) | Install method, exact-vs-range pin, and whether a second environment needs the same script |
 | The prior behind preferring generation over discipline | closed | [remembered surfaces are forgotten surfaces](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) | - |
+| `depends_on` shipped as an unregistered, unchecked typed edge | open | [epistemic-overlay](/meta/plans/epistemic-overlay.md) | Widen `verified_by`, add `deps`/`grounds`, or adopt `depends_on` — whichever wins inherits the existing edges |
+| Capture boundary derived rather than recalled | closed | [`mix brain.thread_tail`](/lib/mix/tasks/brain.thread_tail.ex) · [/capture skill](/.claude/skills/capture/SKILL.md) | - |
+| Does an agent re-derive or recall available state? | paused | [re-derivation vs. recall](/meta/evals/re-derivation-vs-recall.md) | Separating genuine follow-ups from substitution before the metric means anything |
 | Merge commits flagged Unverified by the stop hook | open | [merge-commits-show-unverified](/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md) | Sign the merges, exempt multi-parent commits from the hook, or accept the noise |
 | Policy index glosses drifting on policy edits | open | [policy-index-glosses-drift-on-policy-edits](/meta/issues/policy-index-glosses-drift-on-policy-edits.md) | Which fix shape — state the rule, add a check, or generate the gloss from `description` |
 | Harness choice for building vs. running | closed | `unrouted` | - |
@@ -1084,4 +1105,226 @@ persist "A surface that must be remembered will eventually be forgotten; a surfa
 commit "If you want GitHub to show merge commits as verified" somewhere
 
 then /create-pull-request and merge
+
+## Assistant
+
+PR [#158](https://github.com/ob6to8/elixir-mind/pull/158) merged as `b692feb`. Timer cleared before firing.
+
+**Thread doc:** `meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md`
+
+### What I created
+
+| Type | Doc | Why this type |
+|---|---|---|
+| `belief` | [remembered-surfaces-are-forgotten-surfaces](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/remembered-surfaces-are-forgotten-surfaces.md) `em:d1ba60` | Value-laden prior, `depends_on: [em:189d88]` |
+| `issue` | [merge-commits-show-unverified](https://github.com/ob6to8/elixir-mind/blob/main/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md) | A live concern with two independent fixes, neither chosen |
+
+### Actions I have taken
+
+| Step | Result |
+|---|---|
+| `/capture` | Six exchanges appended; ledger gains both strands; region tagged for `em:d1ba60` |
+| `/add-to-glossary` | **No-op** — `true-merge` already covers the merge-commit concept |
+| `attribution.from` | Stamped on the new issue at filing |
+| `mix brain.dev_history` | Skipped — shallow clone |
+| Commits `b7dfc87`, `efd4355` | Full gate suite green; 183 tests, 0 failures |
+| CI on `efd4355` | All 19 steps green |
+| Merge | True merge commit |
+
+Two things worth flagging from the work itself.
+
+**The belief's `depends_on` points at a concept, not another belief** — `em:189d88` is `freshness-gate`. Your proposed decomposition had both statements as beliefs with one depending on the other; what actually holds is that the analytic pair lives in the concept and only the value-laden step is a belief. The dependency edge crosses type boundaries, which the existing `em:0c4913 → em:1eebdf` precedent doesn't exercise (both are beliefs there). Worth knowing if the `/extract-belief` skill ever gets built — it needs to allow that.
+
+**I caught a capture anchor error mid-flight.** My first extraction anchored on the wrong message and would have silently dropped three exchanges — the #156 merge report, your belief question, and my answer to it. I noticed only because the block count looked short and I checked the thread doc's actual tail. Anchoring on a remembered phrase rather than on the file's real end is exactly the failure mode the belief I just filed describes, which is a little on the nose.
+
+Session now spans five PRs: `5654a39`, `9f63491`, `f46b7b9`, `a522eb6`, `b692feb`. `pr:` stays at its origin, 145.
+
+## User
+
+re: "The belief's depends_on points at a concept, not another belief" - where to persist this?
+how to prevent the capture anchor issue? is that a failure mode that could become an eval?
+
+## Assistant
+
+Both answers changed after checking. The first one substantially.
+
+## 1. The `depends_on` finding — it's already tracked, and the news is worse than I framed it
+
+I was going to recommend a new issue. Don't file one: the [`epistemic-overlay`](https://github.com/ob6to8/elixir-mind/blob/main/meta/plans/epistemic-overlay.md) plan already owns this matter, and it anticipated exactly this case:
+
+> "**Typed dependency edges.** Generalize the evidence edge into grounding edges: a concept declares the ids it stands on. Keep `verified_by` semantics as the special case… **Open question:** widen `verified_by`, or add a broader `deps`/`grounds` beside it."
+
+And it set a bar for introducing one:
+
+> "*This tool is the machine consumer that earns the typed edge under our own rule.* **Until it exists, these edges stay prose.**"
+
+So `depends_on` shipped as a *third* answer to that open question, without the machine consumer the plan said earns a typed edge. Three consequences, all verified against the tree:
+
+| | State |
+|---|---|
+| Registered in [`frontmatter-schema`](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/frontmatter-schema.md)? | **No** — absent from the field table |
+| Checked by any gate? | **No** — `depends_on` appears nowhere in `lib/` or `test/` |
+| Semantics specified? | **No** — belief→belief was the seed; belief→concept is what I did; nothing says which pairs are legal |
+
+The verification gap is the sharp one. `verified_by` is parsed in `registry.ex` and its targets must resolve; `depends_on: [em:deadbe]` pointing at nothing would pass every gate silently. It looks like a typed edge and behaves like a comment.
+
+**So it goes into the existing plan**, per `update-in-place` and one-artifact-per-matter — a note that its open question was partly preempted in the wild, plus the cleanup obligation that creates. Filing a fresh issue would fragment a matter that already has a home.
+
+## 2. The capture anchor — a skill fix, and no, not an eval
+
+**Prevention is derivation.** The boundary between "captured" and "new" is not something to remember — it's *in the thread doc*. Its last rendered block is the boundary; find that exact string in the session log, take everything after. I anchored on a phrase I recalled writing, which is why it silently skipped three exchanges. The fix is one explicit step in `/capture`, converting a recalled value into a computed one — which is [the belief I just filed](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/remembered-surfaces-are-forgotten-surfaces.md) applied to the skill that produced it.
+
+**On the eval question — I don't think it qualifies, by the repo's own genre lines.** `meta/evals/index.md` defines an eval as *"an instrument that re-scores"* agent behavior against *"constructed ground truth."* The `elixir-coding-standards` admission rule says anything with a **mechanical oracle** should be a gate instead. Capture completeness has an oracle in principle — every retained block since the boundary should appear in the thread doc — so it isn't eval-shaped.
+
+But it can't be a gate either, and the reason is structural: the oracle needs the session log at `~/.claude/projects/…`, which is **outside the repo**, while the toolchain is zero-dependency and must run offline in any sandbox. A `mix brain.*` task cannot see it.
+
+What's left is what already exists — `test/elixir_mind/capture_scenario_test.exs` — where a synthetic log plus expected render pins the derivation deterministically. That's a scenario test, not an eval.
+
+**There is an eval-shaped question nearby, and I want to be careful not to oversell it.** The general pattern — *anchoring on remembered state instead of re-deriving from the artifact* — hit three times this session: the stale local `main` I read old policy files from, this capture anchor, and the timer stacking as a cousin. Whether an agent re-derives or recalls, under length and time pressure, has no mechanical oracle and is genuinely about behavior. That is the shape evals are for. But n=3 in one session, self-reported, is weak evidence for building an instrument, and I'd rather name it as a hypothesis than dress it up as a design.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Update `epistemic-overlay` with the `depends_on` finding | Records that the open question was preempted, that the edge is unregistered and unchecked, and that adopting `mix brain.graph` now inherits a cleanup |
+| 2 | Fix `/capture` to derive the boundary | One explicit step: read the thread doc's last block, locate it in the log, take the remainder |
+| 3 | Extend the capture scenario test | Pin "resuming an existing thread doc appends exactly the un-captured blocks" against a synthetic log |
+| 4 | File the re-derive-vs-recall hypothesis | As a `status: proposed` eval, explicitly marked thin on evidence — or leave it until it recurs across sessions |
+
+I'd do **1 and 2** now; **3** if you want the derivation pinned rather than merely stated; and hold **4** — a proposed eval on three self-reported instances is the kind of instrument that measures a story rather than a phenomenon.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+b692feb E noreply@github.com
+b4301dc E noreply@github.com
+504dade N noreply@anthropic.com
+5519662 N noreply@anthropic.com
+f5c33a1 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+I'm not running this one either, and the reason is stronger than last time.
+
+## What the five commits actually are
+
+```
+b692feb  2 parents  committer=noreply@github.com   Merge PR #158   ← my PR's merge
+b4301dc  2 parents  committer=noreply@github.com   Merge PR #157   ← another session's merge
+504dade  1 parent   committer=noreply@anthropic.com  stamp pr: 157 into the Kimi K3 …
+5519662  1 parent   committer=noreply@anthropic.com  split the Kimi K3 economics …
+f5c33a1  1 parent   committer=noreply@anthropic.com  intake Kimi K3 model card …
+```
+
+**All five are on `main`.** My branch is `0` commits ahead with a clean tree — again, nothing of mine is implicated.
+
+**Three of them aren't even from this session.** `504dade`, `5519662`, `f5c33a1` are PR #157 — a separate Kimi K3 intake session. The proposed `git rebase --exec` would rewrite another session's committed work.
+
+**And those three have the correct email.** `noreply@anthropic.com`, flagged `N` — unsigned, not misattributed. That matters: it means the hook isn't catching a misconfiguration at all. The harness doesn't sign commits, so *every* commit this environment produces will trip it, forever. The `E`/`N` split in the hook's own output shows two different conditions being reported as one problem.
+
+## The mechanical defect, now visible
+
+The hook flags commits **reachable from** the branch, not commits the branch **adds**. My branch adds zero commits and got a five-item list — because it's reporting `main`'s history as the branch's liability. That's why the list grew from one entry to five between two firings, and why it will keep growing with every merge by anyone.
+
+## The issue I filed is now understated — and one of its claims is wrong
+
+Last round I filed [`merge-commits-show-unverified-and-trip-the-git-hook`](https://github.com/ob6to8/elixir-mind/blob/main/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md), and scoped it honestly at the time:
+
+> "Observed on this repository's PR-merge path. Whether other hooks propose similarly destructive remedies on sanctioned conditions is **unexamined**."
+
+That scope note is now falsified in a way I can't leave standing. The trigger is not merge commits — merge commits were just the first instance. It's **any unsigned commit**, which is all of them, and the blast radius of the proposed remedy has grown from one commit to five spanning two sessions. The issue as written would tell a future reader this is a merge-path quirk. It isn't.
+
+I haven't edited it, because you have four unanswered options on the table and I'd rather batch a correction than open a sixth PR for one paragraph.
+
+### Your options from here
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Update `epistemic-overlay` with the `depends_on` finding | From the previous turn — still pending |
+| 2 | Fix `/capture` to derive the boundary | From the previous turn — still pending |
+| 3 | Extend the capture scenario test | From the previous turn — still pending |
+| 4 | File the re-derive-vs-recall hypothesis as a proposed eval | From the previous turn — I recommended holding |
+| 5 | **Correct the hook issue's scope** | New, and I'd fold it into whichever of 1–3 you pick: the trigger is unsigned commits generally, the remedy now spans another session's work, and the underlying defect is reachable-from vs. added-by |
+
+My recommendation is **1, 2, and 5 in one PR** — they're all small, and 5 fixes a claim that's currently false in a merged artifact.
+
+## User
+
+what about adding 3 and 4? inadvised?
+
+## Assistant
+
+Checking changed my answer on both, in opposite directions.
+
+## 3 — as I described it, it doesn't work
+
+`capture_scenario_test.exs` tests **`route_tags --materialize`**, not the capture render:
+
+```
+test "materialize writes the expected log and the bundle then checks clean"
+test "re-materializing is idempotent"
+test "materialize removes the section of a sink no longer fed"
+test "a still-fed sink drops the block of a thread that stopped tagging it"
+```
+
+And there is **no capture code in `lib/`** — no module parses a session log, applies the drop rule, or computes a boundary. The entire render is agent-performed from a markdown skill. I was misled by the file's name into assuming it covered the render half; it covers the materialize half, which is the only part that *is* code.
+
+So "extend the capture scenario test" was not a modest option — it was incoherent. There is nothing there to extend. My apologies for proposing it as though it were shelf-ready.
+
+**But the check surfaced something better.** The boundary derivation doesn't need the session log at all — it needs the *thread doc's last rendered block*, which is in-repo. That means it can be code, within the zero-dependency offline constraint:
+
+> `mix brain.thread_tail <path>` → prints the last `## User`/`## Assistant` block of a thread doc.
+
+That converts the skill step from *"recall where the last capture ended"* into *"run this and match its output in the log."* Which is the belief applied to the skill that produced the belief. And once it's a task, it's testable the ordinary way.
+
+So the revised recommendation is not "add a test" but **"make the boundary derivable, then the test comes free."** That's a bigger change than I originally floated — it's a new mix task — and it deserves to be your call rather than folded in silently.
+
+## 4 — I was applying a bar the genre doesn't set
+
+I said hold it because n=3 self-reported is thin. Re-reading `meta/evals/index.md`, that objection partly misfires:
+
+> "A `status: proposed` eval files the instrument's design (question, hypothesis, method, metrics, falsification condition) **ahead of building it**, so the measurement intent survives until the instrument exists."
+
+The genre exists precisely for the pre-evidence state. And there's precedent: `priorities-recitation-vs-harness-reminders` was promoted from *a single journal observation*. So "not enough instances yet" isn't the test — **"is the question well-formed enough to design metrics and a falsification condition"** is.
+
+On that test it holds up better than I gave it credit for. The three instances share one signature: *an authoritative source was available and cheap, and memory was used instead.* That's retrospectively countable from thread docs and git history, and it falsifies cleanly — if re-derivation dominates regardless of session length, the hypothesis is dead.
+
+So: **not inadvisable.** It should state plainly that its evidence base is one session, and it should be `status: proposed` rather than dressed as a finding — but filing the design is what the genre is for, and I was wrong to treat thin evidence as disqualifying.
+
+## Revised recommendation
+
+| # | Item | Call |
+|---|---|---|
+| 1 | `epistemic-overlay` ← `depends_on` finding | **Yes** |
+| 2 | `/capture` derives the boundary | **Yes** — but weaker alone than I implied; it's a remember-to rule |
+| 3 | ~~Extend the scenario test~~ → **`mix brain.thread_tail`** | **Your call** — it's a new task, not a test tweak. It's what makes 2 a fix rather than a mitigation |
+| 4 | Re-derive-vs-recall proposed eval | **Yes**, with its thin base stated in the doc |
+| 5 | Correct the hook issue's scope | **Yes** |
+
+1, 2, 4, 5 are all documents and land cleanly together. **3 is the one genuine decision** — it adds code and a gate surface, and the admission rule asks whether signal beats upkeep. My read: a task that prints a file's last section is about fifteen lines and removes a failure that already cost three dropped exchanges once. But it's the only item here that changes `lib/`, so I'd rather you say yes than assume it.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+b692feb E noreply@github.com
+b4301dc E noreply@github.com
+504dade N noreply@anthropic.com
+5519662 N noreply@anthropic.com
+f5c33a1 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+Identical firing — same five commits, clean tree, branch still `0` ahead of `main`. Nothing changed since I declined this two turns ago, so the answer doesn't either: all five are on `main`, two are GitHub merge commits, three belong to another session's PR #157, and none are mine to rewrite. Already tracked in [`merge-commits-show-unverified-and-trip-the-git-hook`](https://github.com/ob6to8/elixir-mind/blob/main/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md).
+
+Worth noting only because it's now evidence rather than prediction: this is the **third** firing, on an unchanged tree, with no commits of mine involved. The issue said it would recur on every merge; it's recurring on every *turn*.
+
+Nothing is blocked on me except your call on **option 3** — whether `mix brain.thread_tail` is worth adding, since it's the only item that touches `lib/`. Items 1, 2, 4, and 5 are documents and I can land them whenever you say go, with or without 3.
+
+## User
+
+yes to 3, do all 5 then /create-pull-request merge
 
