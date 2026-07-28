@@ -1,89 +1,160 @@
 ---
-id: em:44f899
-type: concept
-title: Jido
-description: An Elixir agent framework (2.x, 2026) that models agents as pure immutable data processed through a single cmd/2 reducer, with schema-validated Actions doubling as LLM tools, CloudEvents-based Signals, runtime-interpreted Directives, and GenServer-backed supervision; its jido_ai layer adds LLM reasoning strategies.
-provenance: "Agent-distilled glossary definition"
-verified: false
-tags: [glossary, jido, elixir, agents, multi-agent, beam]
-sense: common
-timestamp: 2026-07-26
+id: em:1df031
+type: reference
+title: "Why agentic systems need ontologies (Frank Coyle)"
+description: AI Engineer talk arguing that agent failures are symptoms of one missing layer — a formal ontology outside the model, applied as a neurosymbolic validator on the tool-use loop ("Pydantic at the door, ontology at the ledger").
+resource: https://www.youtube.com/watch?v=Sir59K8ZDPU
+provenance: "Frank Coyle (UC Berkeley), 'Why Agentic Systems Need Ontologies', AI Engineer conference talk, 21 min, uploaded 2026-07-23; distilled from the video's transcript and description"
+tags: [agents, agentic-loop, ontology, neurosymbolic-ai, guardrails, tool-use, rdfs, owl, knowledge-graph, validation]
+timestamp: 2026-07-28T07:10:00Z
 attribution:
-  when: 2026-07-12T09:05:38+00:00
-  channel: glossary
-  agent: "Claude Code agent, /add-to-glossary"
-  why: "term surfaced by the captured sources cited in Seen in (backfilled)"
+  when: 2026-07-28T07:10:00Z
+  channel: intake
+  agent: "operator via /intake, Claude Code session"
+  why: "operator passed the talk's YouTube URL to /intake for capture into the brain"
 ---
 
-# Jido
+# Why agentic systems need ontologies (Frank Coyle)
 
-An Elixir framework for autonomous agents and multi-agent systems (2.x stable since early 2026). Its core move is separating the agent from its runtime: an agent is **pure immutable data** — schema-validated state plus signal routes — processed through a single `cmd(agent, {Action, params}) → {updated_agent, directives}` reducer, so decision logic is replayable and testable without an LLM. Around that core: **Actions** (validated functions that double as LLM-callable tools), **Signals** ([CloudEvents](/beliefs/glossary/cloudevents.md)-compliant messages with trie-based routing), **Directives** (structs the runtime interprets for side effects like spawn/schedule/emit), and a GenServer-backed supervised runtime on the [BEAM](/beliefs/glossary/beam.md); the separate `jido_ai` layer adds LLM reasoning strategies ([ReAct](/beliefs/glossary/react.md) by default). Notable gap as of mid-2026: no cross-node distribution story.
+## Summary
 
-*Seen in:* [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [dark-factory scenario analysis](/meta/analysis/dark-factory-epistemic-base-beam-jido.md), [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md), [2026-07-14 Elixir AST/macros and Loomkin thread](/meta/threads/2026-07-14-elixir-ast-macros-and-loomkin-evaluation.md) (the Action macro's compile-time validation and `to_tool/0` verified against hexdocs; Loomkin as a production adopter), [2026-07-16 Jido-caveats thread](/meta/threads/2026-07-16-jido-caveats-and-build-agent-linter-loop.md) (the distribution gap and `req_llm` cognition dependency, unpacked), [2026-07-17 vercel-eve comparison thread](/meta/threads/2026-07-17-vercel-eve-comparison-and-jido-host-plan.md) (Jido as the chassis of the proposed [thin brain host](/meta/plans/thin-jido-brain-host.md), contrasted with Vercel eve), [2026-07-21 ECS intake thread](/meta/threads/2026-07-21-ecs-intake-and-agent-entity-substitution.md) (Jido as independent rediscovery of ECS's composition half — composable Actions/Skills/Sensors over role hierarchies — while keeping agents active), [Dynamic Workflows vs. BEAM/Jido 2 analysis](/meta/analysis/dynamic-workflows-vs-beam-jido.md), [2026-07-26 agent-teams intake thread](/meta/threads/2026-07-26-agent-teams-intake-and-beam-jido-comparison.md) (fourth family comparison; `jido_cluster` re-checked still unpublished)
+Coyle's claim is that most agent failures — a second refund on the same order,
+a payout sent to the support desk instead of the buyer, an order status of
+"probably shipped" — are symptoms of one missing layer. LLMs reason
+probabilistically over domains they only half understand, and no paragraph of
+prompt instructions reliably stops these mistakes; hallucination "is a feature"
+of the probabilistic machinery, not a bug to be prompted away. His fix is
+neurosymbolic: keep the probabilistic reasoning inside the model and put logic
+outside it, as a formal ontology sitting beside the agent loop and checking
+what the model proposes before anything acts.
+
+An ontology here is nothing exotic — typed entities, relationships, and
+constraints, quoting Gruber (1993): "a formal specification of a shared
+conceptualization". Expressed in the old, boring W3C standards (RDFS and OWL),
+it lets you say that a payment status must be one of three values, that a
+customer and a support rep are disjoint kinds of thing, that an order can be
+refunded only once. The operational pattern: wrap a Claude tool-use loop with a
+validator — when the model proposes a tool call, check the parameter types with
+Pydantic and the results against the ontology, and only then let the action
+through. Catches that are painful to write in English become a few lines of
+logic. His slogan for the architecture: "Pydantic at the door, ontology at the
+ledger" — and keep the tools side-effect-free until the validator has passed
+them.
+
+## Key terms
+
+- **Ontology** — a formal representation of a domain's entities, their
+  properties, and their relationships; operationally, a
+  [knowledge graph](/beliefs/glossary/knowledge-graph.md) plus constraint and
+  inference machinery sitting beside it. See the glossary entry
+  [ontology](/beliefs/glossary/ontology.md).
+- **Neurosymbolic AI** — the convergence of neural (probabilistic, LLM) and
+  symbolic (rule-based, logic) systems; in this talk's usage, symbolic
+  guardrails around a probabilistic core.
+- **RDFS domain and range** — inference vocabulary: declaring `teaches` to have
+  domain `Teacher` and range `Student` lets "Bob teaches Scooter" *derive* that
+  Bob is a teacher (hence a person) and Scooter is a student, without those
+  facts being asserted.
+- **OWL property axioms** — [OWL](/beliefs/glossary/owl.md) constructs the
+  validator leans on: *transitive* properties (ancestor-of chains compose),
+  *functional* properties (at most one value — two asserted fathers means two
+  names for one individual, or an error), and *disjoint* classes (a customer is
+  never a support rep).
+- **Tool-use loop** — the classic `while True` agent loop: the LLM cannot
+  execute anything itself; it proposes a tool call (surfaced via a `tool_use`
+  stop reason), the harness executes it, and results are fed back. See
+  [the agent loop as a while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md).
+- **Validator** — the code between the model's proposal and the action: Pydantic
+  for parameter *types* at the boundary, the ontology reasoner for *semantic*
+  invariants over the results; failures route back to the LLM or to a human in
+  the loop.
+- **Böhm–Jacopini result (1966)** — sequence + conditionals + iteration make a
+  language Turing-complete; Coyle's framing is that loops give agentic AI that
+  last piece — and with it the classic loop failure modes (infinite loops,
+  drift, runaway token cost).
+- **Existing taxonomies** — schema.org, FOAF, Dublin Core, DBpedia: published
+  vocabularies to reuse rather than reinventing a domain model from scratch.
+
+## Technical summary
+
+The talk traces two lineages — agents (McCarthy, Selfridge, Minsky; perceive →
+decide → act) and ontologies (Aristotle's categories through Quine to Gruber's
+1993 definition) — and argues their convergence is what "neurosymbolic AI"
+names. The expert-systems era of the 1980s is the cautionary precedent:
+symbolic AI alone couldn't scale and produced an AI winter, just as neural
+networks alone couldn't scale until GPU compute arrived. Ontologies are built
+top-down (domain experts enumerate entities/relations, the expert-systems
+workflow) or bottom-up (mined from interactions), and preferably seeded from
+existing taxonomies.
+
+Mechanically, the graph holds entities, properties, and relationships; RDFS and
+OWL sit "on the side" of the graph supplying derivations (domain/range typing,
+transitive closure) and constraints (functional properties, disjointness,
+enumerated value sets). The agent-side integration is a standard Claude
+tool-use loop with an interposed validation stage: on `stop_reason ==
+"tool_use"`, extract the proposed call, execute the tool, normalize the result
+into the validator's form, and check it against the ontology before committing
+anything — "surround the input with checks", keep agents free of side effects
+until validation passes, and on failure loop back to the model or escalate to a
+human. The closing catalogue of errors an ontology catches that English
+cannot: double refunds (a once-only relationship), misdirected payouts
+(disjoint classes), and invented enum values like "probably shipped" (a closed
+value set — paid, shipped, or refunded, nothing else).
+
+The formal underpinnings of RDFS/OWL — decidability trade-offs, description
+logics, and what the authoring cost buys — are captured separately in
+[FOL and OWL: fully formal knowledge representation](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md);
+this talk is the agent-side argument for putting that machinery to work as
+loop guardrails. Whether the named formalisms deliver the catches claimed here,
+and what an enforcement layer should actually be built from, is evaluated in
+[ontology guardrails vs. schema validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md).
+
+# Citations
+
+- Talk: Frank Coyle, "Why Agentic Systems Need Ontologies", AI Engineer
+  (YouTube, 21:18, uploaded 2026-07-23):
+  <https://www.youtube.com/watch?v=Sir59K8ZDPU>
+- Speaker: <https://www.frank-coyle.ai/>
 
 ## Thread excerpts — route-tagged log
 
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:44f899">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
-
-### 2026-07-16-jido-caveats-and-build-agent-linter-loop (2026-07-16)
-
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
-
-**[`em:44f899`]**
-
-Here's the expansion, which I'll also compile into the analysis doc.
-
-**1. "No distribution story (single-node; `jido_cluster` unpublished)"**
-
-The subtlety: the **BEAM has world-class distribution primitives** (transparent inter-node message passing, `:global`, `:pg`), but a *framework* only becomes distribution-aware if it makes deliberate choices on top of them. Jido makes the single-node choices:
-
-- **Agent identity is node-local.** A Jido agent is a GenServer registered under an instance-scoped supervisor (`{Jido, name: MyApp.Jido}`) via a local Registry. That name resolves on *one* node. There's no cluster-wide registry that lets "agent Foo" be addressed from any node — so you can't transparently route to an agent that happens to live on a different machine.
-- **Recovery is single-node crash recovery, not cross-node failover.** Jido's durability model is "rehydrate from persisted state" (Redis adapter since 2.1.0). That handles *a process crashing and its supervisor restarting it on the same node*. It does **not** handle *a node dying and its agents coming back up elsewhere* — there's no handoff/migration orchestrator watching for a dead node and re-spawning its fleet on survivors.
-- **The signal bus is in-node.** Signals are trie-routed pub/sub over a per-node bus. Cluster-wide routing would need that bus to span nodes (via `:pg`, `phoenix_pubsub`, or `partisan`) — Jido doesn't ship it.
-- **`jido_cluster` is the intended answer, but it's vapor for now.** A repo exists in the agentjido org, but it's *unpublished on hex* — you can't `mix deps.get` it, and the brain flagged its maturity as unconfirmed. So the distribution layer is gestating, not shippable.
-
-**Why this matters (and why it mostly doesn't, until it does):** one BEAM node holds *millions* of lightweight processes, so "single-node" is a very high ceiling — vertical scaling alone carries a big fleet. What you *give up* is (a) horizontal scale across machines, (b) HA — that one node is a single point of failure for the whole fleet; no HA across machines, and (c) geographic distribution. For a dark factory that "eventually spans nodes," you'd be **building the distribution layer yourself** on raw BEAM primitives: `libcluster` for node discovery, `Horde` (or a hand-rolled `:global`/CRDT registry) for distributed process registration + handoff, and a distributed pubsub for the signal bus. That's exactly the "that layer would be ours to build" caveat — and distribution is genuinely hard (split-brain/netsplit handling, CAP tradeoffs on the registry, state-handoff races), which is *why* a young framework reasonably punts on it.
-
-**2. "Makes `req_llm` load-bearing for all cognition"**
-
-The architecture: Jido deliberately splits core `jido` (zero LLM code — the pure `cmd/2` reducer, agent-as-data) from `jido_ai` (the reasoning layer: ReAct/CoT/ToT strategies, tool-calling loops, structured output). `jido_ai` is built on `req_llm`, Jido's own in-house LLM client (they dropped LangChain). `req_llm` sits on `Req` (HTTP) and owns the provider adapters, the model catalog, streaming, and tool-call encoding.
-
-"Load-bearing for all cognition" means: the reducer core is LLM-free *by design* (that's the replayable-without-a-model auditability win) — but the instant an agent actually **thinks** (any inference, any reasoning strategy, any structured extraction, any tool-selection decision), it goes through `jido_ai` → `req_llm`. There is no first-class alternate cognition path in the framework. Consequences:
-
-- **One throat for every inference.** `req_llm`'s provider coverage, streaming correctness, tool-call encoding, retry/rate-limit semantics, and error handling *become your cognition's reliability envelope*. The single most volatile, most external, most expensive part of the system — model calls — has exactly one library standing under it.
-- **Coupling to a young, in-house library.** `req_llm` was written during the ~18-month Jido 2 rewrite; the brain flagged even its "665+ models" claim as unconfirmed. When a new model, param, or feature lands (prompt caching, extended thinking, a changed tool-call format), you wait on `req_llm` to support it or you patch it — versus calling the Anthropic SDK directly, where you own the request shape.
-- **It entangles with elixir-mind's zero-dep and duplicate-runtime blockers.** Adopting Jido's cognition pulls `req_llm` *and* a provider credential into the runtime tier — which is exactly why the verifier core must never depend on it and cognition must live in a separate mix project (blocker #2), and why a Jido deployment is "a second agent runtime with its own LLM credentials" (blocker #3).
-- **The flip side — it's a reasonable design.** Isolating cognition behind a swappable client is *good* architecture: it's what keeps LLM code out of the reducer and makes decisions testable without a model, and in principle the client is replaceable. "Load-bearing" is a caveat about **concentration of dependency**, not a design flaw.
-
-**Tie-back to the linting loop from earlier:** a Jido lint-fixer calling a cheap model would route that call *through* `req_llm` — so your ability to pin `claude-haiku-4-5`, set `max_tokens`, etc., is bounded by what `req_llm` exposes. And the single-node ceiling is irrelevant to a lint-fixer specifically; it only bites once linting becomes a fleet-scale continuous workload.
-
-### 2026-07-27-secure-financial-agent-and-projects-namespace (2026-07-27)
-
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
-
-**[`em:44f899`]**  (co-feeds: `em:f6de6f em:0d4f26`)
-
-Your brain already concluded Jido was a poor fit *for the brain's own tooling* — see [the BEAM/Jido evaluation](https://ob6to8.github.io/elixir-mind/meta/analysis/beam-deployment-and-jido-2-evaluation.html). But read *why* it said no:
-
-> "the BEAM's distinctive strengths (supervision of long-lived state, massive concurrency, fault-tolerant services) have nothing to grip"
-
-**A financial document pipeline gives them everything to grip.** It's resident, stateful, long-lived, concurrent, and needs an audit trail. This is the workload that analysis said was missing. Every blocker it listed was about *this repo* — the pinned 1.14/OTP 24 floor and the zero-dependency constraint — and none applies to a separate project.
-
-More than that, Jido's primitives map onto the security requirements almost suspiciously well:
-
-**1. The reducer is your audit trail.** A Jido agent is pure immutable data through a single `cmd(agent, {Action, params}) → {updated_agent, directives}`. That means every decision is **replayable without an LLM and without a network call**. For financial work — where "why did it categorize this deduction that way?" is a question you may have to answer to a human — a deterministic replay of the decision sequence is worth a great deal.
-
-**2. Actions are the capability boundary.** Actions are schema-validated functions that double as LLM tools. The model cannot invoke what no Action exposes, and params are validated *before* execution. That's OWASP's privilege minimization enforced in the type system rather than requested in a prompt — which is the whole difference, because a prompt is exactly the thing an injection attack overrides.
-
-**3. Directives make the human-in-the-loop gate a first-class primitive.** This is the one that matters most. Side effects in Jido aren't executed inline — they're returned as **Directives**, structs the runtime interprets. So you can inspect a proposed side effect *as data* and gate it before anything happens. The recommended defense for high-consequence actions is [human confirmation that interposes a break in the automated attack chain](https://www.getmaxim.ai/articles/prompt-injection-defense-for-production-ai-agents-a-complete-2026-guide/) — a break "that cannot be bypassed by manipulating the model alone." Jido hands you the seam for free.
-
-**4. Supervision contains a poisoned agent.** Let-it-crash means an agent whose context got contaminated dies and restarts from clean persisted state. Injection doesn't persist across a restart unless you persisted it.
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1df031">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
 
 ### 2026-07-28-ontology-guardrails-intake-and-jido-comparison (2026-07-28)
 
-2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
-**[`em:44f899`]**  (co-feeds: `em:1df031`)
+**[`em:1df031`]**
+
+Intake complete. The video is **"Why Agentic Systems Need Ontologies" — Frank Coyle (UC Berkeley)**, a 21-minute AI Engineer conference talk (uploaded 2026-07-23). I pulled the full transcript and description via yt-dlp, found no existing document on this material (the closest neighbors — the FOL/OWL knowledge-representation capture and the agentic-loop references — cover adjacent but distinct subjects), and filed it as a new `reference` with a layered `/summarize-technical`-style body. The talk's thesis: agent failures like double refunds and invented statuses are symptoms of a missing formal layer — an RDFS/OWL ontology used as a neurosymbolic validator wrapped around the Claude tool-use loop, per his slogan "Pydantic at the door, ontology at the ledger."
+
+**What I created**
+
+| type | doc | why this type |
+|---|---|---|
+| `reference` | why-agentic-systems-need-ontologies (`em:1df031`), filed in `knowledge/SWE/agentic/agentic-loop/` | external talk, fetched and summarized — the definition of a processed capture; filed with the loop-engineering references since its core move is a validation stage inside the tool-use loop |
+
+**What I modified**
+
+| file | thrust of the change |
+|---|---|
+| `knowledge/SWE/agentic/agentic-loop/index.md` | added the new reference under "Reliability & long-horizon" |
+| `meta/registry.md` | regenerated after minting `em:1df031` |
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| Fetched video metadata + transcript (~3,100 words) + description | captured in full; oversized raw source relegated to `resource` + `# Citations` per the filing rule |
+| Synonym-expanded dedup search (ontology, neurosymbolic, RDFS/OWL, knowledge graph, guardrails, Pydantic, tool-use loop) | no duplicate; cross-linked the FOL/OWL capture and the glossary's ontology/OWL/knowledge-graph terms instead |
+| `mix brain.id`, `brain.registry`, `brain.verify`, `brain.dedup_probe --update-baseline` | all green; plain recall 6/15, no regression (gold-row harvest skipped — bare URL, no natural phrasing) |
+| Commit + push to `claude/intake-video-review-31aiyw` | landed as `2f0f433`, all pre-commit gates passed (183 tests, 0 failures) |
+
+The branch is pushed with the intake complete; say the word if you'd like a PR opened (`/create-pull-request`).
+
+---
+
+**[`em:1df031`]**  (co-feeds: `em:44f899`)
 
 Partly — and the way it diverges is the interesting part. Jido 2 matches two of Coyle's three layers, one of them *better* than his Python version, but the layer his entire talk is about is the one Jido doesn't have.
 
@@ -125,7 +196,7 @@ The natural seam is a custom **Strategy** — Strategies control how `cmd/2` exe
 
 ---
 
-**[`em:44f899`]**  (co-feeds: `em:8255b8 em:1df031`)
+**[`em:1df031`]**  (co-feeds: `em:8255b8 em:44f899`)
 
 **1. Yes — and the correction matters**
 

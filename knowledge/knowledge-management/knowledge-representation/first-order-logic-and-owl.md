@@ -134,3 +134,84 @@ with an LLM as the local entailment oracle. See the
 - First-order logic — Wikipedia: <https://en.wikipedia.org/wiki/First-order_logic>
 - OWL 2 Web Ontology Language Document Overview (Second Edition) — W3C:
   <https://www.w3.org/TR/owl2-overview/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:8255b8">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-ontology-guardrails-intake-and-jido-comparison (2026-07-28)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:8255b8`]**
+
+so, to be fair, jido should be compared to pydantic, not the ledger, which floats above either of them?
+does the ledger encode the logic necessary to enforce catch 1 and 2? what exactly is coyle's ledger written in?
+Is owl/jido a formal logic? what would adopting it as the level 2/3 enforcement layer offer vs writing a custom one in elixir?
+
+---
+
+**[`em:8255b8`]**  (co-feeds: `em:44f899 em:1df031`)
+
+**1. Yes — and the correction matters**
+
+Your framing is right, with one refinement: Jido spans *more* positions than Pydantic, just not the ledger one. Pydantic occupies only the door. Jido occupies the door (Action `schema:`), the loop (`cmd/2` + Strategies), and the effect boundary (Directives). What floats above all of them is a **domain model** — orthogonal to whichever framework carries the loop. Coyle's own layering says as much: "check your types with Pydantic and then check your results with the ontology." Types are a property of *the call*; the ontology is a property of *the world*. No agent framework can supply the latter, because it's your business's model, not the framework's.
+
+So the fair comparison is: Jido ⊃ Pydantic at the door, Jido = a purity mechanism Coyle only prescribes as discipline, and the ledger is unowned by either.
+
+**2. Does the ledger encode the logic for the two Jido misses? Only one cleanly.**
+
+**Misdirected payout (disjointness) — yes, cleanly.** `owl:disjointWith(Customer, SupportRep)` means no individual can be both; a reasoner reports the graph inconsistent the moment you assert one. That's real logical work.
+
+But there's a hidden precondition: **the payee has to be a typed individual in the graph, not a string in a JSON field.** If your tool returns `{"payee": "desk-07"}`, no ontology on earth helps — you first have to materialize that string as an entity with a class. That materialization step is the actual cost of the ledger, and Coyle skips over it.
+
+**Double refund (once-only) — no, not the way you'd expect, and this is a genuine flaw in the talk.** Two OWL semantics work against you:
+
+- **No unique name assumption.** Declare `hasRefund` an `owl:FunctionalProperty` and assert `order123 hasRefund R1` and `order123 hasRefund R2`. OWL does **not** raise an error. It concludes `R1 owl:sameAs R2` — the two refunds are inferred to be *the same refund*. That's the precise opposite of the guardrail. You only get an inconsistency if you *additionally* assert `R1 owl:differentFrom R2`, or the two carry conflicting values on some other functional property (different amounts).
+- **Open world assumption.** Not finding a prior refund never entails there wasn't one. "Has this already been refunded?" is inherently a *closed-world* question, and OWL is built to refuse exactly that inference.
+
+The formalism that does encode this is **SHACL** (W3C Rec, 2017) — closed-world constraint validation over RDF graphs, where `sh:maxCount 1` means what a programmer expects: a violation report. Coyle names RDFS and OWL and never mentions SHACL. His flagship example is the one his named tools handle worst.
+
+**3. Coyle's ledger is written in nothing — he never implements it**
+
+I went back through the transcript. He names no reasoner, no library, no triplestore. What's on the slide is a placeholder inside a comment block:
+
+> "Now, I have this stuff in red here. This is where I think the … ontologies and stuff can come in. … The tool's going to give us information. We put the information in a form that our validator can use, and **think about the validator as operating with** these ontologies about our domain"
+
+and, at the close, "**you can have** a reasoner built on ontology to check keep the LLM on track." Both are subjunctive. The working code in the talk is the ordinary Claude tool-use loop plus Pydantic; the ledger is a red annotation on a slide marking where a thing would go. Worth knowing before costing out an implementation — you're not adopting his design, you're originating it.
+
+**4. OWL is a formal logic. Jido is not. That distinction decides the build question.**
+
+**OWL: yes, unambiguously.** OWL 2 DL is a syntactic variant of the description logic **SROIQ(D)** — a decidable fragment of first-order logic with model-theoretic semantics and sound-and-complete reasoners (HermiT, ELK, Pellet). The brain already holds this in [FOL and OWL](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) (`em:8255b8`), including the decidability trade-offs and the profile hierarchy.
+
+**Jido: no.** NimbleOptions/Zoi schemas are runtime predicates over values. There's no entailment relation, no semantics, no reasoner. The categorical difference: **a schema decides membership; a logic derives consequences.** A schema can reject `"probably shipped"` but can never tell you something you didn't assert.
+
+**What adopting OWL buys vs. custom Elixir**
+
+| | OWL/RDF ledger | Custom Elixir |
+|---|---|---|
+| **Derived facts** | Free — transitivity, domain/range typing, subclass closure, all maintained by the reasoner | You hand-code each inference and keep them mutually consistent |
+| **Global consistency** | Reasoner checks the *whole* graph, catching constraint interactions you never thought to test | Checks exactly what you wrote a check for |
+| **Model as data** | Domain model editable/auditable without redeploying; a domain expert can read it | Model is code |
+| **Vocabulary reuse** | schema.org, FOAF, Dublin Core off the shelf | From scratch |
+| **"Already happened?"** | Fights you (OWA/UNA) — needs SHACL or closed-world hacks bolted on | Native. A unique index. Trivial |
+| **Runtime cost** | **No mature OWL DL reasoner on the BEAM.** RDF.ex and SPARQL.ex are solid for representation and query, and RDF.ex ships OWL only as a *vocabulary* (namespace terms), not inference. You'd run HermiT/openllet (JVM) or owlready2 (Python) out-of-process, or a reasoning triplestore — a second runtime, the exact blocker already flagged against Jido's `req_llm` cognition dependency | None |
+| **Authoring cost** | High — the brain's own FOL/OWL capture concludes "the authoring cost of formal ontologies is the standing argument for keeping belief content in natural language and formalizing only the *structure* around it" | Low |
+
+**My recommendation: split the levels rather than adopting one formalism for both.**
+
+The sharpest thing I can tell you is that **none of Coyle's three examples need a reasoner.** The enum is a schema. Disjointness is a type — and Elixir does this *better* than OWL, at compile time, with distinct structs, where OWL does it at runtime over an open world. Once-only is a unique index. He uses these three to motivate ontologies, but they're the weakest possible case for one: all three are *rejected input*, and inference is for *derived knowledge*.
+
+So: level 2 (per-entity shape, closed value sets, entity kinds) → Jido's schemas plus Elixir's type system, which you already have. Level 3 (relational/temporal invariants over history) → a closed-world constraint layer, which if you want it declarative is SHACL-shaped, and SHACL over SPARQL.ex has been demonstrated in Elixir. Reach for OWL proper only if you need derived facts or published-vocabulary reuse — real motivations, but different ones than the talk advertises.
+
+---
+
+This has grown past a chat answer — there's a defensible judgment here (the talk's motivating examples undercut its own thesis; SHACL is the missing formalism; the BEAM has no reasoner) that the existing Jido evaluations would want to cite.
+
+**Your options from here**
+
+| # | option | what it entails |
+|---|---|---|
+| 1 | File as `analysis` — "ontology guardrails vs. schema validation for agent loops" (Recommended) | Captures the OWA/UNA finding, the level-2/3 split, and the recommendation; joins the Jido evaluation cluster in `meta/analysis/` |
+| 2 | Add a "Critique" section to the Coyle reference | Cheaper, but mixes derived judgment into a capture — the routing policy prefers option 1 |
+| 3 | Leave it in chat; `/capture` records it in the thread | Fine if this was orientation rather than a design input |
