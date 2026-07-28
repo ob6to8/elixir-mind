@@ -117,6 +117,15 @@ as well — see step 10.
   their answer (per the
   [concerns-block-the-close policy](/meta/policy/concerns-block-the-close.md):
   the operator chooses fix-now / file-and-proceed / accept, never the agent).
+- **Two more inventory classes, same gate.** (a) *An unverified success
+  criterion*: if the operator's ask has a checkable "did it work?", verify it
+  now — before capture and the PR — so the answer ships in the record, not in
+  post-merge chat. (b) *Unfiled handoff context*: anything a future session
+  would need ("step 2 is…, the open questions are…") is filed into the plan /
+  todo / issue it belongs to **before** the close; the closing report may
+  point at it, never carry it. Post-capture chat is outside every record —
+  content that exists only in the closing message is content the system has
+  already lost.
 - Check for a PR template before writing the body:
   `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, a root
   `PULL_REQUEST_TEMPLATE.md`, or `docs/PULL_REQUEST_TEMPLATE.md` (and the
@@ -164,8 +173,10 @@ as well — see step 10.
   the PR and merging — a new irregularity, a surprise in CI, a judgment call
   made mid-flow — blocks the merge exactly as step 8's gate blocks the open:
   stop and ask. After the merge, the closing report announces completion (PR
-  number, merge SHA, thread doc name) and **introduces nothing new**; a
-  trailing wakeup that only confirms completion is cleared silently.
+  number, merge SHA, thread doc name) and **introduces nothing new**: it
+  consists of completion facts plus pointers to persisted artifacts, with any
+  next-step context already filed where `/priorities` reads. A trailing
+  wakeup that only confirms completion is cleared silently.
 - **Never merge red.** When the argument *is* present: poll the PR's checks
   (`mcp__github__pull_request_read` with `get_check_runs`) until CI is green, then
   merge with a **true merge commit** — `merge_method: "merge"`, never `squash` or

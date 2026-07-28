@@ -949,6 +949,22 @@ into an open thread.
   issue/todo, or proceed accepting it — the agent recommends but does not
   choose. Unilaterally filing an issue and mentioning it post-merge is the
   pattern this policy exists to stop.
+- **The session's driving question is answered before the close, not after.**
+  When the operator's ask has a success criterion ("does a fresh session now
+  see it?"), verifying it is part of the work: it runs before `/capture`, so
+  the answer lands in the thread doc and the PR. A post-merge "the answer is
+  now yes" is work delivered outside every record.
+- **Post-capture chat is outside every record — so the close persists or
+  points, never deposits.** The closing report postdates the thread capture:
+  nothing said only there is discoverable later, and the operator's memory is
+  exactly what this system exists to offload. Beyond the completion facts,
+  every sentence in a closing report must point at a durable home — the plan,
+  a todo, an issue, the thread doc. Next-session context ("for whenever you
+  pick this up, step 2 is…") is the failure signature: that content belongs in
+  the artifact [`/priorities`](/.claude/skills/priorities/SKILL.md) reads,
+  filed before the close, with the close at most pointing at it. A statement
+  with no durable home that doesn't warrant one goes unsaid. The operator
+  never has to ask "is this persisted, or does it only exist in this thread?"
 - **Merged means done.** The post-merge report announces the completed close —
   PR number, merge SHA, thread doc name — and introduces nothing new. A
   trailing wakeup (a CI wait timer, a stray notification) that fires after
