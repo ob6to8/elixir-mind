@@ -1,0 +1,44 @@
+---
+type: policy
+title: Concerns block the close
+description: Once the operator invokes a closing flow (/create-pull-request), any concern the session still holds — process irregularity, improvisation, skipped check, open decision — is a blocker; the flow halts before the irreversible step and the operator chooses the disposition, so a merged close introduces nothing new.
+section: communication
+order: 7
+status: active
+tags: [meta, governance, communication, session-workflow, close]
+timestamp: 2026-07-28
+attribution:
+  when: 2026-07-28T09:40:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, communication-guidance session"
+  why: "the operator flagged the recurring pattern of closing reports introducing new findings after the merge, and ratified treating them as merge blockers"
+---
+
+**A closing flow ends clean or not at all.** Invoking
+[`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) is the
+operator closing the thread. From that moment, every concern the session
+still holds — a process irregularity, an improvisation no policy sanctions, a
+check that was skipped, a judgment call left open — is a **blocker**: the
+flow halts before the irreversible step and the concern is put to the
+operator, instead of surfacing in the report after the merge ("one thing I'd
+flag…", "two notes on how I worked…"), which converts a finished close back
+into an open thread.
+
+- **The test: would the closing report present it as something the operator
+  must react to?** Then it blocks now. Before opening the PR — and again
+  before merging, for anything that emerged in between — inventory such
+  items; if any exist, stop the flow and present them as blocking questions
+  with recommendations, per
+  [response-work-report-format](/meta/policy/response-work-report-format.md).
+- **The disposition is the operator's.** Fix it now, file it as an
+  issue/todo, or proceed accepting it — the agent recommends but does not
+  choose. Unilaterally filing an issue and mentioning it post-merge is the
+  pattern this policy exists to stop.
+- **Merged means done.** The post-merge report announces the completed close —
+  PR number, merge SHA, thread doc name — and introduces nothing new. A
+  trailing wakeup (a CI wait timer, a stray notification) that fires after
+  the merge and only confirms completion is cleared silently, with no report
+  at all when nothing is actionable.
+- **Scope.** Operator-invoked closing flows. Mid-session reporting keeps its
+  existing shape — findings raised while work is still open are ordinary
+  content, and raising them *early* is exactly what this policy rewards.

@@ -889,9 +889,11 @@ content directly.
 
 - **"One process blemish to be transparent about"** — two patterns in one
   phrase, each banned with its variants. *"To be transparent about"* (also "to
-  be honest/candid", "in the interest of transparency") announces the virtue
-  of a disclosure instead of just disclosing: a transparent account shows its
-  transparency in the content, so the announcement asserts nothing — and it
+  be honest/candid/straight/upfront", "in the interest of transparency", and
+  the enumerated-preamble form "two things I want to be straight about:")
+  announces the virtue of a disclosure instead of just disclosing: a
+  transparent account shows its transparency in the content, so the
+  announcement asserts nothing — and it
   implies concealment was a live alternative, an unraised case (the same
   advertising failure as the entry above). *"Blemish"* (also "wart",
   "wrinkle", "minor blip") is the agent pre-grading its own defect as
@@ -899,7 +901,52 @@ content directly.
   soften. Recast: name the defect plainly with its concrete consequence, and
   let the facts carry both the candor and the severity.
 
+- **"Before I do this: it's a bigger change than I called it, and it has a
+  real cost"** — pattern: *"Before I do X: \<hedge\>"* — pre-action hedging
+  that announces revised scope or cost while proceeding anyway, performing
+  deliberation without transferring the decision. A revision that could
+  change the decision is a **blocking question** (the questions table of
+  [response-work-report-format](/meta/policy/response-work-report-format.md);
+  at close time,
+  [concerns-block-the-close](/meta/policy/concerns-block-the-close.md));
+  one that couldn't change it is not said mid-motion. *"It has a real
+  cost"* is the sub-pattern of unquantified gravity: asserting a cost
+  exists with "real" doing the work a number should. Recast: either halt —
+  "this touches ~N files, not the 2 I estimated; proceed?" — or proceed and
+  report the measured cost afterward.
+
 _Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
+
+**A closing flow ends clean or not at all.** Invoking
+[`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) is the
+operator closing the thread. From that moment, every concern the session
+still holds — a process irregularity, an improvisation no policy sanctions, a
+check that was skipped, a judgment call left open — is a **blocker**: the
+flow halts before the irreversible step and the concern is put to the
+operator, instead of surfacing in the report after the merge ("one thing I'd
+flag…", "two notes on how I worked…"), which converts a finished close back
+into an open thread.
+
+- **The test: would the closing report present it as something the operator
+  must react to?** Then it blocks now. Before opening the PR — and again
+  before merging, for anything that emerged in between — inventory such
+  items; if any exist, stop the flow and present them as blocking questions
+  with recommendations, per
+  [response-work-report-format](/meta/policy/response-work-report-format.md).
+- **The disposition is the operator's.** Fix it now, file it as an
+  issue/todo, or proceed accepting it — the agent recommends but does not
+  choose. Unilaterally filing an issue and mentioning it post-merge is the
+  pattern this policy exists to stop.
+- **Merged means done.** The post-merge report announces the completed close —
+  PR number, merge SHA, thread doc name — and introduces nothing new. A
+  trailing wakeup (a CI wait timer, a stray notification) that fires after
+  the merge and only confirms completion is cleared silently, with no report
+  at all when nothing is actionable.
+- **Scope.** Operator-invoked closing flows. Mid-session reporting keeps its
+  existing shape — findings raised while work is still open are ordinary
+  content, and raising them *early* is exactly what this policy rewards.
+
+_Source: [`meta/policy/concerns-block-the-close.md`](/meta/policy/concerns-block-the-close.md)_
 
 ---
 

@@ -47,6 +47,7 @@ the start if siblings are plausible.
 - [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md) — a claim that something does not exist or is not stated is a claim about a search space, so it names the space actually searched; enumerate before a decision rests on it
 - [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md) — a negative statement earns its place only when the case it negates is explicit (raised in-document, a default the reader would assume, or a rule being overridden); otherwise state the rule positively, and an edit that removes a negation's referent recasts the negation in the same motion
 - [banned-phrases](/meta/policy/banned-phrases.md) — the register of words and phrases banned from agent-composed prose, each entry carrying its pattern and reasoning; grown via `/ban-phrase`, where the operator's invocation is the ratification
+- [concerns-block-the-close](/meta/policy/concerns-block-the-close.md) — once a closing flow is invoked, any concern the session still holds blocks the irreversible step as a question the operator dispositions; a merged close introduces nothing new
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values

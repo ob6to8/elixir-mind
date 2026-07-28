@@ -108,6 +108,15 @@ as well — see step 10.
   surface it.
 
 ### 8. Open the PR
+- **Concerns gate — runs first, before the PR exists.** Inventory everything
+  this session would otherwise disclose in its closing report: process
+  irregularities, improvisations no policy sanctions, checks skipped or
+  worked around, open decisions and judgment calls the operator hasn't seen.
+  If any item exists, **stop the flow here** — no PR — and put each item to
+  the operator as a blocking question with a recommendation; resume only on
+  their answer (per the
+  [concerns-block-the-close policy](/meta/policy/concerns-block-the-close.md):
+  the operator chooses fix-now / file-and-proceed / accept, never the agent).
 - Check for a PR template before writing the body:
   `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, a root
   `PULL_REQUEST_TEMPLATE.md`, or `docs/PULL_REQUEST_TEMPLATE.md` (and the
@@ -151,6 +160,12 @@ as well — see step 10.
   case-insensitively). **Without that argument, stop after step 9** — the open PR is
   handed back and the operator merges it when ready. A bare invocation never merges
   (invoking authorizes *opening*, not merging).
+- **The concerns gate runs again here.** Anything that emerged between opening
+  the PR and merging — a new irregularity, a surprise in CI, a judgment call
+  made mid-flow — blocks the merge exactly as step 8's gate blocks the open:
+  stop and ask. After the merge, the closing report announces completion (PR
+  number, merge SHA, thread doc name) and **introduces nothing new**; a
+  trailing wakeup that only confirms completion is cleared silently.
 - **Never merge red.** When the argument *is* present: poll the PR's checks
   (`mcp__github__pull_request_read` with `get_check_runs`) until CI is green, then
   merge with a **true merge commit** — `merge_method: "merge"`, never `squash` or
@@ -185,6 +200,10 @@ as well — see step 10.
   confirmation for those. **Merging is a separate opt-in:** it happens only when the
   skill is invoked with the `merge` argument (step 10). A bare invocation ends with
   the PR open and handed back — never self-merge it.
+- **Concerns block the close.** A closing report never introduces findings the
+  operator hasn't already dispositioned — anything that would have appeared
+  there as "one thing to note" halts the flow at step 8 (or the step-10
+  recheck) as a blocking question instead. Merged means done.
 - **Never commit to a default branch.** Develop on the designated feature branch.
 - **Never squash- or rebase-merge.** Merges are true merge commits only — see the
   [merge-strategy policy](/meta/policy/merge-strategy.md).
