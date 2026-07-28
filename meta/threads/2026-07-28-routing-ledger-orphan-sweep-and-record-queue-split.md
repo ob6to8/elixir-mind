@@ -54,6 +54,19 @@ candidates superseded by the ratified design, cross-linked both ways, and kept
 `open` because the gap is live in the shipped policy until step 5 rewrites it.
 This follow-up landed in **PR 170**.
 
+A third round followed, after the operator ruled out deferring anything to a
+future session: two loose ends were closed rather than folded forward. Step 2 of
+the build order now names the one open question it depends on — the `project`-hub
+answer decides what gets written into two rows, so answering it afterwards means
+re-touching them. And the **duplicate-artifact class** was filed as
+[its own issue](/meta/issues/parallel-sessions-file-duplicate-artifacts.md): two
+sessions running the same day each searched `main`, each correctly found nothing,
+and each filed — once as competing todos on the channels column, once as a `plan`
+and an `issue` on the ledger-upkeep gap. The resulting files differ in name and
+path, so git sees no conflict and no gate fires; both were caught by accident.
+An earlier judgment that a third instance was needed before calling it a pattern
+was reversed on re-reading the two. This third round landed in **PR 176**.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -67,6 +80,8 @@ This follow-up landed in **PR 170**.
 | Steps 2–5: backfill, switch, gate, policies | open | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | Execution deferred to fresh sessions per the plan's build order |
 | Cold-session discoverability of step 2 — digest position and self-describing line | closed | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | - |
 | Duplicate matter filed as an issue by a parallel session | closed | [routing-ledger-has-no-post-capture-upkeep-path](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) | - |
+| Step 2's dependency on the `project`-hub question, uncross-referenced | closed | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | - |
+| Parallel sessions filing duplicate artifacts, undetectable by git | closed | [parallel-sessions-file-duplicate-artifacts](/meta/issues/parallel-sessions-file-duplicate-artifacts.md) | - |
 | Do `project` hubs count as valid `Action` targets? | paused | [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md) | Raised by two secure-financial-agent strands held in the project's own Open questions; recorded `none:` for now |
 
 _All routing targets are governance docs (no `em:` ids), so no route tags are
@@ -384,3 +399,152 @@ Both need a fresh branch and PR — the merged branch is gone. Say the word and 
 do both
 then
 /create-pull-request  merge
+
+## Assistant
+
+PR [#170](https://github.com/ob6to8/elixir-mind/pull/170) is open, CI running. I'll merge once green.
+
+Both fixes are in, and the verification confirmed the plan now ranks **#2** in the top-3 rather than 4th-of-29 and invisible.
+
+One deviation from what you approved: I used **`priority: 2`, not `1`**. There's an existing `priority: 1` on `compile-skills-registry-from-skill-frontmatter`, and a tie would have broken on recency — silently pushing your existing pin down. Flagged items sort above every heuristic class regardless, so `2` gets the same top-3 placement without disturbing what you'd already flagged.
+
+Two things surfaced while testing that I folded in rather than leaving:
+
+**The plans-index gloss was stale** — my miss from #162. It still described the superseded `mix brain.strands` design, so a reader browsing the index would have gotten the old plan.
+
+**A parallel session filed the same matter as an issue**, hours before ours merged — `routing-ledger-has-no-post-capture-upkeep-path`, reaching the identical diagnosis from the opposite direction (a strand resolved later with no sanctioned way to update its row). Its three candidate resolutions are superseded by our ratified design, which dissolves the gap rather than resolving it. Cross-linked both ways and marked superseded, but I kept it **open** — the gap is live in the shipped policy until step 5 rewrites it, and closing it now would claim a fix that hasn't landed.
+
+That's the second duplicate this session (after the channels todo). Two parallel sessions independently filing the same matter within hours is itself a signal worth watching — though I'd want a third instance before treating it as a pattern rather than coincidence.
+
+## Assistant
+
+Conflict resolved and pushed; waiting on CI before retrying the merge.
+
+The conflict was worth reading rather than reflexively resolving: `main` **deleted** `meta/dev-history.md` in `e96a6d3` — "stop committing the dev-history view; generate it at deploy only." My branch had regenerated that file, per the `/create-pull-request` step that was current when this session started. So the modify/delete conflict was my branch doing work `main` had just removed the need for. Accepted the deletion rather than restoring the file.
+
+That also explains a change you may have noticed in the skill itself — the dev-history regeneration step is gone from `/create-pull-request` now.
+
+Gates all pass locally on the merged tree (188 tests). I'll merge #170 once CI confirms.
+
+## Assistant
+
+Merged, and verified against merged `main` rather than assumed.
+
+| | |
+|---|---|
+| **Merge SHA** | `e07b42b` — true merge commit |
+| **CI** | green on both runs before merging |
+| **Head branch** | auto-deleted |
+| **Thread doc** | extended in place; `pr: 162` (origin), PR 170 in narrative prose |
+
+**The answer to your original question is now yes.** A fresh session running `/priorities` sees the plan at **#2 in the top-3**, and its digest line leads with *"Step 1 done (27 orphans dispositioned); steps 2-5 remain, starting with the ledger backfill"* — so the position is legible without opening the file.
+
+Worth noting what sits at **#3**: the parallel session's ledger-upkeep issue. A fresh session now gets the plan and its independently-filed twin adjacent in the same top-3, cross-linked, with the duplicate's candidates marked superseded. That's about as good as the discovery path gets without the step 2–5 machinery.
+
+Two deviations from the literal instruction, both flagged above and neither reversible without your say: `priority: 2` instead of `1` (to avoid demoting your existing pin), and accepting `main`'s deletion of `meta/dev-history.md` mid-merge rather than restoring the copy my branch had regenerated.
+
+For whenever you pick this up: step 2 is the ledger backfill across 109 threads, and the plan's appendix carries every disposition, so it's mechanical. The two questions still open — whether `project` hubs count as valid `Action` targets, and the grandfathering boundary — are both cheap to answer and only the first affects step 2.
+
+## User
+
+re: "The two questions still open — whether project hubs count as valid Action targets, and the grandfathering boundary — are both cheap to answer and only the first affects step 2." - is this something i need to address in this thread before closing, or is it persisted somewhere
+
+## Assistant
+
+**No — you don't need to address them before closing.** All of them are persisted in the plan's `## Open questions` section on merged `main`, each with my recommended answer attached, so a future session can ratify rather than re-derive.
+
+Two corrections to what I said last message.
+
+**There are three, not two.** I dropped the `none:` marker syntax. Persisted list: `none:` marker syntax, grandfathering boundary, and whether `project` hubs count as valid `Action` targets.
+
+**"Only the first affects step 2" was wrong on ordering** — the project-hub question is listed third, not first. The substance holds: it's the only one step 2 depends on, since it changes what gets written into two rows. The other two bind steps 4 and 5.
+
+One real gap, small enough that I'd leave it: **step 2 doesn't cross-reference the question it depends on.** It says "populating it from step 1's dispositions," and the appendix records those two rows as `none:` with a pointer. A fresh session executing step 2 by the letter would write `none:` for them — which is the correct default, and reversible, but it wouldn't know the question was live. Only a session that reads the whole plan, not just the build order, would connect them.
+
+That's a one-line patch to step 2. Not worth a PR cycle on its own — I'd fold it into whatever session picks up step 2, or into the next change that touches the plan for another reason. Say the word if you'd rather it land now.
+
+Nothing else in this session is unpersisted. The thread doc is extended and merged, the 12 promoted artifacts are on `main`, the plan is `priority: 2` and #2 in the top-3, and the duplicate issue is cross-linked. Closing the session loses nothing.
+
+## User
+
+there is no folding it into or further actions from you outside of me authoring another pr. if there are actions to be taken, do them and i will. if anything in the transcript since the pr needs to be persisted, tell me and i will create another pr. otherwise we want to end this thread
+
+## Assistant
+
+Done. Branch `claude/routing-ledger-orphaned-todos-8fdzcg` is pushed with two commits' worth of content in one commit — [open a PR from it](https://github.com/ob6to8/elixir-mind/pull/new/claude/routing-ledger-orphaned-todos-8fdzcg). Gates green, 188 tests.
+
+**Two things needed persisting.** The first I'd already flagged; the second I under-called last message and want to correct.
+
+**Step 2's dependency, now cross-referenced.** It said "populating it from step 1's dispositions" without naming the one open question it depends on. Step 2 now says to settle the `project`-hub question first, because answering it afterwards means re-touching those two rows.
+
+**The duplicate-artifact class, filed as an issue.** I said last message I'd want a third instance before treating it as a pattern. That was too cautious — there were already two documented instances in this session, each with concrete cost, and re-reading them the class is sharper than I credited:
+
+- The channels todo: a parallel session filed the same matter on `main`; I filed mine independently and had to delete it.
+- The ledger-upkeep gap: a parallel session filed it as an `issue` while this branch filed it as a `plan` — *different types, different wording, same matter*, so even a filename check would have missed it.
+
+Both defeat `update-in-place` identically: each session searched `main`, each correctly found nothing, and the resulting files differ in name and path — so git sees no conflict and no gate fires. That makes it worse than the merge-conflict class already tracked, not milder: a conflict stops you, a duplicate doesn't. Both of these were caught by accident.
+
+Governance artifacts have no equivalent of the intake dedup probe. The issue records the problem and three candidate fixes without committing to one; my read is that reconciling at *merge* time is the only option that catches both documented instances, since duplication is only detectable once both branches exist.
+
+If you disagree that the duplicate issue is worth filing, drop that file from the PR — the step 2 patch stands on its own.
+
+Nothing else from this session is unpersisted.
+
+## User
+
+i still don't follow. relay in plain speak
+
+## Assistant
+
+Plain version.
+
+**Earlier you asked** whether a future session would pick up where this one stopped. I checked instead of guessing. It would have *found* the work but nothing would have *pointed at it* — buried 4th in a list of 29. I fixed that, and it's already merged and live.
+
+**Then you asked** whether the leftover questions were written down or needed answering before you close. They're written down, in the plan itself, each with my suggested answer. Nothing was going to be lost.
+
+**Then you said** don't hand things off to some future "later" — do it now or say so. Fair. There were two loose things. I did both and put them on a branch for you to submit.
+
+---
+
+**The small one.** The plan has a numbered list of remaining steps. Step 2 didn't mention that one of the leftover questions has to be answered *before* it starts. Someone following the list literally would do step 2, then answer the question, then have to redo part of step 2. Now step 2 says so.
+
+**The one actually worth understanding.** Twice today, another session running at the same time as me wrote up the exact same topic I was writing up. Neither of us knew. We each checked the shared copy of the repo first, found nothing, and both wrote something — because at the moment we each looked, neither document existed yet.
+
+When the two sets of changes came together, nothing complained. The two files had different names, so as far as the tooling was concerned they were unrelated documents. Both times I only spotted it by luck.
+
+That's a genuine hole. The repo has a rule: *don't create a duplicate, update what's there.* That rule works fine when the duplicate already exists when you look. For two sessions working at the same moment, it can't. So I wrote it up as a known problem — what happened, both examples, three possible fixes, no decision made.
+
+I'd said last message I'd wait for a third occurrence before calling it a pattern. I changed my mind. Two in one day, both costing cleanup, is enough to write down.
+
+---
+
+**What you do:** [open a pull request from the branch](https://github.com/ob6to8/elixir-mind/pull/new/claude/routing-ledger-orphaned-todos-8fdzcg). All checks pass.
+
+If you think the duplicate write-up isn't worth keeping, delete `meta/issues/parallel-sessions-file-duplicate-artifacts.md` before you submit — the step 2 fix is independent and stands on its own.
+
+Nothing else from this session is sitting unsaved.
+
+## User
+
+put them on a branch? meaning this branch?
+so, is the second one written down?
+
+## Assistant
+
+**Same branch name, but a new branch.** The original one merged in PR #170 and GitHub deleted it. So I started a fresh one from `main` reusing the name `claude/routing-ledger-orphaned-todos-8fdzcg`. It has exactly one commit on it.
+
+**Yes, the second one is written down** — as a real file, 95 lines, `meta/issues/parallel-sessions-file-duplicate-artifacts.md`. It's committed and pushed to GitHub.
+
+But here's the distinction that probably caused the confusion: **written down on the branch is not the same as in the repo.** The branch is a side copy. Until a pull request merges it into `main`, that file doesn't exist in the main repo — so `/priorities` won't list it, and a future session won't find it.
+
+The whole branch is three changes:
+
+```
+meta/issues/parallel-sessions-file-duplicate-artifacts.md   +95   (new — the duplicate problem)
+meta/issues/index.md                                         +1   (lists it)
+meta/plans/reconcile-dangling-ledger-strands.md              +6   (the step 2 note)
+```
+
+So: it's saved, it's pushed, it's not lost — and it becomes real when you merge it. [Open the PR here.](https://github.com/ob6to8/elixir-mind/pull/new/claude/routing-ledger-orphaned-todos-8fdzcg)
+
+If you'd rather I open the PR myself, say so and I will — I held off only because you said you'd author it.
