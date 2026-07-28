@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-07-28; verbatim retained
 tags: [meta, thread, communication, policy, plainspeak, banned-phrases]
 timestamp: 2026-07-28
 session: https://claude.ai/code/session_018PjkiFACfCNu2LakjRazV5
+pr: 165
 ---
 
 # 2026-07-28-communication-guidance-and-banned-phrases
