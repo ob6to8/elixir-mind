@@ -6,6 +6,7 @@ provenance: "Claude Code session (claude-fable-5), 2026-07-28; verbatim retained
 tags: [meta, thread, spin-out, separation-of-concerns, architecture, naming, glossary]
 timestamp: 2026-07-28
 session: https://claude.ai/code/session_01Sux5kkrbQvoyGWagUgwGUm
+pr: 179
 ---
 
 # 2026-07-28-swappable-bundle-spec-and-library-naming
