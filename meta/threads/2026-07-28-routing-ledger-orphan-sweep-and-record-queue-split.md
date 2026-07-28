@@ -75,7 +75,7 @@ editing rule is conditional rather than the absolute *never hand-edit* that
 boundary. Re-verifying the tutorial's own figures before opening the PR caught
 a wrong one — a working-tree `grep` had swept up untracked test fixtures under
 `tmp/`, inflating a count that is 128 tracked documents, not 122. The corrected
-figure ships with the command that recomputes it.
+figure ships with the command that recomputes it. This fourth round landed in **PR 181**.
 
 ## Routing
 
