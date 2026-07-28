@@ -50,7 +50,7 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-07-27-scar-tissue-drift-doctrine-and-link-policy (2026-07-27)
 
-2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`em:f35b8f`]**  (co-feeds: `em:1434d9`)
 
@@ -71,3 +71,18 @@ All five ratifications executed, full gate suite green (pre-commit ran everythin
 | type | doc | why this type |
 |---|---|---|
 | belief | [scar-tissue-lens-for-agent-failure](https://github.com/ob6to8/elixir-mind/blob/claude/code-cleanliness-trust-dkff57/beliefs/scar-tissue-lens-for-agent-failure.md) (`em:f35b8f`) | your verbatim "I will act as if…" phrase quoted as the seed, per the quote-primary-sources rule; frame choice is value-laden, so `belief`, with the aptness/lexical halves left where the analysis filed them |
+
+---
+
+**[`em:f35b8f`]**  (co-feeds: `meta/analysis/is-to-ought-belief-grounds-doctrine.md`)
+
+**The tension turned out to be apparent, not real — and the reason is worth having on record.** The analysis rejected a `belief` type on collision grounds: *"the descriptive work is already covered by `claim`/`note`/`concept`, so a `belief` type would collide with them."* That objection was correct and still is. But the type that shipped isn't descriptive — it's a value-laden decision prior that *"stays outside the verification ladder"*, with the rule that one turning out empirically checkable is refiled as a `claim`. That refile rule **is** the analysis's collision-avoidance, made mechanical: anything that would collide with `claim` is by definition not a `belief`. So the analysis rejected a descriptive belief type; the bundle adopted a value-laden one; both stand.
+
+What the original genuinely missed is a *third* register. Its two columns were "checkable fact" and "direction for the brain" — and the seed beliefs fit neither: Dex Horthy's spec-length thesis isn't a checkable claim about this brain, nor a direction the brain serves; it's a prior that bounds how plans get written. The corrected stack in the update puts belief **parallel to** doctrine (four tiers: statement / belief / doctrine / policy), not as a relabeling of the descriptive tier.
+
+Crucially, **the is-to-ought bridge itself is untouched** — the move from premise to direction works the same whether the premise is a verifiable `claim` or an unverifiable `belief`. All that changed is that the premise now has two possible homes, split by whether evidence could settle it.
+
+Two judgment calls in how I made the edit:
+
+- **I marked the superseded passages rather than rewriting them.** An `analysis` is historical by construction — a point-in-time judgment — so silently editing its conclusion would destroy the record of what was actually thought on 2026-07-22. The old tier table and the "not a controlled type" paragraph stay as written, with a blockquote pointing to the update; the reconciliation lives in a dated section at the end.
+- **I added a back-link from the beliefs index**, since the layer's own docs cited the plan but not the analysis — the reconciliation was only discoverable from the analysis side.
