@@ -14,6 +14,11 @@ Each PR's bullets are the merged branch's commit subjects, in the order they
 were made. The checked-in copy lags by the PR that ships it; the copy on the
 deployed site is regenerated at deploy time and is always current.
 
+## [PR #159](https://github.com/ob6to8/elixir-mind/pull/159) — Ground the price-weapon claim on primary sources; clear the dev-history lag *(2026-07-27)*
+
+- ground em:51aede on primary sources; clear the dev-history lag
+- capture: name PR 159 in the thread's narrative
+
 ## [PR #158](https://github.com/ob6to8/elixir-mind/pull/158) — File the generation-over-discipline prior; track the merge-verify hook noise *(2026-07-27)*
 
 - File the generation-over-discipline prior; track the merge-verify hook noise

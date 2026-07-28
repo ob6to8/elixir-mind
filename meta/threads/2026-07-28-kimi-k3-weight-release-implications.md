@@ -42,6 +42,18 @@ sources stated, both corrected. Second, `mix brain.dev_history` was regenerated
 from an unshallowed clone, clearing a lag that had reached six PRs rather than
 the one the design tolerates.
 
+A third round then turned the grounding pass's own lesson into artifacts. The
+fetch-synthesis failure it caught — a summarizing fetch asserting a comparison
+its source never states — became a
+[`quote-primary-sources`](/meta/policy/quote-primary-sources.md) rule (take the
+quote from the source's text, never from a summary of it) and the
+[fetch fidelity probe](/meta/evals/fetch-fidelity-probe.md) that measures whether
+that rule does anything, seeded with the observed instance and carrying a
+falsification condition that would revert the rule. The dev-history cause was
+filed as a [todo](/meta/todos/diagnose-the-dev-history-regeneration-lag.md)
+rather than diagnosed, with the shallow-clone silent-skip recorded explicitly as
+a hypothesis. That round landed in PR 160.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -49,7 +61,9 @@ the one the design tolerates.
 | Kimi K3 model card — architecture, benchmarks, license, deployment | closed | [kimi-k3](/knowledge/machine-learning/kimi-k3.md) | - |
 | The pricing inversion and what it does to the margin-collapse thesis | open | [open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | whether Moonshot's premium pricing holds, or a competitor takes the top open slot at DeepSeek-tier pricing and restores the undercut mechanism |
 | Grounding the claim on primary sources — the bundle's first `type: source` captures | closed | [sources](/knowledge/ai-industry/sources/index.md) | - |
-| Dev-history regeneration and the size of the accumulated lag | paused | `unrouted` | the lag reached six PRs against a design that tolerates one — whether that is shallow-clone sessions failing the step silently, or the step being skipped, is undiagnosed |
+| Dev-history regeneration and the size of the accumulated lag | closed | [diagnose-the-dev-history-regeneration-lag](/meta/todos/diagnose-the-dev-history-regeneration-lag.md) | - |
+| Whether the fetch-synthesis failure is eval fodder | closed | [fetch-fidelity-probe](/meta/evals/fetch-fidelity-probe.md) | - |
+| The verbatim-before-quoting rule that probe measures | closed | [quote-primary-sources](/meta/policy/quote-primary-sources.md) | - |
 | License-column error in the open-weight landscape snapshot | closed | [open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | - |
 | Terminology introduced by the release (MXFP4, QAT, KDA, MaaS, revenue tiers) | closed | [glossary](/beliefs/glossary/index.md) | - |
 
@@ -192,5 +206,61 @@ The grounding pass did what grounding passes are for: it caught two figures I ha
 The DeepSeek V4 Pro $0.04-per-task figure survives, but attributed: it comes from the-decoder, not from Artificial Analysis, and secondary reporting does not belong in a `source` capture backing `verified: true`. It now reads as reported rather than as established.
 </routes>
 
+Both landed. [PR #159](https://github.com/ob6to8/elixir-mind/pull/159) merged as `2d813e4`, branch deleted.
+
+The grounding pass earned its keep by falsifying two of my own figures. I had written that K3 runs "~2.5× Fable 5's wall-clock" on AA-Briefcase and that Fable 5 finishes in 67 turns against K3's 83 — both came from a summarizing fetch, and neither survived re-reading the article for quotable text. That's a specific, repeatable failure mode: a fetch that answers a question in prose will happily synthesize a comparison the source never made, and it reads exactly like a quoted figure once it's in your notes. Demanding verbatim text is what separates them. Artificial Analysis's own summary turned out to be stronger evidence than my paraphrase anyway — *"particularly expensive when comparing to other open weight models of similar size. It's also notably slow and very verbose."*
+
+The dev-history finding is worth your attention more than the grounding was. The design tolerates a one-PR lag; the actual lag was **six** (#148–#158). `mix brain.dev_history --check` skips silently on a shallow clone, which is what every cloud session gets — so the gate that was supposed to catch drift is structurally blind in exactly the environment where the regeneration step is most likely to be skipped. I regenerated it and left the diagnosis alone: I don't know whether sessions are hitting the shallow-clone path and moving on, or skipping the step entirely, and guessing would put a wrong cause into the record. It's a paused strand in the routing ledger, so `/priorities` will surface it.
+
+## User
+
+re: "a fetch that answers a question in prose will happily synthesize a comparison the source never made, and it reads exactly like a quoted figure once it's in your notes" - is this good fodder to add into evals?
+
+restate "The dev-history finding is worth your attention more than the grounding was. The design tolerates a one-PR lag; the actual lag was six (#148–#158). mix brain.dev_history --check skips silently on a shallow clone, which is what every cloud session gets — so the gate that was supposed to catch drift is structurally blind in exactly the environment where the regeneration step is most likely to be skipped. I regenerated it and left the diagnosis alone: I don't know whether sessions are hitting the shallow-clone path and moving on, or skipping the step entirely, and guessing would put a wrong cause into the record. It's a paused strand in the routing ledger, so /priorities will surface it." in plainspeak
+
+## Assistant
+
+<routes ref="/meta/evals/fetch-fidelity-probe.md /meta/policy/quote-primary-sources.md">
+## On the eval question
+
+Yes — but it's a sharper fit for a *fidelity probe* than for anything the existing evals measure, and it's worth being precise about why.
+
+The reason this one is attractive is that its ground truth is cheap and exact. `source-recall-probe` has a hard time constructing ground truth: "the complete set of primary sources for a subject" is a judgment call, which is why that probe is still `proposed`. Here the question is decidable by string containment — either the phrase appears in the fetched page or it doesn't. The bundle already has machinery of exactly that shape (`mix brain.glossary`'s containment scoring, `route_tags`' log-fidelity re-derivation), so the primitive isn't new.
+
+The shape I'd build: a small frozen corpus of `(page snapshot, question, a verbatim answer the page supports, a tempting comparison the page does *not* state)`. Score whether a summarizing fetch invents the absent comparison, and whether a "quote verbatim" prompt suppresses it relative to a "summarize" prompt. Falsification condition, mirroring source-recall's: **if the verbatim prompt scores no better than the summarizing one, the prompting discipline is theater and the fix belongs in tooling or policy, not in how the fetch is worded.**
+
+Two real objections you should weigh before I build anything:
+
+**It measures a vendor's model, not the brain.** WebFetch's summarizer isn't something this repo versions. The score would move when that model changes, so the trend line tracks Anthropic's behavior rather than the brain's — different in kind from `dedup-probe`, which measures the bundle's own lexical layer. That's still useful (it tells you how much to trust the tool), but it's a weaker claim on the eval namespace.
+
+**It needs frozen fixtures to stay offline.** The toolchain's zero-dependency, offline stance means the eval can't fetch live pages. Snapshots work, but they're a corpus to maintain, and they age.
+
+Given that, my recommendation is that the *first* artifact here is a policy rule, not an eval: **a figure that will be quoted, or that will back `verified: true`, gets re-fetched demanding verbatim text before it's asserted.** That fires unprompted in every session because policies compile into the contract; an eval sits inert until someone runs it. The eval is the right *second* move — it tells you whether the rule is doing anything. And it pairs naturally with `source-recall-probe`: recall asks *did you find the source*, fidelity asks *did you report what it actually said*. Two halves of one pipeline, and the second is the easier one to measure.
+</routes>
+
+## The dev-history thing, plainly
+
+There's a file that lists every PR the project has merged. It's meant to be rebuilt whenever someone opens a new PR, so it should never be more than one PR behind. It was six behind.
+
+The reason it drifted is the part that matters. There's a check whose whole job is to catch this. But the check needs the full git history, and this session — like other cloud sessions, as far as I can tell from what I saw here — only downloads a shallow slice of it. When the history isn't there, the check doesn't fail. It prints "skipping" and passes. So the safeguard quietly does nothing in the environment where the problem actually happens.
+
+I rebuilt the file. I did not try to work out why it fell so far behind. It might be that sessions hit that shallow-clone path and moved on, or that the rebuild step is being skipped for some other reason. I don't know which, and writing down a guess would put a wrong answer into a permanent record. So I left it flagged as an open question, which means it'll show up the next time you run `/priorities`.
+
+### Your options from here
+
+| # | option | what it entails |
+|---|---|---|
+| 1 | Add the verbatim-before-quoting rule to policy | small amendment to `quote-primary-sources` or `verification-grounding`; fires unprompted, recompiles the contract |
+| 2 | File the fidelity probe as a `proposed` eval | mirrors `source-recall-probe`'s shape; I'd write the hypothesis and falsification condition but not the fixtures until you want it run |
+| 3 | Both, in that order | the rule now, the eval as the measurement of whether the rule earned its place — this is what I'd do |
+| 4 | The dev-history diagnosis | separate work; needs looking at how other sessions ran the step, not a guess from here |
+
+## User
+
+3, then persist 4 as a todo
+then /create-pull-request  merge
+
+## Assistant
+
 *(the closing report of this turn was delivered after this section was written;
-the follow-up PR is named in the narrative above.)*
+the PR it landed in is named in the narrative above.)*
