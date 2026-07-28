@@ -5,6 +5,7 @@ description: Intake of Archestra's weak-models-debugging blog post, its r/LLMDev
 provenance: "Claude Code session (Claude Sonnet 5), 2026-07-28; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, harness, agents, mcp, intake]
 timestamp: 2026-07-28
+pr: 166
 session: https://claude.ai/code/session_01YAsMvueVmic6XgagaYZsRQ
 ---
 
