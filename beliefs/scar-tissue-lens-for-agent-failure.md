@@ -43,3 +43,31 @@ itself.
 
 - [Scar-tissue capture](/knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md)
   (`em:60242a`) — the source material the lens was adopted from.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f35b8f">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-27-scar-tissue-drift-doctrine-and-link-policy (2026-07-27)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:f35b8f`]**  (co-feeds: `em:1434d9`)
+
+file the lens-adoption prior
+ratify the plans
+approve the fingerprint rider
+yes flip to ratification-immutable
+yes link policy
+
+---
+
+**[`em:f35b8f`]**
+
+All five ratifications executed, full gate suite green (pre-commit ran everything: format, xref, contract/registry/code-map checks, verify, route tags, glossary, lineage, dev-history, 183 tests), committed and pushed. Since PR #147 merged and its branch was deleted, this work sits on the **restarted** `claude/code-cleanliness-trust-dkff57` (rebuilt from latest `main`) — a PR from it will be a new one; say `/create-pull-request` (or `merge`) when you want it opened.
+
+**What I created**
+
+| type | doc | why this type |
+|---|---|---|
+| belief | [scar-tissue-lens-for-agent-failure](https://github.com/ob6to8/elixir-mind/blob/claude/code-cleanliness-trust-dkff57/beliefs/scar-tissue-lens-for-agent-failure.md) (`em:f35b8f`) | your verbatim "I will act as if…" phrase quoted as the seed, per the quote-primary-sources rule; frame choice is value-laden, so `belief`, with the aptness/lexical halves left where the analysis filed them |

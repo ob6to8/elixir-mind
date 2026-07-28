@@ -183,6 +183,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7f58e2` | [beliefs/glossary/fixture-bundle](/beliefs/glossary/fixture-bundle.md) | concept | false |
 | `em:ec63e8` | [beliefs/glossary/flaky-test](/beliefs/glossary/flaky-test.md) | concept | false |
 | `em:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
+| `em:4086a2` | [beliefs/glossary/folksonomy](/beliefs/glossary/folksonomy.md) | concept | false |
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
