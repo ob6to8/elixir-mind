@@ -2,7 +2,7 @@
 type: todo
 title: "Diagnose why meta/dev-history.md fell six PRs behind"
 description: The dev-history view is designed to lag by exactly one PR and its CI check skips silently on a shallow clone, which is what web sessions get; the observed lag reached six PRs, and whether that is the silent skip, the regeneration step being missed, or both is undiagnosed.
-status: open
+status: done
 provenance: "Claude Code session (2026-07-28) — observed while regenerating dev-history from an unshallowed clone"
 tags: [meta, todo, dev-history, generated-artifacts, ci, shallow-clone, gates]
 timestamp: 2026-07-28
@@ -54,6 +54,10 @@ make the skip loud (warn visibly, or fail when the clone is shallow *and* the
 working tree is a PR branch), have `/create-pull-request` unshallow before step 4,
 or move regeneration to a scheduled job against a full clone.
 
-**Done when.** The cause is established from evidence rather than inferred, and
-recorded — either here on completion, or as a [`type: issue`](/meta/issues/index.md)
-if the diagnosis confirms a defect worth tracking separately from its fix.
+**Done.** The diagnosis ran on 2026-07-28 against the merge graph from an
+unshallowed clone. The cause is established: the outcome clusters perfectly by
+session rather than by PR, and the one session that changed behavior mid-flight
+did so exactly when it unshallowed. That confirms a defect whose fix is a
+separate design decision, so the finding and its three candidate fixes are filed
+as [dev-history regeneration silently no-ops on shallow clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
+rather than resolved here.
