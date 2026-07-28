@@ -1,7 +1,7 @@
 ---
 type: issue
 title: "Parallel sessions file duplicate governance artifacts for the same matter, and nothing detects it"
-description: Two sessions working the same day independently filed separate todos and separate issue/plan pairs for identical matters; because the files differ in name and path there is no merge conflict, so the duplication is invisible to git and to every gate.
+description: Sessions working the same day independently file separate artifacts for identical matters — todos, an issue/plan pair, and glossary terms that reached two minted em: ids; where the paths differ there is no merge conflict, so the duplication is invisible to git and to every gate.
 status: open
 provenance: "Claude Code session, 2026-07-28 — two instances encountered in a single session while merging main and reading the priorities digest"
 tags: [meta, issue, parallel-sessions, deduplication, governance, update-in-place]
@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "two documented instances in one day, each costing reconciliation work and each caught only by accident, with no mechanical detector for the class"
-  from: [/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
+  from: [/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md, /meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md]
 ---
 
 # Parallel sessions file duplicate governance artifacts
@@ -51,6 +51,47 @@ noticed otherwise, and both cost reconciliation work after the fact.
 The second is the more instructive: the two artifacts were different *types*
 (`plan` vs `issue`) reaching the same diagnosis from opposite directions, so even
 a filename-similarity check would have missed it.
+
+## Encountered again, same day — and the class is wider than governance
+
+A third session that afternoon hit the same failure twice more, against a
+*different* parallel session (the ontology-guardrails intake, PR #163):
+
+| Matter | This session drafted | The parallel session filed |
+|---|---|---|
+| SHACL glossary term | `beliefs/glossary/shacl.md`, id `em:136984` | [`shacl`](/beliefs/glossary/shacl.md), id `em:4d3462` |
+| Open-world assumption glossary term | `beliefs/glossary/open-world-assumption.md`, id `em:2674dd` | [`open-world-assumption`](/beliefs/glossary/open-world-assumption.md), id `em:d845c0` |
+| OWL's fit for a formal layer | [OWL and the belief layer](/meta/analysis/owl-and-the-belief-layer.md) | [ontology guardrails vs. schema validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) |
+
+Two things this instance adds to the diagnosis:
+
+- **The class is not confined to governance artifacts.** These were **bundle
+  documents**, and both had already been through `mix brain.id`, so the same
+  term existed under two minted, permanent ids. Had the branch merged
+  unreconciled, [`meta/registry.md`](/meta/registry.md) would have carried both
+  and every future `verified_by` or route-tag ref would have had two equally
+  valid targets to choose between. Ids are immutable by policy
+  ([stable-identity](/meta/policy/stable-identity.md)), so the cleanup cost here
+  is strictly higher than for a duplicate todo.
+- **Same-path duplicates are the one variant git *does* catch.** The glossary
+  pair collided on identical filenames, so the merge refused to proceed — which
+  is why it was found. The analysis pair did not collide, was silent exactly as
+  described above, and was noticed only because the glossary collision forced a
+  close reading of what else `main` had landed. One noisy failure surfaced one
+  silent one; nothing would have surfaced the silent one alone.
+
+The dispositions differed by artifact kind, and the split is worth keeping: the
+duplicate **terms** were dropped in favor of the already-merged ones (one term,
+one id — the branch's ids were discarded before they could enter the registry),
+while the two **analyses** were kept as cross-linked siblings, since they answer
+different questions (enforcement at an agent loop's boundary vs. epistemic audit
+of a belief corpus) and neither subsumes the other. Duplicate identity is always
+a defect; overlapping *treatment* of adjacent questions is not necessarily one.
+
+This is the third documented instance in a single day, and the first to reach
+bundle documents — evidence for **candidate resolution 3** below, which is also
+the only one that would have caught the analysis pair: both branches had to
+exist before the overlap was visible at all.
 
 ## Why it matters
 

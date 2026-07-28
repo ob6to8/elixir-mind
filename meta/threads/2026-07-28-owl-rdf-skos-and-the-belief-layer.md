@@ -59,6 +59,7 @@ thread.
 | A derived RDF/SKOS/JSON-LD export of the bundle as a disposable view | open | `unrouted` | Is a `mix brain.rdf` export worth building, and against which vocabulary (SKOS for the taxonomy, AIF for a future belief graph)? |
 | What SKOS is, and why it fits a prose-first concept scheme better than OWL | closed | [SKOS](/beliefs/glossary/skos.md) | - |
 | Whether a reintroduced formalized belief layer is a case for OWL | closed | [OWL and the belief layer](/meta/analysis/owl-and-the-belief-layer.md) | - |
+| Concurrent sessions duplicating the same terms and adjacent analyses, caught at merge | closed | [parallel sessions file duplicate artifacts](/meta/issues/parallel-sessions-file-duplicate-artifacts.md) | - |
 | The three-way semantics mismatch — terminological vs. propositional, monotonic vs. defeasible, open- vs. closed-world | closed | [OWL glossary entry](/beliefs/glossary/owl.md) | - |
 
 ## User
