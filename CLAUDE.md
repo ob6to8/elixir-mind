@@ -887,7 +887,138 @@ content directly.
   [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md).
   Recast: state the items directly, under a heading if they need prominence.
 
+- **"One process blemish to be transparent about"** — two patterns in one
+  phrase, each banned with its variants. *"To be transparent about"* (also "to
+  be honest/candid/straight/upfront", "in the interest of transparency", and
+  the enumerated-preamble form "two things I want to be straight about:")
+  announces the virtue of a disclosure instead of just disclosing: a
+  transparent account shows its transparency in the content, so the
+  announcement asserts nothing — and it
+  implies concealment was a live alternative, an unraised case (the same
+  advertising failure as the entry above). *"Blemish"* (also "wart",
+  "wrinkle", "minor blip") is the agent pre-grading its own defect as
+  cosmetic; severity is the operator's judgment to make, not the author's to
+  soften. Recast: name the defect plainly with its concrete consequence, and
+  let the facts carry both the candor and the severity.
+
+- **"Before I do this: it's a bigger change than I called it, and it has a
+  real cost"** — pattern: *"Before I do X: \<hedge\>"* — pre-action hedging
+  that announces revised scope or cost while proceeding anyway, performing
+  deliberation without transferring the decision. A revision that could
+  change the decision is a **blocking question** (the questions table of
+  [response-work-report-format](/meta/policy/response-work-report-format.md);
+  at close time,
+  [concerns-block-the-close](/meta/policy/concerns-block-the-close.md));
+  one that couldn't change it is not said mid-motion. *"It has a real
+  cost"* is the sub-pattern of unquantified gravity: asserting a cost
+  exists with "real" doing the work a number should. Recast: either halt —
+  "this touches ~N files, not the 2 I estimated; proceed?" — or proceed and
+  report the measured cost afterward.
+
+- **"That last row is the honest headline."** — pattern: *"that X is the
+  honest/real \<headline/story/takeaway\>"* — post-hoc editorial pointing at
+  one's own just-delivered content. Two failures. *"Honest"* as a
+  discriminator is self-indicting: if the whole response is honest the
+  adjective asserts nothing, and if it discriminates, it concedes the rest
+  was framed — the self-directed twin of the announced-candor entry above.
+  And naming something the headline instead of *making* it the headline
+  narrates a structure defect rather than fixing it — per
+  [plainspeak-orientation](/meta/policy/plainspeak-orientation.md), the
+  outcome leads the response. Recast: move the load-bearing fact into the
+  lead and delete the pointer — placement, not commentary, carries emphasis.
+
+- **"let me audit rather than answer from memory"** — pattern: *"let me X
+  rather than Y"* where Y is an inferior practice nobody proposed (also
+  "verified against merged main rather than assumed") — announcing diligence
+  against an unraised lazy alternative, the process-narration form of the
+  seed entry's advertising failure. The distinction the phrase gestures at is
+  real and is governed by
+  [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md):
+  epistemic basis is carried uniformly by citations and plain markers, and a
+  case-by-case announcement is precisely what makes the unannounced remainder
+  illegible. Recast: do the check silently, then state the fact with its
+  basis — "CI is green (both runs completed 08:52)".
+
 _Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
+
+**A closing flow ends clean or not at all.** Invoking
+[`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) is the
+operator closing the thread. From that moment, every concern the session
+still holds — a process irregularity, an improvisation no policy sanctions, a
+check that was skipped, a judgment call left open — is a **blocker**: the
+flow halts before the irreversible step and the concern is put to the
+operator, instead of surfacing in the report after the merge ("one thing I'd
+flag…", "two notes on how I worked…"), which converts a finished close back
+into an open thread.
+
+- **The test: would the closing report present it as something the operator
+  must react to?** Then it blocks now. Before opening the PR — and again
+  before merging, for anything that emerged in between — inventory such
+  items; if any exist, stop the flow and present them as blocking questions
+  with recommendations, per
+  [response-work-report-format](/meta/policy/response-work-report-format.md).
+- **The disposition is the operator's.** Fix it now, file it as an
+  issue/todo, or proceed accepting it — the agent recommends but does not
+  choose. Unilaterally filing an issue and mentioning it post-merge is the
+  pattern this policy exists to stop.
+- **The session's driving question is answered before the close, not after.**
+  When the operator's ask has a success criterion ("does a fresh session now
+  see it?"), verifying it is part of the work: it runs before `/capture`, so
+  the answer lands in the thread doc and the PR. A post-merge "the answer is
+  now yes" is work delivered outside every record.
+- **Post-capture chat is outside every record — so the close persists or
+  points, never deposits.** The closing report postdates the thread capture:
+  nothing said only there is discoverable later, and the operator's memory is
+  exactly what this system exists to offload. Beyond the completion facts,
+  every sentence in a closing report must point at a durable home — the plan,
+  a todo, an issue, the thread doc. Next-session context ("for whenever you
+  pick this up, step 2 is…") is the failure signature: that content belongs in
+  the artifact [`/priorities`](/.claude/skills/priorities/SKILL.md) reads,
+  filed before the close, with the close at most pointing at it. A statement
+  with no durable home that doesn't warrant one goes unsaid. The operator
+  never has to ask "is this persisted, or does it only exist in this thread?"
+- **Merged means done.** The post-merge report announces the completed close —
+  PR number, merge SHA, thread doc name — and introduces nothing new. A
+  trailing wakeup (a CI wait timer, a stray notification) that fires after
+  the merge and only confirms completion is cleared silently, with no report
+  at all when nothing is actionable.
+- **Scope.** Operator-invoked closing flows. Mid-session reporting keeps its
+  existing shape — findings raised while work is still open are ordinary
+  content, and raising them *early* is exactly what this policy rewards.
+
+_Source: [`meta/policy/concerns-block-the-close.md`](/meta/policy/concerns-block-the-close.md)_
+
+**An assertion the operator might act on names its basis — checked or
+recalled.** When a delivered response states a fact, the prose makes the
+basis legible: **checked** in this session — cite what was checked ("CI is
+green — both `verify` runs completed at 08:52"); or **recalled** from
+memory/training — mark it plainly ("from memory, unchecked: …"). The
+distinction is carried **uniformly and structurally**, by citations and
+markers, so the reader can trust the *absence* of a marker exactly as much
+as its presence.
+
+- **The trigger is actionability, not completeness.** Conversational prose,
+  reasoning, and recommendations need no markers; a fact that could change
+  what the operator does next — a state of CI, a file's contents, a price, a
+  version, a "that already merged" — does. When such a fact is cheap to
+  check, check it rather than mark it recalled.
+- **Uniform practice, never episodic narration.** Announcing the diligence
+  case-by-case ("let me audit rather than answer from memory" — see the
+  banned-phrases register) is the anti-pattern this rule replaces: selective
+  announcement implies every unannounced statement has unknown basis, which
+  is the opposite of what a basis convention is for.
+- **Relation to the neighboring rules.** This is the general case of a
+  family:
+  [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md)
+  is its negative-claim instance (the basis of a "not found" is the space
+  searched);
+  [quote-primary-sources](/meta/policy/quote-primary-sources.md) marks the
+  quotation/synthesis boundary;
+  [verification-grounding](/meta/policy/verification-grounding.md) encodes
+  basis for *filed* statements (`verified`/`verified_by`). This policy covers
+  the remaining surface: ephemeral assertions in delivered responses.
+
+_Source: [`meta/policy/assertions-name-their-basis.md`](/meta/policy/assertions-name-their-basis.md)_
 
 ---
 
