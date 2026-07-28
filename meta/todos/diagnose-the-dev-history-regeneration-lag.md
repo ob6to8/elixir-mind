@@ -1,7 +1,7 @@
 ---
 type: todo
 title: "Diagnose why meta/dev-history.md fell six PRs behind"
-description: The dev-history view is designed to lag by exactly one PR and its CI check skips silently on a shallow clone, which is what web sessions get; the observed lag reached six PRs, and whether that is the silent skip, the regeneration step being missed, or both is undiagnosed.
+description: Diagnosed and closed — the lag's cause is the shallow-clone silent no-op, established from the merge graph, but the drift itself turned out to be within design tolerance rather than a defect; see the issue it graduated to.
 status: done
 provenance: "Claude Code session (2026-07-28) — observed while regenerating dev-history from an unshallowed clone"
 tags: [meta, todo, dev-history, generated-artifacts, ci, shallow-clone, gates]
@@ -16,9 +16,11 @@ attribution:
 
 # Diagnose why `meta/dev-history.md` fell six PRs behind
 
-[`meta/dev-history.md`](/meta/dev-history.md) is a generated-but-committed view of
-the default branch's merge graph. By design it lags by **exactly one PR** — a
-branch cannot contain its own merge commit — and the
+[`meta/dev-history.md`](https://ob6to8.github.io/elixir-mind/meta/dev-history.html) is a generated-but-committed view of
+the default branch's merge graph. (This todo was written believing it lags by
+**exactly one PR**; the check is in fact unbounded — see the
+[issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md).)
+A branch cannot contain its own merge commit, and the
 [staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)
 makes `mix brain.dev_history --check` tolerant of precisely that one-PR gap.
 [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md) step 4 is
@@ -60,4 +62,6 @@ session rather than by PR, and the one session that changed behavior mid-flight
 did so exactly when it unshallowed. That confirms a defect whose fix is a
 separate design decision, so the finding and its three candidate fixes are filed
 as [dev-history regeneration silently no-ops on shallow clones](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
-rather than resolved here.
+rather than resolved here — where it was then closed `wontfix`: the check is
+unbounded by design and the deployed page is re-derived on every push, so the
+committed copy's drift is accepted rather than fixed.
