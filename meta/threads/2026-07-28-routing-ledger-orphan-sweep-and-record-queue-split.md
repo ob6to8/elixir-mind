@@ -65,7 +65,7 @@ and each filed — once as competing todos on the channels column, once as a `pl
 and an `issue` on the ledger-upkeep gap. The resulting files differ in name and
 path, so git sees no conflict and no gate fires; both were caught by accident.
 An earlier judgment that a third instance was needed before calling it a pattern
-was reversed on re-reading the two.
+was reversed on re-reading the two. This third round landed in **PR 176**.
 
 ## Routing
 
