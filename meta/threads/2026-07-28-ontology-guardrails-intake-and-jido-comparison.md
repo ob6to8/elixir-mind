@@ -107,6 +107,12 @@ The issue stays `open` until the plan's remaining steps rewrite the policy. The
 in-place `State` edits this session made become moot rather than wrong, and are
 left as-is.
 
+The session's work landed across four PRs — **#163** (the capture and analysis,
+the origin stamped in `pr:`), **#168** (the existence-proof section, the
+coding-standards clause, and the ledger issue), **#173** (the fetch-recipe
+snippet and its `/intake` pointer), and **#175** (this closing capture). Only the
+origin is recorded in frontmatter; the rest live here, per the write-once rule.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
