@@ -522,6 +522,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:863b32` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environments-carry-config](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environments-carry-config.md) | source |  |
 | `em:3f35e1` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
 | `em:a142be` | [knowledge/SWE/agentic/anthropic/claude/artifacts](/knowledge/SWE/agentic/anthropic/claude/artifacts.md) | concept | false |
+| `em:7fa867` | [knowledge/SWE/agentic/architecture/architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md) | reference |  |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
 | `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
@@ -578,7 +579,6 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:01e477` | [knowledge/knowledge-management/argumentation/gsn-community-standard](/knowledge/knowledge-management/argumentation/gsn-community-standard.md) | source |  |
 | `em:5c3ab0` | [knowledge/knowledge-management/argumentation/toulmin-model-of-argument](/knowledge/knowledge-management/argumentation/toulmin-model-of-argument.md) | reference |  |
 | `em:6d6425` | [knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md) | reference |  |
-| `em:7fa867` | [knowledge/knowledge-management/design-rationale/architecture-without-architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md) | reference |  |
 | `em:4f5372` | [knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation](/knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation.md) | reference |  |
 | `em:2e4803` | [knowledge/knowledge-management/design-rationale/design-rationale](/knowledge/knowledge-management/design-rationale/design-rationale.md) | concept | false |
 | `em:ce51fc` | [knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale](/knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale.md) | reference |  |

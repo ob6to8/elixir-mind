@@ -60,8 +60,11 @@ newly applicable even though the tools built on it died.
 - The ADR-automation literature captured beside this concept:
   [LLMs recovering design rationale](/knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale.md),
   [context strategies for ADR generation](/knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation.md),
-  [AgenticAKM](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md),
-  [Architecture Without Architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md).
+  [AgenticAKM](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md).
+- [Architecture Without Architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md)
+  — filed under agentic architecture rather than here: it argues the case *for*
+  decision records from the other direction, as the audit surface for
+  architecture agents shape without review.
 
 ## Thread excerpts — route-tagged log
 
