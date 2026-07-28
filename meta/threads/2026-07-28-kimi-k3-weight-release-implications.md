@@ -79,8 +79,8 @@ operator's direction and **removed the committed copy entirely** — the view is
 generated at deploy time and gitignored, `--check` leaves CI and the pre-commit
 hook, and `/create-pull-request` loses its regeneration step; the issue closed
 `resolved` rather than `wontfix`, at the accepted cost of the page being
-site-only. Both of the earlier
-rounds landed together in PR 164 — the plan round was committed and pushed
+site-only; that removal and the correction preceding it landed in PR 167. Both of
+the earlier rounds landed together in PR 164 — the plan round was committed and pushed
 without a PR of its own, since the operator had not asked for one, and the
 diagnosis round opened the PR over both. `pr:` stays at its origin, 157.
 
