@@ -52,6 +52,13 @@ boundary — and cross-linked; the two duplicate glossary terms drafted here wer
 dropped in favor of the already-merged ones, leaving four new terms from this
 thread.
 
+A follow-up round after the merge asked whether the session's one open
+strand — the derived RDF/SKOS export — lived anywhere but this thread. It
+did not, in any load-bearing sense: `mix brain.session_init` surfaces the row,
+but as one of 97, with no mechanism that ever closes it. It was filed as
+[evaluate a derived RDF/SKOS export](/meta/todos/evaluate-a-derived-rdf-skos-export.md)
+and the ledger row rerouted to it, in PR 180.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
