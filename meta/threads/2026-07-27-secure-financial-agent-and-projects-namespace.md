@@ -142,6 +142,7 @@ defect its sibling issue tracks.
 | Capture boundary derived rather than recalled | closed | [`mix brain.thread_tail`](/lib/mix/tasks/brain.thread_tail.ex) · [/capture skill](/.claude/skills/capture/SKILL.md) | - |
 | `session-capture` cited an update-in-place rule it never stated | closed | [session-capture](/meta/policy/session-capture.md) | - |
 | Does an agent re-derive or recall available state? | paused | [re-derivation vs. recall](/meta/evals/re-derivation-vs-recall.md) | Separating genuine follow-ups from substitution before the metric means anything |
+| The thread's own inability to close, and where the cutoff belongs | closed | `unrouted` | - |
 | Merge commits flagged Unverified by the stop hook | open | [merge-commits-show-unverified](/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md) | Sign the merges, exempt multi-parent commits from the hook, or accept the noise |
 | Policy index glosses drifting on policy edits | open | [policy-index-glosses-drift-on-policy-edits](/meta/issues/policy-index-glosses-drift-on-policy-edits.md) | Which fix shape — state the rule, add a check, or generate the gloss from `description` |
 | Harness choice for building vs. running | closed | `unrouted` | - |
@@ -1446,4 +1447,420 @@ Nothing to do. The two findings from the audit are still pending your call:
 ## User
 
 1
+
+## Assistant
+
+PR [#169](https://github.com/ob6to8/elixir-mind/pull/169) merged as `12e2057`.
+
+### What I modified
+
+| File | Thrust |
+|---|---|
+| `meta/policy/session-capture.md` | States the update-in-place rule it previously only cited — including the boundary derivation and why recalling it fails invisibly |
+| `meta/evals/re-derivation-vs-recall.md` | Evidence base corrected to four instances across two sessions, with the 2026-07-22 quote |
+| `meta/evals/index.md` | Gloss updated in the same motion |
+| `CLAUDE.md` | Recompiled |
+
+### Actions I have taken
+
+| Action | Result |
+|---|---|
+| `mix brain.thread_tail` | Derived the capture boundary; 6 blocks appended |
+| `attribution.from` | Stamped on `session-capture` |
+| Commits `860a36b`, `bc83925` | Gate suite green; 188 tests |
+| CI on `bc83925` | All 19 steps green |
+| Merge | True merge commit |
+
+One thing worth naming rather than burying: **correcting the eval's table immediately produced two stale internal references** — "the three instances" in the falsification section and "instance 2's boundary" in the closing section, both pointing at the pre-renumbering indices. I caught them, but only because I grepped after editing. That's the same drift-after-edit shape as the index gloss that started this whole thread, occurring inside the very PR that fixes two other instances of it. Three occurrences now in one session, all in documents *about* the problem.
+
+Which is a fair argument that the pattern is more mechanical than editorial. A cross-reference checker — flag a doc whose internal ordinals no longer resolve — would have an oracle where the gloss problem doesn't, since numbered lists and their references are both in-repo. That's speculative, and I'm not proposing it as work; just noting the evidence is accumulating in a specific direction.
+
+Session now spans seven PRs: `5654a39`, `9f63491`, `f46b7b9`, `a522eb6`, `b692feb`, `b3cec1a`, `12e2057`. `pr:` remains at its origin, 145. Pickup point unchanged: `projects/secure-financial-agent.md` → `spec-completion.md`.
+
+## User
+
+should we capture these findings somehow?
+are we clear to run /create-pull-request? is there anything you need from me? is everything persisted outside this thread?
+
+## Assistant
+
+**Short version:** almost everything is already persisted. One small thing isn't, and it belongs as an addition to an existing issue rather than a new document. You're clear to run `/create-pull-request` — but if we run it right now it would carry only the session record and nothing else, so it's worth doing the small addition first. Nothing else is needed from you.
+
+## 1. One finding is unpersisted, and it's a refinement not a new artifact
+
+The stale-ordinal instance itself **is** already recorded — in the #169 commit message and in the thread narrative.
+
+What isn't recorded is the observation *about* it: internal cross-references within a document (ordinals, "instance 2", "the three instances") are a **subclass of the drift family that has an oracle** — both the numbered list and the reference to it live in the same repo, so a checker could resolve them. The [policy-index-gloss issue](https://github.com/ob6to8/elixir-mind/blob/main/meta/issues/policy-index-glosses-drift-on-policy-edits.md) currently reasons as if the whole family is ungateable because glosses can't be derived. That's true of glosses and false of cross-references.
+
+That's a correction to an existing issue's analysis, so per `update-in-place` it appends there — not a new issue, not an eval. Small, and it makes that issue's "candidate fixes" section more accurate.
+
+## 2. Clear to run, with one caveat
+
+Working tree clean, branch `0` ahead of `main`. So `/create-pull-request` right now would open a PR containing **only** the capture of two blocks — my merge report and your question. Legitimate, but thin. Doing the item-1 addition first gives the PR something to carry.
+
+Nothing needed from you beyond a yes/no on that.
+
+One thing to flag: the skill itself changed on `main` while we worked. The `mix brain.dev_history` step is gone and merge is now step 9 rather than 10 — I'll follow the current version rather than the one I've been running all session, which is exactly the re-derive-don't-recall case.
+
+## 3. Everything else is persisted — here's what I checked
+
+**Un-captured tail:** 2 blocks (my #169 report, your question). Structural — a capture can't contain the message announcing it.
+
+**Routing ledger:** all seven `open`/`paused` strands route to real durable artifacts:
+
+| Strand | Routes to |
+|---|---|
+| Charter & shape · What remains before code | project hub · `spec-completion` |
+| Elixir/OTP floor | `raise-elixir-otp-toolchain-floor` |
+| `depends_on` unregistered | `epistemic-overlay` |
+| Re-derive vs. recall | the proposed eval |
+| Hook false positive · Policy-index drift | the two issues |
+
+The single `unrouted` row is "harness choice for building vs. running", marked `closed` — a conversational strand that resolved with nothing to file.
+
+**Scope of that check:** the thread's ledger and the un-captured tail. I did not re-audit every artifact this session produced against the full tree — that audit ran two rounds ago and found the two gaps we then closed.
+
+### Your options
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Add the cross-reference note to the gloss issue, then `/create-pull-request merge` **(recommended)** | Two paragraphs into an existing issue; PR carries content plus the capture |
+| 2 | `/create-pull-request merge` as-is | Capture-only PR; the observation stays in this transcript |
+| 3 | Neither | Session ends here; the observation is lost when the transcript is |
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+e07b42b E noreply@github.com
+2316914 E noreply@github.com
+dd43e1b N noreply@anthropic.com
+8013570 N noreply@anthropic.com
+c421fca N noreply@anthropic.com
+a110206 E noreply@github.com
+81049e7 N noreply@anthropic.com
+ed8f48d N noreply@anthropic.com
+b220117 N noreply@anthropic.com
+b90b013 N noreply@anthropic.com
+12e2057 E noreply@github.com
+8e23564 E noreply@github.com
+325fd5e N noreply@anthropic.com
+6ed9adc N noreply@anthropic.com
+e96a6d3 N noreply@anthropic.com
+acd3c82 N noreply@anthropic.com
+4a06911 N noreply@anthropic.com
+40c9394 E noreply@github.com
+8b18392 N noreply@anthropic.com
+574bf60 N noreply@anthropic.com
+62b1cf0 N noreply@anthropic.com
+67f0407 N noreply@anthropic.com
+a319a40 N noreply@anthropic.com
+b0907d9 N noreply@anthropic.com
+2c6d28e N noreply@anthropic.com
+6bb5bd4 E noreply@github.com
+1158e22 N noreply@anthropic.com
+b11108e N noreply@anthropic.com
+67a3277 N noreply@anthropic.com
+8f60eb1 N noreply@anthropic.com
+47e1024 E noreply@github.com
+d2d11c2 N noreply@anthropic.com
+dd29e7c E noreply@github.com
+a6a5902 N noreply@anthropic.com
+fa5edd0 N noreply@anthropic.com
+e6d80b0 N noreply@anthropic.com
+0e0ec17 N noreply@anthropic.com
+6bf8fc2 N noreply@anthropic.com
+e0d9f16 N noreply@anthropic.com
+dd51df7 N noreply@anthropic.com
+cfe808f N noreply@anthropic.com
+0b23cf6 N noreply@anthropic.com
+2f0f433 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+Clean tree, `0` ahead — and **zero of the 43 are from this session**. All 43 belong to other sessions or are merge commits. The proposed `git rebase --exec` would rewrite 43 commits of other people's work, every one already on `main`.
+
+The growth curve across five firings, with my branch contributing nothing each time:
+
+| Firing | Commits flagged | My commits among them |
+|---|---|---|
+| 1 | 1 | 0 |
+| 2 | 5 | 0 |
+| 3 | 5 | 0 |
+| 4 | 6 | 0 |
+| 5 | **43** | 0 |
+
+That jump is `main` absorbing other sessions' PRs while I sat clean. It's the reachable-from-vs-added-by defect scaling exactly as the [issue](https://github.com/ob6to8/elixir-mind/blob/main/meta/issues/merge-commits-show-unverified-and-trip-the-git-hook.md) predicted — but 43 is past "noisy" and into "actively dangerous," since a session that complied would force-push a rewrite of the entire recent history of the repo.
+
+That's a materially stronger data point than what the issue currently records (its second observation tops out at five), and it belongs in the issue.
+
+So this folds into the decision you already have in front of you — **option 1 now covers two additions rather than one**:
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Add both notes, then `/create-pull-request merge` **(recommended)** | The cross-reference-oracle refinement to the gloss issue **+** the 43-commit escalation to the hook issue, then capture and land |
+| 2 | `/create-pull-request merge` as-is | Capture-only PR; both observations stay in this transcript |
+| 3 | Neither | Session ends; both are lost with the transcript |
+
+Still nothing else needed from you.
+
+## User
+
+what do you recommend for next steps to try and close this thread out
+
+## Assistant
+
+**Short version:** land one final PR with the two small additions, then stop — and start the actual next work in a fresh session rather than this one.
+
+## Why this thread won't close on its own
+
+There's a structural reason we've been circling. Every closing motion **generates new material**: I merge a PR → that produces a merge report and a merge commit → the report is un-captured and the commit trips the hook → both become things to record. "Capture everything, then close" is a fixpoint that recedes by exactly one step each time you reach for it.
+
+Five of the seven PRs demonstrate it. #145 and #148 carried the work you actually asked for — the projects namespace, the project, the architecture, four knowledge docs, the spec-completion plan. Everything after has been the session auditing its own process: capture mechanics, a hook false positive, an eval about the agent's own misses, corrections to those corrections. Each was individually defensible. Collectively they're a thread that has turned to examining itself.
+
+So the only way out is a declared cutoff, not another audit.
+
+## What I recommend
+
+**One final PR, then stop.** It carries:
+
+1. The cross-reference-oracle refinement to the gloss issue — genuinely improves that issue's analysis, since it currently treats the whole drift family as ungateable when a checkable subclass exists.
+2. The 43-commit escalation on the hook issue — the strongest data point available, and it changes the severity from noise to hazard.
+3. The capture of the remaining exchanges.
+
+Then merge and stop. **Do not run another persistence audit afterward.** The last two audits found real things; a third would find observations about the second, and that's where the value curve has gone flat.
+
+## What I recommend against
+
+**Continuing the real work in this session.** The pickup point is `spec-completion` → D1/D2 and drafting S1 (the threat model). That deserves a fresh session, for a concrete reason rather than hygiene: this session's context is now dominated by governance minutiae — hook mechanics, ordinal drift, capture boundaries. Drafting a security threat model wants the financial-agent context loaded, not this. A fresh session reading `projects/secure-financial-agent.md` → `architecture.md` → `spec-completion.md` starts better-oriented than I currently am.
+
+**Filing anything further about the session's own behavior.** The re-derivation eval exists, the belief exists, the two issues exist. Four instances is what it is; a fifth self-reported one adds nothing an instrument wouldn't measure better.
+
+## Where things land
+
+| Thread state | |
+|---|---|
+| Original ask | Delivered — spec'd, filed, and the project has a home and a next-step plan |
+| Open decisions | D1 hardware, D2 isolation posture, D3 gate placement — all yours, all recorded with resolution paths |
+| Next agent work | S1 threat model — unblocked, needs a fresh session |
+| Open issues | Two, both tracked, neither blocking |
+
+Say the word and I'll run the final PR. If you'd rather not carry the two additions, `/create-pull-request merge` as-is closes it just as cleanly — the observations are worth about ten minutes, not a decision.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+e07b42b E noreply@github.com
+2316914 E noreply@github.com
+dd43e1b N noreply@anthropic.com
+8013570 N noreply@anthropic.com
+c421fca N noreply@anthropic.com
+a110206 E noreply@github.com
+81049e7 N noreply@anthropic.com
+ed8f48d N noreply@anthropic.com
+b220117 N noreply@anthropic.com
+b90b013 N noreply@anthropic.com
+12e2057 E noreply@github.com
+8e23564 E noreply@github.com
+325fd5e N noreply@anthropic.com
+6ed9adc N noreply@anthropic.com
+e96a6d3 N noreply@anthropic.com
+acd3c82 N noreply@anthropic.com
+4a06911 N noreply@anthropic.com
+40c9394 E noreply@github.com
+8b18392 N noreply@anthropic.com
+574bf60 N noreply@anthropic.com
+62b1cf0 N noreply@anthropic.com
+67f0407 N noreply@anthropic.com
+a319a40 N noreply@anthropic.com
+b0907d9 N noreply@anthropic.com
+2c6d28e N noreply@anthropic.com
+6bb5bd4 E noreply@github.com
+1158e22 N noreply@anthropic.com
+b11108e N noreply@anthropic.com
+67a3277 N noreply@anthropic.com
+8f60eb1 N noreply@anthropic.com
+47e1024 E noreply@github.com
+d2d11c2 N noreply@anthropic.com
+dd29e7c E noreply@github.com
+a6a5902 N noreply@anthropic.com
+fa5edd0 N noreply@anthropic.com
+e6d80b0 N noreply@anthropic.com
+0e0ec17 N noreply@anthropic.com
+6bf8fc2 N noreply@anthropic.com
+e0d9f16 N noreply@anthropic.com
+dd51df7 N noreply@anthropic.com
+cfe808f N noreply@anthropic.com
+0b23cf6 N noreply@anthropic.com
+2f0f433 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+Same 43 commits, unchanged, clean tree — sixth firing. Declining again, for the reasons already recorded in the issue.
+
+This is the loop I described in my last message, demonstrating itself: I explain why the thread won't close on its own, and the act of ending that turn fires the hook, which produces another thing to respond to.
+
+Nothing has changed and nothing needs doing. The decision from my last message is still the only thing outstanding:
+
+| # | Option | What it entails |
+|---|---|---|
+| 1 | Final PR with both additions, then merge **(recommended)** | Cross-reference-oracle note + the 43-commit escalation + capture. Then stop |
+| 2 | `/create-pull-request merge` as-is | Capture-only PR, closes just as cleanly |
+| 3 | Stop here | Both observations lost with the transcript; nothing else is at risk |
+
+Any of the three closes the thread. Option 1 is worth about ten minutes; option 2 is worth about three. I'd take 1, but 2 is a perfectly reasonable call given where the value curve is.
+
+## User
+
+isn't 1 handled by 2?
+
+## Assistant
+
+**Short version:** you're right that capture persists the content, and my earlier framing was wrong. But the two aren't equivalent, and the difference is the one this repo is built around.
+
+**Correcting myself first.** I said option 2 leaves the observations "in this transcript." That's inaccurate. `/capture` renders those exchanges verbatim into the thread doc, which is a committed, durable artifact — not a transcript that evaporates. Both observations *would* be persisted by option 2. I overstated the loss.
+
+**What option 1 adds is routing, not persistence.** The [routing-ledger policy](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/routing-ledger.md) draws exactly this line:
+
+> "Pointers and states only — never content. Synthesized content lands in the routed-to document."
+
+A thread is the *record that something was said*. The issue is *where the content lives for whoever needs it*. Someone picking up the gloss issue in three months opens `policy-index-glosses-drift-on-policy-edits.md` — they don't read a forty-turn thread to discover that its central claim has an exception.
+
+And that claim does have one. The issue currently reasons that the whole drift family is ungateable because glosses aren't derivable. Cross-references within a document *are* — both the list and the reference to it are in-repo. Left only in the thread, that correction sits somewhere nobody working the issue will look.
+
+Same for the hook issue: its second observation tops out at five commits. Forty-three, none of them mine, changes the severity from noise to hazard. That belongs where someone deciding whether to fix the hook will see it.
+
+**So the honest accounting:** option 2 preserves both. Option 1 puts each where it's actionable. If capture alone sufficed, this repo wouldn't have a routing ledger, route tags, or a knowledge layer — it would just be threads.
+
+The cost difference is a few minutes, and both additions are small. I'd still take **1** — but you've correctly identified that this is a discoverability call, not a data-loss one, and if you'd rather just close it, 2 genuinely does keep everything.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+e07b42b E noreply@github.com
+2316914 E noreply@github.com
+dd43e1b N noreply@anthropic.com
+8013570 N noreply@anthropic.com
+c421fca N noreply@anthropic.com
+a110206 E noreply@github.com
+81049e7 N noreply@anthropic.com
+ed8f48d N noreply@anthropic.com
+b220117 N noreply@anthropic.com
+b90b013 N noreply@anthropic.com
+12e2057 E noreply@github.com
+8e23564 E noreply@github.com
+325fd5e N noreply@anthropic.com
+6ed9adc N noreply@anthropic.com
+e96a6d3 N noreply@anthropic.com
+acd3c82 N noreply@anthropic.com
+4a06911 N noreply@anthropic.com
+40c9394 E noreply@github.com
+8b18392 N noreply@anthropic.com
+574bf60 N noreply@anthropic.com
+62b1cf0 N noreply@anthropic.com
+67f0407 N noreply@anthropic.com
+a319a40 N noreply@anthropic.com
+b0907d9 N noreply@anthropic.com
+2c6d28e N noreply@anthropic.com
+6bb5bd4 E noreply@github.com
+1158e22 N noreply@anthropic.com
+b11108e N noreply@anthropic.com
+67a3277 N noreply@anthropic.com
+8f60eb1 N noreply@anthropic.com
+47e1024 E noreply@github.com
+d2d11c2 N noreply@anthropic.com
+dd29e7c E noreply@github.com
+a6a5902 N noreply@anthropic.com
+fa5edd0 N noreply@anthropic.com
+e6d80b0 N noreply@anthropic.com
+0e0ec17 N noreply@anthropic.com
+6bf8fc2 N noreply@anthropic.com
+e0d9f16 N noreply@anthropic.com
+dd51df7 N noreply@anthropic.com
+cfe808f N noreply@anthropic.com
+0b23cf6 N noreply@anthropic.com
+2f0f433 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+Same 43 commits, unchanged. Declining — seventh time, same reasons, already recorded in the issue.
+
+Still waiting on your call between option 1 and option 2. Both close the thread; both persist everything; the difference is only whether the two observations land in the issues they refine or stay in the thread record.
+
+## User
+
+this seems longwinded. i am asking if by calling the skill to create the pr, everything necessary to close out this thread will happen correctly
+
+## Assistant
+
+Yes.
+
+`/create-pull-request merge` runs capture (appends the un-captured exchanges, updates the ledger, materializes route tags), glossaries the thread, stamps `attribution.from`, commits, pushes, opens the PR, records the follow-up PR in prose since `pr:` is already stamped at 145, drives CI green, and true-merges. That's a complete, correct close.
+
+Two caveats, one line each:
+
+- The two observations get persisted in the thread record but not routed into the two issues. That was option 1 — optional, not required for correctness.
+- The hook will fire once more on the resulting merge commit. Expected, not a sign of incompleteness.
+
+Say go and I'll run it.
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are commit(s) on branch 'claude/secure-local-financial-agent-o1dm5a' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):
+e07b42b E noreply@github.com
+2316914 E noreply@github.com
+dd43e1b N noreply@anthropic.com
+8013570 N noreply@anthropic.com
+c421fca N noreply@anthropic.com
+a110206 E noreply@github.com
+81049e7 N noreply@anthropic.com
+ed8f48d N noreply@anthropic.com
+b220117 N noreply@anthropic.com
+b90b013 N noreply@anthropic.com
+12e2057 E noreply@github.com
+8e23564 E noreply@github.com
+325fd5e N noreply@anthropic.com
+6ed9adc N noreply@anthropic.com
+e96a6d3 N noreply@anthropic.com
+acd3c82 N noreply@anthropic.com
+4a06911 N noreply@anthropic.com
+40c9394 E noreply@github.com
+8b18392 N noreply@anthropic.com
+574bf60 N noreply@anthropic.com
+62b1cf0 N noreply@anthropic.com
+67f0407 N noreply@anthropic.com
+a319a40 N noreply@anthropic.com
+b0907d9 N noreply@anthropic.com
+2c6d28e N noreply@anthropic.com
+6bb5bd4 E noreply@github.com
+1158e22 N noreply@anthropic.com
+b11108e N noreply@anthropic.com
+67a3277 N noreply@anthropic.com
+8f60eb1 N noreply@anthropic.com
+47e1024 E noreply@github.com
+d2d11c2 N noreply@anthropic.com
+dd29e7c E noreply@github.com
+a6a5902 N noreply@anthropic.com
+fa5edd0 N noreply@anthropic.com
+e6d80b0 N noreply@anthropic.com
+0e0ec17 N noreply@anthropic.com
+6bf8fc2 N noreply@anthropic.com
+e0d9f16 N noreply@anthropic.com
+dd51df7 N noreply@anthropic.com
+cfe808f N noreply@anthropic.com
+0b23cf6 N noreply@anthropic.com
+2f0f433 N noreply@anthropic.com
+Please run 'git config user.email noreply@anthropic.com && git config user.name Claude', then 'git commit --amend --no-edit --reset-author' for the tip commit, or 'git rebase --exec "git commit --amend --no-edit --reset-author" origin/claude/secure-local-financial-agent-o1dm5a' for earlier commits, then push.
+
+## Assistant
+
+Same 43, unchanged, clean tree. Declining — already tracked in the issue.
+
+Waiting on your go to run `/create-pull-request merge`.
 
