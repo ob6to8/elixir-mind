@@ -68,17 +68,20 @@ as well — see step 10.
 ### 4. Regenerate the dev-history view
 - Run `mix brain.dev_history` to catch `meta/dev-history.md` up to the current
   base branch's merge graph, and stage the result if it changed.
-- **Why this lives here, and why it's best-effort.** `meta/dev-history.md` is a
-  generated-but-committed doc like `CLAUDE.md`/registry/code-map, but a PR's
-  branch can never contain its own merge commit, so CI's check on it
-  (`mix brain.dev_history --check`) is deliberately lag-tolerant by exactly one
-  PR (see the
-  [dev-history staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)).
-  Regenerating here doesn't make this PR self-consistent (it can't be), but it
-  catches the file up through the *previous* merge — so if every PR does this,
-  the checked-in copy never drifts past that unavoidable one-PR lag. Skip only
-  if `mix brain.dev_history` reports a shallow clone (fetch full history first
-  if that's fixable; otherwise proceed without this step and say so).
+- **Why this lives here, and why it's genuinely optional.** The committed
+  `meta/dev-history.md` is a **lagging convenience copy**, not an authoritative
+  one: `pages.yml` re-derives the page from full history on every push to `main`,
+  so the live site is always current. CI's
+  [lag-tolerant check](/beliefs/glossary/lag-tolerant-check.md)
+  (`mix brain.dev_history --check`) accepts **any** number of missing newest
+  sections — it exists to catch hand edits and reorderings, not staleness — so
+  this step never unblocks a PR. Running it just keeps the cache tidier.
+- **It no-ops silently on a shallow clone**, which is what web sessions get, so
+  in those sessions the file simply lags further. That is accepted, not a
+  failure: skip the step and say nothing. `git fetch --unshallow` first if you
+  want the tidier copy and the fetch is cheap. See the
+  [issue closed on this](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)
+  and the [staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md).
 
 ### 5. Survey the change
 - `git status` and `git diff` (plus `git diff --staged`) to see exactly what would
@@ -175,11 +178,10 @@ as well — see step 10.
   so the session record, the terms it introduced, *and* the trace from each
   governance doc back to its session all ship in the same PR; don't commit the
   change and leave any of them for later.
-- **Regenerate dev-history every time (step 4), even on unrelated changes.** It's
-  the one generated doc CI won't hard-fail on by itself (see the
-  [dev-history staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)),
-  so this skill is what keeps it from drifting — skipping it is how the drift
-  happens.
+- **Dev-history (step 4) is the one step you may skip without saying so.** The
+  committed copy is a cache and the deployed page is re-derived on every push to
+  `main`, so its drift is accepted by design — unlike `CLAUDE.md`, the registry,
+  and the code map, whose `--check` gates are strict and *do* block.
 - **The invocation authorizes *opening*, not merging.** Running this skill is the
   operator's yes to capture, commit, push, and open the PR — no separate
   confirmation for those. **Merging is a separate opt-in:** it happens only when the
