@@ -2,8 +2,8 @@
 type: policy
 title: Lead with a plainspeak orientation
 description: A dense delivered response opens with a short plain-language orientation — what happened, where things stand, what needs deciding, in common words — before the technical presentation; repo-specific terms are introduced only after the plain statement they label, so the reader is onboarded to the general thrust before meeting terminology.
-section: filing
-order: 20
+section: communication
+order: 1
 status: active
 tags: [meta, governance, communication, plainspeak, levels]
 timestamp: 2026-07-28

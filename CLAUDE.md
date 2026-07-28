@@ -560,32 +560,6 @@ the metadata states the origin.
 
 _Source: [`meta/policy/provenance-lives-in-metadata.md`](/meta/policy/provenance-lives-in-metadata.md)_
 
-**Negate only an explicit case.** A negative statement — "no X", "never Y",
-"not by Z-ing" — is a reference: it points at the case it rules out. It earns
-its place only when that case is **explicit**: raised in the same document, a
-live alternative the reader would otherwise assume, or a standing rule being
-overridden. Absent an explicit case, state the rule positively — an unanchored
-negation is an orphaned reference, gesturing at an argument the reader cannot
-see.
-
-- **The test: can the reader point at what is being negated?** If the case is
-  named nearby, assumed by default, or contract-bound elsewhere (link it), the
-  negation is anchored and does real work. If answering "who said anything
-  about that?" requires context outside the document, recast the sentence as
-  the positive rule.
-- **Negations fossilize.** An anchored negation loses its anchor when a later
-  edit removes the referent — a provenance sweep, a trim, a refactor — and the
-  stump reads as an argument with a missing party. An edit that removes a
-  negation's referent must recast the negation in the same motion, not leave
-  the stump.
-- **Scope.** Document bodies, index glosses, and agent responses alike —
-  wherever the agent composes prose. Thread renders are exempt (verbatim
-  record). Anchored negations remain fully legitimate and load-bearing —
-  contrast pairs ("cache, never know"), guardrails negating a named temptation,
-  and overrides of stated defaults are the pattern working as intended.
-
-_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
-
 **Choosing the artifact is a second question, not the first.**
 [plan-vs-capture](/meta/policy/plan-vs-capture.md) answers *whether* to persist
 anything: when this session holds the context and can finish the work, the commit
@@ -636,6 +610,108 @@ rather than creating a near-duplicate in a different genre.
 
 _Source: [`meta/policy/governance-artifact-routing.md`](/meta/policy/governance-artifact-routing.md)_
 
+**Living text states the present; git narrates the past.** A **living surface** —
+code, code comments, operational skills, reference docs, the compiled contract —
+is read to act on the system *as it is now*, so every sentence in it should be
+true of the present. The commit graph is already the brain's single
+change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
+[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
+narration embedded in living text — "this used to X", "the old Y", "was removed
+in favor of Z" — is a second, hand-kept history layer at comment scale, and it
+fails the same way the purged `log.md` files did — it goes stale silently and
+gets retrieved and trusted as current state. This is that lesson generalized from
+dedicated log *files* down to inline narration.
+
+**The rule.** When you change the system, rewrite the living text to describe the
+new present — do not append a note about what it used to be. Git holds the
+before; the commit message carries the why-it-changed. The living surface carries
+only what is.
+
+**The carve-outs — what is *not* retrospective narration:**
+
+- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
+  reader where the functionality *is now* — load-bearing, keep. Test: does the
+  sentence tell the reader something they must know to act *today*, or only what
+  changed?
+- **Chesterton's-fence justifications.** A comment explaining why live code still
+  exists ("kept only as the migration reader for X") justifies present code and
+  reads as *this is why this exists*, not as a changelog. Keep.
+- **Explanatory surfaces where the history is the subject.** A `tutorial` or
+  `doctrine` may carry a clearly-marked, bounded history aside when the change
+  itself is what it explains. That permission is exactly why operational and
+  reference surfaces — read to act, not to learn the backstory — get none.
+
+Records that are historical *by construction* — `plan`, `analysis`, `issue`,
+thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
+not living surfaces and are out of scope; narrating the past is their job.
+
+_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
+
+**Prefer established terminology; coin bespoke terms only when nothing
+established fits.** When naming a genre, a `type`, an artifact, a mix task, or
+a concept, reach for the standard term of art (*flow*, *plan*, *glossary*,
+*digest*) before inventing repo-specific vocabulary. Every bespoke term is a
+tax on future readers and agents: it must be learned, glossaried, and
+disambiguated against the standard term it displaced — and an agent
+encountering it cold will guess its meaning from the nearest established sense
+anyway.
+
+- **The test.** Before coining, ask: does an established term denote this
+  thing, even approximately? An approximate standard term with a one-line
+  qualification beats an exact bespoke one (*"flow doc — the touch-sequence of
+  a canonical run"* over a novel coinage).
+- **When bespoke is warranted** — the concept is genuinely novel to this
+  bundle (e.g. *route tag*) — define it in the
+  [glossary](/beliefs/glossary/index.md) at first use, with `sense: repo`.
+- **No retroactive churn.** An existing name is not renamed to a "better" term
+  without operator ratification: renames are shape changes
+  ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)),
+  and a rename's cost (links, skills, muscle memory) usually exceeds a
+  marginal terminology gain.
+
+_Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
+
+---
+
+## 4. Communication — composing responses and prose
+
+**Lead with a plainspeak orientation; keep the technical register after it.**
+A delivered response of any density — one that reports work, presents a
+finding, or leans on artifacts and concepts the operator is not already
+holding in mind from the immediate conversation — opens with a short
+**plainspeak orientation**: what just happened, where things now stand, and
+what (if anything) needs deciding, in common words. The technical
+presentation follows at full density, unchanged — the orientation is a
+runway to it, never a replacement for it.
+
+- **Onboard before terminology.** The reader must meet the general thrust
+  before meeting the terms. Within the orientation, name an artifact by what
+  it does before (or alongside) its repo name — "the file that lists every
+  merged PR (`meta/dev-history.md`)" — and defer repo coinages to the
+  technical half entirely where the plain description carries the point.
+- **One presentation, then the other — never interleaved phrase-by-phrase.**
+  The orientation is a whole, short account (a paragraph or two), after which
+  the technical presentation stands on its own. Phrase-level unpacking is a
+  different tool and stays on demand:
+  [`/elaborate`](/.claude/skills/elaborate/SKILL.md).
+- **The orientation is a derivation, not a second account.** It restates the
+  technical content at lower resolution; it must not introduce claims,
+  caveats, or decisions the technical half lacks. This is the response-surface
+  form of the *one canonical level plus anchored derivations* rule from the
+  [three-level documentation plan](/meta/plans/three-level-documentation.md),
+  whose committed plain tier serves the same reader on the document surface.
+- **Calibrate by density, not length.** Conversational turns, simple answers,
+  and responses whose terms are all live in the current exchange need no
+  separate orientation — an orientation over three plain sentences is
+  ceremony. The trigger is referential density: when following the response
+  requires holding artifacts or concepts the conversation has not just
+  established, orient first.
+- **Placement.** The orientation opens the response, above any
+  [work-report tables](/meta/policy/response-work-report-format.md); tables
+  and technical prose keep their existing form beneath it.
+
+_Source: [`meta/policy/plainspeak-orientation.md`](/meta/policy/plainspeak-orientation.md)_
+
 **When a turn produces work, report it as a ledger.** A response that creates or
 modifies artifacts, or reaches a decision point, closes with tabular sections
 rather than narrating the same facts in prose. Tables make what-happened and
@@ -679,43 +755,6 @@ only the sections that have content.
 
 _Source: [`meta/policy/response-work-report-format.md`](/meta/policy/response-work-report-format.md)_
 
-**Living text states the present; git narrates the past.** A **living surface** —
-code, code comments, operational skills, reference docs, the compiled contract —
-is read to act on the system *as it is now*, so every sentence in it should be
-true of the present. The commit graph is already the brain's single
-change-narrative layer ([merge-strategy](/meta/policy/merge-strategy.md),
-[retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md)): retrospective
-narration embedded in living text — "this used to X", "the old Y", "was removed
-in favor of Z" — is a second, hand-kept history layer at comment scale, and it
-fails the same way the purged `log.md` files did — it goes stale silently and
-gets retrieved and trusted as current state. This is that lesson generalized from
-dedicated log *files* down to inline narration.
-
-**The rule.** When you change the system, rewrite the living text to describe the
-new present — do not append a note about what it used to be. Git holds the
-before; the commit message carries the why-it-changed. The living surface carries
-only what is.
-
-**The carve-outs — what is *not* retrospective narration:**
-
-- **Present-tense pointers.** "The appraisal lives behind `/priorities`" tells a
-  reader where the functionality *is now* — load-bearing, keep. Test: does the
-  sentence tell the reader something they must know to act *today*, or only what
-  changed?
-- **Chesterton's-fence justifications.** A comment explaining why live code still
-  exists ("kept only as the migration reader for X") justifies present code and
-  reads as *this is why this exists*, not as a changelog. Keep.
-- **Explanatory surfaces where the history is the subject.** A `tutorial` or
-  `doctrine` may carry a clearly-marked, bounded history aside when the change
-  itself is what it explains. That permission is exactly why operational and
-  reference surfaces — read to act, not to learn the backstory — get none.
-
-Records that are historical *by construction* — `plan`, `analysis`, `issue`,
-thread docs, `deprecated/`, generated history like `meta/dev-history.md` — are
-not living surfaces and are out of scope; narrating the past is their job.
-
-_Source: [`meta/policy/living-text-is-present-tense.md`](/meta/policy/living-text-is-present-tense.md)_
-
 **Quote primary sources verbatim; mark the boundary between quotation and
 synthesis.** When a delivered response or a document body leans on what a
 source says — a policy, a doctrine, an external article or post, a code
@@ -756,30 +795,6 @@ the boundary checkable.
 
 _Source: [`meta/policy/quote-primary-sources.md`](/meta/policy/quote-primary-sources.md)_
 
-**Prefer established terminology; coin bespoke terms only when nothing
-established fits.** When naming a genre, a `type`, an artifact, a mix task, or
-a concept, reach for the standard term of art (*flow*, *plan*, *glossary*,
-*digest*) before inventing repo-specific vocabulary. Every bespoke term is a
-tax on future readers and agents: it must be learned, glossaried, and
-disambiguated against the standard term it displaced — and an agent
-encountering it cold will guess its meaning from the nearest established sense
-anyway.
-
-- **The test.** Before coining, ask: does an established term denote this
-  thing, even approximately? An approximate standard term with a one-line
-  qualification beats an exact bespoke one (*"flow doc — the touch-sequence of
-  a canonical run"* over a novel coinage).
-- **When bespoke is warranted** — the concept is genuinely novel to this
-  bundle (e.g. *route tag*) — define it in the
-  [glossary](/beliefs/glossary/index.md) at first use, with `sense: repo`.
-- **No retroactive churn.** An existing name is not renamed to a "better" term
-  without operator ratification: renames are shape changes
-  ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)),
-  and a rename's cost (links, skills, muscle memory) usually exceeds a
-  marginal terminology gain.
-
-_Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-established-terminology.md)_
-
 **Negative findings name their scope.** A statement that something *does not
 exist*, *is not stated anywhere*, or *could not be found* is a claim about a
 search space, not about the world. Report it **relative to the space actually
@@ -814,6 +829,32 @@ in
 
 _Source: [`meta/policy/negative-findings-name-their-scope.md`](/meta/policy/negative-findings-name-their-scope.md)_
 
+**Negate only an explicit case.** A negative statement — "no X", "never Y",
+"not by Z-ing" — is a reference: it points at the case it rules out. It earns
+its place only when that case is **explicit**: raised in the same document, a
+live alternative the reader would otherwise assume, or a standing rule being
+overridden. Absent an explicit case, state the rule positively — an unanchored
+negation is an orphaned reference, gesturing at an argument the reader cannot
+see.
+
+- **The test: can the reader point at what is being negated?** If the case is
+  named nearby, assumed by default, or contract-bound elsewhere (link it), the
+  negation is anchored and does real work. If answering "who said anything
+  about that?" requires context outside the document, recast the sentence as
+  the positive rule.
+- **Negations fossilize.** An anchored negation loses its anchor when a later
+  edit removes the referent — a provenance sweep, a trim, a refactor — and the
+  stump reads as an argument with a missing party. An edit that removes a
+  negation's referent must recast the negation in the same motion, not leave
+  the stump.
+- **Scope.** Document bodies, index glosses, and agent responses alike —
+  wherever the agent composes prose. Thread renders are exempt (verbatim
+  record). Anchored negations remain fully legitimate and load-bearing —
+  contrast pairs ("cache, never know"), guardrails negating a named temptation,
+  and overrides of stated defaults are the pattern working as intended.
+
+_Source: [`meta/policy/negate-only-explicit-cases.md`](/meta/policy/negate-only-explicit-cases.md)_
+
 **Certain words and phrases are banned from agent-composed prose.** The
 register below lists each banned phrase with the *pattern* it exemplifies and
 the reason it fails; the ban covers close variants of the pattern, not only the
@@ -834,7 +875,7 @@ content directly.
   is quoted material: a banned phrase inside a verbatim quote stays as its
   source wrote it.
 
-## The register
+### The register
 
 - **"worth flagging rather than burying" / "worth noting rather than
   burying"** — pattern: *"worth X-ing rather than Y-ing"*, and more broadly
@@ -848,46 +889,9 @@ content directly.
 
 _Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
 
-**Lead with a plainspeak orientation; keep the technical register after it.**
-A delivered response of any density — one that reports work, presents a
-finding, or leans on artifacts and concepts the operator is not already
-holding in mind from the immediate conversation — opens with a short
-**plainspeak orientation**: what just happened, where things now stand, and
-what (if anything) needs deciding, in common words. The technical
-presentation follows at full density, unchanged — the orientation is a
-runway to it, never a replacement for it.
-
-- **Onboard before terminology.** The reader must meet the general thrust
-  before meeting the terms. Within the orientation, name an artifact by what
-  it does before (or alongside) its repo name — "the file that lists every
-  merged PR (`meta/dev-history.md`)" — and defer repo coinages to the
-  technical half entirely where the plain description carries the point.
-- **One presentation, then the other — never interleaved phrase-by-phrase.**
-  The orientation is a whole, short account (a paragraph or two), after which
-  the technical presentation stands on its own. Phrase-level unpacking is a
-  different tool and stays on demand:
-  [`/elaborate`](/.claude/skills/elaborate/SKILL.md).
-- **The orientation is a derivation, not a second account.** It restates the
-  technical content at lower resolution; it must not introduce claims,
-  caveats, or decisions the technical half lacks. This is the response-surface
-  form of the *one canonical level plus anchored derivations* rule from the
-  [three-level documentation plan](/meta/plans/three-level-documentation.md),
-  whose committed plain tier serves the same reader on the document surface.
-- **Calibrate by density, not length.** Conversational turns, simple answers,
-  and responses whose terms are all live in the current exchange need no
-  separate orientation — an orientation over three plain sentences is
-  ceremony. The trigger is referential density: when following the response
-  requires holding artifacts or concepts the conversation has not just
-  established, orient first.
-- **Placement.** The orientation opens the response, above any
-  [work-report tables](/meta/policy/response-work-report-format.md); tables
-  and technical prose keep their existing form beneath it.
-
-_Source: [`meta/policy/plainspeak-orientation.md`](/meta/policy/plainspeak-orientation.md)_
-
 ---
 
-## 4. Controlled `type` vocabulary
+## 5. Controlled `type` vocabulary
 
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -983,7 +987,7 @@ _Source: [`meta/policy/controlled-type-vocabulary.md`](/meta/policy/controlled-t
 
 ---
 
-## 5. Identity & verification
+## 6. Identity & verification
 
 - **Every bundle document carries a stable `id`** in frontmatter: the bundle's
   id-namespace prefix + 6 lowercase hex chars — currently `em:` (e.g. `em:4c9e1f`).
@@ -1042,7 +1046,7 @@ _Source: [`meta/policy/verification-grounding.md`](/meta/policy/verification-gro
 
 ---
 
-## 6. Conformance (keep the bundle valid)
+## 7. Conformance (keep the bundle valid)
 
 A bundle conforms to OKF v0.1 when:
 
@@ -1057,7 +1061,7 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
 
 ---
 
-## 7. Skills
+## 8. Skills
 
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -1169,7 +1173,7 @@ _Source: [`meta/policy/skills-registry.md`](/meta/policy/skills-registry.md)_
 
 ---
 
-## 8. Session capture, routing & route tags
+## 9. Session capture, routing & route tags
 
 A working session (a **thread**) is non-linear: it touches many matters, pauses
 some on open questions, and routes each matter's synthesized content into a
@@ -1342,7 +1346,7 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
 
 ---
 
-## 9. Git workflow
+## 10. Git workflow
 
 - **Session branches are ephemeral; the default branch is durable.** Work enters
   the repo on a short-lived head branch (e.g. `claude/<slug>`) and lands in the
@@ -1369,7 +1373,7 @@ _Source: [`meta/policy/git-branch-deletion.md`](/meta/policy/git-branch-deletion
 
 ---
 
-## 10. Elixir tooling — coding standards
+## 11. Elixir tooling — coding standards
 
 **This contract is the coding-standards file.** The Elixir tooling (`lib/`,
 `test/`, the `mix brain.*` tasks) is held to the same anti-drift bar as the

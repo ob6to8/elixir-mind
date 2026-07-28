@@ -42,7 +42,7 @@ ratification. Follow the [operating contract](/CLAUDE.md).
 2. **Dedup.** Check the register for an entry whose pattern already covers
    the phrase. If one does, extend that entry (add the variant, sharpen the
    pattern) rather than filing a near-duplicate.
-3. **Append the entry** to the `## The register` list in
+3. **Append the entry** to the `### The register` list in
    `meta/policy/banned-phrases.md`, matching the existing entry shape
    (bold phrase, pattern, reason, recast). Bump the policy's `timestamp`.
    Leave `attribution` untouched — it records the policy's ingestion, not

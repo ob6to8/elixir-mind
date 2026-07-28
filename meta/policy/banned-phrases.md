@@ -2,8 +2,8 @@
 type: policy
 title: Banned words and phrases
 description: A register of words and phrases banned from agent-composed prose, each entry carrying the phrase, its generalized pattern, and the reason it fails — grown organically via /ban-phrase when the operator flags a phrase, with the invocation itself serving as ratification.
-section: filing
-order: 19
+section: communication
+order: 6
 status: active
 tags: [meta, governance, communication, composition, register]
 timestamp: 2026-07-28
@@ -34,7 +34,7 @@ content directly.
   is quoted material: a banned phrase inside a verbatim quote stays as its
   source wrote it.
 
-## The register
+### The register
 
 - **"worth flagging rather than burying" / "worth noting rather than
   burying"** — pattern: *"worth X-ing rather than Y-ing"*, and more broadly
