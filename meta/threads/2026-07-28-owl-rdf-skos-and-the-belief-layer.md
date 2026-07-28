@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5, then Claude Opus 5), 2026-07-2
 tags: [meta, thread, owl, rdf, skos, semantic-web, knowledge-representation, belief-layer, epistemics]
 timestamp: 2026-07-28
 session: https://claude.ai/code/session_012BMBDuJt3852ngntYqNVo9
+pr: 178
 ---
 
 # 2026-07-28-owl-rdf-skos-and-the-belief-layer
