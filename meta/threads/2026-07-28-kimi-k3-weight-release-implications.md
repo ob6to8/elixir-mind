@@ -5,6 +5,7 @@ description: Intake of the Kimi K3 model card with an implications analysis, spl
 provenance: "Claude Code session (Claude Opus 5), 2026-07-28; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, kimi, open-weights, ai-economics, licensing, intake, glossary]
 timestamp: 2026-07-28
+pr: 157
 session: https://claude.ai/code/session_01PNFB6CSofNa3rBnNwPVp2D
 ---
 
