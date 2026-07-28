@@ -939,6 +939,22 @@ content directly.
   illegible. Recast: do the check silently, then state the fact with its
   basis — "CI is green (both runs completed 08:52)".
 
+- **"I'd rather you hear it from me than find it"** — pattern: *"I'd rather
+  you hear it from me than \<discover it yourself\>"* (also "better you hear
+  this from me", "you'd have found this anyway, so") — framing a disclosure
+  as a courtesy the agent elected to extend. The alternative it names is the
+  operator finding out unaided, which asserts that withholding was available
+  and declined: the disclosure arrives pre-graded as generous, and the
+  operator is cast as receiving a favor rather than a fact. Reporting what
+  happened is the baseline the ledger already requires
+  ([response-work-report-format](/meta/policy/response-work-report-format.md)),
+  and at close time a concern is owed as a blocking question
+  ([concerns-block-the-close](/meta/policy/concerns-block-the-close.md)) — so
+  the preamble claims credit for meeting an obligation. Structurally it is
+  the *"let me X rather than Y"* entry above with the roles swapped: there
+  the unraised alternative is the agent's laziness, here it is the operator's
+  ignorance. Recast: state the thing and its consequence, with no preamble.
+
 _Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
 
 **A closing flow ends clean or not at all.** Invoking
