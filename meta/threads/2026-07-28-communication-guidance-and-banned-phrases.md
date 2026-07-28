@@ -54,9 +54,9 @@ again before the merge step. The "OR" in the final flag resolved as both: the ph
 banned, and
 [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md)
 adopted (checked facts cite what was checked, recalled facts are marked,
-scoped to actionable assertions). This second movement landed as a
-follow-up PR — see the landing note at the end of this narrative — with the
-origin `pr: 165` anchor kept per the write-once rule.
+scoped to actionable assertions). This second movement landed as follow-up
+PR #172, with the origin `pr: 165` anchor kept per the write-once rule; its
+close was the concerns gate's first live run.
 
 ## Routing
 
