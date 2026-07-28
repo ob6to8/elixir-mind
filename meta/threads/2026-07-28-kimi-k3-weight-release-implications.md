@@ -30,8 +30,9 @@ it is revenue-tiered and classified "Commercial Use Restricted".
 
 Ten glossary terms were then added, and that work landed as PR 157.
 
-The session continued past that merge through two follow-ups, landing in a second
-PR. First, `em:51aede` was **grounded**: five `type: source` captures under
+The session continued past that merge through two follow-ups, landing in PR 159
+(`pr:` stays at its origin, 157, per the write-once rule). First, `em:51aede` was
+**grounded**: five `type: source` captures under
 [`knowledge/ai-industry/sources/`](/knowledge/ai-industry/sources/index.md) —
 Moonshot's own K3 and K2.6 pricing pages, Artificial Analysis's index and
 AA-Briefcase articles, and the LICENSE file — wired through `verified_by` to flip
