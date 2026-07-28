@@ -814,6 +814,77 @@ in
 
 _Source: [`meta/policy/negative-findings-name-their-scope.md`](/meta/policy/negative-findings-name-their-scope.md)_
 
+**Certain words and phrases are banned from agent-composed prose.** The
+register below lists each banned phrase with the *pattern* it exemplifies and
+the reason it fails; the ban covers close variants of the pattern, not only the
+literal string. Before delivering a response or filing a document, prose that
+matches an entry is recast — usually by deleting the framing and stating the
+content directly.
+
+- **The register grows organically.** When the operator flags a phrase in
+  conversation, [`/ban-phrase`](/.claude/skills/ban-phrase/SKILL.md) appends it
+  here with the reasoning from that exchange and recompiles the contract. The
+  operator's invocation *is* the ratification — no separate approval pass.
+  Agents may propose entries but never add one unflagged.
+- **Entries carry their reasoning.** A bare blacklist teaches nothing and
+  invites near-miss variants; the reason is what lets an agent recognize the
+  pattern in a phrasing the register has never seen.
+- **Scope.** Delivered responses, document bodies, and index glosses — wherever
+  the agent composes prose. Thread renders are exempt (verbatim record), and so
+  is quoted material: a banned phrase inside a verbatim quote stays as its
+  source wrote it.
+
+## The register
+
+- **"worth flagging rather than burying" / "worth noting rather than
+  burying"** — pattern: *"worth X-ing rather than Y-ing"*, and more broadly
+  any framing that advertises the act of communicating instead of
+  communicating. If the content were not worth mentioning it would not be in
+  the response, so "worth flagging" asserts nothing; and "rather than burying"
+  calls attention to a negative case not taken — a failing nobody raised — which
+  is the phrase-level form of
+  [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md).
+  Recast: state the items directly, under a heading if they need prominence.
+
+_Source: [`meta/policy/banned-phrases.md`](/meta/policy/banned-phrases.md)_
+
+**Lead with a plainspeak orientation; keep the technical register after it.**
+A delivered response of any density — one that reports work, presents a
+finding, or leans on artifacts and concepts the operator is not already
+holding in mind from the immediate conversation — opens with a short
+**plainspeak orientation**: what just happened, where things now stand, and
+what (if anything) needs deciding, in common words. The technical
+presentation follows at full density, unchanged — the orientation is a
+runway to it, never a replacement for it.
+
+- **Onboard before terminology.** The reader must meet the general thrust
+  before meeting the terms. Within the orientation, name an artifact by what
+  it does before (or alongside) its repo name — "the file that lists every
+  merged PR (`meta/dev-history.md`)" — and defer repo coinages to the
+  technical half entirely where the plain description carries the point.
+- **One presentation, then the other — never interleaved phrase-by-phrase.**
+  The orientation is a whole, short account (a paragraph or two), after which
+  the technical presentation stands on its own. Phrase-level unpacking is a
+  different tool and stays on demand:
+  [`/elaborate`](/.claude/skills/elaborate/SKILL.md).
+- **The orientation is a derivation, not a second account.** It restates the
+  technical content at lower resolution; it must not introduce claims,
+  caveats, or decisions the technical half lacks. This is the response-surface
+  form of the *one canonical level plus anchored derivations* rule from the
+  [three-level documentation plan](/meta/plans/three-level-documentation.md),
+  whose committed plain tier serves the same reader on the document surface.
+- **Calibrate by density, not length.** Conversational turns, simple answers,
+  and responses whose terms are all live in the current exchange need no
+  separate orientation — an orientation over three plain sentences is
+  ceremony. The trigger is referential density: when following the response
+  requires holding artifacts or concepts the conversation has not just
+  established, orient first.
+- **Placement.** The orientation opens the response, above any
+  [work-report tables](/meta/policy/response-work-report-format.md); tables
+  and technical prose keep their existing form beneath it.
+
+_Source: [`meta/policy/plainspeak-orientation.md`](/meta/policy/plainspeak-orientation.md)_
+
 ---
 
 ## 4. Controlled `type` vocabulary
@@ -1084,6 +1155,13 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   only when asked, delivered in chat and persisted verbatim below the entry under a
   marked `## Response` heading — operator voice above, agent voice below, never
   interleaved. See `.claude/skills/journal/SKILL.md`.
+- **`/ban-phrase`** — add an operator-flagged word or phrase to the
+  [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
+  generalized pattern, the reasoning from the flagging exchange, and a recast),
+  dedup against existing patterns, and recompile the contract so the entry binds
+  every future session; the operator's invocation is the ratification.
+  `/ban-phrase list` renders the register read-only. See
+  `.claude/skills/ban-phrase/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

@@ -6,7 +6,7 @@ section: skills
 order: 1
 status: active
 tags: [meta, governance, skills]
-timestamp: 2026-07-25
+timestamp: 2026-07-28
 attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
@@ -109,5 +109,12 @@ attribution:
   only when asked, delivered in chat and persisted verbatim below the entry under a
   marked `## Response` heading — operator voice above, agent voice below, never
   interleaved. See `.claude/skills/journal/SKILL.md`.
+- **`/ban-phrase`** — add an operator-flagged word or phrase to the
+  [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
+  generalized pattern, the reasoning from the flagging exchange, and a recast),
+  dedup against existing patterns, and recompile the contract so the entry binds
+  every future session; the operator's invocation is the ratification.
+  `/ban-phrase list` renders the register read-only. See
+  `.claude/skills/ban-phrase/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
