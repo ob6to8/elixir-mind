@@ -59,7 +59,28 @@ repo's standing "not now."
 
 The operator ratified filing the comparison as an analysis rather than folding it
 into the capture. A container clock skew was caught during capture and the two new
-docs' dates corrected from 07-27 to 07-28 before the PR landed.
+docs' dates corrected from 07-27 to 07-28 before the PR landed. That work merged
+as PR #163 (`47e1024`).
+
+**Follow-up, same session (a second PR).** Asked whether the two strands the
+ledger left open should be addressed, the session read
+`lib/elixir_mind/verifier.ex` and found the analysis had filed its own
+recommendation as hypothetical while running inside a shipped instance of it.
+`mix brain.verify` *is* a closed-world constraint checker over the bundle's typed
+graph — the bundle is the graph, `em:` ids are the individuals, and its numbered
+moduledoc reads as a shapes file — implementing every category of catch the talk
+motivates: controlled value sets (rule 7), type-disjointness (rule 6), conditional
+cardinality (rules 4-5), and referential integrity (rules 3, 8). That collapses
+both strands: the level-3 layer is not hypothetical but built, and the SHACL
+question changes from "worth a spike?" to "worth porting?", which the coding
+standards' admission rule already answers no. The operator ratified all three
+follow-up actions — extend the analysis with an existence-proof section and close
+both rows, bind the SHACL refusal into the
+[coding standards](/meta/policy/elixir-coding-standards.md) so it reaches future
+sessions unprompted, and file the ledger-upkeep gap as an
+[issue](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md). Per the
+write-once rule this thread keeps `pr: 163` as its origin anchor; the follow-up
+landed in a second PR.
 
 ## Routing
 
@@ -70,8 +91,11 @@ docs' dates corrected from 07-27 to 07-28 before the PR landed.
 | Jido's actions/directives as door + effect boundary | closed | [Jido glossary](/beliefs/glossary/jido.md) | - |
 | OWL's OWA/UNA vs. the double-refund catch; SHACL as the right formalism | closed | [first-order-logic-and-owl](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) | - |
 | Coyle never implements the ledger (transcript-verified) | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
-| Split enforcement stack by world assumption | open | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | Whether a level-3 closed-world constraint layer is ever wanted here, or stays hypothetical under the standing "not now" |
-| No mature OWL reasoner on the BEAM | paused | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | Whether SHACL-over-SPARQL.ex is worth a spike if a constraint layer is ever built |
+| Split enforcement stack by world assumption | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
+| No mature OWL reasoner on the BEAM | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
+| `mix brain.verify` as a shipped level-3 constraint layer | closed | [ontology-guardrails-vs-schema-validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md) | - |
+| Bind the SHACL refusal into the coding standards | closed | [elixir-coding-standards](/meta/policy/elixir-coding-standards.md) | - |
+| Routing ledger has no post-capture upkeep path | open | [routing-ledger-has-no-post-capture-upkeep-path](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) | Which of the three fixes to adopt — permit State edits, forward-only, or derive the column |
 | YouTube fetch blocked; yt-dlp alternate player client | closed | `unrouted` | Whether the intake skill should document a video-transcript path |
 
 ## User
@@ -233,3 +257,78 @@ This has grown past a chat answer — there's a defensible judgment here (the ta
 
 1
 then /create-pull-request merge
+
+## Assistant
+
+Merged and the head branch was auto-deleted.
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| `/capture` — thread doc, routing ledger, route tags | `2026-07-28-ontology-guardrails-intake-and-jido-comparison`; excerpt logs materialized into `em:1df031`, `em:44f899`, `em:8255b8` |
+| Filed the analysis (option 1) | `ontology-guardrails-vs-schema-validation` |
+| `/add-to-glossary` over the thread | 6 new terms: neurosymbolic AI, SHACL, open world assumption, unique name assumption, RDFS, Pydantic; *Seen in* extended on `ontology`, `owl`, `description-logic` |
+| Stamped `attribution.from` and `pr: 163` | Analysis back-links to the thread; thread anchored to its origin PR |
+| Resolved a mid-flight conflict with `main` | Main had landed a scar-tissue intake; five additive conflicts — both sides kept in the two indexes, the three generated artifacts (registry, glossary index, Jido excerpt log) re-derived from source rather than hand-merged |
+| Drove CI green, true-merged | PR #163 → merge commit `47e1024`; head branch auto-deleted |
+
+Two things worth flagging rather than burying. **`mix brain.dev_history` was skipped** — the container has a shallow clone, which is the documented skip condition, so the checked-in dev-history stays one PR further behind than usual; CI's lag-tolerant check passed. And the **GitHub check-runs endpoint served stale data** for about ten minutes, reporting `in_progress` on jobs that had completed successfully at 07:16:07 — I confirmed via the per-job endpoint before merging rather than trusting the aggregate.
+
+The analysis leaves two strands open in the routing ledger, neither blocking: whether a level-3 closed-world constraint layer is ever actually wanted here, and whether SHACL-over-SPARQL.ex would merit a spike if one is built. Both sit behind the repo's standing "not now" on a resident runtime.
+
+## User
+
+should either of these two things be addressed? how could we resolve these two open strands?
+
+## Assistant
+
+<routes ref="em:1df031 em:8255b8 em:4d3462 lib/elixir_mind/verifier.ex">
+Yes — and researching them changes the answer to both. I read `lib/elixir_mind/verifier.ex` to check a hunch, and it holds.
+
+## The finding: this repo already *is* the level-3 layer
+
+The analysis recommended splitting enforcement by world assumption, with a closed-world constraint layer at level 3 — and then filed that recommendation as hypothetical. It isn't. `mix brain.verify` is a closed-world constraint checker over a typed graph, and it already implements every category of catch Coyle uses ontologies to motivate:
+
+| Coyle's catch | His formalism | `brain.verify`'s equivalent | SHACL analogue |
+|---|---|---|---|
+| `"probably shipped"` — closed value set | `owl:oneOf` | Rule 7: `sense` ∈ {common, repo, dual}; `attribution.channel` controlled | `sh:in` |
+| Payout to support desk — **disjointness** | `owl:disjointWith` | Rule 6: `verified` may appear *only* on `claim`/`note`/`concept`; attribution exemptions must carry none | `sh:targetClass` + `sh:not` |
+| Second refund — **conditional cardinality** | (fails — needs SHACL) | Rule 5: `verified: true` ⇒ non-empty `verified_by`; Rule 4: `verified: true` ⊕ `resource` | `sh:minCount` under a condition |
+| — | — | Rules 3, 8: `verified_by` and `attribution.from` refs must resolve | referential integrity |
+
+The bundle is the typed graph; `em:` ids are the individuals; the verifier is the reasoner. It's ~140 lines of dependency-free Elixir, wired into CI and the pre-commit hook, with the rule set written as a numbered moduledoc that reads exactly like a shapes file.
+
+So the analysis derived a recommendation from first principles and the repo it was filed in is a shipped existence proof of it. That's a stronger result than the analysis claimed, and it resolves both strands.
+
+## Strand 1 — close it. The question was mis-posed.
+
+"Whether a level-3 closed-world constraint layer is ever wanted here" presupposes there isn't one. There is: `brain.verify` + `brain.route_tags` + `brain.glossary` together. Nothing needs building; what needs correcting is the analysis's framing, which treats its own host as a hypothetical.
+
+The substantive upgrade: the recommendation stops being "here's what you'd do if you built one" and becomes "here's the pattern, validated in production, at a known cost" — roughly 140 lines plus a mix task per rule family, no dependencies, mechanical oracle. That's a far more useful thing for a future session to read.
+
+## Strand 2 — close it as declined, not paused.
+
+Once strand 1 collapses, strand 2's real question changes from *"is SHACL-over-SPARQL.ex worth a spike if a layer is built?"* to *"should the existing layer's rules be re-expressed as SHACL shapes?"* — and the contract already answers that. The admission rule: a check earns a gate when its "**signal beats its upkeep** *and* it runs offline as a plain `mix` task with no dependencies." SHACL-over-SPARQL.ex would add two deps, require materializing the bundle as an RDF graph on every run, and buy declarativeness the Elixir already has in readable form. It belongs in the contract's named intentional-gaps list beside Credo and Dialyzer, not in a pending-spike queue.
+
+One caveat worth stating: this closes the question *for this repo's rule set*, whose shapes are simple and stable. It does not close it for a hypothetical system with hundreds of churning domain constraints authored by non-programmers — that's where a declarative shapes file earns its dependency. Naming that boundary is what makes the "no" durable rather than merely current.
+
+## How to land it
+
+Extend the existing analysis rather than filing new (one artifact per matter): add a section — call it *"The host is the existence proof"* — carrying the mapping table above, then flip both ledger rows to `closed`.
+
+One question I'd rather surface than assume: the routing ledger lives in a **frozen** thread doc, and session-capture has `/capture` maintain it "at capture time." A strand that resolves in a *later* session has no documented update path — the `open`/`paused` states imply strands are meant to close eventually, but the policy never says who marks them. I'd resolve it by having *this* session's capture record the closure and updating the prior thread's rows to point at it, but that's a small policy gap worth your ratification rather than my improvisation.
+
+**Your options from here**
+
+| # | option | what it entails |
+|---|---|---|
+| 1 | Extend the analysis + close both strands (Recommended) | New section with the verify↔SHACL mapping; both ledger rows → `closed`; fresh branch off `main`, since #163 is merged |
+| 2 | Also add SHACL to the contract's intentional-gaps list | Makes the "no" bind future sessions unprompted, rather than sitting in an analysis they'd have to go looking for — a policy edit, so `/render-contract` after |
+| 3 | File the ledger-upkeep gap as an `issue` | The "who closes a strand after capture" question is a real hole in the policy, independent of this matter |
+| 4 | Leave both strands as-is | Defensible if you'd rather not spend a PR on a reframing, though the analysis stays weaker than its evidence supports |
+</routes>
+
+## User
+
+1, 2 and 3
