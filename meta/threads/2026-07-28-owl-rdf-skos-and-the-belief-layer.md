@@ -59,6 +59,17 @@ but as one of 97, with no mechanism that ever closes it. It was filed as
 [evaluate a derived RDF/SKOS export](/meta/todos/evaluate-a-derived-rdf-skos-export.md)
 and the ledger row rerouted to it, in PR 180.
 
+The closing report of that round called the still-`open` strand a fourth
+instance of the
+[post-capture upkeep gap](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md).
+It is not one. The [routing-ledger policy](/meta/policy/routing-ledger.md) makes
+state and dispatch orthogonal — "a strand can be routed yet still `open`" — so a
+strand whose question remains unanswered while its work is tracked elsewhere is
+the ledger behaving as specified. The upkeep gap concerns strands that
+*resolve* in a later session with no one to close them; this one has not
+resolved. The issue's instance count is unaffected, and no filed document
+carried the claim.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -209,3 +220,98 @@ The doc carries the full judgment as reached in-session: the question and bottom
 | commit `67431cc` + push to `claude/owl-rdf-rdfs-similarities-rrufnp` | pre-commit gate suite passed (183 tests, 0 failures); branch pushed and tracking |
 
 One note: the analysis deliberately does not carry a `status` field or graduate anything into a plan — it's a judgment to be cited when iteration three of the belief layer is actually designed, at which point the existing analysis-mode and epistemic-overlay plans remain the work-bearing artifacts. When you're ready to close the session, `/create-pull-request` will capture the thread and stamp it into the doc's `attribution.from`.
+
+## Assistant
+
+I've stopped before opening the PR. The merge with `main` — which moved 30+ commits while this session ran — surfaced items the concerns gate in the updated `/create-pull-request` requires me to put to you rather than disclose after merging.
+
+Capture, glossary, `attribution.from` stamping, the main merge, and the full gate suite are all done and pushed (`c0fb19f`, 188 tests passing). Only the PR and merge remain.
+
+**What happened during the sync.** A concurrent session — the ontology-guardrails intake (PR #163) — landed [its own analysis](https://ob6to8.github.io/elixir-mind/meta/analysis/ontology-guardrails-vs-schema-validation.html) on adjacent ground the same day, plus glossary entries for SHACL and the open-world assumption. Its question is what a reasoner buys at an *agent loop's* enforcement boundary; mine is whether a formalized *belief layer* should use OWL. They reach the same open-world/closed-world boundary from opposite sides, and both name `mix brain.verify` as a closed-world instance.
+
+**Questions you need to answer**
+
+| # | Question | My recommendation |
+|---|---|---|
+| 1 | Two analyses now cover overlapping semantic-web ground. Keep them as cross-linked siblings, or fold mine into the guardrails analysis? | **Keep both.** The matters differ under governance-artifact-routing — enforcement of an executing loop vs. epistemic audit of a belief corpus — and neither subsumes the other's question. I've already added a cross-reference in mine naming where they agree and diverge. |
+| 2 | Two concurrent sessions independently produced overlapping analyses and duplicate glossary terms on the same day. File this as an issue, or accept it? | **File an issue.** It's a concrete instance of the concurrent-writer duplication the dark-factory and agents-as-GenServers analyses predict, and the first one observed in the wild — but per the policy the disposition is yours, so I haven't filed it. |
+
+**Two smaller items, resolved, for your visibility**
+
+| item | what I did |
+|---|---|
+| I drafted SHACL and open-world-assumption glossary entries; main had already merged its own with different ids | Deleted mine, kept main's (`em:4d3462`, `em:d845c0`), per update-in-place. Four new terms remain from this session: [SKOS](https://github.com/ob6to8/elixir-mind/blob/claude/owl-rdf-rdfs-similarities-rrufnp/beliefs/glossary/skos.md), RDF, AIF, PROV-O. |
+| I ran `mix brain.dev_history` following the pre-merge version of this skill; main has since retired the committed view (now gitignored, generated at deploy) | The regenerated file made `DevHistoryTest` fail. Deleted it; no artifact remains and the step is gone from the current skill. |
+
+Merge conflicts were in six files: four generated (registry, glossary index, and two excerpt logs — took main's, then regenerated) and two indexes (kept both sides).
+
+Answer 1 and 2 and I'll open the PR and drive it to merge. The captured thread is at `meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md`.
+
+## User
+
+keep both, file the issue, then open the PR and merge
+
+## User
+
+or rather, /create-pull-request merge
+
+## Assistant
+
+Merged as **b67fa9d** — a true merge commit, head branch auto-deleted.
+
+The session's judgment is now on `main` at [OWL and the belief layer: schema yes, reasoner no](https://ob6to8.github.io/elixir-mind/meta/analysis/owl-and-the-belief-layer.html): OWL's reasoning is terminological, monotonic, and open-world, while the belief layer's needs are propositional, defeasible, and closed-world — so OWL earns a place only as a passive schema for a derived export's vocabulary, alongside RDF serialization, PROV-O, and SHACL, with ATMS environments and Dung argumentation as the fitting formal core.
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| `/capture` | [`meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md`](https://ob6to8.github.io/elixir-mind/meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.html) — routing ledger with five strands, route tags over the frozen body, excerpt logs materialized into four sinks |
+| `/add-to-glossary` | Four terms: [SKOS](https://ob6to8.github.io/elixir-mind/beliefs/glossary/skos.html), [RDF](https://ob6to8.github.io/elixir-mind/beliefs/glossary/rdf.html), [AIF](https://ob6to8.github.io/elixir-mind/beliefs/glossary/argument-interchange-format.html), [PROV-O](https://ob6to8.github.io/elixir-mind/beliefs/glossary/prov-o.html) |
+| Ratified disposition 1 — keep both analyses | Cross-linked as siblings in both directions |
+| Ratified disposition 2 — file the duplication event | Recorded on the existing [parallel-sessions issue](https://ob6to8.github.io/elixir-mind/meta/issues/parallel-sessions-file-duplicate-artifacts.html) rather than as a new one, which would have been the failure it tracks |
+| Merged `origin/main` (30+ commits) | Six conflicts resolved; four generated files regenerated, two indexes kept both sides |
+| PR [#178](https://github.com/ob6to8/elixir-mind/pull/178) → merge `b67fa9d` | CI green, true merge, branch deleted |
+
+Two things the merged `main` changed under this session that are worth knowing for the next one, both already reflected in what shipped: `meta/dev-history.md` is now gitignored and generated at deploy time, so `/create-pull-request` no longer has a regeneration step; and the new [concerns-block-the-close](https://ob6to8.github.io/elixir-mind/meta/policy/concerns-block-the-close.html) policy is what halted this flow before the PR rather than after the merge.
+
+The one strand left open in the ledger is whether to build a derived `mix brain.rdf` export, and against which vocabulary — SKOS for the taxonomy and glossary, AIF for a future belief graph. It's recorded as a dangling question on the thread, not filed as work.
+
+## User
+
+So it only lives in this thread?
+
+## Assistant
+
+It's surfaced, but weakly — and the honest answer is that you caught an under-filing.
+
+`mix brain.session_init` (what `/priorities` reads) does pick it up:
+
+```
+- `open` A derived RDF/SKOS/JSON-LD export of the bundle as a disposable view
+  — dangling: Is a `mix brain.rdf` export worth building, and against which
+  vocabulary (SKOS for the taxonomy, AIF for a future belief graph)?
+```
+
+So it isn't invisible. But it's **1 of 97 strands** in that list, most of them `closed` or months stale — and the brain has already diagnosed this exact weakness: the plan [Reconcile dangling routing-ledger strands into tracked work](https://ob6to8.github.io/elixir-mind/meta/plans/reconcile-dangling-ledger-strands.md) is your `priority: 2` pin, and [routing ledger has no post-capture upkeep path](https://ob6to8.github.io/elixir-mind/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) ranks #3 in the current appraisal. A strand is a *record that a question was left open*, not a tracked item — nothing will ever mark it done, and it competes with 96 others for attention.
+
+So "it only lives in the thread" is close enough to true to act on. It should be a `todo`: the approach is obvious (evaluate the export against the analysis's recommendation — SKOS for the taxonomy and glossary, AIF for a future belief graph, RDF/JSON-LD as the serialization), only the doing remains, so it doesn't need a plan's decision record — the analysis already carries that.
+
+Want me to file it? It's a small follow-up PR: a `todo` under `meta/todos/`, its index gloss, and the thread's ledger row updated to route to it instead of `unrouted`. Say the word and I'll open and merge it the same way.
+
+## User
+
+Yes
+
+## Assistant
+
+Merged as **50789e5** (PR [#180](https://github.com/ob6to8/elixir-mind/pull/180)), CI green, branch deleted.
+
+It now appears in the digest as a **tracked todo** in the open-todos section, not only as a strand:
+
+> **Evaluate a derived RDF/SKOS export of the bundle (mix brain.rdf)** — … decide whether the interoperability is wanted before building the task.
+
+The [todo](https://ob6to8.github.io/elixir-mind/meta/todos/evaluate-a-derived-rdf-skos-export.html) carries the export's shape (`em:` id → IRI, `type` → `rdf:type`, title/description → `skos:prefLabel`/`skos:definition`, tree → `skos:broader`, provenance → PROV-O), states that OWL axioms are deliberately out of scope, and frames the decision as demand rather than feasibility — the translation is mechanical because the bundle is already triple-shaped, so what's left is whether any consumer justifies another generated artifact. Its `Done when` admits `cancelled` with a recorded reason as a legitimate outcome, so it can't sit open indefinitely without someone stating why.
+
+The thread's ledger row now routes to the todo instead of `unrouted`, and the follow-up PR is named in the thread's narrative — `pr:` stays at 178, its origin.
+
+One thing the digest output shows plainly: the strand row still reads `open` in the ledger even though its content is now tracked elsewhere. That's the gap your `priority: 2` plan and the post-capture-upkeep issue already describe — a strand resolved after capture has no documented path to being marked closed. This session is now a fourth instance of it, and I've left the row as-is rather than improvising a convention the policy doesn't sanction.
