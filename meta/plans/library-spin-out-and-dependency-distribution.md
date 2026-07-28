@@ -11,7 +11,7 @@ attribution:
   why: "graduates the deferred Phase 4 spin-out of the bundle/library separation plan into its own executable spec, recording the dependency-distribution decision the operator asked about"
   from: [/meta/threads/2026-07-17-library-spin-out-spec.md]
 tags: [meta, plan, architecture, separation-of-concerns, spin-out, hex, dependency, tooling]
-timestamp: 2026-07-17
+timestamp: 2026-07-28
 ---
 
 # Library spin-out: knowledge-base repos consuming Elixir Mind as a packaged dependency
@@ -174,6 +174,214 @@ The prefix stays **opaque** per policy: `cb` mnemonically mirrors
 composable-beliefs the way `em` mirrors elixir-mind, but nothing may depend
 on its letters carrying meaning.
 
+## The shape, structured
+
+*(Retrofit per
+[structured-plan-bodies](/meta/policy/structured-plan-bodies.md), audited
+against `main` at `d08abf2`, 2026-07-28. This section grounds the
+config-surface table above in the actual coupling sites and specs the target
+architecture; the decisions above are unchanged, and the design questions it
+surfaced are appended to the open questions below.)*
+
+**The swappable-bundle property, stated once.** The library's entire knowledge
+of a particular collection reduces to two inputs: a **bundle root** (a path to
+an OKF checkout) and a **manifest** (the consuming repo's config). Any client
+that supplies both gets the full toolchain over its own bundle — this repo's
+agent sessions, another operator's knowledge-base repo, CI, and the
+[thin Jido host](/meta/plans/thin-jido-brain-host.md) (which drives the same
+`brain.*` verbs over a checkout) are the same call path with different
+manifests. Nothing else in the library may know which bundle it operates on —
+that invariant is what makes the bundle swappable and the architecture
+client-agnostic.
+
+### Current state — where the library binds to this bundle
+
+The inventory of bundle-specific constants in `lib/` at audit time (module
+attributes unless noted) — the concrete work-list behind the parent plan's
+Phase 3. Completeness is guaranteed by the fixture-bundle oracle, not by this
+table.
+
+| Group | Constant | Sites |
+|---|---|---|
+| Already config | `site_base_url`, `repo_url` | `config/config.exs`, read only via `ElixirMind.SiteConfig` (default base URL also hardcoded at `site_config.ex:24`) |
+| Id namespace | `em:` prefix | `registry.ex:21` (`@id_format`), `registry.ex:47` (minting), `route_tags.ex:222` (`classify_ref/1`), `attribution.ex:305` (`resolves?/3`), `dedup_probe.ex:215` (id regex) |
+| Namespace layout | three overlapping excluded-dir lists | `registry.ex:22`, `links.ex:31`, `site_config.ex:28` |
+| | anchored non-bundle dirs | `orphans.ex:28` (`@anchored_dirs`) |
+| | attribution exemption globs/prefixes | `attribution.ex:64`, `attribution.ex:75-78` |
+| Vocabularies | attribution `channel` list | `attribution.ex:38` (`@channels`) |
+| | statement types | `verifier.ex:36` (`@statement_types`) |
+| | glossary senses | `verifier.ex:38` (`@senses`) |
+| Governance addresses | policy dir; contract output + preamble; registry output; threads dir; flows dir + lineage index; glossary dir + index; code-map, dev-history, dedup-gold outputs; session-init dirs | `policy.ex:25`, `contract.ex:16-17`, `registry.ex:127`, `route_tags.ex:47`, `lineage.ex:32-33`, `glossary.ex:34-35` + `verifier.ex:37`, `code_map.ex:26`, `dev_history.ex:31`, `dedup_probe.ex:48`, `session_init.ex:89-122` |
+| This-bundle-only code | reorg-history path mapping and backfill heuristics | `attribution/backfill.ex` (e.g. `pre_reorg_path/1`) — migration code for *this* repo's 2026-07 attribution backfill |
+| Project identity | app `:elixir_mind`, zero deps | `mix.exs` |
+
+Notably absent: the controlled `type` vocabulary. The verifier enforces
+non-empty `type` (OKF conformance), not list membership — so the config
+table's "library enforces membership-in-declared-list" row is a **new** check
+the manifest enables, not a lift of an existing one.
+
+### Desired state — the manifest and the `Bundle` struct
+
+One module owns all instance knowledge; everything else takes it as an
+argument.
+
+```elixir
+# knowledge repo's config/config.exs — the bundle manifest
+config :composable_beliefs_3,
+  bundle_root: ".",
+  id_prefix: "em",                     # library enforces <prefix>:[0-9a-f]{6}
+  site_base_url: "https://ob6to8.github.io/elixir-mind/",
+  repo_url: "https://github.com/ob6to8/elixir-mind",
+  type_vocabulary: ~w(note claim concept reference source person project area
+                      snippet methodology policy tutorial issue plan analysis
+                      todo elaboration doctrine belief),
+  attribution_channels: ~w(intake auto-intake glossary agent-authored backfill),
+  excluded_dirs: [...],                # today's hardcoded values as defaults
+  anchored_dirs: ~w(meta/threads inbox survey journal),
+  governance: [
+    policy_dir: "meta/policy",
+    preamble: "meta/preamble.md",
+    contract_output: "CLAUDE.md",
+    registry_output: "meta/registry.md",
+    threads_dir: "meta/threads",
+    flows_dir: "meta/flows",
+    glossary_dir: "beliefs/glossary"
+  ]
+```
+
+```elixir
+defmodule ComposableBeliefs.Bundle do
+  @type t :: %__MODULE__{
+          root: Path.t(),
+          id_prefix: String.t(),
+          type_vocabulary: [String.t()],
+          attribution_channels: [String.t()],
+          excluded_dirs: [String.t()],
+          anchored_dirs: [String.t()],
+          governance: map(),
+          site_base_url: String.t() | nil,
+          repo_url: String.t() | nil
+        }
+
+  @spec load(overrides :: keyword()) :: t
+  @spec id_regex(t) :: Regex.t()
+  @spec mint_id(t) :: String.t()
+  @spec bundle_doc?(t, rel_path :: String.t()) :: boolean()
+  @spec excluded?(t, rel_path :: String.t()) :: boolean()
+end
+```
+
+Entry points shift from a bare root path to the struct (root subsumed):
+
+```elixir
+@spec run(ComposableBeliefs.Bundle.t(), keyword) :: :ok | {:error, [String.t()]}
+# ElixirMind.Verifier.run/2 today; likewise Registry.scan/1, RouteTags,
+# Site, Contract, Glossary, … — every module that now calls File.cwd!()
+```
+
+### File-tree diffs
+
+The library repo (`composable-beliefs-3`), created by history extraction:
+
+```
+composable-beliefs-3/
+├── mix.exs                        # app :composable_beliefs_3; still zero deps
+├── lib/
+│   ├── composable_beliefs/       # ← lib/elixir_mind/, module-renamed
+│   │   ├── bundle.ex             # NEW — manifest struct, single config read point
+│   │   └── …                     # existing modules, attrs → Bundle fields
+│   └── mix/tasks/                # the task suite (naming: open question 7)
+├── test/                         # existing suite, retargeted at the fixture
+├── priv/demo_bundle/             # NEW — cb:-namespaced demo/fixture OKF bundle
+├── profile/metadata-profile.md   # NEW — the versioned schema spec (parent Phase 2)
+└── .github/workflows/gates.yml   # NEW — reusable (workflow_call) gate suite
+```
+
+This repo, after the removal PR:
+
+```diff
+ elixir-mind/
+-├── lib/                          # extracted
+-├── test/
+~├── mix.exs                       # thin: app + {:composable_beliefs_3, tag: …}
++├── mix.lock                      # pins the dep; offline property via CI cache
+~├── config/config.exs             # becomes the bundle manifest (above)
+~├── .github/workflows/ci.yml      # shrinks to `uses: …/gates.yml@vX` + deps cache
+~├── .github/workflows/pages.yml   # stays per-bundle; calls the dep's tasks
+ ├── knowledge/ beliefs/ meta/ …   # untouched — the collection and its governance
+ └── .claude/skills/               # editorial skills stay; tool-wrappers move (Q3)
+```
+
+### Call/flow trees
+
+Production — every task, one shape:
+
+```
+mix brain.<task>                   # run from a knowledge repo
+└── Bundle.load()                  # reads the manifest; the only Application.get_env site
+    └── <Module>.run(bundle, opts)
+        └── file IO under bundle.root, filtered by bundle.excluded_dirs / bundle_doc?/2
+```
+
+Test — the manifest is the seam; the production code path runs unmodified:
+
+```
+ExUnit (in the library repo)
+└── Bundle.load(root: "priv/demo_bundle", id_prefix: "cb", …)
+    └── <Module>.run(bundle, opts)  # same path as production, different manifest
+```
+
+### Boundary decisions
+
+- **`Bundle.load/1` is the single config read point.** Every other module
+  receives instance knowledge as an explicit argument — which is also what
+  lets the fixture-bundle tests exercise the production code path with a
+  substituted manifest rather than a mock.
+- **Profile vs. manifest, operationalized:** the library owns *shape*
+  (frontmatter schema, id shape `<prefix>:[0-9a-f]{6}`, attribution map
+  structure, reserved filenames); the manifest owns *values* (the prefix, the
+  vocabularies, the directory lists, the URLs). The test: a rule a second
+  bundle could legitimately set differently is a manifest field; one it
+  couldn't is profile.
+- **Vocabularies are membership checks against declared lists.** The library
+  ships no normative type or channel list; ratifying an addition stays a
+  per-bundle governance act — an edit to that bundle's manifest.
+- **The three excluded-dir lists collapse into manifest fields** with today's
+  values as defaults; per-module deltas (`Registry` additionally skipping the
+  governance dirs, `Orphans`' anchored dirs) become derived views over the
+  same fields, not independent lists.
+- **Detection vs. side effects, unchanged:** library modules detect and return
+  error lists; mix tasks own exit codes and writes — the split the codebase
+  already has, now with `Bundle.t` threaded through it.
+
+### Anchors
+
+- **Coupling sites:** the current-state table above (file:line at `d08abf2`).
+- **Pattern to copy:** `ElixirMind.SiteConfig`
+  (`lib/elixir_mind/site_config.ex`) is the existing config-not-constant
+  precedent; `Bundle` generalizes it and absorbs it.
+- **Reuse:** `Registry.scan/1` is the shared walk every checker builds on —
+  the first function to take `Bundle.t`, and the choke point where
+  `excluded_dirs`/`bundle_doc?/2` apply.
+- **Tests that prove the property:** the full gate suite green against
+  `priv/demo_bundle` under `cb:` (the Phase 3 oracle); a regression asserting
+  `Bundle.load/1` is the only `Application.get_env` caller; this repo's CI
+  green on the removal PR with the manifest set to today's values (behavioral
+  no-op).
+
+### Decision list (this section)
+
+- **Recommended:** explicit `Bundle.t` argument threading over ambient config
+  reads; manifest defaults equal to today's hardcoded values so the removal PR
+  here is behaviorally a no-op; the demo bundle doubles as test fixture and
+  Phase 3 oracle.
+- **Rejected:** per-module config keys (re-scatters the manifest across the
+  namespace); a process-dictionary or agent-held bundle context (implicit
+  state defeats the test seam); a standalone YAML/markdown manifest file
+  parsed at runtime (`config.exs` is already the established per-repo
+  manifest surface and needs no new parser).
+- **Open questions surfaced:** 5–7 below.
+
 ## What each knowledge-base repo keeps
 
 - **A thin `mix.exs`** — app name, the `:composable_beliefs_3` dep, nothing
@@ -245,3 +453,23 @@ on its letters carrying meaning.
    restate library-enforced mechanics shrink to pointers at the library's
    docs (parent plan's open question 3) — needs a doc-by-doc pass in the
    removal PR.
+5. **Statement types and glossary senses — profile or manifest?**
+   `@statement_types` implements the verification-grounding policy's
+   semantics and `@senses` the glossary's sense model. Leaning **profile**
+   (they define what verification and sense *mean*, not which values this
+   bundle chose), with a manifest override deferred until a second bundle
+   actually wants different semantics.
+6. **Disposition of `attribution/backfill.ex` at extraction.** It encodes
+   this repo's 2026-07 reorg history (`pre_reorg_path/1` and kin) and its
+   backfill has landed. Retire it in the extraction, or park it
+   bundle-side? Leaning **retire** — git history keeps it, and a library
+   module hardcoding one bundle's past paths is the coupling this plan
+   removes.
+7. **Task-namespace coordination with the
+   [brain.\* → mind.\* rename plan](/meta/plans/rename-brain-tasks-to-mind.md).**
+   After extraction the task names ship to every consuming bundle, so that
+   rename must land either before extraction (here) or after it (in the
+   library repo) — and `mind.*` is arguably bundle-flavored naming for a
+   library named composable-beliefs. Sequencing and the name itself are an
+   operator call; the plan above deliberately keeps the operator-facing
+   command surface stable in the meantime.
