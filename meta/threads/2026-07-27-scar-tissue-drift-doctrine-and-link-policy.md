@@ -1,7 +1,7 @@
 ---
 type: reference
 title: 2026-07-27-scar-tissue-drift-doctrine-and-link-policy
-description: Two intakes (trust-state inversion; the 300-hour scar-tissue post), the scar-tissue defenses analysis and its redo, the bound-adaptation doctrine, the ratification-immutable definition, the analogy-as-belief decomposition, and the link-policy resolution — landing in PR 147, then continuing through the operator's five ratifications (the lens-adoption belief, both plans accepted, the fingerprint rider, the title flip, the GitHub-links-in-threads policy) in a follow-up PR.
+description: Two intakes (trust-state inversion; the 300-hour scar-tissue post), the scar-tissue defenses analysis and its redo, the bound-adaptation doctrine, the ratification-immutable definition, the analogy-as-belief decomposition, and the link-policy resolution — landing in PR 147, then continuing through the operator's five ratifications (the lens-adoption belief, both plans accepted, the fingerprint rider, the title flip, the GitHub-links-in-threads policy) in a follow-up PR, and closing by reconciling the is-to-ought analysis with the shipped belief type.
 provenance: "Claude Code session (Claude Sonnet 5, then Claude Fable 5), 2026-07-27; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, scar-tissue, drift, doctrine, ratification, glossary, link-policy, intake, beliefs]
 timestamp: 2026-07-27
@@ -13,7 +13,7 @@ pr: 147
 
 ## Where this landed
 
-A session in four movements. First, two intakes: Hans de Raad's
+A session in five movements. First, two intakes: Hans de Raad's
 **trust-state inversion** article (filed under a new
 `knowledge/SWE/agentic/supply-chain-security/` subdirectory, `em:f3beb0`) and
 the 300-hour **scar-tissue** Reddit post (`em:60242a`), with two `origin/main`
@@ -55,6 +55,22 @@ docs-side form* — implemented by a new `mix brain.url --thread` mode. That
 follow-up work landed in **PR 150**; `pr:` deliberately still reads 147, the
 origin PR that first opened this thread doc.
 
+**Fifth: reconciling the belief layer with its own analysis.** The 2026-07-22
+[is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md)
+had concluded that "belief" is a register, not a controlled `type` — which read
+as a flat contradiction once the `belief` type shipped and was seeded. It is
+not one: that analysis rejected a **descriptive** belief type on collision
+grounds (the descriptive work being covered by `claim`/`note`/`concept`), an
+objection that still holds, while the type adopted is a **value-laden decision
+prior** kept off the verification ladder — whose refile-to-`claim` rule is that
+same collision-avoidance made mechanical. The analysis was updated in place
+with a dated reconciliation section, its two superseded passages marked rather
+than rewritten (an analysis is a point-in-time record), and a corrected
+four-tier stack — statement / belief / doctrine / policy — putting belief
+*parallel to* doctrine. What the original missed was a third register: a prior
+the operator acts on that is neither checkable fact nor standing direction.
+That pass landed in **PR 153**.
+
 *Nine `alb.reddit.com` promoted-content tracker URLs inside the operator's
 verbatim Reddit paste are replaced with `elided-ad-tracker-url`; all post and
 comment text is retained verbatim. One operator message delivered mid-turn
@@ -77,7 +93,7 @@ context at its position, marked inline.*
 | brain.* → mind.* task-namespace rename | open | [rename plan](/meta/plans/rename-brain-tasks-to-mind.md) | accepted; execution pending — external-caller audit and alias-vs-clean-break carried |
 | Style fingerprint rider (three surfaces, dedup-probe pattern) | open | [escape-rate plan](/meta/plans/auto-intake-escape-rate-sampling.md) | approved; execution pending with the plan |
 | Link policy: Pages in docs, GitHub in threads (+ `mix brain.url --thread`) | closed | [response-resource-links](/meta/policy/response-resource-links.md) | - |
-| Belief-layer tension: main's is-to-ought analysis holds "belief is a register, not a type" | paused | [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md) | the type shipped and is now seeded; the register view is unreconciled with it |
+| Belief-layer tension: is-to-ought analysis vs. the shipped belief type | closed | [is-to-ought analysis](/meta/analysis/is-to-ought-belief-grounds-doctrine.md) | reconciled — the analysis rejected a *descriptive* belief type (objection intact); the shipped type is a value-laden prior, so both stand |
 
 ## User
 
@@ -712,6 +728,74 @@ All five ratifications executed, full gate suite green (pre-commit ran everythin
 One deliberate judgment to note: "ratify the plans" was applied as accepting each plan's stated recommendation — where an open question had a stated proposal (shim removal in the following PR) that proposal is now the decision; where it had none (alias-vs-clean-break, the tag-semantics note), I marked it as carried to execution rather than inventing an answer.
 
 The links above are `--thread`-form branch links, per the policy this very batch enacted. Every future session inherits the rule through the recompiled contract.
+
+## User
+
+/create-pull-request merge
+
+## Assistant
+
+Merged and complete.
+
+**PR [#150](https://github.com/ob6to8/elixir-mind/pull/150)** — true-merged into `main` at **`f266f99`**, after both CI `verify` runs went green on the merge commit. Head branch auto-deleted (confirmed absent from the branch list); its commits stay reachable through the merge.
+
+**Thread doc:** `meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md` — **the same file as before, updated in place**, not a second record. Per the session-capture rules this session already had a thread doc, so the render was extended through the ratification turns, the narrative gained a fourth movement, and the routing ledger was refreshed. Its `pr:` still reads **147** — the write-once origin anchor — with #150 named in the narrative prose instead, exactly as the multi-PR rule prescribes.
+
+Beyond the five ratifications you'd already seen executed, this PR added: two new route-tagged regions (feeding the belief `em:f35b8f` and the retitled `em:1434d9`), the glossary term **folksonomy** (`em:4086a2`) for the regime the tags axis defaulted into, an `attribution.from` stamp on the escape-rate plan, and a mid-flight `origin/main` sync (one union-resolved conflict in the plans index; all generated artifacts re-derived).
+
+Two things worth noting rather than burying:
+
+- **The PR body's doc links are bundle-absolute paths**, which the link policy this very PR ratified says should be GitHub blob URLs in delivered surfaces. I wrote the body before that policy was live on `main` — mild irony, worth a fix in the next PR body rather than an edit now.
+- **The belief-layer tension is still open** and now recorded as a `paused` strand in the routing ledger: main's [is-to-ought analysis](https://github.com/ob6to8/elixir-mind/blob/main/meta/analysis/is-to-ought-belief-grounds-doctrine.md) concludes "belief is a register, not a controlled `type`," while the `belief` type has since shipped and now holds seven entries including yours. Nothing is broken, but the two views haven't been reconciled in writing.
+
+Everything else from this session's queue is closed. Want me to watch the PR (it's merged, so this would only matter for follow-ups), or take up the belief-register reconciliation next?
+
+## User
+
+update the is-to-ought analysis
+
+## Assistant
+
+Updated and pushed — [is-to-ought-belief-grounds-doctrine.md](https://github.com/ob6to8/elixir-mind/blob/claude/code-cleanliness-trust-dkff57/meta/analysis/is-to-ought-belief-grounds-doctrine.md) (branch link, per the link policy).
+
+<routes ref="em:f35b8f meta/analysis/is-to-ought-belief-grounds-doctrine.md">
+**The tension turned out to be apparent, not real — and the reason is worth having on record.** The analysis rejected a `belief` type on collision grounds: *"the descriptive work is already covered by `claim`/`note`/`concept`, so a `belief` type would collide with them."* That objection was correct and still is. But the type that shipped isn't descriptive — it's a value-laden decision prior that *"stays outside the verification ladder"*, with the rule that one turning out empirically checkable is refiled as a `claim`. That refile rule **is** the analysis's collision-avoidance, made mechanical: anything that would collide with `claim` is by definition not a `belief`. So the analysis rejected a descriptive belief type; the bundle adopted a value-laden one; both stand.
+
+What the original genuinely missed is a *third* register. Its two columns were "checkable fact" and "direction for the brain" — and the seed beliefs fit neither: Dex Horthy's spec-length thesis isn't a checkable claim about this brain, nor a direction the brain serves; it's a prior that bounds how plans get written. The corrected stack in the update puts belief **parallel to** doctrine (four tiers: statement / belief / doctrine / policy), not as a relabeling of the descriptive tier.
+
+Crucially, **the is-to-ought bridge itself is untouched** — the move from premise to direction works the same whether the premise is a verifiable `claim` or an unverifiable `belief`. All that changed is that the premise now has two possible homes, split by whether evidence could settle it.
+
+Two judgment calls in how I made the edit:
+
+- **I marked the superseded passages rather than rewriting them.** An `analysis` is historical by construction — a point-in-time judgment — so silently editing its conclusion would destroy the record of what was actually thought on 2026-07-22. The old tier table and the "not a controlled type" paragraph stay as written, with a blockquote pointing to the update; the reconciliation lives in a dated section at the end.
+- **I added a back-link from the beliefs index**, since the layer's own docs cited the plan but not the analysis — the reconciliation was only discoverable from the analysis side.
+</routes>
+
+This is on the restarted `claude/code-cleanliness-trust-dkff57` (rebuilt from `main` after #150 merged), one commit, gates green, not yet PR'd. Say the word when you want it opened.
+
+## User
+
+restate in plainspeak
+
+## Assistant
+
+<routes ref="meta/analysis/is-to-ought-belief-grounds-doctrine.md">
+**The apparent problem.** An old document said "we should not have a document type called `belief`." Later, someone added a document type called `belief`. Those look like a direct contradiction.
+
+**Why they're not.** They're talking about two different things that share a name.
+
+The old document was arguing against a type for *facts* — statements like "a lossy summary can't tell you why a decision was made." True or false, checkable. We already have types for those (`claim`, `note`, `concept`), so adding a fourth would just be a duplicate. That reasoning was right.
+
+The type that actually got added is for something else: things you choose to act on *without* being able to prove them. Like "I'll treat the scar-tissue analogy as the right way to think about agent failure." There's no experiment that settles that — other framings fit the same facts equally well — but it still shapes what you build. That's not a duplicate of anything.
+
+There's even a rule that keeps them apart: if a `belief` turns out to be something evidence *could* settle, it gets refiled as a `claim`. So a belief can never quietly become the duplicate the old document warned about.
+
+**What the old document actually got wrong.** It assumed everything is either a checkable fact or a direction for the project to head in. Two boxes. But some things fit neither — a prior you act on that isn't checkable and isn't a goal. It had nowhere to put those. That's the real gap, and it's what the new type fills.
+
+**What didn't change.** The old document's main idea — that a fact can *justify* a direction, and you should keep those two things distinct — still works exactly as written. The only difference is that the fact doing the justifying can now live in one of two places, depending on whether evidence could settle it.
+
+**What I did to the file.** Left the original text alone and added a dated section at the bottom explaining all of the above. I didn't rewrite the old conclusion, because that document is a record of what was thought on a particular day — quietly editing it would erase that. I just flagged the two outdated spots with a pointer to the new section, and added a link from the beliefs folder so someone reading from that side finds the explanation too.
+</routes>
 
 ## User
 
