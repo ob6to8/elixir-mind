@@ -12,7 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, communication-guidance session"
   why: "the operator asked for a formalized, organically-growing list of banned communication phrases, seeded from a phrase flagged in the 2026-07-27 session"
-  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
+  from: [/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-banned-phrases-disclosure-favor-and-preamble-valuation.md]
 ---
 
 **Certain words and phrases are banned from agent-composed prose.** The
@@ -98,3 +98,35 @@ content directly.
   case-by-case announcement is precisely what makes the unannounced remainder
   illegible. Recast: do the check silently, then state the fact with its
   basis — "CI is green (both runs completed 08:52)".
+
+- **"I'd rather you hear it from me than find it"** — pattern: *"I'd rather
+  you hear it from me than \<discover it yourself\>"* (also "better you hear
+  this from me", "you'd have found this anyway, so") — framing a disclosure
+  as a courtesy the agent elected to extend. The alternative it names is the
+  operator finding out unaided, which asserts that withholding was available
+  and declined: the disclosure arrives pre-graded as generous, and the
+  operator is cast as receiving a favor rather than a fact. Reporting what
+  happened is the baseline the ledger already requires
+  ([response-work-report-format](/meta/policy/response-work-report-format.md)),
+  and at close time a concern is owed as a blocking question
+  ([concerns-block-the-close](/meta/policy/concerns-block-the-close.md)) — so
+  the preamble claims credit for meeting an obligation. Structurally it is
+  the *"let me X rather than Y"* entry above with the roles swapped: there
+  the unraised alternative is the agent's laziness, here it is the operator's
+  ignorance. Recast: state the thing and its consequence, with no preamble.
+
+- **"One thing that turned out to matter more than the mechanics:"** —
+  pattern: *"the thing that actually/really matters is X"* / *"what turned
+  out to matter more than Y was X"* — a self-assigned importance ranking
+  preambled before the content, instead of leaving the content and its
+  placement to demonstrate the ranking. A valuation is unnecessary if it
+  doesn't carry weight: if the point genuinely outweighs what preceded it,
+  the reader sees that once it's stated; the preamble either asserts nothing
+  (the weight was already going to land) or oversells a point that can't back
+  it up alone. The preamble-side twin of the seed entry's "worth flagging"
+  failure (self-graded worth asserted instead of shown) and the "honest
+  headline" entry's post-hoc twin (pointing at significance instead of
+  *making* something the headline via placement, per
+  [plainspeak-orientation](/meta/policy/plainspeak-orientation.md)). Recast:
+  state the point directly; if it needs prominence, lead with it or give it a
+  heading — structure carries the emphasis, not a verdict phrase.
