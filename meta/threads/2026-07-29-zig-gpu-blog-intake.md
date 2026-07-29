@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-07-29; verbatim retaine
 tags: [meta, thread, zig, gpu-programming, spir-v, vulkan, opencl, intake]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_01YPqbqCf2qR8tGEjZ2BGJkH
+pr: 191
 ---
 
 # 2026-07-29-zig-gpu-blog-intake
