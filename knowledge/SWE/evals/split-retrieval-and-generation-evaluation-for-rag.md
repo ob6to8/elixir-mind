@@ -140,3 +140,41 @@ for the other, for exactly the reason that belief predicts.
   building the model wrapper](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md),
   fetched 2026-07-29 —
   <https://www.reddit.com/r/LLMDevs/comments/1v9m8d5/evaluation_is_so_much_harder_than_actually/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:9baaad">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-rag-evaluation-reddit-intake (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:9baaad`]**  (co-feeds: `em:1394b9`)
+
+The Reddit thread on RAG evaluation is now filed in two documents under
+`knowledge/SWE/evals/`, and the branch is pushed.
+
+**What happened, in plain terms:** the thread argues that scoring a RAG
+pipeline's answers with one blended metric (BLEU/ROUGE, or a single
+LLM-judge score) hides which half is broken. The fix the commenters converge
+on is to score retrieval and generation separately — retrieval against a
+small hand-built answer key (hit rate/MRR), generation by whether it stuck
+to the retrieved text (a hallucination check) — and to keep any LLM-judge
+honest by testing it against answers a human already scored, using a
+different model as the judge. I captured the raw thread verbatim, and wrote
+a second document distilling that technique for reuse.
+
+**What I created**
+
+| Type | Doc | Why this type |
+|---|---|---|
+| `reference` | [r/LLMDevs thread, verbatim](https://github.com/ob6to8/elixir-mind/blob/claude/rag-evaluation-metrics-zesc6s/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) (`em:1394b9`) | External material captured per your instruction to persist it verbatim; `resource` holds the source URL |
+| `methodology` | [Split retrieval/generation eval for RAG](https://github.com/ob6to8/elixir-mind/blob/claude/rag-evaluation-metrics-zesc6s/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) (`em:9baaad`) | A repeatable, prescriptive how-to distilled from the thread — the analysis half of the ask |
+
+Both filed under the existing `knowledge/SWE/evals/` directory (no new
+directory or type needed), cross-linked to each other and to existing
+bundle concepts: [gold set](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/glossary/gold-set.md),
+[test oracle](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/glossary/test-oracle.md),
+[decompose-then-verify factuality](https://github.com/ob6to8/elixir-mind/blob/main/knowledge/SWE/evals/decompose-then-verify-factuality.md),
+[an instrument without a control](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/an-instrument-without-a-control-measures-itself.md),
+and [coverage and quality must be measured jointly](https://github.com/ob6to8/elixir-mind/blob/main/beliefs/coverage-and-quality-must-be-measured-jointly.md).

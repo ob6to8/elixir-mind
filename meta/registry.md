@@ -230,6 +230,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
 | `em:628db5` | [beliefs/glossary/ground-truth](/beliefs/glossary/ground-truth.md) | concept | false |
 | `em:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |
+| `em:725a08` | [beliefs/glossary/groundedness](/beliefs/glossary/groundedness.md) | concept | false |
 | `em:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
 | `em:ff4d55` | [beliefs/glossary/hallucination](/beliefs/glossary/hallucination.md) | concept | false |
 | `em:ac0e23` | [beliefs/glossary/harness](/beliefs/glossary/harness.md) | concept | false |
@@ -285,6 +286,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:9be927` | [beliefs/glossary/maturity-model](/beliefs/glossary/maturity-model.md) | concept | false |
+| `em:1c5e08` | [beliefs/glossary/mean-reciprocal-rank](/beliefs/glossary/mean-reciprocal-rank.md) | concept | false |
 | `em:45649c` | [beliefs/glossary/mental-model](/beliefs/glossary/mental-model.md) | concept | false |
 | `em:715a40` | [beliefs/glossary/metered-paywall](/beliefs/glossary/metered-paywall.md) | concept | false |
 | `em:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
@@ -384,6 +386,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:96a610` | [beliefs/glossary/residual-fragmentation](/beliefs/glossary/residual-fragmentation.md) | concept | false |
 | `em:0ad3bb` | [beliefs/glossary/response-prefill](/beliefs/glossary/response-prefill.md) | concept | false |
 | `em:fd9873` | [beliefs/glossary/restricted-boltzmann-machine](/beliefs/glossary/restricted-boltzmann-machine.md) | concept | false |
+| `em:92ba1e` | [beliefs/glossary/retrieval-hit-rate](/beliefs/glossary/retrieval-hit-rate.md) | concept | false |
 | `em:3e46be` | [beliefs/glossary/retrieval-practice](/beliefs/glossary/retrieval-practice.md) | concept | false |
 | `em:d95896` | [beliefs/glossary/retrospective-narration](/beliefs/glossary/retrospective-narration.md) | concept | false |
 | `em:2bcd9a` | [beliefs/glossary/reusable-workflow](/beliefs/glossary/reusable-workflow.md) | concept | false |
