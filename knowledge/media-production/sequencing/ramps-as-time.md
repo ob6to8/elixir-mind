@@ -4,7 +4,7 @@ type: concept
 title: "Ramps as time: derive events from a phase, don't schedule triggers"
 description: "The time model gen~ enforces and Wakefield & Taylor's book builds on: represent musical time as a continuous 0→1 phase ramp and derive every event — beats, subdivisions, swing, polymeter, phasing, and non-audio consumers like video cut points — by arithmetic on that phase, instead of scheduling discrete trigger events one by one."
 verified: true
-verified_by: [em:98a026]
+verified_by: [em:98a026, em:ee3948]
 provenance: "Distilled from Wakefield's Gen course notes and the Cycling '74 authors' interview for Generating Sound & Organizing Time"
 tags: [media-production, sequencing, timing, gen, phasor, rhythm, mental-model]
 timestamp: 2026-07-28

@@ -603,6 +603,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
 | `em:d5ca81` | [knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md) | concept | true |
+| `em:ee3948` | [knowledge/media-production/audio-synthesis/generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | reference |  |
 | `em:ff1ed5` | [knowledge/media-production/audio-synthesis/supercollider-nrt-rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md) | note | false |
 | `em:98a026` | [knowledge/media-production/audio-synthesis/wakefield-gen-course-notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md) | source |  |
 | `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |

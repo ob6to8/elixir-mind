@@ -41,7 +41,11 @@ verbatim below), the publisher's description
 and the authors' interview
 ([Cycling '74](https://cycling74.com/articles/generating-sound-and-organizing-time-an-interview-with-graham-wakefield-and-gregory-taylor-1),
 paraphrased). Claims about the book beyond these sources are inference, not
-reading.
+reading. The publisher's chapter-level table of contents was obtained after
+this analysis was first written and is captured in
+[the book reference](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md);
+it confirms the ramp doctrine as the book's backbone (chapter 2) and adds the
+chapter 5 binary-sequencing finding noted below.
 
 ## What gen~ actually reduces to
 
@@ -64,12 +68,18 @@ Wakefield's course notes put numbers and mechanisms on it:
 
 — [Wakefield, *Gen* course notes](https://artificialnature.net/courses/gen/Gen.pdf)
 
-One terminological correction matters for anyone reading "binary primitives"
+One terminological distinction matters for anyone reading "binary primitives"
 into this: gen~'s "binary operators" are *two-input arithmetic operators*
 (add, multiply, compare) — the term as used in
 [the notes](https://artificialnature.net/courses/gen/Gen.pdf) ("binary
 operators with an argument have only one inlet"), and in operator taxonomy
-generally, means arity, and bitwise/binary-digit logic is a different thing.
+generally, means arity. The phrase's *other* reading is real too, though: the
+book's chapter 5 makes binary-digit structure itself the musical material —
+shift-register sequencing, xor pseudo-random sequences, integers as patterns,
+Euclidean rhythms as "digitized ratios" — per the
+[table of contents captured after this analysis was first written](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md).
+Both readings feed the timing DSL below; only the arity one describes the
+operator set.
 The reduction claim in its strong form: **multiply, add, compare, plus one
 sample of memory (`history`) and delay lines** — and complex processes are
 straight-line arithmetic over those. His compiled nested-comb-filter example is

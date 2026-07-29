@@ -4,6 +4,11 @@ DSP models and render backends for producing sound with code.
 
 ## Contents
 
+- [Generating Sound & Organizing Time: Thinking with gen~ (Book 1)](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md)
+  — Wakefield & Taylor's per-sample DSP book, captured at chapter level from
+  the publisher's table of contents: ramp-based time, unit shaping, chaos,
+  binary/Euclidean sequencing, filters, delays, modulation, wavetables,
+  granular time
 - [DSP reduces to a small primitive vocabulary plus one sample of memory](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md)
   — the mental model gen~ demonstrates: two-input arithmetic, the one-sample
   `history` delay, and delay lines, made efficient by compilation
