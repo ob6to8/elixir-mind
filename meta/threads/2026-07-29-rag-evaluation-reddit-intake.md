@@ -5,6 +5,7 @@ description: Intake of an r/LLMDevs discussion on RAG evaluation — persisted v
 provenance: "Claude Code session (Sonnet 5), 2026-07-29; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evals, rag, retrieval, llm-as-judge, intake]
 timestamp: 2026-07-29
+pr: 193
 session: https://claude.ai/code/session_0149Nj4yfEJQkJ48TTxc23Ef
 ---
 
