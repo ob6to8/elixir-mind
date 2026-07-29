@@ -15,4 +15,5 @@ and the practices they change.
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
 - [multi-model](/knowledge/SWE/agentic/multi-model/index.md) — working across multiple model providers in coding-agent workflows: escaping single-provider lock-in while keeping the dev ergonomics
+- [provenance](/knowledge/SWE/agentic/provenance/index.md) — trust and provenance layers for content moving through multi-agent pipelines: grading transmitters, chain trust, and corroboration
 - [supply-chain-security](/knowledge/SWE/agentic/supply-chain-security/index.md) — trust and governance risk in the agentic-AI dependency supply chain

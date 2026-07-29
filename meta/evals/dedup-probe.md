@@ -78,6 +78,8 @@ being mechanically rewritten.
 | implications of kimi k3 releasing its weights | em:68d1b3 | target | kimi k3 open weights; moonshot 2.8T open-weight model; kimi k3 license | harvested at intake 2026-07-28 |
 | debugging on weaker models is more informative; top models cover your harness bugs | em:7309de | target | weaker models; harness; cheapest model; tool interface | harvested at intake 2026-07-28 |
 | the gen~ book's approach to dsp via reducing operations down to binary primitives | em:ee3948 | target | generating sound organizing time; wakefield taylor gen book; sample-level DSP book | harvested at intake 2026-07-28 |
+| 1400 years ago scholars solved a problem multi-agent ai reinvented | em:c880d8 | target | isnad claim verification; hadith transmission chains for ai; rijal grading transmitters | harvested at intake 2026-07-29 |
+| persist the reddit thread verbatim | em:9318af | target | isnad reddit discussion thread; r/AgentsOfAI isnad thread; isnad announcement comments | harvested at intake 2026-07-29 |
 
 ## Baseline
 
@@ -91,8 +93,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 6 | 19 |
-| expanded | 17 | 19 |
+| plain | 6 | 21 |
+| expanded | 17 | 21 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to
