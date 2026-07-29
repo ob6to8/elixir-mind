@@ -208,6 +208,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
+| `em:d504b3` | [beliefs/glossary/gen-tilde](/beliefs/glossary/gen-tilde.md) | concept | false |
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
 | `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
@@ -299,12 +300,14 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
 | `em:54995c` | [beliefs/glossary/non-bundle-namespace](/beliefs/glossary/non-bundle-namespace.md) | concept | false |
 | `em:724e2f` | [beliefs/glossary/non-monotonic-reasoning](/beliefs/glossary/non-monotonic-reasoning.md) | concept | false |
+| `em:7eb410` | [beliefs/glossary/non-realtime-rendering](/beliefs/glossary/non-realtime-rendering.md) | concept | false |
 | `em:0c343a` | [beliefs/glossary/normative-conclusion](/beliefs/glossary/normative-conclusion.md) | concept | false |
 | `em:760063` | [beliefs/glossary/nyquist-shannon-sampling-theorem](/beliefs/glossary/nyquist-shannon-sampling-theorem.md) | concept | false |
 | `em:617977` | [beliefs/glossary/observer-agent](/beliefs/glossary/observer-agent.md) | concept | false |
 | `em:8c9ef1` | [beliefs/glossary/observer-effect](/beliefs/glossary/observer-effect.md) | concept | false |
 | `em:a267ab` | [beliefs/glossary/okf-frontmatter-profile](/beliefs/glossary/okf-frontmatter-profile.md) | concept | false |
 | `em:6e1259` | [beliefs/glossary/on-behalf-of-delegation](/beliefs/glossary/on-behalf-of-delegation.md) | concept | false |
+| `em:5a4acb` | [beliefs/glossary/onset-detection](/beliefs/glossary/onset-detection.md) | concept | false |
 | `em:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
 | `em:02dc95` | [beliefs/glossary/open-weights](/beliefs/glossary/open-weights.md) | concept | false |
 | `em:d845c0` | [beliefs/glossary/open-world-assumption](/beliefs/glossary/open-world-assumption.md) | concept | false |
@@ -323,12 +326,14 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7adc45` | [beliefs/glossary/parse-the-log](/beliefs/glossary/parse-the-log.md) | concept | false |
 | `em:83c71b` | [beliefs/glossary/patch-validation-funnel](/beliefs/glossary/patch-validation-funnel.md) | concept | false |
 | `em:eae2bf` | [beliefs/glossary/pattern-matching](/beliefs/glossary/pattern-matching.md) | concept | false |
+| `em:094aff` | [beliefs/glossary/phasor](/beliefs/glossary/phasor.md) | concept | false |
 | `em:8048c6` | [beliefs/glossary/pipe-table](/beliefs/glossary/pipe-table.md) | concept | false |
 | `em:42b353` | [beliefs/glossary/plainspeak-orientation](/beliefs/glossary/plainspeak-orientation.md) | concept | false |
 | `em:bf0524` | [beliefs/glossary/plan-type](/beliefs/glossary/plan-type.md) | concept | false |
 | `em:78580d` | [beliefs/glossary/plugin](/beliefs/glossary/plugin.md) | concept | false |
 | `em:393e3d` | [beliefs/glossary/pointer-entry](/beliefs/glossary/pointer-entry.md) | concept | false |
 | `em:fa15e7` | [beliefs/glossary/policy-type](/beliefs/glossary/policy-type.md) | concept | false |
+| `em:c68556` | [beliefs/glossary/polymeter](/beliefs/glossary/polymeter.md) | concept | false |
 | `em:ae26bf` | [beliefs/glossary/post-training](/beliefs/glossary/post-training.md) | concept | false |
 | `em:c6868c` | [beliefs/glossary/postsubmit](/beliefs/glossary/postsubmit.md) | concept | false |
 | `em:1ddce3` | [beliefs/glossary/posttooluse-hook](/beliefs/glossary/posttooluse-hook.md) | concept | false |
@@ -600,7 +605,17 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
+| `em:d5ca81` | [knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md) | concept | true |
+| `em:ee3948` | [knowledge/media-production/audio-synthesis/generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | reference |  |
+| `em:ff1ed5` | [knowledge/media-production/audio-synthesis/supercollider-nrt-rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md) | note | false |
+| `em:98a026` | [knowledge/media-production/audio-synthesis/wakefield-gen-course-notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md) | source |  |
+| `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |
+| `em:507eb9` | [knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md) | note | false |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
+| `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
+| `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
+| `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |
+| `em:0b9d92` | [projects/code-driven-av-production/headless-supercollider-grid-render](/projects/code-driven-av-production/headless-supercollider-grid-render.md) | tutorial |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
 | `em:0d4f26` | [projects/secure-financial-agent/architecture](/projects/secure-financial-agent/architecture.md) | plan |  |
 | `em:6e97e5` | [projects/secure-financial-agent/spec-completion](/projects/secure-financial-agent/spec-completion.md) | plan |  |
