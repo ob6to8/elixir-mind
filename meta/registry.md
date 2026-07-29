@@ -47,6 +47,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ac22a3` | [beliefs/glossary/assertion-graph](/beliefs/glossary/assertion-graph.md) | concept | false |
 | `em:7a467d` | [beliefs/glossary/assumption](/beliefs/glossary/assumption.md) | concept | false |
 | `em:6cf17b` | [beliefs/glossary/assurance-case](/beliefs/glossary/assurance-case.md) | concept | false |
+| `em:33ce3c` | [beliefs/glossary/atom](/beliefs/glossary/atom.md) | concept | false |
 | `em:fd5a1e` | [beliefs/glossary/atomic-fact](/beliefs/glossary/atomic-fact.md) | concept | false |
 | `em:630624` | [beliefs/glossary/attention-residuals](/beliefs/glossary/attention-residuals.md) | concept | false |
 | `em:0e6a29` | [beliefs/glossary/attestation](/beliefs/glossary/attestation.md) | concept | false |
@@ -90,6 +91,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
 | `em:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
 | `em:4e4719` | [beliefs/glossary/composition-over-inheritance](/beliefs/glossary/composition-over-inheritance.md) | concept | false |
+| `em:ba3dac` | [beliefs/glossary/comprehension](/beliefs/glossary/comprehension.md) | concept | false |
 | `em:927291` | [beliefs/glossary/computer-use](/beliefs/glossary/computer-use.md) | concept | false |
 | `em:4a590f` | [beliefs/glossary/concept-type](/beliefs/glossary/concept-type.md) | concept | false |
 | `em:6a5115` | [beliefs/glossary/consensus-core](/beliefs/glossary/consensus-core.md) | concept | false |
@@ -320,6 +322,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:a8e67a` | [beliefs/glossary/parity-principle](/beliefs/glossary/parity-principle.md) | concept | false |
 | `em:7adc45` | [beliefs/glossary/parse-the-log](/beliefs/glossary/parse-the-log.md) | concept | false |
 | `em:83c71b` | [beliefs/glossary/patch-validation-funnel](/beliefs/glossary/patch-validation-funnel.md) | concept | false |
+| `em:eae2bf` | [beliefs/glossary/pattern-matching](/beliefs/glossary/pattern-matching.md) | concept | false |
 | `em:8048c6` | [beliefs/glossary/pipe-table](/beliefs/glossary/pipe-table.md) | concept | false |
 | `em:42b353` | [beliefs/glossary/plainspeak-orientation](/beliefs/glossary/plainspeak-orientation.md) | concept | false |
 | `em:bf0524` | [beliefs/glossary/plan-type](/beliefs/glossary/plan-type.md) | concept | false |

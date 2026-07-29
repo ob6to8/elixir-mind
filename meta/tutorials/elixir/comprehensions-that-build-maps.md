@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, in-session authoring"
   why: "operator asked for a beginner explanation of build_id_index/1 to be kept as a durable tutorial, opening an Elixir-language subdirectory under meta/tutorials/"
+  from: [/meta/threads/2026-07-29-elixir-comprehension-tutorial.md]
 ---
 
 # Reading an Elixir comprehension that builds a map
