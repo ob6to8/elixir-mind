@@ -5,6 +5,7 @@ description: A graded evaluation of the repo against the 2026 second-brain field
 provenance: "Claude Code session (Claude Opus 5), 2026-07-29; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, evaluation, grading, second-brain, landscape, retrieval, corpus-composition, link-integrity, readme]
 timestamp: 2026-07-29
+pr: 188
 session: https://claude.ai/code/session_01XGMF8Zw3DbevFk46hHvCBH
 ---
 
