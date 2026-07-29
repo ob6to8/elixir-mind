@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-29; verbatim retained 
 tags: [meta, thread, elixir, comprehensions, pattern-matching, tutorials, taxonomy]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_01CX6rEN67aHag6T1UN1UcVo
+pr: 186
 ---
 
 # 2026-07-29-elixir-comprehension-tutorial
