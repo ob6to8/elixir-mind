@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, repo-knowledge-base-eval session"
   why: "operator asked for a graded evaluation against the second-brain status quo; filed so the measured baseline and the rubric persist as the comparison point for the next re-run"
+  from: [/meta/threads/2026-07-29-repo-evaluation-against-the-second-brain-field.md]
 ---
 
 # Re-evaluated at 615 documents
