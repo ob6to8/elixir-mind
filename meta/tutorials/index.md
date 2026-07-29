@@ -4,6 +4,11 @@ Long-form explanatory notes about how the brain's tooling and governance work �
 the "why", written to be read start to finish. Distinct from `policy` (the rules
 that compile into the contract) and `threads` (verbatim conversation archives).
 
+## Subdirectories
+
+- [elixir/](/meta/tutorials/elixir/index.md) — the Elixir language itself: syntax, idioms, and
+  standard-library shapes, taught through the brain's own source in `lib/`.
+
 ## Contents
 
 - [The tooling architecture — a grand tour of the `mix brain.*` pipeline](/meta/tutorials/the-tooling-architecture.md) — the spine that ties the other tutorials together: how the `elixir_mind` modules form a parse → scan → generate → publish pipeline over the bundle's markdown, with a cross-cutting provenance layer and a thin `mix brain.*` CLI on top; where each narrow tutorial and the generated [code map](/meta/code-map.md) fit into that shape.
