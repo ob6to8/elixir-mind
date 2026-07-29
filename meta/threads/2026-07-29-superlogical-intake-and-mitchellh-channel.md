@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-07-29; verbatim retaine
 tags: [meta, thread, intake, superlogical, mitchell-hashimoto, dev-tools, channels, terminal]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_018FRKrQBMPdtgYQtu7rDTs2
+pr: 190
 ---
 
 # 2026-07-29-superlogical-intake-and-mitchellh-channel
