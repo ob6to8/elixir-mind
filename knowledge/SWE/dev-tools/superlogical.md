@@ -70,3 +70,43 @@ pricing published.
   <https://mitchellh.com/writing/superlogical>
 - Superlogical product site —
   <https://www.superlogical.com/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:fed9ce">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-superlogical-intake-and-mitchellh-channel (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:fed9ce`]**  (co-feeds: `survey/channels.md`)
+
+Pushed successfully. Per contract, I'm not opening a PR since none was requested.
+
+**What I created**
+
+| Doc | Type | Why this type |
+|---|---|---|
+| `knowledge/SWE/dev-tools/superlogical.md` (`em:fed9ce`) | `reference` | Captured/summarized external material (Hashimoto's founding post + product site) |
+| `knowledge/SWE/dev-tools/index.md` | — | New subdirectory listing (autonomous — subdir under the established `SWE` domain) |
+
+**What I modified**
+
+| File | Change |
+|---|---|
+| `knowledge/SWE/index.md` | Added the new `dev-tools` subdirectory entry |
+| `survey/channels.md` | Added `mitchellh.com` under Independent blogs, pointed at the new Superlogical doc |
+| `meta/registry.md` | Regenerated after minting the new id |
+
+**Actions I have taken**
+
+| Action | Result |
+|---|---|
+| Fetched both URLs | Distilled into one `reference` doc (Superlogical's thesis, founders, first product, funding) |
+| Dedup search (Superlogical/Hashimoto/Ghostty/terminal multiplexer) | No existing doc — filed new |
+| `mix brain.id && mix brain.registry` | Minted `em:fed9ce` |
+| `mix brain.dedup_probe --update-baseline` | No natural operator phrasing to harvest as a gold row (bare URLs); recall unchanged (6/19), no regression |
+| `mix brain.verify` + full pre-commit gate suite | All green, including tests |
+| Committed and pushed | `1efd752` on `claude/mitchell-hedlund-writing-channel-a8gxje` |
+
+No new directory outside an established top-level domain was needed, so nothing here awaits ratification.
