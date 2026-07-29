@@ -13,13 +13,23 @@ frontmatter, designed to be read and extended by AI agents and humans alike.
 - **`CLAUDE.md`** — the operating contract every agent follows (OKF rules, filing
   conventions, `type` vocabulary, and the taxonomy-evolution protocol). A
   **generated artifact**, compiled from `meta/policy/` by `mix brain.contract`.
+- **`knowledge/`** — the knowledge taxonomy: domain knowledge, organized as a
+  unix-like tree that *is* the classification. See
+  [`knowledge/index.md`](/knowledge/index.md).
+- **`beliefs/`** — the brain's own working vocabulary and value-laden decision
+  priors, including **`beliefs/glossary/`**: one concept file per technical term
+  used across the brain, with citations, accreted by `/add-to-glossary` (hub:
+  [`beliefs/glossary.md`](/beliefs/glossary.md)).
+- **`projects/`** — systems built *outside* this repo that incubate here: their
+  specs and design records, with every generalizable finding filed to
+  `knowledge/` instead.
 - **`meta/`** — governance namespace: the source policies, plans, issues, todos,
-  analyses, tutorials, flow docs, archived session threads, and the generated
-  stable-id registry. See [`meta/index.md`](/meta/index.md).
-- **`glossary/`** — one concept file per technical term used across the brain,
-  with citations; accreted by `/add-to-glossary` (hub: [`glossary.md`](/beliefs/glossary.md)).
-- **`inbox/`** — the daily candidate feed written by `/research` (a non-bundle
-  namespace: candidates awaiting `/intake`, not concepts).
+  analyses, tutorials, flow docs, evals, archived session threads, and the
+  generated stable-id registry. See [`meta/index.md`](/meta/index.md).
+- **`inbox/`**, **`survey/`**, **`journal/`** — non-bundle staging and record
+  namespaces (no `em:` ids): the daily candidate feed written by `/research`,
+  the bookmark tier processed by `/bookmarks`, and the operator's dated journal
+  entries filed by `/journal`.
 - **`.claude/skills/`** — skills. Start with **`/intake`** for capturing content.
 - **`deprecated/`** — archived legacy content and tooling (read-only; not part of
   the knowledge bundle).
@@ -34,17 +44,32 @@ to ratify before creating it.
 ## Usage
 
 From the Claude Code app, paste material after `/intake` to capture it into the brain.
+`/research` generates the daily candidate feed and auto-intakes its featured items;
+`/bookmarks` parks links in the survey tier; `/journal` files the operator's daily
+entry.
+
 Run `/priorities` for an open-work appraisal — `mix brain.session_init` compiles a
 digest of open issues, todos, active plans, and dangling thread strands, ending in a
 heuristic top-3 the agent refines. The `/issue`, `/plan`, and `/todo` skills list the
 open artifacts of each type.
 
+At session close, `/create-pull-request` runs `/capture` (freezing the session as a
+thread doc under `meta/threads/`), glossaries it, then commits, pushes, and opens the
+PR.
+
 ## Integrity gates
 
-CI runs the full gate suite on every push and PR: compile, format, tests, contract
-freshness (`mix brain.contract --check`), registry freshness (`mix brain.registry
---check`), bundle verification (`mix brain.verify` — ids, evidence edges,
-grounding), route-tag verification (`mix brain.route_tags`), and a site build.
+CI runs the full gate suite on every push and PR. Build gates: workflow lint
+(actionlint), compile and tests with warnings as errors, format check, and zero
+compile-time coupling between modules (`mix xref graph --label compile-connected
+--fail-above 0`). Generated-artifact freshness: the contract (`mix brain.contract
+--check`), the stable-id registry (`mix brain.registry --check`), the code map
+(`mix brain.codemap --check`), and the flow lineage views (`mix brain.lineage
+--check`). Bundle integrity: `mix brain.verify` (ids, evidence edges, grounding),
+`mix brain.route_tags` (tags, refs, sink logs, log fidelity), `mix brain.glossary`
+(descriptions, index sync, body dedup), and a site build. `mix brain.dedup_probe`
+reports lexical dedup recall as a non-gating trend metric.
+
 A local mirror is available as an opt-in pre-commit hook
 (`git config core.hooksPath .githooks`).
 
