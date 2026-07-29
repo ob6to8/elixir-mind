@@ -5,6 +5,7 @@ Software engineering knowledge.
 ## Contents
 
 - [agentic](/knowledge/SWE/agentic/index.md) — AI agents, their runtimes, vendors, and the practices they change
+- [dev-tools](/knowledge/SWE/dev-tools/index.md) — developer-tools products and the companies that build them: terminals, editors, and related workstation/session infrastructure
 - [evals](/knowledge/SWE/evals/index.md) — evaluating LLM and agent output: benchmarks, metrics, and evaluation methodology
 - [gpu-programming](/knowledge/SWE/gpu-programming/index.md) — programming GPUs directly: compilation backends, cross-vendor intermediate representations, and API capability gaps
 - [llm-engineering](/knowledge/SWE/llm-engineering/index.md) — making LLM inference and retrieval cheaper, faster, or more capable
