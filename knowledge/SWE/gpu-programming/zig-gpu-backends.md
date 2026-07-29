@@ -117,3 +117,45 @@ these backends.
 
 - Ali Cheraghi, "Zig and GPUs": <https://alichraghi.github.io/blog/zig-gpu/> —
   the captured resource.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:bab1d2">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-zig-gpu-blog-intake (2026-07-29)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:bab1d2`]**
+
+Bundle verifies cleanly. Now let's grow the dedup gold set per step 8 — this
+intake was a bare URL paste, so I check whether there's a natural operator
+phrasing to harvest.
+
+The intake was invoked with just a bare URL and no accompanying text, so
+there's no natural phrasing to harvest — per the skill, I skip that silently.
+Let's still refresh the dedup baseline.
+
+---
+
+**[`em:bab1d2`]**
+
+**Summary**
+
+I filed the blog post "Zig and GPUs" (Ali Cheraghi) as a new `type: reference`
+document, using the layered `/summarize-technical` breakdown since it's
+technical enough to warrant it.
+
+**What I created**
+
+| Doc | Type | Why |
+|---|---|---|
+| [`knowledge/SWE/gpu-programming/zig-gpu-backends.md`](https://github.com/ob6to8/elixir-mind/blob/claude/zig-gpu-blog-intake-rvzi6v/knowledge/SWE/gpu-programming/zig-gpu-backends.md) (`em:bab1d2`) | `reference` | Layered breakdown of Zig's SPIR-V and LLVM-native GPU backends and the OpenCL-vs-Vulkan capability gaps |
+| `knowledge/SWE/gpu-programming/index.md` | index | Listing for the new subdirectory |
+
+**What I modified**
+
+| File | Change |
+|---|---|
+| `knowledge/SWE/index.md` | Added the new `gpu-programming` subdirectory to the contents list |
+| `meta/registry.md` | Regenerated after minting the new id |
