@@ -4,9 +4,9 @@ type: reference
 title: "Zig and GPUs (Ali Cheraghi)"
 description: "Ali Cheraghi's overview of Zig's two GPU compilation paths — a self-hosted SPIR-V backend for Vulkan/OpenCL and an LLVM-based path to native PTX/AMDGCN — and the OpenCL-vs-Vulkan capability gaps (pointer casting, correctly-rounded math) that hold Vulkan's behavior-test pass rate below OpenCL's."
 resource: https://alichraghi.github.io/blog/zig-gpu/
-provenance: "Distilled from Ali Cheraghi's blog post; layered breakdown via /summarize-technical"
+provenance: "Distilled from Ali Cheraghi's blog post (raw HTML fetched and cross-checked directly, not only the fetch tool's summarization); layered breakdown via /summarize-technical"
 tags: [zig, gpu-programming, spir-v, vulkan, opencl, llvm, ptx, amdgcn, compilers, systems-programming]
-timestamp: 2026-07-29
+timestamp: 2026-07-29T18:00:00Z
 attribution:
   when: 2026-07-29
   channel: intake
@@ -113,10 +113,40 @@ launched without vendor toolchains), and GPU-oriented standard-library
 algorithms (prefix sum, reduction, matrix multiplication) built on top of
 these backends.
 
+## Build invocations
+
+The article's own `zig build-obj`/`zig build-lib` invocations for each
+target, quoted verbatim:
+
+```
+// SPIR-V:
+//     zig build-obj -target spirv64-vulkan-none -mcpu vulkan_v1_2+int64 \
+//     -ofmt=spirv -fno-llvm kernel.zig
+//     zig build-obj -target spirv64-opencl-none -mcpu opencl_v2+int64 \
+//     -ofmt=spirv -fno-llvm kernel.zig
+//
+// PTX:
+//     zig build-lib -dynamic -target nvptx64-cuda-none -mcpu <gpu-model> \
+//     -femit-asm -fno-emit-bin -fno-ubsan-rt kernel.zig
+//
+// AMDGCN:
+//     zig build-lib -dynamic -target amdgcn-amdhsa-none -mcpu <gpu-model> \
+//     -fno-compiler-rt kernel.zig
+```
+
+The SPIR-V/OpenCL invocations both go through `-fno-llvm` (Zig's self-hosted
+backend); the PTX/AMDGCN invocations go through the ordinary LLVM-backed
+pipeline, targeting `nvptx64-cuda-none` and `amdgcn-amdhsa-none` respectively.
+
 # Citations
 
 - Ali Cheraghi, "Zig and GPUs": <https://alichraghi.github.io/blog/zig-gpu/> —
-  the captured resource.
+  the captured resource; raw page fetched and cross-checked directly against
+  this document's claims and figures.
+- [snektron/shallenge](https://github.com/snektron/shallenge) — the article's
+  pointer to "a complete example" combining these backends.
+- [Zig's behavior test suite](https://github.com/ziglang/zig/tree/master/test/behavior) —
+  the suite the ~75%/~50% OpenCL/Vulkan pass rates are measured against.
 
 ## Thread excerpts — route-tagged log
 

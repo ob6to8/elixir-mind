@@ -13,15 +13,16 @@ session: https://claude.ai/code/session_01YPqbqCf2qR8tGEjZ2BGJkH
 ## Where this landed
 
 The operator ran `/intake` on Ali Cheraghi's blog post "Zig and GPUs". The
-fetched content only came back as small-model summaries rather than verbatim
-text, so the article was distilled from those summaries rather than a
-verbatim source. A dedup sweep (zig, gpu, spir-v, vulkan, opencl, amdgcn, ptx)
-found nothing existing in the bundle — only unrelated survey bookmarks — so it
-was filed as a new document rather than merged. Given its technical density
-(compiler backends, address-space semantics, correctly-rounded math
-guarantees), it was built with the `/summarize-technical` three-part layered
-structure (plain-language summary → key terms → technical summary) and filed
-as [Zig and GPUs (Ali Cheraghi)](/knowledge/SWE/gpu-programming/zig-gpu-backends.md)
+first two fetch attempts only came back as small-model summaries rather than
+verbatim text, so the article was initially distilled from those summaries
+rather than the source itself. A dedup sweep (zig, gpu, spir-v, vulkan,
+opencl, amdgcn, ptx) found nothing existing in the bundle — only unrelated
+survey bookmarks — so it was filed as a new document rather than merged.
+Given its technical density (compiler backends, address-space semantics,
+correctly-rounded math guarantees), it was built with the
+`/summarize-technical` three-part layered structure (plain-language summary →
+key terms → technical summary) and filed as
+[Zig and GPUs (Ali Cheraghi)](/knowledge/SWE/gpu-programming/zig-gpu-backends.md)
 (`em:bab1d2`), covering Zig's self-hosted SPIR-V backend (targeting
 Vulkan/OpenCL) and its LLVM-based native path to PTX/AMDGCN, plus the
 OpenCL-vs-Vulkan capability gap (pointer address-space casting,
@@ -31,8 +32,26 @@ autonomously as a subdirectory under the already-established `SWE` top-level
 domain (no operator ratification required). The intake was a bare URL paste
 with no natural operator phrasing to harvest for the dedup gold set, so that
 step was skipped per the skill's own rule; the dedup baseline was still
-refreshed and showed no regression. The session then closed with
-`/create-pull-request merge`.
+refreshed and showed no regression.
+
+The operator then invoked `/create-pull-request merge`. `/capture` and
+`/add-to-glossary` ran first (ten new cross-domain terms: SPIR-V, Vulkan,
+OpenCL, LLVM, PTX, AMDGCN, CUDA, HIP, address space, correctly rounded), and
+that work was committed and pushed. Before opening the PR, the concerns gate
+surfaced a real one: the filed document's specific technical figures (the
+~75%/~50% OpenCL/Vulkan behavior-test pass rates, `OpPtrCastToGeneric`, the
+correctly-rounded-math claim) rested on a fetch tool's small-model
+summarization of the source rather than a direct read of it — a fidelity gap
+worth resolving before, not after, the PR. A direct `curl` fetch of the
+article (a static page, no client rendering involved) recovered the full
+verbatim text and confirmed every figure and claim in the filed document was
+accurate. That direct fetch also surfaced content the summarized passes had
+dropped — the article's own `zig build-obj`/`zig build-lib` invocations per
+backend, and its pointers to the `snektron/shallenge` example and Zig's
+behavior-test suite — which were added to the filed document as a verbatim
+quoted "Build invocations" section and two further citations, with
+`provenance` updated to record the direct cross-check. The session closed
+with the PR opened and merged.
 
 ## Routing
 
