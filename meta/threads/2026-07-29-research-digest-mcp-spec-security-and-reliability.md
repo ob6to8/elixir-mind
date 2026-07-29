@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-07-29; verbatim retaine
 tags: [meta, thread, research, inbox, mcp, security, agentic-loop, anthropic]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_01PbDTm9jmdBxdh9SvCCHp2n
+pr: 187
 ---
 
 # 2026-07-29-research-digest-mcp-spec-security-and-reliability
