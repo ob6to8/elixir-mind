@@ -557,6 +557,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
+| `em:bab1d2` | [knowledge/SWE/gpu-programming/zig-gpu-backends](/knowledge/SWE/gpu-programming/zig-gpu-backends.md) | reference |  |
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
 | `em:ae82a8` | [knowledge/SWE/llm-engineering/defeating-nondeterminism-in-llm-inference](/knowledge/SWE/llm-engineering/defeating-nondeterminism-in-llm-inference.md) | reference |  |
 | `em:266c5e` | [knowledge/SWE/llm-engineering/kv-cache-compression-history](/knowledge/SWE/llm-engineering/kv-cache-compression-history.md) | reference |  |
