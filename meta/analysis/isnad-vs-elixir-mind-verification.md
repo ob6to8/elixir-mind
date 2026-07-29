@@ -10,6 +10,7 @@ attribution:
   channel: intake
   agent: "operator via /intake, Claude Code session"
   why: "evaluate this compared to this repo"
+  from: [/meta/threads/2026-07-29-isnad-claim-verification-intake.md]
 ---
 
 # ISNAD vs. this bundle's verification model

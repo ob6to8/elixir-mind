@@ -1,164 +1,56 @@
 ---
-id: em:c880d8
 type: reference
-title: "ISNAD — an isnād–rijāl framework for claim-level provenance in multi-agent systems"
-description: A Python framework (paper + library, Ali Zahid Raja, arXiv:2607.24117) adapting classical hadith transmission science to AI pipelines — per-claim transmission chains, graded transmitters, weakest-link chain grading, independence-checked corroboration, and content criticism routing claims to serve/review/quarantine.
-resource: https://arxiv.org/abs/2607.24117
-provenance: "Distilled from the arXiv abstract page, the GitHub README (alizahidraja/isnad), and the author's Reddit discussion thread, fetched 2026-07-29"
-tags: [provenance, trust, multi-agent, verification, claim-level, hadith, corroboration, knowledge-systems]
+title: 2026-07-29-isnad-claim-verification-intake
+description: Intake of ISNAD (a hadith-derived isnād-rijāl claim-provenance framework, arXiv:2607.24117) — the paper, repo, and a verbatim-captured Reddit discussion filed as sibling documents under a new provenance/ directory — plus an analysis comparing ISNAD's automatic trust-grading pipeline against this bundle's evidence-recording verification ladder, committed and pushed ahead of the PR this thread itself captures.
+provenance: "Claude Code session, 2026-07-29; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
+tags: [meta, thread, intake, isnad, provenance, verification, multi-agent, hadith]
 timestamp: 2026-07-29
-attribution:
-  when: 2026-07-29T17:00:00Z
-  channel: intake
-  agent: "operator via /intake, Claude Code session"
-  why: "evaluate this compared to this repo"
+session: https://claude.ai/code/session_01EeqXHRGVLnTKNErykjjQad
 ---
 
-# ISNAD — an isnād–rijāl framework for claim-level provenance in multi-agent systems
+# 2026-07-29-isnad-claim-verification-intake
 
-**Paper:** "Grading the Narrators: An Isnad-Rijal Framework for Claim-Level
-Provenance in Multi-Agent Knowledge Systems" — Ali Zahid Raja, arXiv:2607.24117
-(cs.AI, cs.MA), submitted 2026-07-27. **Code:** Apache-2.0 Python 3.12+ library
-at [alizahidraja/isnad](https://github.com/alizahidraja/isnad) (v2.0.4, archived
-at Zenodo doi:10.5281/zenodo.21216873).
+## Where this landed
 
-## Plain-language summary
+The operator ran `/intake` with a Reddit post, an arXiv paper (2607.24117),
+and a GitHub repo (`alizahidraja/isnad`) — a hadith-derived "isnād-rijāl"
+claim-provenance framework for multi-agent pipelines — asking for an
+evaluation against this repo. Mid-flight, the operator additionally asked for
+the Reddit thread to be persisted verbatim. Three documents were filed: a
+distilled `reference` for ISNAD, a `source` capture of the full Reddit
+announcement + discussion thread, and an `analysis` comparing ISNAD's
+automatic claim-grading pipeline (weakest-link chain trust, corroboration
+with independence checks, matn content-criticism, an automatic
+serve/review/quarantine decision) against this bundle's own verification
+model (`verified`/`verified_by` as evidence links a human judges,
+`provenance`/`attribution` kept orthogonal, `mix brain.verify` checking shape
+never truth). The analysis's sharpest finding: the Reddit thread's most
+substantive critique — that grading a "narrator" which is really a model call
+produces a number that "is stable and says nothing," and that two chains
+through the same base model aren't provably independent — lands on ground
+this bundle has already surveyed for its own future agent swarm, and doesn't
+yet have an answer to either. All three documents were filed, ids minted, the
+bundle verified clean, a dedup gold-set row harvested, and the change
+committed and pushed to the session branch — after which the operator invoked
+`/create-pull-request merge` to close the session out.
 
-Multi-agent pipelines fail silently: an answer passes through scrapers,
-extractors, several models, and a synthesizer, and when one link is unreliable
-the final answer arrives fluent and confidently wrong, with nothing marking
-which hop corrupted it. Existing trust work authenticates the *agent* —
-identity, permissions, access — while the *claim* travels unexamined. The
-author's framing, from the Reddit announcement: "Everyone's building to verify
-the agent — identity, permissions, access. Barely anyone's verifying the
-claim."
+## Routing
 
-ISNAD transfers the machinery classical Islamic scholarship built for exactly
-this problem — trusting statements transmitted through chains of fallible
-people. Every claim carries its full chain of transmitters; every transmitter
-is graded on reliability; a chain is only as strong as its weakest link;
-independent chains corroborate each other; and even a perfect chain does not
-excuse content that contradicts established knowledge. The repo's slogan:
-"Grade the narrators, not just log them."
+| Topic | State | Routed to | Dangling |
+|---|---|---|---|
+| ISNAD framework — distilled reference | closed | [ISNAD reference](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | - |
+| Reddit announcement + discussion thread, verbatim | closed | [Reddit thread source](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | - |
+| ISNAD vs. this bundle's verification model | closed | [comparison analysis](/meta/analysis/isnad-vs-elixir-mind-verification.md) | - |
+| Dedup gold-set harvest for this intake | closed | [dedup-probe gold set](/meta/evals/dedup-probe.md) | - |
+| Commit, push, open and merge the PR | open | `unrouted` | PR not yet opened at capture time |
 
-## Key terms
+## User
 
-- **[isnād](/beliefs/glossary/isnad.md)** — the transmission chain itself: the
-  ordered list of hops a claim took from origin to assertion. In the
-  framework, an ordered, gap-checked sequence per claim; a gap (a hop that
-  cannot be accounted for) demotes the chain.
-- **[rijāl](/beliefs/glossary/rijal.md)** — transmitter criticism: grading
-  each narrator on integrity and precision. Here, a registry of grades kept
-  per *(narrator, domain)* pair — reliability is scoped to a domain, not
-  global to the agent.
-- **[matn criticism](/beliefs/glossary/matn-criticism.md)** — criticism of
-  the *content* of a transmitted statement, independent of its chain: does it
-  contradict better-established knowledge? Implemented as pluggable
-  contradiction detectors (embedding-based, NLI, LLM).
-- **mutābaʿāt (corroboration)** — independent chains carrying the same claim
-  raise its confidence. Requires proving independence, not assuming it.
-- **[madār](/beliefs/glossary/madar.md)** — the common node several
-  apparently-independent chains route through; detecting one collapses their
-  claimed independence.
-- **grade tiers** — ṣaḥīḥ (sound) · ḥasan (good) · ḍaʿīf (weak) · mawḍūʿ
-  (fabricated), with Bayesian transitions between tiers rather than hardcoded
-  thresholds.
+<command-message>intake</command-message>
+<command-name>/intake</command-name>
+<command-args>
 
-## Technical summary
-
-The abstract (per the arXiv page) describes attaching "graded, per-domain
-transmitter reliability to claim-level transmission chains" with completeness
-semantics and content criticism. The library decomposes into:
-
-- **Chain** — ordered, gap-checked transmission sequences per claim;
-  completeness (ittiṣāl) is epistemic, and a gap demotes the chain to ḍaʿīf.
-- **Registry** — the rijāl store: a grade per (narrator, domain) with a
-  Bayesian state machine driving tier transitions.
-- **Grading** — refined weakest-link: a chain's grade is the refined minimum
-  across its narrators.
-- **Corroboration** — independent-chain validation via semantic embedding
-  matching, with madār detection to establish genuine independence; upgrades
-  cap at ḥasan (corroboration can rescue a weak chain but never mint a sound
-  one); contributions are weighted by chain quality.
-- **Decision matrix** — 4×2 routing of (chain grade × content verdict) to
-  actions: ṣaḥīḥ + consistent → SERVE; ṣaḥīḥ + contradiction → REVIEW (the
-  highest-value signal — a strong chain carrying contradicting content is
-  where something interesting is wrong); ḍaʿīf + contradiction → QUARANTINE;
-  weak-but-clean chains trigger a corroboration search.
-- **Integration** — FastAPI service with Prometheus metrics, SQLAlchemy
-  persistence, a LangChain `IsnadTracer` callback, CLI. Every strategy layer
-  (grading, transitions, corroboration, correlation, critics) is pluggable.
-
-**Validation status** (the paper foregrounds its own gaps): validated —
-Bayesian grading, weakest-link quarantine, corroboration on 707 test pairs
-(zero false positives on Wikipedia and physics-textbook matches), embedding
-content criticism, the LangChain integration; evaluation ran on ~20,000
-physics-textbook claims. Partial — narrator discovery works but good narrators
-need seed grades, and seed bootstrapping only lifts coverage from ~5% to ~10%.
-Not validated — self-confidence scoring as a defect predictor; and the
-grade-recovery loop showed a "partial failure" in detecting the highest-fault
-narrator. The paper's case study: a prototype self-maintaining knowledge base
-"surfaced 19 genuine cross-framework contradictions in undergraduate physics
-texts, demonstrating the matn-criticism substrate" (as quoted in the
-[discussion thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md)).
-
-## Critiques from the discussion thread
-
-The sharpest critique (commenter donk8r, verbatim spans from the
-[captured thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md))
-targets the two halves of the transfer that lean on properties AI pipelines
-lack:
-
-- **Rijāl assumes a persistent identity accumulating a track record.** In a
-  pipeline "the transmitter is a model call, and reliability there is not a
-  property of the model, it is a property of the model plus the task type plus
-  whatever was in context at the time. Grade at the model level and you get a
-  number that is stable and says nothing." Per-task-type grades and benchmark
-  priors don't fix it: a prior "has no idea whether it's sitting in the 85 or
-  the 15," where the original system graded individuals on observed instances.
-  The workable substitute: "scoring a transmitter on how often its claims
-  survived independent checking inside your own pipeline."
-- **Corroboration assumes provable independence.** "Two chains routed through
-  the same base model are not independent even when the agents and prompts
-  differ, so correlated error arrives looking exactly like agreement." ISNAD's
-  madār detection is a partial answer; the critique is that in practice the
-  independence usually is not there to detect.
-- The concession: "weakest-link is the only half of the method that survives
-  the transfer intact" — unless the grading unit narrows below the agent and
-  independence gets a stated definition.
-
-Multiple commenters converged on the missing empirical piece: no controlled
-A/B comparison of verified vs. unverified pipeline output yet exists.
-
-## Relation to this bundle
-
-The evaluation of ISNAD against this brain's own verification ladder is a
-project-relative judgment and lives in
-[the ISNAD-vs-elixir-mind analysis](/meta/analysis/isnad-vs-elixir-mind-verification.md).
-The shared vocabulary is real: claim-level (not agent-level) trust,
-[provenance](/beliefs/glossary/provenance.md) as chain-of-custody, evidence
-that must exist before a claim upgrades, and content the operator ratifies
-rather than trusts on fluency.
-
-# Citations
-
-- Paper — <https://arxiv.org/abs/2607.24117> (CC BY 4.0)
-- Code — <https://github.com/alizahidraja/isnad> (Apache 2.0; Zenodo
-  doi:10.5281/zenodo.21216873)
-- Announcement + discussion — captured verbatim in
-  [isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md)
-  (<https://www.reddit.com/r/AgentsOfAI/comments/1v9qe4p/1400_years_ago_scholars_solved_a_problem/>)
-
-## Thread excerpts — route-tagged log
-
-Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:c880d8">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
-
-### 2026-07-29-isnad-claim-verification-intake (2026-07-29)
-
-2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
-
-**[`em:c880d8`]**  (co-feeds: `em:9318af`)
-
+<routes ref="em:c880d8 em:9318af">
 - evaluate this compared to this repo
 https://www.reddit.com/r/AgentsOfAI/comments/1v9qe4p/1400_years_ago_scholars_solved_a_problem/
 https://github.com/alizahidraja/isnad
@@ -268,11 +160,19 @@ ReplyShare
 Another modern analog is references/sources in academic papers, fwiw.
 Use case matters. Are we talking about factual claims or "whether the agent did its job"
 ReplyShare
+</routes>
 
----
+</command-args>
 
-**[`em:c880d8`]**  (co-feeds: `em:9318af /meta/analysis/isnad-vs-elixir-mind-verification.md /meta/evals/dedup-probe.md`)
+*Mid-turn, while the above was being processed:*
 
+<routes ref="em:9318af">
+persist the reddit thread verbatim
+</routes>
+
+## Assistant
+
+<routes ref="em:c880d8 em:9318af /meta/analysis/isnad-vs-elixir-mind-verification.md /meta/evals/dedup-probe.md">
 All filed and verified. Here's where things stand.
 
 **What happened:** I fetched the ISNAD paper (arXiv:2607.24117), its GitHub repo (`alizahidraja/isnad`), and captured the Reddit discussion verbatim (per your mid-turn request), then filed three documents and wrote the comparison you asked for. The bundle passes `mix brain.verify` and `mix brain.route_tags` clean.
@@ -292,3 +192,25 @@ The most useful part of the Reddit thread — donk8r's critique — turns out to
 **Housekeeping:** I harvested two dedup gold-set rows for this intake and refreshed the baseline — recall held at 6/21 plain, no regression. One pre-existing advisory warning surfaced (the analysis doc's `attribution` lacks `from` — expected, since that gets stamped later by `/create-pull-request` once a thread doc exists) and is not something to act on now.
 
 Nothing here is committed or pushed yet — say the word (or `/create-pull-request`) when you want this opened as a PR.
+</routes>
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+## Assistant
+
+Pushed successfully to `claude/isnad-claim-verification-5nioc8`. The full gate suite (format, xref, compiled contract, registry, code-map, `mix brain.verify`, route-tags, glossary, lineage, and all 188 tests) passed clean on commit.
+
+**What's on the branch now:** the ISNAD reference and Reddit-thread source under a new `knowledge/SWE/agentic/provenance/` directory, the comparison analysis at `meta/analysis/isnad-vs-elixir-mind-verification.md`, and the supporting index/registry/dedup-baseline updates — as summarized in my previous message.
+
+I have not opened a pull request — per this repo's contract, that's a separate operator-invoked step (`/create-pull-request`), which also runs `/capture` to freeze this session into a thread doc and stamps `attribution.from` on the new analysis doc (the one advisory warning `mix brain.verify` is flagging). Say the word when you want that PR opened.
+
+## User
+
+<command-message>create-pull-request</command-message>
+<command-name>/create-pull-request</command-name>
+<command-args>merge</command-args>
+
+*(Session continues past this point — the rest of the `/create-pull-request merge` flow, run per its own skill, is recorded by the commit graph and the PR it opens rather than in this render.)*
