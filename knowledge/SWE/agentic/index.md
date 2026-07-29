@@ -14,5 +14,6 @@ and the practices they change.
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
+- [skill-optimization](/knowledge/SWE/agentic/skill-optimization/index.md) — optimizing an agent's instruction/skill file against a score rather than authoring it by judgment: text-space optimizers, edit budgets, and held-out gates
 - [multi-model](/knowledge/SWE/agentic/multi-model/index.md) — working across multiple model providers in coding-agent workflows: escaping single-provider lock-in while keeping the dev ergonomics
 - [supply-chain-security](/knowledge/SWE/agentic/supply-chain-security/index.md) — trust and governance risk in the agentic-AI dependency supply chain
