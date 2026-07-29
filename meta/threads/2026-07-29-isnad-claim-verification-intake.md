@@ -6,6 +6,7 @@ provenance: "Claude Code session, 2026-07-29; verbatim retained messages — too
 tags: [meta, thread, intake, isnad, provenance, verification, multi-agent, hadith]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_01EeqXHRGVLnTKNErykjjQad
+pr: 192
 ---
 
 # 2026-07-29-isnad-claim-verification-intake
