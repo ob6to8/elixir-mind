@@ -4,7 +4,7 @@ title: "Channels — standing sources register"
 description: Standing sources — newsletters, blogs, author feeds, vendor docs, archives, video, forums — the brain monitors for new AI material; each entry carries a focus line, an access note (free, or login required and whether paid), the documents already ingested from it, and the origin of the recommendation.
 provenance: "Operator-supplied source list seeded from https://www.codesupreme.ai/ and https://www.codesupreme.ai/the-edge/read; extended with the sources behind the bundle's filed documents and a vetted video set."
 tags: [survey, channels]
-timestamp: 2026-07-28
+timestamp: 2026-07-29
 ---
 
 # Channels — standing sources register
@@ -83,6 +83,7 @@ OKF bundle: no `em:` ids, never verified.
 | [The AI Digest](https://theaidigest.org/) | Capability forecasting and measurement, including METR's time-horizon work | Free | [Agent task time horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | filed documents (2026-07-26) |
 | [claudefa.st](https://claudefa.st/) | Community reverse-engineering of undocumented Claude Code behavior — useful, unofficial, and to be treated as such | Free | [Observer subagent pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | filed documents (2026-07-26) |
 | [Yos Riady](https://yos.io/) | Elixir and functional software design | Free | [Entity Component Systems in Elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | filed documents (2026-07-26) |
+| [Mitchell Hashimoto](https://mitchellh.com/) | HashiCorp cofounder and Ghostty creator writing on terminal tooling, developer infrastructure, and building software as a craft | Free | [Superlogical](/knowledge/SWE/dev-tools/superlogical.md) | operator (2026-07-29) |
 | [David Nicholas Williams](https://davidnicholaswilliams.com/#open-source) | Software building and startup practice from a YC/a16z-backed-company engineer; blog essays on engineering and product plus an open-source contributions log (React Frontload, VS Code, Dropwizard) | Free | [It's not empowering to hand off the details](/knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details.md) | operator-supplied (2026-07-29) |
 
 ## Vendor engineering blogs & product docs

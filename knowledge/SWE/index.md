@@ -5,6 +5,7 @@ Software engineering knowledge.
 ## Contents
 
 - [agentic](/knowledge/SWE/agentic/index.md) — AI agents, their runtimes, vendors, and the practices they change
+- [dev-tools](/knowledge/SWE/dev-tools/index.md) — developer-tools products and the companies that build them: terminals, editors, and related workstation/session infrastructure
 - [evals](/knowledge/SWE/evals/index.md) — evaluating LLM and agent output: benchmarks, metrics, and evaluation methodology
 - [llm-engineering](/knowledge/SWE/llm-engineering/index.md) — making LLM inference and retrieval cheaper, faster, or more capable
 - [security](/knowledge/SWE/security/index.md) — vulnerability analysis, secure coding, and LLM assistance at the defensive/misuse boundary
