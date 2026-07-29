@@ -11,6 +11,11 @@ project accrues research to the brain rather than to one repo.
 
 ## Active
 
+- [Code-driven AV production](/projects/code-driven-av-production.md) — a
+  scriptable music-and-video pipeline: ffmpeg picture cuts and SuperCollider
+  non-realtime sound rendered from one declared timing grid, run on the
+  operator's local machine
+  ([docs](/projects/code-driven-av-production/index.md))
 - [Secure financial agent](/projects/secure-financial-agent.md) — a locally-hosted
   agentic system for processing sensitive financial documents (taxes, bank
   statements) with no data egress and a typed capability boundary
