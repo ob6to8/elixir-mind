@@ -122,6 +122,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c2a18e` | [beliefs/glossary/cross-site-scripting](/beliefs/glossary/cross-site-scripting.md) | concept | false |
 | `em:466011` | [beliefs/glossary/crossing-signal](/beliefs/glossary/crossing-signal.md) | concept | false |
 | `em:6e5432` | [beliefs/glossary/currency-check](/beliefs/glossary/currency-check.md) | concept | false |
+| `em:8f223c` | [beliefs/glossary/cyber-range](/beliefs/glossary/cyber-range.md) | concept | false |
+| `em:08a552` | [beliefs/glossary/cyclomatic-complexity](/beliefs/glossary/cyclomatic-complexity.md) | concept | false |
 | `em:197b02` | [beliefs/glossary/dark-factory](/beliefs/glossary/dark-factory.md) | concept | false |
 | `em:2d756f` | [beliefs/glossary/data-residency](/beliefs/glossary/data-residency.md) | concept | false |
 | `em:cd979f` | [beliefs/glossary/decision-graph](/beliefs/glossary/decision-graph.md) | concept | false |
@@ -341,6 +343,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6e8813` | [beliefs/glossary/prefix-caching](/beliefs/glossary/prefix-caching.md) | concept | false |
 | `em:cc47d1` | [beliefs/glossary/preregistration](/beliefs/glossary/preregistration.md) | concept | false |
 | `em:3a8b96` | [beliefs/glossary/presubmit](/beliefs/glossary/presubmit.md) | concept | false |
+| `em:332bd0` | [beliefs/glossary/probabilistic-delimiter-injection](/beliefs/glossary/probabilistic-delimiter-injection.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |

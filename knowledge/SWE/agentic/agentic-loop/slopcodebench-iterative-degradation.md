@@ -86,3 +86,15 @@ got there is something a human should be maintaining.
 - [Agent task time horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md)
 - [Scar tissue: behavioral drift in long-running autonomous coding agents](/knowledge/SWE/agentic/agentic-loop/scar-tissue-behavioral-drift-in-long-running-agents.md)
 - [How to test: test features, not code (matklad)](/knowledge/SWE/testing/how-to-test-features-not-code.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:5f9c0d">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-research-digest-mcp-spec-security-and-reliability (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:5f9c0d`]**  (co-feeds: `em:be781f em:57c28a em:51e5f3 em:636e39`)
+
+Pushed to `claude/research-17ueta`. Commit `d7d62f6` — 13 files, all gates green (format, xref, contract, verify, route-tags, glossary, 188 tests). No PR opened, since that wasn't requested — the branch is up for you to review or ask me to open one.

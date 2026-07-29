@@ -93,3 +93,15 @@ can't reach at all.
 # See also
 
 - [Indirect prompt injection in document pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:57c28a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-research-digest-mcp-spec-security-and-reliability (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:57c28a`]**  (co-feeds: `em:be781f em:51e5f3 em:5f9c0d em:636e39`)
+
+Pushed to `claude/research-17ueta`. Commit `d7d62f6` — 13 files, all gates green (format, xref, contract, verify, route-tags, glossary, 188 tests). No PR opened, since that wasn't requested — the branch is up for you to review or ask me to open one.

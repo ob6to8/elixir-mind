@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, mcp, agentic, tools, protocol]
 sense: common
-timestamp: 2026-07-18
+timestamp: 2026-07-29
 attribution:
   when: 2026-07-11T18:01:58+00:00
   channel: glossary
@@ -24,8 +24,16 @@ knowledge-graph tools like GitNexus and Codebase-Memory expose their queries to
 coding agents this way. Several design choices make it the N×M→N+M collapse for
 driving local applications: JSON-RPC over a stdio transport (a wrapper server
 can spawn as a child process and translate to an app's native socket), runtime
-tool discovery with JSON Schema per tool, long-lived stateful sessions, and
-server-to-client notifications supplying the reverse channel from the driven
-app back to the agent.
+tool discovery with JSON Schema per tool, and server-to-client notifications
+supplying the reverse channel from the driven app back to the agent.
 
-*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Codebase-Memory](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md), [GitNexus](/knowledge/SWE/agentic/code-context/gitnexus.md), [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [2026-07-18 agent-drivable-apps thread](/meta/threads/2026-07-18-agent-drivable-apps-warp-hunk-nvim.md), [agent-drivable-apps analysis](/meta/analysis/agent-drivable-apps-shared-state-dual-interfaces.md)
+The protocol was originally a stateful session model — a handshake established
+a long-lived, per-server connection identified by a session id. The
+[2026-07-28 specification revision](/knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28.md)
+replaced this with a stateless request/response core: every request carries
+its own identity and capabilities, so any request can land on any server
+instance with no shared session state, and applications that still need
+cross-call state mint an explicit handle instead of relying on the protocol
+session.
+
+*Seen in:* [2026-07-11 news-digest thread](/meta/threads/2026-07-11-news-digest-intake-and-daily-read.md), [Codebase-Memory](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md), [GitNexus](/knowledge/SWE/agentic/code-context/gitnexus.md), [BEAM/Jido evaluation](/meta/analysis/beam-deployment-and-jido-2-evaluation.md), [2026-07-18 agent-drivable-apps thread](/meta/threads/2026-07-18-agent-drivable-apps-warp-hunk-nvim.md), [agent-drivable-apps analysis](/meta/analysis/agent-drivable-apps-shared-state-dual-interfaces.md), [2026-07-29 research digest thread](/meta/threads/2026-07-29-research-digest-mcp-spec-security-and-reliability.md)

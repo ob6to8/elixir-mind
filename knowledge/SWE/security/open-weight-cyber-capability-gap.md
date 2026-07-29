@@ -64,3 +64,15 @@ the ones vendors advertise.
 - [GLM-5.2 and the coming AI margin collapse](/knowledge/ai-industry/ai-margin-collapse-glm-5-2.md)
 - [Kimi K3 (Moonshot AI)](/knowledge/machine-learning/kimi-k3.md)
 - [Agent Data Injection (ADI)](/knowledge/SWE/security/agent-data-injection.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:51e5f3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-research-digest-mcp-spec-security-and-reliability (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:51e5f3`]**  (co-feeds: `em:be781f em:57c28a em:5f9c0d em:636e39`)
+
+Pushed to `claude/research-17ueta`. Commit `d7d62f6` — 13 files, all gates green (format, xref, contract, verify, route-tags, glossary, 188 tests). No PR opened, since that wasn't requested — the branch is up for you to review or ask me to open one.
