@@ -84,3 +84,15 @@ narrowed accordingly.
 - Authors' interview: https://cycling74.com/articles/generating-sound-and-organizing-time-an-interview-with-graham-wakefield-and-gregory-taylor-1
 - Google Books listing: https://books.google.com/books/about/Generating_Sound_Organizing_Time.html?id=yvV4zwEACAAJ
 - ResearchGate listing (operator-supplied; 403 to this environment): https://www.researchgate.net/publication/366394855_Generating_Sound_Organizing_Time_Thinking_with_gen_Book_1
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ee3948">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-code-driven-av-production-and-declared-cadence (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:ee3948`]**
+
+The mentions are all secondhand references to the book — no doc *is* the book, so this files as new. And the TOC contains a finding that corrects this session's own record: Chapter 5 ("binary shift registers", "using xor for pseudo-random sequences", "working with the bits of an integer") means your original "binary primitives" instinct had a real referent beyond operator-arity after all. Checking the survey register mention first:

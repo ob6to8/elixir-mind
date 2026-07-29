@@ -27,7 +27,14 @@ timing-DSL-first judgment, and — via the operator's synergies prompt — the
 [declared-cadence swarm-auditability breakout](/meta/analysis/declared-cadence-swarm-auditability.md),
 whose spike (render a real workflow journal against its declared cadence) is the
 session's main open strand. Three commits landed on the session branch before
-this capture: the project charter, the knowledge domain, the analyses.
+this capture: the project charter, the knowledge domain, the analyses. The
+session continued past PR 185's opening with an `/intake` of the book itself:
+the publisher's own table-of-contents PDF (found via the Cycling '74 book page
+after ResearchGate 403'd) yielded the chapter-level
+[book reference](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md),
+confirming the ramp doctrine as the book's backbone and narrowing the DSL
+analysis's arity-only reading of "binary primitives" — chapter 5 works with
+genuinely binary-digit sequencing. The operator then had the PR merged.
 
 ## Routing
 
@@ -44,6 +51,7 @@ this capture: the project charter, the knowledge domain, the analyses.
 | media-production domain ratification | closed | [media-production index](/knowledge/media-production/index.md) | - |
 | Cross-domain synergies survey | closed | [media-production-domain-synergies](/meta/analysis/media-production-domain-synergies.md) | - |
 | Declared cadence for swarm auditability | open | [declared-cadence-swarm-auditability](/meta/analysis/declared-cadence-swarm-auditability.md) | run the spike: render a real workflow journal against its declared cadence |
+| The gen~ book itself (TOC intake, binary-primitives narrowing) | closed | [generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | - |
 
 ## User
 
@@ -530,3 +538,34 @@ Recommendation: 1 — the spike deserves a fresh session with the breakout analy
 
 1
 
+## Assistant
+
+**PR #185 is open: https://github.com/ob6to8/elixir-mind/pull/185** — handed back to you to merge (true merge, per the merge-strategy policy).
+
+The captured thread doc is **`meta/threads/2026-07-28-code-driven-av-production-and-declared-cadence.md`**, stamped with `pr: 185` and `session:` URL. The render was parsed mechanically from the session log; one recovery of note is recorded in the process — your mid-turn message (the domain ratification and synergies prompt) was stored as a queued-command record rather than a user message, and it's in the render verbatim.
+
+The close, in full:
+
+| step | result |
+|---|---|
+| `/capture` | thread doc with narrative, 11-row routing ledger, 6 route-tagged regions; excerpt logs materialized into the six fed docs |
+| `/add-to-glossary` | five terms: gen~ (`em:d504b3`), non-realtime rendering (`em:7eb410`), phasor (`em:094aff`), onset detection (`em:5a4acb`), polymeter (`em:c68556`) |
+| `from`-stamping | both meta analyses now trace to the thread; the two advisory warnings are cleared |
+| commits | `9f1edf3` (capture) + `f95b911` (pr stamp), on top of `078bed3`/`ed69e07`/`6b8b573` — all gates green, 188 tests |
+
+The two open strands are in the routing ledger where `/priorities` will find them: the declared-cadence spike (render a real workflow journal against its declared cadence) and the commit-or-not decision on the timing DSL.
+
+I can subscribe this session to the PR to watch CI and respond to review comments — say the word if you'd like that.
+
+## User
+
+/intake https://www.researchgate.net/publication/366394855_Generating_Sound_Organizing_Time_Thinking_with_gen_Book_1
+commit
+then run /capture to update PR
+then merge
+
+## Assistant
+
+<routes ref="em:ee3948">
+The mentions are all secondhand references to the book — no doc *is* the book, so this files as new. And the TOC contains a finding that corrects this session's own record: Chapter 5 ("binary shift registers", "using xor for pseudo-random sequences", "working with the bits of an integer") means your original "binary primitives" instinct had a real referent beyond operator-arity after all. Checking the survey register mention first:
+</routes>
