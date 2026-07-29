@@ -5,6 +5,7 @@ description: Added David Nicholas Williams's site to the channels register and i
 provenance: "Claude Code session (Sonnet 5), 2026-07-29; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, channels, survey, intake, ai-adoption]
 timestamp: 2026-07-29
+pr: 189
 session: https://claude.ai/code/session_01H4grMYm3REarbsaLn3oZd4
 ---
 
