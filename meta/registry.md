@@ -563,6 +563,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5914d` | [knowledge/SWE/llm-engineering/local-inference-serving-stacks](/knowledge/SWE/llm-engineering/local-inference-serving-stacks.md) | reference |  |
 | `em:a01073` | [knowledge/SWE/llm-engineering/local-inference-workstation-tiers](/knowledge/SWE/llm-engineering/local-inference-workstation-tiers.md) | reference |  |
 | `em:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
+| `em:96a4d0` | [knowledge/SWE/llm-engineering/turbofieldfare-gemma4-apple-silicon](/knowledge/SWE/llm-engineering/turbofieldfare-gemma4-apple-silicon.md) | reference |  |
 | `em:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
 | `em:57c28a` | [knowledge/SWE/security/agent-data-injection](/knowledge/SWE/security/agent-data-injection.md) | reference |  |
 | `em:cc0c87` | [knowledge/SWE/security/air-gapped-operations](/knowledge/SWE/security/air-gapped-operations.md) | concept | false |
