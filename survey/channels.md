@@ -83,6 +83,7 @@ OKF bundle: no `em:` ids, never verified.
 | [The AI Digest](https://theaidigest.org/) | Capability forecasting and measurement, including METR's time-horizon work | Free | [Agent task time horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | filed documents (2026-07-26) |
 | [claudefa.st](https://claudefa.st/) | Community reverse-engineering of undocumented Claude Code behavior — useful, unofficial, and to be treated as such | Free | [Observer subagent pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | filed documents (2026-07-26) |
 | [Yos Riady](https://yos.io/) | Elixir and functional software design | Free | [Entity Component Systems in Elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | filed documents (2026-07-26) |
+| [David Nicholas Williams](https://davidnicholaswilliams.com/#open-source) | Software building and startup practice from a YC/a16z-backed-company engineer; blog essays on engineering and product plus an open-source contributions log (React Frontload, VS Code, Dropwizard) | Free | [It's not empowering to hand off the details](/knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details.md) | operator-supplied (2026-07-29) |
 
 ## Vendor engineering blogs & product docs
 
