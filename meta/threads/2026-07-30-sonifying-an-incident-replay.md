@@ -6,6 +6,7 @@ provenance: "Claude Code session (Opus 5), 2026-07-30; verbatim retained message
 tags: [meta, thread, sonification, data-visualization, multimodal-interfaces, security, accessibility]
 timestamp: 2026-07-30
 session: https://claude.ai/code/session_01MDrq5iTcxA7sFjtauriwqH
+pr: 196
 ---
 
 # 2026-07-30-sonifying-an-incident-replay
