@@ -109,7 +109,9 @@ is the same organ grown for a different body. The dark-factory scenario runs
 it autonomous-with-audits; agent pairing runs it with a human at the gate. One
 architecture, a posture dial.
 
-The strategic reading for the discipline: hook-based supervision seams are
+The strategic reading for the discipline — filed as its own principle,
+[typed actions are born supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md):
+hook-based supervision seams are
 what *retrofit* looks like. Frameworks that represent agent actions as data —
 Jido is the BEAM instance of a wider pattern — get decision-granular
 supervision, and its [compliance-grade record](/projects/agent-pairing/compliance-and-governance-observability.md),

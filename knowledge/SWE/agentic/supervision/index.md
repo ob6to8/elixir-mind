@@ -15,6 +15,14 @@ act on.
 - [Agent supervision consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md) —
   the tools that multiplex concurrent agents into one attention surface:
   terminal multiplexers, workspace managers, task boards, and session recorders
+- [Normative records vs. descriptive traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md) —
+  a trace says what the agent did; a decision record says what was authorized,
+  by whom, with what reason — the artifact oversight obligations ask for, and
+  the two failure modes that hollow it out
+- [Typed actions are born supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md) —
+  agents whose actions are typed data admit supervision by interposition;
+  opaque tool calls force retrofit hooks — the action representation sets the
+  supervision ceiling
 
 ## Related
 

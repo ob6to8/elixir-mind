@@ -21,7 +21,9 @@ exists, what does its record make attestable that is not attestable now, and
 what would a compliance regime built on it get wrong?
 
 **Thesis.** The broker log is a different *kind* of record from a trace, not a
-better trace. A trace is **descriptive** — it says what the agent did. The
+better trace — the
+[normative-vs-descriptive distinction](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md),
+applied. A trace is **descriptive** — it says what the agent did. The
 broker's acknowledgement protocol produces a **normative** record — it says
 what was *authorized*, by whom, with what stated reason, and what was amended
 before it was allowed to happen. That is the artifact human-oversight

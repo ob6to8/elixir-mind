@@ -99,6 +99,14 @@ the keyboard, the broker returns `deny` with a retry reason and the agent waits.
 
 Pacing budget is the hook timeout — 600 seconds per call.
 
+Two commitments from the
+[compliance analysis](/projects/agent-pairing/compliance-and-governance-observability.md)
+bind from tier 3's first version, because retrofitting them costs the whole
+record: the decision log is **append-only and typed** (the same storage
+discipline replay needs), and each session is stamped with its **supervision
+posture** (attended / follow / unattended), so the record can later say which
+regime governed which change.
+
 ## Gaps this design must close itself
 
 The harness surface supplies action, not intent, and no unit boundary:
@@ -145,6 +153,17 @@ here until it graduates into its own plan at build time.
   anchored to code and commit; on repetition, offer to promote the correction
   into committed project rules. Differentiated from harness auto-memory by being
   anchored, operator-ratified, and committed rather than agent-private.
+- **Sonification client.** The auditory tier below tier 1: an ambient bed
+  carrying activity as texture (information in change, per-agent voices for
+  fleet listening) plus a rationed earcon vocabulary for blocking events, via a
+  real-time `scsynth` driven over OSC. Third client on the same typed stream;
+  designed in the [sonification analysis](/projects/agent-pairing/realtime-sonification-layer.md).
+- **Signal-bus-native ingest.** A second ingest beside the Claude Code hook
+  adapter, for an agent whose actions are already typed data on a bus (Jido
+  Signals being the reference case) — gating becomes interposition in the
+  dispatch path and the unit-boundary gap closes structurally. Design target
+  from the [BEAM/Jido analysis](/projects/agent-pairing/beam-jido-integration.md),
+  kept deferred so the architecture is demonstrably not a Claude Code appendage.
 
 ## Decisions, alternatives, open questions
 
@@ -164,9 +183,14 @@ edited into.
 
 - Does `PostToolBatch` carry enough structure to serve as the semantic unit
   boundary, or must units come from agent self-announcement?
-- Broker implementation language — the operator's toolchain favors Elixir, and
-  the supervision loop is a natural process-per-agent fit; weigh against
-  distribution friction for a tool meant to be installed casually.
 - Does tier 1 alone change the operator's behavior enough to justify tiers 2–3?
   This is the question tier 1 exists to answer, and the answer should gate the
   rest.
+
+**Settled since first writing:** broker implementation language. The
+[BEAM/Jido analysis](/projects/agent-pairing/beam-jido-integration.md) resolves
+it — Elixir/OTP with a reducer-shaped core (the blocking-degrades-to-`defer`
+constraint is supervision-tree behavior stated as product behavior), the Jido
+dependency decision deferred to first-code as reversible, `jido_ai` excluded,
+and Burrito-style packaging owed at release. A Rust/TS broker remains the
+fallback only if casual-install distribution becomes the growth constraint.
