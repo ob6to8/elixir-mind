@@ -128,3 +128,15 @@ adds supervision capacity *without* spending visual attention. Prototype with
 the continuous bed plus two earcons (blocked, pending-ack) and live with it
 before growing the vocabulary. If the ambient tier proves out, it also becomes
 the strongest demo the project has: nobody has heard a herd before.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:857398">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:857398`]**
+
+**Sonification.** A genuine tier, not a gimmick — the one *below* tier 1, the only rendering that adds supervision capacity without spending visual attention: eyes on your own buffer, ears on the herd. A continuous ambient bed carrying information in *change*, plus a rationed vocabulary of ≤6 earcons. Thin-client architecture, synthesis via a real-time `scsynth` over OSC, reusing your SuperCollider competence from the AV project. One detail I'd defend hardest: silence is a claim, so the bed carries a heartbeat whose absence means the rendering died, not the herd went quiet.

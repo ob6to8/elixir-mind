@@ -81,3 +81,15 @@ The competitive position and the state of each planned capability are in the
 - [Agent supervision consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md) — the console landscape and its granularity axis
 - [Neovim agent tooling landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) — the editor-side ecosystem the first client lands in
 - [Claude Code hook events as the agent-supervision seam](/knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam.md) — the harness interface the broker binds to
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:4d48ef">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:4d48ef`]**
+
+The routing followed the split rule: findings true regardless of the system went to the taxonomy with `em:` ids, and only what is true *for this system* went under `projects/agent-pairing/`. That's why the hooks reference and the console landscape are knowledge rather than project docs.

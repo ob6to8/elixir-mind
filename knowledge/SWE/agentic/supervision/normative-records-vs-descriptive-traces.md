@@ -55,3 +55,15 @@ Where such records exist, evidence standards ratchet toward them — an applied
 working-through, with the mechanism that generates the record as a side effect
 of normal supervision, is the agent-pairing project's
 [observability-as-compliance analysis](/projects/agent-pairing/compliance-and-governance-observability.md).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:712e01">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:712e01`]**  (co-feeds: `em:24c203`)
+
+**Compliance/governance.** The broker log is a different *kind* of record from a trace, not a better one: a trace is descriptive (what the agent did), the acknowledgement protocol's log is **normative** (what was authorized, by whom, with what reason, what was amended first). That's the artifact "meaningful human oversight" obligations actually ask for, and today it exists nowhere below the PR-approval boundary. Discipline-level effect: the unit of observability moves from the trace to the decision, and auditing shifts to verifying the instrumentation. Two failure modes hollow it out — rubber-stamping (visible as collapsing ack latencies, and Goodhartable) and ungated action paths. Recommendation: don't build for compliance, but take the two free enablers — append-only typed records and posture stamping. I flagged the regulatory mapping as directional from training knowledge.

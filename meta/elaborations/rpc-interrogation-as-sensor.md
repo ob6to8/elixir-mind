@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, /elaborate"
   why: "operator asked to expand the interrogation-vs-editing sentence from the agent-driven-Neovim answer"
+  from: [/meta/threads/2026-07-30-neovim-adoption-and-the-agent-pairing-project.md]
 ---
 
 # RPC-driving shines at interrogation rather than editing

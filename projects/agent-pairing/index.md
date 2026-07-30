@@ -32,3 +32,8 @@ linked from the hub; what lives here is true only *for this system*.
   the broker as the first workload in this brain's orbit that fits OTP; Jido
   as chassis iff thin; and BEAM-native agents as born-supervisable subjects
   that close the ingest gaps structurally _(analysis)_
+- [Can the stack be Lua + Zig + Elixir + Jido 2?](/projects/agent-pairing/stack-lua-zig-elixir-jido.md) —
+  the four-language stack holds, but its labels invert: Zig is the
+  per-invocation hook shim (forced by BEAM boot latency), Elixir/OTP is the
+  stateful broker core, and a Zig core would foreclose in-process Jido
+  interposition _(analysis)_

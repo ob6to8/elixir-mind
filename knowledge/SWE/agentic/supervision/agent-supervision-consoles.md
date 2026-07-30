@@ -97,3 +97,15 @@ code into git notes.
 
 The edit row is where the shipped tooling thins out: consoles route attention to
 an agent, then hand off to whatever the agent renders in its own pane.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b4bb5e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:b4bb5e`]**
+
+**2 — Exploration visibility: not shipped as described.** What exists is trace-shaped — agent panes show "Read X / Grepped Y" as a chat-column activity feed, agent-inspect renders tool-call execution trees. The spatial projection onto the editor's file tree and the computed absences turned up nowhere. **3 — Decision-granularity fleet supervision: shipped outside the editor.** Omnara pushes agent questions to your phone; Vibe Kanban gives a review-column queue. The quickfix-in-Neovim shape, none. **4 — Session recording: shipped, and well.** Entire.io captures sessions via hooks, checkpoints on commit, append-only shadow branch, `entire rewind`. What I did not find: the paced-replay half. **5 — Corrections becoming rules: shipped at the harness layer.** Claude Code's auto memory learns from corrections into `~/.claude/projects/<project>/memory/`. What remains unshipped is the *governed* variant — anchored capture, repetition detection, ratified promotion into committed rules.

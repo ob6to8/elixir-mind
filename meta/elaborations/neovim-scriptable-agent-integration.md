@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, /elaborate"
   why: "operator asked to expand the scriptability clause from the Neovim staying-power answer"
+  from: [/meta/threads/2026-07-30-neovim-adoption-and-the-agent-pairing-project.md]
 ---
 
 # it's scriptable (so it integrates with agents rather than embedding a chatbot UI)

@@ -90,3 +90,15 @@ an editor without contending for the buffer.
 - [awesome-herdr](https://github.com/yigitkonur/awesome-herdr)
 - [herdr.dev](https://herdr.dev/)
 - [hunk.dev](https://www.hunk.dev/)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ca359c">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:ca359c`]**
+
+**A Neovim + herdr workflow.** herdr is a Rust terminal multiplexer built specifically for running a *herd* of coding agents: each agent gets a real PTY pane, a background server keeps sessions alive (detach/reattach like tmux, including over SSH), and a sidebar classifies every agent as **blocked / working / done / idle** by watching process names and output. It hit #1 in Rust on GitHub Trending in late June. A concrete workflow: launch a deck (one YAML file opens a Neovim pane, agent panes, a shell, lazygit per project/worktree); navigate seamlessly (the same `Ctrl+h/j/k/l` flows from a Vim split into the adjacent agent pane); feed context from the editor (herdr-context.nvim stages a visual selection into an agent's prompt); steer by the sidebar (work in Neovim until an agent flips to blocked or done); detach and go (the herd keeps running on the server; reattach from a laptop or phone over SSH). herdr is also a first-class backend in sidekick.nvim.

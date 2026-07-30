@@ -80,3 +80,15 @@ sensor half of a control loop with the human as controller. Observation becomes
 an *input* rather than a side effect once the supervisor also feeds the agent's
 scheduling, at which point the [observer effect](/beliefs/glossary/observer-effect.md)
 stops being a distortion to avoid and becomes the mechanism.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:7404fb">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:7404fb`]**
+
+**The genuinely-new half.** Two things aren't in any trace because they aren't events: **absences** ("edited a file it never read" is a join, not a recorded action) and **the correlation with you** ("editing a region you reviewed under different assumptions" joins the agent's stream with your attention state).

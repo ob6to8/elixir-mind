@@ -677,6 +677,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:24c203` | [projects/agent-pairing/compliance-and-governance-observability](/projects/agent-pairing/compliance-and-governance-observability.md) | analysis |  |
 | `em:c3c2f8` | [projects/agent-pairing/opportunity-assessment](/projects/agent-pairing/opportunity-assessment.md) | analysis |  |
 | `em:857398` | [projects/agent-pairing/realtime-sonification-layer](/projects/agent-pairing/realtime-sonification-layer.md) | analysis |  |
+| `em:fa721a` | [projects/agent-pairing/stack-lua-zig-elixir-jido](/projects/agent-pairing/stack-lua-zig-elixir-jido.md) | analysis |  |
 | `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |

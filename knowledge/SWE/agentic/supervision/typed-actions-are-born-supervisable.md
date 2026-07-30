@@ -54,3 +54,15 @@ The applied case for both directions is the agent-pairing project's
 [BEAM/Jido analysis](/projects/agent-pairing/beam-jido-integration.md), whose
 gap list for supervising Claude Code via hooks is, read backwards, a
 specification of what typed actions provide for free.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:91b88f">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:91b88f`]**  (co-feeds: `em:32fd52`)
+
+**BEAM/Jido 2.** Two findings with opposite polarities. As *substrate*: the broker is the first workload in this brain's orbit that fits OTP — "blocking degrades to defer, never a stranded agent" *is* let-it-crash as product behavior. Jido fits as chassis (its `cmd → directives` reducer is the `broker.ingest/1` fixture seam), with `jido_ai` excluded. As *subject*: a Jido agent's actions are already typed data on a signal bus — **born supervisable** — so gating becomes interposition, not interception, and the unit-boundary gap closes structurally. Third independent derivation of the owned choke point (write-gatekeeper, librarian, broker): one architecture, a posture dial.

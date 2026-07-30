@@ -187,10 +187,16 @@ edited into.
   This is the question tier 1 exists to answer, and the answer should gate the
   rest.
 
-**Settled since first writing:** broker implementation language. The
-[BEAM/Jido analysis](/projects/agent-pairing/beam-jido-integration.md) resolves
-it — Elixir/OTP with a reducer-shaped core (the blocking-degrades-to-`defer`
-constraint is supervision-tree behavior stated as product behavior), the Jido
-dependency decision deferred to first-code as reversible, `jido_ai` excluded,
-and Burrito-style packaging owed at release. A Rust/TS broker remains the
-fallback only if casual-install distribution becomes the growth constraint.
+**Refined since first writing:** implementation language is a **shim/core
+split**, not a single choice. The per-invocation hook handler cannot be on the
+BEAM (boot latency per gated action is disqualifying), so the architecture is
+forced into a resident daemon plus a tiny per-call client regardless of
+language. The [stack analysis](/projects/agent-pairing/stack-lua-zig-elixir-jido.md)
+maps the layers: **Zig** (swappable with Rust/Go/C) for the per-call hook shim
+and distribution edge; **Elixir/OTP** for the resident broker core (process
+isolation, blocking-with-timeout, and `defer`-on-crash are correctness-for-free
+there); **Jido 2** optional as chassis and the born-supervisable subject,
+`jido_ai` excluded, dependency decision deferred to first-code. The core stays
+on the BEAM specifically to keep Jido interposition in-process; if casual-install
+distribution ever dominates, the answer is more shim and a Burrito'd core, not a
+Zig rewrite of the core.

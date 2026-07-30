@@ -105,3 +105,15 @@ harness needs that harness's own event surface.
 # Citations
 
 - [Claude Code hooks reference](https://code.claude.com/docs/en/hooks)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:8a9ed7">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:8a9ed7`]**
+
+The harness seam, with the field names from the hooks reference: `PreToolUse` fires before the call and is synchronous and blocking by default with a 600-second timeout; `permissionDecision` takes allow/deny/ask/defer; `permissionDecisionReason` and `additionalContext` carry text back into the model; and `updatedInput` rewrites the tool arguments — so the navigator can correct the driver's keystroke *before it happens*. What the harness genuinely lacks: no semantic unit boundary, no structured intent (only structured action), no cheap rollback checkpoint, no standard event schema across agents.

@@ -139,3 +139,15 @@ a future consumer of the record, not to the broker.
 enablers (append-only typed records, posture stamping), not as a requirements
 source. Revisit only if a real governed deployment materializes — at which
 point the completeness invariant, not the record schema, is where the work is.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:24c203">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:24c203`]**  (co-feeds: `em:712e01`)
+
+**Compliance/governance.** The broker log is a different *kind* of record from a trace, not a better one: a trace is descriptive (what the agent did), the acknowledgement protocol's log is **normative** (what was authorized, by whom, with what reason, what was amended first). That's the artifact "meaningful human oversight" obligations actually ask for, and today it exists nowhere below the PR-approval boundary. Discipline-level effect: the unit of observability moves from the trace to the decision, and auditing shifts to verifying the instrumentation. Two failure modes hollow it out — rubber-stamping (visible as collapsing ack latencies, and Goodhartable) and ungated action paths. Recommendation: don't build for compliance, but take the two free enablers — append-only typed records and posture stamping. I flagged the regulatory mapping as directional from training knowledge.

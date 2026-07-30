@@ -137,3 +137,15 @@ absence-marks, and attention-aware scheduling possible at all.
 Integrate rather than compete: ship the Neovim client assuming a herdr or cmux
 pane around it, and treat their session APIs as placement targets rather than
 rivals.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:48e404">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:48e404`]**
+
+On the comparison: the verdict is that herdr and cmux are complementary at the substrate level and contest exactly one surface — attention routing. Their sidebars answer *which agent needs me* by inferring state from process names and rendered output; the decision queue answers it from typed hook payloads and at edit granularity, which subsumes the question. So the supersession is bounded to the sidebar's role as *primary* queue — one feature demoted, no tool displaced. The single path where it turns genuinely competitive is herdr binding hooks and rendering edits itself, which is off-thesis for a terminal and weak on the editor-side half, since a terminal sees pixels where the editor sees structure.

@@ -83,3 +83,15 @@ the human is not watching and yields on the buffer they are. The second is only
 available to a supervisor that reads editor state, which is the same capability
 that makes [ambient observability](/knowledge/SWE/agentic/supervision/ambient-agent-observability.md)
 possible.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:87c81a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-neovim-adoption-and-the-agent-pairing-project (2026-07-30)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:87c81a`]**
+
+**"Driving the driver" is the right name for it.** In classic pair programming the driver types tactically while the navigator holds strategy and reviews in real time — and the navigator is usually the more experienced one. Mapping the agent to driver and you to navigator is arguably the *natural* assignment for agentic coding, and it's notable that essentially nothing mainstream does it. What Claude Code, Cursor's agent mode, and the rest actually ship is "agent works out of sight, then presents a diff," which isn't pair programming at all — it's asynchronous code review with a very fast contributor.
