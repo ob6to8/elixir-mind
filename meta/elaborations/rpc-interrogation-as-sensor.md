@@ -89,8 +89,17 @@ history) does not outweigh that, and the mainstream bridges get the same
 outcome more safely by writing files and rendering the result as a diff the
 human accepts or rejects.
 
-The read direction has no such substitute, and that is the asymmetry the
-sentence names. Consider an agent that has just changed six files and wants to
+That argument carries a **scope condition the sentence leaves implicit**: it
+holds for *unattended* work, where the human's attention is elsewhere and the
+editor is a destination rather than a display. When the human is watching the
+edit happen — the agent-as-driver pairing posture, human as navigator — writing
+through the editor stops being redundant delivery and becomes the product
+itself: what lands in the file is incidental, and what the operator *saw* land,
+in sequence, at a pace they can interrupt, is the point. The write direction is
+redundant only when nobody is looking.
+
+The read direction has no such substitute under either posture, and that is the
+asymmetry the sentence names. Consider an agent that has just changed six files and wants to
 know whether it broke anything. Its default move is to shell out — run the
 compiler, run the test suite — which costs seconds to minutes and only sees
 saved files. Meanwhile the editor already has the answer: language servers have
