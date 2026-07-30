@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5 and Claude Opus 5, model switch
 tags: [meta, thread, neovim, agents, supervision, editor-integration, agent-pairing, hooks, beam, jido, sonification, compliance, observability]
 timestamp: 2026-07-30
 session: https://claude.ai/code/session_01TE4bE6ESQCfAWkdEuwBCJb
+pr: 197
 ---
 
 # 2026-07-30-neovim-adoption-and-the-agent-pairing-project
