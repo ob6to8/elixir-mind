@@ -52,6 +52,11 @@ why a *value-laden* belief type escapes the collision that ruled out a
   a hand-kept surface is carried by memory, which fails silently, while a derived
   surface cannot fall out of date because nothing is being remembered. Depends on
   [freshness gate](/beliefs/glossary/freshness-gate.md).
+- [The value of writing is the human synthesis behind it](/beliefs/value-of-writing-is-human-synthesis.md) —
+  a written artifact is a presentation layer, and what readers are actually
+  evaluating is whose judgment stands behind it, staked on a reputation; the
+  prior the [human-writing-attribution project](/projects/human-writing-attribution.md)
+  operationalizes.
 
 ## Vocabulary & scratch
 
