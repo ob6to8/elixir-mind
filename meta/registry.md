@@ -670,8 +670,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
 | `em:4d48ef` | [projects/agent-pairing](/projects/agent-pairing.md) | project |  |
 | `em:a8dd36` | [projects/agent-pairing/architecture-and-build-order](/projects/agent-pairing/architecture-and-build-order.md) | plan |  |
+| `em:32fd52` | [projects/agent-pairing/beam-jido-integration](/projects/agent-pairing/beam-jido-integration.md) | analysis |  |
 | `em:48e404` | [projects/agent-pairing/comparison-herdr-cmux](/projects/agent-pairing/comparison-herdr-cmux.md) | analysis |  |
+| `em:24c203` | [projects/agent-pairing/compliance-and-governance-observability](/projects/agent-pairing/compliance-and-governance-observability.md) | analysis |  |
 | `em:c3c2f8` | [projects/agent-pairing/opportunity-assessment](/projects/agent-pairing/opportunity-assessment.md) | analysis |  |
+| `em:857398` | [projects/agent-pairing/realtime-sonification-layer](/projects/agent-pairing/realtime-sonification-layer.md) | analysis |  |
 | `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |
