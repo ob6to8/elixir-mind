@@ -6,6 +6,7 @@ provenance: "Claude Code session, 2026-07-30; verbatim retained messages — too
 tags: [meta, thread, writing, attribution, provenance, ai-authorship, projects]
 timestamp: 2026-07-30
 session: https://claude.ai/code/session_01SchH1sXAKaGV8jn28EhBJX
+pr: 195
 ---
 
 # 2026-07-30-human-writing-attribution
