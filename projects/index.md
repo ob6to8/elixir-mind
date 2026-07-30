@@ -16,6 +16,12 @@ project accrues research to the brain rather than to one repo.
   non-realtime sound rendered from one declared timing grid, run on the
   operator's local machine
   ([docs](/projects/code-driven-av-production/index.md))
+- [Human writing attribution](/projects/human-writing-attribution.md) — a
+  provenance system for human-authored writing: publish each piece with its
+  declared sources and LLM threads plus a quotation-vs-synthesis overlap
+  report, so readers evaluate the human judgment directly instead of
+  inferring authorship from style
+  ([docs](/projects/human-writing-attribution/index.md))
 - [Secure financial agent](/projects/secure-financial-agent.md) — a locally-hosted
   agentic system for processing sensitive financial documents (taxes, bank
   statements) with no data egress and a typed capability boundary
