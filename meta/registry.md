@@ -55,6 +55,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:0e6a29` | [beliefs/glossary/attestation](/beliefs/glossary/attestation.md) | concept | false |
 | `em:57c7d1` | [beliefs/glossary/attribution](/beliefs/glossary/attribution.md) | concept | false |
 | `em:99aa8c` | [beliefs/glossary/attribution-shadow](/beliefs/glossary/attribution-shadow.md) | concept | false |
+| `em:99d38a` | [beliefs/glossary/auditory-icon](/beliefs/glossary/auditory-icon.md) | concept | false |
+| `em:22ad57` | [beliefs/glossary/auditory-stream-segregation](/beliefs/glossary/auditory-stream-segregation.md) | concept | false |
 | `em:f8ae3a` | [beliefs/glossary/auto-intake](/beliefs/glossary/auto-intake.md) | concept | false |
 | `em:fb77a7` | [beliefs/glossary/automated-program-repair](/beliefs/glossary/automated-program-repair.md) | concept | false |
 | `em:d19df5` | [beliefs/glossary/avatar](/beliefs/glossary/avatar.md) | concept | false |
@@ -169,6 +171,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:48b2f1` | [beliefs/glossary/dual-use](/beliefs/glossary/dual-use.md) | concept | false |
 | `em:b528d9` | [beliefs/glossary/durable-execution](/beliefs/glossary/durable-execution.md) | concept | false |
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
+| `em:436ebc` | [beliefs/glossary/earcon](/beliefs/glossary/earcon.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
 | `em:d907fd` | [beliefs/glossary/elixir-mind](/beliefs/glossary/elixir-mind.md) | concept | false |
 | `em:da21de` | [beliefs/glossary/embeddings](/beliefs/glossary/embeddings.md) | concept | false |
@@ -207,6 +210,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:950a55` | [beliefs/glossary/flow-touch-sequence](/beliefs/glossary/flow-touch-sequence.md) | concept | false |
 | `em:4086a2` | [beliefs/glossary/folksonomy](/beliefs/glossary/folksonomy.md) | concept | false |
 | `em:ff1ede` | [beliefs/glossary/force-with-lease](/beliefs/glossary/force-with-lease.md) | concept | false |
+| `em:8cd9bc` | [beliefs/glossary/foveal-vision](/beliefs/glossary/foveal-vision.md) | concept | false |
 | `em:27e7a7` | [beliefs/glossary/fresh-context-execution](/beliefs/glossary/fresh-context-execution.md) | concept | false |
 | `em:e56fb4` | [beliefs/glossary/fresh-session-per-fire](/beliefs/glossary/fresh-session-per-fire.md) | concept | false |
 | `em:189d88` | [beliefs/glossary/freshness-gate](/beliefs/glossary/freshness-gate.md) | concept | false |
@@ -232,6 +236,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:61877f` | [beliefs/glossary/golden-test](/beliefs/glossary/golden-test.md) | concept | false |
 | `em:9e28d2` | [beliefs/glossary/goodharts-law](/beliefs/glossary/goodharts-law.md) | concept | false |
 | `em:0c8532` | [beliefs/glossary/graduation](/beliefs/glossary/graduation.md) | concept | false |
+| `em:d19aa3` | [beliefs/glossary/granular-synthesis](/beliefs/glossary/granular-synthesis.md) | concept | false |
 | `em:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
 | `em:628db5` | [beliefs/glossary/ground-truth](/beliefs/glossary/ground-truth.md) | concept | false |
 | `em:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |
@@ -443,6 +448,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
 | `em:8995e9` | [beliefs/glossary/skos](/beliefs/glossary/skos.md) | concept | false |
 | `em:ceca0b` | [beliefs/glossary/software-factory](/beliefs/glossary/software-factory.md) | concept | false |
+| `em:1c77cf` | [beliefs/glossary/sonification](/beliefs/glossary/sonification.md) | concept | false |
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
 | `em:1f7dca` | [beliefs/glossary/source-of-truth](/beliefs/glossary/source-of-truth.md) | concept | false |
 | `em:0c6f63` | [beliefs/glossary/source-recall](/beliefs/glossary/source-recall.md) | concept | false |
@@ -505,6 +511,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `em:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
+| `em:21524a` | [beliefs/glossary/web-audio-api](/beliefs/glossary/web-audio-api.md) | concept | false |
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
 | `em:e862bb` | [beliefs/glossary/word-error-rate](/beliefs/glossary/word-error-rate.md) | concept | false |
