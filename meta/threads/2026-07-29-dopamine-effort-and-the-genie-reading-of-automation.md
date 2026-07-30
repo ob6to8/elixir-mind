@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5, switched mid-session via /mod
 tags: [meta, thread, journal, dopamine, effort, automation]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_01L2QdT7jfWvuod4F9eoirbv
+pr: 194
 ---
 
 # 2026-07-29-dopamine-effort-and-the-genie-reading-of-automation
