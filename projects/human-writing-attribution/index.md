@@ -7,6 +7,7 @@ Project-scoped by construction: anything true regardless of this system files to
 
 ## Design records
 
-None filed yet — the project is at the premise stage. The hub's open
-questions (publication format, thread redaction, the overlap tool, source
-scope) are where the first records will come from.
+- [The overlap tool](/projects/human-writing-attribution/overlap-tool.md)
+  — design for the quotation-vs-synthesis report generator: a pure-Elixir
+  literal-span matcher classifying each overlap as marked quotation or
+  unmarked overlap, prototyped as a mix task in this repo. _(plan)_

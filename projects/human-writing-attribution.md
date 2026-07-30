@@ -109,4 +109,38 @@ LLM threads ─────────┘        │        + overlap report (q
 
 ## Documents
 
+- [The overlap tool](/projects/human-writing-attribution/overlap-tool.md) —
+  design for the quotation-vs-synthesis report generator
 - [Project docs](/projects/human-writing-attribution/index.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:763ec8">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-30-human-writing-attribution (2026-07-30)
+
+4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:763ec8`]**  (co-feeds: `em:2bd5a1`)
+
+Consider this idea that this repo is really about attribution when it comes to writing. It's intended to be a system of provenance for human authored content. One of the biggest issues right now in the wild is evaluating the source of anything written on the web. There's almost a default assumption at this point that AI is writing it. whatever it is. there is the new habit of looking for LLM tells and then immediately discounting everything that follows. what about this for a proposed System of human written attribution. you include with every bit of original writing your sources. These sources are third party sources and or LLM threads. Then you run an analysis on your own writing to find out where there may be literal quotations and what is uniquely written by you. the human operator. The idea is complete transparency. Being transparent that AI was used as a research assistant and in brainstorming and formulating opinion, but the result was a human authored synthesis that cites its sources and references. The problem is we have conflated the artifact, which is a written presentation of ideas, with its role in the brainstorming process. The value is in actual human synthesis. That's what people are attracted to. How did you, as a human, synthesize and come to an opinion that you are prepared to stand your reputation behind? If you're regurgitating LLM outputs, you may have creatively massaged the context to result in a clever output, but the value is certainly not the same. thoughts?
+
+---
+
+**[`em:763ec8`]**
+
+**The real move is converting unverifiable inference into falsifiable claims.** Nothing stops someone from stamping "human synthesis" on machine output — the attestation is self-issued, and that's the standard objection. But it misses what changes: today a skeptical reader has only stylistic guesswork; under your system, an author who cites their LLM threads has made a *checkable* claim. If the "synthesis" is a light paraphrase of the thread, the disclosed thread convicts them. The system doesn't prove honesty — it makes dishonesty auditable, and it makes the reputational stake concrete because there's now a specific record to be caught against. That's the same trust model as signed commits: the signature doesn't prove the code is good, it establishes who answers for it. The known failure mode to design against is C2PA's — provenance as detachable metadata gets stripped or ignored. Here the disclosure has to be part of the published work's frame (the citation graph *is* content), not a sidecar credential.
+
+**Why this repo is a natural substrate:** the contract already enforces the inward-facing half of exactly this discipline, just pointed the other direction. `provenance`/`attribution` metadata, the quote-primary-sources rule (verbatim spans marked, everything outside quotes is declared synthesis, "a reader must never have to wonder whether a phrase is the source's claim or the agent's"), thread docs as the frozen full-fidelity process record with `session:` URLs as the raw-transcript escape hatch, `verified_by` evidence edges, commit trailers naming which session authored what — all of it exists so the *human can audit the machine's* contributions. Your proposal is the mirror image: the same machinery, published outward, so *readers can audit the human's*. The journal namespace is even the prototype of the voice boundary — operator prose kept inviolable, agent voice fenced below a marked heading, never interleaved.
+
+---
+
+**[`em:763ec8`]**  (co-feeds: `em:fe5ca6`)
+
+The delta to actually prototype it here is small: a document layer for operator-authored synthesis that declares its inputs (thread docs + `source` captures), plus a `mix brain.*`-style task that computes literal-overlap spans between the piece and its declared inputs and emits the quotation/synthesis report. The thread docs you're already capturing are the expensive-to-fabricate part of the disclosure, and you already have them.
+
+---
+
+**[`em:763ec8`]**
+
+One caution: watch for the badge failure. If "transparent human synthesis" becomes a credential people want, the credential gets gamed, and the ecosystem devolves into transparency theater. The defense is exactly what makes your version costly — publishing the actual process record (threads, sources, overlap report) rather than a self-assessed label. Anyone can claim the label; few will fabricate a convincing corpus.
