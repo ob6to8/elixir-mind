@@ -22,6 +22,11 @@ mouthful in its context*.
 
 ## Contents
 
+- [it's scriptable (so it integrates with agents rather than embedding a chatbot UI)](/meta/elaborations/neovim-scriptable-agent-integration.md) —
+  unpacks the scriptability clause from the 2026-07-30 Neovim staying-power
+  answer: why an editor with a programmable surface (Lua + RPC socket) lets
+  coding agents plug in as external clients, versus editors that embed an AI
+  chat panel as a vendor-shipped feature.
 - [two-directional materialize with unconditional orphan-block removal](/meta/elaborations/two-directional-materialize.md) —
   unpacks the P1 work-package phrase from the code-review hardening plan: the
   route-tag log materializer removing generated content whose source tags
