@@ -26,8 +26,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
 | `em:27e6ac` | [beliefs/glossary/admission-rule](/beliefs/glossary/admission-rule.md) | concept | false |
 | `em:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |
+| `em:3cbfb6` | [beliefs/glossary/agent-as-driver](/beliefs/glossary/agent-as-driver.md) | concept | false |
 | `em:dbaf55` | [beliefs/glossary/agent-as-presenter](/beliefs/glossary/agent-as-presenter.md) | concept | false |
 | `em:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
+| `em:58d708` | [beliefs/glossary/agent-multiplexer](/beliefs/glossary/agent-multiplexer.md) | concept | false |
 | `em:76ccba` | [beliefs/glossary/agent-swarm](/beliefs/glossary/agent-swarm.md) | concept | false |
 | `em:4e18d8` | [beliefs/glossary/agent-teams](/beliefs/glossary/agent-teams.md) | concept | false |
 | `em:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
@@ -35,6 +37,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e24e40` | [beliefs/glossary/ai-native](/beliefs/glossary/ai-native.md) | concept | false |
 | `em:c9e142` | [beliefs/glossary/aliasing](/beliefs/glossary/aliasing.md) | concept | false |
 | `em:4aa4da` | [beliefs/glossary/ambient-authority](/beliefs/glossary/ambient-authority.md) | concept | false |
+| `em:5bcc5b` | [beliefs/glossary/ambient-rendering](/beliefs/glossary/ambient-rendering.md) | concept | false |
 | `em:88dd10` | [beliefs/glossary/amdgcn](/beliefs/glossary/amdgcn.md) | concept | false |
 | `em:73e13b` | [beliefs/glossary/analysis-type](/beliefs/glossary/analysis-type.md) | concept | false |
 | `em:a74152` | [beliefs/glossary/append-only](/beliefs/glossary/append-only.md) | concept | false |
@@ -51,6 +54,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6cf17b` | [beliefs/glossary/assurance-case](/beliefs/glossary/assurance-case.md) | concept | false |
 | `em:33ce3c` | [beliefs/glossary/atom](/beliefs/glossary/atom.md) | concept | false |
 | `em:fd5a1e` | [beliefs/glossary/atomic-fact](/beliefs/glossary/atomic-fact.md) | concept | false |
+| `em:954be1` | [beliefs/glossary/attention-aware-scheduling](/beliefs/glossary/attention-aware-scheduling.md) | concept | false |
 | `em:630624` | [beliefs/glossary/attention-residuals](/beliefs/glossary/attention-residuals.md) | concept | false |
 | `em:0e6a29` | [beliefs/glossary/attestation](/beliefs/glossary/attestation.md) | concept | false |
 | `em:57c7d1` | [beliefs/glossary/attribution](/beliefs/glossary/attribution.md) | concept | false |
@@ -277,6 +281,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3e204b` | [beliefs/glossary/kv-cache-hit-rate](/beliefs/glossary/kv-cache-hit-rate.md) | concept | false |
 | `em:056746` | [beliefs/glossary/label-atms](/beliefs/glossary/label-atms.md) | concept | false |
 | `em:731c59` | [beliefs/glossary/lag-tolerant-check](/beliefs/glossary/lag-tolerant-check.md) | concept | false |
+| `em:cfaa13` | [beliefs/glossary/language-server-protocol](/beliefs/glossary/language-server-protocol.md) | concept | false |
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
 | `em:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
@@ -316,6 +321,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:219996` | [beliefs/glossary/multi-head-latent-attention](/beliefs/glossary/multi-head-latent-attention.md) | concept | false |
 | `em:fc8797` | [beliefs/glossary/mxfp4](/beliefs/glossary/mxfp4.md) | concept | false |
 | `em:9eca36` | [beliefs/glossary/neurosymbolic-ai](/beliefs/glossary/neurosymbolic-ai.md) | concept | false |
+| `em:3c848d` | [beliefs/glossary/next-edit-suggestion](/beliefs/glossary/next-edit-suggestion.md) | concept | false |
 | `em:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
 | `em:54995c` | [beliefs/glossary/non-bundle-namespace](/beliefs/glossary/non-bundle-namespace.md) | concept | false |
 | `em:724e2f` | [beliefs/glossary/non-monotonic-reasoning](/beliefs/glossary/non-monotonic-reasoning.md) | concept | false |
@@ -361,6 +367,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6e8813` | [beliefs/glossary/prefix-caching](/beliefs/glossary/prefix-caching.md) | concept | false |
 | `em:cc47d1` | [beliefs/glossary/preregistration](/beliefs/glossary/preregistration.md) | concept | false |
 | `em:3a8b96` | [beliefs/glossary/presubmit](/beliefs/glossary/presubmit.md) | concept | false |
+| `em:0836b3` | [beliefs/glossary/pretooluse-hook](/beliefs/glossary/pretooluse-hook.md) | concept | false |
 | `em:332bd0` | [beliefs/glossary/probabilistic-delimiter-injection](/beliefs/glossary/probabilistic-delimiter-injection.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
@@ -557,6 +564,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:33e0c7` | [knowledge/SWE/agentic/anthropic/claude-code/agent-teams](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md) | reference |  |
 | `em:53f32a` | [knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions](/knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions.md) | reference |  |
 | `em:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
+| `em:8a9ed7` | [knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam](/knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam.md) | reference |  |
 | `em:02731b` | [knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | reference |  |
 | `em:564b8e` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
 | `em:eb418b` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching.md) | source |  |
@@ -576,6 +584,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:784985` | [knowledge/SWE/agentic/context-engineering/conversation-tree-architecture](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md) | reference |  |
 | `em:649457` | [knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
+| `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `em:121acc` | [knowledge/SWE/agentic/mcp/mcp-architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) | reference |  |
@@ -585,6 +594,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
 | `em:9318af` | [knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | source |  |
 | `em:c880d8` | [knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | reference |  |
+| `em:87c81a` | [knowledge/SWE/agentic/supervision/agent-as-driver-pairing-inversion](/knowledge/SWE/agentic/supervision/agent-as-driver-pairing-inversion.md) | concept | false |
+| `em:b4bb5e` | [knowledge/SWE/agentic/supervision/agent-supervision-consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md) | reference |  |
+| `em:7404fb` | [knowledge/SWE/agentic/supervision/ambient-agent-observability](/knowledge/SWE/agentic/supervision/ambient-agent-observability.md) | concept | false |
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
@@ -656,6 +668,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |
 | `em:507eb9` | [knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md) | note | false |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
+| `em:4d48ef` | [projects/agent-pairing](/projects/agent-pairing.md) | project |  |
+| `em:a8dd36` | [projects/agent-pairing/architecture-and-build-order](/projects/agent-pairing/architecture-and-build-order.md) | plan |  |
+| `em:48e404` | [projects/agent-pairing/comparison-herdr-cmux](/projects/agent-pairing/comparison-herdr-cmux.md) | analysis |  |
+| `em:c3c2f8` | [projects/agent-pairing/opportunity-assessment](/projects/agent-pairing/opportunity-assessment.md) | analysis |  |
 | `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |

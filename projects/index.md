@@ -11,6 +11,11 @@ project accrues research to the brain rather than to one repo.
 
 ## Active
 
+- [Agent pairing](/projects/agent-pairing.md) — a supervision layer that renders
+  a coding agent's work into the operator's live editor at human pace and lets
+  them gate, amend, and correct edits before they land; broker plus thin editor
+  clients, Neovim first
+  ([docs](/projects/agent-pairing/index.md))
 - [Code-driven AV production](/projects/code-driven-av-production.md) — a
   scriptable music-and-video pipeline: ffmpeg picture cuts and SuperCollider
   non-realtime sound rendered from one declared timing grid, run on the
