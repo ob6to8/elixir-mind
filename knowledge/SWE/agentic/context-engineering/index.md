@@ -10,6 +10,7 @@ tool-calling mechanics.
 
 ## References
 
+- [Graph serialization format as an unmeasured GraphRAG stage (ISONGraph, r/LLMDevs)](/knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt.md) — how a retrieved subgraph is rendered into the prompt goes uninstrumented; the promoted "40% to 80% multi-hop swing" turns out to rest on a 10-question subset under one model, while the repo's own limitations section says so. `em:c81829` _(reference)_
 - [Conversation Tree Architecture — branching context to avoid logical context poisoning](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md) — structures conversations as trees with selective downstream/upstream context flow between branches. `em:784985` _(reference)_
 - [When F1 fails: granularity-aware evaluation for dialogue topic segmentation (Michael Coen)](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) — separates boundary scoring from boundary selection; shows sweeping boundary density changes W-F1 more than switching segmentation methods does. `em:649457` _(reference)_
 - [Context rot — LLM performance degrades non-uniformly as input length grows (Chroma)](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md) — 18 frontier models show non-uniform degradation as context grows; bigger windows don't remove the need for curation. `em:77d68a` _(reference)_

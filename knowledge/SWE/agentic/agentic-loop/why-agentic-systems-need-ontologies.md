@@ -109,6 +109,13 @@ loop guardrails. Whether the named formalisms deliver the catches claimed here,
 and what an enforcement layer should actually be built from, is evaluated in
 [ontology guardrails vs. schema validation](/meta/analysis/ontology-guardrails-vs-schema-validation.md).
 
+A separate talk,
+[thin agents on a smarter substrate](/knowledge/SWE/agentic/agentic-loop/thin-agents-on-a-smarter-ontology-based-substrate.md)
+(Emil Eifrem), pairs an ontology with agents differently: not as a validator
+checking a proposed action's result, but as a shared discovery/routing
+substrate telling agents which data source to use and whether to trust it,
+plus an execution-trace layer that learns from what worked.
+
 # Citations
 
 - Talk: Frank Coyle, "Why Agentic Systems Need Ontologies", AI Engineer
