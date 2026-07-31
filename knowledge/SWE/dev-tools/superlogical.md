@@ -55,9 +55,9 @@ A modern [terminal multiplexer](/beliefs/glossary/terminal-multiplexer.md):
 - Built-in session sharing
 - Improved scrollback, selection, and scrolling over traditional multiplexers (tmux/screen)
 
-It is built atop `libghostty` as a public component — consuming the same
-MIT-licensed library available to anyone else and upstreaming improvements,
-rather than forking it privately.
+It is built atop [`libghostty`](/beliefs/glossary/libghostty.md) as a public
+component — consuming the same MIT-licensed library available to anyone else
+and upstreaming improvements, rather than forking it privately.
 
 ## Status
 

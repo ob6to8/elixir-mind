@@ -63,6 +63,11 @@ why a *value-laden* belief type escapes the collision that ruled out a
   *confirmed* exactly when the failure it exists to catch has occurred. Carries the
   absence-of-error corollary and the three-valued outcome. Depends on `em:674c8f`.
   `em:01abda`
+- [The value of writing is the human synthesis behind it](/beliefs/value-of-writing-is-human-synthesis.md) —
+  a written artifact is a presentation layer, and what readers are actually
+  evaluating is whose judgment stands behind it, staked on a reputation; the
+  prior the [human-writing-attribution project](/projects/human-writing-attribution.md)
+  operationalizes.
 
 ## Vocabulary & scratch
 

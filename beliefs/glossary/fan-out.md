@@ -30,4 +30,4 @@ single stronger model then synthesizes. That read-in-parallel / synthesize-once
 shape pairs naturally with [capability-matched model selection](/beliefs/glossary/capability-matched-model-selection.md):
 cheap models absorb the high-volume fan-out, the strongest model does the join.
 
-*Seen in:* [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md)
+*Seen in:* [2026-07-16 code-tutorial-and-generated-code-map thread](/meta/threads/2026-07-16-code-tutorial-and-generated-code-map.md), [2026-07-31 agent-substrate-talks-intake-analysis-and-ratifications thread](/meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md) ([graph engineering](/beliefs/glossary/graph-engineering.md) as fan-out applied to agent orchestration, and the failure mode of a fan-out safety gate that partitions files but not matters)
