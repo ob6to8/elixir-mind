@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, agent-substrate analysis session"
   why: "operator ratified the thin attribution policy that capability-matched-model-selection proposes, after the graph-engineering talk supplied the doctrine's first empirical evidence and raised the cost of leaving reviewer-tier unrecorded under fan-out"
+  from: [/meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 **An agent-authored document names the model that produced it.**

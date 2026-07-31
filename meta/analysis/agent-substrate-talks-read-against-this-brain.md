@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, /intake follow-up session"
   why: "operator asked for an analysis of this repo from the perspective of the three agent-architecture talks filed in the same session"
+  from: [/meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 # Three agent-substrate talks read against this brain

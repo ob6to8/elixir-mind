@@ -73,8 +73,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d131c1` | [beliefs/glossary/belief-network](/beliefs/glossary/belief-network.md) | concept | false |
 | `em:d351a5` | [beliefs/glossary/belief-type](/beliefs/glossary/belief-type.md) | concept | false |
 | `em:dcbb9e` | [beliefs/glossary/bipartite-graph](/beliefs/glossary/bipartite-graph.md) | concept | false |
+| `em:0d504c` | [beliefs/glossary/blackboard-architecture](/beliefs/glossary/blackboard-architecture.md) | concept | false |
 | `em:d73148` | [beliefs/glossary/blast-radius](/beliefs/glossary/blast-radius.md) | concept | false |
 | `em:068a32` | [beliefs/glossary/bm25](/beliefs/glossary/bm25.md) | concept | false |
+| `em:71f934` | [beliefs/glossary/bound-adaptation](/beliefs/glossary/bound-adaptation.md) | concept | false |
 | `em:7c6ca8` | [beliefs/glossary/branch-transplant](/beliefs/glossary/branch-transplant.md) | concept | false |
 | `em:79ca74` | [beliefs/glossary/bundle-absolute-link](/beliefs/glossary/bundle-absolute-link.md) | concept | false |
 | `em:ad34c1` | [beliefs/glossary/bundle-manifest](/beliefs/glossary/bundle-manifest.md) | concept | false |
@@ -190,6 +192,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bce124` | [beliefs/glossary/error-recovery](/beliefs/glossary/error-recovery.md) | concept | false |
 | `em:14d4b0` | [beliefs/glossary/escalating-example-exposition](/beliefs/glossary/escalating-example-exposition.md) | concept | false |
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
+| `em:8eb851` | [beliefs/glossary/event-sourcing](/beliefs/glossary/event-sourcing.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
 | `em:af40d9` | [beliefs/glossary/experience-graph](/beliefs/glossary/experience-graph.md) | concept | false |
@@ -241,6 +244,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:9e28d2` | [beliefs/glossary/goodharts-law](/beliefs/glossary/goodharts-law.md) | concept | false |
 | `em:0c8532` | [beliefs/glossary/graduation](/beliefs/glossary/graduation.md) | concept | false |
 | `em:d19aa3` | [beliefs/glossary/granular-synthesis](/beliefs/glossary/granular-synthesis.md) | concept | false |
+| `em:1af093` | [beliefs/glossary/graph-engineering](/beliefs/glossary/graph-engineering.md) | concept | false |
 | `em:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
 | `em:628db5` | [beliefs/glossary/ground-truth](/beliefs/glossary/ground-truth.md) | concept | false |
 | `em:fe0ebd` | [beliefs/glossary/grounded-extension](/beliefs/glossary/grounded-extension.md) | concept | false |

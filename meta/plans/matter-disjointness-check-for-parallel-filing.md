@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, agent-substrate analysis session"
   why: "operator ratified extending the fan-out readiness gate to matter-disjointness before the pilot runs; the same comparator also closes the already-documented cross-session duplicate-filing failure"
+  from: [/meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 # Matter-disjointness check for parallel filing

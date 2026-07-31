@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 # Dedup recall probe — gold set
