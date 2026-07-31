@@ -104,6 +104,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:25711c` | [beliefs/glossary/compile-time-coupling](/beliefs/glossary/compile-time-coupling.md) | concept | false |
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
+| `em:c6d2c5` | [beliefs/glossary/complexity-escape](/beliefs/glossary/complexity-escape.md) | concept | false |
 | `em:04f8dd` | [beliefs/glossary/composable-beliefs](/beliefs/glossary/composable-beliefs.md) | concept | false |
 | `em:4e4719` | [beliefs/glossary/composition-over-inheritance](/beliefs/glossary/composition-over-inheritance.md) | concept | false |
 | `em:ba3dac` | [beliefs/glossary/comprehension](/beliefs/glossary/comprehension.md) | concept | false |
