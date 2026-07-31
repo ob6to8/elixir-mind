@@ -97,3 +97,34 @@ rewind-as-checkout on top.
 
 - GitLord repository — <https://github.com/yashneil75/gitlord>
 - Author's announcement thread, r/AgentsOfAI — <https://www.reddit.com/r/AgentsOfAI/comments/1v159x5/i_stopped_building_a_database_for_my_ai_agents/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:31e85b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-gitlord-git-backed-agent-orchestration-intake (2026-07-31)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:31e85b`]**
+
+Pushed. Here's a plain summary: I filed one new document — the two paste items (the GitHub repo and its Reddit announcement) turned out to describe the same project, GitLord, so they became a single filed concept rather than two.
+
+---
+
+**[`em:31e85b`]**
+
+| Doc | Type | Why this type |
+|---|---|---|
+| [gitlord-git-backed-agent-orchestration.md](https://github.com/ob6to8/elixir-mind/blob/claude/git-agent-orchestration-isj1fb/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) (`em:31e85b`) | `reference` | External tool, captured and summarized — fits the existing `knowledge/SWE/agentic/frameworks/` directory alongside Archestra and sagents |
+
+---
+
+**[`em:31e85b`]**
+
+| Action | Result |
+|---|---|
+| Fetched both links, confirmed they describe one project | GitHub README + Reddit thread → one concept, not two |
+| Synonym-expanded dedup search (git+agent, subagent, orchestration, rewind, refs/agents, LiteLLM) | No existing doc on this tool; genuinely new |
+| Minted id, recompiled registry, ran `mix brain.verify` | Clean |
+| Cross-linked to git-worktrees-for-parallel-agents and noted the parallel to this bundle's own merge-strategy policy | — |
