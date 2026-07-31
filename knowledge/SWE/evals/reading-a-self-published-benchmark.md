@@ -93,3 +93,38 @@ grounding needs.
 [Graph serialization format as an unmeasured GraphRAG stage](/knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt.md)
 runs all six steps end to end, including a case where steps 2, 3, and 5 each
 independently shrink the headline.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:1f1256">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-graphrag-serialization-claim-and-its-critic (2026-07-29)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:1f1256`]**  (co-feeds: `em:c81829`)
+
+**Three checkable gaps**
+
+1. **Wrong suite.** "10-format benchmark shows it swings multi-hop accuracy 40% to 80%" attaches the five-format suite's ten-question result to the ten-format suite. The ten-format suite's own multi-hop range is 47.6%–85.7%.
+2. **One bad format, not a general property.** Drop RDF/Turtle and the ten-format spread collapses to two questions out of twenty-one. The defensible claim is *verbose RDF-style syntax hurts graph reasoning*, not *format choice swings accuracy by half*.
+3. **Flattering baseline.** The ~70% token figure is against pretty-printed JSON. Against minified JSON it is 41.3%.
+
+And the repo says all of it. Its methodology section states the result is "one run, one model (DeepSeek Chat, temperature 0), 100 questions", that "A 3-point gap at n=100 is inside the ~±6-9pp confidence interval, so ordering within the 85-90% cluster should be treated as indicative, not proven", and — of the headline token number — "Nobody should ship pretty-printed JSON in a context window; against minified JSON the saving is 41.3%." It even documents a case where its own format loses: mutating a graph inside a cached prompt prefix invalidates "~77% of the prefix vs ~65% for compact JSON."
+
+---
+
+**[`em:1f1256`]**  (co-feeds: `em:c81829`)
+
+**My analysis**
+
+**None of the critic's technical objections land.**
+
+- *Compression* is real but aimed at the wrong layer — it's about index and storage representation, while the benchmark measures what a model reads in a prompt. Compression the model must decode doesn't apply at that boundary.
+- *"Not structured data"* is self-refuting against the artifact. ISONGraph's encoding is columnar — a header row of column names then positional rows (`nodes.person` / `id name age` / `1 Alice 30`) — which is exactly the fixed-position layout he defines as structured data. The objection reads as written without opening the repo.
+- *BM25* appears nowhere in the post or the benchmark. He introduced it and then argued against it.
+- *Secret, patented, 50-year-old, non-public formats* are unfalsifiable by construction. Demanding inclusion in a benchmark while refusing to supply anything runnable isn't a testable claim.
+
+**But the post is overclaimed anyway.** The critic's *suspicion* of promotional framing was well-founded; every *reason* he gave for it was wrong. That's the shape of the thing — not "influencer vs. engineer who caught them," but a real effect, measured honestly at small scale, oversold in the post, and attacked by someone who didn't check the artifact.
+
+**What survives as usable:** verbose graph syntax costs both tokens and multi-hop accuracy against a compact tabular encoding, on one model at n≈100. Enough to justify measuring the stage in your own pipeline; not enough to justify migrating format on someone else's numbers. The stage being unmeasured is the durable point. The size of the effect is not established.

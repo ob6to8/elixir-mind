@@ -108,6 +108,14 @@ prompt prefix invalidates "~77% of the prefix vs ~65% for compact JSON"
 So the repo is calibrated and the promotional post is not. The caveats were
 written and then dropped on the way to Reddit.
 
+The README makes that sequence legible: it contains the whole document **twice**
+(1,743 lines, two `### Benchmark Results` sections). The first copy is the
+revised one quoted above; the second is an earlier version whose key findings
+read "Multi-hop queries: ISONGraph excels at 80% vs 40-70% for alternatives",
+with no confidence interval, no second JSON baseline, and no cache limitation.
+The post's headline numbers match that older copy — so the revision added the
+caveats and the promotional text was never updated to them.
+
 ## The dispute in the thread
 
 The single critical responder (u/Actual__Wizard) made four moves across five
@@ -190,3 +198,87 @@ effect is not yet established.
 - Repository (MIT): <https://github.com/isongraph/isongraph>
 - Knowledge Graph benchmark: <https://github.com/isongraph/isongraph/blob/main/benchmark/KnowledgeGraph_Benchmark/BENCHMARK.md>
 - Data Traversal benchmark: <https://github.com/isongraph/isongraph/blob/main/benchmark/DataTraversal_Benchmark/BENCHMARK.md>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:c81829">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-graphrag-serialization-claim-and-its-critic (2026-07-29)
+
+5 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:c81829`]**
+
+**Orientation**
+
+Someone posted to r/LLMDevs arguing that everyone measures every part of a graph-retrieval pipeline *except* the last step — how the retrieved graph gets turned into text for the prompt — and offered a benchmark plus their own format as proof. One commenter attacked it hard and eventually accused them of running fake benchmarks for promotional purposes.
+
+I read the post, all seven comments, and the actual benchmark files in the linked repository. The short version: **the underlying question is real and genuinely under-measured, the post's headline numbers are inflated relative to the repo's own data, and the critic's specific technical objections are all wrong.** The most interesting part is that the repository itself already states every caveat the Reddit post drops — the author wrote honest limitations and then abandoned them on the way to the promotional post.
+
+---
+
+**[`em:c81829`]**
+
+**What the OP claims**
+
+Post by u/Immediate-Cake6519, 2026-07-28, sitting at **0 points, 50% upvoted**:
+
+> We benchmark retrievers, rerankers, chunkers, embedding models. Then the retrieved subgraph goes into the prompt via json.dumps and nobody measures that step.
+
+> I compared 10 graph serialization formats … Results: 40% to 80% multi-hop accuracy spread on format alone, and about 70% token cost difference between the most verbose and most compact formats. Verbose syntax does not just cost tokens, it appears to actively hurt the model's attention over graph structure.
+
+Linked: `github.com/isongraph/isongraph` (MIT), presented as "the winning format with the benchmark methodology."
+
+**What the repository actually reports**
+
+There are **two** benchmark suites, and the headline mixes them.
+
+**Knowledge Graph suite** — 100 questions, 7 datasets, **10 formats**. Overall accuracy runs 85–90% for eight of ten formats; RDF/Turtle is 58%, GraphML 87%. Its multi-hop category is **21 questions**: ISONGraph 18/21, Cypher 18/21, everything else 16–17/21 — except RDF/Turtle at 10/21. Among the nine non-RDF formats the entire multi-hop spread is **two questions out of twenty-one**.
+
+**Data Traversal suite** — 50 questions, 4 datasets, **5 formats**. Its multi-hop category is **10 questions**: 8/10 down to 4/10. *That* is where "40% to 80%" comes from.
+
+Both suites: **one model (DeepSeek Chat, temperature 0), one run**, `o200k_base` tokenizer.
+
+---
+
+**[`em:c81829`]**  (co-feeds: `em:1f1256`)
+
+**Three checkable gaps**
+
+1. **Wrong suite.** "10-format benchmark shows it swings multi-hop accuracy 40% to 80%" attaches the five-format suite's ten-question result to the ten-format suite. The ten-format suite's own multi-hop range is 47.6%–85.7%.
+2. **One bad format, not a general property.** Drop RDF/Turtle and the ten-format spread collapses to two questions out of twenty-one. The defensible claim is *verbose RDF-style syntax hurts graph reasoning*, not *format choice swings accuracy by half*.
+3. **Flattering baseline.** The ~70% token figure is against pretty-printed JSON. Against minified JSON it is 41.3%.
+
+And the repo says all of it. Its methodology section states the result is "one run, one model (DeepSeek Chat, temperature 0), 100 questions", that "A 3-point gap at n=100 is inside the ~±6-9pp confidence interval, so ordering within the 85-90% cluster should be treated as indicative, not proven", and — of the headline token number — "Nobody should ship pretty-printed JSON in a context window; against minified JSON the saving is 41.3%." It even documents a case where its own format loses: mutating a graph inside a cached prompt prefix invalidates "~77% of the prefix vs ~65% for compact JSON."
+
+---
+
+**[`em:c81829`]**
+
+**What the responder pushes back on**
+
+u/Actual__Wizard, five comments:
+
+- **Antiquity and secrecy** — "the development of these graphs has been on going for almost 50 years and the best formats are not really public at this time"; the relevant technique is "patented and can't be used in these systems".
+- **Compression** — "I don't see any compression (of any kind) occurring either."
+- **A definitional objection** — "the format is absolutely not structured data, you are encoding data into a structure… The purpose to structuring the data is so that one can pivot off of the structure with out reading any of the data."
+- **Escalation** — after an unanswered DM: "So, you're just setting up fake benchmarking sites? So, you're setting up deceptive advertisements?", "Let me guess, you're a google employee?", a mod report, and "I can not believe you people actually think BM25 is good."
+
+The OP conceded the compression point, offered to benchmark anything runnable and publish losses, and said "I can't benchmark a description." The critic refused: "I'm not sending you private code."
+
+---
+
+**[`em:c81829`]**  (co-feeds: `em:1f1256`)
+
+**My analysis**
+
+**None of the critic's technical objections land.**
+
+- *Compression* is real but aimed at the wrong layer — it's about index and storage representation, while the benchmark measures what a model reads in a prompt. Compression the model must decode doesn't apply at that boundary.
+- *"Not structured data"* is self-refuting against the artifact. ISONGraph's encoding is columnar — a header row of column names then positional rows (`nodes.person` / `id name age` / `1 Alice 30`) — which is exactly the fixed-position layout he defines as structured data. The objection reads as written without opening the repo.
+- *BM25* appears nowhere in the post or the benchmark. He introduced it and then argued against it.
+- *Secret, patented, 50-year-old, non-public formats* are unfalsifiable by construction. Demanding inclusion in a benchmark while refusing to supply anything runnable isn't a testable claim.
+
+**But the post is overclaimed anyway.** The critic's *suspicion* of promotional framing was well-founded; every *reason* he gave for it was wrong. That's the shape of the thing — not "influencer vs. engineer who caught them," but a real effect, measured honestly at small scale, oversold in the post, and attacked by someone who didn't check the artifact.
+
+**What survives as usable:** verbose graph syntax costs both tokens and multi-hop accuracy against a compact tabular encoding, on one model at n≈100. Enough to justify measuring the stage in your own pipeline; not enough to justify migrating format on someone else's numbers. The stage being unmeasured is the durable point. The size of the effect is not established.

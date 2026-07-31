@@ -114,3 +114,15 @@ silently:
 ## See also
 
 - [Getting a YouTube transcript when the page fetch is blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md) — the same shape of problem on a client-rendered host.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:8df8d1">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-graphrag-serialization-claim-and-its-critic (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:8df8d1`]**
+
+Reddit is unreachable from this environment by every ordinary route, so getting the thread took a detour — I've filed the working route as its own snippet. Below is the substance.
