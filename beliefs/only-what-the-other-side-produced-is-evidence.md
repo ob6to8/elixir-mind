@@ -7,9 +7,9 @@ depends_on: [em:674c8f]
 resource: "https://www.reddit.com/r/AgentsOfAI/comments/1v87nmh/your_agent_says_done_you_check_and_nothing/"
 provenance: "r/AgentsOfAI discussion thread \"Your agent says 'done.' You check and nothing actually happened.\" — commenter u/Shape_Weird, who discloses building in the space and offers the account as \"my own scar tissue rather than a survey\"; read from the operator's paste of the rendered page, since Reddit refuses unauthenticated reads (HTTP 403 over every route tried)"
 tags: [belief, verification, evidence, agent-output, epistemics, instrumentation, observability]
-timestamp: 2026-07-29
+timestamp: 2026-07-31
 attribution:
-  when: 2026-07-29T00:00:00Z
+  when: 2026-07-31T00:00:00Z
   channel: intake
   agent: "Claude Code agent, post-action-verification session"
   why: "the read-back prior (em:674c8f) says to verify against the source of truth but supplies no test for what counts as one; this is that test, and applying it invalidated a read-back the same session had just proposed"

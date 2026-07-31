@@ -4,11 +4,11 @@ type: source
 title: "Reddit thread — \"Your agent says 'done.' You check and nothing actually happened.\" (r/AgentsOfAI)"
 description: Verbatim capture of the post and its full comment thread on r/AgentsOfAI — practitioners on silent agent no-ops, why traces/evals/guardrails cannot detect them, and the read-back, receipt, and reconciliation patterns proposed against them.
 resource: https://www.reddit.com/r/AgentsOfAI/comments/1v87nmh/your_agent_says_done_you_check_and_nothing/
-provenance: "Page text pasted by the operator, 2026-07-29; the page cannot be fetched from this sandbox — Reddit returns HTTP 403 to unauthenticated reads over every route tried (WebFetch, direct curl to the .json endpoint, and a third-party reader service), so this capture is the only reachable copy. OP username not present in the paste"
+provenance: "Page text pasted by the operator, 2026-07-31; the page cannot be fetched from this sandbox — Reddit returns HTTP 403 to unauthenticated reads over every route tried (WebFetch, direct curl to the .json endpoint, and a third-party reader service), so this capture is the only reachable copy. OP username not present in the paste"
 tags: [verification, read-back, reconciliation, agent-output, observability, silent-failure, discussion-thread, primary-source]
-timestamp: 2026-07-29
+timestamp: 2026-07-31
 attribution:
-  when: 2026-07-29T00:00:00Z
+  when: 2026-07-31T00:00:00Z
   channel: intake
   agent: "operator via /intake, Claude Code session"
   why: "operator asked to intake the reddit link with the verbatim thread and cross-link it to the beliefs and plan authored from it in the same session"
@@ -16,8 +16,9 @@ attribution:
 
 # Reddit thread — "Your agent says 'done.' You check and nothing actually happened."
 
-Verbatim capture of the post and all comments as pasted 2026-07-29 (post ~3 days
-old at capture; score line rendered as `Upvote8Downvote16`). Stripped from the
+Verbatim capture of the post and all comments as pasted 2026-07-31 (post ~3 days
+old at capture per its own relative timestamps; score line rendered as
+`Upvote8Downvote16`). Stripped from the
 paste: two interleaved advertisements (The Atlantic, Microsoft 365) with their
 tracking URLs, one AutoModerator boilerplate comment, and Reddit page chrome
 (flair link, sort controls, collapsed video-player rows, "Reply/Share" button
