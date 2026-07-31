@@ -5,6 +5,7 @@ description: Intake of GitLord — a git-backed agent orchestration framework wh
 provenance: "Claude Code session (Claude Sonnet 5), 2026-07-31; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, intake, git, agentic, agent-framework, orchestration]
 timestamp: 2026-07-31
+pr: 206
 session: https://claude.ai/code/session_011fV17PPQvsJJDaGS4yrbNY
 ---
 
