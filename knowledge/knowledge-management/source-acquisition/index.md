@@ -7,4 +7,5 @@ which points here when a fetch returns nothing usable.
 
 ## Snippets
 
+- [Getting a Reddit thread when every direct fetch is blocked](/knowledge/knowledge-management/source-acquisition/reddit-thread-when-fetch-is-blocked.md) — WebFetch refuses `reddit.com` and Reddit's JSON endpoints 403 a datacenter IP, so the route runs through a Redlib mirror; the Anubis `preact` challenge in front of it is one SHA-256, not a proof-of-work search. `em:8df8d1` _(snippet)_
 - [Getting a YouTube transcript when the page fetch is blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md) — the working `yt-dlp` invocation after a plain fetch returns page chrome and the default extractor hits the bot check; subtitles download even when every media format is DRM-blocked.
