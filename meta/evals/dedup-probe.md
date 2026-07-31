@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md, /meta/threads/2026-07-31-herdr-cmux-terminal-tool-comparison-intake.md]
 ---
 
 # Dedup recall probe — gold set
@@ -82,6 +82,7 @@ being mechanically rewritten.
 | persist the reddit thread verbatim | em:9318af | target | isnad reddit discussion thread; r/AgentsOfAI isnad thread; isnad announcement comments | harvested at intake 2026-07-29 |
 | evaluation is so much harder than actually building the model wrapper | em:9baaad | target | RAG evaluation is hard; splitting retrieval and generation eval; BLEU ROUGE useless for RAG | harvested at intake 2026-07-29 |
 | a convincing influencer and an ai engineer who is clearly calling them out for misrepresentation, or ineptness | em:c81829 em:1f1256 | target | self-published benchmark; benchmark rigor; graph serialization format | harvested at intake 2026-07-29 |
+| compare herdr vs warp vs cmux vs tmux vs ghostty vs superlogical, and evaluate the use of libghostty | em:eb9f29 em:16581e | target | herdr vs cmux vs tmux vs ghostty comparison; agent-aware terminal multiplexer; libghostty-based mac terminal for coding agents | harvested at intake 2026-07-31 |
 
 ## Baseline
 
@@ -95,8 +96,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 23 |
-| expanded | 20 | 23 |
+| plain | 8 | 24 |
+| expanded | 21 | 24 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets

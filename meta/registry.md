@@ -293,6 +293,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
 | `em:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
+| `em:5dec1d` | [beliefs/glossary/libghostty](/beliefs/glossary/libghostty.md) | concept | false |
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
 | `em:564fb9` | [beliefs/glossary/living-surface](/beliefs/glossary/living-surface.md) | concept | false |
@@ -621,6 +622,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:712e01` | [knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md) | concept | false |
 | `em:91b88f` | [knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md) | concept | false |
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
+| `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
+| `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
