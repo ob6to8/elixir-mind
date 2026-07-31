@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5, then Claude Sonnet 5 after a mi
 tags: [meta, thread, vim, neovim, dvorak, keyboard-layouts, projects, prior-art]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01SRMMrnt1jLMJcf5bdFyKqu
+pr: 198
 ---
 
 # 2026-07-31-dvorak-vim-reference-and-practice-project
