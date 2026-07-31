@@ -87,6 +87,11 @@ learning — that Coyle's talk does not cover. The two are complementary layers
 an agent system could combine: Eifrem's substrate for discovery and routing,
 Coyle's validator for guarding what the agent then does with what it finds.
 
+The three pillars read against this bundle's own architecture — where
+[`meta/registry.md`](/meta/registry.md) already serves as the compiled
+business↔technical mapping — are evaluated in
+[three agent-substrate talks read against this brain](/meta/analysis/agent-substrate-talks-read-against-this-brain.md).
+
 The talk does not name a specific technical construction for the technical
 ontology beyond "three key ways" left for a follow-up conversation, and
 gives no benchmark or quantified before/after — the claims here are the

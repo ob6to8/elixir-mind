@@ -105,6 +105,11 @@ ad-hoc memory. See also
 for the message-passing loop architecture ActiveGraph explicitly departs
 from.
 
+Why this bundle already holds the log-centric commitment (via the git commit
+graph and the no-squash rule) while declining the score-gated self-modification
+half on ratified doctrine is worked through in
+[three agent-substrate talks read against this brain](/meta/analysis/agent-substrate-talks-read-against-this-brain.md).
+
 **Scope note.** All reported results (LongMemEval scores, the Pokémon win
 rate, the Regimes accuracy gain) are the speaker's own account from a
 conference talk with no linked benchmark numbers or paper in the video

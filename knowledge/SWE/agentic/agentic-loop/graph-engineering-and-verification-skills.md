@@ -103,6 +103,13 @@ point of failure rather than one property among several. See also
 [guarding against AI drift](/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md)
 for the underlying code-review-quality theme this reuses.
 
+What the bad-node failure mode implies for this bundle's own fan-out plans —
+where the readiness gate partitions files but not matters — and how the
+reviewer-model finding grounds
+[capability-matched model selection](/meta/doctrine/capability-matched-model-selection.md)
+is analyzed in
+[three agent-substrate talks read against this brain](/meta/analysis/agent-substrate-talks-read-against-this-brain.md).
+
 **Scope note.** The video's title and framing attribute a "fix" to
 Anthropic, and the description references "Anthropic's article," but no
 specific Anthropic blog post or documentation page is linked anywhere in
