@@ -198,6 +198,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bce124` | [beliefs/glossary/error-recovery](/beliefs/glossary/error-recovery.md) | concept | false |
 | `em:14d4b0` | [beliefs/glossary/escalating-example-exposition](/beliefs/glossary/escalating-example-exposition.md) | concept | false |
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
+| `em:d8ef12` | [beliefs/glossary/escript](/beliefs/glossary/escript.md) | concept | false |
 | `em:8eb851` | [beliefs/glossary/event-sourcing](/beliefs/glossary/event-sourcing.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
@@ -338,6 +339,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:219996` | [beliefs/glossary/multi-head-latent-attention](/beliefs/glossary/multi-head-latent-attention.md) | concept | false |
 | `em:ff9316` | [beliefs/glossary/multi-hop-reasoning](/beliefs/glossary/multi-hop-reasoning.md) | concept | false |
 | `em:fc8797` | [beliefs/glossary/mxfp4](/beliefs/glossary/mxfp4.md) | concept | false |
+| `em:bf754e` | [beliefs/glossary/ndjson](/beliefs/glossary/ndjson.md) | concept | false |
 | `em:9eca36` | [beliefs/glossary/neurosymbolic-ai](/beliefs/glossary/neurosymbolic-ai.md) | concept | false |
 | `em:3c848d` | [beliefs/glossary/next-edit-suggestion](/beliefs/glossary/next-edit-suggestion.md) | concept | false |
 | `em:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
@@ -372,6 +374,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:83c71b` | [beliefs/glossary/patch-validation-funnel](/beliefs/glossary/patch-validation-funnel.md) | concept | false |
 | `em:eae2bf` | [beliefs/glossary/pattern-matching](/beliefs/glossary/pattern-matching.md) | concept | false |
 | `em:094aff` | [beliefs/glossary/phasor](/beliefs/glossary/phasor.md) | concept | false |
+| `em:811803` | [beliefs/glossary/picker](/beliefs/glossary/picker.md) | concept | false |
 | `em:8048c6` | [beliefs/glossary/pipe-table](/beliefs/glossary/pipe-table.md) | concept | false |
 | `em:42b353` | [beliefs/glossary/plainspeak-orientation](/beliefs/glossary/plainspeak-orientation.md) | concept | false |
 | `em:bf0524` | [beliefs/glossary/plan-type](/beliefs/glossary/plan-type.md) | concept | false |
