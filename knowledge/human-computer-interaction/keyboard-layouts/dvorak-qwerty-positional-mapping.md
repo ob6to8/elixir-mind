@@ -133,3 +133,21 @@ of design, and a layout change preserves the mnemonic kind while destroying the
 positional kind. Any remedy therefore has to supply the positional layer
 separately, since the program's own documentation encodes it only implicitly,
 in the QWERTY geometry it assumes.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:9efeba">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-dvorak-vim-reference-and-practice-project (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:9efeba`]**  (co-feeds: `em:dc21d4`)
+
+One thing I need you to check: your example `f (u)` has the two letters in the opposite relationship from the actual layout. The key labelled `f` produces the character `u` in Dvorak, not the reverse — so that pair, written as "command first," is `u (f)`: vim's undo, on the keycap marked `f`. I built the whole thing on command-first. If you meant keycap-first, it's a one-line flip.
+
+---
+
+**[`em:9efeba`]**
+
+**One fact from the mapping that's worth having in your head regardless:** every digit and shifted digit is fixed, as are backtick and backslash — and exactly two letters don't move, `a` and `m`. Everything else displaces. And `hjkl`, four adjacent home-row keys on QWERTY, become three rows, both hands, and a right pinky.

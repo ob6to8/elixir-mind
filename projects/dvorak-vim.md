@@ -205,4 +205,81 @@ GitHub topic sweep.
   — notation, data model, and the three query directions
 - [The drill engine](/projects/dvorak-vim/drill-engine.md) — the three drill
   modes and latency-graded scheduling
+- [Next steps](/projects/dvorak-vim/next-steps.md) — build order for verifying
+  `langmap` coverage, building a minimal `:Dv ?` peek-key slice, and reading
+  vimhjkl's implementation before designing mode 3
 - [Project docs](/projects/dvorak-vim/index.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:dc21d4">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-dvorak-vim-reference-and-practice-project (2026-07-31)
+
+9 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:dc21d4`]**
+
+I sketched the project and filed it. Here's the plain version first.
+
+You described two things — a lookup reference and a set of practice tests — and I filed them as one project with a shared core, because they want the same underlying table: the list of vim commands crossed with where each character actually sits on your keyboard. Build that once, and the reference and the drills are both just different views of it.
+
+---
+
+**[`em:dc21d4`]**
+
+Two things came out of thinking it through that changed the shape. First, the reason your stored overlay diagram goes unopened isn't that it's incomplete — it's that opening a text editor and pressing the key is *faster*. So the reference has to live inside the editor and answer in under a second, or it loses to the workaround again. Second, your problem isn't getting bindings wrong, it's the pause before getting them right. A practice system that scores correctness would tell you you've mastered exactly the keys that stall you — so the drills are timed, and a slow-but-correct answer counts as a miss.
+
+---
+
+**[`em:dc21d4`]**  (co-feeds: `em:9efeba`)
+
+One thing I need you to check: your example `f (u)` has the two letters in the opposite relationship from the actual layout. The key labelled `f` produces the character `u` in Dvorak, not the reverse — so that pair, written as "command first," is `u (f)`: vim's undo, on the keycap marked `f`. I built the whole thing on command-first. If you meant keycap-first, it's a one-line flip.
+
+---
+
+**[`em:dc21d4`]**
+
+**The premise, stated precisely.** Typing prose trains sequences, not keys — you don't retrieve `d`-`e`-`l`-`e`-`t`-`e`, you execute the word as one motor program. On QWERTY the isolated-character skill gets built anyway, incidentally, because every glance at the keycap is a free repetition of the association. On Dvorak with standard hardware you get zero such repetitions, because the keycaps state the wrong character. Vim is the workload that exposes the gap, since it asks for isolated characters in sequences that aren't words. That's why this is a real skill deficit and not just a lookup problem.
+
+---
+
+**[`em:dc21d4`]**  (co-feeds: `em:04281b`)
+
+Answering (2) first, then I'll go look.
+
+**Yes — your actual physical keycaps.** The question is what's engraved on the plastic your fingers sit on. Three cases, and they want different second elements in the notation:
+
+| Your hardware | The `(x)` half should be |
+|---|---|
+| QWERTY-engraved keycaps, Dvorak set in software | the QWERTY label — `u (f)` — since you can read it off the key |
+| Dvorak-engraved keycaps (or a hardware-Dvorak board) | row + finger — `u (home, left index)` — the QWERTY label means nothing to you |
+| Blank keycaps | row + finger, same reason |
+
+Now let me check for prior art.
+
+---
+
+**[`em:dc21d4`]**
+
+Short version: yes, there's a lot out there — but it splits along exactly the seam this project would cross. Everything that knows about Dvorak is a **static picture**. Everything that drills you is **layout-blind**. Nobody has built the thing in the middle, and nobody grades on hesitation.
+
+I found one thing that partly challenges the premise, though, so lead with that.
+
+---
+
+**[`em:dc21d4`]**  (co-feeds: `em:715616`)
+
+Vim has **built-in Dvorak support** — a `langmap` option and a stock `$VIMRUNTIME/macros/dvorak` macro. Per the search snippets, `langmap` translates keystrokes in insert, search, and command modes while leaving normal-mode navigation untouched. If that's accurate, a one-line config already handles part of what this project addresses, and the honest question becomes how much problem is left.
+
+---
+
+**[`em:dc21d4`]**
+
+`neovim-cheatsheet` is the closest existing thing to your reference, and it's well done — "a modern and customizable take on the excellent viemu cheat sheet, supporting QWERTY as well as alternative keyboard layouts such as Colemak and Dvorak". It is also, precisely, the artifact you described as unusable: a keyboard diagram, stored somewhere, that you cross-reference. Its existence proves the demand and its form is the gap.
+
+---
+
+**[`em:dc21d4`]**
+
+**The unoccupied position:** layout-aware *and* a drill, in-editor, latency-graded, with the isolated character as a drillable unit. Scope of that claim — six web searches (Dvorak vim plugins/remapping, Dvorak cheatsheets, vim spaced-repetition trainers, layout-aware Neovim plugins, keybinding-display plugins) plus direct README reads of the three tools above. Not swept: dotfyle and awesome-neovim by name, or GitHub topics systematically.

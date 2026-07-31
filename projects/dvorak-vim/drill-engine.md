@@ -204,3 +204,15 @@ Open:
 - **Retirement.** Whether an item that bands fluent for long enough leaves the
   rotation entirely, or drops to a low-frequency check; leaving forever risks
   the practice becoming all-review and no-gain.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:da9532">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-dvorak-vim-reference-and-practice-project (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:da9532`]**  (co-feeds: `em:715616`)
+
+`vimhjkl` is the strongest and has an idea better than mine: grading against a verified optimal keystroke count. I recorded that as something to lift rather than re-derive. `vim-gym` is the instructive counterexample — it asks you to self-report a 0–5 score, which is the exact input the latency rule exists to avoid, since self-rating is least reliable right after you've recovered from a stall.

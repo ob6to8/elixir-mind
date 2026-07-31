@@ -167,3 +167,31 @@ Open:
 - **Whether the card and web page are worth building at all** once `:Dv ?`
   exists, or whether they are only for the shared-machine case where the plugin
   is absent.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:04281b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-dvorak-vim-reference-and-practice-project (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:04281b`]**
+
+**The surface that kills the recovery loop** is `:Dv ?` — press it, then press any key, and it reports which character that key produces and what it's bound to, without executing it. That's your scratch buffer, minus the round trip, plus the semantics.
+
+---
+
+**[`em:04281b`]**  (co-feeds: `em:dc21d4`)
+
+Answering (2) first, then I'll go look.
+
+**Yes — your actual physical keycaps.** The question is what's engraved on the plastic your fingers sit on. Three cases, and they want different second elements in the notation:
+
+| Your hardware | The `(x)` half should be |
+|---|---|
+| QWERTY-engraved keycaps, Dvorak set in software | the QWERTY label — `u (f)` — since you can read it off the key |
+| Dvorak-engraved keycaps (or a hardware-Dvorak board) | row + finger — `u (home, left index)` — the QWERTY label means nothing to you |
+| Blank keycaps | row + finger, same reason |
+
+Now let me check for prior art.
