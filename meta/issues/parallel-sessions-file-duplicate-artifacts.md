@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, ledger-strand reconciliation sweep"
   why: "two documented instances in one day, each costing reconciliation work and each caught only by accident, with no mechanical detector for the class"
-  from: [/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md, /meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md]
+  from: [/meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md, /meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 # Parallel sessions file duplicate governance artifacts
@@ -130,6 +130,7 @@ Options 1 and 2 are cheaper but each miss a documented instance.
 
 ## Related
 
+- [matter-disjointness check for parallel filing](/meta/plans/matter-disjointness-check-for-parallel-filing.md) — the plan adopting candidate resolution 3, extended to a second call site: the same comparator runs at Workflow fold-back, where fan-out reproduces this failure with disjoint file sets
 - [update-in-place](/meta/policy/update-in-place.md) — the rule this defeats
 - [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — "one artifact per matter"
 - [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md) — the noisy sibling class

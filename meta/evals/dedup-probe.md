@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 # Dedup recall probe — gold set
@@ -98,12 +98,16 @@ cross-check — warn and trend, don't fail).
 | plain | 8 | 23 |
 | expanded | 20 | 23 |
 
-The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
-of how much recall the tier-1 `/intake` synonym-expansion change is expected to
-recover: 7 of the 10 targets miss under plain lexical search but are recovered once
-the agent generates the recorded variant phrasings. When the **plain** figure
-degrades as concepts are added, that is the quantified trigger for tier-2 embedding
-dedup — not a guessed size threshold.
+The gap between the two rows above is the offline, repeatable measurement of how
+much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
+that miss under plain lexical search are found once the agent generates the
+recorded variant phrasings. When the **plain** figure degrades as concepts are
+added, that is the quantified trigger for tier-2 embedding dedup — not a guessed
+size threshold.
+
+The figures live in the generated table and **are deliberately not restated in
+this prose**: a hand-written copy beside a regenerating table has no oracle and
+goes stale silently.
 
 ## Upkeep — fully automated, no operator action
 

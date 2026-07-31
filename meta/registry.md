@@ -73,8 +73,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d131c1` | [beliefs/glossary/belief-network](/beliefs/glossary/belief-network.md) | concept | false |
 | `em:d351a5` | [beliefs/glossary/belief-type](/beliefs/glossary/belief-type.md) | concept | false |
 | `em:dcbb9e` | [beliefs/glossary/bipartite-graph](/beliefs/glossary/bipartite-graph.md) | concept | false |
+| `em:0d504c` | [beliefs/glossary/blackboard-architecture](/beliefs/glossary/blackboard-architecture.md) | concept | false |
 | `em:d73148` | [beliefs/glossary/blast-radius](/beliefs/glossary/blast-radius.md) | concept | false |
 | `em:068a32` | [beliefs/glossary/bm25](/beliefs/glossary/bm25.md) | concept | false |
+| `em:71f934` | [beliefs/glossary/bound-adaptation](/beliefs/glossary/bound-adaptation.md) | concept | false |
 | `em:7c6ca8` | [beliefs/glossary/branch-transplant](/beliefs/glossary/branch-transplant.md) | concept | false |
 | `em:79ca74` | [beliefs/glossary/bundle-absolute-link](/beliefs/glossary/bundle-absolute-link.md) | concept | false |
 | `em:ad34c1` | [beliefs/glossary/bundle-manifest](/beliefs/glossary/bundle-manifest.md) | concept | false |
@@ -191,6 +193,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bce124` | [beliefs/glossary/error-recovery](/beliefs/glossary/error-recovery.md) | concept | false |
 | `em:14d4b0` | [beliefs/glossary/escalating-example-exposition](/beliefs/glossary/escalating-example-exposition.md) | concept | false |
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
+| `em:8eb851` | [beliefs/glossary/event-sourcing](/beliefs/glossary/event-sourcing.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
 | `em:af40d9` | [beliefs/glossary/experience-graph](/beliefs/glossary/experience-graph.md) | concept | false |
@@ -242,6 +245,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:9e28d2` | [beliefs/glossary/goodharts-law](/beliefs/glossary/goodharts-law.md) | concept | false |
 | `em:0c8532` | [beliefs/glossary/graduation](/beliefs/glossary/graduation.md) | concept | false |
 | `em:d19aa3` | [beliefs/glossary/granular-synthesis](/beliefs/glossary/granular-synthesis.md) | concept | false |
+| `em:1af093` | [beliefs/glossary/graph-engineering](/beliefs/glossary/graph-engineering.md) | concept | false |
 | `em:005615` | [beliefs/glossary/graphrag](/beliefs/glossary/graphrag.md) | concept | false |
 | `em:fbab7f` | [beliefs/glossary/greedy-layer-wise-pretraining](/beliefs/glossary/greedy-layer-wise-pretraining.md) | concept | false |
 | `em:628db5` | [beliefs/glossary/ground-truth](/beliefs/glossary/ground-truth.md) | concept | false |
@@ -549,11 +553,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
 | `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |
+| `em:360ddd` | [knowledge/SWE/agentic/agentic-loop/activegraph-event-sourced-agent-runtime](/knowledge/SWE/agentic/agentic-loop/activegraph-event-sourced-agent-runtime.md) | reference |  |
 | `em:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
 | `em:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |
 | `em:06d95d` | [knowledge/SWE/agentic/agentic-loop/building-effective-agents](/knowledge/SWE/agentic/agentic-loop/building-effective-agents.md) | reference |  |
 | `em:3384ba` | [knowledge/SWE/agentic/agentic-loop/designing-agentic-loops](/knowledge/SWE/agentic/agentic-loop/designing-agentic-loops.md) | reference |  |
 | `em:c0961a` | [knowledge/SWE/agentic/agentic-loop/effective-context-engineering-for-agents](/knowledge/SWE/agentic/agentic-loop/effective-context-engineering-for-agents.md) | reference |  |
+| `em:428854` | [knowledge/SWE/agentic/agentic-loop/graph-engineering-and-verification-skills](/knowledge/SWE/agentic/agentic-loop/graph-engineering-and-verification-skills.md) | reference |  |
 | `em:a832e0` | [knowledge/SWE/agentic/agentic-loop/how-coding-agents-work](/knowledge/SWE/agentic/agentic-loop/how-coding-agents-work.md) | reference |  |
 | `em:8e885f` | [knowledge/SWE/agentic/agentic-loop/how-to-build-an-agent](/knowledge/SWE/agentic/agentic-loop/how-to-build-an-agent.md) | reference |  |
 | `em:01bb9a` | [knowledge/SWE/agentic/agentic-loop/loop-engineering-went-mainstream](/knowledge/SWE/agentic/agentic-loop/loop-engineering-went-mainstream.md) | reference |  |
@@ -569,6 +575,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:592342` | [knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels](/knowledge/SWE/agentic/agentic-loop/the-agent-loop-decoded-three-levels.md) | reference |  |
 | `em:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
 | `em:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
+| `em:619132` | [knowledge/SWE/agentic/agentic-loop/thin-agents-on-a-smarter-ontology-based-substrate](/knowledge/SWE/agentic/agentic-loop/thin-agents-on-a-smarter-ontology-based-substrate.md) | reference |  |
 | `em:1df031` | [knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies](/knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies.md) | reference |  |
 | `em:214aa4` | [knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint](/knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint.md) | source |  |
 | `em:bdfa05` | [knowledge/SWE/agentic/anthropic/certification/claude-certification-program](/knowledge/SWE/agentic/anthropic/certification/claude-certification-program.md) | reference |  |
