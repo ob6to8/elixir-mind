@@ -98,6 +98,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d676f0` | [beliefs/glossary/cognitive-debt](/beliefs/glossary/cognitive-debt.md) | concept | false |
 | `em:d07ed9` | [beliefs/glossary/commoditize-your-complement](/beliefs/glossary/commoditize-your-complement.md) | concept | false |
 | `em:2ac1be` | [beliefs/glossary/common-weakness-enumeration](/beliefs/glossary/common-weakness-enumeration.md) | concept | false |
+| `em:6e0097` | [beliefs/glossary/compare-and-swap](/beliefs/glossary/compare-and-swap.md) | concept | false |
 | `em:25711c` | [beliefs/glossary/compile-time-coupling](/beliefs/glossary/compile-time-coupling.md) | concept | false |
 | `em:23f009` | [beliefs/glossary/compiled-contract](/beliefs/glossary/compiled-contract.md) | concept | false |
 | `em:b53ee1` | [beliefs/glossary/complementary-priors](/beliefs/glossary/complementary-priors.md) | concept | false |
@@ -239,6 +240,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:15fa92` | [beliefs/glossary/git-dependency](/beliefs/glossary/git-dependency.md) | concept | false |
 | `em:8272bc` | [beliefs/glossary/git-filter-repo](/beliefs/glossary/git-filter-repo.md) | concept | false |
 | `em:80c65c` | [beliefs/glossary/git-hook](/beliefs/glossary/git-hook.md) | concept | false |
+| `em:119990` | [beliefs/glossary/git-plumbing](/beliefs/glossary/git-plumbing.md) | concept | false |
 | `em:816d17` | [beliefs/glossary/git-trailer](/beliefs/glossary/git-trailer.md) | concept | false |
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
@@ -615,6 +617,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
+| `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `em:e4d9cf` | [knowledge/SWE/agentic/governance/models-and-the-semantic-gap](/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md) | reference |  |
 | `em:121acc` | [knowledge/SWE/agentic/mcp/mcp-architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) | reference |  |

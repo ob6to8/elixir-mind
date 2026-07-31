@@ -19,4 +19,4 @@ attribution:
 
 Examples include Chroma, sqlite-vec, LanceDB, and Qdrant. Its cost only pays off past a corpus size where lexical search's recall genuinely breaks down.
 
-*Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md)
+*Seen in:* [2026-07-09 vector-DB recall thread](/meta/threads/2026-07-09-vector-db-recall-evaluation-and-analysis-type.md), [2026-07-31 GitLord intake thread](/meta/threads/2026-07-31-gitlord-git-backed-agent-orchestration-intake.md)
