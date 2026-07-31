@@ -5,6 +5,7 @@ description: Intake of the TurboFieldfare GitHub repo — a Swift/Metal runtime 
 provenance: "Claude Code session (Claude Sonnet 5), 2026-07-31; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, intake, llm-inference, apple-silicon]
 timestamp: 2026-07-31
+pr: 204
 session: https://claude.ai/code/session_01WkiQP7bW1Q6YTuEkwL2u5r
 ---
 
