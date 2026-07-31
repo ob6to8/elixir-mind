@@ -5,6 +5,7 @@ description: Intake of Microsoft's SkillOpt (a text-space optimizer that trains 
 provenance: "Claude Code session (Claude Opus 5, Claude Sonnet 5), 2026-07-31; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, intake, skillopt, microsoft, skill-optimization, agent-memory]
 timestamp: 2026-07-31
+pr: 205
 session: https://claude.ai/code/session_01R3FjWHYjveEV39gE3CWWAp
 ---
 
