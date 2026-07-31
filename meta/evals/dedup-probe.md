@@ -81,6 +81,7 @@ being mechanically rewritten.
 | 1400 years ago scholars solved a problem multi-agent ai reinvented | em:c880d8 | target | isnad claim verification; hadith transmission chains for ai; rijal grading transmitters | harvested at intake 2026-07-29 |
 | persist the reddit thread verbatim | em:9318af | target | isnad reddit discussion thread; r/AgentsOfAI isnad thread; isnad announcement comments | harvested at intake 2026-07-29 |
 | evaluation is so much harder than actually building the model wrapper | em:9baaad | target | RAG evaluation is hard; splitting retrieval and generation eval; BLEU ROUGE useless for RAG | harvested at intake 2026-07-29 |
+| your agent says done, you check and nothing actually happened | em:b01e03 | target | silent no-op; read-back; post-action verification; agent's story not reality | harvested at intake 2026-07-31 |
 | a convincing influencer and an ai engineer who is clearly calling them out for misrepresentation, or ineptness | em:c81829 em:1f1256 | target | self-published benchmark; benchmark rigor; graph serialization format | harvested at intake 2026-07-29 |
 | compare herdr vs warp vs cmux vs tmux vs ghostty vs superlogical, and evaluate the use of libghostty | em:eb9f29 em:16581e | target | herdr vs cmux vs tmux vs ghostty comparison; agent-aware terminal multiplexer; libghostty-based mac terminal for coding agents | harvested at intake 2026-07-31 |
 | the new microsoft skillopt repo and documentation | em:42648b | target | skillopt; text-space optimizer for agent skills; training a skill.md as a trainable parameter; prompt optimization with a validation gate | harvested at intake 2026-07-31 |
@@ -97,8 +98,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 25 |
-| expanded | 22 | 25 |
+| plain | 8 | 26 |
+| expanded | 23 | 26 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets

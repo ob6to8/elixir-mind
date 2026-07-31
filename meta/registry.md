@@ -13,6 +13,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | id | concept | type | verified |
 |----|---------|------|----------|
 | `em:763494` | [beliefs/an-instrument-without-a-control-measures-itself](/beliefs/an-instrument-without-a-control-measures-itself.md) | belief |  |
+| `em:674c8f` | [beliefs/completion-claims-are-not-evidence-of-completion](/beliefs/completion-claims-are-not-evidence-of-completion.md) | belief |  |
 | `em:06de36` | [beliefs/coverage-and-quality-must-be-measured-jointly](/beliefs/coverage-and-quality-must-be-measured-jointly.md) | belief |  |
 | `em:0c4913` | [beliefs/dont-review-code-length-specs](/beliefs/dont-review-code-length-specs.md) | belief |  |
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
@@ -415,6 +416,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:cf2db9` | [beliefs/glossary/rdfs](/beliefs/glossary/rdfs.md) | concept | false |
 | `em:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
 | `em:f5c2bd` | [beliefs/glossary/react](/beliefs/glossary/react.md) | concept | false |
+| `em:8ca1b6` | [beliefs/glossary/read-back](/beliefs/glossary/read-back.md) | concept | false |
 | `em:99ec79` | [beliefs/glossary/reason-tags](/beliefs/glossary/reason-tags.md) | concept | false |
 | `em:5e7da1` | [beliefs/glossary/recall](/beliefs/glossary/recall.md) | concept | false |
 | `em:0b95ed` | [beliefs/glossary/recall-at-k](/beliefs/glossary/recall-at-k.md) | concept | false |
@@ -559,6 +561,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
+| `em:01abda` | [beliefs/only-what-the-other-side-produced-is-evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md) | belief |  |
 | `em:a96688` | [beliefs/plan-artifacts-compress-decisions-not-bodies](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) | belief |  |
 | `em:6c7e85` | [beliefs/plan-artifacts-surface-implicit-review-decisions](/beliefs/plan-artifacts-surface-implicit-review-decisions.md) | belief |  |
 | `em:d1ba60` | [beliefs/remembered-surfaces-are-forgotten-surfaces](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) | belief |  |
@@ -566,6 +569,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f35b8f` | [beliefs/scar-tissue-lens-for-agent-failure](/beliefs/scar-tissue-lens-for-agent-failure.md) | belief |  |
 | `em:1eebdf` | [beliefs/spec-detail-approaches-code-length](/beliefs/spec-detail-approaches-code-length.md) | belief |  |
 | `em:2bd5a1` | [beliefs/value-of-writing-is-human-synthesis](/beliefs/value-of-writing-is-human-synthesis.md) | belief |  |
+| `em:b01e03` | [knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread](/knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread.md) | source |  |
 | `em:dc210d` | [knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details](/knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details.md) | reference |  |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |

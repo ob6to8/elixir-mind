@@ -27,4 +27,4 @@ chronological source is a lossless selection, whereas the reverse — reassembli
 chronology from scattered per-location fragments — loses adjacency. Choosing the
 source is therefore prior to choosing the presentation.
 
-*Seen in:* [2026-07-20 localized-code-conversation thread](/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md), [localized-code-conversation analysis](/meta/analysis/localized-code-conversation-vs-linear-thread.md)
+*Seen in:* [2026-07-20 localized-code-conversation thread](/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md), [localized-code-conversation analysis](/meta/analysis/localized-code-conversation-vs-linear-thread.md), [2026-07-29 post-action read-back belief and plan thread](/meta/threads/2026-07-29-post-action-readback-belief-and-plan.md)
