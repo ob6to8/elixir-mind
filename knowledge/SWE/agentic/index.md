@@ -14,6 +14,7 @@ and the practices they change.
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context
 - [editor-integration](/knowledge/SWE/agentic/editor-integration/index.md) — how coding agents connect to the editor a developer already uses: protocols, plugin ecosystems, and how deeply an agent can reach into a live session
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
+- [governance](/knowledge/SWE/agentic/governance/index.md) — enforcement mechanisms for agent-produced work: typed models as the binding layer between prose and code, checking properties at the abstraction level where they're legible
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
 - [multi-model](/knowledge/SWE/agentic/multi-model/index.md) — working across multiple model providers in coding-agent workflows: escaping single-provider lock-in while keeping the dev ergonomics
 - [provenance](/knowledge/SWE/agentic/provenance/index.md) — trust and provenance layers for content moving through multi-agent pipelines: grading transmitters, chain trust, and corroboration
