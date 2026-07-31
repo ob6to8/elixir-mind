@@ -81,6 +81,7 @@ being mechanically rewritten.
 | 1400 years ago scholars solved a problem multi-agent ai reinvented | em:c880d8 | target | isnad claim verification; hadith transmission chains for ai; rijal grading transmitters | harvested at intake 2026-07-29 |
 | persist the reddit thread verbatim | em:9318af | target | isnad reddit discussion thread; r/AgentsOfAI isnad thread; isnad announcement comments | harvested at intake 2026-07-29 |
 | evaluation is so much harder than actually building the model wrapper | em:9baaad | target | RAG evaluation is hard; splitting retrieval and generation eval; BLEU ROUGE useless for RAG | harvested at intake 2026-07-29 |
+| your agent says done, you check and nothing actually happened | em:b01e03 | target | silent no-op; read-back; post-action verification; agent's story not reality | harvested at intake 2026-07-29 |
 
 ## Baseline
 
@@ -94,8 +95,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 22 |
-| expanded | 19 | 22 |
+| plain | 8 | 23 |
+| expanded | 20 | 23 |
 
 The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
 of how much recall the tier-1 `/intake` synonym-expansion change is expected to
