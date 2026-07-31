@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-31; verbatim retained 
 tags: [meta, thread, intake, agentic-loop, ontology, event-sourcing, graph-engineering, analysis, doctrine, model-attribution, capture, create-pull-request]
 timestamp: 2026-07-31T03:50:00Z
 session: https://claude.ai/code/session_01WJibsfQCCpNJHkGY5NPrVz
+pr: 200
 ---
 
 # 2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications
