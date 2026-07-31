@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-29; verbatim retained 
 tags: [meta, thread, intake, graphrag, serialization, benchmark-rigor, source-acquisition, context-engineering]
 timestamp: 2026-07-29
 session: https://claude.ai/code/session_01ED941NsVq41HDMsH7dAmLH
+pr: 201
 ---
 
 # 2026-07-29-graphrag-serialization-claim-and-its-critic
