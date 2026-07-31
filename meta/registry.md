@@ -13,6 +13,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | id | concept | type | verified |
 |----|---------|------|----------|
 | `em:763494` | [beliefs/an-instrument-without-a-control-measures-itself](/beliefs/an-instrument-without-a-control-measures-itself.md) | belief |  |
+| `em:fa6efe` | [beliefs/capability-growth-relocates-risk-to-operator-epistemics](/beliefs/capability-growth-relocates-risk-to-operator-epistemics.md) | belief |  |
 | `em:674c8f` | [beliefs/completion-claims-are-not-evidence-of-completion](/beliefs/completion-claims-are-not-evidence-of-completion.md) | belief |  |
 | `em:06de36` | [beliefs/coverage-and-quality-must-be-measured-jointly](/beliefs/coverage-and-quality-must-be-measured-jointly.md) | belief |  |
 | `em:0c4913` | [beliefs/dont-review-code-length-specs](/beliefs/dont-review-code-length-specs.md) | belief |  |
@@ -568,6 +569,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:2ecdd2` | [beliefs/review-is-not-an-oracle](/beliefs/review-is-not-an-oracle.md) | belief |  |
 | `em:f35b8f` | [beliefs/scar-tissue-lens-for-agent-failure](/beliefs/scar-tissue-lens-for-agent-failure.md) | belief |  |
 | `em:1eebdf` | [beliefs/spec-detail-approaches-code-length](/beliefs/spec-detail-approaches-code-length.md) | belief |  |
+| `em:b31b96` | [beliefs/understanding-is-not-standing-to-judge](/beliefs/understanding-is-not-standing-to-judge.md) | belief |  |
 | `em:2bd5a1` | [beliefs/value-of-writing-is-human-synthesis](/beliefs/value-of-writing-is-human-synthesis.md) | belief |  |
 | `em:b01e03` | [knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread](/knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread.md) | source |  |
 | `em:dc210d` | [knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details](/knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details.md) | reference |  |
