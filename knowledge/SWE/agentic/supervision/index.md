@@ -19,6 +19,8 @@ act on.
   a trace says what the agent did; a decision record says what was authorized,
   by whom, with what reason — the artifact oversight obligations ask for, and
   the two failure modes that hollow it out
+- [Your agent says "done." You check and nothing actually happened. — r/AgentsOfAI](/knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns.md) —
+  practitioner discussion of silent completion failures and validation patterns: write-verify separation, read-back verification, and reconciliation against system of record `em:7c4f3e` _(reference)_
 - [Typed actions are born supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md) —
   agents whose actions are typed data admit supervision by interposition;
   opaque tool calls force retrofit hooks — the action representation sets the

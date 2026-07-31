@@ -640,6 +640,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b4bb5e` | [knowledge/SWE/agentic/supervision/agent-supervision-consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md) | reference |  |
 | `em:7404fb` | [knowledge/SWE/agentic/supervision/ambient-agent-observability](/knowledge/SWE/agentic/supervision/ambient-agent-observability.md) | concept | false |
 | `em:712e01` | [knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md) | concept | false |
+| `em:7c4f3e` | [knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns](/knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns.md) | reference |  |
 | `em:91b88f` | [knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md) | concept | false |
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
