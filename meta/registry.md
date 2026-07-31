@@ -640,6 +640,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fdf328` | [knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses](/knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses.md) | source |  |
 | `em:8ad00c` | [knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing.md) | source |  |
 | `em:b6380e` | [knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing.md) | source |  |
+| `em:9efeba` | [knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping](/knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping.md) | claim | false |
 | `em:59895a` | [knowledge/knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
 | `em:148cd9` | [knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments](/knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments.md) | source |  |
 | `em:d72938` | [knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks](/knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md) | reference |  |
@@ -682,6 +683,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |
 | `em:0b9d92` | [projects/code-driven-av-production/headless-supercollider-grid-render](/projects/code-driven-av-production/headless-supercollider-grid-render.md) | tutorial |  |
+| `em:dc21d4` | [projects/dvorak-vim](/projects/dvorak-vim.md) | project |  |
+| `em:da9532` | [projects/dvorak-vim/drill-engine](/projects/dvorak-vim/drill-engine.md) | plan |  |
+| `em:04281b` | [projects/dvorak-vim/keybinding-reference-design](/projects/dvorak-vim/keybinding-reference-design.md) | plan |  |
 | `em:763ec8` | [projects/human-writing-attribution](/projects/human-writing-attribution.md) | project |  |
 | `em:fe5ca6` | [projects/human-writing-attribution/overlap-tool](/projects/human-writing-attribution/overlap-tool.md) | plan |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
