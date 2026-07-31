@@ -1,7 +1,7 @@
 ---
 type: plan
 title: "Post-action read-back: confirm state changes against the source of truth"
-description: Wire read-back verification into the development flow at the boundaries where it is actually missing — the git/GitHub tail of /create-pull-request, the /capture write, and the scheduled /research run — while explicitly declining to add it in-tree, where the gate suite already re-derives state from disk and is the batch read-back.
+description: Wire read-back verification into the development flow at the boundaries where it is actually missing — the git/GitHub tail of /create-pull-request and the scheduled /research run — while declining to add it in-tree, where the gate suite is already the batch read-back, and declining a /capture fidelity check outright, because the only thing it could read is material the same session wrote.
 status: proposed
 provenance: "Claude Code session, 2026-07-29 — designed from the operator-supplied post-action-verification quote; persisted rather than executed because the policy text is the operator's to ratify"
 tags: [meta, plan, verification, workflow, git, github, ci, tooling, agent-output]
@@ -15,10 +15,18 @@ attribution:
 
 # Post-action read-back: confirm state changes against the source of truth
 
-Grounded in
-[a completion claim is not evidence of completion](/beliefs/completion-claims-are-not-evidence-of-completion.md)
-(`em:674c8f`): a state-changing action is unconfirmed until a separate read
-against the system holding that state returns the expected value.
+Grounded in two beliefs, and the second constrains the first:
+
+- [a completion claim is not evidence of completion](/beliefs/completion-claims-are-not-evidence-of-completion.md)
+  (`em:674c8f`) — a state-changing action is unconfirmed until a separate read
+  against the system holding that state returns the expected value.
+- [only what the other side produced is evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md)
+  (`em:01abda`) — that read counts only if the party holding the state produced
+  what it reads; a check built from self-generated material is testimony, and is
+  worse than no check because it fails toward *confirmed*.
+
+The second is applied as a test to every read-back proposed below, and it
+disqualifies one of them.
 
 ## The problem
 
@@ -60,10 +68,11 @@ hours after the fire, and the issue records why it could not be found from insid
 > *\"fired and failed\"* from *\"never fired\"*, because the query tool itself is
 > gated."
 
-That is the read-back's absence stated as a diagnosis. An automated run that ends
-by reading `origin/main` back and failing loudly when its own commit is not there
-would have reported the outcome on the first fire instead of on the operator's
-manual audit.
+That is the read-back's absence stated as a diagnosis — and it is the harder of
+the two classes the source distinguishes. An in-run read-back would catch a run
+that fires and fails; it cannot catch a run that never fires, because there is no
+run to hold the check. That case needs the delayed reconciliation pass described
+under "the second class" below.
 
 ## The scoping decision — this is the load-bearing one
 
@@ -77,8 +86,18 @@ on every write.
 where nothing downstream re-derives it. Where a later step already recomputes the
 state from the authority, that step *is* the read-back.**
 
-This falls straight out of the belief's own cost bound and it partitions the flow
-cleanly:
+The source draws the boundary in the same place, from the other direction:
+
+> "If you're doing codegen, it's easier. rerun the test or check the diff and you
+> know. but anything that touches real systems is where it breaks. issuing a
+> refund in your billing system, updating a CRM field, provisioning something,
+> moving a ticket, actually sending the email. there's no cheap retry to verify
+> any of that."
+
+Almost everything this repo's flow does is the easy case — the bundle *is* the
+artifact, and "rerun the test or check the diff" is the entire gate suite. The
+`--check` gates are that cheap retry, industrialized. What is left over is the
+handful of actions that touch real systems, and the partition is clean:
 
 | State | Authority | Already read back? |
 |---|---|---|
@@ -96,6 +115,65 @@ cleanly:
 
 Seven rows say "in-tree, covered by a gate". Five say "external, taken on the
 acting call's word". The work is entirely in the second group.
+
+## The evidence test, applied — and the one read-back it kills
+
+[`em:01abda`](/beliefs/only-what-the-other-side-produced-is-evidence.md) supplies
+the test each proposed read-back has to pass: *who produced the thing this check
+reads?* Running it over the candidates:
+
+| Proposed read-back | Produced by | Evidence? |
+|---|---|---|
+| `git ls-remote origin <branch>` | the remote's ref advertisement | **yes** — the server's own answer about its own refs |
+| `pull_request_read` → `head.sha`, `base.ref`, `state` | GitHub's PR record | **yes** |
+| `pull_request_read` → `merged`, `merge_commit_sha` | GitHub, which minted the merge SHA | **yes** — an id we could not have produced |
+| `list_branches` after deletion | GitHub's branch list | **yes** |
+| `actions_get` → job `conclusion` | the runner | **yes** |
+| `mix brain.thread_tail` on the thread doc we just wrote | **us** | **no** — see below |
+
+The last row fails, and it fails in the direction the belief warns about. The
+thread doc is a file this session wrote from its own context; re-reading its tail
+confirms the bytes reached the disk and nothing more. It cannot detect the failure
+the check would exist to catch — a capture that silently dropped exchanges —
+because the dropped material is absent from both the render and the reader. It is
+the same shape as donk8r's admission about his own logs, which lands squarely on
+this brain's record layer:
+
+> "Our session logs are append only and complete, and they're still only the
+> agent's account of its own actions, which is precisely the thing you can't verify
+> with."
+
+**Consequence for the plan**: the `/capture` step is *not* proposed as a fidelity
+check. The session transcript is the only authority for what was delivered, and it
+is not readable by the agent — the thread's `session:` URL points at it precisely
+because it is "*account-bound … unreadable by agents*"
+([session-capture](/meta/policy/session-capture.md)). So capture fidelity has **no
+available oracle**, and the honest design is `em:01abda`'s third state rather than
+a check that would always pass: the flow reports the file as *written*, never as
+*faithful*, and says which of the two it means. This also settles the plan's
+earlier open question 2 on principle rather than on cost.
+
+## The second class: actions with no read path, and the run that never fires
+
+Inline verification covers actions that happened and left a trace to read. The
+source bounds two cases it cannot cover — "*async writes that aren't visible yet,
+and side effects with no read path at all*" — and prescribes "*a delayed
+reconciliation pass against the source of truth rather than inline
+verification*."
+
+This repo has exactly one instance, and it is the `/research` Routine. A run that
+never fires cannot contain its own read-back, and the issue records that even a
+*later* session could not settle it, because the query tool was itself gated. The
+reconciliation therefore has to be positive and external:
+
+- **Positive, not error-absence.** Ask "is today's digest on `origin/main`?" — a
+  fact the remote produced — rather than "did anything report a failure?" Silence
+  from a scheduler that never ran is indistinguishable from silence from a
+  scheduler that succeeded, which is `em:01abda`'s zero-POST case exactly.
+- **External to the run.** The check belongs to something that runs whether or not
+  the Routine did. `mix brain.session_init` already runs at session start and
+  already reads the bundle; a "no digest for the last N days" line there costs
+  nothing and is read by a session that exists.
 
 ## Current-state tree — the `/create-pull-request` tail
 
@@ -150,22 +228,26 @@ failure. It is prior art for generalizing, not an exception.
 +    report: the SHA and status the read-backs returned, never the merge call's
 ```
 
-Every added line is a distinct call, issued after the action, against the object
-that holds the state, and every one can come back with the wrong answer.
+Every added line is a distinct call, issued after the action, against an object
+**GitHub or the remote produced**, and every one can come back with the wrong
+answer. That is the evidence test passing on all six.
 
-The two smaller flows:
+The two smaller flows — note that `/capture` gets vocabulary, not a check:
 
 ```diff
   /capture, after writing meta/threads/YYYY-MM-DD-<slug>.md
-+   ↳ read back: mix brain.thread_tail <path>
-+      assert: the printed final block matches the session's last delivered block
-+      (the same command already used to find the append boundary — run it after
-+       the write as well as before, and compare against the transcript)
++   ↳ NO fidelity read-back is available — the transcript is the only authority
++      for what was delivered, and it is not readable by the agent.
++   ↳ report the file as WRITTEN, never as FAITHFUL, and say which is meant.
++      (mix brain.thread_tail stays where it is — deriving the *append boundary*
++       before writing, which is a different job it does correctly.)
 
   /research, scheduled fresh-session run, after commit & push
-+   ↳ read back: git ls-remote origin refs/heads/main  (or the PR object)
++   ↳ read back: git ls-remote origin refs/heads/main
 +      assert: the digest commit is reachable; on failure, report loudly rather
 +      than concluding the run succeeded
++   ↳ AND, outside the run: mix brain.session_init reports "no digest for N days"
++      — positive evidence, checked by something that runs when the Routine didn't
 ```
 
 ## File-tree diff
@@ -178,21 +260,27 @@ CLAUDE.md                              # MODIFIED — regenerated by mix brain.c
 .claude/skills/create-pull-request/
   SKILL.md                             # MODIFIED — read-back steps at 5,6,7,9 (P2)
 .claude/skills/capture/
-  SKILL.md                             # MODIFIED — post-write tail read-back (P2)
+  SKILL.md                             # MODIFIED — written-vs-faithful vocabulary,
+                                       #   and why no fidelity check is offered (P2)
 .claude/skills/research/
   SKILL.md                             # MODIFIED — landed-on-main read-back (P2)
+lib/elixir_mind/
+  session_init.ex                      # MODIFIED — "no digest for N days" line,
+                                       #   the out-of-run reconciliation pass (P2)
 meta/flows/
   create-pull-request.md               # MODIFIED — the "no in-repo oracle" line
                                        #   is superseded; record what now checks it
 meta/issues/
-  daily-news-routine-runs-not-landing.md  # MODIFIED — note the read-back step as
-                                       #   the detection mechanism this lacked
+  daily-news-routine-runs-not-landing.md  # MODIFIED — record that an in-run check
+                                       #   cannot cover a run that never fires
 beliefs/
   completion-claims-are-not-evidence-of-completion.md  # NEW — em:674c8f (done)
+  only-what-the-other-side-produced-is-evidence.md     # NEW — em:01abda (done)
 ```
 
-No new `lib/` module and no new gate in P1–P2. That is a decision, not an
-omission — see the rejected alternatives.
+No new module and no new gate in P1–P2 — the only code is a reporting line added
+to the existing `session_init`. That is a decision, not an omission — see the
+rejected alternatives.
 
 ## Boundary decisions
 
@@ -216,6 +304,15 @@ omission — see the rejected alternatives.
   state-change instance of
   [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md): for
   an action, "checked" means read back from the authority.
+- **What counts as an authority**: whatever produced the artifact being read, per
+  [`em:01abda`](/beliefs/only-what-the-other-side-produced-is-evidence.md). A
+  check reading material this session generated does not qualify, and the policy
+  states that as a disqualifier rather than a caution — it is the failure that
+  fails toward *confirmed*.
+- **What the ledger says when no authority exists**: a third value. Where a
+  confirmation is unobtainable, the result is reported as *unverified* with the
+  reason, never rounded up to done — and the policy makes that state cheap to
+  reach, since a grudging middle value collapses back to two.
 - **What stays out**: in-tree state. The gate suite is the batch read-back and is
   not duplicated per-edit.
 
@@ -226,13 +323,19 @@ omission — see the rejected alternatives.
 brevity constraint; the reasoning lives here and in the belief. This alone
 captures most of the value, because it binds every session including ad-hoc ones.
 
-**P2 — the skill steps (no code).** Add the read-backs above to
-`/create-pull-request`, `/capture`, and `/research`, quoting the policy verbatim
-with a `canonical:` marker per the
+**P2 — the skill steps, plus one reporting line.** Add the six read-backs to
+`/create-pull-request`; give `/capture` the written-vs-faithful vocabulary and a
+sentence saying why no fidelity check is offered; add the landed-on-`main` check
+to `/research`. Quote the policy verbatim with a `canonical:` marker per the
 [policy-canonical-skill-guidance plan](/meta/plans/policy-canonical-skill-guidance.md)
 if that plan has landed by then. Update the flow doc's superseded "no in-repo
 oracle" line in the same motion, per
 [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md).
+
+The one code change belongs here rather than in P3: a **"no digest for the last N
+days"** line in `session_init`. It is the out-of-run half of the `/research`
+reconciliation, and without it the skill-side check covers only the failure mode
+that is already the easier one.
 
 **P3 — deferred: derive the close-out ledger instead of recalling it.** The
 work-report tables (*What I created* / *What I modified*) are today composed from
@@ -249,8 +352,10 @@ measured, and the admission rule asks for signal before upkeep.
 
 ## Decisions
 
-**Recommended shape**: one new policy + three skill edits, no new gate, no new
-module. The scoping rule (external state only) is what keeps it that size.
+**Recommended shape**: one new policy + three skill edits + one reporting line,
+no new gate and no new module. The scoping rule (external state only) is what
+keeps it that size; the evidence test is what keeps it honest, by removing a
+check rather than adding one.
 
 **Alternatives rejected:**
 
@@ -261,6 +366,16 @@ module. The scoping rule (external state only) is what keeps it that size.
   already do.
 - *Re-read every file after every write.* Rejected as ceremony — the scoping rule
   above.
+- *Add a `/capture` fidelity check against the written thread doc.* Rejected on
+  the evidence test, having been proposed in this plan's first draft: the reader
+  and the writer are the same context, so the check cannot fail in the case it
+  exists for, and a check that always passes is
+  [worse than none](/beliefs/only-what-the-other-side-produced-is-evidence.md).
+  Replaced by vocabulary — *written*, not *faithful*.
+- *Detect a missing `/research` run with an in-run read-back.* Rejected as
+  insufficient rather than wrong: it covers fire-and-fail, and the observed
+  failure may be never-fire, which no in-run check can reach. Hence the
+  `session_init` line, which runs when the Routine did not.
 - *Treat green CI on the pushed branch as the tail's read-back.* Rejected as
   insufficient: it establishes that a commit reached the remote and passes, not
   that the PR head is that commit, that the stamp shipped, or that the merge
@@ -280,15 +395,24 @@ module. The scoping rule (external state only) is what keeps it that size.
    authority says is precisely the class
    [concerns-block-the-close](/meta/policy/concerns-block-the-close.md) exists to
    stop from landing in a post-merge report.
-2. **Should the `/capture` read-back compare content, or only the tail?** The tail
-   comparison is cheap and mechanical; a full content comparison against the
-   transcript has no oracle and would be editorial. Recommendation: tail only,
-   and say so, rather than implying more coverage than exists.
-3. **Should `em:674c8f` be decomposed into atomic beliefs** (the two-step
+2. ~~Should the `/capture` read-back compare content, or only the tail?~~
+   **Settled by the evidence test** — neither. Both readings are self-produced, so
+   no amount of comparison makes the check evidential. `/capture` gets the
+   *written*/*faithful* distinction instead.
+3. **Does the third state need a name in the ledger, or is prose enough?** The
+   *Actions I have taken · result* column would carry `unverified — <reason>`
+   alongside read-back values. Recommendation: name it, because the source's own
+   finding is that an unnamed middle state gets rounded up to success under
+   pressure. Whether this amends
+   [response-work-report-format](/meta/policy/response-work-report-format.md) or
+   stays inside the new policy is the open half.
+4. **Should `em:674c8f` be decomposed into atomic beliefs** (the two-step
    property; the observability-does-not-substitute claim; the report-the-read-back
    corollary) once
    [`/extract-into-belief`](/meta/plans/extract-into-belief-skill.md) is built?
    Recommendation: yes, but after that skill exists — hand-splitting now would
-   pre-empt the decomposition protocol it is meant to enforce.
-4. **P3's fate.** Recommendation: leave deferred until a recall error in a closing
+   pre-empt the decomposition protocol it is meant to enforce. `em:01abda` was
+   filed separately rather than folded in because it is a different author's
+   different rule, not a conjunct of the first.
+5. **P3's fate.** Recommendation: leave deferred until a recall error in a closing
    ledger is actually observed, then build it against that case.

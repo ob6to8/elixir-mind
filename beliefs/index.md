@@ -57,6 +57,12 @@ why a *value-laden* belief type escapes the collision that ruled out a
   the action, so only a separate read against the system holding the state settles
   it; traces and evals read the agent's account, which never contains the fact.
   The action-side instance of review-is-not-an-oracle. `em:674c8f`
+- [Only what the other side produced is evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md) —
+  the test a read-back must itself pass: a check reading material the acting side
+  generated is testimony, and is worse than no check because it fails toward
+  *confirmed* exactly when the failure it exists to catch has occurred. Carries the
+  absence-of-error corollary and the three-valued outcome. Depends on `em:674c8f`.
+  `em:01abda`
 
 ## Vocabulary & scratch
 

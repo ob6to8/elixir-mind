@@ -509,6 +509,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
+| `em:01abda` | [beliefs/only-what-the-other-side-produced-is-evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md) | belief |  |
 | `em:a96688` | [beliefs/plan-artifacts-compress-decisions-not-bodies](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) | belief |  |
 | `em:6c7e85` | [beliefs/plan-artifacts-surface-implicit-review-decisions](/beliefs/plan-artifacts-surface-implicit-review-decisions.md) | belief |  |
 | `em:d1ba60` | [beliefs/remembered-surfaces-are-forgotten-surfaces](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) | belief |  |
