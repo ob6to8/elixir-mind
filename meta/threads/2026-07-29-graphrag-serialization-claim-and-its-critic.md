@@ -47,7 +47,7 @@ before the operator invoked `/create-pull-request merge`.
 | The GraphRAG serialization claim, its real numbers, and the thread's dispute | closed | [graph-serialization-format-in-the-prompt](/knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt.md) | - |
 | How to adjudicate a self-published benchmark and its critic | closed | [reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | - |
 | Getting a Reddit thread when every direct fetch is blocked | closed | [reddit-thread-when-fetch-is-blocked](/knowledge/knowledge-management/source-acquisition/reddit-thread-when-fetch-is-blocked.md) | - |
-| Headless Chromium cannot reach the network through the agent proxy | open | `unrouted` | Chromium resets on every host including `example.com` while curl succeeds; whether this is fixable from the session side is unknown, and it removes browser rendering as a fallback for any client-rendered source. |
+| Headless Chromium cannot reach the network through the agent proxy | open | [headless-chromium-cannot-reach-the-network-through-the-agent-proxy](/meta/issues/headless-chromium-cannot-reach-the-network-through-the-agent-proxy.md) | Undiagnosed — three launch variants and a proxy-status read taken during a failing navigation are the tracked next step. |
 | Dedup gold set and baseline refresh | closed | `unrouted` | - |
 | Committing, opening, and merging the pull request | open | `unrouted` | Awaiting this session's `/create-pull-request merge` steps 4–9. |
 
