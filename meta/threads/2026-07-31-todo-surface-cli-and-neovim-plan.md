@@ -6,6 +6,7 @@ provenance: "Claude Code session (claude-sonnet-5, switched to claude-opus-5 mid
 tags: [meta, thread, todos, neovim, editor-integration, cli, ndjson, elixir-tooling, planning]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01RMxto949nCMPrJimKDALg6
+pr: 207
 ---
 
 # 2026-07-31-todo-surface-cli-and-neovim-plan
