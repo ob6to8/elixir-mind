@@ -1318,10 +1318,11 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
   `attribution` (machine-enforced exempt), anchored by date rather than inbound
   links, outside the taxonomy — the operator's synthesis practice, on the record
-  layer. `/journal list` reviews recent entries; a response to an entry is produced
-  only when asked, delivered in chat and persisted verbatim below the entry under a
-  marked `## Response` heading — operator voice above, agent voice below, never
-  interleaved. See `.claude/skills/journal/SKILL.md`.
+  layer. `/journal list` reviews recent entries; every filed entry receives a
+  two-part response by default — an editorial read, then a substantive follow-up
+  (the operator opts out per entry: "file only") — delivered in chat and persisted
+  verbatim below the entry under a marked `## Response` heading — operator voice
+  above, agent voice below, never interleaved. See `.claude/skills/journal/SKILL.md`.
 - **`/ban-phrase`** — add an operator-flagged word or phrase to the
   [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
   generalized pattern, the reasoning from the flagging exchange, and a recast),

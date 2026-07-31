@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -105,10 +105,11 @@ attribution:
   a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
   `attribution` (machine-enforced exempt), anchored by date rather than inbound
   links, outside the taxonomy — the operator's synthesis practice, on the record
-  layer. `/journal list` reviews recent entries; a response to an entry is produced
-  only when asked, delivered in chat and persisted verbatim below the entry under a
-  marked `## Response` heading — operator voice above, agent voice below, never
-  interleaved. See `.claude/skills/journal/SKILL.md`.
+  layer. `/journal list` reviews recent entries; every filed entry receives a
+  two-part response by default — an editorial read, then a substantive follow-up
+  (the operator opts out per entry: "file only") — delivered in chat and persisted
+  verbatim below the entry under a marked `## Response` heading — operator voice
+  above, agent voice below, never interleaved. See `.claude/skills/journal/SKILL.md`.
 - **`/ban-phrase`** — add an operator-flagged word or phrase to the
   [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
   generalized pattern, the reasoning from the flagging exchange, and a recast),
