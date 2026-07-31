@@ -2,7 +2,7 @@
 type: plan
 title: "Repair the route-tag orphan check: an assignment-as-filter makes the no-such-thread branch unreachable"
 description: The log-fidelity orphan clause in ElixirMind.RouteTags binds `t = by_slug[slug]` inside a comprehension, where a bare assignment acts as a filter — so a block naming a thread that does not exist is dropped before the `t == nil` test runs, and a hand-written excerpt block passes the gate.
-status: proposed
+status: done
 provenance: "model undisclosed"
 tags: [meta, plan, route-tags, verifier, gate-suite, elixir, dead-code]
 timestamp: 2026-07-31
@@ -14,6 +14,19 @@ attribution:
 ---
 
 # Repair the route-tag orphan check
+
+## Outcome
+
+**Done**, executed in the session that filed it, in the planned order. The
+regression test failed first with `log fidelity :ok` over a fabricated block;
+the sentinel lookup turned it green and simultaneously turned
+`mix brain.route_tags` **red on the live bundle** —
+`em:712e01: block for 2026-07-31-agent-says-done-reconciliation-patterns but no
+such thread` — which is the check firing for the first time. Rewriting that
+block as body prose returned the suite to green at 189 tests.
+
+The open question below (does the same assignment-as-filter shape appear
+elsewhere in `lib/`?) was **not** swept and remains open.
 
 ## The problem
 

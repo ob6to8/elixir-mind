@@ -56,6 +56,37 @@ working-through, with the mechanism that generates the record as a side effect
 of normal supervision, is the agent-pairing project's
 [observability-as-compliance analysis](/projects/agent-pairing/compliance-and-governance-observability.md).
 
+## The same distinction, arrived at from operations
+
+Practitioners running agents against real systems reach this boundary from the
+other side, without the compliance framing: an agent reports a refund issued, the
+run is clean, and the billing system holds no such refund. The operational
+statement of the problem is that a trace is
+[testimony rather than evidence](/knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns.md) —
+"task completed" and "state changed" are different signals, and observability
+instruments only the first. What is missing is not more recording but
+**reconciliation**: a read-back from the system of record, which is the only step
+in the loop the agent does not narrate.
+
+Three refinements from that experience sharpen the concept:
+
+- **The verifier can be testimony too.** A check the agent generates from its own
+  rendering of a page proves nothing — one operator's DOM-based confirmation check
+  matched a node that renders identically on success and on validation failure,
+  so it returned true precisely when a false was needed. Evidence has to be
+  something the counterparty produced: an id they minted, a response they
+  returned, a message they sent.
+- **Absence of error is not evidence.** A run in which no request ever left the
+  client and a run in which every request succeeded are indistinguishable in a log
+  that records only failures.
+- **The claim state must be earned, not defaulted.** A system that cannot obtain
+  external confirmation should report `pending`, never `done` — and `pending`
+  should be the easier state to reach.
+
+This is the completeness gap above, restated at the level of a single action: the
+record is honest only about the stream it observes, and an action path that
+produces no external artifact leaves the record pristine.
+
 ## Thread excerpts — route-tagged log
 
 Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:712e01">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
@@ -67,11 +98,3 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 **[`em:712e01`]**  (co-feeds: `em:24c203`)
 
 **Compliance/governance.** The broker log is a different *kind* of record from a trace, not a better one: a trace is descriptive (what the agent did), the acknowledgement protocol's log is **normative** (what was authorized, by whom, with what reason, what was amended first). That's the artifact "meaningful human oversight" obligations actually ask for, and today it exists nowhere below the PR-approval boundary. Discipline-level effect: the unit of observability moves from the trace to the decision, and auditing shifts to verifying the instrumentation. Two failure modes hollow it out — rubber-stamping (visible as collapsing ack latencies, and Goodhartable) and ungated action paths. Recommendation: don't build for compliance, but take the two free enablers — append-only typed records and posture stamping. I flagged the regulatory mapping as directional from training knowledge.
-
-### 2026-07-31-agent-says-done-reconciliation-patterns (2026-07-31)
-
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
-
-**[`em:712e01`]**
-
-**Practical evidence from operators.** Reddit operators comparing notes on the exact problem this concept names: agents claiming completion without state actually changing in downstream systems (refunds marked done but billing unchanged, tickets closed but no action taken). The core finding repeated across practitioners: "trace is testimony rather than evidence" — the only part of a loop that isn't agent-narrated is the read-back from the system of record. Patterns that work: (1) Write-verify as separable steps, never trust completion claims from the same context that made them; (2) Make every write tool return a read-back (re-fetch the field that should have changed) not just a status code; (3) For async writes with no read path (email), delayed reconciliation pass against source of truth; (4) Evidence must come from the other system (their response, id they minted, email they sent), not from signals the agent generated. Failure modes: verification steps can be testimony too (matching DOM elements that render identically on success and validation-failure states). The sharp version is "absence of error is not evidence" — a clean run (no errors logged) and a run where no network calls fired look identical if you only record failures.
