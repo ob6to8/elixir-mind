@@ -775,6 +775,11 @@ Rules enforced (each violation is a human-readable error string):
      backfill rule — `from` appears on governance docs only and every ref
      resolves, exempt files carry no attribution, and (once the backfill
      lands) every bundle concept and governance doc carries the field.
+  9. Every `visualization` names its artifact in `launch`, and that artifact
+     exists on disk beside it: a bare `.html` filename, never a path or URL,
+     so the pair travels together and the launch link cannot dangle. The
+     field is an error on any other type — nothing else has an artifact to
+     launch.
 
 **Functions**
 

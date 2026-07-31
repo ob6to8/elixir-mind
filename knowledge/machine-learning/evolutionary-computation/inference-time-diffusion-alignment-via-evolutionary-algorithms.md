@@ -185,6 +185,11 @@ than derived formulas.
 
 ## Relation to other captures
 
+Five of this paper's claims are manipulable directly in
+[Evolutionary search in a diffusion model's latent space](/knowledge/machine-learning/evolutionary-computation/evolutionary-search-in-latent-space.md)
+— the Gaussian shell, the rotation invariance, the crossover proof, the
+GA/ES diversity contrast, and reward-as-similarity.
+
 Intake'd alongside
 [Circles, Sines, and Signals](/knowledge/knowledge-management/technical-communication/circles-sines-signals.md)
 and the

@@ -112,9 +112,10 @@ not a built demonstration — no widget above has been implemented.
 
 ## Demonstrations in this bundle
 
-None yet — this method has not been used to build an artifact in this
-bundle. The worked sketch above is the candidate build list, should the
-operator want one turned into an actual interactive artifact.
+- [Evolutionary search in a diffusion model's latent space](/knowledge/machine-learning/evolutionary-computation/evolutionary-search-in-latent-space.md)
+  — the sketch above, built: all five widgets as one launchable
+  `type: visualization` page. Widgets 1–3 compute the paper's equations
+  directly; widgets 4–5 are labeled stand-ins on the page itself.
 
 # Citations
 
