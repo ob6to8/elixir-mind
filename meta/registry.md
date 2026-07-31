@@ -607,6 +607,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:53f32a` | [knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions](/knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions.md) | reference |  |
 | `em:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
 | `em:8a9ed7` | [knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam](/knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam.md) | reference |  |
+| `em:c55c81` | [knowledge/SWE/agentic/anthropic/claude-code/model-selection-and-delegation](/knowledge/SWE/agentic/anthropic/claude-code/model-selection-and-delegation.md) | reference |  |
 | `em:02731b` | [knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | reference |  |
 | `em:564b8e` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-credentials-outside-sandbox.md) | source |  |
 | `em:eb418b` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-environment-caching.md) | source |  |
