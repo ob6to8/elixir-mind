@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-07-31; verbatim retaine
 tags: [meta, thread, intake, herdr, cmux, terminal, terminal-multiplexer, libghostty, dev-tools]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01UKJddToWvJYDBzMKmU6JCW
+pr: 202
 ---
 
 # 2026-07-31-herdr-cmux-terminal-tool-comparison-intake
