@@ -25,8 +25,20 @@ the sentinel lookup turned it green and simultaneously turned
 such thread` — which is the check firing for the first time. Rewriting that
 block as body prose returned the suite to green at 189 tests.
 
-The open question below (does the same assignment-as-filter shape appear
-elsewhere in `lib/`?) was **not** swept and remains open.
+The open question below — does the same assignment-as-filter shape appear
+elsewhere in `lib/`? — was **swept and closed**. Across 13 comprehensions in 5
+files (`glossary`, `contract`, `dedup_probe`, `site`, `route_tags`), three
+assignments sit inside a comprehension and all are in `route_tags.ex`: `:431`
+(the sentinel fix), `:421` (`Enum.filter/2` returns a list, and `[]` is truthy —
+safe), and `:419` (`block = get_in(…)`, which *is* the same shape and *is* a
+filter, but benignly: the divergent clause wants only pairs whose block exists,
+and a missing block is `check_sink_logs`' business).
+
+`:419` leaves a fingerprint worth recognizing in future review: the next line,
+`block != nil`, can never be false, because the assignment already dropped those
+rows. A redundant nil-guard immediately after an assignment in a comprehension
+is the signature of this misreading — the author wrote the check the semantics
+had silently already applied. It is left in place; deleting it buys nothing.
 
 ## The problem
 
