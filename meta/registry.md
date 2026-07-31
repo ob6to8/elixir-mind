@@ -272,6 +272,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
 | `em:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
+| `em:5dec1d` | [beliefs/glossary/libghostty](/beliefs/glossary/libghostty.md) | concept | false |
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
 | `em:564fb9` | [beliefs/glossary/living-surface](/beliefs/glossary/living-surface.md) | concept | false |
