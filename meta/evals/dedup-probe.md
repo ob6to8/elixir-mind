@@ -85,6 +85,8 @@ being mechanically rewritten.
 | a convincing influencer and an ai engineer who is clearly calling them out for misrepresentation, or ineptness | em:c81829 em:1f1256 | target | self-published benchmark; benchmark rigor; graph serialization format | harvested at intake 2026-07-29 |
 | compare herdr vs warp vs cmux vs tmux vs ghostty vs superlogical, and evaluate the use of libghostty | em:eb9f29 em:16581e | target | herdr vs cmux vs tmux vs ghostty comparison; agent-aware terminal multiplexer; libghostty-based mac terminal for coding agents | harvested at intake 2026-07-31 |
 | the new microsoft skillopt repo and documentation | em:42648b | target | skillopt; text-space optimizer for agent skills; training a skill.md as a trainable parameter; prompt optimization with a validation gate | harvested at intake 2026-07-31 |
+| the evolutionary algorithms paper | em:da2ffb | target | diffusion model evolutionary alignment; inference-time diffusion alignment; evolving latent noise for diffusion models | harvested at intake 2026-07-31 |
+| the circles-sines-signals interactive educational displays | em:4956f3 | target | circles sines and signals; jack schaedler dft explorable; interactive DFT teaching resource | harvested at intake 2026-07-31 |
 
 ## Baseline
 
@@ -98,8 +100,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 26 |
-| expanded | 23 | 26 |
+| plain | 8 | 28 |
+| expanded | 23 | 28 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
