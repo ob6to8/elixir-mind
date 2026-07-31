@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-07-29 to 2026-07-31; verb
 tags: [meta, thread, verification, read-back, belief, plan, intake, evidence, dating-error]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01DVYRTueTVHEGm2q2RuhhTf
+pr: 209
 ---
 
 # 2026-07-29-post-action-readback-belief-and-plan
