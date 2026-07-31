@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, post-action-verification session"
   why: "the read-back prior filed as em:674c8f names a practice with no home in this repo's flow; the gap it closes is concentrated in the git/GitHub tail, and the change proposes a new contract-compiled policy, which is the operator's to ratify"
+  from: [/meta/threads/2026-07-29-post-action-readback-belief-and-plan.md]
 ---
 
 # Post-action read-back: confirm state changes against the source of truth

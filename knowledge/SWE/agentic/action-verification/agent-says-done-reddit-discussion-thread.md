@@ -243,3 +243,23 @@ solicits DMs twice, so the thread's apparent breadth of agreement is smaller tha
 its comment count suggests. Three of the substantive contributors disclose that
 they build in the space; u/Shape_Weird marks the disclosure explicitly and frames
 the account as "my own scar tissue rather than a survey."
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b01e03">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-post-action-readback-belief-and-plan (2026-07-29)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:b01e03`]**
+
+Filed. The thread now lives in the bundle as a verbatim `type: source` capture, following the pattern the ISNAD thread set one directory over — post and comments reproduced as pasted, usernames and relative timestamps intact, with a note on what was stripped.
+
+Keeping the full text is load-bearing here rather than a default indulgence. Reddit returns 403 to unauthenticated reads over every route tried, so a reader following the `resource` URL hits a login wall — this capture is the only reachable copy, which is precisely the case [link-processing](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/link-processing.md) carves out for persisting the text alongside the link.
+
+**Directory call.** I created `knowledge/SWE/agentic/action-verification/`. Confirming an agent's actions landed is a different question from [provenance](https://github.com/ob6to8/elixir-mind/blob/main/knowledge/SWE/agentic/provenance/index.md) (grading *claims* moving through a pipeline) and from evals (scoring output quality) — and the thread's own argument is that the eval layer structurally cannot answer it. Subdirectories under an established top-level are autonomous under the taxonomy protocol, so I made the call rather than blocking; the naming is reversible if you'd rather it sat in `agentic-loop/`.
+
+**Cross-links go both ways.** The capture points forward to `em:674c8f`, `em:01abda`, and the plan, naming which commenter each prior came from; those three, plus the new directory index, point back. It also notes the sibling ISNAD thread — same subreddit, same week, opening on the same silent-failure observation but answering it at the claim layer rather than the action layer.
+
+The capture closes with a short reading note on the thread as evidence: four practitioners contribute substantive positions, three of whom disclose building in the space, and one account replies approvingly to nearly every top-level comment while soliciting DMs — so the apparent breadth of agreement is smaller than the comment count.

@@ -140,3 +140,35 @@ distinction hard to blur: manjit-johal's "**'task completed' and 'state changed'
 are completely different signals**", and ticktockbent's design rule that a
 completion must be anchored on a tool-use receipt — "anchor the agent's 'done' on
 something that isn't vibes."
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:674c8f">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-post-action-readback-belief-and-plan (2026-07-29)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:674c8f`]**
+
+The quote says: don't believe an agent when it says it did something — go look at the thing it claims to have changed. I filed that as a belief, then looked at where this repo is actually exposed to it.
+
+---
+
+**[`em:674c8f`]**  (co-feeds: `/meta/plans/post-action-readback-in-the-development-flow.md`)
+
+**A read-back is owed where the state is outside the working tree, or where nothing downstream re-derives it. Where a later step already recomputes the state from the authority, that step *is* the read-back.**
+
+That partitions the flow cleanly — seven categories of state are already covered by the gate suite, five are taken on the acting call's word. All the work is in the second group, which is why the proposal is one policy plus three skill edits, **no new gate and no new module**. A gate can't cover this anyway: the state is external, which fails the toolchain's offline admission rule, and a gate runs *before* the action it would need to follow.
+
+One piece of prior art already exists and generalizes cleanly — step 9 of `/create-pull-request` says a check-run can report `in_progress` for a finished job, so consult the job itself because *"its `status`/`conclusion` and per-step timings are authoritative."* That's a read-back against a more authoritative source, written to fix a stale-read failure.
+
+I dogfooded it on this change: after pushing, I read the ref back off the remote rather than trusting the push's exit code. Local HEAD and remote ref both `78b9699`.
+
+---
+
+**[`em:674c8f`]**
+
+Three independent routes all refuse: WebFetch (blocked at the proxy), direct `curl` (HTTP 403), and a third-party reader service (HTTP 403, relayed body: *"You've been blocked by network security. To continue, log in to your Reddit account or use your developer token"*). Reddit is refusing unauthenticated reads of that thread, so this is not a sandbox quirk — no retry from here will succeed. It needs your paste.
+
+That makes the provenance line I filed misleading in a way that matters: it blames WebFetch, which would invite a future session to retry from a different environment. Corrected to name the actual cause.

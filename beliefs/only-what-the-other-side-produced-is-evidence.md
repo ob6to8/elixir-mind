@@ -108,3 +108,33 @@ own instance. It binds wherever a check is designed: the question to ask of any
 proposed verification is not "is this check accurate?" but "who produced the thing
 this check reads?" — and where the answer is *we did*, the check reports what was
 already believed, in the case where that belief is wrong.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:01abda">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-29-post-action-readback-belief-and-plan (2026-07-29)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:01abda`]**
+
+The full thread carried something the excerpt didn't, and it made the plan smaller rather than bigger: it supplied a test that one of my own proposed checks fails.
+
+The excerpt was one commenter's (u/ocean_protocol) prescription. A different commenter, u/Shape_Weird, gives the rule that constrains it — **evidence has to be something the other side produced that you could not have produced yourself**, learned from a verifier that matched a confirmation element in a page, until it turned out the same component renders for "thanks, we got it" and "fix these fields": *"the check returned true exactly in the case where i most needed a false. that is worse than having no check, because it converts an unknown into a confident wrong answer."*
+
+---
+
+**[`em:01abda`]**  (co-feeds: `/meta/plans/post-action-readback-in-the-development-flow.md`)
+
+Run that test over my six proposed read-backs and five pass — a remote ref advertisement, a PR record, a GitHub-minted merge SHA, a branch list, a runner's job conclusion are all things the other side produced. The sixth fails. I had proposed that `/capture` re-read the thread doc it just wrote and compare the tail against the session's last delivered block. But the thread doc is a file this session wrote from its own context, so the check cannot fail in the case it exists for — a capture that silently dropped exchanges is absent from both the render *and* the reader. u/donk8r says the same thing about his own product in the thread, and it lands directly on this brain's record layer:
+
+> "Our session logs are append only and complete, and they're still only the agent's account of its own actions, which is precisely the thing you can't verify with."
+
+So capture fidelity has no available oracle here — the transcript is the only authority and the contract already notes the `session:` URL is *"unreadable by agents"*. The plan now proposes vocabulary instead of a check: report the thread doc as **written**, never as **faithful**, and say which is meant. That settles an open question I'd left on cost grounds, on principle instead.
+
+---
+
+**[`em:01abda`]**
+
+One caveat on the thread as evidence: u/ApprehensiveCar6879 replies approvingly to nearly every top-level comment and solicits DMs, so the apparent consensus is four practitioners, not eight. That's in the belief's provenance.
