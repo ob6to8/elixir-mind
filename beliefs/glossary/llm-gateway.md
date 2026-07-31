@@ -30,6 +30,6 @@ underlying model — or the gateway itself — is typically a base-URL-and-key c
 which is what makes a gateway the pragmatic hedge against
 [provider lock-in](/beliefs/glossary/provider-lock-in.md).
 
-*Seen in:* [2026-07-21 multi-model dev environment thread](/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md), [provider-agnostic coding-agent tooling note](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md), [cross-model PR review GitHub Action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md)
+*Seen in:* [2026-07-21 multi-model dev environment thread](/meta/threads/2026-07-21-multi-model-dev-environment-and-cross-model-pr-review.md), [provider-agnostic coding-agent tooling note](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md), [cross-model PR review GitHub Action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md), [2026-07-31 GitLord intake thread](/meta/threads/2026-07-31-gitlord-git-backed-agent-orchestration-intake.md)
 
 *See also:* [OpenAI-compatible API](/beliefs/glossary/openai-compatible-api.md), [provider lock-in](/beliefs/glossary/provider-lock-in.md), [model cascade](/beliefs/glossary/model-cascade.md)
