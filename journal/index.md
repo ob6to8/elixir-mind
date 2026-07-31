@@ -9,6 +9,14 @@ operator's voice is kept faithful; only dictation noise is cleaned.
 
 ## Entries
 
+- [2026-07-29](/journal/2026-07-29.md) — Dopamine without effort as the
+  addiction mechanism LLMs promise to trigger, the genie narrative read as a
+  parable of effort-bypass, and why pure automation defeats the reward system
+  it would serve.
+- [2026-07-28](/journal/2026-07-28.md) — The operator's methodology to date —
+  fast-paced, plan-punting, implementation-detail-accepting — and the
+  intentional transition to a comprehension-and-auditing approach that combs
+  the whole repo and bakes understanding into the knowledge base.
 - [2026-07-27](/journal/2026-07-27.md) — Second brains as avatars of their
   operators — the brain/mind distinction as framework-induced alignment,
   abandoning the product framing in favor of a single-operator avatar, why

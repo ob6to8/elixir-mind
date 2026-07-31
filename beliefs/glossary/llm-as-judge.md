@@ -30,4 +30,12 @@ which makes each genuinely new pretraining lineage (e.g.
 [Inkling](/beliefs/glossary/inkling.md)) an oversight resource, not just a
 contestant.
 
-*Seen in:* [decompose-then-verify factuality reference](/knowledge/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition plan](/meta/plans/belief-decomposition-analysis-mode.md), [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md), [2026-07-16 evals-landscape spike thread](/meta/threads/2026-07-16-inkling-evals-landscape-spike.md) (judge diversity against correlated error; fine-tuned judges as the evals industry's product)
+Even a single judge is stronger with a
+[control](/beliefs/an-instrument-without-a-control-measures-itself.md): anchor
+it to a small set of answers already scored by hand, and re-check the judge
+against that anchor on a cadence (e.g. weekly) rather than trusting its
+verdicts to stay calibrated indefinitely. This catches judge drift the same
+way a control case catches a broken measurement harness — the anchor set is
+a known answer the judge must keep reproducing.
+
+*Seen in:* [decompose-then-verify factuality reference](/knowledge/SWE/evals/decompose-then-verify-factuality.md), [belief-decomposition plan](/meta/plans/belief-decomposition-analysis-mode.md), [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md), [2026-07-16 evals-landscape spike thread](/meta/threads/2026-07-16-inkling-evals-landscape-spike.md) (judge diversity against correlated error; fine-tuned judges as the evals industry's product), [Split retrieval and generation evaluation for RAG](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) (the human-anchored calibration cadence)
