@@ -5,7 +5,7 @@ title: Dvorak vim
 description: A layout-aware vim reference and drill system for Dvorak typists learning stock vim — every binding shown as the command character plus the QWERTY keycap that produces it, served inside the editor where the question is actually asked, and paired with latency-graded drills that build the isolated character-to-key association prose typing never trains.
 status: incubating
 tags: [projects, vim, neovim, dvorak, keyboard-layouts, spaced-repetition, reference-tooling]
-timestamp: 2026-07-30
+timestamp: 2026-07-31
 attribution:
   when: 2026-07-30T00:00:00Z
   channel: agent-authored
@@ -111,28 +111,76 @@ it exercises.
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| Notation order | command character, then keycap in parens | the character is the key the reader arrives with, having read it in a vim doc; the keycap is what they are looking up |
+| Notation order | command character, then keycap in parens — `u (f)` | the character is the key the reader arrives with, having read it in a vim doc; the keycap is what they are looking up. Operator-confirmed |
+| Second element | the QWERTY keycap label | the target hardware is a MacBook's built-in QWERTY-engraved keyboard with Dvorak set in software, so the label is readable off the key. Row-and-finger is the fallback for Dvorak-engraved or blank keycaps, and the mapping table already carries it |
 | Primary surface | in-editor, one keystroke away | the reference competes with a scratch buffer on latency, and any surface reached by leaving the editor loses that comparison |
 | Drill metric | response latency, banded | correctness scores the operator as fluent on exactly the bindings that stall them |
 | Learn stock vim | yes; the layout adapts, the bindings do not | remapping `hjkl` to the Dvorak home row restores adjacency but forfeits every `:help` page, plugin default, tutorial, and unconfigured machine — the reference exists precisely so stock stays viable |
 | Host editor | Neovim | drills need real vim semantics to be worth anything, the reference needs to be in the editor anyway, and Lua makes both one plugin instead of two programs |
 | Layout data | separate from binding data | the binding set is vim's; the mapping is the layout's — see [the positional mapping](/knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping.md), which other layouts can slot into unchanged |
 
+## Prior art
+
+The genre is populated, and it splits cleanly along the same seam this project
+proposes to cross. Every layout-aware artifact is a **static diagram**; every
+drill tool is **layout-blind**.
+
+**Layout-aware references — all static, all outside the editor:**
+
+| Artifact | Form | Layouts |
+|---|---|---|
+| [mattmc3/neovim-cheatsheet](https://github.com/mattmc3/neovim-cheatsheet) | Google Sheets, printable | Dvorak, Programmer Dvorak, Colemak (+DH), Workman, Norman, Carpalx, Minimak |
+| [smt.io Dvorak edition](https://www.smt.io/posts/vim-cheat-sheet-for-programmers-dvorak-edition/) | PDF | Dvorak |
+| [Wikimedia "Cheatsheet Vim with programming Dvorak"](https://commons.wikimedia.org/wiki/File:Cheatsheet_Vim_with_'programming_Dvorak'_layout.png) | PNG | Programmer Dvorak |
+
+`neovim-cheatsheet` is the closest existing thing to the reference half, and it
+describes itself as "a modern and customizable take on the excellent viemu
+cheat sheet, supporting QWERTY as well as alternative keyboard layouts such as
+Colemak and Dvorak". It is a keyboard *diagram* rendered per layout — precisely
+the overlay artifact this project's premise identifies as the thing that goes
+unconsulted, because reaching it costs more than the scratch-buffer workaround.
+Its existence confirms the demand; its form is the gap.
+
+**The remapping school** — the other answer to the same problem, taken by
+[danalexilewis/vim-dvorak](https://github.com/danalexilewis/vim-dvorak),
+[njcom/hjkl-remap](https://github.com/njcom/hjkl-remap),
+[tendertree/nforcolemak](https://github.com/tendertree/nforcolemak) (the
+Colemak equivalent), and
+[jbranso/evil-dvorak](https://github.com/jbranso/evil-dvorak) for Emacs. Vim
+also ships stock support here: `langmap`, and a `$VIMRUNTIME/macros/dvorak`
+macro, with `langmap` reportedly translating in insert, search, and command
+modes while leaving normal-mode navigation alone. That last detail is from
+search results, unverified against `:help langmap` — check before relying on
+it, since a stock `langmap` posture would be a real alternative to this
+project's whole premise.
+
+**Drill tools — none layout-aware, none latency-graded:**
+
+| Tool | Grading | Layout awareness |
+|---|---|---|
+| [matt-savvy/vim-gym](https://github.com/matt-savvy/vim-gym) | self-reported 0–5, then SR scheduling | none — the README does not mention any layout |
+| [S-Sigdel/vimhjkl](https://github.com/S-Sigdel/vimhjkl) | correctness + keystroke count against "a verified par"; Leitner box | remapped keys are "graded as the original", which is remap support rather than layout awareness |
+| [dahu/vim-sm2](https://github.com/dahu/vim-sm2) | SM2 in pure VimL — a component, not a trainer | none |
+| [VimGym](https://www.vimgym.dev/), [KeyCombiner](https://keycombiner.com/vim/), ShortcutFoo | web trainers, correctness-based | none |
+
+`vimhjkl` is the strongest of these and worth reading before building mode 3 —
+grading against a verified optimal keystroke count is a better idea than
+anything in the drill plan, and should be borrowed. Neither it nor `vim-gym`
+measures response time: `vim-gym` asks the learner to self-report, which is the
+input this project's scoring rule specifically excludes, and `vimhjkl` scores
+efficiency, which is a different axis from hesitation.
+
+**The unoccupied position**, then, is the intersection: layout-aware *and* a
+drill, in-editor, with latency as the grade and the isolated character as a
+drillable unit. Scope of that negative finding — six web searches (vim/Dvorak
+plugins and remapping, Dvorak vim cheatsheets, vim spaced-repetition trainers,
+layout-aware Neovim plugins, keybinding-display plugins) plus direct reads of
+the `neovim-cheatsheet`, `vim-gym`, and `vimhjkl` READMEs. Not searched: the
+Neovim plugin registries (dotfyle, awesome-neovim) by name, or a systematic
+GitHub topic sweep.
+
 ## Open questions
 
-- **The notation's direction, confirmed against the operator's example.** The
-  operator wrote `f (u)` glossed as "`f` in dvorak, `u` in standard". Those two
-  characters are a real pair in the mapping, but in the other direction: the
-  key labelled `f` produces the character `u`, so the same pair written under
-  the convention above is `u (f)` — vim's undo, on the keycap marked `f`. The
-  hub adopts character-first throughout; if the intended reading was
-  keycap-first, one line of the data flips and every generated surface follows.
-- **What the hardware says.** The whole scheme assumes QWERTY-labelled keycaps
-  under a software Dvorak layout. Dvorak-engraved keycaps or blank ones would
-  make the parenthesized half useless, and the second element should then be a
-  positional descriptor — row and finger, which
-  [the mapping table](/knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping.md)
-  already carries — instead of a label.
 - **Scope of the binding set.** Stock normal-mode motions and operators are the
   obvious core. Whether it extends to visual mode, ex commands, and the
   operator's own plugin bindings determines whether the data file ships fixed

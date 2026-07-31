@@ -5,7 +5,7 @@ title: "Dvorak vim — the drill engine"
 description: Design for the practice half of the project — three escalating drill modes (isolated character, semantic recall, in-buffer execution) that train the isolated character-to-key association prose typing never exercises, scored on response latency rather than correctness because the reported failure is the stall and not the error.
 status: proposed
 tags: [projects, vim, neovim, dvorak, spaced-repetition, drills, lua, planning]
-timestamp: 2026-07-30
+timestamp: 2026-07-31
 attribution:
   when: 2026-07-30T00:00:00Z
   channel: agent-authored
@@ -144,6 +144,22 @@ function scheduler.due(limit) end
 ---@return Review
 function modes.present(item) end
 ```
+
+## What to borrow
+
+[S-Sigdel/vimhjkl](https://github.com/S-Sigdel/vimhjkl) already solves mode 3
+better than the sketch above does. It captures keystrokes with `vim -W` and
+scores them "on correctness and efficiency against a verified par", passing an
+attempt within 2× the optimal keystroke count, over a Leitner-box schedule with
+six presentation modes. The verified-par idea should be lifted directly rather
+than re-derived; what it does not supply is any layout awareness or any timing,
+which is where this engine adds something.
+
+[matt-savvy/vim-gym](https://github.com/matt-savvy/vim-gym) is the counterpoint
+worth keeping in view: it prompts the learner to "enter a score from 0-5" and
+schedules from that. Self-report is the input the scoring rule above excludes,
+so `vim-gym` is a working demonstration of the failure mode rather than a
+component to reuse.
 
 ## Boundary decisions
 

@@ -5,7 +5,7 @@ title: "Dvorak vim — the keybinding reference"
 description: Design for the reference half of the project — the command-character-plus-keycap notation, the layout/binding data split that keeps vim's binding set independent of any one layout, the three query directions (semantic, by-command, reverse-by-keycap), and the peek-key surface that beats a scratch buffer at answering "which key is that".
 status: proposed
 tags: [projects, vim, neovim, dvorak, reference-tooling, lua, planning]
-timestamp: 2026-07-30
+timestamp: 2026-07-31
 attribution:
   when: 2026-07-30T00:00:00Z
   channel: agent-authored
@@ -150,7 +150,8 @@ function query.reverse(label, shift, layout) end
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| Notation | `keys (labels)` — command first | the reader arrives holding the command, having read it in a vim doc |
+| Notation | `keys (labels)` — command first, `u (f)` | the reader arrives holding the command, having read it in a vim doc. Operator-confirmed |
+| Label source | the QWERTY engraving | target hardware is a MacBook's built-in QWERTY keyboard with Dvorak set in software |
 | Multi-key rendering | concatenate both halves, `dw (h,)` | keeps one token per command instead of a per-key table the eye has to reassemble |
 | Shift rendering | uppercase the label, `: (Z)` | shows the physical action rather than the character, which is what the finger needs |
 | Control and leader keys | passed through unannotated | `<C-o>` is layout-stable in the part that matters and annotating it adds noise |
@@ -158,8 +159,6 @@ function query.reverse(label, shift, layout) end
 
 Open:
 
-- **Notation direction** — inherited from the hub's first open question and
-  unresolved until the operator confirms; it is one line in `annotate.render`.
 - **Semantic ranking** — whether `terms` hand-curated per binding is enough, or
   the query needs fuzzy matching over `:help` text pulled in at build time.
 - **Peek-key capture in insert mode** — `getcharstr()` covers normal mode
