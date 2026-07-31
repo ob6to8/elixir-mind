@@ -5,7 +5,7 @@ title: A completion claim is not evidence of completion
 description: An agent's report that an action succeeded is a statement produced by the same context that made the action, so it carries no information about the resulting state — only a separate read against the system that holds the state does, which makes the write and the read-back two steps rather than one.
 depends_on: [em:2ecdd2]
 resource: "https://www.reddit.com/r/AgentsOfAI/comments/1v87nmh/your_agent_says_done_you_check_and_nothing/"
-provenance: "r/AgentsOfAI thread \"your agent says done, you check and nothing\" — quoted text as supplied verbatim by the operator; the page could not be fetched from this sandbox (WebFetch refuses www.reddit.com and old.reddit.com), so the wording is unverified against the original and the quote is attributed to the thread rather than to a named author"
+provenance: "r/AgentsOfAI thread \"your agent says done, you check and nothing\" — quoted text as supplied verbatim by the operator; the wording is unverified against the original and the quote is attributed to the thread rather than to a named author, because Reddit refuses unauthenticated reads of the page (HTTP 403, \"blocked by network security … log in or use your developer token\") over all three routes tried: WebFetch, direct curl to the .json endpoint, and a third-party reader service. Retrieval needs an authenticated fetch or an operator paste, not a different sandbox"
 tags: [belief, verification, agent-output, epistemics, observability, tooling, workflow]
 timestamp: 2026-07-29
 attribution:
