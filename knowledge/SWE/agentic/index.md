@@ -18,5 +18,6 @@ and the practices they change.
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
 - [multi-model](/knowledge/SWE/agentic/multi-model/index.md) — working across multiple model providers in coding-agent workflows: escaping single-provider lock-in while keeping the dev ergonomics
 - [provenance](/knowledge/SWE/agentic/provenance/index.md) — trust and provenance layers for content moving through multi-agent pipelines: grading transmitters, chain trust, and corroboration
+- [skill-optimization](/knowledge/SWE/agentic/skill-optimization/index.md) — optimizing an agent's instruction/skill file against a score rather than authoring it by judgment: text-space optimizers, edit budgets, and held-out gates
 - [supervision](/knowledge/SWE/agentic/supervision/index.md) — how a human stays in the loop over agent work: the postures available, the consoles built for them, and what makes agent activity legible enough to act on
 - [supply-chain-security](/knowledge/SWE/agentic/supply-chain-security/index.md) — trust and governance risk in the agentic-AI dependency supply chain
