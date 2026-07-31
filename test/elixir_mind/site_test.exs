@@ -139,4 +139,71 @@ defmodule ElixirMind.SiteTest do
     assert html =~ "Topic"
     assert html =~ ~s(class="nav-link active")
   end
+
+  test "copies a visualization's launch artifact under a distinct on-site name", %{
+    tmp_dir: dir
+  } do
+    write(dir, "topic/widget.md", """
+    ---
+    id: em:aaaaaa
+    type: visualization
+    title: Widget
+    launch: widget.html
+    ---
+
+    [Launch it](./widget.html)
+    """)
+
+    write(dir, "topic/widget.html", "<title>Widget</title><script>1<2&&true</script>")
+
+    out = Path.join(dir, "_site")
+    Site.build(dir, out)
+
+    # The doc's own rendered page keeps the plain slug — foo.md -> foo.html —
+    # so every other page's cross-link to it still resolves.
+    doc = File.read!(Path.join(out, "topic/widget.html"))
+    assert doc =~ "nav-dir-label"
+    refute doc =~ "1<2&&true"
+
+    # The artifact lands under a distinct name, since the plain one is taken
+    # by the doc page above — copied verbatim, never through render_page/4.
+    assert File.exists?(Path.join(out, "topic/widget.embed.html"))
+    refute File.exists?(Path.join(out, "topic/widget.html.embed.html"))
+
+    copied = File.read!(Path.join(out, "topic/widget.embed.html"))
+    original = File.read!(Path.join(dir, "topic/widget.html"))
+    assert copied == original
+    assert copied =~ "1<2&&true"
+    refute copied =~ "nav-dir-label"
+
+    # The doc's own Launch link is rewritten to the renamed on-site copy —
+    # never left dangling at the plain name the doc page itself now owns.
+    # Everything *else* pointing at this page (nav, breadcrumb, "active"
+    # marker) still resolves to the doc, since the rewrite happens in the
+    # markdown source before nav chrome is generated, not in the rendered
+    # HTML where it could catch an unrelated href by substring accident.
+    assert doc =~ ~s(<a href="../topic/widget.embed.html">Launch it</a>)
+    assert doc =~ ~s(<a class="nav-link active" href="../topic/widget.html">)
+  end
+
+  test "a local file:// open still finds the plain sibling name, unrenamed", %{tmp_dir: dir} do
+    write(dir, "topic/widget.md", """
+    ---
+    id: em:aaaaaa
+    type: visualization
+    title: Widget
+    launch: widget.html
+    ---
+
+    [Launch it](./widget.html)
+    """)
+
+    write(dir, "topic/widget.html", "<title>Widget</title>")
+
+    out = Path.join(dir, "_site")
+    Site.build(dir, out)
+
+    # The site build never touches the source tree — only _site/ is renamed.
+    assert File.read!(Path.join(dir, "topic/widget.html")) == "<title>Widget</title>"
+  end
 end
