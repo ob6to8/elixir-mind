@@ -147,3 +147,35 @@ logic, bounded model checking) and concrete model-authoring patterns
 James C. Davis, "Models and the Semantic Gap," *Model-Based Agentic Software
 Engineering* (MAGE), ch. 2.2 —
 <https://davisjam.github.io/agent-governance-mechanisms/book/2.2-models-and-the-semantic-gap.html>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e4d9cf">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-neovim-pr-tree-view-and-mage-semantic-gap-intake (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:e4d9cf`]**
+
+**Filed**
+
+I intook the chapter you'd been discussing — no other "resources" were in scope from this conversation, so this is the one item.
+
+| Created | Type | Path |
+|---|---|---|
+| Models and the semantic gap (MAGE, ch. 2.2) | `reference` (`em:e4d9cf`) | `knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md` |
+
+**Fetched:** the chapter itself, plus the book's landing page to get title/author/context (James C. Davis, Purdue — *Model-Based Agentic Software Engineering*, ch. 2.2). Fully distilled (plain-language summary → key terms → technical summary) rather than link-only, since it's dense enough to warrant the layered breakdown but short enough to capture faithfully.
+
+**New directory:** `knowledge/SWE/agentic/governance/` — no existing subdirectory covered "typed models as an enforcement/governance layer for agent work" (closest neighbors, `code-quality/` and `supervision/`, are about drift-guardrails and human oversight respectively, not this). Created autonomously since `agentic/` is an already-established domain under the `SWE` top-level dir — same precedent as the earlier `provenance/` subdirectory. Both `index.md` files (new dir + parent `agentic/`) are updated.
+
+**Housekeeping:** `mix brain.verify` passes; dedup baseline refreshed, no recall regression (held at 8/22 plain). No natural operator phrasing to harvest into the dedup gold set — you pasted the link with no descriptive framing (calling it "a PR" doesn't describe the content), so per the skill I skipped that step rather than inventing a query.
+
+Nothing is committed yet — say the word or run `/create-pull-request` when you want this opened as a PR.
+
+---
+
+**[`em:e4d9cf`]**
+
+Committed (`e11848c`) and pushed to `claude/neovim-pr-file-tree-qr65ce`. No PR opened yet — let me know if you'd like one, or if you're continuing the session further before wrapping up.

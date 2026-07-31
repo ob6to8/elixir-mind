@@ -61,6 +61,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:99aa8c` | [beliefs/glossary/attribution-shadow](/beliefs/glossary/attribution-shadow.md) | concept | false |
 | `em:99d38a` | [beliefs/glossary/auditory-icon](/beliefs/glossary/auditory-icon.md) | concept | false |
 | `em:22ad57` | [beliefs/glossary/auditory-stream-segregation](/beliefs/glossary/auditory-stream-segregation.md) | concept | false |
+| `em:f064b8` | [beliefs/glossary/authored-model](/beliefs/glossary/authored-model.md) | concept | false |
 | `em:f8ae3a` | [beliefs/glossary/auto-intake](/beliefs/glossary/auto-intake.md) | concept | false |
 | `em:fb77a7` | [beliefs/glossary/automated-program-repair](/beliefs/glossary/automated-program-repair.md) | concept | false |
 | `em:d19df5` | [beliefs/glossary/avatar](/beliefs/glossary/avatar.md) | concept | false |
@@ -145,9 +146,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e092bc` | [beliefs/glossary/deep-belief-network](/beliefs/glossary/deep-belief-network.md) | concept | false |
 | `em:464ee6` | [beliefs/glossary/defeasibility](/beliefs/glossary/defeasibility.md) | concept | false |
 | `em:da5194` | [beliefs/glossary/deferred-tool-loading](/beliefs/glossary/deferred-tool-loading.md) | concept | false |
+| `em:696b9d` | [beliefs/glossary/definition-of-done](/beliefs/glossary/definition-of-done.md) | concept | false |
 | `em:c68b6d` | [beliefs/glossary/dependency-directed-backtracking](/beliefs/glossary/dependency-directed-backtracking.md) | concept | false |
 | `em:aa3e46` | [beliefs/glossary/dependency-free](/beliefs/glossary/dependency-free.md) | concept | false |
 | `em:048bca` | [beliefs/glossary/deploy-gating](/beliefs/glossary/deploy-gating.md) | concept | false |
+| `em:cdc9f5` | [beliefs/glossary/derived-model](/beliefs/glossary/derived-model.md) | concept | false |
 | `em:dcffa5` | [beliefs/glossary/derived-view](/beliefs/glossary/derived-view.md) | concept | false |
 | `em:f9d319` | [beliefs/glossary/description-logic](/beliefs/glossary/description-logic.md) | concept | false |
 | `em:ca7b27` | [beliefs/glossary/descriptive-premise](/beliefs/glossary/descriptive-premise.md) | concept | false |
@@ -183,6 +186,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:560ae2` | [beliefs/glossary/entity-component-system](/beliefs/glossary/entity-component-system.md) | concept | false |
 | `em:990c2c` | [beliefs/glossary/entity-resolution](/beliefs/glossary/entity-resolution.md) | concept | false |
 | `em:9054ac` | [beliefs/glossary/environment-atms](/beliefs/glossary/environment-atms.md) | concept | false |
+| `em:f84070` | [beliefs/glossary/epic](/beliefs/glossary/epic.md) | concept | false |
 | `em:f727fe` | [beliefs/glossary/epistemic-overlay](/beliefs/glossary/epistemic-overlay.md) | concept | false |
 | `em:e1c3b6` | [beliefs/glossary/epistemic-poisoning](/beliefs/glossary/epistemic-poisoning.md) | concept | false |
 | `em:735b38` | [beliefs/glossary/epistemic-teleological-split](/beliefs/glossary/epistemic-teleological-split.md) | concept | false |
@@ -344,6 +348,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3ee2d2` | [beliefs/glossary/orphan-block](/beliefs/glossary/orphan-block.md) | concept | false |
 | `em:a9113e` | [beliefs/glossary/orphaned-branch](/beliefs/glossary/orphaned-branch.md) | concept | false |
 | `em:5d40bf` | [beliefs/glossary/otp](/beliefs/glossary/otp.md) | concept | false |
+| `em:069bf4` | [beliefs/glossary/ouroboros](/beliefs/glossary/ouroboros.md) | concept | false |
 | `em:c98541` | [beliefs/glossary/out-of-band](/beliefs/glossary/out-of-band.md) | concept | false |
 | `em:c42550` | [beliefs/glossary/over-refusal](/beliefs/glossary/over-refusal.md) | concept | false |
 | `em:410879` | [beliefs/glossary/owl](/beliefs/glossary/owl.md) | concept | false |
@@ -435,6 +440,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:23844f` | [beliefs/glossary/section-terminator](/beliefs/glossary/section-terminator.md) | concept | false |
 | `em:4e01f8` | [beliefs/glossary/self-consistency-check](/beliefs/glossary/self-consistency-check.md) | concept | false |
 | `em:81a3ae` | [beliefs/glossary/self-referential-lag](/beliefs/glossary/self-referential-lag.md) | concept | false |
+| `em:fc19fe` | [beliefs/glossary/semantic-gap](/beliefs/glossary/semantic-gap.md) | concept | false |
 | `em:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
 | `em:b7760e` | [beliefs/glossary/semidecidability](/beliefs/glossary/semidecidability.md) | concept | false |
 | `em:60220a` | [beliefs/glossary/sense](/beliefs/glossary/sense.md) | concept | false |
@@ -484,6 +490,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
 | `em:089fb2` | [beliefs/glossary/thread-doc](/beliefs/glossary/thread-doc.md) | concept | false |
+| `em:8af8b6` | [beliefs/glossary/three-island-problem](/beliefs/glossary/three-island-problem.md) | concept | false |
 | `em:ffa597` | [beliefs/glossary/three-level-documentation](/beliefs/glossary/three-level-documentation.md) | concept | false |
 | `em:59cff6` | [beliefs/glossary/timestamp](/beliefs/glossary/timestamp.md) | concept | false |
 | `em:5b4fca` | [beliefs/glossary/tinker](/beliefs/glossary/tinker.md) | concept | false |
