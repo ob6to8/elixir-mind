@@ -176,6 +176,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e1a8ee` | [beliefs/glossary/dual-llm-pattern](/beliefs/glossary/dual-llm-pattern.md) | concept | false |
 | `em:48b2f1` | [beliefs/glossary/dual-use](/beliefs/glossary/dual-use.md) | concept | false |
 | `em:b528d9` | [beliefs/glossary/durable-execution](/beliefs/glossary/durable-execution.md) | concept | false |
+| `em:927fe0` | [beliefs/glossary/dvorak-simplified-keyboard](/beliefs/glossary/dvorak-simplified-keyboard.md) | concept | false |
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
 | `em:436ebc` | [beliefs/glossary/earcon](/beliefs/glossary/earcon.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
@@ -285,7 +286,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3e204b` | [beliefs/glossary/kv-cache-hit-rate](/beliefs/glossary/kv-cache-hit-rate.md) | concept | false |
 | `em:056746` | [beliefs/glossary/label-atms](/beliefs/glossary/label-atms.md) | concept | false |
 | `em:731c59` | [beliefs/glossary/lag-tolerant-check](/beliefs/glossary/lag-tolerant-check.md) | concept | false |
+| `em:2fd346` | [beliefs/glossary/langmap](/beliefs/glossary/langmap.md) | concept | false |
 | `em:cfaa13` | [beliefs/glossary/language-server-protocol](/beliefs/glossary/language-server-protocol.md) | concept | false |
+| `em:bb1673` | [beliefs/glossary/leitner-system](/beliefs/glossary/leitner-system.md) | concept | false |
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
 | `em:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
@@ -321,6 +324,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:acf52e` | [beliefs/glossary/model-cascade](/beliefs/glossary/model-cascade.md) | concept | false |
 | `em:c66f10` | [beliefs/glossary/model-context-protocol](/beliefs/glossary/model-context-protocol.md) | concept | false |
 | `em:43bac4` | [beliefs/glossary/monitor-by-exception](/beliefs/glossary/monitor-by-exception.md) | concept | false |
+| `em:9a0a9e` | [beliefs/glossary/motor-program](/beliefs/glossary/motor-program.md) | concept | false |
 | `em:334e60` | [beliefs/glossary/mounting-point](/beliefs/glossary/mounting-point.md) | concept | false |
 | `em:219996` | [beliefs/glossary/multi-head-latent-attention](/beliefs/glossary/multi-head-latent-attention.md) | concept | false |
 | `em:fc8797` | [beliefs/glossary/mxfp4](/beliefs/glossary/mxfp4.md) | concept | false |
@@ -389,6 +393,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ca9f72` | [beliefs/glossary/quantization](/beliefs/glossary/quantization.md) | concept | false |
 | `em:40976d` | [beliefs/glossary/quantization-aware-training](/beliefs/glossary/quantization-aware-training.md) | concept | false |
 | `em:fb0bfb` | [beliefs/glossary/query-profile](/beliefs/glossary/query-profile.md) | concept | false |
+| `em:bfa6b7` | [beliefs/glossary/qwerty](/beliefs/glossary/qwerty.md) | concept | false |
 | `em:a95adb` | [beliefs/glossary/ratification](/beliefs/glossary/ratification.md) | concept | false |
 | `em:1434d9` | [beliefs/glossary/ratification-immutable](/beliefs/glossary/ratification-immutable.md) | concept | false |
 | `em:df9c77` | [beliefs/glossary/rdf](/beliefs/glossary/rdf.md) | concept | false |
@@ -458,6 +463,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
 | `em:8995e9` | [beliefs/glossary/skos](/beliefs/glossary/skos.md) | concept | false |
+| `em:058646` | [beliefs/glossary/slop](/beliefs/glossary/slop.md) | concept | false |
 | `em:ceca0b` | [beliefs/glossary/software-factory](/beliefs/glossary/software-factory.md) | concept | false |
 | `em:1c77cf` | [beliefs/glossary/sonification](/beliefs/glossary/sonification.md) | concept | false |
 | `em:2b6117` | [beliefs/glossary/soundness-and-completeness](/beliefs/glossary/soundness-and-completeness.md) | concept | false |
@@ -647,6 +653,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fdf328` | [knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses](/knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses.md) | source |  |
 | `em:8ad00c` | [knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing.md) | source |  |
 | `em:b6380e` | [knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing.md) | source |  |
+| `em:9efeba` | [knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping](/knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping.md) | claim | false |
 | `em:59895a` | [knowledge/knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
 | `em:148cd9` | [knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments](/knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments.md) | source |  |
 | `em:d72938` | [knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks](/knowledge/knowledge-management/argumentation/dung-abstract-argumentation-frameworks.md) | reference |  |
@@ -689,6 +696,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |
 | `em:0b9d92` | [projects/code-driven-av-production/headless-supercollider-grid-render](/projects/code-driven-av-production/headless-supercollider-grid-render.md) | tutorial |  |
+| `em:dc21d4` | [projects/dvorak-vim](/projects/dvorak-vim.md) | project |  |
+| `em:da9532` | [projects/dvorak-vim/drill-engine](/projects/dvorak-vim/drill-engine.md) | plan |  |
+| `em:04281b` | [projects/dvorak-vim/keybinding-reference-design](/projects/dvorak-vim/keybinding-reference-design.md) | plan |  |
+| `em:715616` | [projects/dvorak-vim/next-steps](/projects/dvorak-vim/next-steps.md) | plan |  |
 | `em:763ec8` | [projects/human-writing-attribution](/projects/human-writing-attribution.md) | project |  |
 | `em:fe5ca6` | [projects/human-writing-attribution/overlap-tool](/projects/human-writing-attribution/overlap-tool.md) | plan |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |

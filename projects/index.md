@@ -21,6 +21,12 @@ project accrues research to the brain rather than to one repo.
   non-realtime sound rendered from one declared timing grid, run on the
   operator's local machine
   ([docs](/projects/code-driven-av-production/index.md))
+- [Dvorak vim](/projects/dvorak-vim.md) — a layout-aware vim reference and drill
+  system for Dvorak typists: every binding shown as the command character plus
+  the QWERTY keycap that produces it, served inside the editor, paired with
+  latency-graded drills for the isolated character-to-key association prose
+  typing never trains
+  ([docs](/projects/dvorak-vim/index.md))
 - [Human writing attribution](/projects/human-writing-attribution.md) — a
   provenance system for human-authored writing: publish each piece with its
   declared sources and LLM threads plus a quotation-vs-synthesis overlap
