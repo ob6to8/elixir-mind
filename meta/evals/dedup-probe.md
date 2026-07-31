@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md]
 ---
 
 # Dedup recall probe — gold set
@@ -81,6 +81,7 @@ being mechanically rewritten.
 | 1400 years ago scholars solved a problem multi-agent ai reinvented | em:c880d8 | target | isnad claim verification; hadith transmission chains for ai; rijal grading transmitters | harvested at intake 2026-07-29 |
 | persist the reddit thread verbatim | em:9318af | target | isnad reddit discussion thread; r/AgentsOfAI isnad thread; isnad announcement comments | harvested at intake 2026-07-29 |
 | evaluation is so much harder than actually building the model wrapper | em:9baaad | target | RAG evaluation is hard; splitting retrieval and generation eval; BLEU ROUGE useless for RAG | harvested at intake 2026-07-29 |
+| a convincing influencer and an ai engineer who is clearly calling them out for misrepresentation, or ineptness | em:c81829 em:1f1256 | target | self-published benchmark; benchmark rigor; graph serialization format | harvested at intake 2026-07-29 |
 
 ## Baseline
 
@@ -94,15 +95,19 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 22 |
-| expanded | 19 | 22 |
+| plain | 8 | 23 |
+| expanded | 20 | 23 |
 
-The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
-of how much recall the tier-1 `/intake` synonym-expansion change is expected to
-recover: 7 of the 10 targets miss under plain lexical search but are recovered once
-the agent generates the recorded variant phrasings. When the **plain** figure
-degrades as concepts are added, that is the quantified trigger for tier-2 embedding
-dedup — not a guessed size threshold.
+The gap between the two rows above is the offline, repeatable measurement of how
+much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
+that miss under plain lexical search are found once the agent generates the
+recorded variant phrasings. When the **plain** figure degrades as concepts are
+added, that is the quantified trigger for tier-2 embedding dedup — not a guessed
+size threshold.
+
+The figures live in the generated table and **are deliberately not restated in
+this prose**: a hand-written copy beside a regenerating table has no oracle and
+goes stale silently.
 
 ## Upkeep — fully automated, no operator action
 
