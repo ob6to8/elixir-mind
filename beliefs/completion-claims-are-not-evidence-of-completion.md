@@ -5,11 +5,11 @@ title: A completion claim is not evidence of completion
 description: An agent's report that an action succeeded is a statement produced by the same context that made the action, so it carries no information about the resulting state — only a separate read against the system that holds the state does, which makes the write and the read-back two steps rather than one.
 depends_on: [em:2ecdd2]
 resource: "https://www.reddit.com/r/AgentsOfAI/comments/1v87nmh/your_agent_says_done_you_check_and_nothing/"
-provenance: "r/AgentsOfAI discussion thread \"Your agent says 'done.' You check and nothing actually happened. Anyone else seeing this?\" (posted ~2026-07-26, OP username not captured), read from the operator's paste of the rendered page rather than fetched — Reddit returns HTTP 403 to unauthenticated reads over every route tried (WebFetch, direct curl to .json, third-party reader). The read-back formulation is commenter u/ocean_protocol's; the framing quotes are the OP's. One account (u/ApprehensiveCar6879) replies approvingly to nearly every top-level comment and solicits DMs, so the thread's apparent consensus is four independent practitioners, not eight"
+provenance: "r/AgentsOfAI discussion thread \"Your agent says 'done.' You check and nothing actually happened. Anyone else seeing this?\" — the read-back formulation is commenter u/ocean_protocol's; the framing quotes are the OP's. Filed 2026-07-29 from a single excerpt the operator supplied; expanded 2026-07-31 once the operator pasted the full thread, which is captured verbatim at [em:b01e03](/knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread.md) — see that capture's reading note on the thread as evidence (one account replies approvingly to nearly every top-level comment, so the apparent consensus is four independent practitioners, not eight)"
 tags: [belief, verification, agent-output, epistemics, observability, tooling, workflow]
 timestamp: 2026-07-31
 attribution:
-  when: 2026-07-31T00:00:00Z
+  when: 2026-07-29T20:24:35Z
   channel: intake
   agent: "Claude Code agent, post-action-verification session"
   why: "operator supplied the quote with its source and directed committing it as a belief, to ground a plan for wiring read-back verification into this repo's development flow"

@@ -3,11 +3,11 @@ type: plan
 title: "Post-action read-back: confirm state changes against the source of truth"
 description: Wire read-back verification into the development flow at the boundaries where it is actually missing — the git/GitHub tail of /create-pull-request and the scheduled /research run — while declining to add it in-tree, where the gate suite is already the batch read-back, and declining a /capture fidelity check outright, because the only thing it could read is material the same session wrote.
 status: proposed
-provenance: "Claude Code session, 2026-07-31 — designed from the operator-supplied post-action-verification quote; persisted rather than executed because the policy text is the operator's to ratify"
+provenance: "Claude Code session, 2026-07-29 — designed from the operator-supplied post-action-verification quote; persisted rather than executed because the policy text is the operator's to ratify. Revised 2026-07-31 once the operator supplied the full source thread (em:b01e03) and confirmed the two beliefs' scope"
 tags: [meta, plan, verification, workflow, git, github, ci, tooling, agent-output]
 timestamp: 2026-07-31
 attribution:
-  when: 2026-07-31T00:00:00Z
+  when: 2026-07-29T20:24:35Z
   channel: agent-authored
   agent: "Claude Code agent, post-action-verification session"
   why: "the read-back prior filed as em:674c8f names a practice with no home in this repo's flow; the gap it closes is concentrated in the git/GitHub tail, and the change proposes a new contract-compiled policy, which is the operator's to ratify"
