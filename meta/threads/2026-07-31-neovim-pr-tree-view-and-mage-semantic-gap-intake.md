@@ -6,6 +6,7 @@ provenance: "Claude Code session (Sonnet 5), 2026-07-31; verbatim retained messa
 tags: [meta, thread, intake, neovim, editor-integration, agent-governance, models, mage]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01EZgqdRUXjtEqnbBiZdoZr7
+pr: 203
 ---
 
 # 2026-07-31-neovim-pr-tree-view-and-mage-semantic-gap-intake
