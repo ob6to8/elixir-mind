@@ -97,12 +97,16 @@ cross-check — warn and trend, don't fail).
 | plain | 8 | 22 |
 | expanded | 19 | 22 |
 
-The gap — **plain 3/10 vs expanded 10/10** — is the offline, repeatable measurement
-of how much recall the tier-1 `/intake` synonym-expansion change is expected to
-recover: 7 of the 10 targets miss under plain lexical search but are recovered once
-the agent generates the recorded variant phrasings. When the **plain** figure
-degrades as concepts are added, that is the quantified trigger for tier-2 embedding
-dedup — not a guessed size threshold.
+The gap between the two rows above is the offline, repeatable measurement of how
+much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
+that miss under plain lexical search are found once the agent generates the
+recorded variant phrasings. When the **plain** figure degrades as concepts are
+added, that is the quantified trigger for tier-2 embedding dedup — not a guessed
+size threshold.
+
+The figures live in the generated table and **are deliberately not restated in
+this prose**: a hand-written copy beside a regenerating table has no oracle and
+goes stale silently.
 
 ## Upkeep — fully automated, no operator action
 

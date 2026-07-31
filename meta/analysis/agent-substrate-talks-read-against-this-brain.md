@@ -2,7 +2,7 @@
 type: analysis
 title: "Three agent-substrate talks read against this brain"
 description: Evaluates elixir-mind against three 2026 conference talks proposing shared substrates for agents (an ontology-based semantic layer, an event-sourced graph runtime, and verification-layered graph engineering) — finding the brain already implements their durable-state and gated-change layers more strictly than any of them, has declined their outcome-feedback mechanism on ratified doctrine rather than by oversight, and is left with three narrow residues: an unpartitioned failure mode that fan-out would multiply, the first empirical grounding for capability-matched model selection, and the untaken distinction between measurement as evidence and measurement as authority.
-provenance: "Claude Code session, 2026-07-31 — operator asked for an analysis of this repo from the perspective of the three talks intaken in the same session"
+provenance: "Claude Code session (model undisclosed — the environment withholds the identifier from committed artifacts), 2026-07-31 — operator asked for an analysis of this repo from the perspective of the three talks intaken in the same session"
 tags: [meta, analysis, agents, substrate, ontology, event-sourcing, graph-engineering, doctrine, evals, fan-out]
 timestamp: 2026-07-31T02:10:00Z
 attribution:
@@ -163,15 +163,20 @@ them all."
 
 The doctrine also names a gap it cannot close from inside: "Selection itself
 **cannot be enforced**: it is a runtime act", with attribution as "the enforceable
-shadow of selection". The thin attribution policy it proposes — agent-authored
-governance and statement documents recording the producing model in `provenance`
-— is **not ratified**. The talk raises the cost of leaving it unratified, because
-under fan-out the reviewing node's tier becomes the property most worth auditing
-after the fact, and nothing currently records it.
+shadow of selection".
 
-**Recommendation.** Ratify the attribution policy the doctrine already proposes.
-It is cheap, it is the doctrine's own stated path, and fan-out is what makes it
-matter.
+The record is partial rather than absent, and the distinction decides what a
+policy should add. The harness injects `Co-Authored-By: Claude <Name> <Version>`
+alongside `Claude-Session:` — 257 of the last 400 commits carry the session
+trailer — so the model *is* recorded per **commit**. What is missing is the
+per-**document** attestation: a trailer assigns every document in a commit to one
+model regardless of the motions' differing weight, and a document read on the
+published site or after a move carries no trailer at all. Under fan-out the
+reviewing node's tier is the property most worth auditing afterward, and
+commit-level granularity is the wrong unit for it.
+
+**Recommendation.** Ratify the thin attribution policy the doctrine proposes,
+scoped to what the commit graph does not already cover.
 
 ## 5. Finding — measurement as evidence, and measurement as authority
 

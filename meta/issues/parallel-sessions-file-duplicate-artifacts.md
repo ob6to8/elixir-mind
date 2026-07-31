@@ -130,6 +130,7 @@ Options 1 and 2 are cheaper but each miss a documented instance.
 
 ## Related
 
+- [matter-disjointness check for parallel filing](/meta/plans/matter-disjointness-check-for-parallel-filing.md) — the plan adopting candidate resolution 3, extended to a second call site: the same comparator runs at Workflow fold-back, where fan-out reproduces this failure with disjoint file sets
 - [update-in-place](/meta/policy/update-in-place.md) — the rule this defeats
 - [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — "one artifact per matter"
 - [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md) — the noisy sibling class
