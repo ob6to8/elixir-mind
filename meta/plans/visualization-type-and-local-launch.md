@@ -2,7 +2,7 @@
 type: plan
 title: "A `visualization` type: self-contained explorables, launchable locally"
 description: Add a visualization type to the controlled vocabulary for self-contained interactive pages that a reader launches from the document beside them — a bundle .md carrying an em: id and a launch field, paired with a same-slug sibling .html that opens over file:// with no build step, no server, and no network.
-status: proposed
+status: done
 provenance: "Claude Code session, 2026-07-31 — model undisclosed (the session environment withholds the model identifier from committed artifacts)"
 attribution:
   when: 2026-07-31T00:00:00Z
@@ -17,8 +17,29 @@ timestamp: 2026-07-31
 
 ## Status
 
-**Proposed** — not ratified. Adding to the controlled `type` vocabulary is a
-change to the shape of the brain
+**Done — ratified and executed 2026-07-31.** The operator ratified the plan as
+drafted, including decision 1 (`launch:` over `resource:`) and decision 4
+(accept the deployed-site 404 under the local-only scope), and directed the
+session-built page be committed as-authored. Executed the same day per the build
+order: the `visualization` entry and its filing test added to
+[controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md), the
+`launch` field to [frontmatter-schema](/meta/policy/frontmatter-schema.md),
+contract recompiled; `:launch` added to `Registry.Entry` and `load_entry/2`;
+verifier rule 9 (`launch_errors/2`) with three regression tests; and the first
+visualization filed as `em:70f026`, cross-linked from `em:da2ffb` and
+`em:e12137`. The gate was confirmed live against the real bundle, not only its
+fixtures — removing the artifact fails `mix brain.verify` with the dangling-launch
+error, restoring it passes.
+
+One departure from the plan as written: the committed `.html` gained a
+`<!doctype>`, `<html lang>`, and a `<head>` carrying `charset` and `viewport`.
+The session-built page had relied on the artifact host to supply them; without
+them a `file://` open renders in quirks mode with an undeclared encoding, which
+would mangle the page's `‖z‖`/`√d`/`ψ` notation — so the wrapper is what makes
+the local-launch property actually hold. Original design record below, unedited.
+
+**Original status: Proposed** — not ratified. Adding to the controlled `type`
+vocabulary is a change to the shape of the brain
 ([taxonomy-evolution-protocol](/meta/policy/taxonomy-evolution-protocol.md)), so
 this plan exists for the operator to ratify against something concrete.
 
