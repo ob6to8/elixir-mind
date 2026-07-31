@@ -763,7 +763,7 @@ re-engages.
 - Exploring timbre transfer and neural synthesis techniques that merge traditional audio coding with machine learning for creative sound manipulation.
 
 ### [Generating Sound and Organizing Time: An Interview with Graham Wakefield and Gregory Taylor](https://cycling74.com/articles/generating-sound-and-organizing-time-an-interview-with-graham-wakefield-and-gregory-taylor-1)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `max-msp` `audio-synthesis` `digital-signal-processing` `gen-programming` `sound-design`
+- **Added:** 2026-07-23 · **Status:** promoted → [Generating Sound & Organizing Time reference](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) · **Tags:** `max-msp` `audio-synthesis` `digital-signal-processing` `gen-programming` `sound-design`
 - Interview about "Generating Sound and Organizing Time" book introducing gen~ for creating custom audio synthesis and DSP at the sample level.
 
 ### [ext for live | Ableton Live Extensions Marketplace](https://extforlive.com/resources/extensions-guide)

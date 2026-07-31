@@ -37,6 +37,11 @@ transcript**, so it does not support a distilled capture on its own.
 
 ## Full transcript and metadata
 
+`yt-dlp` is **not preinstalled** in these containers — `pip3 install yt-dlp`
+first (a few seconds, no build step). Check the version afterwards: the YouTube
+extractor is chased by upstream continuously, so a stale pinned copy fails in
+ways the flags below cannot rescue.
+
 ```bash
 yt-dlp --js-runtimes node \
        --extractor-args "youtube:player_client=web_embedded,tv" \
@@ -98,6 +103,21 @@ recipe does not supply.
 ## Thread excerpts — route-tagged log
 
 Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:31fed1">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-28-architecture-practice-and-nondeterminism-intakes (2026-07-28)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:31fed1`]**  (co-feeds: `em:414265 em:dfadfb`)
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| Fetched the source | `yt-dlp` recipe from `em:31fed1` worked as documented — DRM blocked every video format, subtitles came through anyway |
+| Dedup pass (expanded phrasings) | Searched Hohpe, architect elevator, phantom sketch, court jester, political capital, big ball of mud, modular monolith, plus architecture/trade-off/complexity terms across `*.md`. No existing coverage; nearest neighbour is `architecture-without-architects` (`em:7fa867`), a different subject, now cross-linked |
+| Minted ids, verified, committed, pushed | `5f04ef3` on `claude/intake-video-review-bpqqft`; full gate suite green (188 tests, verify, route tags, glossary, contract, codemap) |
+| Dedup baseline | plain 6/18 — unchanged, no regression. No gold row harvested: a bare URL carries no natural phrasing |
 
 ### 2026-07-28-ontology-guardrails-intake-and-jido-comparison (2026-07-28)
 

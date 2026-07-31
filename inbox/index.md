@@ -12,15 +12,17 @@ the brain only when the operator says *"intake the &lt;…&gt; item"*, which run
 
 ## Latest
 
-- **[2026-07-12](/inbox/2026-07-12.md)** — 4 items across ai-industry (2) and SWE (2):
-  the week's open-weight surge with a sovereignty twist (LongCat-2.0 trained without
-  Western hardware, Mistral's EU-sovereign open-weight family) against fresh empirical
-  evidence that agentic coding still needs a human correcting 9 of 10 misalignments.
+- **[2026-07-29](/inbox/2026-07-29.md)** — 5 items, all SWE: MCP's 2026-07-28
+  stateless/OAuth-hardened spec and a new forged-metadata injection attack (Agent
+  Data Injection) land the same week AISI clocks the open-weight cyber-capability
+  lag at 4–7 months, while Opus 5's launch sits against SlopCodeBench's finding
+  that no agent solves an iterative benchmark end-to-end. All 5 auto-intaken.
 
 ## Archive
 
 Digests are regenerated daily; previous days are persisted unchanged.
 
+- [2026-07-29](/inbox/2026-07-29.md)
 - [2026-07-12](/inbox/2026-07-12.md)
 - [2026-07-11](/inbox/2026-07-11.md)
 - [2026-07-09](/inbox/2026-07-09.md)

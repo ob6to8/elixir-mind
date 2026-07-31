@@ -11,6 +11,28 @@ project accrues research to the brain rather than to one repo.
 
 ## Active
 
+- [Agent pairing](/projects/agent-pairing.md) — a supervision layer that renders
+  a coding agent's work into the operator's live editor at human pace and lets
+  them gate, amend, and correct edits before they land; broker plus thin editor
+  clients, Neovim first
+  ([docs](/projects/agent-pairing/index.md))
+- [Code-driven AV production](/projects/code-driven-av-production.md) — a
+  scriptable music-and-video pipeline: ffmpeg picture cuts and SuperCollider
+  non-realtime sound rendered from one declared timing grid, run on the
+  operator's local machine
+  ([docs](/projects/code-driven-av-production/index.md))
+- [Dvorak vim](/projects/dvorak-vim.md) — a layout-aware vim reference and drill
+  system for Dvorak typists: every binding shown as the command character plus
+  the QWERTY keycap that produces it, served inside the editor, paired with
+  latency-graded drills for the isolated character-to-key association prose
+  typing never trains
+  ([docs](/projects/dvorak-vim/index.md))
+- [Human writing attribution](/projects/human-writing-attribution.md) — a
+  provenance system for human-authored writing: publish each piece with its
+  declared sources and LLM threads plus a quotation-vs-synthesis overlap
+  report, so readers evaluate the human judgment directly instead of
+  inferring authorship from style
+  ([docs](/projects/human-writing-attribution/index.md))
 - [Secure financial agent](/projects/secure-financial-agent.md) — a locally-hosted
   agentic system for processing sensitive financial documents (taxes, bank
   statements) with no data egress and a typed capability boundary
