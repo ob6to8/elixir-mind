@@ -124,3 +124,15 @@ moves the number.
   ablation) — https://github.com/microsoft/SkillOpt/blob/main/docs/sleep/RESULTS.md
 - Engine package — https://github.com/microsoft/SkillOpt/tree/main/skillopt_sleep
 - Per-agent plugin shells — https://github.com/microsoft/SkillOpt/tree/main/plugins
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a2a391">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-microsoft-skillopt-intake (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:a2a391`]**  (co-feeds: `em:42648b`)
+
+The substantive finding, independent of whether the framework ever gets used here: SkillOpt's authors and the Sleep docs both land on the validation gate as the load-bearing part. Without it, an agent revising its own instructions drifts; with it, the worst case is bounded because a non-improving edit is simply discarded. Every `SKILL.md` in this repo is exactly the artifact they train, currently revised by judgment with no held-out score deciding whether a revision helped. Sleep's measured `recall_k` scaling adds a second one — the gain rose monotonically with how much *relevant past experience* was recalled, which says retrieval depth, not the mere existence of memory, is what moves the number.

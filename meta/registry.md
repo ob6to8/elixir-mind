@@ -207,6 +207,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:189d88` | [beliefs/glossary/freshness-gate](/beliefs/glossary/freshness-gate.md) | concept | false |
 | `em:2fa34c` | [beliefs/glossary/frontier-lab](/beliefs/glossary/frontier-lab.md) | concept | false |
 | `em:640701` | [beliefs/glossary/frontmatter](/beliefs/glossary/frontmatter.md) | concept | false |
+| `em:6153c9` | [beliefs/glossary/frozen-model](/beliefs/glossary/frozen-model.md) | concept | false |
 | `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
@@ -451,6 +452,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
+| `em:a2a2bb` | [beliefs/glossary/text-space-optimization](/beliefs/glossary/text-space-optimization.md) | concept | false |
+| `em:a9efbd` | [beliefs/glossary/textual-learning-rate](/beliefs/glossary/textual-learning-rate.md) | concept | false |
 | `em:089fb2` | [beliefs/glossary/thread-doc](/beliefs/glossary/thread-doc.md) | concept | false |
 | `em:ffa597` | [beliefs/glossary/three-level-documentation](/beliefs/glossary/three-level-documentation.md) | concept | false |
 | `em:59cff6` | [beliefs/glossary/timestamp](/beliefs/glossary/timestamp.md) | concept | false |
@@ -472,6 +475,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:927eb2` | [beliefs/glossary/typed-edge](/beliefs/glossary/typed-edge.md) | concept | false |
 | `em:570738` | [beliefs/glossary/ungrounded-inference](/beliefs/glossary/ungrounded-inference.md) | concept | false |
 | `em:05fab0` | [beliefs/glossary/unique-name-assumption](/beliefs/glossary/unique-name-assumption.md) | concept | false |
+| `em:b9eb99` | [beliefs/glossary/validation-gate](/beliefs/glossary/validation-gate.md) | concept | false |
 | `em:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
 | `em:4c6c63` | [beliefs/glossary/vendoring](/beliefs/glossary/vendoring.md) | concept | false |
 | `em:f6c3c2` | [beliefs/glossary/vercel-eve](/beliefs/glossary/vercel-eve.md) | concept | false |

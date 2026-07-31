@@ -56,8 +56,8 @@ bounded.
 | **optimizer model** | a *separate* model that reads scored rollouts and proposes text edits (the analogue of the gradient computation) |
 | **rollout** | the forward pass — the target executes a batch of tasks under the current skill |
 | **reflect** | the backward pass — the optimizer analyses trajectories into edit patches |
-| **textual learning rate** | `optimizer.learning_rate`: the **maximum number of edit patches per step** — gradient clipping, in text |
-| **validation gate** | a candidate skill is accepted only if it strictly improves a [held-out](/beliefs/glossary/held-out-set.md) selection-split score |
+| **[textual learning rate](/beliefs/glossary/textual-learning-rate.md)** | `optimizer.learning_rate`: the **maximum number of edit patches per step** — gradient clipping, in text |
+| **[validation gate](/beliefs/glossary/validation-gate.md)** | a candidate skill is accepted only if it strictly improves a [held-out](/beliefs/glossary/held-out-set.md) selection-split score |
 | **rejected-edit buffer** | memory of refused edits, fed back as negative signal |
 | **slow / meta update** | epoch-boundary longitudinal update and cross-epoch optimizer memory |
 | **`best_skill.md`** | the deployed artifact — typically 300–2,000 tokens |
@@ -179,3 +179,27 @@ your own Claude Code and Codex session history, is filed separately as
   Skills", arXiv:2605.23904 — https://arxiv.org/abs/2605.23904
 - Microsoft Research feature — https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/
 - Project page — https://microsoft.github.io/SkillOpt/
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:42648b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-microsoft-skillopt-intake (2026-07-31)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:42648b`]**
+
+I split it into two documents because it's really two things: the research engine (paper + repo), and SkillOpt-Sleep, a separate companion that runs nightly over your own Claude Code and Codex session history. The second one is close enough to what this repo does by hand that it earned its own place in agent memory. Both are filed, the toolchain passes clean, and the work is committed and pushed. Nothing is awaiting your ratification — the one new directory sits under the already-established `agentic/` domain, which the taxonomy protocol lets me create autonomously.
+
+---
+
+**[`em:42648b`]**
+
+The main doc uses the layered `/summarize-technical` body the intake procedure calls for on substantial technical sources: plain-language summary → key-terms table → technical detail, cross-linked to the existing [held-out set](/beliefs/glossary/held-out-set.md), [in-context learning](/beliefs/glossary/in-context-learning.md), [prompt sensitivity](/beliefs/glossary/prompt-sensitivity.md), and [skill](/beliefs/glossary/skill.md) glossary terms.
+
+---
+
+**[`em:42648b`]**  (co-feeds: `em:a2a391`)
+
+The substantive finding, independent of whether the framework ever gets used here: SkillOpt's authors and the Sleep docs both land on the validation gate as the load-bearing part. Without it, an agent revising its own instructions drifts; with it, the worst case is bounded because a non-improving edit is simply discarded. Every `SKILL.md` in this repo is exactly the artifact they train, currently revised by judgment with no held-out score deciding whether a revision helped. Sleep's measured `recall_k` scaling adds a second one — the gain rose monotonically with how much *relevant past experience* was recalled, which says retrieval depth, not the mere existence of memory, is what moves the number.
