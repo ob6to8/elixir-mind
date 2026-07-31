@@ -6,6 +6,7 @@ provenance: "Claude Code session, 2026-07-28 through 2026-07-31 (paused and resu
 tags: [meta, thread, journal, methodology, comprehension, auditing, slop]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01PKGcyFYajFbMEAtFx1CZ5o
+pr: 199
 ---
 
 # 2026-07-28-operator-methodology-shift-and-comprehension-audit
