@@ -120,9 +120,13 @@ attribution:
 - **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
   tables: every request the operator made (with a done/partial/not-done/declined/
   superseded status), and what the agent actually did, with the files touched and
-  whether each landed in a commit or is still in the working tree. The delivered
-  column is derived from `git log`/`git diff` against `origin/main`, never from
-  recollection, so the audit is evidence rather than the session's own testimony
+  whether each landed in a commit or is still in the working tree. **Both columns
+  rest on artifacts, never on recall**: the asks are enumerated from the session
+  transcript (`~/.claude/projects/…/<session-id>.jsonl`) and the delivered work
+  from `git log`/`git diff` against `origin/main` — an asks column built from a
+  context-compaction summary drops the asks made before the boundary, silently,
+  which is the failure the skill exists to catch — so the audit is evidence
+  rather than the session's own testimony
   (see [normative records vs. descriptive
   traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md));
   gaps in either direction are reported in prose beneath. Read-only — it opens,

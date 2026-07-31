@@ -31,16 +31,48 @@ git status --short                           # uncommitted work, if any
 Uncommitted changes are part of the delivered set and are marked as such — a
 file edited but not committed has not landed and the operator must know.
 
-### 2. Enumerate the operator's asks
+### 2. Enumerate the operator's asks from the transcript — never from memory
 
-Walk the session's operator messages in order and list each **request** — the
-things the operator asked to have done. One row per ask, in the order they were
-made. Include asks that were declined, deferred, or superseded; the audit is
-incomplete without them.
+**Read the session transcript**, the same way step 1 reads git. Both columns of
+this audit must rest on evidence; an asks column built from recollection or from
+a context-compaction summary is the agent's account of what it was told, which is
+the failure this skill exists to catch. A compacted session is exactly when the
+audit matters most and exactly when memory is thinnest — an ask made before the
+compaction boundary can be missing from the summary entirely and will then be
+missing from the audit, silently.
 
-Slash-command invocations count as asks (`/intake <url>` is "file this link").
-Corrections and mid-course redirections are their own rows, not silent edits to
-an earlier one.
+The transcript is at
+`~/.claude/projects/<slugified-cwd>/<session-id>.jsonl`, one JSON object per
+line. Extract the user turns:
+
+```
+python3 - <<'EOF'
+import json, glob
+for p in glob.glob("<transcript-path>"):
+    for line in open(p):
+        try: d = json.loads(line)
+        except: continue
+        if d.get("type") != "user": continue
+        c = d.get("message", {}).get("content")
+        if isinstance(c, list):
+            c = "".join(x.get("text", "") for x in c if isinstance(x, dict))
+        if isinstance(c, str) and c.strip():
+            print("---", c[:400].replace("\n", " "))
+EOF
+```
+
+Skip the envelopes that are not operator speech: skill-body injections (they
+begin `Base directory for this skill:`), `<system-reminder>` blocks, hook
+feedback, and context-continuation summaries. What remains — including
+`<command-name>`/`<command-args>` blocks — is the ask list.
+
+List each **request** in the order made. Include asks that were declined,
+deferred, or superseded; the audit is incomplete without them. Slash-command
+invocations count as asks (`/intake <url>` is "file this link"). Corrections and
+mid-course redirections are their own rows, not silent edits to an earlier one.
+
+If the transcript cannot be read, say so in the report and mark the asks column
+**unverified** — do not quietly fall back to recollection.
 
 ### 3. Render the two tables
 
@@ -76,8 +108,11 @@ a PR.
 ## Guardrails
 
 - **Read-only.** No files are written, no commits made, no PR touched.
-- **Git is the oracle for the delivered column.** Where recollection and the
-  diff disagree, the diff wins and the discrepancy is reported.
+- **Both columns rest on evidence, not recall.** Git is the oracle for what was
+  delivered; the transcript is the oracle for what was asked. Where recollection
+  disagrees with either, the artifact wins and the discrepancy is reported. An
+  audit with one evidenced column and one remembered column fails in the
+  remembered one.
 - **Report an ask as `partial` or `not done` when it is** — an audit that
   grades its own work generously is worth nothing to the reviewer.
 - Never touch `deprecated/`.
