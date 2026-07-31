@@ -36,7 +36,29 @@ One departure from the plan as written: the committed `.html` gained a
 The session-built page had relied on the artifact host to supply them; without
 them a `file://` open renders in quirks mode with an undeclared encoding, which
 would mangle the page's `‖z‖`/`√d`/`ψ` notation — so the wrapper is what makes
-the local-launch property actually hold. Original design record below, unedited.
+the local-launch property actually hold.
+
+**The Pages passthrough (deferred below) was un-deferred and built the same
+day**, and building it surfaced a defect the deferred note didn't anticipate:
+a same-slug pair `foo.md` + `foo.html` both map to `foo.html` once the doc
+side goes through the site's usual `.md` → `.html` rename, so a plain
+`File.cp!` of the sibling — exactly what the deferred note proposed — would
+silently overwrite the visualization's own rendered documentation page,
+whichever write ran last. Caught by building the real site and reading the
+output, not by the unit tests alone (which happened to pass without the
+overwrite having a check to catch it). The fix, reflected in `Site.build/2`'s
+moduledoc and this plan's shape section: the copied artifact is written under
+an `.embed.html` suffix (`launch_site_name/1`), and the visualization's own
+`./launch` markdown link is rewritten to that suffix **in the source text,
+before rendering** — not in the rendered HTML, which would also have caught
+the sidebar/breadcrumb "current page" self-link (anything else ending in the
+same filename) in the same regex sweep. The source tree's sibling keeps its
+plain name throughout; only the in-memory build copy of the body text and the
+`_site/` output are affected. Confirmed end-to-end against a real build: the
+doc page keeps its content, the Launch link resolves to the renamed copy, the
+copy is byte-identical to the source sibling, and the source tree is
+untouched. Original design record below, unedited except where the shape
+section is updated in place to match what shipped.
 
 **Original status: Proposed** — not ratified. Adding to the controlled `type`
 vocabulary is a change to the shape of the brain
@@ -105,13 +127,21 @@ already built in this session satisfies this as written.
 
 ## File-tree diff
 
+As shipped (two differences from the original proposal, both because the
+passthrough was un-deferred and built the same day: `site.ex` is touched, and
+the verifier tests landed in the existing `registry_test.exs`, which already
+holds every other `Verifier.run/2` case, rather than a new file):
+
 ```
-meta/policy/controlled-type-vocabulary.md          # MODIFIED — add the `visualization` entry + filing test
-meta/policy/frontmatter-schema.md                  # MODIFIED — document the `launch` field (visualization only)
+meta/policy/controlled-type-vocabulary.md          # MODIFIED — the `visualization` entry + filing test
+meta/policy/frontmatter-schema.md                  # MODIFIED — the `launch` field (visualization only)
 CLAUDE.md                                          # MODIFIED — regenerated; never hand-edited
 lib/elixir_mind/registry.ex                        # MODIFIED — Entry gains :launch; load_entry/2 reads fm["launch"]
 lib/elixir_mind/verifier.ex                        # MODIFIED — rule 9 + launch_errors/2, mirroring sense_errors/1
-test/elixir_mind/verifier_test.exs                 # MODIFIED — rule-9 cases (missing / dangling / wrong-dir / wrong-ext / ok)
+lib/elixir_mind/site.ex                            # MODIFIED — copy_visualization_artifacts/3, launch_site_name/1,
+                                                    #   rewrite_launch_link/2 (pre-render, in load_page/2)
+test/elixir_mind/registry_test.exs                 # MODIFIED — rule-9 cases (missing / dangling / wrong-dir / wrong-ext / ok)
+test/elixir_mind/site_test.exs                     # MODIFIED — artifact copy + on-site rename + source-untouched cases
 knowledge/machine-learning/evolutionary-computation/
   evolutionary-search-in-latent-space.md           # NEW — the first visualization document
   evolutionary-search-in-latent-space.html         # NEW — the artifact already built this session
@@ -149,21 +179,34 @@ just another file written into that fixture directory.
 - **The verifier owns the pairing**, not the site generator and not the author's
   discipline. A dangling `launch` is a build failure, the same class of error as
   a dangling `verified_by`.
-- **The site generator is untouched.** It globs `**/*.md`; a sibling `.html` is
-  invisible to it and stays that way under this plan (see the consequence below).
+- **The rename is site-build-only, computed, never stored.** `launch_site_name/1`
+  (`String.replace_suffix(launch, ".html", ".embed.html")`) is applied at build
+  time to the copy's output path and, in the source markdown text in memory, to
+  the visualization's own `./launch` link target — never written back to the
+  `.md` or `.html` on disk. The pairing a reader sees in a checkout is exactly
+  the plain-named pair the type promises.
+- **The link swap happens in markdown source, not rendered HTML.** The first
+  implementation rewrote the launch `href` in the already-rendered page instead,
+  matched by trailing filename — and it also matched the sidebar's own
+  "current page" self-link and the breadcrumb link to the same page, since both
+  legitimately end in the same filename. Rewriting the source text in
+  `load_page/2`, before the page shell (sidebar, breadcrumbs) is generated,
+  makes that class of collision structurally impossible rather than something
+  a narrower regex has to keep dodging.
 
-## Known consequence of the local-only scope
+## Consequence of the local-only scope — resolved same day
 
-**On the deployed site, the Launch link will 404.** `Site.build/2` copies no
-`.html` from the source tree, so the rendered `<slug>.html` page will carry a
-relative link to a file that was never copied into `_site/`. The link works in a
-checkout and in an editor; it is dead on Pages. This is a direct, accepted
-consequence of scoping to local launch — recorded here so it is a decision rather
-than a surprise. The fix is small and is in *Deferred* below.
+**Originally: on the deployed site, the Launch link would 404.** `Site.build/2`
+copied no `.html` from the source tree, so the rendered `<slug>.html` page would
+carry a relative link to a file never copied into `_site/`. Recorded here as an
+accepted consequence of scoping to local launch, with the fix sized and slotted
+into *Deferred* below — then un-deferred at the operator's direction the same
+day. See *Status* above for what building it actually took (a same-slug
+filename collision the original one-line description didn't anticipate) and
+*Boundary decisions* above for the shape that resulted.
 
 ## Scope boundaries (explicitly out)
 
-- **No Pages passthrough.** Out by the operator's scoping decision. Deferred.
 - **No raw-HTML passthrough in the markdown parser.** Wider blast radius (every
   document body becomes a script vector) for no gain the file-sibling shape
   doesn't already give.
@@ -189,15 +232,16 @@ than a surprise. The fix is small and is in *Deferred* below.
 6. Cross-link from `em:da2ffb` and `em:e12137` — and replace
    `em:e12137`'s "Demonstrations in this bundle: none yet" with the real one.
 7. Full gate suite; commit.
+8. **Un-deferred the same day:** the Pages passthrough (see *Deferred*'s first
+   item, and *Status* above for what it actually took). `Site.build/2` gained
+   `copy_visualization_artifacts/3`, `launch_site_name/1`, and a pre-render
+   `rewrite_launch_link/2` in `load_page/2`; two tests added
+   (`test/elixir_mind/site_test.exs`); confirmed against a real build (not only
+   the fixtures) that the doc page, the renamed copy, and the untouched source
+   tree all come out correct.
 
 ## Deferred
 
-- **Pages passthrough** — teach `Site.build/2` to copy each visualization's
-  sibling `.html` verbatim into `_site/`, un-404ing the live Launch link. The
-  generator already writes unwrapped files (`assets/style.css`, `assets/app.js`,
-  `search-index.json`), so this is a `File.cp!` in the existing walk, not new
-  machinery. Deliberately deferred, not blocked: it graduates the moment the
-  operator wants the explorables readable from the published site.
 - **A `visualizes:` typed edge** (id-keyed, from the visualization to the
   document whose claims it demonstrates), mirroring `verified_by`. Prose
   cross-links carry it adequately at n=1; revisit if visualizations accumulate.
@@ -209,9 +253,11 @@ than a surprise. The fix is small and is in *Deferred* below.
 | 1 | Which frontmatter field points at the sibling? | **A new `launch:` field.** Purpose-built, unambiguous, mechanically checkable; extra keys are already sanctioned by the frontmatter schema. | **Reusing `resource:`** — floated earlier in this session. On inspection it misreads: `resource` denotes the *source asset a document captures*, and here the html is the document's own artifact, not its source. It also sits in the middle of verifier rules 4–5, where a `resource` marks a doc as a capture — semantics a visualization should not inherit. |
 | 2 | Is `visualization` a bundle type (gets an `em:` id) or governance? | **Bundle type.** It is knowledge content sitting beside the reference it illustrates, and the id is what survives a later move — the same argument the project-namespace policy makes for its hubs. | Filing under `meta/` — it is not governance of the brain. |
 | 3 | Does the type name follow the established-terminology rule? | **`visualization` is the established term** and reads correctly cold. | `explorable` — accurate to the genre, but bespoke enough to need glossing at every use; `demo` — too loose (implies a product walkthrough). |
-| 4 | Accept the dead Launch link on the deployed site? | **Accept for now**, per the local-only scope, with the passthrough deferred and costed above. | Blocking local launch on the Pages work — inverts the operator's scoping decision. |
+| 4 | Accept the dead Launch link on the deployed site? | **Superseded** — the operator un-deferred the passthrough same-day; the link resolves on Pages too now (see *Status*). | — |
+| 5 | Same-slug output collision (surfaced building decision 4's fix, not anticipated at ratification) | **`.embed.html` on-site rename, rewritten pre-render in the markdown source.** Keeps the source-tree pair plain-named (local launch untouched) and makes the sidebar/breadcrumb self-link collision structurally impossible rather than regex-avoided. | Rewriting the rendered HTML's `href` by trailing-filename match — caught the doc's own nav self-link and breadcrumb link in the same sweep, since both legitimately end in the same filename; discarded once the real build surfaced it. |
 
-**Open question for the operator:** should the first visualization's `.html` be
-committed as-authored, or should the plan's execution re-derive it in-repo? The
-session-built page satisfies every self-containment constraint as written, so the
-recommendation is to commit it as-is and let review catch anything.
+**Resolved:** the first visualization's `.html` was committed as-authored, per
+the operator's direction — it satisfied every self-containment constraint as
+written, and review (the real end-to-end build, not just fixtures) caught the
+one thing that needed fixing, which was the passthrough's collision, not the
+artifact itself.

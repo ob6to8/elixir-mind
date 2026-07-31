@@ -657,13 +657,32 @@ Like the other `mix brain.*` tools it is **dependency-free** — it reuses
 `ElixirMind.Frontmatter` and `ElixirMind.Markdown` and the standard library
 only, so `mix brain.site` runs offline in CI and any sandbox.
 
+A `type: visualization` document is rendered like any other page, but its
+`launch` artifact — a same-directory sibling `.html`, guaranteed to exist by
+`ElixirMind.Verifier` rule 9 — is additionally copied **verbatim** into the
+matching output directory, unwrapped by the page shell, the same way
+`assets/style.css` and `assets/app.js` are written untouched below. That copy
+is what makes a visualization's "Launch" link resolve on the deployed site
+rather than only in a local checkout.
+
+The copy is written under an `.embed.html` suffix rather than the sibling's
+own name: a source pair `foo.md` + `foo.html` both map to `foo.html` once the
+doc side goes through the usual `.md` → `.html` rename, so the raw artifact
+would silently overwrite its own documentation page on write order alone. The
+rename is site-build-only — the source tree keeps the plain sibling name a
+local `file://` open expects — so a visualization's markdown *source* has its
+`./launch` link target swapped to the renamed copy before rendering, the same
+way an internal `.md` link is swapped to `.html`. Rewriting the source instead
+of the rendered page keeps the change from ever touching the sidebar/
+breadcrumb chrome, which doesn't exist until rendering runs.
+
 All internal links are **relative** (each page carries a `root_prefix` computed
 from its depth), so the site works both at a domain root and under a project
 subpath like `/elixir-mind/` without configuration.
 
 **Functions**
 
-- `build/2` — Build the site from `root` into `out_dir`. Removes and recreates `out_dir`, then writes every page plus `assets/` and `search-index.json`. Returns the number of pages written.
+- `build/2` — Build the site from `root` into `out_dir`. Removes and recreates `out_dir`, then writes every page, each visualization's launch artifact, plus `assets/` and `search-index.json`. Returns the number of pages written.
 - `default_out/0` — Default output directory (relative to repo root).
 
 **Types**
