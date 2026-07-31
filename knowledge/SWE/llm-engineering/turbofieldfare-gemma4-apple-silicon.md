@@ -68,3 +68,39 @@ affiliated with Google.
 # Citations
 
 - <https://github.com/drumih/turbo-fieldfare> — project repository and README
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:96a4d0">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-turbofieldfare-intake (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:96a4d0`]**
+
+I filed the linked GitHub repo as a new reference document in the brain and pushed the branch. No PR was opened since that wasn't requested.
+
+**What I created**
+
+| Type | Doc | Why this type |
+|---|---|---|
+| reference | [`knowledge/SWE/llm-engineering/turbofieldfare-gemma4-apple-silicon.md`](https://github.com/ob6to8/elixir-mind/blob/claude/turbo-fieldfare-intake-j9k13u/knowledge/SWE/llm-engineering/turbofieldfare-gemma4-apple-silicon.md) (`em:96a4d0`) | captured/summarized external project material, not the operator's own claim |
+
+**What I modified**
+
+| File | Change |
+|---|---|
+| `knowledge/SWE/llm-engineering/index.md` | added listing for the new doc |
+| `meta/registry.md` | regenerated after minting the id |
+
+**Actions I have taken**
+
+| Action | Result |
+|---|---|
+| Fetched the repo's GitHub page and README | got project purpose, architecture, benchmarks, licensing |
+| Dedup search (turbofieldfare, Gemma 4, MoE expert streaming, fieldfare) | no existing doc on this project — two Gemma-4-related survey bookmarks exist but are unrelated (a different, multimodal Gemma 4 12B model) |
+| Filed into existing directory `knowledge/SWE/llm-engineering/` | fits alongside the existing local-inference-stacks and hardware-tier docs; no new directory needed |
+| `mix brain.id` / `mix brain.registry` / `mix brain.verify` | id minted, registry rebuilt, bundle verifies clean |
+| `mix brain.dedup_probe --update-baseline` | 6/19 plain recall, no regression vs. committed baseline |
+| Committed and pushed | commit `e9dc15c` on `claude/turbo-fieldfare-intake-j9k13u` |
