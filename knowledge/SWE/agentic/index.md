@@ -17,6 +17,7 @@ and the practices they change.
 - [governance](/knowledge/SWE/agentic/governance/index.md) — enforcement mechanisms for agent-produced work: typed models as the binding layer between prose and code, checking properties at the abstraction level where they're legible
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
 - [multi-model](/knowledge/SWE/agentic/multi-model/index.md) — working across multiple model providers in coding-agent workflows: escaping single-provider lock-in while keeping the dev ergonomics
+- [prompt-design](/knowledge/SWE/agentic/prompt-design/index.md) — approaches and research for effective prompt engineering in agentic systems
 - [provenance](/knowledge/SWE/agentic/provenance/index.md) — trust and provenance layers for content moving through multi-agent pipelines: grading transmitters, chain trust, and corroboration
 - [skill-optimization](/knowledge/SWE/agentic/skill-optimization/index.md) — optimizing an agent's instruction/skill file against a score rather than authoring it by judgment: text-space optimizers, edit budgets, and held-out gates
 - [supervision](/knowledge/SWE/agentic/supervision/index.md) — how a human stays in the loop over agent work: the postures available, the consoles built for them, and what makes agent activity legible enough to act on
