@@ -56,6 +56,7 @@ the start if siblings are plausible.
 ## verification
 - [stable-identity](/meta/policy/stable-identity.md) — immutable `em:xxxxxx` ids; edges reference ids; `meta/registry.md` is compiled
 - [verification-grounding](/meta/policy/verification-grounding.md) — provenance immutable; `verified` requires grounding; evidence edges live only in `verified_by`
+- [model-attribution](/meta/policy/model-attribution.md) — agent-authored governance and statement docs name the producing model in `provenance`, in model-id form; an undisclosed model is stated, never omitted or guessed
 
 ## conformance
 - [okf-conformance](/meta/policy/okf-conformance.md) — the OKF v0.1 conformance conditions
