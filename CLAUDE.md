@@ -1029,11 +1029,26 @@ distinction is carried **uniformly and structurally**, by citations and
 markers, so the reader can trust the *absence* of a marker exactly as much
 as its presence.
 
-- **The trigger is actionability, not completeness.** Conversational prose,
-  reasoning, and recommendations need no markers; a fact that could change
-  what the operator does next — a state of CI, a file's contents, a price, a
-  version, a "that already merged" — does. When such a fact is cheap to
-  check, check it rather than mark it recalled.
+- **The trigger is actionability, not completeness.** Conversational prose
+  and reasoning need no markers; a fact that could change what the operator
+  does next — a state of CI, a file's contents, a price, a version, a "that
+  already merged" — does. When such a fact is cheap to check, check it rather
+  than mark it recalled.
+- **A recommendation names the premise it would fall with.** A recommendation
+  is not a fact and takes no basis marker, but it nearly always rests on one:
+  a belief about the operator's setup, the contents of a file, what a skill
+  already does. When that premise is **unchecked** *and* the recommendation
+  would reverse without it, name it inline ("assuming your sessions run
+  Opus-tier, …") or check it before writing the recommendation down —
+  checking is usually one tool call, and always cheaper than the round-trip
+  it saves. The failure is structural rather than occasional: a
+  recommendation is produced *alongside* the options it ranks, so it inherits
+  the least verification of anything in the response while being formatted as
+  the most decision-relevant. This is what makes the ledger's
+  ratify-rather-than-re-derive invitation
+  ([response-work-report-format](/meta/policy/response-work-report-format.md))
+  safe to accept: the operator can see what the recommendation is standing
+  on, instead of having to ask a question to find out.
 - **Uniform practice, never episodic narration.** Announcing the diligence
   case-by-case ("let me audit rather than answer from memory" — see the
   banned-phrases register) is the anti-pattern this rule replaces: selective
