@@ -781,6 +781,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:da9532` | [projects/dvorak-vim/drill-engine](/projects/dvorak-vim/drill-engine.md) | plan |  |
 | `em:04281b` | [projects/dvorak-vim/keybinding-reference-design](/projects/dvorak-vim/keybinding-reference-design.md) | plan |  |
 | `em:715616` | [projects/dvorak-vim/next-steps](/projects/dvorak-vim/next-steps.md) | plan |  |
+| `em:6733b4` | [projects/elixir-agent-memory](/projects/elixir-agent-memory.md) | project |  |
+| `em:50bbc3` | [projects/elixir-agent-memory/design-and-build-order](/projects/elixir-agent-memory/design-and-build-order.md) | plan |  |
 | `em:763ec8` | [projects/human-writing-attribution](/projects/human-writing-attribution.md) | project |  |
 | `em:fe5ca6` | [projects/human-writing-attribution/overlap-tool](/projects/human-writing-attribution/overlap-tool.md) | plan |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |

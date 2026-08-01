@@ -21,6 +21,12 @@ project accrues research to the brain rather than to one repo.
   non-realtime sound rendered from one declared timing grid, run on the
   operator's local machine
   ([docs](/projects/code-driven-av-production/index.md))
+- [Elixir agent memory](/projects/elixir-agent-memory.md) — a BEAM-native
+  recall-and-dedup sidecar for file-canonical knowledge bundles and agent
+  fleets: derived, disposable FTS5+embedding indexes over canonical markdown,
+  benchmarked on recall gold sets; the tier-2 dedup engine this brain's own
+  recall analysis specified, built outside it
+  ([docs](/projects/elixir-agent-memory/index.md))
 - [Dvorak vim](/projects/dvorak-vim.md) — a layout-aware vim reference and drill
   system for Dvorak typists: every binding shown as the command character plus
   the QWERTY keycap that produces it, served inside the editor, paired with
