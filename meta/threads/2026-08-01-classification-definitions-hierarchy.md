@@ -6,6 +6,7 @@ provenance: "Claude Code session, 2026-08-01; verbatim retained messages — too
 tags: [meta, thread, taxonomy, beliefs, doctrine, type-vocabulary, epistemics]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01JQEjTpEGuxHfNqdvjNKDLn
+pr: 218
 ---
 
 # 2026-08-01-classification-definitions-hierarchy
