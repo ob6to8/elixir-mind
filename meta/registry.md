@@ -184,6 +184,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:927fe0` | [beliefs/glossary/dvorak-simplified-keyboard](/beliefs/glossary/dvorak-simplified-keyboard.md) | concept | false |
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
 | `em:436ebc` | [beliefs/glossary/earcon](/beliefs/glossary/earcon.md) | concept | false |
+| `em:08334b` | [beliefs/glossary/effort-level](/beliefs/glossary/effort-level.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
 | `em:d907fd` | [beliefs/glossary/elixir-mind](/beliefs/glossary/elixir-mind.md) | concept | false |
 | `em:da21de` | [beliefs/glossary/embeddings](/beliefs/glossary/embeddings.md) | concept | false |
@@ -503,6 +504,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:c60c8e` | [beliefs/glossary/structured-data](/beliefs/glossary/structured-data.md) | concept | false |
 | `em:7820f1` | [beliefs/glossary/stylometry](/beliefs/glossary/stylometry.md) | concept | false |
+| `em:d91933` | [beliefs/glossary/subagent](/beliefs/glossary/subagent.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
 | `em:025b76` | [beliefs/glossary/supervision-tree](/beliefs/glossary/supervision-tree.md) | concept | false |
 | `em:60e22c` | [beliefs/glossary/survey-tier](/beliefs/glossary/survey-tier.md) | concept | false |
@@ -537,6 +539,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:82c03c` | [beliefs/glossary/two-plane-rule](/beliefs/glossary/two-plane-rule.md) | concept | false |
 | `em:e7c96f` | [beliefs/glossary/two-tier-memory](/beliefs/glossary/two-tier-memory.md) | concept | false |
 | `em:927eb2` | [beliefs/glossary/typed-edge](/beliefs/glossary/typed-edge.md) | concept | false |
+| `em:f2a039` | [beliefs/glossary/unchecked-premise](/beliefs/glossary/unchecked-premise.md) | concept | false |
 | `em:570738` | [beliefs/glossary/ungrounded-inference](/beliefs/glossary/ungrounded-inference.md) | concept | false |
 | `em:05fab0` | [beliefs/glossary/unique-name-assumption](/beliefs/glossary/unique-name-assumption.md) | concept | false |
 | `em:b9eb99` | [beliefs/glossary/validation-gate](/beliefs/glossary/validation-gate.md) | concept | false |

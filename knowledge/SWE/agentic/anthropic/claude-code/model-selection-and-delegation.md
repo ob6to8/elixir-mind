@@ -174,3 +174,74 @@ symptom, not the cause.
 - [Extend Claude with skills](https://code.claude.com/docs/en/skills) — frontmatter reference (`model`, `effort`, `context`, `agent`, `background`), forked-skill semantics.
 - [Create custom subagents](https://code.claude.com/docs/en/sub-agents) — subagent frontmatter, model resolution order, built-in agent tiers.
 - [Choosing a Claude model and effort level in Claude Code](https://claude.com/blog/claude-model-and-effort-level-in-claude-code) — Anthropic blog, 2026-07-07.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:c55c81">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-skill-model-selection (2026-08-01)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:c55c81`]**  (co-feeds: `knowledge/SWE/agentic/anthropic/claude-code/index.md`)
+
+I'll research the official Claude Code docs on model selection and synthesize what I find into a reference document.
+
+Model selection in Claude Code happens at **four distinct points**:
+
+| Surface | Scope | How |
+|---|---|---|
+| **Session** | The whole conversation | `/model <alias\|name>`, `claude --model`, `ANTHROPIC_MODEL`, or settings |
+| **Skill** | The rest of the invoking turn | `model:` and `effort:` in `SKILL.md` frontmatter |
+| **Subagent** | One delegated task | `model:`/`effort:` in `.claude/agents/<name>.md`, or per-invocation `model` param |
+| **Forked skill** | One delegated task | `context: fork` + `agent:` field |
+
+**Skill frontmatter** (`model:` and `effort:`)
+- The override applies for **the rest of the current turn** — work you prompt for afterwards resumes on the session model.
+- A value excluded by your organization's allowlist is silently skipped, leaving the session model in place.
+- `inherit` keeps the active model.
+
+**Subagent resolution order** (highest first):
+1. `CLAUDE_CODE_SUBAGENT_MODEL` environment variable
+2. Per-invocation `model` parameter
+3. Subagent definition's `model` frontmatter
+4. The main conversation's model
+
+Omitted, `model:` defaults to `inherit`.
+
+**Forked skill** (`context: fork`)
+- The skill body becomes the subagent's prompt
+- The `agent:` field determines the execution environment (model, tools, permissions)
+- No conversation history; runs in the background by default
+- The fork gets no semantic context from the skill's caller
+
+**Anthropic's model-selection heuristic** (from their 2026-07-07 blog):
+- Smaller models (Sonnet) suit "edits you can describe precisely, mechanical changes, or questions about code"
+- Larger models (Fable/Opus) suit "subtle bugs, unfamiliar domains, or architecture decisions"
+- When output is wrong, ask: "did it not try hard enough (raise effort) or not know enough (pick larger model)?"
+
+This is failure-driven, not a task-to-model table.
+
+I've filed this as a reference doc in the knowledge taxonomy: [`knowledge/SWE/agentic/anthropic/claude-code/model-selection-and-delegation.md`](/knowledge/SWE/agentic/anthropic/claude-code/model-selection-and-delegation.md), id `em:c55c81`.
+
+---
+
+**[`em:c55c81`]**  (co-feeds: `meta/policy/assertions-name-their-basis.md`)
+
+The pattern: an answer that rested on an invisible unchecked premise (`session is Opus-tier`) and missed an option entirely (the mechanical conflict clause). Questioning forced re-derivation, which surfaced both.
+
+What's happening structurally:
+
+**Recommendations inherit the least verification of anything in a response, while formatted as the most decision-relevant.** You ask for an option ranking. I generate N options (each reasoned from context held in this session) and a recommendation (produced *alongside* those options, inheriting the least verification of the whole set—any premise I didn't validate sits in shadows). But that recommendation is what the operator reads first and acts on. The options stay unread if the recommendation lands. So the oversight — whether a hidden premise or a missed option — lives in the highest-stakes cell while you're asking me to verify the lower-stakes ones.
+
+This is the "cache invalidation" problem from first principles: when I cached the recommendation's premise ("Opus-tier session" — reasonable for many contexts, never checked here), I also cached the answer space ("three options" — I didn't re-enumerate). The cache is cheap and accurate most of the time. Questioning triggers re-enumeration, which resets both, and the reset is visible as "significant revisions" because I now carry the full, unchunked reasoning.
+
+The upstream fix: **make recommendation premises visible and verifiable**. Don't hide a premise in the recommendation cell; name it ("assuming X…") or check it before you write the recommendation down. That's one tool call, always cheaper than the round-trip of the operator catching it.
+
+Implications:
+
+1. **Policy amendment needed.** The `assertions-name-their-basis` policy (which currently governs facts as checked/recalled) should extend to *recommendations*: a recommendation either names its unchecked premises or checks them first. This makes the structure visible to future sessions.
+
+2. **The cell itself is structural.** This isn't a Sonnet vs. Opus problem specifically; it's a problem in how recommendations are produced anywhere alongside options. But Opus's higher reasoning depth makes the invisibility *harder to catch*—a smaller model producing an obviously thin answer gets questioned faster; Opus producing a well-reasoned but premise-blind answer reads as confident and gets questioned later (if at all). The larger the model, the later the catch.
+
+3. **Mechanical tests beat judgment calls in the conflict-resolver.** Option 5 addresses the same structural pattern in `/sync-branch-with-main`: a self-assessed judgment (whether a conflict is unambiguous) is where weaknesses hide. Replace it with a rule (auto-resolve only generated artifacts), and the tier stops mattering for that decision.
