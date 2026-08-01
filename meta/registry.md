@@ -160,6 +160,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
 | `em:90e275` | [beliefs/glossary/digital-twin](/beliefs/glossary/digital-twin.md) | concept | false |
 | `em:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
+| `em:2b2532` | [beliefs/glossary/direction-of-fit](/beliefs/glossary/direction-of-fit.md) | concept | false |
 | `em:537412` | [beliefs/glossary/disposition](/beliefs/glossary/disposition.md) | concept | false |
 | `em:bec37f` | [beliefs/glossary/distill-dont-dump](/beliefs/glossary/distill-dont-dump.md) | concept | false |
 | `em:04befc` | [beliefs/glossary/distillation-target](/beliefs/glossary/distillation-target.md) | concept | false |
