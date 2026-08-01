@@ -104,7 +104,23 @@ mechanism is not failing; it is unguarded. The proposal spends a permanent
 per-read and per-write cost to harden a path that empirically holds, and
 hardens only half of it.
 
-## Recommendation
+## A second exposure the sweep cannot close
+
+Merging `origin/main` into the branch that performed this move surfaced a case
+the framing above misses. A document filed on `main` while the branch was open
+([the architect as amplifier](/knowledge/SWE/software-design/the-architect-as-amplifier.md))
+cross-linked the moved paper **at its old path** — a link that did not exist
+when the sweep ran and could not have. Git merged both sides cleanly, because
+neither edited the same line; the break was semantic, and only the advisory
+resolution check named it.
+
+This sharpens the case for gating rather than for ids. A grep-and-sed at move
+time protects against *what exists*; concurrent work on another branch is
+outside its reach entirely, and no link syntax fixes that — an id-referenced
+link would have gone stale here too if the new document were governance-filed,
+and would merely have failed differently otherwise. What catches it is a check
+that runs **after the merge, on the merged tree**, and refuses to pass. That is
+exactly move 1.
 
 Two moves, neither touching link syntax:
 
