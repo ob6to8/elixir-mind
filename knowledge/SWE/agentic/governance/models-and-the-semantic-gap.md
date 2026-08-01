@@ -314,3 +314,64 @@ Nothing is committed yet — say the word or run `/create-pull-request` when you
 **[`em:e4d9cf`]**
 
 Committed (`e11848c`) and pushed to `claude/neovim-pr-file-tree-qr65ce`. No PR opened yet — let me know if you'd like one, or if you're continuing the session further before wrapping up.
+
+### 2026-08-01-mage-governance-comparison-update (2026-08-01)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:e4d9cf`]**
+
+The chapter and this repo are close cousins — in places the repo reads like an independent implementation of the chapter's argument — but they diverge on two load-bearing points: what gets modeled, and the economics of adding checks. Here's the comparison.
+
+First, plainly: the chapter argues that agent-governed systems should keep a compact, machine-checkable description (a "model") between fuzzy prose and verbose code, wire it to build-time drift gates, and enforce properties at the level of a *completed unit of work* rather than per-commit — because "enforce a property at the wrong level of abstraction" and it "slips through" (its "semantic gap"). Your repo already runs most of that playbook, applied to a knowledge corpus instead of a codebase. The interesting differences are where you made the opposite bet.
+
+**Where you're doing the same thing**
+
+**Drift-and-parity gates — you have them, and they're the backbone.** The chapter's "typed model wired to a build-time drift check" is structurally what this repo's generated-artifact suite is: `CLAUDE.md` compiled from `meta/policy/` with `mix brain.contract --check`, `meta/registry.md` from per-file ids with `--check`, the code map from moduledocs, and the route-tag logs, where `mix brain.route_tags` "re-derives each sink's log from the current tags and **fails on divergence**, converting the log's freshness from procedural to structural" ([route-tagging](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/route-tagging.md)). That last phrase is the chapter's thesis in your own vocabulary.
+
+**The semantic gap — you independently landed on the same enforcement level.** The chapter's core example is that per-commit drift checking is wrong: "the model may be legitimately out of sync in the middle and correct again by the end. Enforce at the commit and you are checking a sentence for grammar before the paragraph is written." Your governance repeatedly picks the session/PR close as the enforcement boundary for exactly this reason: [session-capture](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/session-capture.md) is "on demand, not a hook… never a per-turn hook," with tagging as "one finalization motion over that frozen body, not a per-turn rewrite"; [concerns-block-the-close](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/concerns-block-the-close.md) inventories open concerns at the close, not mid-work; and `/create-pull-request` stamps `attribution.from` only once the thread path exists. Mid-session, the bundle is legitimately inconsistent; the property "the record is complete and routed" is only legible at the close. That *is* the chapter's Figure-8 principle, enacted.
+
+**A typed model binding the islands.** The chapter complains the usual setup "gives you docs, code, and tests — and *nothing binding them together*. They sit as three separate islands." Your islands are different — the record layer (threads), the knowledge layer (documents), and the change layer (commits) — but the glue is the same move: a typed structure (`em:` ids, `verified_by` edges, route tags, `attribution.from`, `pr:` stamps, session trailers) that `mix brain.verify` checks referentially. The frontmatter schema plus the controlled type vocabulary is, in the chapter's sense, a typed model of the corpus.
+
+**"Agreement, not correctness" — you draw the identical epistemic line.** The chapter insists the gate "proves one thing: the model and the code **agree**" — it can't prove the model right. Your contract states the same boundary repeatedly: route-tag *coverage* "has no mechanical oracle and stays editorial"; the model-attribution field is "an attestation, not a measurement — a checker can establish presence and form, never truthfulness"; `mix brain.verify` checks shape, never whether a claim is true — truth goes through the separate, evidence-based [verification-grounding](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/verification-grounding.md) ladder.
+
+**Where you diverge**
+
+**Spec vs. mirror — you made the opposite choice, deliberately.** This is the sharpest contrast. The chapter's model must be *authored independently* of the code (a spec, not a mirror), because only an independent second description can catch bugs at the parity check; a derived model only reflects what is. Your generated artifacts are all *mirrors by design* — `CLAUDE.md`, the registry, the code map, the route-tag logs are derived views, and their gates check freshness of derivation, not agreement between two independent accounts. More than that: where two independent descriptions of the same fact *could* exist, your policies systematically delete the second one — [provenance-lives-in-metadata](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/provenance-lives-in-metadata.md) bans prose restating attribution, the evidence narrative is "derived on demand… never committed," and hand-kept `log.md` files were purged in favor of the commit graph. The chapter's instinct is "maintain the second description and gate its agreement"; yours is "there shall be no second description — generate it." Both defeat rot; they defeat it differently, and yours forfeits the chapter's bug-catching benefit of independent authorship *for those artifacts*. The place you do keep an independently-authored model is upstream: the policy corpus itself is the spec, and the checkable subject is the bundle — the check runs bundle-against-policy rather than model-against-code. And [structured-plan-bodies](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/structured-plan-bodies.md) is your one true spec-not-mirror artifact — trees, diffs, and signatures authored *before* the code, with the refresh rule ("re-derive the current-state tree against `HEAD`, diff it against the plan's") acting as a hand-run drift check. Notably, that check is editorial, not gated.
+
+**Economics — the chapter says model more; you hold a stricter admission bar.** The chapter's bet: "Agents removed that cost. When the map stays in sync almost for free, the typed model… becomes the one you start from" — as maintenance cost approaches zero, the rational amount of modeling goes up. Your [coding standards](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/elixir-coding-standards.md) accept the drift-gate half but reject the expansion half: "a check earns a gate when its **signal beats its upkeep** *and* it runs offline… with no dependencies," and on those grounds you've *declined* — not deferred — a declarative shapes layer (SHACL), Credo, Dialyzer, and gated coverage. The implicit disagreement: agent labor drives the *synchronization* cost toward zero, but dependency weight, toolchain complexity, and false-positive noise are costs agents don't remove, so cheap maintenance alone doesn't justify more model. That's a real, defensible refinement of the chapter's claim rather than a contradiction of it.
+
+**Different substrate, different correctness oracle.** The chapter governs software, where tests are the third island and correctness has an executable oracle. Your primary subject is knowledge, which has no test suite — so you built a different apex for correctness: `claim` → `source` captures with verbatim spans → `verified_by` edges → `verified: true`. That is, interestingly, the chapter's "independently authored description catches errors" idea reappearing at the knowledge layer: the primary-source capture is the independent description, and verification is the parity check between statement and evidence. Meanwhile your `lib/` tooling gets the chapter's treatment straight (warnings-as-errors, xref compile-coupling at zero, format checks), per [guarding-against-ai-drift](https://github.com/ob6to8/elixir-mind/blob/main/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md).
+
+**One gap on your side the chapter would poke at.** The chapter's semantic-gap lens suggests asking, for each editorial-only rule, whether it's editorial because no oracle *can* exist or because none has been built at the right level yet. Route-tag coverage and the model-attribution presence check are both candidates the contract itself flags as "mechanically checkable" someday — the chapter's framing would say the unit-of-work level (the PR gate you already have) is exactly where such checks belong when they're added, and your admission rule is the right filter for whether they're worth it.
+
+In one sentence: the chapter and this repo agree on gates, on enforcing at the unit of work, and on "agreement ≠ correctness" — and disagree on whether the model should be an independent spec (chapter) or whether second descriptions should be eliminated and generated (you), and on whether near-free maintenance justifies more modeling (chapter) or whether upkeep-vs-signal remains the binding constraint (you).
+
+If you want, I can `/intake` the chapter as a filed `reference` (it cross-links naturally to the guarding-against-ai-drift doc), or persist this comparison as a `meta/analysis/` doc — say the word and I'll file it.
+
+---
+
+**[`em:e4d9cf`]**
+
+This was an update, not a fresh intake — a document for this exact resource was already filed (`em:e4d9cf`, at `knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md`), so per the bundle's update-in-place rule I extended it rather than creating a duplicate.
+
+**What I did**
+
+| Change | Detail |
+|---|---|
+| Fixed `resource` URL | Old `agent-governance-mechanisms` domain → new `model-based-agentic-software-engineering` domain (same chapter path, confirmed the chapter content itself is unchanged). |
+| Updated `provenance` | Now notes the book's retitling and records the old path for traceability. |
+| Added `## Comparison with this bundle's governance approach` | The full compare/contrast from our conversation, inserted before the Citations section. |
+| Bumped `timestamp` | To 2026-08-01. `attribution` (the ingestion event) was left untouched, per the bundle's own rule that merges bump `timestamp`, never `attribution`. |
+
+**One deviation from strictly verbatim, worth flagging:** your original chat reply blended two separate quoted fragments into one sentence ("enforce a property at the wrong level of abstraction" *and it* "slips through"), which is fine for a chat aside but violates this bundle's own quote-primary-sources rule once the text is filed as document prose. I re-verified the source and swapped in the actual single verbatim sentence — *"this is the semantic gap: the failure you get whenever you enforce a property at the wrong level of abstraction"* — same claim, accurately quoted. I also converted the chat-form GitHub blob links back to the bundle-absolute paths the doc convention requires (`/meta/policy/route-tagging.md` etc.), and dropped the closing "want me to file this?" line since that's now moot. Everything else is unchanged.
+
+Verified: `mix brain.verify`, `mix brain.contract --check`, `mix brain.registry --check`, and `mix brain.route_tags` all pass clean. Nothing is committed yet — say the word or run `/create-pull-request` to open it as a PR.
+
+---
+
+**[`em:e4d9cf`]**
+
+Pushed to `claude/agent-governance-semantic-gap-uvniuv` (commit `58dbc77`). All pre-commit gates passed (format, xref, contract, registry, code-map, `mix brain.verify`, route-tags, glossary, lineage, and the full test suite — 188 tests, 0 failures).
+
+No PR opened — let me know if you'd like one.
