@@ -841,7 +841,7 @@ re-engages.
 - Comprehensive guide to Spotify's payment system, how streams convert to royalties, and factors affecting payouts.
 
 ### [Evals FAQ — Hamel Husain](https://hamel.dev/blog/posts/evals-faq/evals-faq.pdf)
-- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-evaluation` `evals` `agent-testing` `best-practices` `pdf`
+- **Added:** 2026-07-31 · **Status:** promoted → [LLM Evals: Everything You Need to Know — Hamel Husain & Shreya Shankar](/knowledge/SWE/evals/llm-evals-faq-hamel-husain-shreya-shankar.md) (2026-08-01) · **Tags:** `ai-evaluation` `evals` `agent-testing` `best-practices` `pdf`
 - Practical FAQ covering evaluation design, metrics, common pitfalls, and strategies for measuring AI agent performance reliably.
 
 ### [The Therapist Pattern — Thoughtful Software](https://blog.fsck.com/2026/07/20/the-therapist-pattern/)
@@ -1033,7 +1033,7 @@ re-engages.
 - (unfetched: YouTube metadata unavailable)
 
 ### [YouTube: Technical Deep Dive](https://www.youtube.com/watch?v=TL527yTpxlk)
-- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `technical` `tutorial` `video`
+- **Added:** 2026-07-31 · **Status:** promoted → [Complete Beginner's Course on AI Evaluations — Aman Khan](/knowledge/SWE/evals/complete-beginners-course-on-ai-evaluations-aman-khan.md) (2026-08-01) · **Tags:** `youtube` `technical` `tutorial` `video`
 - (unfetched: YouTube metadata unavailable)
 
 ### [YouTube: Engineering Video](https://www.youtube.com/watch?v=dKaZ89SkVYY&t=1s)
@@ -1835,12 +1835,12 @@ re-engages.
 - CLI and library for evaluating and red-teaming LLM apps with automated testing, vulnerability scanning, and comparison.
 
 ### [LLM Evals FAQ: Everything You Need to Know](https://hamel.dev/blog/posts/evals-faq/)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `llm-evaluation` `testing` `error-analysis` `best-practices`
+- **Added:** 2026-07-23 · **Status:** promoted → [LLM Evals: Everything You Need to Know — Hamel Husain & Shreya Shankar](/knowledge/SWE/evals/llm-evals-faq-hamel-husain-shreya-shankar.md) (2026-08-01) · **Tags:** `llm-evaluation` `testing` `error-analysis` `best-practices`
 - Comprehensive guide to building LLM evaluation systems emphasizing error analysis and domain-expert-driven evaluation.
 
 ### [LLM Evals FAQ (PDF)](https://hamel.dev/blog/posts/evals-faq/evals-faq.pdf)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `llm-evaluation` `testing` `reference`
-- PDF document (format prevented content extraction for detailed summary).
+- **Added:** 2026-07-23 · **Status:** promoted → [LLM Evals: Everything You Need to Know — Hamel Husain & Shreya Shankar](/knowledge/SWE/evals/llm-evals-faq-hamel-husain-shreya-shankar.md) (2026-08-01) · **Tags:** `llm-evaluation` `testing` `reference`
+- PDF document (format prevented content extraction for detailed summary; full text extracted via `pdftotext` on promotion — see the filed reference).
 
 ### [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/)
 - **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `llm-evaluation` `ai-products` `testing` `strategy`
@@ -2441,8 +2441,8 @@ re-engages.
 - YouTube blocked automated access via CAPTCHA redirect (google.com/sorry)
 
 ### [Unable to fetch](https://www.youtube.com/watch?v=TL527yTpxlk)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `youtube` `video` `blocked`
-- YouTube blocked automated access via CAPTCHA redirect (google.com/sorry)
+- **Added:** 2026-07-23 · **Status:** promoted → [Complete Beginner's Course on AI Evaluations — Aman Khan](/knowledge/SWE/evals/complete-beginners-course-on-ai-evaluations-aman-khan.md) (2026-08-01) · **Tags:** `youtube` `video` `blocked`
+- YouTube blocked automated access via CAPTCHA redirect (google.com/sorry); resolved on promotion via `yt-dlp` (see [the transcript-fetch snippet](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md)).
 
 ### [Unable to fetch](https://www.youtube.com/watch?v=TTgQV21X0SQ)
 - **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `youtube` `video` `blocked`

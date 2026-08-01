@@ -687,8 +687,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
 | `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
+| `em:2b1f58` | [knowledge/SWE/evals/ai-evals-for-engineers-pms-qas-study-guide](/knowledge/SWE/evals/ai-evals-for-engineers-pms-qas-study-guide.md) | reference |  |
+| `em:b7deb1` | [knowledge/SWE/evals/complete-beginners-course-on-ai-evaluations-aman-khan](/knowledge/SWE/evals/complete-beginners-course-on-ai-evaluations-aman-khan.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
+| `em:b3586c` | [knowledge/SWE/evals/llm-evals-faq-hamel-husain-shreya-shankar](/knowledge/SWE/evals/llm-evals-faq-hamel-husain-shreya-shankar.md) | reference |  |
 | `em:1394b9` | [knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) | reference |  |
 | `em:1f1256` | [knowledge/SWE/evals/reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | methodology |  |
 | `em:9baaad` | [knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) | methodology |  |
