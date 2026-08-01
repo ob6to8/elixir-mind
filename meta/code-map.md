@@ -509,9 +509,8 @@ breaks an edge: only the registry view changes.
 Scope: knowledge-bundle concepts only. Governance (`meta/`), skills
 (`.claude/`), tooling (`lib/`, `test/`), the archive (`deprecated/`), the
 candidate feed (`inbox/`), the survey tier (`survey/`), the operator's
-journal (`journal/`), imported eval snapshots (`evals/`), and reserved/root
-files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) are outside the
-registry.
+journal (`journal/`), and reserved/root files (`index.md`, `log.md`,
+`README.md`, `CLAUDE.md`) are outside the registry.
 
 **Functions**
 
