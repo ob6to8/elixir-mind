@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-01; verbatim retained
 tags: [meta, thread, tdd, methodology, agentic, atomic-prs, agent-guidance, cognitive-biases]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01MWHK7zH3EgQzvgsJyPGkG4
+pr: 224
 ---
 
 # 2026-08-01-tdd-research-spike-and-methodology-adoption
