@@ -5,6 +5,7 @@ description: Operator questioned the filing of em:7fa867 under knowledge-managem
 provenance: "Claude Code session (Claude Opus 5), 2026-08-01; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, taxonomy, refile, links, stable-identity, tooling, verifier]
 timestamp: 2026-08-01
+pr: 214
 session: https://claude.ai/code/session_018hjdRdzF1PRXk1cz5vnxVh
 ---
 
