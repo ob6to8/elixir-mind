@@ -5,6 +5,7 @@ and the practices they change.
 
 ## Subdirectories
 
+- [action-verification](/knowledge/SWE/agentic/action-verification/index.md) — confirming an agent's state-changing actions actually landed in the target system: read-backs, receipts, reconciliation, and why traces and evals cannot detect a silent no-op
 - [adoption](/knowledge/SWE/agentic/adoption/index.md) — how organizations adopt agentic coding: maturity models, rollout stages, bottlenecks, and guardrails
 - [agent-memory](/knowledge/SWE/agentic/agent-memory/index.md) — how agents persist and reuse experience across sessions: memory architectures, experience graphs, structured vs. raw-trajectory memory
 - [agentic-loop](/knowledge/SWE/agentic/agentic-loop/index.md) — the core execution loop of an LLM agent (reason→act→observe) and the "loop engineering" lexicon around it

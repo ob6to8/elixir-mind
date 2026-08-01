@@ -59,33 +59,16 @@ of normal supervision, is the agent-pairing project's
 ## The same distinction, arrived at from operations
 
 Practitioners running agents against real systems reach this boundary from the
-other side, without the compliance framing: an agent reports a refund issued, the
-run is clean, and the billing system holds no such refund. The operational
-statement of the problem is that a trace is
-[testimony rather than evidence](/knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns.md) —
-"task completed" and "state changed" are different signals, and observability
-instruments only the first. What is missing is not more recording but
-**reconciliation**: a read-back from the system of record, which is the only step
-in the loop the agent does not narrate.
-
-Three refinements from that experience sharpen the concept:
-
-- **The verifier can be testimony too.** A check the agent generates from its own
-  rendering of a page proves nothing — one operator's DOM-based confirmation check
-  matched a node that renders identically on success and on validation failure,
-  so it returned true precisely when a false was needed. Evidence has to be
-  something the counterparty produced: an id they minted, a response they
-  returned, a message they sent.
-- **Absence of error is not evidence.** A run in which no request ever left the
-  client and a run in which every request succeeded are indistinguishable in a log
-  that records only failures.
-- **The claim state must be earned, not defaulted.** A system that cannot obtain
-  external confirmation should report `pending`, never `done` — and `pending`
-  should be the easier state to reach.
-
-This is the completeness gap above, restated at the level of a single action: the
-record is honest only about the stream it observes, and an action path that
-produces no external artifact leaves the record pristine.
+other side, without the compliance framing — an agent reports a refund issued,
+the run is clean, and the billing system holds no such refund. The reasoning
+from that direction, its evidence test for what a read-back must be, and its
+own account of a self-generated check that fooled its author are filed as
+priors in their own right:
+[a completion claim is not evidence of completion](/beliefs/completion-claims-are-not-evidence-of-completion.md)
+(`em:674c8f`) and
+[only what the other side produced is evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md)
+(`em:01abda`), with the source discussion captured in full under
+[action-verification](/knowledge/SWE/agentic/action-verification/index.md).
 
 ## Thread excerpts — route-tagged log
 

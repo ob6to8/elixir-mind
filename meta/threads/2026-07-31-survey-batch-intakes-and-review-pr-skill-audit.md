@@ -863,8 +863,6 @@ persist the resource via the /intake process and include the verbatim transcript
 
 ## Assistant
 
-<routes ref="em:7c4f3e">
-
 ## Resource persisted ✓
 
 Verbatim Reddit transcript now filed as a separate `type: reference` document:
@@ -883,8 +881,6 @@ Verbatim Reddit transcript now filed as a separate `type: reference` document:
 2. **Source preservation layer** — Filed the complete transcript as `em:7c4f3e` for future reference and verbatim quotes
 
 All gates passing. Both commits pushed to branch.
-
-</routes>
 
 ## User
 

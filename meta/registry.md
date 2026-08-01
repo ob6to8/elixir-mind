@@ -13,6 +13,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | id | concept | type | verified |
 |----|---------|------|----------|
 | `em:763494` | [beliefs/an-instrument-without-a-control-measures-itself](/beliefs/an-instrument-without-a-control-measures-itself.md) | belief |  |
+| `em:674c8f` | [beliefs/completion-claims-are-not-evidence-of-completion](/beliefs/completion-claims-are-not-evidence-of-completion.md) | belief |  |
 | `em:06de36` | [beliefs/coverage-and-quality-must-be-measured-jointly](/beliefs/coverage-and-quality-must-be-measured-jointly.md) | belief |  |
 | `em:0c4913` | [beliefs/dont-review-code-length-specs](/beliefs/dont-review-code-length-specs.md) | belief |  |
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
@@ -198,6 +199,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:bce124` | [beliefs/glossary/error-recovery](/beliefs/glossary/error-recovery.md) | concept | false |
 | `em:14d4b0` | [beliefs/glossary/escalating-example-exposition](/beliefs/glossary/escalating-example-exposition.md) | concept | false |
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
+| `em:d8ef12` | [beliefs/glossary/escript](/beliefs/glossary/escript.md) | concept | false |
 | `em:8eb851` | [beliefs/glossary/event-sourcing](/beliefs/glossary/event-sourcing.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
@@ -338,6 +340,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:219996` | [beliefs/glossary/multi-head-latent-attention](/beliefs/glossary/multi-head-latent-attention.md) | concept | false |
 | `em:ff9316` | [beliefs/glossary/multi-hop-reasoning](/beliefs/glossary/multi-hop-reasoning.md) | concept | false |
 | `em:fc8797` | [beliefs/glossary/mxfp4](/beliefs/glossary/mxfp4.md) | concept | false |
+| `em:bf754e` | [beliefs/glossary/ndjson](/beliefs/glossary/ndjson.md) | concept | false |
 | `em:9eca36` | [beliefs/glossary/neurosymbolic-ai](/beliefs/glossary/neurosymbolic-ai.md) | concept | false |
 | `em:3c848d` | [beliefs/glossary/next-edit-suggestion](/beliefs/glossary/next-edit-suggestion.md) | concept | false |
 | `em:a5b3bd` | [beliefs/glossary/nogood](/beliefs/glossary/nogood.md) | concept | false |
@@ -372,6 +375,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:83c71b` | [beliefs/glossary/patch-validation-funnel](/beliefs/glossary/patch-validation-funnel.md) | concept | false |
 | `em:eae2bf` | [beliefs/glossary/pattern-matching](/beliefs/glossary/pattern-matching.md) | concept | false |
 | `em:094aff` | [beliefs/glossary/phasor](/beliefs/glossary/phasor.md) | concept | false |
+| `em:811803` | [beliefs/glossary/picker](/beliefs/glossary/picker.md) | concept | false |
 | `em:8048c6` | [beliefs/glossary/pipe-table](/beliefs/glossary/pipe-table.md) | concept | false |
 | `em:42b353` | [beliefs/glossary/plainspeak-orientation](/beliefs/glossary/plainspeak-orientation.md) | concept | false |
 | `em:bf0524` | [beliefs/glossary/plan-type](/beliefs/glossary/plan-type.md) | concept | false |
@@ -412,6 +416,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:cf2db9` | [beliefs/glossary/rdfs](/beliefs/glossary/rdfs.md) | concept | false |
 | `em:6e9584` | [beliefs/glossary/reachability](/beliefs/glossary/reachability.md) | concept | false |
 | `em:f5c2bd` | [beliefs/glossary/react](/beliefs/glossary/react.md) | concept | false |
+| `em:8ca1b6` | [beliefs/glossary/read-back](/beliefs/glossary/read-back.md) | concept | false |
 | `em:99ec79` | [beliefs/glossary/reason-tags](/beliefs/glossary/reason-tags.md) | concept | false |
 | `em:5e7da1` | [beliefs/glossary/recall](/beliefs/glossary/recall.md) | concept | false |
 | `em:0b95ed` | [beliefs/glossary/recall-at-k](/beliefs/glossary/recall-at-k.md) | concept | false |
@@ -557,6 +562,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
+| `em:01abda` | [beliefs/only-what-the-other-side-produced-is-evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md) | belief |  |
 | `em:a96688` | [beliefs/plan-artifacts-compress-decisions-not-bodies](/beliefs/plan-artifacts-compress-decisions-not-bodies.md) | belief |  |
 | `em:6c7e85` | [beliefs/plan-artifacts-surface-implicit-review-decisions](/beliefs/plan-artifacts-surface-implicit-review-decisions.md) | belief |  |
 | `em:d1ba60` | [beliefs/remembered-surfaces-are-forgotten-surfaces](/beliefs/remembered-surfaces-are-forgotten-surfaces.md) | belief |  |
@@ -564,6 +570,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f35b8f` | [beliefs/scar-tissue-lens-for-agent-failure](/beliefs/scar-tissue-lens-for-agent-failure.md) | belief |  |
 | `em:1eebdf` | [beliefs/spec-detail-approaches-code-length](/beliefs/spec-detail-approaches-code-length.md) | belief |  |
 | `em:2bd5a1` | [beliefs/value-of-writing-is-human-synthesis](/beliefs/value-of-writing-is-human-synthesis.md) | belief |  |
+| `em:b01e03` | [knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread](/knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread.md) | source |  |
 | `em:dc210d` | [knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details](/knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details.md) | reference |  |
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
@@ -642,7 +649,6 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b4bb5e` | [knowledge/SWE/agentic/supervision/agent-supervision-consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md) | reference |  |
 | `em:7404fb` | [knowledge/SWE/agentic/supervision/ambient-agent-observability](/knowledge/SWE/agentic/supervision/ambient-agent-observability.md) | concept | false |
 | `em:712e01` | [knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md) | concept | false |
-| `em:7c4f3e` | [knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns](/knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns.md) | reference |  |
 | `em:91b88f` | [knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md) | concept | false |
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
@@ -709,9 +715,13 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:24bd1e` | [knowledge/knowledge-management/open-knowledge-format](/knowledge/knowledge-management/open-knowledge-format.md) | reference |  |
 | `em:8df8d1` | [knowledge/knowledge-management/source-acquisition/reddit-thread-when-fetch-is-blocked](/knowledge/knowledge-management/source-acquisition/reddit-thread-when-fetch-is-blocked.md) | snippet |  |
 | `em:31fed1` | [knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked](/knowledge/knowledge-management/source-acquisition/youtube-transcript-when-fetch-is-blocked.md) | snippet |  |
+| `em:4956f3` | [knowledge/knowledge-management/technical-communication/circles-sines-signals](/knowledge/knowledge-management/technical-communication/circles-sines-signals.md) | reference |  |
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
+| `em:e12137` | [knowledge/knowledge-management/technical-communication/explorable-explanations](/knowledge/knowledge-management/technical-communication/explorable-explanations.md) | methodology |  |
 | `em:dfadfb` | [knowledge/knowledge-management/technical-communication/phantom-sketch-artist-method](/knowledge/knowledge-management/technical-communication/phantom-sketch-artist-method.md) | methodology |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
+| `em:70f026` | [knowledge/machine-learning/evolutionary-computation/evolutionary-search-in-latent-space](/knowledge/machine-learning/evolutionary-computation/evolutionary-search-in-latent-space.md) | visualization |  |
+| `em:da2ffb` | [knowledge/machine-learning/evolutionary-computation/inference-time-diffusion-alignment-via-evolutionary-algorithms](/knowledge/machine-learning/evolutionary-computation/inference-time-diffusion-alignment-via-evolutionary-algorithms.md) | reference |  |
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
 | `em:d5ca81` | [knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md) | concept | true |

@@ -54,6 +54,7 @@ Frontmatter fields:
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
+| `launch` | **Mandatory** on `visualization` | Filename of the document's same-directory sibling `.html` — the self-contained artifact the reader opens. A bare filename, never a path or URL. Distinct from `resource`: that names an *external source asset the document captures*, this names *the document's own artifact*. Machine-enforced (exists, sibling, `.html`); an error on any other type. |
 | `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a document that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
 | `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
 | `attribution` | **Mandatory** (bundle documents and governance docs) | Structured map recording the ingestion event — `when`/`channel`/`agent`/`why`, plus append-only `from` on governance docs. Immutable once written (except `from`). See the resource-attribution policy. |
@@ -1082,6 +1083,20 @@ Seed vocabulary:
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
   *how-to* for carrying out a recurring task (distinct from a `note`, which merely
   records an idea, and a `concept`, which defines a mental model).
+- `visualization` — a **self-contained interactive page** the reader launches to
+  manipulate a model directly: an explorable explanation, a live diagram, a
+  parameter sweep. Filed as a **document pair** — the `.md` carries the `em:` id,
+  the prose, and a `launch` field naming its **same-slug sibling `.html`**, which
+  holds the artifact itself (inline CSS and JS, classic `<script>`, no `fetch`, no
+  ES modules, no external hosts, so it opens over `file://` with no build step or
+  server). Distinct from a `snippet` (a fragment to paste elsewhere, not a page to
+  open), a `methodology` (the *how-to* for building one — see
+  [explorable-explanations](/knowledge/knowledge-management/technical-communication/explorable-explanations.md)),
+  and a `reference` (a capture of *someone else's* material, whereas a
+  visualization is authored here). Filing test: *if the reader manipulates it, it
+  is a `visualization`; if they read about manipulating it, it is a
+  `methodology` or `reference`.* Machine-checked — `mix brain.verify` rejects a
+  missing `launch`, or one whose target is absent, non-sibling, or not `.html`.
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the

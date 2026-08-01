@@ -29,6 +29,11 @@ defmodule ElixirMind.Verifier do
        backfill rule — `from` appears on governance docs only and every ref
        resolves, exempt files carry no attribution, and (once the backfill
        lands) every bundle concept and governance doc carries the field.
+    9. Every `visualization` names its artifact in `launch`, and that artifact
+       exists on disk beside it: a bare `.html` filename, never a path or URL,
+       so the pair travels together and the launch link cannot dangle. The
+       field is an error on any other type — nothing else has an artifact to
+       launch.
   """
 
   alias ElixirMind.{Attribution, Registry}
@@ -36,6 +41,7 @@ defmodule ElixirMind.Verifier do
   @statement_types ~w(claim note concept)
   @glossary_dir "beliefs/glossary/"
   @senses ~w(common repo dual)
+  @launch_type "visualization"
 
   @spec run(String.t(), keyword) :: :ok | {:error, [String.t()]}
   def run(root \\ File.cwd!(), opts \\ []) do
@@ -49,7 +55,8 @@ defmodule ElixirMind.Verifier do
             id_errors(e) ++
             edge_errors(e, by_id) ++
             grounding_errors(e) ++
-            sense_errors(e) ++ Attribution.bundle_errors(e, by_id, root, opts)
+            sense_errors(e) ++
+            launch_errors(e, root) ++ Attribution.bundle_errors(e, by_id, root, opts)
         end) ++
         Attribution.governance_errors(root, by_id, opts)
 
@@ -122,4 +129,42 @@ defmodule ElixirMind.Verifier do
   end
 
   defp sense_errors(_), do: []
+
+  # A visualization is a document pair: the artifact it launches must exist
+  # beside it, so the pair moves together and the launch link cannot dangle.
+  defp launch_errors(%{type: @launch_type, launch: launch, path: path}, root) do
+    cond do
+      launch in [nil, ""] ->
+        [
+          "#{path}: missing `launch` — a visualization names the sibling .html " <>
+            "the reader opens"
+        ]
+
+      Path.basename(launch) != launch ->
+        [
+          "#{path}: launch #{inspect(launch)} is not a bare filename — the " <>
+            "artifact is a sibling, not a path or URL"
+        ]
+
+      Path.extname(launch) != ".html" ->
+        ["#{path}: launch #{inspect(launch)} is not a .html file"]
+
+      not File.regular?(Path.join([root, Path.dirname(path), launch])) ->
+        ["#{path}: launch #{inspect(launch)} does not exist beside it"]
+
+      true ->
+        []
+    end
+  end
+
+  # Nothing but a visualization has an artifact to launch.
+  defp launch_errors(%{launch: launch, type: type, path: path}, _root)
+       when not is_nil(launch) do
+    [
+      "#{path}: `launch` on type #{inspect(type)} — only a visualization " <>
+        "launches an artifact; omit the field"
+    ]
+  end
+
+  defp launch_errors(_, _), do: []
 end
