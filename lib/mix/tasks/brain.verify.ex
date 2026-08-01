@@ -4,12 +4,13 @@ defmodule Mix.Tasks.Brain.Verify do
   @moduledoc """
   Run the machine checks over the knowledge bundle (see `ElixirMind.Verifier`):
   OKF conformance, stable-id presence/uniqueness/format, `verified_by` edge
-  resolution, and grounding of every `verified: true`.
+  resolution, grounding of every `verified: true`, and index-listing coverage
+  (a directory's *existing* `index.md` must list everything filed beside it).
 
   On a green bundle, also prints advisory docs-freshness warnings (see
-  `ElixirMind.Links`): internal links that don't resolve and index-coverage
-  gaps. Warnings never fail the task — broken links are tolerated per OKF
-  conformance, and index coverage is ultimately editorial.
+  `ElixirMind.Links`): internal links that don't resolve, and directories
+  with no `index.md` at all. Warnings never fail the task — broken links and
+  an absent index are both tolerated per OKF conformance.
 
       mix brain.verify
   """

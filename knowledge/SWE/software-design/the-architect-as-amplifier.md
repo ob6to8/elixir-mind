@@ -257,7 +257,7 @@ The workable posture is that the tool's output is the starting point and the
 architect adds the value on top. This is the same amplifier/substitute
 distinction the episode opens with, now applied to tooling rather than to
 people — and it is the practitioner-side complement to
-[Architecture Without Architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md),
+[Architecture Without Architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md),
 which makes the governance-side case that agent-made architectural decisions go
 unreviewed as decisions.
 

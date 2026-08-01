@@ -95,3 +95,17 @@ way.
 # Citations
 
 - Jack Schaedler, *Circles, Sines, and Signals* — <https://jackschaedler.github.io/circles-sines-signals/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:4956f3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-evolutionary-search-explorable-and-visualization-type (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:4956f3`]**  (co-feeds: `em:da2ffb em:e12137`)
+
+Filed and pushed. Here's the rundown.
+
+Both sources are in the brain now, and I used them together to actually test the idea instead of just speculating about it: I distilled the teaching *mechanism* Circles, Sines, and Signals uses into a reusable method, then ran the evolutionary-algorithms paper's own equations through it. They map directly — not approximately. The paper's real content (a rotation that keeps noise on a probability "shell," a population's diversity collapsing over generations, a reward function that's really a similarity measure) is exactly the kind of *relationship-in-motion* that resource's drag-a-slider approach is built for, not decoration bolted onto static notation.

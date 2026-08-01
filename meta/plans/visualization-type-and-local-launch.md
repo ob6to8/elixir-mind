@@ -9,6 +9,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, explorable-explanations intake session"
   why: "adding a type to the controlled vocabulary is a shape change the operator ratifies; this records the design so that decision is made against a concrete artifact rather than a chat sketch"
+  from: [/meta/threads/2026-07-31-evolutionary-search-explorable-and-visualization-type.md]
 tags: [meta, plan, type-vocabulary, visualization, explorable-explanations, site, verifier]
 timestamp: 2026-07-31
 ---

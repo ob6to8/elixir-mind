@@ -59,3 +59,21 @@ modules, no external hosts (the only URLs are outbound citation links). This
 is the constraint the `visualization` type requires rather than a stylistic
 preference — over `file://`, module imports and `fetch` both fail CORS, so a
 page that reached for either would not open from a checkout at all.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:70f026">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-evolutionary-search-explorable-and-visualization-type (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:70f026`]**
+
+Ratified and built. The `visualization` type exists, the gate enforces it, and the first one is filed — all on PR #211 as you asked.
+
+---
+
+**[`em:70f026`]**
+
+Found a real bug before it shipped: the artifact and its own documentation page collide on the same output filename (`.md`→`.html` mapping produces the identical name as the sibling `.html`). My first pass let the raw artifact silently clobber the doc page. Fixing properly — the artifact needs a distinct on-site name, with the doc's own Launch link rewritten to match:

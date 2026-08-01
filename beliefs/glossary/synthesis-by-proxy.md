@@ -5,7 +5,7 @@ title: synthesis by proxy
 description: Relying on an agent to synthesize understanding on one's behalf — a dependence that cannot deliver what it substitutes for, since borrowed synthesis does not become the user's own understanding.
 provenance: "Agent-distilled glossary definition — coined in the 2026-07-25 journal response"
 verified: false
-tags: [glossary, cognition, agents, workflow]
+tags: [glossary, cognition, agents, workflow, coined]
 sense: repo
 timestamp: 2026-07-31
 attribution:

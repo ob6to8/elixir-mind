@@ -34,9 +34,14 @@ defmodule ElixirMind.Verifier do
        so the pair travels together and the launch link cannot dangle. The
        field is an error on any other type — nothing else has an artifact to
        launch.
+    10. Every directory's *existing* `index.md` lists every doc and immediate
+        subdirectory filed beside it (see `ElixirMind.Links.unlisted_errors/1`).
+        A directory with no `index.md` at all stays advisory (`mix brain.verify`
+        still prints it as a docs-freshness warning, per OKF conformance); this
+        rule only fires once an index exists and has fallen behind.
   """
 
-  alias ElixirMind.{Attribution, Registry}
+  alias ElixirMind.{Attribution, Links, Registry}
 
   @statement_types ~w(claim note concept)
   @glossary_dir "beliefs/glossary/"
@@ -58,7 +63,8 @@ defmodule ElixirMind.Verifier do
             sense_errors(e) ++
             launch_errors(e, root) ++ Attribution.bundle_errors(e, by_id, root, opts)
         end) ++
-        Attribution.governance_errors(root, by_id, opts)
+        Attribution.governance_errors(root, by_id, opts) ++
+        Links.unlisted_errors(root)
 
     if errors == [], do: :ok, else: {:error, errors}
   end

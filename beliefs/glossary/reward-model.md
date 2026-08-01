@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, reward-model, rl, rlhf, evals, training]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-07-31
 attribution:
   when: 2026-07-16T14:20:00Z
   channel: glossary
@@ -28,4 +28,4 @@ the judge rates for a report, the reward model rates for a gradient. Inkling's
 own calibration training used reward models that verify claims via web
 search, an example of the verifier-backed variety.
 
-*Seen in:* [2026-07-16 evals-landscape spike thread](/meta/threads/2026-07-16-inkling-evals-landscape-spike.md), [inkling-open-weights-eval-landscape analysis](/meta/analysis/inkling-open-weights-eval-landscape.md)
+*Seen in:* [2026-07-16 evals-landscape spike thread](/meta/threads/2026-07-16-inkling-evals-landscape-spike.md), [inkling-open-weights-eval-landscape analysis](/meta/analysis/inkling-open-weights-eval-landscape.md), [2026-07-31 evolutionary search explorable and the visualization type](/meta/threads/2026-07-31-evolutionary-search-explorable-and-visualization-type.md)

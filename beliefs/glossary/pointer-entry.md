@@ -5,7 +5,7 @@ title: pointer entry
 description: A glossary entry for a term canonically defined elsewhere in the brain — a one-line gloss plus a link to the defining doc, never a duplicated definition.
 provenance: "Agent-distilled glossary definition; coined by the /add-to-glossary skill"
 verified: false
-tags: [glossary, cross-linking, dedup]
+tags: [glossary, cross-linking, dedup, coined]
 sense: repo
 timestamp: 2026-07-21
 attribution:
