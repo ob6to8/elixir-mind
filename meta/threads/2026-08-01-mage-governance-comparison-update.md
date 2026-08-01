@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5, Claude Sonnet 5), 2026-08-01; 
 tags: [meta, thread, mage, models, semantic-gap, governance-comparison, update-in-place]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01A6nvJpoBmmm2GaLzWGEmig
+pr: 220
 ---
 
 # 2026-08-01-mage-governance-comparison-update
