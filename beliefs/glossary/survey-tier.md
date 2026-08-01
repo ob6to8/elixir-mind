@@ -5,7 +5,7 @@ title: survey tier
 description: The brain's lower-effort resource level — links kept but not yet fully ingested, parked in the non-bundle `survey/` register with a mandatory one-line summary and topical tags so they stay queryable by topic, and promoted to a filed reference via `/intake`.
 provenance: "Agent-distilled glossary definition; coined by the survey-tier design session"
 verified: false
-tags: [glossary, filing, links, survey, namespaces]
+tags: [glossary, filing, links, survey, namespaces, coined]
 sense: repo
 timestamp: 2026-07-22
 attribution:

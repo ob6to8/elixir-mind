@@ -5,7 +5,7 @@ title: agent-as-presenter
 description: A workflow inversion in which the agent renders its output inside the human's own tools — navigating their editor to the change, floating rationale beside the code, driving their live browser — instead of into a chat transcript.
 provenance: "Agent-distilled glossary definition — coined in the agent-drivable-apps analysis"
 verified: false
-tags: [glossary, agents, review, workflow, ux]
+tags: [glossary, agents, review, workflow, ux, coined]
 sense: repo
 timestamp: 2026-07-18
 attribution:
