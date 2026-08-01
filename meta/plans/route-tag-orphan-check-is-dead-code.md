@@ -3,7 +3,7 @@ type: plan
 title: "Repair the route-tag orphan check: an assignment-as-filter makes the no-such-thread branch unreachable"
 description: The log-fidelity orphan clause in ElixirMind.RouteTags binds `t = by_slug[slug]` inside a comprehension, where a bare assignment acts as a filter — so a block naming a thread that does not exist is dropped before the `t == nil` test runs, and a hand-written excerpt block passes the gate.
 status: done
-provenance: "model undisclosed"
+provenance: "Claude Opus 5"
 tags: [meta, plan, route-tags, verifier, gate-suite, elixir, dead-code]
 timestamp: 2026-07-31
 attribution:
