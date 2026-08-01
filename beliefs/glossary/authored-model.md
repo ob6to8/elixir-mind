@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agent-governance, models, spec-vs-implementation]
 sense: common
-timestamp: 2026-07-31
+timestamp: 2026-08-01
 attribution:
   when: 2026-07-31T00:00:00Z
   channel: glossary
@@ -25,6 +25,6 @@ error rather than just restate one — a model that instead reflects the code
 it's compared against (a [derived model](/beliefs/glossary/derived-model.md),
 or "mirror") makes any drift check between the two circular.
 
-*Seen in:* [2026-07-31 Neovim PR tree view and MAGE semantic-gap intake](/meta/threads/2026-07-31-neovim-pr-tree-view-and-mage-semantic-gap-intake.md), [Models and the semantic gap](/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md)
+*Seen in:* [2026-07-31 Neovim PR tree view and MAGE semantic-gap intake](/meta/threads/2026-07-31-neovim-pr-tree-view-and-mage-semantic-gap-intake.md), [Models and the semantic gap](/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md), [2026-08-01 MAGE governance comparison and update](/meta/threads/2026-08-01-mage-governance-comparison-update.md)
 
 *See also:* [derived model](/beliefs/glossary/derived-model.md), [three-island problem](/beliefs/glossary/three-island-problem.md)
