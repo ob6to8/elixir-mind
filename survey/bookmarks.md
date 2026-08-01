@@ -4,7 +4,7 @@ title: "Bookmarks — survey register"
 description: The survey tier — links parked with a one-line summary and topical tags, awaiting full intake. A lower-effort staging register than a filed reference; process with /bookmarks, promote with /intake.
 provenance: "Maintained by /bookmarks — the operator drops raw URLs under Pending; the skill fetches each and writes a summarized, tagged Surveyed entry."
 tags: [survey, bookmark]
-timestamp: 2026-07-23
+timestamp: 2026-08-01
 ---
 
 # Bookmarks — survey register
@@ -31,6 +31,10 @@ re-engages.
 ## Surveyed
 
 ### AI Agents & Orchestration
+
+### [What's it actually like working on LLM agents? (Career advice for a software engineer)](https://www.reddit.com/r/LLMDevs/comments/1vcu686/whats_it_actually_like_working_on_llm_agents/)
+- **Added:** 2026-08-01 · **Status:** surveyed · **Tags:** `llm-agents` `ai-engineering-careers` `production-ai` `llm-evaluation` `agent-frameworks`
+- (fetch blocked: reddit.com; summarized from operator-pasted text) r/LLMDevs thread on day-to-day LLM-agent work — replies say agents are ~20% of the code amid conventional plumbing, production leans on thin SDK calls over frameworks, and most time goes to evaluating traces, building ground-truth datasets, and optimising prompts.
 
 ### [Level up with LangChain Academy](https://academy.langchain.com/)
 - **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `langchain` `agent-development` `llm-training` `observability` `deployment`
