@@ -5,6 +5,7 @@ description: Intake of a diffusion-alignment evolutionary-algorithms paper and C
 provenance: "Claude Code session (Claude Sonnet 5, Claude Opus 5), 2026-07-31; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, intake, explorable-explanations, visualization, evolutionary-computation, diffusion-models, site-generator, type-vocabulary]
 timestamp: 2026-07-31
+pr: 212
 session: https://claude.ai/code/session_0195tV13La6ZUshqSrULAQYG
 ---
 
