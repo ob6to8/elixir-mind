@@ -85,8 +85,12 @@ dumping a whole suite into context *degrades* generation.
 ## 5. Atomic delivery
 
 - **One self-contained concern per PR** — a behavior with its tests, or a
-  refactor, never both mixed. Target **~50–200 changed lines**; treat 1,000
-  as the hard ceiling. Small PRs review faster, revert less, and draw more
+  refactor, never both mixed. **The matter is the unit; size is a signal,
+  never the gate.** ~50–200 changed lines is the natural weight of one
+  concern, and unexplained bulk is a smell to justify — but a large diff
+  carrying one mechanical intent (a rename, a regeneration, a format sweep)
+  is one reviewable decision, and a small diff carrying two separable
+  decisions still splits. Small PRs review faster, revert less, and draw more
   comments per line — and with agents the constraint has inverted: generation
   is cheap and **review is the bottleneck**, so output must be decomposed to
   fit reviewer attention, not batched to amortize it.
@@ -137,8 +141,11 @@ The Elixir annex is included only in Elixir repos.
   never the project's own modules.
 
 ### Delivery
-- One self-contained concern per PR, with its tests; target ~50–200 changed
-  lines; never mix refactoring with behavior changes.
+- One self-contained matter per PR, with its tests; never mix refactoring
+  with behavior changes. Size is a signal, not a cap: ~50–200 changed lines
+  is typical of one concern, mechanical bulk (renames, regenerations, format
+  sweeps) is exempt, and no split may leave a commit that doesn't compile
+  and pass.
 - Every commit compiles and passes the full suite.
 - After 3 failed attempts at the same issue: stop, document what was tried and
   the exact errors, reassess the approach.

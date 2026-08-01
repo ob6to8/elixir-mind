@@ -2,7 +2,7 @@
 type: plan
 title: "Two-level methodological guidance for agents: canonical in the brain, vendored into repos"
 description: Give the operator's stricter development methodology (TDD-first, atomic reviewed PRs) a two-tier storage design — the canonical methodology doc lives in this brain as ratified knowledge, a lean compiled block of it is vendored into each consuming repo's CLAUDE.md, and each repo keeps its own specifics beneath the block — because user-level memory does not reach cloud sessions and only repo files bind every agent everywhere.
-status: proposed
+status: accepted
 provenance: "Claude Code session (Claude Fable 5), 2026-08-01 — designed from the TDD research spike, the dzombak captures, and the current Claude Code memory-hierarchy documentation"
 tags: [meta, plan, methodology, agent-guidance, claude-md, tdd, atomic-prs, distribution]
 timestamp: 2026-08-01
@@ -118,16 +118,22 @@ part of the canonical doc and vendored only into Elixir repos.
 
 ## Build order
 
-1. Ratify this plan and the
+1. ~~Ratify this plan and the methodology doc~~ — **done 2026-08-01**
+   (operator ratified both; the
    [methodology doc](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md)
-   (filed in the same session; the doc is the canonical tier).
-2. Operator pastes the vendorable block into one active Elixir repo's
-   `CLAUDE.md` and adds that repo's specifics beneath it (pilot).
-3. Operator installs the same block into `~/.claude/CLAUDE.md` on local
+   is the canonical tier).
+2. ~~Record the direction and the home-repo rule~~ — **done 2026-08-01**:
+   the [verified-increments doctrine](/meta/doctrine/verified-increments.md)
+   and the [atomic-pull-requests policy](/meta/policy/git-atomic-pull-requests.md)
+   bind this repo now; this repo is the methodology's first live test bed,
+   since no second repo is currently active enough to pilot.
+3. When a consuming repo becomes active (or is created), the operator pastes
+   the vendorable block into its `CLAUDE.md` and adds that repo's specifics
+   beneath it — the deferred pilot.
+4. Operator installs the same block into `~/.claude/CLAUDE.md` on local
    machines (optional backstop for unvendored repos).
-4. Run the pilot for a few working sessions; fold observed misses back into
-   the canonical doc (bump the block version; re-paste into the pilot repo).
-5. Roll out to remaining repos at natural touchpoints (next session in each).
+5. Fold observed misses back into the canonical doc (bump the block version;
+   re-paste into consuming repos).
 6. Deferred: `mix brain.methodology` emitting the block from the canonical
    doc, plus a freshness check — only if version churn or multi-repo drift is
    actually observed.
@@ -143,11 +149,14 @@ part of the canonical doc and vendored only into Elixir repos.
   wrong fit for a personal methodology and not operator-editable per repo.
 - **Rejected — full methodology text vendored into repos:** violates the
   lean-context constraint; repos get the block, the brain keeps the prose.
-- **Open questions (ratification):**
-  1. `CLAUDE.md` section vs `.claude/rules/methodology.md` as the vendored
-     form (recommendation: `CLAUDE.md` section).
-  2. Should this repo's own contract gain an atomic-PR policy (one matter per
-     PR, review checklist) so elixir-mind sessions are bound too
-     (recommendation: yes, as a small separate policy ratified on its own)?
-  3. Which repo pilots (recommendation: the operator's most active Elixir
-     repo).
+- **Open questions — all resolved by operator ratification, 2026-08-01:**
+  1. Vendored form: **`CLAUDE.md` section** (ratified as recommended).
+  2. This repo's contract: **yes** — ratified and executed as the
+     [atomic-pull-requests policy](/meta/policy/git-atomic-pull-requests.md),
+     shaped per the operator's direction that the matter is the unit and line
+     counts never force artificial splits, plus the
+     [verified-increments doctrine](/meta/doctrine/verified-increments.md)
+     above it.
+  3. Pilot repo: **none yet** — no second repo is currently active; the
+     pilot moved to build-order step 3, triggered when one exists. Until
+     then, this repo (under the policy) is the methodology's live test bed.

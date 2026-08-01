@@ -94,15 +94,31 @@ double an agent's fix precision (SWT-Bench: ~20%→47.8%). Tests are a better
 verification signal than generation signal — when independent, adequate,
 and held out.
 
+**Agent-improvised tests are a different thing, and the data says so.** The
+strongest quantitative counterpoint — "Rethinking the Value of
+Agent-Generated Tests for LLM-Based Software Engineering Agents" (arXiv
+2602.07900, 2026-02; traced via the [surveyed HN thread](/survey/bookmarks.md)
+whose "19.8% token cost" figure cites it) — analyzed six strong models'
+SWE-bench Verified trajectories and found on-the-fly agent test-writing
+correlates weakly with resolution, the "tests" are mostly print-statement
+observation probes rather than assertions, and prompt interventions to
+increase or decrease test-writing don't move outcomes: "Current
+agent-written testing practices reshape process and cost more than final
+task outcomes" (abstract). The HN-relayed body figures (+19.8% output
+tokens for no gain; regressions 6.08%→9.94% under imposed TDD prompting)
+were not independently confirmed here — abstract checked, body not
+retrieved. Read correctly, this cuts against *prompting an agent to
+improvise tests mid-solve* — unreviewed, unprotected, assertion-free — not
+against tests-as-ratified-contract, which is precisely what the paper's
+subjects lacked. It sharpens the verdict's conditionality: TDD's value with
+agents lives in the contract discipline (human-reviewed assertions,
+red-confirmed, protected from edits), not in test-writing motion.
+
 **Where evidence is thin.** The full autonomous red-green-refactor loop is
 unvalidated at scale (generating failing tests from real issue reports:
 18.5–23.6% fail-to-pass success); most quantitative results use benchmark
 tests as proxies for developer-written specs; and the TDD-benefits and
-reward-hacking literatures barely intersect. One surveyed counter-claim —
-the [HN thread](/survey/bookmarks.md) citing research that "test-writing
-adds 19.8% token costs without improving resolution rates" — did not
-surface a corroborating paper in this spike's academic sweep (arXiv +
-alphaXiv + web, 2023–26); it stays a lead, not evidence.
+reward-hacking literatures barely intersect.
 
 ## The counterpoint camp, weighed
 
@@ -199,6 +215,6 @@ Böckeler — [developer skills](https://martinfowler.com/articles/exploring-gen
 Willison — [using LLMs for code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/), [vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/), [red/green TDD pattern](https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/) (2026-02);
 Harper Reed — [LLM codegen workflow](https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/), [Basic Claude Code](https://harper.blog/2025/05/08/basic-claude-code/).
 Counterpoints: [Watt](https://neonwatty.com/posts/tdd-is-dead/) (2026-03); [Dunlop](https://medium.com/vibe-coding/stop-using-tdd-with-ai-agents-heres-what-i-use-f76d086ac56d) (2026-04, Medium-gated, lower confidence).
-Empirical: TGen (arXiv 2402.13521, ASE 2024); LLM4TDD (2312.04687); TiCoder (2208.05950; TSE 2024 = 2404.10100); WebApp1K (2505.09027); test-influence study (2607.26244); ClassEval-TDD (2602.03557); TENET (2509.24148); vibe-coding TDD experiment (2607.22406); TDD-Bench Verified (2412.02883); SWT-Bench (2406.12952, NeurIPS 2024); Verification Horizon (2606.26300); SpecBench (2605.21384); ImpossibleBench (2510.20270); [METR reward hacking](https://metr.org/blog/2025-06-05-recent-reward-hacking/) (2025-06); [Anthropic emergent misalignment](https://www.anthropic.com/research/emergent-misalignment-reward-hacking) (2025-11); OpenAI CoT monitoring (2503.11926).
+Empirical: TGen (arXiv 2402.13521, ASE 2024); LLM4TDD (2312.04687); TiCoder (2208.05950; TSE 2024 = 2404.10100); WebApp1K (2505.09027); test-influence study (2607.26244); ClassEval-TDD (2602.03557); TENET (2509.24148); vibe-coding TDD experiment (2607.22406); TDD-Bench Verified (2412.02883); SWT-Bench (2406.12952, NeurIPS 2024); Verification Horizon (2606.26300); SpecBench (2605.21384); ImpossibleBench (2510.20270); agent-generated-tests counter-study (2602.07900, abstract verified 2026-08-01); [METR reward hacking](https://metr.org/blog/2025-06-05-recent-reward-hacking/) (2025-06); [Anthropic emergent misalignment](https://www.anthropic.com/research/emergent-misalignment-reward-hacking) (2025-11); OpenAI CoT monitoring (2503.11926).
 Elixir/PR: [Valim, mocks and explicit contracts](https://dashbit.co/blog/mocks-and-explicit-contracts) (2015); [Valim, why Elixir is the best language for AI](https://dashbit.co/blog/why-elixir-best-language-for-ai) (2026-02); [phoenix.new](https://fly.io/blog/phoenix-new-the-remote-ai-runtime/) (2025-06); [Google small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html); [Graphite 50-line data](https://graphite.com/blog/the-ideal-pr-is-50-lines-long) (2023) and [Graphite Agent](https://graphite.com/blog/introducing-graphite-agent-and-pricing) (2025-10); [Codacy PR-bottleneck](https://blog.codacy.com/ai-breaking-code-review-how-engineering-teams-survive-pr-bottleneck) (2026-07, citing CircleCI and LinearB 2026 reports).
 Filed leads not yet promoted: the [survey register's TDD rows](/survey/bookmarks.md) (Superpowers; Jason Swett's TDD skill; the HN 19.8%-token-cost thread).
