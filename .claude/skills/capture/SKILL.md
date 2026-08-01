@@ -8,7 +8,7 @@ description: Render the current session into a thread doc under meta/threads/ �
 Turn the current working session into one **thread** record: a clean read of
 what was actually said, a per-thread **routing ledger** of where each topic
 went, and **route tags** that materialize each topic's excerpts into the
-`concept` docs they feed.
+documents they feed.
 
 This is **on-demand**, run **once at session close** (or when asked) — not a
 per-turn hook. It is the brain's session-persistence skill: it keeps substantive
@@ -24,7 +24,7 @@ noise, it does not summarize what it keeps.
   date-prefixed kebab-case, **no `Thread` prefix, no em-dashes, no spaces**.
 - **Type**: `reference`, governance namespace (`meta/`) — **no `em:` id**; the
   registry and `mix brain.verify` ignore it. Threads are tag *sources*; the
-  `concept` docs they route to (which carry `em:` ids) are the sinks.
+  documents they route to (which carry `em:` ids) are the sinks.
 - **Update in place**: if this session already has a thread file, **append** the
   un-captured exchanges to it — do not create a second one, and do not rewrite
   the blocks already there (the body is frozen once written).
@@ -120,16 +120,17 @@ only, never synthesized content**:
 
 | Topic | State | Routed to | Dangling |
 |---|---|---|---|
-| <one line> | open\|paused\|closed | [<concept>](/path/to/concept.md) or `unrouted` | <open question or -> |
+| <one line> | open\|paused\|closed | [<doc title>](/path/to/doc.md) or `unrouted` | <open question or -> |
 ```
 
-One row per topic the session touched. `Routed to` links a `concept` doc by
-bundle-absolute path (or `unrouted`). State (`open`/`paused`/`closed`) describes
-the strand; routed-to describes dispatch — they are independent.
+One row per topic the session touched. `Routed to` links a document — bundle
+or governance, of any type — by bundle-absolute path (or `unrouted`). State
+(`open`/`paused`/`closed`) describes the strand; routed-to describes dispatch
+— they are independent.
 
 ### 4. Route tags over the frozen body
 
-Now that the render is frozen, mark each region that feeds a concept:
+Now that the render is frozen, mark each region that feeds a document:
 
 ```
 <routes ref="em:4c9e1f lib/foo.ex">
@@ -137,25 +138,25 @@ Now that the render is frozen, mark each region that feeds a concept:
 </routes>
 ```
 
-- Ref a concept's **`em:` id** (the aggregating sink — grep the target concept's
-  frontmatter, or `meta/registry.md`, for its id). A **path** ref is an optional
-  non-aggregating back-link (code/file) — it gets no log.
+- Ref a document's **`em:` id** (the aggregating sink — grep the target
+  document's frontmatter, or `meta/registry.md`, for its id). A **path** ref
+  is an optional non-aggregating back-link (code/file) — it gets no log.
 - Per-paragraph, multi-ref on one region; never nest; never cross a
   `## User`/`## Assistant` boundary. Tag whole — no trimming inside a region.
-- Every concept a `## Routing` row routes to should be covered by at least one
-  tag (the verifier warns otherwise).
+- Every document a `## Routing` row routes to should be covered by at least
+  one tag (the verifier warns otherwise).
 
 ### 5. Materialize the excerpt logs and verify
 
-Each tagged concept carries a `## Thread excerpts — route-tagged log` section.
+Each tagged document carries a `## Thread excerpts — route-tagged log` section.
 **Do not hand-write it** — generate it:
 
 ```
-mix brain.route_tags --materialize   # writes each fed concept's log section from the tags
+mix brain.route_tags --materialize   # writes each fed document's log section from the tags
 mix brain.route_tags                 # verify: wellformedness, refs, sink logs, fidelity
 ```
 
-If a target concept has no log section yet, `--materialize` adds one. Re-run
+If a target document has no log section yet, `--materialize` adds one. Re-run
 after any tag edit so the log stays re-derivable.
 
 ## After writing
@@ -173,8 +174,8 @@ after any tag edit so the log stays re-derivable.
   responses are reproduced **verbatim**; dropping noise is the only editing, and
   it neither adds nor condenses what remains.
 - The excerpt log is **append-only** and generated; let `--materialize` own it.
-- A concept freezes excerpt acceptance when its matter resolves (per matter, not
-  on archival) — do not append to a resolved matter's log.
+- A document freezes excerpt acceptance when its matter resolves (per matter,
+  not on archival) — do not append to a resolved matter's log.
 
 ## See also
 

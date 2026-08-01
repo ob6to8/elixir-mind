@@ -118,6 +118,9 @@ The Reddit content is **new**: it captures the design decisions and tradeoffs at
 **Commit**
 
 Staged, committed, and pushed to `claude/survey-bookmarks-links-fdfn2c`:
+```
+Intake: unattended agent operation control plane patterns
+```
 
 ---
 

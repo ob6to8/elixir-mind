@@ -27,6 +27,30 @@ defmodule ElixirMind.RouteTagsTest do
       assert Enum.join(region.content, "\n") =~ "First paragraph."
     end
 
+    test "a region containing a fence materializes whole, code included" do
+      body = """
+      ## Assistant
+
+      <routes ref="em:abc123">
+      Before the code.
+      ```elixir
+      def foo, do: :bar
+      ```
+      After the code.
+      </routes>
+      """
+
+      {[region], []} = RouteTags.parse_regions(body)
+
+      assert Enum.join(region.content, "\n") == """
+             Before the code.
+             ```elixir
+             def foo, do: :bar
+             ```
+             After the code.\
+             """
+    end
+
     test "ignores tag syntax mentioned inside fenced code" do
       body = """
       The syntax looks like:
@@ -213,6 +237,34 @@ defmodule ElixirMind.RouteTagsTest do
 
       assert Enum.join(blocks["2026-07-01-first-thread"], "\n") =~ "A block."
       refute Enum.join(blocks["2026-07-02-second-thread"], "\n") =~ "Related"
+    end
+
+    test "a `#`-comment inside a lifted fence does not truncate the block" do
+      doc = """
+      ## Thread excerpts — route-tagged log
+
+      ### 2026-07-01-first-thread (2026-07-01)
+
+      **[`em:aaa111`]**
+
+      ```bash
+      # a shell comment, not a heading
+      echo hi
+      ```
+
+      After the fence.
+
+      ## Related
+
+      - not part of the log
+      """
+
+      blocks = RouteTags.parse_log_section(doc)
+      block = Enum.join(blocks["2026-07-01-first-thread"], "\n")
+
+      assert block =~ "# a shell comment, not a heading"
+      assert block =~ "After the fence."
+      refute block =~ "Related"
     end
   end
 

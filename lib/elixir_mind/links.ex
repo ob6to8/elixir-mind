@@ -184,8 +184,17 @@ defmodule ElixirMind.Links do
   defp unlisted_files(index_rel, content, basenames) do
     basenames
     |> Enum.reject(&(&1 in @reserved_files))
-    |> Enum.reject(&String.contains?(content, &1))
+    |> Enum.reject(&listed_as_target?(content, &1))
     |> Enum.map(&"#{index_rel}: #{&1} is filed here but not listed")
+  end
+
+  # A basename counts as listed only when it appears as a link target — right
+  # after `(` (a relative target) or `/` (the tail of a bundle-absolute or
+  # nested target) — never as a bare substring, so a longer listed filename
+  # (`generated-artifact.md`) cannot mask an unlisted shorter one that happens
+  # to be its suffix (`artifact.md`).
+  defp listed_as_target?(content, basename) do
+    String.contains?(content, "(" <> basename) or String.contains?(content, "/" <> basename)
   end
 
   defp unlisted_dirs(index_rel, content, dir, by_dir) do

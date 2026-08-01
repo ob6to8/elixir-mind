@@ -2,7 +2,7 @@
 type: issue
 title: "Route-tag regions lose fenced code: materialized sink excerpts drop every code block, and the fidelity gate cannot see it"
 description: The region parser never appends fence lines to an open region's content, so nine threads' tagged regions materialize into their sink logs without their code blocks — while the log-fidelity check compares against the same lossy derivation and stays green.
-status: open
+status: resolved
 provenance: "Claude Code session (Claude Fable 5), 2026-08-01 — comprehensive repo review"
 tags: [meta, issue, route-tags, fidelity, record-layer, tooling]
 timestamp: 2026-08-01
@@ -11,10 +11,20 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "confirmed by reproduction during the tooling review; the record layer is silently dropping content the route-tagging policy says is lifted whole"
-  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md, /meta/threads/2026-08-01-route-tag-fencing-index-coverage-and-staleness-fixes.md]
 ---
 
 # Route-tag regions lose fenced code
+
+## Resolution (2026-08-01)
+
+Fixed: `parse_line/2` now appends fence-delimiter and fenced-content lines to
+an open region via a shared `append_if_open/2` helper (fence state still
+suppresses tag/turn matching); `parse_log_section/1`'s h1/h2 boundary search
+was made fence-aware too, since a materialized region's own `#`-prefixed
+comment lines were tripping it once fences stopped being dropped. Re-run of
+`mix brain.route_tags --materialize` rewrote the eleven affected sink docs
+fed by the nine threads named below; the round-trip regression test pins it.
 
 ## Summary
 

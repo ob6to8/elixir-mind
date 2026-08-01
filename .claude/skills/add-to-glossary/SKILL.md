@@ -1,6 +1,6 @@
 ---
 name: add-to-glossary
-description: Scan a persisted thread (meta/threads/), a paper, a post, or a filed concept; extract the technical terms and concepts it actually uses; and merge distilled definitions into the glossary — one concept file per term under /beliefs/glossary/. Use when the operator says "/add-to-glossary", "add this to the glossary", "glossary this thread", "define the terms in this", or asks for glossary links.
+description: Scan a persisted thread (meta/threads/), a paper, a post, or a filed document; extract the technical terms and concepts it actually uses; and merge distilled definitions into the glossary — one concept file per term under /beliefs/glossary/. Use when the operator says "/add-to-glossary", "add this to the glossary", "glossary this thread", "define the terms in this", or asks for glossary links.
 ---
 
 # /add-to-glossary — accrete a cross-domain glossary
@@ -14,7 +14,7 @@ glossary that lives and dies with its breakdown, this skill maintains the
 *persistent, cross-source* one: the same term seen in three threads and a paper has
 **one** file, with four citations.
 
-Each term file is a bundle concept like any other — its own `em:` id, frontmatter,
+Each term file is a bundle document like any other — its own `em:` id, frontmatter,
 and place in `mix brain.verify`/`registry` and the site renderer. That per-term
 granularity is the point: **every definition is individually linkable**, so a term
 can be cited anywhere as a bundle-absolute link (`[route tag](/beliefs/glossary/route-tag.md)`)
@@ -29,7 +29,7 @@ One source per invocation (or several, processed in sequence):
   topic. Read the frozen body; extract terms from the substantive exchanges.
 - **A paper or post** — a URL (WebFetch; alphaXiv tools for arXiv papers), pasted
   text, or an attached file (for PDFs, read in page batches).
-- **An already-filed bundle concept** — a `reference`/`source`/`concept` named by
+- **An already-filed bundle document** — a `reference`/`source`/`concept` named by
   title, path, or `em:` id.
 
 If nothing was given, ask the operator what to scan.
@@ -107,9 +107,9 @@ Write each definition from understanding, not by transcription:
     why: "term surfaced by <the thread/doc/paper scanned>"
   ```
 - Body: an `# <term>` heading, **expansion-only prose**, then a *Seen in:* line
-  of citations — bundle-absolute links for threads and filed concepts, plain
+  of citations — bundle-absolute links for threads and filed documents, plain
   URLs for external papers/posts (a citation is not a parked bookmark; the
-  link-processing policy governs filing URLs as *concepts*, not citing them).
+  link-processing policy governs filing URLs as *documents*, not citing them).
 - **The body never restates the description.** The site renders the description
   as the lede directly above the body, so body prose that re-defines the term
   stacks two definitions on one page. Body paragraphs add only what the
@@ -156,7 +156,7 @@ Write each definition from understanding, not by transcription:
 
 ### 6. Report
 List the terms added, the terms merged into existing entries, and the pointer
-entries that defer to filed concepts — so the operator can spot a wrong
+entries that defer to filed documents — so the operator can spot a wrong
 definition at a glance.
 
 ## Citing terms in responses

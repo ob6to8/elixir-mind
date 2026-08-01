@@ -15,8 +15,14 @@ defmodule ElixirMind.LinksTest do
     write(
       dir,
       Path.join(rel_dir, "index.md"),
-      "# index\n\n" <> Enum.map_join(listed, "\n", &"- #{&1}")
+      "# index\n\n" <> Enum.map_join(listed, "\n", &entry_line/1)
     )
+  end
+
+  # Real index.md entries link every doc (`- [title](basename.md)`); a bare
+  # subdirectory name has no file to link, so it stays plain text.
+  defp entry_line(name) do
+    if String.ends_with?(name, ".md"), do: "- [x](#{name})", else: "- #{name}"
   end
 
   # --- link resolution -------------------------------------------------------
@@ -133,6 +139,18 @@ defmodule ElixirMind.LinksTest do
     assert Links.check(dir) == []
     assert [error] = Links.unlisted_errors(dir)
     assert error =~ "index.md: orphan.md is filed here but not listed"
+  end
+
+  test "a listed doc's basename does not mask an unlisted sibling it merely contains", %{
+    tmp_dir: dir
+  } do
+    indexed(dir, ".", ["agentic-git.md"])
+    write(dir, "agentic-git.md", "body")
+    write(dir, "git.md", "body")
+
+    assert Links.check(dir) == []
+    assert [error] = Links.unlisted_errors(dir)
+    assert error =~ "index.md: git.md is filed here but not listed"
   end
 
   test "an immediate subdirectory not mentioned in the parent index is a hard error", %{

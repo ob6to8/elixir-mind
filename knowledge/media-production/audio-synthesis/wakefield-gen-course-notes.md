@@ -101,5 +101,16 @@ and name the single mechanism the whole thing pivots on:
 
 The reduction you're intuiting is real and visible in what gen~ emits. This is his own example of a nested comb-filter patch after compilation:
 
+```
+tap_3  = delay_1.read(in6);
+mul_4  = in4 * -1.;
+mul_5  = tap_3 * mul_4;
+tap_6  = delay_2.read(in5);
+mul_7  = tap_6 * in3;
+add_8  = mul_7 + mul_5;
+...
+delay_1.write(add_8);
+delay_2.write(add_11);
+```
 
 A physical-model resonator is straight-line scalar arithmetic plus two delay-line reads and writes. That's the claim in its strongest form: **multiply, add, compare, and one sample of memory**. Everything else is arrangement. The framing that makes it work is treating the patch "as specification for compiler, rather than interpreted network of black-box objects."

@@ -1,12 +1,12 @@
 defmodule Mix.Tasks.Brain.RouteTags do
-  @shortdoc "Verify route tags and the per-concept excerpt logs they materialize"
+  @shortdoc "Verify route tags and the per-document excerpt logs they materialize"
 
   @moduledoc """
   Verify the route-tagging layer (see `ElixirMind.RouteTags` and
   `meta/policy/route-tagging.md`): `<routes ref="...">` tag wellformedness, ref
-  resolution, that every tagged concept sink carries its dated block, that each
+  resolution, that every tagged document sink carries its dated block, that each
   block matches its re-derivation from the current tags, and — at warn level —
-  that every concept-routed routing-ledger row is covered by a tag.
+  that every document-routed routing-ledger row is covered by a tag.
 
       mix brain.route_tags              # verify; exits non-zero on any failure
       mix brain.route_tags --materialize  # project tags into sinks (write fed

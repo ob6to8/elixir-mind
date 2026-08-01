@@ -57,8 +57,7 @@ defmodule ElixirMind.Attribution do
   exempt files are thread docs, `inbox/` digests, the `survey/` tier (bookmark
   registers), the `journal/` tier (dated operator entries), `index.md`
   listings, and generated artifacts
-  (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`,
-  `meta/dev-history.md`).
+  (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`).
   """
   def governance_paths(root \\ File.cwd!()) do
     ["meta/**/*.md", "inbox/**/*.md", "survey/**/*.md", "journal/**/*.md"]
@@ -76,7 +75,7 @@ defmodule ElixirMind.Attribution do
       String.starts_with?(rel_path, "inbox/") or
       String.starts_with?(rel_path, "survey/") or
       String.starts_with?(rel_path, "journal/") or
-      rel_path in ~w(meta/registry.md meta/preamble.md meta/flows/lineage.md meta/dev-history.md)
+      rel_path in ~w(meta/registry.md meta/preamble.md meta/flows/lineage.md)
   end
 
   # --- errors ----------------------------------------------------------------

@@ -153,10 +153,10 @@ defmodule ElixirMind.RouteTags do
   defp parse_line({line, n}, state) do
     cond do
       String.starts_with?(String.trim_leading(line), "```") ->
-        %{state | fence: not state.fence}
+        append_if_open(%{state | fence: not state.fence}, line)
 
       state.fence ->
-        state
+        append_if_open(state, line)
 
       match = Regex.run(@open_re, line) ->
         [_, ref_string] = match
@@ -198,14 +198,17 @@ defmodule ElixirMind.RouteTags do
             |> Map.put(:open, nil)
         end
 
-      state.open != nil ->
-        {refs, opened, content} = state.open
-        %{state | open: {refs, opened, [line | content]}}
-
       true ->
-        state
+        append_if_open(state, line)
     end
   end
+
+  # Fence lines and fenced content still land in an open region's content —
+  # only tag/turn matching is suppressed while `state.fence` is set.
+  defp append_if_open(%{open: nil} = state, _line), do: state
+
+  defp append_if_open(%{open: {refs, opened, content}} = state, line),
+    do: %{state | open: {refs, opened, [line | content]}}
 
   defp problem(state, text), do: %{state | problems: [text | state.problems]}
 
@@ -262,11 +265,39 @@ defmodule ElixirMind.RouteTags do
         nil
 
       {_, [_header | rest]} ->
-        # Stop at the next h1 or h2 — the same terminator replace_section/2
-        # uses, so parsing and rewriting agree on where the section ends.
-        rest
-        |> Enum.take_while(&(!Regex.match?(~r/^#{"#"}{1,2} /, &1)))
+        # Stop at the next h1 or h2, outside fenced code — the same
+        # fence-aware terminator replace_section/2 and remove_log_section/2
+        # use, so parsing and rewriting agree on where the section ends even
+        # when a lifted region's fenced code contains a `#`-prefixed line
+        # (a shell/Python/Ruby comment, a `#include`, ...).
+        case next_heading_index(rest) do
+          nil -> rest
+          i -> Enum.take(rest, i)
+        end
         |> split_blocks()
+    end
+  end
+
+  @heading_re ~r/^#{"#"}{1,2} /
+
+  # Index of the next top-level (h1/h2) heading in `lines`, skipping lines
+  # inside fenced code — a materialized region can carry a `#`-prefixed
+  # comment line inside its own fence, which must not be mistaken for the
+  # section's own boundary.
+  defp next_heading_index(lines) do
+    lines
+    |> Enum.with_index()
+    |> Enum.reduce_while(false, fn {line, i}, fence ->
+      cond do
+        String.starts_with?(String.trim_leading(line), "```") -> {:cont, not fence}
+        fence -> {:cont, fence}
+        Regex.match?(@heading_re, line) -> {:halt, {:found, i}}
+        true -> {:cont, fence}
+      end
+    end)
+    |> case do
+      {:found, i} -> i
+      _ -> nil
     end
   end
 
@@ -625,7 +656,7 @@ defmodule ElixirMind.RouteTags do
         rest = tl(from)
 
         tail =
-          case Enum.find_index(rest, &Regex.match?(~r/^#{"#"}{1,2} /, &1)) do
+          case next_heading_index(rest) do
             nil -> []
             i -> Enum.drop(rest, i)
           end
@@ -653,7 +684,7 @@ defmodule ElixirMind.RouteTags do
         rest = tl(from)
 
         tail =
-          case Enum.find_index(rest, &Regex.match?(~r/^#{"#"}{1,2} /, &1)) do
+          case next_heading_index(rest) do
             nil -> []
             i -> Enum.drop(rest, i)
           end

@@ -26,7 +26,7 @@ One phrase or passage per invocation:
 - **A pointer into the conversation** — "elaborate on that", "what does the
   second bullet mean": resolve to the exact phrase the operator means; quote it
   back so the target is unambiguous.
-- **A pointer into the bundle** — a phrase inside a filed concept, thread doc,
+- **A pointer into the bundle** — a phrase inside a filed document, thread doc,
   or policy, named by path or quote. Read the surrounding context before
   explaining; the sentence may lean on it.
 
@@ -55,7 +55,7 @@ plainly. In order of appearance in the phrase.
 **Check the brain first.** If a term already has a glossary file, link it
 inline — `[route tag](/beliefs/glossary/route-tag.md)` — and keep the definition here
 consistent with (or briefer than) the filed one; if it is canonically defined
-by a filed concept or the operating contract, link that instead. Define from
+by a filed document or the operating contract, link that instead. Define from
 understanding, never contradicting what the brain has already filed — if the
 filed definition looks wrong, say so rather than silently diverging.
 
@@ -107,7 +107,7 @@ doc, merge into it and bump `timestamp` rather than creating a near-duplicate.
    terms are overloaded, and the elaboration must match this usage, not the
    most common one.
 2. **List the terms** worth defining before writing anything, and grep
-   `/beliefs/glossary/` (and the registry/concept tree) for each — existing
+   `/beliefs/glossary/` (and the registry/document tree) for each — existing
    definitions get linked, not re-invented.
 3. **Write parts 1–3 in order** and deliver them in chat. Part 1 stays
    jargon-free; part 3 may use a term once part 2 has defined it.

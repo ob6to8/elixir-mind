@@ -131,5 +131,12 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 **The architecture: one arrangement, three renderers**
 
+```
+arrangement.json  { bpm, grid_offset, bars, seed, samples, cut_rules }
+        │
+        ├──► drum renderer   → drums.wav  (+ beat.mid)
+        ├──► cut-list builder → cuts.json → ffmpeg chunks → picture.mp4
+        └──► mux             → final.mp4
+```
 
 The video-only pipeline derived timestamps from audio via onset detection, which carries measurement error. Here the grid is *declared*, so the cuts land on the same integers the kick does by construction. No drift, no rounding disagreement between the two halves.
