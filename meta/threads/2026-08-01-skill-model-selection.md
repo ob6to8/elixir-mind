@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-08-01; verbatim retained 
 tags: [meta, thread, model-selection, recommendation-verification, policy-amendment, conflict-resolution]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01PqA4mW4QYYvvn7HzoKFk88
+pr: 217
 ---
 
 ## Where this landed
