@@ -49,6 +49,7 @@ the start if siblings are plausible.
 - [banned-phrases](/meta/policy/banned-phrases.md) — the register of words and phrases banned from agent-composed prose, each entry carrying its pattern and reasoning; grown via `/ban-phrase`, where the operator's invocation is the ratification
 - [concerns-block-the-close](/meta/policy/concerns-block-the-close.md) — once a closing flow is invoked, any concern the session still holds blocks the irreversible step as a question the operator dispositions; the driving question is verified before the close, handoff context is filed where `/priorities` reads, and a merged close introduces nothing that lives only in the thread
 - [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md) — an actionable assertion makes its basis legible (checked: cite what was checked; recalled: mark it plainly), uniformly by citations and markers rather than episodic diligence narration; a recommendation names the unchecked premise it would fall with
+- [inline-reply-quoting](/meta/policy/inline-reply-quoting.md) — a response to a multi-subject operator message takes the email inline-reply form: each subject's passage quoted verbatim, the answer directly beneath it, in the operator's order; orientation still opens, tables still close
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
