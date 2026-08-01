@@ -473,6 +473,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
 | `em:b7760e` | [beliefs/glossary/semidecidability](/beliefs/glossary/semidecidability.md) | concept | false |
 | `em:60220a` | [beliefs/glossary/sense](/beliefs/glossary/sense.md) | concept | false |
+| `em:21e292` | [beliefs/glossary/sentinel-value](/beliefs/glossary/sentinel-value.md) | concept | false |
 | `em:425356` | [beliefs/glossary/separation-of-concerns](/beliefs/glossary/separation-of-concerns.md) | concept | false |
 | `em:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |
@@ -606,6 +607,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1aefe2` | [knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering](/knowledge/SWE/agentic/agentic-loop/the-art-of-loop-engineering.md) | reference |  |
 | `em:d580ce` | [knowledge/SWE/agentic/agentic-loop/the-coming-loop](/knowledge/SWE/agentic/agentic-loop/the-coming-loop.md) | reference |  |
 | `em:619132` | [knowledge/SWE/agentic/agentic-loop/thin-agents-on-a-smarter-ontology-based-substrate](/knowledge/SWE/agentic/agentic-loop/thin-agents-on-a-smarter-ontology-based-substrate.md) | reference |  |
+| `em:5a82cf` | [knowledge/SWE/agentic/agentic-loop/unattended-agent-operation-control-plane-patterns](/knowledge/SWE/agentic/agentic-loop/unattended-agent-operation-control-plane-patterns.md) | reference |  |
 | `em:1df031` | [knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies](/knowledge/SWE/agentic/agentic-loop/why-agentic-systems-need-ontologies.md) | reference |  |
 | `em:214aa4` | [knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint](/knowledge/SWE/agentic/anthropic/certification/cca-foundations-exam-blueprint.md) | source |  |
 | `em:bdfa05` | [knowledge/SWE/agentic/anthropic/certification/claude-certification-program](/knowledge/SWE/agentic/anthropic/certification/claude-certification-program.md) | reference |  |
@@ -634,9 +636,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:784985` | [knowledge/SWE/agentic/context-engineering/conversation-tree-architecture](/knowledge/SWE/agentic/context-engineering/conversation-tree-architecture.md) | reference |  |
 | `em:649457` | [knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `em:c81829` | [knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt](/knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt.md) | reference |  |
+| `em:9d3c07` | [knowledge/SWE/agentic/context-engineering/markdown-folder-beat-a-vector-db-as-agent-knowledge-base](/knowledge/SWE/agentic/context-engineering/markdown-folder-beat-a-vector-db-as-agent-knowledge-base.md) | reference |  |
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
+| `em:b4e21d` | [knowledge/SWE/agentic/frameworks/caveman-agent-output-compression](/knowledge/SWE/agentic/frameworks/caveman-agent-output-compression.md) | reference |  |
 | `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `em:e4d9cf` | [knowledge/SWE/agentic/governance/models-and-the-semantic-gap](/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md) | reference |  |
@@ -645,6 +649,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3b0352` | [knowledge/SWE/agentic/mcp/mcp-tools-primitive](/knowledge/SWE/agentic/mcp/mcp-tools-primitive.md) | reference |  |
 | `em:9b5d41` | [knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md) | snippet |  |
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
+| `em:2f847a` | [knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies](/knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies.md) | source |  |
 | `em:9318af` | [knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | source |  |
 | `em:c880d8` | [knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | reference |  |
 | `em:42648b` | [knowledge/SWE/agentic/skill-optimization/skillopt](/knowledge/SWE/agentic/skill-optimization/skillopt.md) | reference |  |
