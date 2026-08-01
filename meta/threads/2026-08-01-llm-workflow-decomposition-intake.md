@@ -6,6 +6,7 @@ provenance: "Claude Code session, 2026-08-01; verbatim retained messages — too
 tags: [meta, thread, intake, llm-workflow-design, deterministic-code, cost-optimization, finops]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01V3xMKFRGP9XhyQCgh592eN
+pr: 221
 ---
 
 # 2026-08-01-llm-workflow-decomposition-intake
