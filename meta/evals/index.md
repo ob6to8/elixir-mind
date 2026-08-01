@@ -60,3 +60,10 @@ not by pressure from the backlog's size.
   agent re-derive or recall, and does the ratio move as a session lengthens? Design
   only; four instances across two sessions, one of them recorded independently by an
   earlier session that reached the same conclusion. `status: proposed`.
+- [Belief-graph grounding eval](/meta/evals/cb-eval-export/MANIFEST.md) — an
+  external snapshot, not a `mix brain.*`-scored instrument built here: the
+  apples/fruit `conceptual-prototype/` that surfaced a logical-composition gap, and
+  the `purity-test/` prose-vs-assertion-DAG run it motivated. Byte-identical import
+  from `amieval/evals` (branch `claude/agent-grounding-eval-gwdvej`, commit
+  `3545da7a191f676073df8ecfe369d1a7ba430fa7`); see its own `MANIFEST.md` for exact
+  contents and exclusions.
