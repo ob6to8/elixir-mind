@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "the epistemological third of the operator-commissioned comprehensive repo review"
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
 ---
 
 # Epistemological review

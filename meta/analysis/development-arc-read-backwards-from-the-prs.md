@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "the operator commissioned a comprehensive code, content, and epistemological review and directed working backwards through the PRs to derive intention and direction"
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
 ---
 
 # The development arc read backwards from the pull requests

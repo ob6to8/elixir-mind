@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "found reading Links.unlisted_errors during the tooling review; the hard gate's guarantee has live false-negative capacity"
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
 ---
 
 # The index-coverage gate matches by substring

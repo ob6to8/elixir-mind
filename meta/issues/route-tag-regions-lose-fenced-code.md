@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "confirmed by reproduction during the tooling review; the record layer is silently dropping content the route-tagging policy says is lifted whole"
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
 ---
 
 # Route-tag regions lose fenced code

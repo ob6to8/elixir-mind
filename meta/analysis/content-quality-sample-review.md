@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "the content third of the operator-commissioned comprehensive repo review — sampled this session, full sweep scoped in the review-program plan"
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
 ---
 
 # Content quality, sampled

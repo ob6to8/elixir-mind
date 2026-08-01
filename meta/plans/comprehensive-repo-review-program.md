@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "the review spans sessions by construction; this plan is the cross-session build order and status ledger persist-plans requires for deferred work"
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
 ---
 
 # Comprehensive repo review — program
@@ -96,6 +97,91 @@ The execution session(s) for what the review filed, in recommended order:
 | 3 | Verbatim-capture filing pattern (three in use) | Standardize on sibling-`source`; retype the strays |
 | 4 | Contract size counterweight (15,153 words, monotonic) | Warn-only word-count trend in CI + relocation pass on the five longest policies |
 | 5 | Plan-backlog posture (38 active plans vs ~1 execution/session) | Triage pass: supersede or defer-with-date the stale `accepted` set |
+
+## Execution hand-offs
+
+Ratified sequencing (operator, 2026-08-01): resolve the session-1 thread →
+fix thread → operator reading block → decision-queue thread → sessions 2–3.
+The operator reads the four analyses before the decision-queue thread (arc
+first as the frame, then epistemology and content — they argue the queue —
+with the tooling review last, doubling as review context for the fix PR).
+Model selection follows
+[capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md):
+strongest tier where the output is unoracled judgment, cheaper tiers where
+the gate suite is the oracle.
+
+### Fix thread — Sonnet-tier (fully specified defects; mechanical oracle)
+
+> Fix the two open issues filed by the comprehensive review, plus the
+> staleness sweep it recommended, on a fresh branch:
+>
+> 1. `/meta/issues/route-tag-regions-lose-fenced-code.md` — fix
+>    `parse_line/2` in `lib/elixir_mind/route_tags.ex` so fence lines and
+>    fenced content are appended to an open region's content (fence state
+>    still suppresses tag/turn matching inside code), add the round-trip
+>    regression test (a region containing a fence materializes whole), then
+>    run `mix brain.route_tags --materialize` and include the nine rewritten
+>    sink diffs in the PR.
+> 2. `/meta/issues/index-coverage-gate-substring-masking.md` — tighten
+>    `Links.unlisted_files/3` to link-target or word-boundary matching, with
+>    the regression test named in the issue.
+> 3. The staleness sweep: findings 8–13 in
+>    `/meta/analysis/tooling-implementation-review.md` (two stale
+>    comments/exemptions, the capture and render-contract skill corrections,
+>    the resource-attribution exemption list + `/render-contract`, the
+>    unit-terminology pass over the six skills and task shortdocs +
+>    `mix brain.codemap`).
+>
+> One commit per numbered item. Full gate suite green before closing. Mark
+> both issues `status: resolved` with a one-line resolution note, update
+> `meta/issues/index.md`, then `/create-pull-request`.
+
+### Decision-queue thread — strongest tier (unoracled judgment ratified into policy)
+
+> Work the operator decision queue from the comprehensive review. The queue
+> is the table "Questions the review leaves with the operator" in
+> `/meta/plans/comprehensive-repo-review-program.md`; the argued case for
+> each row is in the epistemology and content review analyses it links.
+>
+> For each of the five rows in order: present the recommendation and its
+> case in chat text, take my decision inline, and execute what a decision
+> unblocks in-session (policy edits + `/render-contract`, the
+> model-attribution index-gloss fix, retyping strays, filing a small plan
+> where a row needs design rather than a ruling — likely the excerpt-log
+> discipline row).
+>
+> After the queue, present the contract-synchronization sweep (§2–3 of
+> `/meta/analysis/epistemology-and-governance-review.md`) as a single
+> ratification, and execute it on approval.
+>
+> Update the program plan's session ledger, then `/create-pull-request`.
+
+### Session 2 — Opus-tier main loop, cheaper subagent readers
+
+> Execute session 2 of `/meta/plans/comprehensive-repo-review-program.md`
+> (the glossary-scale, thread-fidelity, and remaining-index sweeps). Read
+> the plan's "Remaining sections" for scope and its method note: delegate
+> bounded reading passes, and re-verify every severe claim directly before
+> filing anything.
+>
+> Deliverables: one analysis under `meta/analysis/` per the session-1 house
+> pattern, issues only for confirmed defects, the program plan's ledger
+> updated. Honor the decisions ratified in the decision-queue session
+> (check the plan's ledger for them) as the criteria the sweeps judge
+> against. Then `/create-pull-request`.
+
+### Session 3 — Opus-tier (strongest tier if the consolidation call should be made at full strength)
+
+> Execute session 3 of `/meta/plans/comprehensive-repo-review-program.md`:
+> the SWE/agentic deep-dive (intake-fidelity sampling against cited
+> sources, the agentic-loop synthesis-gap assessment, the BEAM/Jido
+> satellite-cluster consolidation question), duplication beyond the top-10
+> pairs, and the `deprecated/` triage input for
+> `/meta/todos/triage-what-remains-in-deprecated.md`.
+>
+> Same method and deliverable shape as session 2. If this completes the
+> program's remaining sections, move the program plan to `status: done`
+> with a closing ledger entry. Then `/create-pull-request`.
 
 ## Deferred
 
