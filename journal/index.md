@@ -9,6 +9,12 @@ operator's voice is kept faithful; only dictation noise is cleaned.
 
 ## Entries
 
+- [2026-07-31](/journal/2026-07-31.md) — The auditability thesis — that truly
+  auditing agent work requires understanding it down to the foundation — the
+  repo nearing the "complexity escape" of the previous attempt and the decision
+  to pay the tab, rising model capability as a temptation to strip guidance and
+  enforcement, and the tour-advancing system where verification doubled the
+  work.
 - [2026-07-29](/journal/2026-07-29.md) — Dopamine without effort as the
   addiction mechanism LLMs promise to trigger, the genie narrative read as a
   parable of effort-bypass, and why pure automation defeats the reward system

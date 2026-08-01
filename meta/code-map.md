@@ -320,6 +320,12 @@ Enforcement splits by what has a mechanical oracle, mirroring
   * **warn** — moderate containment. Semantic redundancy has no exact
     oracle, so the middle band reports without failing, like the
     routing-ledger coverage warning.
+  * **warn** — a term whose `provenance` narrates coining (the word "coin"
+    in any form: coined, coinage, coining) but whose `tags` omit `coined`.
+    The text match is close to mechanical, but what the tag should *mean*
+    for a term coined by an external source rather than the operator or a
+    repo session is an open editorial question, so this stays warn rather
+    than fail until that's settled.
 
 Generated `## Thread excerpts — route-tagged log` sections, *Seen in:* and
 *See also:* lines are excluded from the repetition check — they are
@@ -923,8 +929,10 @@ Verify the glossary layer (see `ElixirMind.Glossary` and the
 [glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)): that
 every term carries a non-empty `description` (its one canonical overview), that
 the index `## Terms` section matches its re-derivation from the term files
-(title-sorted, gloss = description verbatim), and — with a fail/warn split —
-that no body sentence near-restates its entry's description.
+(title-sorted, gloss = description verbatim), that — with a fail/warn split —
+no body sentence near-restates its entry's description, and — warn-only —
+that a term whose `provenance` narrates coining also carries the `coined`
+tag.
 
     mix brain.glossary                # verify; exits non-zero on any failure
     mix brain.glossary --materialize  # regenerate the index `## Terms`
