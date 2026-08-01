@@ -5,6 +5,7 @@ description: An operator-directed examination of em:712e01's frontmatter, key by
 provenance: "Claude Code session, 2026-08-01, model switched twice by the operator mid-session: Claude Opus 5 for the analysis and plan drafting, Claude Fable 5 for the review pass, Claude Opus 5 again for the capture and close; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, schema, attribution, provenance, types, vocabulary, tags, prov-dm, iso-704, evaluator, ci]
 timestamp: 2026-08-01
+pr: 219
 session: https://claude.ai/code/session_01Y2Z4AHuUfu9JQTEosoHzj4
 ---
 
