@@ -2,7 +2,7 @@
 type: issue
 title: "The index-coverage gate matches by substring, so a longer listed filename masks a shorter unlisted one"
 description: Links.unlisted_errors decides a doc is listed via String.contains?(index, basename), so a doc whose name is a suffix of another listed filename passes the hard gate while genuinely unlisted — eight live maskable pairs exist in the tree today.
-status: open
+status: resolved
 provenance: "Claude Code session (Claude Fable 5), 2026-08-01 — comprehensive repo review"
 tags: [meta, issue, links, index, gates, tooling]
 timestamp: 2026-08-01
@@ -15,6 +15,14 @@ attribution:
 ---
 
 # The index-coverage gate matches by substring
+
+## Resolution (2026-08-01)
+
+Fixed: `unlisted_files/3` now requires the basename to appear as a link
+target — immediately after `(` or `/` — instead of anywhere in the index
+content, so a longer listed filename can no longer mask a shorter unlisted
+sibling; the regression test named below (`agentic-git.md` masking `git.md`)
+pins it.
 
 ## Summary
 
