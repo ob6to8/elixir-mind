@@ -6,7 +6,7 @@ description: Classic-AI knowledge-representation machinery (Doyle's JTMS, de Kle
 resource: https://en.wikipedia.org/wiki/Reason_maintenance
 provenance: "Distilled from the Wikipedia article on reason maintenance (fetched 2026-07-11), with mechanics supplemented from the standard literature (Doyle 1979; de Kleer 1986); layered breakdown via /summarize-technical"
 tags: [knowledge-representation, epistemics, truth-maintenance, belief-revision, classic-ai, dependency-graph]
-timestamp: 2026-07-11
+timestamp: 2026-08-01
 attribution:
   when: 2026-07-11T09:07:29+00:00
   channel: intake
@@ -122,6 +122,21 @@ internally-coherent but mutually-contradictory documents without merging them
 into one inconsistent store. See the
 [belief-decomposition analysis](/meta/analysis/belief-decomposition-derived-vs-authored.md)
 and the [derived analysis-mode plan](/meta/plans/belief-decomposition-analysis-mode.md).
+
+## Modern echoes
+
+The division of labor this machinery defined — a reasoner that proposes, a
+maintenance layer that records justifications and repairs consistency — is
+re-emerging around LLMs: BeliefBank
+(<https://arxiv.org/abs/2109.14723>, EMNLP 2021) adds an external symbolic
+belief memory with weighted-MaxSAT revision over a frozen model and cites de
+Kleer's ATMS as prior art; REFLEX (<https://arxiv.org/abs/2305.14250>, EMNLP
+2023) rebuilds the belief-graph-plus-constraint-reasoner anatomy without the
+classic name; Zep/Graphiti (<https://arxiv.org/abs/2501.13956>, 2025) ships
+contradiction-driven edge invalidation as production agent memory. Whether
+this re-emergence means the classic machinery was premature rather than wrong
+is evaluated in
+[the research spike](/meta/analysis/classic-epistemics-premature-not-wrong.md).
 
 # Citations
 
