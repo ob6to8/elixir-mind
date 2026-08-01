@@ -39,6 +39,13 @@ Spec written, filed, and pushed. The plan is at [`meta/plans/resource-attributio
 
 **The proposed shape** — one new frontmatter key on bundle concepts:
 
+```yaml
+attribution:
+  when: 2026-07-13T14:02:00Z
+  channel: auto-intake          # controlled vocab: intake | auto-intake | glossary | agent-authored | backfill
+  agent: "Claude Code agent, /research daily Routine"
+  why: "featured in the 2026-07-13 digest under agents/orchestration; reason-tag: impactful"
+```
 
 **Key design decisions in the spec:**
 

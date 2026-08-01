@@ -211,5 +211,11 @@ Not all "used to" wording is pure history. There's a real distinction:
 
 The hook comment mixes both. Trimmed, it stays useful without the archaeology:
 
+```bash
+# Provision the session's toolchain — nothing more. The session-init appraisal
+# (open work + heuristic top-3) is not emitted here; it lives behind the
+# on-demand `/priorities` skill (.claude/skills/priorities/SKILL.md). This
+# hook's sole job is to ensure the Elixir/OTP toolchain is present and warm...
+```
 
 Same information a reader needs, minus the "used to."

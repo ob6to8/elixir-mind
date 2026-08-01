@@ -78,6 +78,13 @@ Wakefield's notes state the same rule as a hard constraint of the language: **"N
 
 In my previous answer I gave you a grid of *event lists* — kick at indices 0, 4, 8, 12. That's the trigger model. The ramp model replaces the lists with one continuous function of time, and derives everything from it:
 
+```python
+phase = (t * bpm / 60 / 4) % 1.0      # bar phase: a 0→1 ramp, once per bar
+
+kick  = edge(phase * 4)               # ×4 → four on the floor
+snare = edge(phase * 2 + 0.5)         # ×2, offset half → backbeat
+cuts  = edge(phase * 3)               # ×3 → three cuts per bar, against a 4/4 beat
+```
 
 Every rhythmic transformation becomes arithmetic on one ramp:
 

@@ -280,6 +280,12 @@ Everything below I ran in this container just now.
 
 Installed SuperCollider 3.13.0 from Ubuntu's repos (`supercollider-server`, `supercollider-language`, no GUI packages). It needs two environment variables to start headless as root, or `sclang` aborts on Qt WebEngine:
 
+```bash
+QT_QPA_PLATFORM=offscreen \
+QTWEBENGINE_DISABLE_SANDBOX=1 \
+QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox --disable-gpu" \
+sclang render.scd
+```
 
 Then I rendered 8 bars of the exact beat from my last message — synthesized kick and snare, four on the floor with backbeat, 120 BPM — via `Score.recordNRT`, which drives `scsynth` in **non-realtime mode**: no audio device, no soundcard, no clock. It renders as fast as the CPU allows and writes a file.
 
@@ -298,5 +304,12 @@ Every event lands *early*, snapped down to the preceding block. For picture sync
 
 **How it slots into the video render**
 
+```
+arrangement.py ──► ramp/grid  ──┬──► render.scd  ──sclang──► scsynth NRT ──► stems/*.wav
+                                │                                                │
+                                └──► cuts.json  ──► ffmpeg chunks ──► picture.mp4 │
+                                                                            │     │
+                                                                            └──► ffmpeg mux ──► final.mp4
+```
 
 Both branches consume the same ramp, so the drums and the cuts cannot disagree — there's no sync step to get wrong. And SC renders faster than realtime, so a full re-render after a parameter change is seconds.
