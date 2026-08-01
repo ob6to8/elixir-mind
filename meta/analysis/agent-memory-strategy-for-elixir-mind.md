@@ -201,3 +201,39 @@ the incumbent map at execution time.
 5. **Re-read the landscape at the next field re-evaluation** — the
    convergence claim and the incumbent map both date quickly in this
    space.
+
+## Addendum — GrapeRoot, same day (2026-08-01)
+
+The operator pointed `/intake` at
+[GrapeRoot](/knowledge/SWE/agentic/code-context/graperoot.md) (a Python
+context engine that pre-packs graph-ranked code into the prompt; ~969
+stars, Apache launcher over a proprietary core, vendor-run economics
+claims) and asked whether it changes this analysis. **The verdicts stand;
+two refinements.**
+
+1. **The retrieval-posture axis is three-way, and the landscape now says
+   so.** Agentic pull (Claude Code's bet), external index (the Milvus
+   position), and graph pre-load — which GrapeRoot productizes and mex's
+   router represents in markdown form. GrapeRoot's objective function is
+   token economics (turns, cost) rather than recall quality, which makes
+   it orthogonal to the sidecar plan: the engine answers "can intake find
+   the merge target", not "can a prompt be pre-packed cheaply". The
+   deferred session-start router in the
+   [plan](/projects/elixir-agent-memory/design-and-build-order.md) gains a
+   second exemplar, nothing more.
+2. **The decline-auto-formation verdict gains a counter-exemplar, and
+   survives it.** GrapeRoot keeps "Persistent decisions/tasks/facts across
+   sessions" in gitignored JSON — cross-session memory outside version
+   control, unreviewable, provenance-free, the polarity Letta's 2026 pivot
+   abandoned. One 2026 entrant on the far side of the convergence does not
+   reverse the trend reading; it sharpens what the convergence is *about*:
+   not files as a format, but memory that is versioned, reviewable, and
+   attributable. That is the property this bundle's governance already
+   enforces and the property GrapeRoot's memory lacks.
+
+No impact on the Elixir gap or the project plan: GrapeRoot is Python, its
+core is closed, it operates in the code-context lane, and it is neither
+file-canonical (its store is the gitignored graph) nor eval-first (its
+numbers are vendor-run on its own prompt set). Basis: README and GitHub
+page fetched today with verbatim spans re-confirmed; one web search for
+reception found no third-party threads (scoped in the capture).

@@ -70,10 +70,16 @@ moving there.
   ([x.com/bcherny](https://x.com/bcherny/status/2017824286489383315));
   quoted across secondary sources from the Latent Space podcast as agentic
   search having "outperformed everything. By a lot." (secondary
-  attribution). The counter-position exists and is vendor-shaped: Milvus,
-  "Why I'm Against Claude Code's Grep-Only Retrieval? It Just Burns Too
-  Many Tokens"
-  ([milvus.io](https://milvus.io/blog/why-im-against-claude-codes-grep-only-retrieval-it-just-burns-too-many-tokens.md)).
+  attribution). Two counter-positions exist, one per rival posture: the
+  external-index bet, vendor-shaped — Milvus, "Why I'm Against Claude
+  Code's Grep-Only Retrieval? It Just Burns Too Many Tokens"
+  ([milvus.io](https://milvus.io/blog/why-im-against-claude-codes-grep-only-retrieval-it-just-burns-too-many-tokens.md))
+  — and the pre-load bet, productized:
+  [GrapeRoot](/knowledge/SWE/agentic/code-context/graperoot.md) pre-packs
+  graph-ranked code into the prompt and sells the turn/cost reduction
+  (vendor-run numbers). Retrieval posture is thus a three-way axis —
+  agentic pull, external index, graph pre-load — with the leading coding
+  agent on the first pole and the other two carrying the burden of proof.
 
 ## The formation-pipeline products
 

@@ -652,6 +652,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7fa867` | [knowledge/SWE/agentic/architecture/architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md) | reference |  |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
+| `em:c71155` | [knowledge/SWE/agentic/code-context/graperoot](/knowledge/SWE/agentic/code-context/graperoot.md) | reference |  |
 | `em:a0fbd5` | [knowledge/SWE/agentic/code-context/mex](/knowledge/SWE/agentic/code-context/mex.md) | reference |  |
 | `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
 | `em:8d9b89` | [knowledge/SWE/agentic/code-quality/guarding-against-ai-drift](/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md) | reference |  |
