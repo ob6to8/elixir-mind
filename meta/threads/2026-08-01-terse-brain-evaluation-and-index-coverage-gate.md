@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5, then Claude Sonnet 5 after a mi
 tags: [meta, thread, terse, karpathy, llm-wiki, second-brain, comparison, index-coverage, verifier, gate]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01QJ8BM94dFhX5NSf2i981uQ
+pr: 216
 ---
 
 # 2026-08-01-terse-brain-evaluation-and-index-coverage-gate
