@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-directed session on the /review-pr audit"
   why: "operator asked for a plan building the mechanical check that would catch a hand-written route-tag block; the check already exists and is silently unreachable"
+  from: [/meta/threads/2026-07-31-survey-batch-intakes-and-review-pr-skill-audit.md]
 ---
 
 # Repair the route-tag orphan check

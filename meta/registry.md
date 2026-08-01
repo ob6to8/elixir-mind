@@ -461,6 +461,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:98acc0` | [beliefs/glossary/semantic-search](/beliefs/glossary/semantic-search.md) | concept | false |
 | `em:b7760e` | [beliefs/glossary/semidecidability](/beliefs/glossary/semidecidability.md) | concept | false |
 | `em:60220a` | [beliefs/glossary/sense](/beliefs/glossary/sense.md) | concept | false |
+| `em:21e292` | [beliefs/glossary/sentinel-value](/beliefs/glossary/sentinel-value.md) | concept | false |
 | `em:425356` | [beliefs/glossary/separation-of-concerns](/beliefs/glossary/separation-of-concerns.md) | concept | false |
 | `em:243d56` | [beliefs/glossary/session-capture](/beliefs/glossary/session-capture.md) | concept | false |
 | `em:6f2442` | [beliefs/glossary/session-init-digest](/beliefs/glossary/session-init-digest.md) | concept | false |

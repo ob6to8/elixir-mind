@@ -82,3 +82,50 @@ The tradeoff is deliberate: a simpler agent on top of a tight control plane beat
 
 Reddit: r/AgentsOfAI, "Lessons from a year of running coding agents unattended" (2026-07-29, fetched 2026-07-31)
 - https://www.reddit.com/r/AgentsOfAI/comments/1v5q3ii/lessons_from_a_year_of_running_coding_agents/
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:5a82cf">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-survey-batch-intakes-and-review-pr-skill-audit (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:5a82cf`]**
+
+**Intake: Markdown-first knowledge bases for AI agents**
+
+**Dedup finding:** The existing document `/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md` (em:41a1e3, type: reference) covers markdown file structures for agent memory. The Reddit discussion is complementary — it captures practitioner perspectives on vector DB vs. markdown tradeoffs, scaling boundaries, and hybrid patterns not yet in the bundle.
+
+**Filed as:** `type: reference` at `/knowledge/SWE/agentic/context-engineering/markdown-vs-vector-db-knowledge-base-tradeoffs.md`
+
+**Distilled content:**
+
+> A practitioner-led discussion comparing vector database knowledge bases against structured markdown file hierarchies for agent context. The original author replaced a full retrieval stack (vector DB + embedding pipeline + chunker + reranker) with a folder of cross-linked markdown files and grep-based navigation, finding the simpler approach retrieved better at their scale (~few thousand pages) and was dramatically easier to debug and maintain.
+>
+> **Key findings:**
+> - Markdown keeps concepts intact; no chunker boundary splits. Whole sections are queryable units matching human reading.
+> - The file system is inspectable and diffable. When retrieval fails, the actual content is readable; with embeddings, debugging means staring at cosine scores.
+> - Single source of truth prevents sync problems between index and source.
+> - Tradeoff: scales to low millions of documents; beyond that, real vector infrastructure becomes necessary.
+> - Query expansion (model-generated synonyms before grep) recovers recall lost to lexical search (e.g., 'auth' vs. 'login flow' mismatch) without reintroducing vector infrastructure.
+> - Hybrid pattern working at scale: markdown as source of truth, derived index as performance layer (rebuilt anytime without data loss).
+
+**Frontmatter fields:**
+- `id:` [to be minted by mix brain.id]
+- `type:` reference
+- `title:` Markdown-first knowledge bases for AI agents: tradeoffs and scaling limits
+- `description:` Practitioner discussion of vector DB vs. markdown file hierarchies, including when each scales and hybrid approaches
+- `resource:` https://www.reddit.com/r/LLMDevs/comments/1v549i8/i_ripped_out_my_vector_db_and_a_folder_of/
+- `tags:` [`ai-agents`, `knowledge-bases`, `vector-db`, `markdown`, `context-engineering`, `retrieval`, `scaling`]
+- `timestamp:` 2026-07-31
+- `attribution:`
+  - `when:` 2026-07-31T00:00:00Z
+  - `channel:` intake
+  - `agent:` operator via /intake, Claude Code session
+  - `why:` practitioner perspective on knowledge base architecture tradeoffs for agent systems
+
+**Index update:** Add to `/knowledge/SWE/agentic/context-engineering/index.md`:
+- [Markdown-first knowledge bases for AI agents](/knowledge/SWE/agentic/context-engineering/markdown-vs-vector-db-knowledge-base-tradeoffs.md) — Practitioner discussion comparing vector databases and structured markdown, including scaling limits and hybrid approaches
+
+Ready to proceed with file writing and commit when you confirm.

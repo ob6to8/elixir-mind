@@ -105,3 +105,32 @@ so nothing in our system is allowed to say applied. it may say it clicked submit
 
 Reddit: r/AgentsOfAI, "Your agent says 'done.' You check and nothing actually happened"
 - https://www.reddit.com/r/AgentsOfAI/comments/1v87nmh/your_agent_says_done_you_check_and_nothing/
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:7c4f3e">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-survey-batch-intakes-and-review-pr-skill-audit (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:7c4f3e`]**
+
+**Resource persisted ✓**
+
+Verbatim Reddit transcript now filed as a separate `type: reference` document:
+
+| Document | Type | ID | Path |
+|----------|------|-----|------|
+| Your agent says "done." You check and nothing actually happened. | `reference` | `em:7c4f3e` | `/knowledge/SWE/agentic/supervision/reddit-agent-says-done-reconciliation-patterns.md` |
+
+**Content captured verbatim:**
+- Original post (full)
+- Selected practitioner comments (8 key threads) covering validation patterns and failure modes
+- Citations and related links section
+
+**Two-layer filing:**
+1. **Analysis layer** — Updated `em:712e01` (normative-records-vs-descriptive-traces) with practitioner patterns distilled into a thread excerpt
+2. **Source preservation layer** — Filed the complete transcript as `em:7c4f3e` for future reference and verbatim quotes
+
+All gates passing. Both commits pushed to branch.

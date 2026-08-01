@@ -98,3 +98,31 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 **[`em:712e01`]**  (co-feeds: `em:24c203`)
 
 **Compliance/governance.** The broker log is a different *kind* of record from a trace, not a better one: a trace is descriptive (what the agent did), the acknowledgement protocol's log is **normative** (what was authorized, by whom, with what reason, what was amended first). That's the artifact "meaningful human oversight" obligations actually ask for, and today it exists nowhere below the PR-approval boundary. Discipline-level effect: the unit of observability moves from the trace to the decision, and auditing shifts to verifying the instrumentation. Two failure modes hollow it out — rubber-stamping (visible as collapsing ack latencies, and Goodhartable) and ungated action paths. Recommendation: don't build for compliance, but take the two free enablers — append-only typed records and posture stamping. I flagged the regulatory mapping as directional from training knowledge.
+
+### 2026-07-31-survey-batch-intakes-and-review-pr-skill-audit (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:712e01`]**
+
+This thread is a perfect evidence base for an existing document. It substantiates **`normative-records-vs-descriptive-traces.md`** (em:712e01) with real-world practitioner experience of the exact problem described — traces being agent testimony rather than evidence, and reconciliation patterns that address it.
+
+I'll update that document in place to include this Reddit discussion, then create the intake:
+
+**Intake complete ✓**
+
+The Reddit discussion was **merged into an existing document** rather than created as a new one:
+
+| Action | Document | Type | ID |
+|--------|----------|------|-----|
+| **Updated in place** | Normative records vs. descriptive traces | `concept` | `em:712e01` |
+
+**Why merged, not new:** This Reddit thread is practitioner-validated evidence of the exact problem the existing concept describes — that traces are agent testimony, not evidence of actual work happening in downstream systems. The thread contributes real-world patterns (write-verify separation, read-back verification, reconciliation against source of truth) that directly substantiate and extend the concept.
+
+**Key insights added:**
+- Practitioners independently discovered "trace is testimony, not evidence"
+- Validated patterns: write and verify as separate steps, read-back from system of record, delayed reconciliation for async operations
+- Failure modes when verification itself can be testimony (matching DOM elements that appear identical on both success and error states)
+- Critical distinction: absence of error ≠ evidence of success
+
+**All gates passing.** Commit pushed to branch.

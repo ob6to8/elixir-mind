@@ -110,3 +110,15 @@ Curious where the crossover actually is for people. At what corpus size did a pl
 **alchebyte:** in the repo (a .knowledge folder). agents/claude.md is minimal and the LLM context window built from the .knowledge skills to update and keep it coherent and up-to-date.
 
 **ItaySela:** did the same swap and agree the win is mostly that cross-links plus real headings turn the folder into a graph the model can walk, which cosine scores never gave me. the spot it bit me was vocabulary mismatch: grep is lexical, so a query that says 'auth' never finds the section that only ever says 'login flow', and that miss is silent. what patched it without dragging the vector db back was a cheap query-expansion pass before grep, let the model list synonyms first
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:9d3c07">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-survey-batch-intakes-and-review-pr-skill-audit (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:9d3c07`]**
+
+**The dropped intake is filed** as `em:9d3c07` in `context-engineering/`, beside `em:41a1e3` — that one reaches the same conclusion from a convergence argument (Manus, OpenClaw, Claude Code), this one from a first-person migration, so neither subsumes the other. Transcript preserved verbatim per your standing preference.
