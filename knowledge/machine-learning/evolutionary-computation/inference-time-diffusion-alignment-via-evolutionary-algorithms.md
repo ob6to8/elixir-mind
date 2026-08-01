@@ -205,3 +205,17 @@ rather than static notation.
 - Jajal, Eliopoulos, Chou, Thiruvathukal, Davis, Lu, "Inference-Time
   Alignment of Diffusion Models via Evolutionary Algorithms," arXiv:2506.00299v2,
   25 Nov 2025 — <https://arxiv.org/abs/2506.00299>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:da2ffb">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-evolutionary-search-explorable-and-visualization-type (2026-07-31)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:da2ffb`]**  (co-feeds: `em:4956f3 em:e12137`)
+
+Filed and pushed. Here's the rundown.
+
+Both sources are in the brain now, and I used them together to actually test the idea instead of just speculating about it: I distilled the teaching *mechanism* Circles, Sines, and Signals uses into a reusable method, then ran the evolutionary-algorithms paper's own equations through it. They map directly — not approximately. The paper's real content (a rotation that keeps noise on a probability "shell," a population's diversity collapsing over generations, a reward function that's really a similarity measure) is exactly the kind of *relationship-in-motion* that resource's drag-a-slider approach is built for, not decoration bolted onto static notation.
