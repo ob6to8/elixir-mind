@@ -95,9 +95,10 @@ rule above is the registry's scan **plus a validation pass** — no new files, o
 
 One rule breaks that pattern: **index-listing coverage**
 (`ElixirMind.Links.unlisted_errors/1` — a directory's *existing* `index.md`
-must list every doc and subdirectory filed beside it, `evals/` excepted). It
-does open a second door, the way RouteTags does below — `Links.doc_paths/1` is
-its own wildcard-plus-exclusion walk, scoped differently from the registry's
+must list every doc and subdirectory filed beside it; no directory is exempt
+by name). It does open a second door, the way RouteTags does below —
+`Links.doc_paths/1` is its own wildcard-plus-exclusion walk, scoped
+differently from the registry's
 (it *includes* `meta/` and `inbox/`, which the registry excludes as
 non-bundle namespaces, and stays out of `test/`/`deprecated/` like the
 registry does). So `mix brain.verify` still never trips over a fabricated id

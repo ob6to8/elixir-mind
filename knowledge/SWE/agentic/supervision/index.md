@@ -28,3 +28,6 @@ act on.
 
 - [editor-integration](/knowledge/SWE/agentic/editor-integration/index.md) — the
   editor as one surface a supervising human watches
+- [action-verification](/knowledge/SWE/agentic/action-verification/index.md) — a
+  trace only ever tells the supervisor what the agent claims; confirming the
+  claim against the system of record is a separate discipline, covered there

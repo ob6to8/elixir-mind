@@ -77,9 +77,10 @@ is enough to know what turns them red:
   edge pointing at an id that doesn't exist, a capture (a concept with a
   `resource`) marked `verified: true`, a `verified: true` statement with no
   `verified_by`, **or a directory whose existing `index.md` omits a doc or
-  subdirectory filed beside it** (`ElixirMind.Links.unlisted_errors/1` —
-  `evals/` excepted, an imported snapshot corpus outside the taxonomy). On a
-  green bundle it additionally prints **advisory docs-freshness warnings**
+  subdirectory filed beside it** (`ElixirMind.Links.unlisted_errors/1` — no
+  directory is exempt by name; an imported foreign corpus like
+  `meta/evals/cb-eval-export/` clears it as long as its parent index mentions
+  it). On a green bundle it additionally prints **advisory docs-freshness warnings**
   (`ElixirMind.Links.check/1`): internal links that don't resolve, and
   directories with no `index.md` at all. These never turn the gate red —
   broken links and a wholly absent index are both tolerated per OKF

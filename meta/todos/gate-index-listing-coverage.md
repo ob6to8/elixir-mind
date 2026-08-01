@@ -1,7 +1,7 @@
 ---
 type: todo
 title: "Gate index-listing coverage: promote the existing advisory check to a hard mix brain.verify failure"
-description: A directory whose index.md already exists but omits a doc or subdirectory filed beside it is now a hard mix brain.verify failure, not an advisory warning; a wholly absent index.md stays advisory per OKF conformance, and evals/ (an imported eval-snapshot corpus already outside the taxonomy) is excluded, matching Registry's existing precedent.
+description: A directory whose index.md already exists but omits a doc or subdirectory filed beside it is now a hard mix brain.verify failure, not an advisory warning; a wholly absent index.md stays advisory per OKF conformance. No directory is excepted by name — a concurrently-merged relocation of evals/ to meta/evals/cb-eval-export/ made an earlier name-based exemption for it unnecessary before this todo closed.
 status: done
 provenance: "Claude Code session (Claude Sonnet 5), 2026-08-01 — surfaced during a terse-brain evaluation that read ElixirMind.Links and found the index-coverage half of it already existed but was non-binding by design"
 tags: [meta, todo, tooling, elixir, verifier, index, ci, gates]
@@ -30,32 +30,43 @@ already excludes it from the stable-identity scan).
 **Done when.** A directory's *existing* `index.md` omitting a filed doc or
 subdirectory is a hard failure; a wholly absent `index.md` stays advisory
 (matching the [OKF-conformance policy](/meta/policy/okf-conformance.md)'s
-explicit tolerance); `evals/` is excluded from the hard check.
+explicit tolerance); no directory is excepted from the hard check by name.
 
 **What shipped.**
 
 - `ElixirMind.Links` split: `check/1` now covers only link resolution and
   "no `index.md` at all" (both stay advisory); a new `unlisted_errors/1`
   covers "doc/subdirectory filed but not listed in an *existing* `index.md`"
-  (hard), excluding `evals/`.
-- `ElixirMind.Verifier.run/2` gained rule 9, folding `Links.unlisted_errors/1`
+  (hard). First built with a name-based `evals/` exemption (13 of the 13 live
+  warnings sat there at the time, all "no index at all"); dropped during this
+  PR's merge with `main`, which had independently relocated `evals/` to
+  `meta/evals/cb-eval-export/` in the meantime — its parent index already
+  links it by name, so the general rule clears it with no exemption needed,
+  and the exemption would otherwise have become dead code pointing at a
+  directory that no longer exists.
+- `ElixirMind.Verifier.run/2` gained a new rule, folding `Links.unlisted_errors/1`
   into its pass/fail result — `mix brain.verify` now fails on a stale index
-  listing.
+  listing. Landed as rule 10 on merge: a concurrently-merged PR (#215) had
+  already claimed rule 9 for the new `visualization` type's `launch` check,
+  and both sides auto-merged cleanly except the numbered moduledoc list,
+  resolved by renumbering this one past it.
 - `mix brain.verify`'s and `ElixirMind.Links`'s moduledocs, `ElixirMind.SessionInit`'s
   docs-freshness section, and the
   [gate-suite tutorial](/meta/tutorials/the-gate-suite-and-where-it-runs.md) /
   [three-bundle-scanners tutorial](/meta/tutorials/the-three-bundle-scanners.md)
   updated to describe the new split — the latter's "the verifier adds no new
-  files to look at" claim no longer held once rule 9 opened a second scan
+  files to look at" claim no longer held once this rule opened a second scan
   surface (`Links.doc_paths/1`, differently scoped from `Registry.scan/1`), so
   its architecture diagram and closing sentence were corrected too.
 - `ElixirMind.LinksTest` updated: the two "unlisted" cases moved from
-  advisory to hard assertions, plus a new case confirming `evals/` is out of
-  scope for the hard check.
-- Full local gate suite re-run green after the change: compile
-  (`--warnings-as-errors`), format, xref (`--fail-above 0`), test (189
-  passing), `mix brain.verify` (still exits `0` — the 13 live warnings are all
-  in the still-advisory "no index at all" class), `mix brain.contract
-  --check`, `mix brain.registry --check`, `mix brain.codemap --check` (both
-  regenerated after the docstring edits), `mix brain.route_tags`, `mix
+  advisory to hard assertions, plus a case confirming a foreign import
+  mentioned only in its parent's prose (not a name-based exemption) still
+  clears the hard check.
+- Full local gate suite re-run green after both the original change and the
+  merge with `main`: compile (`--warnings-as-errors`), format, xref
+  (`--fail-above 0`), test (198 passing post-merge), `mix brain.verify`
+  (exits `0` — the former `evals/` warnings now sit at
+  `meta/evals/cb-eval-export/`, still in the advisory "no index at all"
+  class), `mix brain.contract --check`, `mix brain.registry --check`, `mix
+  brain.codemap --check` (regenerated), `mix brain.route_tags`, `mix
   brain.site`.

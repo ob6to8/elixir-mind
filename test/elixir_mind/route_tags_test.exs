@@ -339,6 +339,28 @@ defmodule ElixirMind.RouteTagsTest do
     end
 
     @tag :tmp_dir
+    test "a block naming a thread that does not exist is an orphan", %{root: root} do
+      green_fixture(root)
+
+      # A hand-written block citing a thread that was never captured: the log
+      # section is generated, so nothing else can put this here.
+      write_concept(root, "other-doc", "em:ccc333", """
+      # Other doc
+
+      ## Thread excerpts — route-tagged log
+
+      ### 2026-07-31-never-captured-thread (2026-07-31)
+
+      hand-written block
+      """)
+
+      results = RouteTags.run_checks(root)
+      {_, :fail, detail} = Enum.find(results, &(elem(&1, 0) == "log fidelity"))
+      assert detail =~ "em:ccc333"
+      assert detail =~ "no such thread"
+    end
+
+    @tag :tmp_dir
     test "a concept-routed ledger row with no covering tag warns, not fails", %{root: root} do
       green_fixture(root)
       write_concept(root, "uncovered-doc", "em:ddd444", "# Uncovered\n")

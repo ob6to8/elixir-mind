@@ -161,15 +161,19 @@ same direction — the mechanism already existed. What this evaluation actually
 recommends, and what this session built, is *promoting* the half of the
 existing check that was silently non-binding: a directory whose `index.md`
 *already exists* but omits a doc or subdirectory filed beside it is now a
-hard `mix brain.verify` failure (`ElixirMind.Verifier` rule 9,
-`ElixirMind.Links.unlisted_errors/1`). A directory with *no* `index.md` at
-all stays advisory, matching the [OKF-conformance policy](/meta/policy/okf-conformance.md)'s
-explicit tolerance for an absent index; `evals/` is excluded from the hard
-check for the same reason `Registry` already excludes it. `mix brain.verify`
-exits `0` on the current tree under the new rule — the 13 live warnings are
-all in the still-advisory "no index at all" class, and the previously-live
-"subdirectory `evals/` is not listed" warning is now out of scope rather than
-silently tolerated.
+hard `mix brain.verify` failure (`ElixirMind.Verifier` rule 10,
+`ElixirMind.Links.unlisted_errors/1` — renumbered on merge past a
+concurrently-landed rule 9 for the new `visualization` type). A directory
+with *no* `index.md` at all stays advisory, matching the
+[OKF-conformance policy](/meta/policy/okf-conformance.md)'s explicit
+tolerance for an absent index. `mix brain.verify` exits `0` on the current
+tree under the new rule — the 13 warnings observed above are all in the
+still-advisory "no index at all" class, and the "subdirectory `evals/` is
+not listed" warning that had accompanied them is gone outright, not merely
+excused: a concurrently-merged PR relocated `evals/` to
+`meta/evals/cb-eval-export/` during this same close, and its parent index
+already links it by name, so the new rule clears it without needing a
+name-based exemption at all. No directory is excepted from the hard check.
 
 ## What TERSE gets right that this bundle doesn't yet have
 

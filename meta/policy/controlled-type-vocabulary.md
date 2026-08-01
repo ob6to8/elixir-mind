@@ -39,6 +39,20 @@ Seed vocabulary:
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
   *how-to* for carrying out a recurring task (distinct from a `note`, which merely
   records an idea, and a `concept`, which defines a mental model).
+- `visualization` — a **self-contained interactive page** the reader launches to
+  manipulate a model directly: an explorable explanation, a live diagram, a
+  parameter sweep. Filed as a **document pair** — the `.md` carries the `em:` id,
+  the prose, and a `launch` field naming its **same-slug sibling `.html`**, which
+  holds the artifact itself (inline CSS and JS, classic `<script>`, no `fetch`, no
+  ES modules, no external hosts, so it opens over `file://` with no build step or
+  server). Distinct from a `snippet` (a fragment to paste elsewhere, not a page to
+  open), a `methodology` (the *how-to* for building one — see
+  [explorable-explanations](/knowledge/knowledge-management/technical-communication/explorable-explanations.md)),
+  and a `reference` (a capture of *someone else's* material, whereas a
+  visualization is authored here). Filing test: *if the reader manipulates it, it
+  is a `visualization`; if they read about manipulating it, it is a
+  `methodology` or `reference`.* Machine-checked — `mix brain.verify` rejects a
+  missing `launch`, or one whose target is absent, non-sibling, or not `.html`.
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the

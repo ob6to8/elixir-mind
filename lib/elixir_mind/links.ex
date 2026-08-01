@@ -30,17 +30,22 @@ defmodule ElixirMind.Links do
       external targets (`scheme://`, `mailto:`, pure `#anchor`s);
     * code spans and fenced code blocks (literal text, not rendered links);
     * reserved files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) from the
-      must-be-listed requirement;
-    * `evals/` from the hard check only — an imported eval-snapshot corpus
-      with its own README/LICENSE, outside the taxonomy (mirrors
-      `Registry`'s existing exclusion of the same directory).
+      must-be-listed requirement.
+
+  No directory is exempt from the hard check by name. An imported foreign
+  corpus (e.g. `meta/evals/cb-eval-export/`, a byte-identical external
+  snapshot) still clears it as long as its own parent index links it —
+  `unlisted_dirs/4`'s substring match is satisfied by any mention, including
+  inside a prose link — and its own subdirectories carry no `index.md` at
+  all, which stays the advisory case. `Registry.scan/1` similarly excludes no
+  directory by name below `meta/` (itself excluded wholesale, along with a
+  handful of tooling/archive directories) — see its moduledoc.
 
   Unlike `Registry.scan/1` this walks the governance namespaces too (`meta/`,
   `inbox/`) — index drift lives exactly where the id gates don't look.
   """
 
   @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test deprecated)
-  @hard_excluded_dirs ~w(evals)
   @reserved_files ~w(index.md log.md README.md CLAUDE.md)
   @frozen_dirs ~w(meta/threads)
   @excerpt_heading "## Thread excerpts — route-tagged log"
@@ -154,12 +159,11 @@ defmodule ElixirMind.Links do
   Directories whose *existing* `index.md` omits a filed doc or immediate
   subdirectory — folded into `mix brain.verify`'s pass/fail result. A
   directory with no `index.md` at all is not a candidate here (that stays
-  the advisory `check/1` case); `evals/` is out of scope entirely (see
-  moduledoc).
+  the advisory `check/1` case).
   """
   @spec unlisted_errors(String.t()) :: [String.t()]
   def unlisted_errors(root \\ File.cwd!()) do
-    paths = doc_paths(root) |> Enum.reject(&hard_excluded?/1)
+    paths = doc_paths(root)
     by_dir = Enum.group_by(paths, &Path.dirname/1)
 
     Enum.flat_map(Enum.sort(by_dir), fn {dir, files} ->
@@ -176,8 +180,6 @@ defmodule ElixirMind.Links do
       end
     end)
   end
-
-  defp hard_excluded?(path), do: hd(Path.split(path)) in @hard_excluded_dirs
 
   defp unlisted_files(index_rel, content, basenames) do
     basenames

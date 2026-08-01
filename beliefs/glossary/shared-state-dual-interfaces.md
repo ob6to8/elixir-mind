@@ -5,7 +5,7 @@ title: shared state, dual interfaces
 description: An application architecture in which a human-facing UI and an agent-facing structured API operate as two clients of the same live process state — the human gets pixels, the agent gets JSON, and neither scrapes the other.
 provenance: "Agent-distilled glossary definition — coined in the agent-drivable-apps analysis"
 verified: false
-tags: [glossary, agents, architecture, ipc, review]
+tags: [glossary, agents, architecture, ipc, review, coined]
 sense: repo
 timestamp: 2026-07-18
 attribution:

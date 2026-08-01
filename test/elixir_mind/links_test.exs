@@ -147,11 +147,19 @@ defmodule ElixirMind.LinksTest do
     assert error =~ "index.md: subdirectory hidden/ is not listed"
   end
 
-  test "evals/ is out of scope for the hard check even when unlisted", %{tmp_dir: dir} do
-    indexed(dir, ".", [])
-    write(dir, "evals/README.md", "imported snapshot")
+  test "a foreign import mentioned in prose clears the hard check even with no index.md of its own",
+       %{tmp_dir: dir} do
+    indexed(dir, ".", ["imports"])
+
+    write(
+      dir,
+      "imports/index.md",
+      "an imported snapshot; see [manifest](/imports/vendor/MANIFEST.md)"
+    )
+
+    write(dir, "imports/vendor/MANIFEST.md", "imported snapshot")
 
     assert Links.unlisted_errors(dir) == []
-    assert Enum.any?(Links.check(dir), &(&1 =~ "evals: holds docs but has no index.md"))
+    assert Enum.any?(Links.check(dir), &(&1 =~ "imports/vendor: holds docs but has no index.md"))
   end
 end

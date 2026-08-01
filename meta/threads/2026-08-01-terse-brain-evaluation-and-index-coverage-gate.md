@@ -49,6 +49,22 @@ ran green throughout — including against the new hard gate's effect on the
 session's own new docs — and the close proceeded via `/create-pull-request
 merge`.
 
+CI passed but the merge itself failed on real conflicts: `main` had moved 6
+PRs since the branch was cut, including one that independently relocated
+`evals/` to `meta/evals/cb-eval-export/` and another that claimed rule 9 for
+a new `visualization`-type check. Resolving meant renumbering the new rule to
+10 past the concurrent one (both function bodies had already auto-merged
+correctly; only the numbered moduledoc list conflicted), regenerating
+`meta/code-map.md` instead of hand-merging it, and combining both sides'
+additions to two index listings. The `evals/` relocation made the just-shipped
+name-based exemption dead code — the directory it named no longer existed —
+so it was dropped outright rather than repointed: the general rule already
+clears the relocated import without any exemption, since its new parent index
+mentions it by name and its own subdirectories still carry no `index.md`
+(the advisory case). The analysis, the todo, and both tutorials were corrected
+again in the same pass so the shipped description matches the merged code,
+not the pre-merge snapshot.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
