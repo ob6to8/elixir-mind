@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5, then Claude Opus 5 via /model
 tags: [meta, thread, journal, beliefs, glossary, coinage, agentic-trust, auditability]
 timestamp: 2026-07-31
 session: https://claude.ai/code/session_01H9KTh9PviXHGQT61yRxo4M
+pr: 215
 ---
 
 # 2026-07-31-agent-auditability-beliefs-and-glossary-coinage-check
