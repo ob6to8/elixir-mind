@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-08-01; verbatim retaine
 tags: [meta, thread, route-tags, index-coverage, tooling, staleness, gates]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01SazjGkPuNmzouued83j8WU
+pr: 223
 ---
 
 # 2026-08-01-route-tag-fencing-index-coverage-and-staleness-fixes
