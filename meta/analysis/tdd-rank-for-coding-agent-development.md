@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator asked where TDD ranks as a methodology at this point for developing with coding agents, matklad prioritized, Elixir-focused"
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
 ---
 
 # Where TDD ranks for coding-agent development

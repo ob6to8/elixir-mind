@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator instructed adopting email-style inline quoting whenever their message covers more than one subject, compiled into the contract"
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
 ---
 **Answer a multi-subject message inline, under quotes of its subjects.** When
 an operator message carries more than one subject — several questions,

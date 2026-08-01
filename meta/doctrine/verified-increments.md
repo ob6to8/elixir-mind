@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator directed recording the methodology's standing direction as doctrine (with its policy) rather than piloting in a second repo that doesn't yet exist"
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
 ---
 
 # Verified increments: agent work lands test-first and review-sized

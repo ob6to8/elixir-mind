@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "operator approved promoting the surveyed TDD bookmarks as follow-up work in its own PR"
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
 ---
 
 # Promote the TDD survey bookmarks and intake the counter-study

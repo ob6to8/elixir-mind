@@ -191,6 +191,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
 | `em:436ebc` | [beliefs/glossary/earcon](/beliefs/glossary/earcon.md) | concept | false |
 | `em:08334b` | [beliefs/glossary/effort-level](/beliefs/glossary/effort-level.md) | concept | false |
+| `em:837963` | [beliefs/glossary/einstellung-effect](/beliefs/glossary/einstellung-effect.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
 | `em:d907fd` | [beliefs/glossary/elixir-mind](/beliefs/glossary/elixir-mind.md) | concept | false |
 | `em:da21de` | [beliefs/glossary/embeddings](/beliefs/glossary/embeddings.md) | concept | false |
@@ -340,6 +341,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:19d667` | [beliefs/glossary/matn-criticism](/beliefs/glossary/matn-criticism.md) | concept | false |
+| `em:4c629e` | [beliefs/glossary/matter](/beliefs/glossary/matter.md) | concept | false |
 | `em:9be927` | [beliefs/glossary/maturity-model](/beliefs/glossary/maturity-model.md) | concept | false |
 | `em:1c5e08` | [beliefs/glossary/mean-reciprocal-rank](/beliefs/glossary/mean-reciprocal-rank.md) | concept | false |
 | `em:6c220e` | [beliefs/glossary/megaprompt](/beliefs/glossary/megaprompt.md) | concept | false |
@@ -538,6 +540,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |
 | `em:acddb7` | [beliefs/glossary/terse](/beliefs/glossary/terse.md) | concept | false |
+| `em:eb851b` | [beliefs/glossary/test-driven-development](/beliefs/glossary/test-driven-development.md) | concept | false |
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
 | `em:a2a2bb` | [beliefs/glossary/text-space-optimization](/beliefs/glossary/text-space-optimization.md) | concept | false |
 | `em:a9efbd` | [beliefs/glossary/textual-learning-rate](/beliefs/glossary/textual-learning-rate.md) | concept | false |

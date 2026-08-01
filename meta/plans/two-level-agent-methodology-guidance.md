@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator asked to figure out how to create two levels of methodological guidance for agents and where and how each should be stored"
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
 ---
 
 # Two-level methodological guidance for agents

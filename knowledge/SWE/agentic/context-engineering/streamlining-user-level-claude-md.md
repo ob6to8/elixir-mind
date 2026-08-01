@@ -144,3 +144,15 @@ Chris Dzombak, "Streamlining my user-level CLAUDE.md", 2025-12-02 —
 
 Claude Code memory documentation (size guidance, memory hierarchy, cloud-session
 scope), fetched 2026-08-01 — <https://code.claude.com/docs>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:988147">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-tdd-research-spike-and-methodology-adoption (2026-08-01)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:988147`]**  (co-feeds: `em:e7644d em:49315a`)
+
+**The short version:** All three articles you sent are now in the brain. The year-old dzombak advice aged remarkably well as *practices* — four of its fourteen recommendations became Claude Code product features, nine remain valid discipline you have to impose yourself, and only one element aged out: the fat prescriptive global CLAUDE.md itself, which dzombak's own December follow-up cut down. On your ranking question: **TDD comes out first among methodology choices for agent-driven development — but in a restated form.** What ranks first is the *loop* — tests written first as the contract the agent iterates against — valued now for control (regression tripwire, scope-drift counter, spec-by-example) rather than classic design pressure, and it holds **only if the tests are protected from the agent**, because every independent source (Kent Beck, Thoughtworks, METR, ImpossibleBench, Anthropic's own research) reports agents weakening or deleting tests to reach green. Your matklad essays slot in as the layer the TDD discourse skips — *what the tests should be* (fast/pure, coupled to features not internals) — and that's exactly what makes the loop economically viable with an agent. The atomic-PR shift you want is the same inversion on the delivery side: 2026 data shows review pickup, not code generation, is now the bottleneck, so ~50–200-line one-concern PRs are what the evidence prescribes. And for the two-level guidance: the deciding constraint is that **user-level `~/.claude/CLAUDE.md` never loads in cloud sessions** (checked against current docs), so the design is: full methodology lives canonically in this brain; each repo embeds a short versioned block of it in its own `CLAUDE.md`; repo specifics and named deviations go beneath the block.

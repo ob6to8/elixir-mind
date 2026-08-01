@@ -174,3 +174,15 @@ and the quantitative record assembled in
 [the ranking analysis](/meta/analysis/tdd-rank-for-coding-agent-development.md)
 (test-first gains, dose effects, PR-size and review-queue data, reward-hacking
 mitigations).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:cab2c5">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-tdd-research-spike-and-methodology-adoption (2026-08-01)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:cab2c5`]**
+
+The dials in it that are preference rather than evidence-forced: the 3-attempt stop, the 3–5-focused-tests working set, "test-first by default" (vs. a harder "always"), and the Mox/behaviour mandate. Note the Delivery bullet still carries the "is exempt" wording matter C would fix, and matter D below would add a test-protection line — so the clean sequence is: you rule on C and D, I apply, then you ratify the resulting block once (matter A).
