@@ -605,6 +605,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
 | `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |
 | `em:a2a391` | [knowledge/SWE/agentic/agent-memory/skillopt-sleep](/knowledge/SWE/agentic/agent-memory/skillopt-sleep.md) | reference |  |
+| `em:fe3522` | [knowledge/SWE/agentic/agent-memory/superlocalmemory](/knowledge/SWE/agentic/agent-memory/superlocalmemory.md) | reference |  |
 | `em:360ddd` | [knowledge/SWE/agentic/agentic-loop/activegraph-event-sourced-agent-runtime](/knowledge/SWE/agentic/agentic-loop/activegraph-event-sourced-agent-runtime.md) | reference |  |
 | `em:97d2a8` | [knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop](/knowledge/SWE/agentic/agentic-loop/agent-loop-as-a-while-loop.md) | reference |  |
 | `em:c29a22` | [knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | reference |  |
@@ -650,6 +651,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:7fa867` | [knowledge/SWE/agentic/architecture/architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md) | reference |  |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
+| `em:a0fbd5` | [knowledge/SWE/agentic/code-context/mex](/knowledge/SWE/agentic/code-context/mex.md) | reference |  |
 | `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
 | `em:8d9b89` | [knowledge/SWE/agentic/code-quality/guarding-against-ai-drift](/knowledge/SWE/agentic/code-quality/guarding-against-ai-drift.md) | reference |  |
 | `em:41a1e3` | [knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files](/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md) | reference |  |
