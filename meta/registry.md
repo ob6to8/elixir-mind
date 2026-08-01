@@ -679,6 +679,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:712e01` | [knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md) | concept | false |
 | `em:91b88f` | [knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable](/knowledge/SWE/agentic/supervision/typed-actions-are-born-supervisable.md) | concept | false |
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
+| `em:7d4960` | [knowledge/SWE/agentic/workflow-decomposition/ai-bill-as-a-management-discipline](/knowledge/SWE/agentic/workflow-decomposition/ai-bill-as-a-management-discipline.md) | reference |  |
+| `em:5a89af` | [knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic](/knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic.md) | reference |  |
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
 | `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
