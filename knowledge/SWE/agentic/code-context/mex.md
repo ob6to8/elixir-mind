@@ -49,6 +49,20 @@ graph scope"), with minimal-context tasks at "5/5" completed and "0/5"
 requiring fallback Read/Grep. Self-measured on the vendor's own repo over five
 tasks — a plausibility signal, not an independent benchmark.
 
+## Maturity and reception
+
+~1.2k stars and 80 forks on the 2026-08-01 GitHub page fetch; GitHub
+description: "Persistent project memory for AI coding agents. Structured
+scaffold + drift detection CLI." The business model is the free CLI plus a
+paid team dashboard in early access, pitched as "Shared, validated memory
+for AI coding agents" ([mexmemory.com](https://mexmemory.com/)) — with no
+customer logos, case studies, or founder/team names on the site, and none
+surfaced by the landscape sweep's searches; no Hacker News thread was found
+in that sweep's queries either. Its lane acquired a big-vendor competitor
+in July 2026: LangChain's OpenWiki ("OpenWiki is a CLI that writes and
+maintains agent documentation for your codebase" —
+[github.com/langchain-ai/openwiki](https://github.com/langchain-ai/openwiki)).
+
 ## Where it sits
 
 Same genre as [GitNexus](/knowledge/SWE/agentic/code-context/gitnexus.md) and

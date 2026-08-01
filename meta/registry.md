@@ -604,6 +604,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:974060` | [knowledge/SWE/agentic/adoption/steps-of-ai-adoption](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | reference |  |
 | `em:efab03` | [knowledge/SWE/agentic/adoption/strongdm-software-factory](/knowledge/SWE/agentic/adoption/strongdm-software-factory.md) | reference |  |
 | `em:221e3e` | [knowledge/SWE/agentic/agent-memory/experience-graphs-exg](/knowledge/SWE/agentic/agent-memory/experience-graphs-exg.md) | reference |  |
+| `em:dd64c2` | [knowledge/SWE/agentic/agent-memory/memory-systems-landscape](/knowledge/SWE/agentic/agent-memory/memory-systems-landscape.md) | reference |  |
 | `em:a2a391` | [knowledge/SWE/agentic/agent-memory/skillopt-sleep](/knowledge/SWE/agentic/agent-memory/skillopt-sleep.md) | reference |  |
 | `em:fe3522` | [knowledge/SWE/agentic/agent-memory/superlocalmemory](/knowledge/SWE/agentic/agent-memory/superlocalmemory.md) | reference |  |
 | `em:360ddd` | [knowledge/SWE/agentic/agentic-loop/activegraph-event-sourced-agent-runtime](/knowledge/SWE/agentic/agentic-loop/activegraph-event-sourced-agent-runtime.md) | reference |  |

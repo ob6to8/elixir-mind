@@ -72,11 +72,26 @@ self-archive, no hardcoded thresholds"). Three self-authored arXiv preprints
 (arXiv:2603.02240, arXiv:2603.14588, arXiv:2604.04514) back these; the README
 calls them peer-reviewed, but arXiv posting is not peer review, and no
 independent evaluation, replication, or third-party benchmark of the system
-was found in the sources gathered for this intake (README, project pages, and
-the landscape sweep's community-reception search). The Fisher quote's own
+was found in the searched space (README, project site, the arXiv pages, and
+the HN/Reddit reception queries recorded in the landscape sweep). The Fisher quote's own
 hedge — cosine does the actual candidate generation; Fisher terms "can modify
 later scoring" — is the pattern in miniature: standard mechanics, exotic
 labels.
+
+## Reception
+
+201 stars and 34 forks on the 2026-08-01 GitHub page fetch; implementation
+Python plus JS/TS surfaces. The GitHub description leads with the
+superlative: "World's first local-only AI memory to break 74% retrieval and
+60% zero-LLM on LoCoMo. No cloud, no APIs, no data leaves your machine.
+Additionally, mode C (LLM/Cloud) - 87.7% LoCoMo. Research-backed. arXiv:
+2603.14588". Its Show HN (February 2026) drew one point and no visible
+comments ([HN](https://news.ycombinator.com/item?id=46926968)); the post
+pitched it as "First open-source project. Built after getting tired of
+Mem0's $50/month bills.", its author self-describing as an Accenture senior
+manager with "basic coding skills". The landscape sweep's Reddit and
+third-party-review queries found no substantive coverage — absence of
+scrutiny, which cuts neither for nor against the claims.
 
 ## Reading
 

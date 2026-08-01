@@ -87,6 +87,7 @@ being mechanically rewritten.
 | the new microsoft skillopt repo and documentation | em:42648b | target | skillopt; text-space optimizer for agent skills; training a skill.md as a trainable parameter; prompt optimization with a validation gate | harvested at intake 2026-07-31 |
 | the evolutionary algorithms paper | em:da2ffb | target | diffusion model evolutionary alignment; inference-time diffusion alignment; evolving latent noise for diffusion models | harvested at intake 2026-07-31 |
 | the circles-sines-signals interactive educational displays | em:4956f3 | target | circles sines and signals; jack schaedler dft explorable; interactive DFT teaching resource | harvested at intake 2026-07-31 |
+| research spike into alternatives, the landscape, learnings, what is hype what is proven | em:dd64c2 | target | agent memory landscape; memory systems for coding agents; mem0 vs zep vs letta; what is proven vs hype in agent memory | harvested at intake 2026-08-01 |
 
 ## Baseline
 
@@ -100,8 +101,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 28 |
-| expanded | 23 | 28 |
+| plain | 8 | 29 |
+| expanded | 24 | 29 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
