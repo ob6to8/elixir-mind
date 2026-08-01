@@ -186,5 +186,65 @@ defmodule ElixirMind.RegistryTest do
       assert {:error, errors} = Verifier.run(dir)
       assert Enum.join(errors, "\n") =~ "checked-prior.md: `verified` on type \"belief\""
     end
+
+    test "passes a visualization whose artifact sits beside it", %{tmp_dir: dir} do
+      write_concept(dir, "viz/shell.md",
+        type: "visualization",
+        id: "em:abc123",
+        launch: "shell.html"
+      )
+
+      File.write!(Path.join(dir, "viz/shell.html"), "<title>Shell</title>")
+
+      assert Verifier.run(dir) == :ok
+    end
+
+    test "flags every way a visualization's launch can fail", %{tmp_dir: dir} do
+      write_concept(dir, "viz/bare.md", type: "visualization", id: "em:aaaaaa")
+
+      write_concept(dir, "viz/dangling.md",
+        type: "visualization",
+        id: "em:bbbbbb",
+        launch: "absent.html"
+      )
+
+      write_concept(dir, "viz/pathed.md",
+        type: "visualization",
+        id: "em:cccccc",
+        launch: "nested/elsewhere.html"
+      )
+
+      write_concept(dir, "viz/wrong-ext.md",
+        type: "visualization",
+        id: "em:dddddd",
+        launch: "artifact.js"
+      )
+
+      File.write!(Path.join(dir, "viz/artifact.js"), "// not a page")
+
+      assert {:error, errors} = Verifier.run(dir)
+      joined = Enum.join(errors, "\n")
+
+      assert joined =~ "bare.md: missing `launch`"
+      assert joined =~ "dangling.md: launch \"absent.html\" does not exist beside it"
+      assert joined =~ "pathed.md: launch \"nested/elsewhere.html\" is not a bare filename"
+      assert joined =~ "wrong-ext.md: launch \"artifact.js\" is not a .html file"
+    end
+
+    test "flags `launch` on a type that has no artifact", %{tmp_dir: dir} do
+      write_concept(dir, "captured.md",
+        type: "reference",
+        id: "em:abc123",
+        launch: "widget.html"
+      )
+
+      File.write!(Path.join(dir, "widget.html"), "<title>Widget</title>")
+
+      assert {:error, errors} = Verifier.run(dir)
+      joined = Enum.join(errors, "\n")
+
+      assert joined =~ "captured.md: `launch` on type \"reference\""
+      assert joined =~ "only a visualization launches an artifact"
+    end
   end
 end

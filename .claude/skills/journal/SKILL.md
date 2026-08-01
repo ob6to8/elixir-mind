@@ -25,10 +25,12 @@ inbound links (`mix brain.orphans` excludes them by design).
 ## Dispatch
 
 - `/journal <entry text>` (the default — everything after the invocation is the
-  entry body) → **File** (below).
+  entry body) → **File** (below), then **Respond** (below): every filed entry
+  receives the two-part response in the same turn, unless the operator says
+  otherwise ("file only", "no response").
 - `/journal list [n]` → **List** the most recent `n` entries (default 7). Read-only.
-- `/journal respond` (or the operator asks for a response after filing) →
-  **Respond** (below).
+- `/journal respond` → **Respond** (below) for an already-filed entry that has
+  no response yet (e.g. one filed with "file only", or a same-day addition).
 
 ---
 
@@ -92,8 +94,10 @@ link for the requested count. Read-only.
 
 ## Respond
 
-Only when the operator asks (never by default). Unless the operator directs
-otherwise, respond in two parts:
+Runs as the default second half of every **File** (operator-ratified
+2026-07-28); the operator opts *out* per entry ("file only", "no response"),
+and `/journal respond` produces the response later for an entry filed without
+one. Unless the operator directs otherwise, respond in two parts:
 
 1. **Editorial read** — a critical evaluation of the entry's communication style and
    expressivity: what lands, what blurs, how it could be edited or reformulated.

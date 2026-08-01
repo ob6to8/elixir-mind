@@ -763,7 +763,7 @@ re-engages.
 - Exploring timbre transfer and neural synthesis techniques that merge traditional audio coding with machine learning for creative sound manipulation.
 
 ### [Generating Sound and Organizing Time: An Interview with Graham Wakefield and Gregory Taylor](https://cycling74.com/articles/generating-sound-and-organizing-time-an-interview-with-graham-wakefield-and-gregory-taylor-1)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `max-msp` `audio-synthesis` `digital-signal-processing` `gen-programming` `sound-design`
+- **Added:** 2026-07-23 · **Status:** promoted → [Generating Sound & Organizing Time reference](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) · **Tags:** `max-msp` `audio-synthesis` `digital-signal-processing` `gen-programming` `sound-design`
 - Interview about "Generating Sound and Organizing Time" book introducing gen~ for creating custom audio synthesis and DSP at the sample level.
 
 ### [ext for live | Ableton Live Extensions Marketplace](https://extforlive.com/resources/extensions-guide)
@@ -827,6 +827,234 @@ re-engages.
 ### [CCA exam guide — claudecertifiedarchitects.com](https://www.claudecertifiedarchitects.com/cca-exam-guide/)
 - **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-blueprint` `third-party` `unverified-claims`
 - The most-cited third-party CCA blueprint. Anthropic's own [public exam guide](https://anthropic-partners.skilljar.com/page/partner-certifications) confirms the weightings, 60 items, 120 minutes and 720/1000 cut score, but this page gets two structural facts wrong: items are **multiple-choice *and* multiple-response** (not "one correct answer"), and the exam presents **4 scenarios drawn from a bank of 6** (not 6). Cite the official guide, never this.
+
+### [Pearson Vue Anthropic Exams](https://www.pearsonvue.com/us/en/anthropic.html)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `anthropic` `certification` `exam-registration` `pearson-vue` `testing`
+- Official Pearson Vue testing center for Anthropic certification exams (CCA, CCAR-F) with registration and center locator.
+
+### [Anthropic Partner Certifications](https://anthropic-partners.skilljar.com/page/partner-certifications)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `anthropic` `certification` `partner-program` `official-resource` `skilljar`
+- Official Anthropic certifications portal listing CCA, CCAR-F, and partner credentials with exam blueprints and registration links.
+
+### [Spotify for Artists - Royalties Guide](https://artists.spotify.com/royalties-guide)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `spotify` `music-distribution` `artist-earnings` `royalty-model` `streaming-economics`
+- Comprehensive guide to Spotify's payment system, how streams convert to royalties, and factors affecting payouts.
+
+### [Evals FAQ — Hamel Husain](https://hamel.dev/blog/posts/evals-faq/evals-faq.pdf)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-evaluation` `evals` `agent-testing` `best-practices` `pdf`
+- Practical FAQ covering evaluation design, metrics, common pitfalls, and strategies for measuring AI agent performance reliably.
+
+### [The Therapist Pattern — Thoughtful Software](https://blog.fsck.com/2026/07/20/the-therapist-pattern/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-agents` `design-pattern` `agent-reliability` `error-handling` `workflow-orchestration`
+- Design pattern where dedicated agent reviews and critiques another agent's work, catching errors and improving quality before production impact.
+
+### [Harness Engineering — OpenAI](https://openai.com/index/harness-engineering/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-agents` `orchestration` `system-design` `harness-pattern` `multi-agent-systems`
+- OpenAI's framework for designing robust harnesses that manage long-running agents, handle context limits, and coordinate multi-step workflows.
+
+### [StrongDM Software Factory](https://factory.strongdm.ai/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `software-factory` `ai-automation` `devops` `ci-cd` `agent-orchestration`
+- Production-grade template and reference implementation for software factories powered by AI agents, integrating triage, design, and deployment.
+
+### [GitHub Stacked Pull Requests (Public Preview)](https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `github` `stacked-prs` `workflow-improvement` `git-feature` `developer-experience`
+- GitHub's native stacked PR feature enabling multi-commit workflows and dependent PRs, reducing friction for agent-driven development.
+
+### [Advanced Context Engineering for Coding Agents (WSFF)](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-agents` `context-engineering` `prompt-engineering` `coding-agents` `brownfield-codebases`
+- "Write Specs, Fix Files" methodology: agents distill understanding into specs before implementation, separating design from code mechanics.
+
+### [Emotion Concepts Function — Anthropic Research](https://www.anthropic.com/research/emotion-concepts-function)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `anthropic-research` `ai-safety` `interpretability` `emotion-concepts` `llm-behavior`
+- Research on how LLMs represent and use emotion concepts, implications for model safety and human-AI interaction.
+
+### [I Deleted My Vector Database and My RAG System Got Better](https://medium.com/@nomannayeem/i-deleted-my-vector-database-and-my-rag-system-got-better-61253a21aab9)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `rag-systems` `vector-databases` `agent-memory` `simplification` `performance`
+- Markdown-first approach replacing vector DB with filesystem storage for RAG, achieving better retrieval accuracy and simpler architecture.
+
+### [Multi-Agent Memory Without a Vector Database — The Markdown-First Approach](https://dev.to/whoffagents/multi-agent-memory-without-a-vector-database-the-markdown-first-approach-2lo0)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `agent-memory` `markdown` `rag` `multi-agent` `architecture`
+- Structured markdown-based memory system for multi-agent coordination avoiding vector DB complexity while maintaining queryability.
+
+### [The Markdown File That Beat a $50M Vector Database](https://medium.com/@Micheal-Lanham/the-markdown-file-that-beat-a-50m-vector-database-38e1f5113cbe)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `vector-databases` `rag` `agent-memory` `simplification` `cost-efficiency`
+- Case study: structured markdown outperformed enterprise vector DB in retrieval relevance and response quality at fraction of cost.
+
+### [Writing by Hand Is Good for Your Brain — Neal Stephenson](https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `cognition` `writing` `productivity` `developer-practice` `analog-tools`
+- Neal Stephenson on handwriting's cognitive benefits and parallel processing advantages over digital typing.
+
+### [SIMD for Everyone — Mitchell Hashimoto](https://mitchellh.com/writing/everyone-should-know-simd)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `simd` `performance` `cpu-optimization` `systems-programming` `tutorial`
+- Introduction to SIMD instruction sets, their role in modern performance optimization, and practical examples across architectures.
+
+### [Zigler — Elixir SIMD Bindings](https://github.com/E-xyza/zigler)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `elixir` `simd` `zig-language` `performance` `bindings`
+- Zigler enables Elixir developers to write SIMD-accelerated code in Zig, bridging high-level concurrency with low-level performance.
+
+### [Herdr — Coding Agents as Runtimes](https://herdr.dev/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `herdr` `ai-agents` `coding-agents` `developer-platform` `agentic-systems`
+- Platform treating coding agents as first-class runtimes: agents provision infrastructure, write code, run CI, and deploy with minimal human intervention.
+
+### [Herdr GitHub](https://github.com/ogulcancelik/herdr)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `herdr` `coding-agents` `platform` `open-source` `agentic-development`
+- Open-source implementation of agent-as-runtime paradigm with full CI/CD integration.
+
+### [Coding Agents Are Becoming Runtimes — Herdr Blog](https://herdr.dev/blog/coding-agents-are-becoming-runtimes/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-agents` `agent-architecture` `runtime-systems` `infrastructure` `agentic-development`
+- Thesis: coding agents are evolving from assistants into autonomous runtimes managing full software factory workflows end-to-end.
+
+### [fzf and fzf-tab — Fuzzy Finder](https://github.com/Aloxaf/fzf-tab)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `shell-tools` `developer-productivity` `zsh` `fzf` `terminal-ui`
+- fzf-tab plugin replacing zsh completion with interactive fuzzy-search interface; transformative for terminal workflow with agents.
+
+### [fvim — Font-rendering in Neovim](https://github.com/yatli/fvim)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `neovim` `font-rendering` `text-editor` `ui` `developer-tools`
+- Desktop GUI for Neovim with modern font rendering, ligatures, and performance optimizations.
+
+### [Neovide — Neovim GUI](https://neovide.dev/features.html)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `neovim` `gui` `text-editor` `developer-tools` `rust`
+- GPU-accelerated Neovim frontend with smooth animations, ligature support, and cross-platform stability.
+
+### [mkdnflow.nvim — Markdown Flow for Neovim](https://github.com/jakewvincent/mkdnflow.nvim)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `neovim` `markdown` `note-taking` `plugin` `knowledge-management`
+- Neovim plugin for markdown workflow: follow links, create notes, organize notebooks—agent-friendly for persistent context.
+
+### [Data-Oriented Design — nagent Context](https://github.com/macton/nagent/blob/main/context/data-oriented-design.md)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `data-oriented-design` `systems-architecture` `performance` `game-development` `software-design`
+- Introduction to DOD principles: organizing code around data flow rather than object abstraction for cache efficiency and parallelism.
+
+### [Data-Oriented Design PDF](https://www.gamedevs.org/uploads/introduction-to-data-oriented-design.pdf)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `data-oriented-design` `systems-architecture` `pdf` `performance` `cache-efficiency`
+- Foundational white paper on data-oriented design in game development with lessons applicable to high-performance systems.
+
+### [GPU Self-Hosting Guide](https://aistack.imec-int.com/blog/gpu-self-hosting)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `gpu` `self-hosting` `ai-infrastructure` `cost-optimization` `cloud-alternative`
+- Practical guide to running AI models on self-hosted GPU infrastructure vs. cloud APIs for cost control and latency.
+
+### [BEAM as Best Platform for Agent OS — LinkedIn](https://www.linkedin.com/posts/david-stevens-connecting-dots_the-more-i-learn-about-the-beam-and-elixir-activity-7350888911298048002-22_y/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `beam` `erlang` `elixir` `agent-orchestration` `distributed-systems`
+- Argument for BEAM/Erlang as ideal substrate for agent OS: native million-process concurrency, supervision trees, fault tolerance.
+
+### [The Beam Book — Preface](https://blog.stenmans.org/theBeamBook/#_preface)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `beam` `erlang` `otp` `distributed-systems` `technical-reference`
+- Deep reference on BEAM internals: scheduling, memory management, and design decisions making it architecture for agent systems.
+
+### [HuggingFace Frontier Lab Model Intrusion Analysis](https://huggingface-anatomy-of-frontier-lab-model-intrusion.static.hf.space/index.html)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `security` `ai-safety` `model-intrusion` `attack-analysis` `vulnerabilities`
+- Technical anatomy of HuggingFace security incident: how attackers compromised Frontier Lab model weights.
+
+### [HuggingFace Security Incident (July 2026)](https://huggingface.co/blog/security-incident-july-2026)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `huggingface` `security` `incident-report` `transparency` `model-safety`
+- HuggingFace disclosure of July 2026 security compromise affecting model weights and user trust.
+
+### [HuggingFace Agent Intrusion Technical Timeline](https://huggingface.co/blog/agent-intrusion-technical-timeline)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `security-incident` `timeline` `forensics` `ai-safety` `model-integrity`
+- Detailed forensic timeline of agent-based attack exploiting HuggingFace infrastructure.
+
+### [Mutation Testing Wikipedia](https://en.wikipedia.org/wiki/Mutation_testing)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `testing` `quality-assurance` `mutation-testing` `software-verification` `agent-evals`
+- Testing technique injecting faults into code to measure test suite effectiveness; increasingly relevant for evaluating agent-generated code.
+
+### [Plannotator.ai — Planning Tool](https://plannotator.ai/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `planning` `ai-tools` `project-management` `annotation` `agent-workflows`
+- AI-assisted planning and annotation tool for structuring complex projects; integrable with agent workflows.
+
+### [Generating Sound and Organizing Time — Book](https://www.amazon.com/Generating-Sound-Organizing-Time-Thinking/dp/1732590311/ref=sr_1_14)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `audio-synthesis` `max-msp` `gen-programming` `book` `sound-design`
+- Authoritative book on generative audio in Max/MSP: DSP, algorithmic composition, and creative coding for sound.
+
+### [Gray Swan AI](https://www.grayswan.ai/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `risk-assessment` `ai-tools` `forecasting` `intelligence` `emerging-risks`
+- Platform using AI for tail-risk forecasting and emerging threat detection across domains.
+
+### [AI Wellbeing](https://www.ai-wellbeing.org/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-safety` `wellbeing` `ai-ethics` `governance` `research-collective`
+- Research collective studying AI's social and economic impact, promoting balanced approaches to AI adoption.
+
+### [Where's Your Ed At — Series](https://www.wheresyoured.at/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-critique` `hype-analysis` `ai-industry` `skepticism` `commentary`
+- Critical tech analysis series examining AI industry claims, cost structures, productivity stalls, and misaligned incentives.
+
+### [Let AI Burn](https://www.wheresyoured.at/let-ai-burn/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-critique` `sustainability` `energy-consumption` `ai-economics` `commentary`
+- Critique of AI's resource consumption and questionable ROI amid sustainability concerns.
+
+### [The AI Industry Is Losing](https://www.wheresyoured.at/the-ai-industry-is-losing/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-industry` `economics` `market-analysis` `profitability` `skepticism`
+- Analysis of AI industry's failure to achieve promised productivity gains or profitability at current valuations.
+
+### [AI Is Slowing Down](https://www.wheresyoured.at/ai-is-slowing-down/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-progress` `scaling-laws` `capability-plateau` `research` `analysis`
+- Data showing AI capability scaling plateauing, questioning further progress under current approaches.
+
+### [Cargo Culture](https://www.wheresyoured.at/cargo-culture/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-hype` `cargo-cult-science` `mimicry` `business-culture` `critique`
+- Commentary on cargo-cult-like AI adoption: imitating surface behaviors (hiring "AI people", adding vector DBs) without understanding fundamentals.
+
+### [The Problem With AI Is Shitty Human Beings — Karl Bode](https://karlbode.com/the-problem-with-ai-is-shitty-human-beings/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-critique` `ethics` `corporate-incentives` `commentary` `industry-analysis`
+- Bode's argument that AI's real risks come not from the technology but from how corporations deploy it without accountability or foresight.
+
+### [The AI Hype Reckoning Is Upon Us — Karl Bode](https://karlbode.com/the-ai-hype-reckoning-is-upon-us/)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-hype` `market-reality` `investment-downturn` `industry-shift` `skepticism`
+- Analysis of AI sector facing reality check as promised returns fail to materialize and investments cool.
+
+### [AI Productivity in the Workplace: Errors and Oversight — The Guardian](https://www.theguardian.com/technology/2026/apr/14/ai-productivity-workplace-errors?ref=karlbode.com)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `workplace-ai` `productivity` `errors` `oversight` `accountability`
+- Guardian investigation of AI deployment in workplaces increasing error rates and regulatory blind spots.
+
+### Hacker News Discussions (Assorted)
+
+### [HN: Vibe Coding Leading to Disaster](https://news.ycombinator.com/item?id=49023019)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-coding` `code-quality` `technical-debt` `hn-discussion` `software-engineering`
+- Discussion on risks of vibecoding (AI-assisted development without rigor) accumulating technical debt.
+
+### [HN: The Arthropod Newsletter on Vibe Coding](https://www.arthropod.software/p/vibe-coding-our-way-to-disaster)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-coding` `code-quality` `technical-debt` `newsletter` `critique`
+- Newsletter piece warning that vibecoding culture is creating unmaintainable codebases and future debt.
+
+### [HN: Agent Substrate Talks (Discussion)](https://news.ycombinator.com/item?id=49048034)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-agents` `research-talks` `agent-capabilities` `discourse` `hn-discussion`
+- Hacker News thread discussing research on agent substrate selection and capability matching.
+
+### [HN: Agent Framework Evaluation](https://news.ycombinator.com/item?id=49048212)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `ai-agents` `frameworks` `evaluation` `tooling` `hn-discussion`
+- Discussion comparing agent frameworks and evaluation methodologies.
+
+### YouTube Videos (Metadata Unavailable)
+
+### [YouTube: Audio/Music Production Video](https://www.youtube.com/watch?v=P6Zw6f6CEbI)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `audio` `production` `music` `video`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Development Video](https://www.youtube.com/watch?v=tVZigxFceUE&t=140s)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `development` `tutorial` `video`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Technical Deep Dive](https://www.youtube.com/watch?v=TL527yTpxlk)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `technical` `tutorial` `video`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Engineering Video](https://www.youtube.com/watch?v=dKaZ89SkVYY&t=1s)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `engineering` `systems` `video`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Code/Development](https://www.youtube.com/watch?v=IS_y40zY-hc)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `coding` `development` `tutorial`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Analysis Video](https://www.youtube.com/watch?v=3MP8D-mdheA)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `analysis` `technical` `video`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Technical Talk](https://www.youtube.com/watch?v=Q0VkgCyNVUg)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `technical` `talk` `conference`
+- (unfetched: YouTube metadata unavailable)
+
+### [YouTube: Performance/Optimization](https://www.youtube.com/watch?v=wVl6ZjELpBk)
+- **Added:** 2026-07-31 · **Status:** surveyed · **Tags:** `youtube` `performance` `optimization` `engineering`
+- (unfetched: YouTube metadata unavailable)
 
 ### [Claude Certification Guide — free mock exams and study guides](https://claudecertificationguide.com/)
 - **Added:** 2026-07-27 · **Status:** surveyed · **Tags:** `cca` `certification` `exam-prep` `free` `third-party`

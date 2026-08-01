@@ -422,13 +422,16 @@ defmodule ElixirMind.RouteTags do
           normalize(block) != normalize(derive_block(sink, t, regions)),
           do: "#{sink}: block for #{t.slug} diverges from its re-derivation from the tags"
 
+    # `:absent` rather than the `nil` a plain lookup returns: a bare assignment
+    # in a comprehension is a filter, so a nil binding would drop the very row
+    # the `== :absent` branch below exists to report.
     orphans =
       for {sink, %{blocks: blocks}} <- sinks,
           {slug, _} <- blocks,
-          t = by_slug[slug],
-          t == nil or not Enum.any?(t.regions, &(sink in doc_refs(&1.refs))),
+          t = Map.get(by_slug, slug, :absent),
+          t == :absent or not Enum.any?(t.regions, &(sink in doc_refs(&1.refs))),
           do:
-            "#{sink}: block for #{slug} but #{if t, do: "the thread no longer tags this sink", else: "no such thread"}"
+            "#{sink}: block for #{slug} but #{if t == :absent, do: "no such thread", else: "the thread no longer tags this sink"}"
 
     problems = divergent ++ orphans
 

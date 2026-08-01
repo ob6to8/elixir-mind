@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 sense: common
 tags: [glossary, security, prompt-injection, agents, document-processing]
-timestamp: 2026-07-27
+timestamp: 2026-07-29
 attribution:
   when: 2026-07-27T00:00:00Z
   channel: glossary
@@ -21,4 +21,6 @@ The distinguishing feature is that the operator's request is innocuous and the p
 
 Because the instructions are interpreted by whichever model reads the content, the attack is unaffected by where that model runs; a fully air-gapped deployment is as susceptible as a hosted one. Defense therefore lives on the action surface — [privilege minimization](/beliefs/glossary/prompt-injection.md) and a human gate on consequential operations — rather than in classifying the input, since no reliable detector exists for text that is semantically an instruction.
 
-*Seen in:* [indirect prompt injection in document pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md), [secure financial agent](/projects/secure-financial-agent.md)
+A newer subclass, [agent data injection](/knowledge/SWE/security/agent-data-injection.md) (ADI), forges the *trusted metadata* an agent parses structure from — sender names, resource identifiers, tool-call formats — rather than smuggling an instruction, which is why classifiers built to catch instruction injection largely fail to catch it.
+
+*Seen in:* [indirect prompt injection in document pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md), [secure financial agent](/projects/secure-financial-agent.md), [Agent Data Injection](/knowledge/SWE/security/agent-data-injection.md), [2026-07-29 research digest thread](/meta/threads/2026-07-29-research-digest-mcp-spec-security-and-reliability.md)

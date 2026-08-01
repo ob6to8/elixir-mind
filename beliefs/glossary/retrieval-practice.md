@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition, 2026-07-25 session"
 verified: false
 tags: [glossary, learning, cognition, terminology]
 sense: common
-timestamp: 2026-07-26
+timestamp: 2026-07-31
 attribution:
   when: 2026-07-25T19:42:00Z
   channel: glossary
@@ -19,4 +19,4 @@ attribution:
 
 The benefit depends on ordering: recall first, review second — which is why the [journal](/beliefs/glossary/journal-namespace.md) workflow is dictate-first, with the agent surfacing related documents only afterward. The cognitive-cost side of skipping this practice is tracked under [cognitive debt](/beliefs/glossary/cognitive-debt.md).
 
-*Seen in:* [2026-07-25 journal-skill thread](/meta/threads/2026-07-25-journal-skill-and-first-entry.md), [journal 2026-07-25](/journal/2026-07-25.md), [2026-07-26 journal-day-two thread](/meta/threads/2026-07-26-journal-day-two-intermediary-layer.md)
+*Seen in:* [2026-07-25 journal-skill thread](/meta/threads/2026-07-25-journal-skill-and-first-entry.md), [journal 2026-07-25](/journal/2026-07-25.md), [2026-07-26 journal-day-two thread](/meta/threads/2026-07-26-journal-day-two-intermediary-layer.md), [2026-07-28 operator-methodology thread](/meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md) (the comprehension audit's operator-reads-first protocol)

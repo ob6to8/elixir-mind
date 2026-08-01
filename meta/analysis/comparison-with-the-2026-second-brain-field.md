@@ -161,6 +161,12 @@ and remains the single highest-leverage piece of unshipped work.
   synonym-expansion dedup *before* the corpus grows past what an agent holds in
   context — the subsidy's expiry is not announced.
 
+## Re-evaluation
+
+This comparison's central claim was re-tested at 615 bundle documents in
+[Re-evaluated at 615 documents](/meta/analysis/second-brain-field-re-evaluation-at-615-documents.md)
+(2026-07-29), which grades fourteen dimensions and reports where the field moved.
+
 ## Source notes
 
 Survey run 2026-07-10 by a background research agent (web search + direct fetches

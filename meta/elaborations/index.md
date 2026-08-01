@@ -22,6 +22,16 @@ mouthful in its context*.
 
 ## Contents
 
+- [RPC-driving shines at interrogation rather than editing](/meta/elaborations/rpc-interrogation-as-sensor.md) —
+  unpacks why agent control of a live editor over its RPC socket pays off as a
+  read channel (querying LSP diagnostics and editor state as a sensor) rather
+  than a write channel, and why the read half is the part likely to be absorbed
+  into the mainstream agent↔editor bridges.
+- [it's scriptable (so it integrates with agents rather than embedding a chatbot UI)](/meta/elaborations/neovim-scriptable-agent-integration.md) —
+  unpacks the scriptability clause from the 2026-07-30 Neovim staying-power
+  answer: why an editor with a programmable surface (Lua + RPC socket) lets
+  coding agents plug in as external clients, versus editors that embed an AI
+  chat panel as a vendor-shipped feature.
 - [two-directional materialize with unconditional orphan-block removal](/meta/elaborations/two-directional-materialize.md) —
   unpacks the P1 work-package phrase from the code-review hardening plan: the
   route-tag log materializer removing generated content whose source tags

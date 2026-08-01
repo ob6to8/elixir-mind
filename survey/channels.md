@@ -4,7 +4,7 @@ title: "Channels — standing sources register"
 description: Standing sources — newsletters, blogs, author feeds, vendor docs, archives, video, forums — the brain monitors for new AI material; each entry carries a focus line, an access note (free, or login required and whether paid), the documents already ingested from it, and the origin of the recommendation.
 provenance: "Operator-supplied source list seeded from https://www.codesupreme.ai/ and https://www.codesupreme.ai/the-edge/read; extended with the sources behind the bundle's filed documents and a vetted video set."
 tags: [survey, channels]
-timestamp: 2026-07-28
+timestamp: 2026-07-29
 ---
 
 # Channels — standing sources register
@@ -83,6 +83,10 @@ OKF bundle: no `em:` ids, never verified.
 | [The AI Digest](https://theaidigest.org/) | Capability forecasting and measurement, including METR's time-horizon work | Free | [Agent task time horizons](/knowledge/SWE/agentic/agentic-loop/agent-task-time-horizons.md) | filed documents (2026-07-26) |
 | [claudefa.st](https://claudefa.st/) | Community reverse-engineering of undocumented Claude Code behavior — useful, unofficial, and to be treated as such | Free | [Observer subagent pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | filed documents (2026-07-26) |
 | [Yos Riady](https://yos.io/) | Elixir and functional software design | Free | [Entity Component Systems in Elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | filed documents (2026-07-26) |
+| [Mitchell Hashimoto](https://mitchellh.com/) | HashiCorp cofounder and Ghostty creator writing on terminal tooling, developer infrastructure, and building software as a craft | Free | [Superlogical](/knowledge/SWE/dev-tools/superlogical.md) | operator (2026-07-29) |
+| [David Nicholas Williams](https://davidnicholaswilliams.com/#open-source) | Software building and startup practice from a YC/a16z-backed-company engineer; blog essays on engineering and product plus an open-source contributions log (React Frontload, VS Code, Dropwizard) | Free | [It's not empowering to hand off the details](/knowledge/SWE/agentic/adoption/its-not-empowering-to-hand-off-the-details.md) | operator-supplied (2026-07-29) |
+| [Karl Bode](https://karlbode.com/) | Critical analysis of AI industry economics, hype, and implications for workers and regulation; the structural critique complement to technical AI writing | Free | — | operator (2026-07-31) |
+| [Where's Your Ed At — Edward Niedermeyer](https://www.wheresyoured.at/author/edward/) | Edward Niedermeyer's series on AI productivity stalls, energy costs, misaligned incentives, and the gap between hype and measured results | Free | — | operator (2026-07-31) |
 
 ## Vendor engineering blogs & product docs
 
@@ -136,6 +140,7 @@ two disagree often enough that a channel's own blurb is not evidence.
 | [No place like localhost](https://www.youtube.com/@NoPlaceLikeLocalhost) | Standing up and tuning LLMs on local hardware: performance tuning, multi-GPU setups, head-to-head model comparisons, spec-driven development against one-shot prompting | Free | — | [r/LLMDevs](https://www.reddit.com/r/LLMDevs/comments/1v6zxz3/recommended_nonbs_youtube_channels/) (2026-07-26) |
 | [Alex Ziskind](https://www.youtube.com/@AZisk) | Hardware-side testing of local inference — vendor capability claims checked against measurement, cheap high-VRAM builds, laptop and Apple-silicon inference limits | Free | — | [r/LLMDevs](https://www.reddit.com/r/LLMDevs/comments/1v6zxz3/recommended_nonbs_youtube_channels/) (2026-07-26) |
 | [xCreate](https://www.youtube.com/@xcreate) | Independent reviews of newly released open-weight models scored on real coding tasks; the author also builds Inferencer, a macOS inference harness. **Caveat:** the substance meets the standard, the packaging does not — superlative-and-emoji titles claiming one model "destroys" another | Free | — | [r/LLMDevs](https://www.reddit.com/r/LLMDevs/comments/1v6zxz3/recommended_nonbs_youtube_channels/) (2026-07-26) |
+| [Tom D. Aorist](https://www.youtube.com/@tom_d_aorist) | (metadata unavailable; content to be evaluated on future uploads) | Free | — | operator (2026-07-31) |
 
 ## Forums & social
 

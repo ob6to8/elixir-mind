@@ -17,9 +17,11 @@ attribution:
 # MCP architecture
 
 > **Revision captured: 2025-06-18.** The current specification revision is
-> **2025-11-25**; dated revision paths stay live indefinitely, so this capture
-> does not become invalid, but it may lag. Re-verify against the current
-> revision before relying on normative detail — see
+> **[2026-07-28](/knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28.md)**, which replaced
+> the stateful session model described below with a stateless request/response
+> core; dated revision paths stay live indefinitely, so this capture does not
+> become invalid, but it now describes a superseded architecture. Re-verify
+> against the current revision before relying on normative detail — see
 > [the source-surface map](/meta/analysis/anthropic-primary-source-surfaces.md).
 
 The [Model Context Protocol](/beliefs/glossary/model-context-protocol.md) is
