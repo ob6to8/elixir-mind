@@ -122,3 +122,31 @@ not a built demonstration — no widget above has been implemented.
 - [Circles, Sines, and Signals](/knowledge/knowledge-management/technical-communication/circles-sines-signals.md)
   — the exemplar this method is distilled from; original at
   <https://jackschaedler.github.io/circles-sines-signals/>.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e12137">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-evolutionary-search-explorable-and-visualization-type (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:e12137`]**  (co-feeds: `em:da2ffb em:4956f3`)
+
+Filed and pushed. Here's the rundown.
+
+Both sources are in the brain now, and I used them together to actually test the idea instead of just speculating about it: I distilled the teaching *mechanism* Circles, Sines, and Signals uses into a reusable method, then ran the evolutionary-algorithms paper's own equations through it. They map directly — not approximately. The paper's real content (a rotation that keeps noise on a probability "shell," a population's diversity collapsing over generations, a reward function that's really a similarity measure) is exactly the kind of *relationship-in-motion* that resource's drag-a-slider approach is built for, not decoration bolted onto static notation.
+
+---
+
+**[`em:e12137`]**
+
+**On the actual idea** — the methodology doc's "Worked sketch" section has the detail, but the shape of the answer is: the source resource's trick is never "explain the equation," it's "state it in one line, then let the reader move one variable and watch a claim get confirmed or falsified live." That only works when an equation's content *is* a relationship, not a definition. This paper is unusually rich in exactly that kind of content — five direct correspondences turned up:
+
+- The **Gaussian Annulus fact** (high-dimensional noise lives on a thin shell, not spread everywhere) → a dimension slider redrawing a live histogram of noise-vector lengths collapsing onto a spike, same shape as the source's sample-count slider sharpening frequency peaks.
+- **Rotation preserves the shell** (why the paper searches orthonormal transforms) → a rotation-angle drag on a projected noise point, tracing a fixed-radius circle no matter the angle — a direct reskin of the source's Euler's-formula phasor widget.
+- **GA population diversity collapsing under selection pressure** vs. **ES sustaining it** → a selection-pressure slider driving two live scatterplots side by side.
+- **Uniform crossover provably preserving the Gaussian** → a per-coordinate coin-flip control redrawing a child-population histogram over many trials.
+- **The reward function as a similarity measure** → literally the source's own drag-a-vector dot-product widget, reskinned as "fitness."
+
+None of these are built — it's a design sketch, honestly labeled as such in the filed doc. If you want, I'd build one as a live interactive artifact (the Gaussian-shell one is the cleanest single demonstration and needs no ML dependencies, just noise sampling and a canvas) so you can judge the transfer on something real rather than a table.

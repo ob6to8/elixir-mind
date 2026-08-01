@@ -164,6 +164,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d18504` | [beliefs/glossary/deterministic-spine](/beliefs/glossary/deterministic-spine.md) | concept | false |
 | `em:610415` | [beliefs/glossary/diamond-problem](/beliefs/glossary/diamond-problem.md) | concept | false |
 | `em:209429` | [beliefs/glossary/differential-testing](/beliefs/glossary/differential-testing.md) | concept | false |
+| `em:cc8785` | [beliefs/glossary/diffusion-model](/beliefs/glossary/diffusion-model.md) | concept | false |
 | `em:d4fc9d` | [beliefs/glossary/digest](/beliefs/glossary/digest.md) | concept | false |
 | `em:90e275` | [beliefs/glossary/digital-twin](/beliefs/glossary/digital-twin.md) | concept | false |
 | `em:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
@@ -201,9 +202,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c106a0` | [beliefs/glossary/escape-rate](/beliefs/glossary/escape-rate.md) | concept | false |
 | `em:d8ef12` | [beliefs/glossary/escript](/beliefs/glossary/escript.md) | concept | false |
 | `em:8eb851` | [beliefs/glossary/event-sourcing](/beliefs/glossary/event-sourcing.md) | concept | false |
+| `em:d6c279` | [beliefs/glossary/evolution-strategy](/beliefs/glossary/evolution-strategy.md) | concept | false |
 | `em:3101ef` | [beliefs/glossary/excerpt-log](/beliefs/glossary/excerpt-log.md) | concept | false |
 | `em:34e823` | [beliefs/glossary/execution-context-payload](/beliefs/glossary/execution-context-payload.md) | concept | false |
 | `em:af40d9` | [beliefs/glossary/experience-graph](/beliefs/glossary/experience-graph.md) | concept | false |
+| `em:ffe2ee` | [beliefs/glossary/explorable-explanation](/beliefs/glossary/explorable-explanation.md) | concept | false |
 | `em:c359c4` | [beliefs/glossary/extended-mind](/beliefs/glossary/extended-mind.md) | concept | false |
 | `em:9e1592` | [beliefs/glossary/exunit](/beliefs/glossary/exunit.md) | concept | false |
 | `em:6a6054` | [beliefs/glossary/f1-at-k](/beliefs/glossary/f1-at-k.md) | concept | false |
@@ -235,9 +238,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:eec645` | [beliefs/glossary/function-calling](/beliefs/glossary/function-calling.md) | concept | false |
 | `em:83b180` | [beliefs/glossary/functional-core-imperative-shell](/beliefs/glossary/functional-core-imperative-shell.md) | concept | false |
 | `em:f5eafa` | [beliefs/glossary/gate-suite](/beliefs/glossary/gate-suite.md) | concept | false |
+| `em:9fd6fb` | [beliefs/glossary/gaussian-annulus](/beliefs/glossary/gaussian-annulus.md) | concept | false |
 | `em:d504b3` | [beliefs/glossary/gen-tilde](/beliefs/glossary/gen-tilde.md) | concept | false |
 | `em:8b48c7` | [beliefs/glossary/generated-artifact](/beliefs/glossary/generated-artifact.md) | concept | false |
 | `em:10e9cb` | [beliefs/glossary/generative-model](/beliefs/glossary/generative-model.md) | concept | false |
+| `em:783551` | [beliefs/glossary/genetic-algorithm](/beliefs/glossary/genetic-algorithm.md) | concept | false |
 | `em:d94806` | [beliefs/glossary/genserver](/beliefs/glossary/genserver.md) | concept | false |
 | `em:9e945b` | [beliefs/glossary/gguf](/beliefs/glossary/gguf.md) | concept | false |
 | `em:15fa92` | [beliefs/glossary/git-dependency](/beliefs/glossary/git-dependency.md) | concept | false |
@@ -298,6 +303,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:731c59` | [beliefs/glossary/lag-tolerant-check](/beliefs/glossary/lag-tolerant-check.md) | concept | false |
 | `em:2fd346` | [beliefs/glossary/langmap](/beliefs/glossary/langmap.md) | concept | false |
 | `em:cfaa13` | [beliefs/glossary/language-server-protocol](/beliefs/glossary/language-server-protocol.md) | concept | false |
+| `em:9c0e16` | [beliefs/glossary/latent-space](/beliefs/glossary/latent-space.md) | concept | false |
 | `em:bb1673` | [beliefs/glossary/leitner-system](/beliefs/glossary/leitner-system.md) | concept | false |
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
@@ -442,6 +448,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d95896` | [beliefs/glossary/retrospective-narration](/beliefs/glossary/retrospective-narration.md) | concept | false |
 | `em:2bcd9a` | [beliefs/glossary/reusable-workflow](/beliefs/glossary/reusable-workflow.md) | concept | false |
 | `em:e07c3b` | [beliefs/glossary/revenue-tiered-license](/beliefs/glossary/revenue-tiered-license.md) | concept | false |
+| `em:598021` | [beliefs/glossary/reward-hacking](/beliefs/glossary/reward-hacking.md) | concept | false |
 | `em:fa29f5` | [beliefs/glossary/reward-model](/beliefs/glossary/reward-model.md) | concept | false |
 | `em:8f5d10` | [beliefs/glossary/rijal](/beliefs/glossary/rijal.md) | concept | false |
 | `em:490d9d` | [beliefs/glossary/round-trip](/beliefs/glossary/round-trip.md) | concept | false |
@@ -548,6 +555,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:61e46a` | [beliefs/glossary/verification-ladder](/beliefs/glossary/verification-ladder.md) | concept | false |
 | `em:c6e78a` | [beliefs/glossary/verified-by](/beliefs/glossary/verified-by.md) | concept | false |
 | `em:2ecd37` | [beliefs/glossary/vibe-architecting](/beliefs/glossary/vibe-architecting.md) | concept | false |
+| `em:2ef786` | [beliefs/glossary/visualization-type](/beliefs/glossary/visualization-type.md) | concept | false |
 | `em:4aa691` | [beliefs/glossary/vllm](/beliefs/glossary/vllm.md) | concept | false |
 | `em:34fbe3` | [beliefs/glossary/von-neumann-architecture](/beliefs/glossary/von-neumann-architecture.md) | concept | false |
 | `em:28cf8e` | [beliefs/glossary/vulkan](/beliefs/glossary/vulkan.md) | concept | false |
