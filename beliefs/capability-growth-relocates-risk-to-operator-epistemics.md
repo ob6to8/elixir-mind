@@ -73,3 +73,21 @@ belongs to — a single operator directing agents that produce durable
 artifacts. In settings where model outputs act on the world without an
 operator's mental model in the loop, the relocation this belief names has
 nowhere to land, and the model layer is again where the risk sits.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:fa6efe">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-agent-auditability-beliefs-and-glossary-coinage-check (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:fa6efe`]**
+
+also "which is the filing test for a belief: "capability growth relocates agentic risk from model behavior to operator epistemics" could file under /beliefs/ with three days of journal as its grounding. Offering, not filing."
+
+---
+
+**[`em:fa6efe`]**  (co-feeds: `em:b31b96`)
+
+The two priors divide the entry's argument cleanly between them: `em:b31b96` holds the epistemology of the audit — comprehension and authority are separate debts, and only re-deciding (not re-reading) repays the second — while `em:fa6efe` holds the risk thesis — that capability growth moves the operative danger into your own assumptions, grounded in the 07-26 fears catalogue, the 07-29 effort-bypass mechanism, and today's tour-system case. The authority belief also records its own recursion honestly: the persisted rationale you'd reconstruct authority *from* is itself largely agent-authored, so the reconstruction bottoms out only where you re-make a decision in your own judgment.

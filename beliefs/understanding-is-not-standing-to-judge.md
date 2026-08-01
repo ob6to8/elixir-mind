@@ -75,3 +75,23 @@ agent-authored, so reconstructing authority *from* it still leans on the
 outsourced faculty. The recursion bottoms out only where the operator re-makes
 the decision in their own judgment; the artifacts shorten that path but cannot
 substitute for it.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b31b96">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-07-31-agent-auditability-beliefs-and-glossary-coinage-check (2026-07-31)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:b31b96`]**
+
+i would propose: 
+
+* follow up belief spun out of ""Granting me the authority to do so" is the entry's most original idea and gets one subordinate clause. It names a problem no artifact in this repo covers: having outsourced a degree of critical faculty during design, the operator lacks the standing to judge which complexity is incidental and which is load-bearing — the audit must first reconstruct the authority to audit. That is a distinct and harder problem than comprehension debt (you can understand a decision and still not know whether it was justified), and it deserves its own paragraph, possibly its own entry."
+
+---
+
+**[`em:b31b96`]**  (co-feeds: `em:fa6efe`)
+
+The two priors divide the entry's argument cleanly between them: `em:b31b96` holds the epistemology of the audit — comprehension and authority are separate debts, and only re-deciding (not re-reading) repays the second — while `em:fa6efe` holds the risk thesis — that capability growth moves the operative danger into your own assumptions, grounded in the 07-26 fears catalogue, the 07-29 effort-bypass mechanism, and today's tour-system case. The authority belief also records its own recursion honestly: the persisted rationale you'd reconstruct authority *from* is itself largely agent-authored, so the reconstruction bottoms out only where you re-make a decision in your own judgment.
