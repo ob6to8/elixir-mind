@@ -529,6 +529,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d91933` | [beliefs/glossary/subagent](/beliefs/glossary/subagent.md) | concept | false |
 | `em:ea95e4` | [beliefs/glossary/supersession](/beliefs/glossary/supersession.md) | concept | false |
 | `em:025b76` | [beliefs/glossary/supervision-tree](/beliefs/glossary/supervision-tree.md) | concept | false |
+| `em:8ed93d` | [beliefs/glossary/support-asymmetry](/beliefs/glossary/support-asymmetry.md) | concept | false |
 | `em:60e22c` | [beliefs/glossary/survey-tier](/beliefs/glossary/survey-tier.md) | concept | false |
 | `em:40133e` | [beliefs/glossary/synonym-expansion](/beliefs/glossary/synonym-expansion.md) | concept | false |
 | `em:ac9709` | [beliefs/glossary/synthesis-by-proxy](/beliefs/glossary/synthesis-by-proxy.md) | concept | false |
