@@ -1,11 +1,11 @@
 ---
 type: plan
-title: "Concept terminology: the document/concept split (done) and the concept-type redefinition (open)"
-description: Record of the operator-ratified adoption of "document" for the OKF unit, plus the follow-on investigation into the concept type itself — whose one-line definition, machine enforcement, and actual usage tell three different stories — ending in the open questions a future session must resolve.
-status: proposed
+title: "Concept terminology: the document/concept split (done) and the concept-type redefinition (ratified, awaiting execution)"
+description: Record of the operator-ratified adoption of "document" for the OKF unit, plus the follow-on investigation into the concept type itself — whose one-line definition, machine enforcement, and actual usage told three different stories — closed by the 2026-08-01 ratification that types are pure content-kinds, graduation is dropped, and verified alone carries epistemic status.
+status: accepted
 provenance: "Originating Claude Code session, 2026-07-13 (operator-driven terminology review); re-landed on current main 2026-07-15 by a replication session, since the original PR 71 never merged"
 tags: [meta, plan, terminology, types, vocabulary, glossary, verification]
-timestamp: 2026-07-15
+timestamp: 2026-08-01
 attribution:
   when: 2026-07-15T00:00:00Z
   channel: agent-authored
@@ -18,16 +18,18 @@ attribution:
 
 ## Status & provenance
 
-**Proposed.** Part 1 (the unit rename) was ratified and executed in the
+**Accepted.** Part 1 is executed; Part 2's open questions were ratified
+2026-08-01 (resolution section below) and await execution.
+
+Part 1 (the unit rename) was ratified and executed in the
 originating 2026-07-13 session (commit `fe5aa52`, branch
 `claude/concept-definition-review-wmvtl2`, PR 71); it is recorded here as settled
 context. That PR never merged, and `main` drifted 137 commits past it (the
 `sb:` → `em:` id migration and the second-brain → elixir-mind rename), so on
 2026-07-15 a replication session re-applied Part 1 onto current `main` rather
-than resurrect the stale branch. Part 2 (redefining the `concept` type) is
-**undecided** — this plan exists so a fresh session can pick up the
-investigation's findings and put the closing questions to the operator without
-re-deriving anything.
+than resurrect the stale branch. Part 2 (redefining the `concept` type) was
+carried as open questions until the 2026-08-01 schema-formalization dialogue
+ratified the resolution recorded below.
 
 ## Problem
 
@@ -165,12 +167,54 @@ This is the same defect pattern Part 1 fixed one level down: a word doing
 double duty, and a written definition claiming a property that neither the
 verifier nor the corpus backs.
 
-## Open questions (the point of this plan)
+## Resolution — ratified 2026-08-01
 
-These require operator ratification — type-vocabulary changes are shape
-changes. A session executing this plan should put them to the operator **in
-the chat, not the dialog box** (per the session-capture policy), with this
-plan's findings as context:
+The 2026-08-01 schema-formalization dialogue (the session behind the
+[schema-formalization plan](/meta/plans/schema-formalization-and-evaluator-lane.md))
+answered the open questions. The governing principle: **types are pure
+content-kinds; `verified` alone carries epistemic status.** Every type answers
+"what sort of utterance is this?", never "how well established is it?" —
+today's vocabulary encodes status twice (type and field) and kind once,
+fuzzily.
+
+| Type | Content-kind | Truth-apt? | Status carrier |
+|---|---|---|---|
+| `concept` | a definition or mental model — judged by adequacy | no | none needed |
+| `claim` | a proposition about the world | yes | `verified`/`verified_by` |
+| `belief` | a holder-indexed assertion (doxastic: `B_holder φ` — the warrant is that a specified holder holds it) | yes, indexed to a holder rather than evidence | none by construction |
+
+Answers, by question number:
+
+1. **`concept` narrows; no new `term` type.** A glossary term definition is a
+   definition — the paradigm `concept`. The glossary corpus keeps its type;
+   the coupling in `/add-to-glossary` and the `elaboration` contrast clause
+   survives unchanged.
+2. **Graduation drops — option (a).** A verified claim stays a `claim` with
+   `verified: true` carrying the weight; a definition is not what a confirmed
+   proposition turns into. `git-local-branches-dont-auto-advance-on-fetch.md`
+   retypes to `claim` (id unchanged).
+3. **"(established/accepted)" drops.** The definition then honestly describes
+   the corpus; no oracle is invented for a parenthetical the corpus
+   contradicts.
+4. **The code-side vocabulary sweep rides the execution commit**, as Part 1
+   deferred it.
+
+The belief row doubles as the type's first formal definition — the filing test
+becomes: if removing "I hold that…" changes the sentence's warrant, it is a
+`belief`; if it does not, it is a `claim`. A scoped negative finding recorded
+in the schema-formalization plan (D6): ISO 704, SKOS, PROV-DM, and SBVR were
+read against this axis and none carries a doxastic modality — the split is
+this bundle's own.
+
+**Execution** = the vocabulary policy edits, the verification-grounding
+graduation-clause removal, the one retype, the code sweep, and the contract
+recompile — phase 3 of the schema-formalization plan's build order, executed
+under this plan.
+
+## The questions as originally carried (superseded by the resolution above)
+
+These required operator ratification — type-vocabulary changes are shape
+changes:
 
 1. **Should glossary entries get their own type** (e.g. `term`), or should
    `concept` *narrow* to mean strictly "term definition / mental model"?
