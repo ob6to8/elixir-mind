@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-01; verbatim retained
 tags: [meta, thread, review, audit, code-review, epistemology, content-quality]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01Y99WZxAFKB7nsStLDxgMHy
+pr: 222
 ---
 
 # 2026-08-01-comprehensive-repo-review-session-1
