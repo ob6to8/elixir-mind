@@ -65,18 +65,24 @@ already set: take the standard's semantics, decline the RDF/triple-store
 substrate, keep `mix brain.verify` as the checker.
 
 **D2 — Exception marking over a declared default.** Every document declares
-its default basis in frontmatter; spans are marked only where they depart from
-it. Unmarked text is governed by the default, so annotation mass lands on the
-exceptions (quotes, operator voice, thread lifts) instead of on the dominant
-synthesis class — while the default itself stays explicit, timestamped, and
+its default basis in structured `provenance` (D5); spans are marked only where
+they depart from it. Unmarked text is governed by the default, so annotation
+mass lands on the exceptions (quotes, operator voice, thread lifts) instead of
+on the dominant synthesis class — while the default itself stays explicit and
 source-bearing rather than implicit.
 
-**D3 — Synthesis basis is recorded, sub-attributed, and read as attestation.**
-The doc-level default distinguishes synthesis **from memory** vs. **from
-search/retrieval**, with sources and a timestamp. Presence and form are
-checkable; truthfulness is not — the same epistemics
+**D3 — Synthesis basis is part of provenance, sub-attributed, and read as
+attestation.** The default basis distinguishes synthesis **from memory** vs.
+**from search/retrieval** (`provenance.mode`), with `provenance.sources` when
+retrieval fed it; the instant is already `attribution.created` (a later
+re-synthesis bumps `modified`), so no separate timestamp exists to drift.
+Presence and form are checkable; truthfulness is not — the same epistemics
 [model-attribution](/meta/policy/model-attribution.md) already assigns to the
 model field ("evidence about authorship rather than proof of it").
+*(Revised at the 2026-08-01 review pass: an earlier draft made synthesis a
+fourth frontmatter block beside provenance/attribution/derived_from —
+reproducing the origin-metadata sprawl this plan exists to cure. One default
+basis, one home.)*
 
 **D4 — The doc-side thread edge is derived, never hand-kept.** Bundle
 documents gain a `derived_from` frontmatter list **materialized from the
@@ -85,26 +91,47 @@ CI-checked for divergence exactly as the logs are. No second hand-maintained
 copy of an edge the tags already carry; origins with no route tag (a
 pre-capture conversation) belong in structured provenance instead.
 
-**D5 — `provenance` splits into structure.** `model` (trailer display form or
-`model undisclosed`, per model-attribution), `ref` (a resolvable `em:` id or
-bundle-absolute path, **required whenever the origin has an in-repo address**),
+**D5 — `provenance` becomes the structured default basis.** Sub-keys: `mode`
+(`memory` · `search` · `operator` · `external` — how the content came to be),
+`ref` (a resolvable `em:` id or bundle-absolute path, **required whenever the
+origin has an in-repo address**), `sources` (URLs/ids when `mode: search`),
 `note` (free-text residue for origins with no address). Ref resolution is
-machine-checked.
+machine-checked. The **model has exactly one home — `attribution.agent`**
+(D6): the filing model is the actor of the ingestion event, and a
+`provenance.model` beside it would put one fact in two fields — the
+"reads three ways" defect [model-attribution](/meta/policy/model-attribution.md)
+itself warns against. That policy is amended in phase 1 to point at
+`attribution.agent`; an origin model *distinct from the filer* (content
+distilled from another model's output) goes in `provenance.note`.
+*(Revised at the 2026-08-01 review pass: the ratified draft had
+`provenance.model` and a model-bearing `agent` side by side.)*
 
-**D6 — The attribution map realigns to PROV agent/activity.** `agent` narrows
-to the actor (model + harness); a new `activity` carries the context the
-current field actually holds (session, skill, Routine); `channel` folds into
-`activity` as its leading token; `when` renames to `created` and top-level
+**D6 — The attribution map realigns to PROV agent/activity; `channel` stays a
+controlled key.** `agent` narrows to the actor (model in trailer display form,
+plus harness); a new `activity` carries the context the current field actually
+holds (session, skill, Routine); `when` renames to `created` and top-level
 `timestamp` to `modified` (the Dublin Core `dcterms:created`/`dcterms:modified`
-pair). `why` is unchanged, and stays doc-granular under span attribution — a
-document has one filing rationale even when its text has many origins.
+pair). `channel` is **kept as its own machine-enforced controlled field** —
+the [escape-rate plan](/meta/plans/auto-intake-escape-rate-sampling.md) keys
+its ground-truth oracle on `channel: auto-intake`, and the attribution
+backfill and `mix brain.attribution` queries filter on it; folding it into a
+free-text `activity` string (an earlier draft's shape, reversed at the
+2026-08-01 review pass) would demote a queryable controlled value to prose.
+`why` is unchanged, and stays doc-granular under span attribution — a document
+has one filing rationale even when its text has many origins.
 
 **D7 — Local quotes verify deterministically.** A marked quote span whose
 source is a local capture (e.g. the
 [agent-says-done thread capture](/knowledge/SWE/agentic/action-verification/agent-says-done-reddit-discussion-thread.md),
 `em:b01e03`, quoted by the beliefs extracted from it) is checked by string
-containment against the source body — no model, no network. External-URL
-quotes stay editorial.
+containment against the source body — no model, no network. The containment is
+**whitespace-normalized and elision-aware**: markdown re-wrapping and
+blockquote markers are collapsed before comparison, and a quote carrying a
+marked elision (`…`) checks per fragment, since
+[quote-primary-sources](/meta/policy/quote-primary-sources.md) explicitly
+sanctions marked elisions and bracketed insertions — a naive exact-substring
+check would fail every legitimate use of them. External-URL quotes stay
+editorial.
 
 **D8 — Doc-level `verified` becomes derived.** Once spans exist: a document is
 verified iff every truth-apt span carries a resolving support ref. The bit
@@ -119,23 +146,31 @@ Frontmatter delta on a bundle document (illustrative):
  type: concept
 -provenance: "Agent-distilled from an operator-directed design session, 2026-07-30"
 +provenance:
-+  model: model undisclosed
++  mode: memory             # memory | search | operator | external
 +  ref: /meta/threads/2026-07-30-neovim-adoption-and-the-agent-pairing-project.md
 +derived_from: [/meta/threads/2026-07-30-neovim-adoption-and-the-agent-pairing-project.md]  # materialized, never hand-edited
-+synthesis:
-+  mode: memory            # memory | search
-+  at: 2026-07-30T07:05:00Z
 -timestamp: 2026-07-30
 +modified: 2026-07-30
  attribution:
 -  when: 2026-07-30T07:05:00Z
--  channel: agent-authored
--  agent: "Claude Code agent, operator-directed session on agent supervision and governance"
 +  created: 2026-07-30T07:05:00Z
-+  agent: "model undisclosed, Claude Code web session"
-+  activity: "agent-authored: operator-directed session on agent supervision and governance"
+   channel: agent-authored
+-  agent: "Claude Code agent, operator-directed session on agent supervision and governance"
++  agent: "Claude Fable 5, Claude Code web session"
++  activity: "operator-directed session on agent supervision and governance"
    why: "the distinction generalizes past the project that surfaced it — …"
 ```
+
+The `agent` value above is **recovered, not invented**: this doc's filing
+commit (`818a885`) carries `Co-Authored-By: Claude Fable 5` in its trailer.
+The migration recovers the model from each doc's filing-commit trailer — the
+same derivation the attribution backfill used — and writes
+`model undisclosed` **only** where no trailer exists (pre-2026-07-07 commits,
+merge commits, local-terminal sessions, per
+[merge-strategy](/meta/policy/merge-strategy.md)'s coverage-gap list).
+Stamping `model undisclosed` onto a doc whose model *is* recorded discards
+evidence; an earlier draft's example did exactly that and was corrected at
+the 2026-08-01 review pass.
 
 Span markup, following the `<routes>` precedent (region tags over prose, one
 class plus a source ref, never nested):
@@ -159,6 +194,7 @@ lib/mix/tasks/
   brain.quotes.ex       # NEW — mix brain.quotes (gate-eligible: offline, deterministic)
 meta/policy/
   resource-attribution.md   # MODIFIED — schema realignment (D5, D6)
+  model-attribution.md      # MODIFIED — model's home moves to attribution.agent (D5)
   span-attribution.md       # NEW policy — classes, default rule, markup, derived verified
 ```
 
@@ -184,9 +220,17 @@ Boundary decisions:
 ## Build order
 
 1. **Structured provenance + attribution realignment (D5, D6)** — policy
-   edits, `Attribution` checks, corpus migration sweep, contract recompile.
-   The migration's write path wants `Frontmatter.dump/1` from the
-   [parser-rewrite plan](/meta/plans/frontmatter-parser-profile-rewrite.md);
+   edits (resource-attribution, model-attribution), `Attribution` checks,
+   corpus migration sweep, contract recompile. **Scope honesty: this is the
+   widest sweep since the `sb:` → `em:` id migration** — `timestamp` →
+   `modified` touches every document in the bundle, and the attribution key
+   renames touch every attribution block, plus every tool and policy that
+   reads `timestamp` (registry, collection ordering, index conventions).
+   Execute verifier-atomically on the id-migration pattern: one deterministic
+   pass, gates green before and after, no partially-renamed state. Model
+   values are recovered from filing-commit trailers (see the worked example);
+   the migration's write path wants `Frontmatter.dump/1` from the
+   [parser-rewrite plan](/meta/plans/frontmatter-parser-profile-rewrite.md) —
    until that lands, the sweep uses the same regex surgery the attribution
    backfill used, accepted as a one-time cost.
 2. **`derived_from` materialization (D4)** — extend `--materialize` and the
@@ -203,19 +247,32 @@ Boundary decisions:
 `em:712e01` is the pilot document for phases 1–2 (its provenance and thread
 edge are the worked example above).
 
+**Cross-plan ordering:** phase 1 here lands **before** phase 2 of the
+[schema-formalization plan](/meta/plans/schema-formalization-and-evaluator-lane.md),
+so its per-key definition blocks are written once, against the final key set,
+rather than formalizing a schema this plan immediately rewrites.
+
+## Span survival across edits — ruled 2026-08-01
+
+Route tags only annotate frozen thread bodies; knowledge documents are living,
+and a span boundary must survive prose re-flows. **Ruling: spans re-anchor by
+normalized content hash, and the verifier fails on drift** — an edit that
+changes text inside a span must update or re-confirm the span in the same
+commit, converting span freshness from a remembered obligation into a gate.
+The alternative (manual re-marking as editorial discipline) is rejected on the
+bundle's own prior:
+[a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md).
+Residual detail for execution: hash granularity (per-span, over
+whitespace-collapsed content) and the re-confirmation syntax — mechanics, not
+open design.
+
 ## Open questions
 
-1. **Span survival across edits.** Route tags only annotate frozen thread
-   bodies; knowledge documents are living, and a span boundary must survive
-   prose re-flows. Options at execution: re-anchor by content hash and fail
-   loudly on drift, or accept manual re-marking as part of any edit that
-   crosses a span. This is the plan's highest-risk unknown and phase 4 does
-   not start until it has an answer.
-2. **Truth-apt span segmentation.** Deciding which sentences are claims vs.
+1. **Truth-apt span segmentation.** Deciding which sentences are claims vs.
    framing has no mechanical oracle; it lands in the evaluator lane of the
    [schema-formalization plan](/meta/plans/schema-formalization-and-evaluator-lane.md)
    rather than in a gate.
-3. **Adjacent-layer reconciliation.** The
+2. **Adjacent-layer reconciliation.** The
    [epistemic-overlay plan](/meta/plans/epistemic-overlay.md) types edges
    *between* documents; this plan attributes text *within* them. The boundary
    looks clean (overlay = inter-doc evidential structure; spans = intra-doc
@@ -232,7 +289,12 @@ edge are the worked example above).
   audit value — the declared default carries it); hand-kept `derived_from`
   (shadow copy of the route-tag edge); sampling-parameter capture in
   provenance (unobservable from a session; a required field that can only be
-  guessed).
+  guessed); a separate `synthesis` frontmatter block (fourth origin structure
+  — folded into `provenance`, review pass); folding `channel` into free-text
+  `activity` (demotes a machine-queried controlled value to prose);
+  `provenance.model` beside a model-bearing `agent` (one fact, two fields);
+  manual span re-marking as discipline (remembered surface — see the ruling
+  above).
 - **Assumption:** the four classes are exhaustive for this bundle's text. A
   fifth (e.g. tool-generated tables) would extend the class enum, not the
   architecture.

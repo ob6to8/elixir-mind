@@ -49,7 +49,12 @@ already governs it ([frontmatter-schema](/meta/policy/frontmatter-schema.md)
 and siblings): the key, its tier-1 shape, its tier-2 reductions, and the
 tier-3 predicate stated as the question the evaluator answers. One artifact,
 so the human rule and the checked rule cannot drift apart; the evaluator
-resolves definitions from the policy source, not from a copy.
+resolves definitions from the policy source, not from a copy. **Cross-plan
+ordering:** the definition blocks are written against the key set the
+[span-attribution plan](/meta/plans/span-level-attribution.md)'s phase 1
+produces (structured provenance, `created`/`modified`, agent/activity), so
+that phase lands before phase 2 here — formalizing the outgoing schema would
+make every block stale on arrival.
 
 **D3 — The description regime generalizes from the glossary, unchanged.**
 `description` is the canonical compressed statement; the body is
@@ -164,7 +169,12 @@ Boundary decisions:
    lint (after the tag-governance report exists to absorb its findings); and
    the `em:712e01` fixes — description rewritten to the intensional template
    without body overlap, provenance ref resolved, `supervision` tag
-   dispositioned — as the pilot's worked test case.
+   dispositioned — as the pilot's worked test case. Its `verified: false` is
+   **removed by the vocabulary execution, never flipped to true**: under the
+   ratified trichotomy `concept` leaves the statement types, so the earlier
+   idea of capturing regulatory primary sources to flip the bit is dead —
+   the doc's empirical entailments file as `claim`s (with `verified_by`) if
+   that evidence is wanted.
 2. **Definition blocks + doctrine amendment.** Per-key blocks into the policy
    docs (D2), the advisory-lane amendment (D7), contract recompile,
    `SchemaDefs` parsing them with a freshness-style check that every

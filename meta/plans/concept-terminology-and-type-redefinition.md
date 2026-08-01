@@ -179,8 +179,9 @@ fuzzily.
 
 | Type | Content-kind | Truth-apt? | Status carrier |
 |---|---|---|---|
-| `concept` | a definition or mental model — judged by adequacy | no | none needed |
-| `claim` | a proposition about the world | yes | `verified`/`verified_by` |
+| `concept` | a definition or mental model — judged by adequacy | no | none — `verified` becomes illegal on it |
+| `claim` | a proposition asserted for reliance | yes | `verified`/`verified_by` |
+| `note` | a distilled idea or observation, recorded without the assertoric commitment of a claim | yes | `verified`/`verified_by` (optional) |
 | `belief` | a holder-indexed assertion (doxastic: `B_holder φ` — the warrant is that a specified holder holds it) | yes, indexed to a holder rather than evidence | none by construction |
 
 Answers, by question number:
@@ -206,8 +207,27 @@ in the schema-formalization plan (D6): ISO 704, SKOS, PROV-DM, and SBVR were
 read against this axis and none carries a doxastic modality — the split is
 this bundle's own.
 
+**Two consequences drawn at the 2026-08-01 review pass** (the ratified
+resolution left them implicit, which would have surfaced as surprises at
+execution):
+
+- **The statement types narrow to `claim`/`note`.** A non-truth-apt type
+  carrying a truth flag is the incoherence this resolution exists to remove,
+  so `verified` (either value) becomes an **error** on `concept` — verifier
+  rule 6's `@statement_types` shrinks accordingly — and the glossary corpus's
+  `verified: false` fields (nearly all of its 234+ entries carry one) are
+  removed in a mechanical sweep. Without this, the resolution renames the
+  disease rather than curing it.
+- **`note` is ruled, not skipped.** The original trichotomy dialogue covered
+  `concept`/`claim`/`belief` and was silent on the fourth statement type.
+  Ruling: a `note` records an observation or idea — propositional, hence
+  truth-apt, hence `verified`-eligible — and the `claim`/`note` boundary is
+  assertoric strength (a claim is asserted for reliance and expects evidence;
+  a note records without that commitment), not kind.
+
 **Execution** = the vocabulary policy edits, the verification-grounding
-graduation-clause removal, the one retype, the code sweep, and the contract
+graduation-clause removal, verifier rule 6 narrowed to `claim`/`note`, the
+glossary `verified` sweep, the one retype, the code sweep, and the contract
 recompile — phase 3 of the schema-formalization plan's build order, executed
 under this plan.
 

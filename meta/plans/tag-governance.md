@@ -112,7 +112,9 @@ index is derived, not stored.**
   `[path]` (canonically filed here) or `[tag]` (touches the facet from
   elsewhere) — the two matches mean different things and the result surface
   keeps the distinction. The disjointness lint is what keeps the labels
-  trustworthy.
+  trustworthy. The implicit union excludes namespace roots shared by
+  effectively every document (`knowledge`): a tag the whole bundle matches
+  retrieves nothing.
 - **Consequence for the build order:** `mix brain.tags` (step 2) gains a
   query mode beside the report — same scan, two outputs — and the
   normalization pass (step 3) gets a mechanical head start: every
