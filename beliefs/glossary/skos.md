@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, knowledge-representation, semantic-web, rdf, taxonomy, vocabulary]
 sense: common
-timestamp: 2026-07-28
+timestamp: 2026-08-01
 attribution:
   when: 2026-07-28T07:12:25Z
   channel: glossary
@@ -31,7 +31,11 @@ makes it the fitting target vocabulary for a prose-first scheme like this
 bundle's taxonomy and glossary, where [OWL](/beliefs/glossary/owl.md)'s
 reasoning semantics would be unused weight.
 
-*Seen in:* [OWL and the belief layer](/meta/analysis/owl-and-the-belief-layer.md), [2026-07-28 OWL/RDF/SKOS thread](/meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md)
+It is not an alternative to [ISO 704](/beliefs/glossary/iso-704.md) but a
+complement at a different layer: that standard governs the prose inside a
+definition, this one governs the scheme of concepts around it.
+
+*Seen in:* [OWL and the belief layer](/meta/analysis/owl-and-the-belief-layer.md), [2026-07-28 OWL/RDF/SKOS thread](/meta/threads/2026-07-28-owl-rdf-skos-and-the-belief-layer.md), [2026-08-01 schema-formalization thread](/meta/threads/2026-08-01-schema-formalization-and-span-attribution-plans.md)
 
 ## Thread excerpts — route-tagged log
 

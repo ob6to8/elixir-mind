@@ -24,7 +24,7 @@ compete.
 
 ## Terminal multiplexers with agent awareness
 
-[**herdr**](https://herdr.dev/) is a single ~10MB Rust binary giving each agent
+[**herdr**](/knowledge/SWE/dev-tools/herdr.md) is a single ~10MB Rust binary giving each agent
 its own real PTY pane, with a background server for detach/reattach (including
 over SSH) and a sidebar that classifies every agent as **blocked / working /
 done / idle** by inspecting process names and terminal output. It detects Claude
@@ -35,8 +35,8 @@ plugin ecosystem for context staging and workspace launching) and is a session
 backend for sidekick.nvim. It went to #1 in Rust on GitHub Trending in late June
 2026.
 
-[**cmux**](https://cmux.com/) (Manaflow, GPL, `manaflow-ai/cmux`) is a native
-macOS terminal — Swift + AppKit on libghostty, GPU-accelerated, no Electron —
+[**cmux**](/knowledge/SWE/dev-tools/cmux.md) (Manaflow, GPL, `manaflow-ai/cmux`) is a native
+macOS terminal — Swift + AppKit on [libghostty](/beliefs/glossary/libghostty.md), GPU-accelerated, no Electron —
 built around the same problem from the terminal-emulator side: vertical tabs
 showing git branch, working directory, ports and notification text;
 "notification rings" that light panes needing attention; horizontal and vertical

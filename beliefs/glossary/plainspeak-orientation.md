@@ -10,7 +10,7 @@ attribution:
   channel: glossary
   agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
   why: "term coined by the plainspeak-orientation policy this session filed"
-tags: [glossary, communication, plainspeak]
+tags: [glossary, communication, plainspeak, coined]
 sense: repo
 timestamp: 2026-07-28
 ---

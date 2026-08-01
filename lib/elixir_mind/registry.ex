@@ -34,6 +34,7 @@ defmodule ElixirMind.Registry do
       :verified,
       :resource,
       :sense,
+      :launch,
       :attribution,
       verified_by: []
     ]
@@ -103,6 +104,7 @@ defmodule ElixirMind.Registry do
           verified: fm["verified"],
           resource: fm["resource"],
           sense: fm["sense"],
+          launch: fm["launch"],
           attribution: fm["attribution"],
           verified_by: List.wrap(fm["verified_by"])
         }

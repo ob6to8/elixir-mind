@@ -10,6 +10,9 @@ inference and retrieval cheaper, faster, or more capable in practice.)
 
 - [deep-learning](/knowledge/machine-learning/deep-learning/index.md) — neural-network
   architectures and the methods used to train them
+- [evolutionary-computation](/knowledge/machine-learning/evolutionary-computation/index.md) —
+  genetic algorithms, evolution strategies, and other population/distribution-based
+  search methods used inside or alongside ML systems
 
 ## References
 

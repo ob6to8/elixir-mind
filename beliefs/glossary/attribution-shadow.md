@@ -10,7 +10,7 @@ attribution:
   channel: glossary
   agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
   why: "coined while resolving whether model-selection guidance is enforceable"
-tags: [glossary, enforcement, provenance, models, terminology]
+tags: [glossary, enforcement, provenance, models, terminology, coined]
 sense: repo
 timestamp: 2026-07-13
 ---

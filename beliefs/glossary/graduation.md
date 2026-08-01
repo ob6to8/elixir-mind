@@ -5,7 +5,7 @@ title: graduation
 description: A document or work item earning promotion up a level — a glossary term relocating into the domain taxonomy (sense 1), a grounded claim becoming a concept (sense 2), a deferred strand or analysis residue becoming a plan (sense 3), a surveyed bookmark becoming a filed reference (sense 4), or a parked future-belief becoming a policy or doctrine (sense 5).
 provenance: "Agent-distilled glossary definition; coined by the /add-to-glossary skill"
 verified: false
-tags: [glossary, taxonomy, lifecycle]
+tags: [glossary, taxonomy, lifecycle, coined]
 sense: repo
 timestamp: 2026-07-26
 attribution:

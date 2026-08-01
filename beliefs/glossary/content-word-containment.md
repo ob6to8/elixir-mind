@@ -5,7 +5,7 @@ title: content-word containment
 description: A lightweight lexical-overlap score — the fraction of one text's unique content words (after normalization and stopword removal) that also appear in a reference text — used to flag near-restatements without any semantic model.
 provenance: "Agent-distilled glossary definition; coined for the mix brain.glossary repetition check"
 verified: false
-tags: [glossary, verification, dedup, text-comparison]
+tags: [glossary, verification, dedup, text-comparison, coined]
 sense: repo
 timestamp: 2026-07-16
 attribution:

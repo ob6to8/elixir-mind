@@ -52,11 +52,32 @@ why a *value-laden* belief type escapes the collision that ruled out a
   a hand-kept surface is carried by memory, which fails silently, while a derived
   surface cannot fall out of date because nothing is being remembered. Depends on
   [freshness gate](/beliefs/glossary/freshness-gate.md).
+- [A completion claim is not evidence of completion](/beliefs/completion-claims-are-not-evidence-of-completion.md) —
+  an agent's report that an action succeeded comes from the same context that made
+  the action, so only a separate read against the system holding the state settles
+  it; traces and evals read the agent's account, which never contains the fact.
+  The action-side instance of review-is-not-an-oracle. `em:674c8f`
+- [Only what the other side produced is evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md) —
+  the test a read-back must itself pass: a check reading material the acting side
+  generated is testimony, and is worse than no check because it fails toward
+  *confirmed* exactly when the failure it exists to catch has occurred. Carries the
+  absence-of-error corollary and the three-valued outcome. Depends on `em:674c8f`.
+  `em:01abda`
 - [The value of writing is the human synthesis behind it](/beliefs/value-of-writing-is-human-synthesis.md) —
   a written artifact is a presentation layer, and what readers are actually
   evaluating is whose judgment stands behind it, staked on a reputation; the
   prior the [human-writing-attribution project](/projects/human-writing-attribution.md)
   operationalizes.
+- [Understanding a decision is not standing to judge it](/beliefs/understanding-is-not-standing-to-judge.md) —
+  an operator who outsourced judgment during design must reconstruct the
+  standing to judge which complexity is incidental and which is load-bearing;
+  comprehension repays one debt, and re-deciding — not re-reading — repays the
+  other. `em:b31b96`
+- [Capability growth relocates agentic risk from model behavior to operator epistemics](/beliefs/capability-growth-relocates-risk-to-operator-epistemics.md) —
+  the realized danger of more capable models is the operator's compounding false
+  assumptions, not model malice: capability invites stripping guidance and
+  verification, and the unverified remainder accumulates as a misaligned mental
+  model of the system. `em:fa6efe`
 
 ## Vocabulary & scratch
 

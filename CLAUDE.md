@@ -54,6 +54,7 @@ Frontmatter fields:
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
+| `launch` | **Mandatory** on `visualization` | Filename of the document's same-directory sibling `.html` — the self-contained artifact the reader opens. A bare filename, never a path or URL. Distinct from `resource`: that names an *external source asset the document captures*, this names *the document's own artifact*. Machine-enforced (exists, sibling, `.html`); an error on any other type. |
 | `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a document that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
 | `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
 | `attribution` | **Mandatory** (bundle documents and governance docs) | Structured map recording the ingestion event — `when`/`channel`/`agent`/`why`, plus append-only `from` on governance docs. Immutable once written (except `from`). See the resource-attribution policy. |
@@ -1082,6 +1083,20 @@ Seed vocabulary:
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
   *how-to* for carrying out a recurring task (distinct from a `note`, which merely
   records an idea, and a `concept`, which defines a mental model).
+- `visualization` — a **self-contained interactive page** the reader launches to
+  manipulate a model directly: an explorable explanation, a live diagram, a
+  parameter sweep. Filed as a **document pair** — the `.md` carries the `em:` id,
+  the prose, and a `launch` field naming its **same-slug sibling `.html`**, which
+  holds the artifact itself (inline CSS and JS, classic `<script>`, no `fetch`, no
+  ES modules, no external hosts, so it opens over `file://` with no build step or
+  server). Distinct from a `snippet` (a fragment to paste elsewhere, not a page to
+  open), a `methodology` (the *how-to* for building one — see
+  [explorable-explanations](/knowledge/knowledge-management/technical-communication/explorable-explanations.md)),
+  and a `reference` (a capture of *someone else's* material, whereas a
+  visualization is authored here). Filing test: *if the reader manipulates it, it
+  is a `visualization`; if they read about manipulating it, it is a
+  `methodology` or `reference`.* Machine-checked — `mix brain.verify` rejects a
+  missing `launch`, or one whose target is absent, non-sibling, or not `.html`.
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the
@@ -1207,6 +1222,75 @@ _Source: [`meta/policy/stable-identity.md`](/meta/policy/stable-identity.md)_
 
 _Source: [`meta/policy/verification-grounding.md`](/meta/policy/verification-grounding.md)_
 
+**An agent-authored document names the model that produced it.**
+[capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md)
+directs the strongest models to motions where "the output *is* the judgment and
+there is no oracle behind it" — but selection "**cannot be enforced**: it is a
+runtime act". Attribution is its enforceable shadow, and this rule fixes where
+that shadow falls on a **document**.
+
+**What the commit graph already covers, and what it does not.** The harness
+injects `Co-Authored-By: Claude <Name> <Version>` alongside `Claude-Session:` on
+commits Claude authors, so the model is already recorded per *commit* for the
+majority of this repo's history. Two gaps remain, and they are what this rule
+addresses — not the absence of any record:
+
+- **A trailer attributes a commit, not a document.** One commit routinely touches
+  several documents written across a session; the trailer assigns all of them to
+  one model even where the motions differed in weight. The audit
+  capability-matched-model-selection wants is per-artifact.
+- **A document is read outside its git history.** On the published site, after a
+  move, or when quoted elsewhere, the trailer is not present. A document that
+  travels carries only its own frontmatter.
+
+**The rule.**
+
+- **Who records.** An agent-authored **governance** document (under `meta/`) or
+  **statement** document (`claim` · `note` · `concept`) whose
+  `attribution.channel` is `agent-authored` or `auto-intake` names its producing
+  model in `provenance`. An operator-authored document does not; a capture of
+  external material attributes its *source*, and names a model only if one
+  produced the distillation.
+- **One form — the trailer's display form** (`Claude Opus 4.8`,
+  `Claude Fable 5`), so the document-level and commit-level records join on the
+  same string. Do not coin a second form: a field that reads three ways cannot be
+  grepped, counted, or trended, and the repo's existing `provenance` fields
+  already split across display names, ids, and bare "Claude Code session".
+- **An undisclosed model is stated, never omitted.** A session that cannot
+  determine its model, or that runs in an environment withholding the identifier
+  from committed artifacts, writes `model undisclosed` in `provenance`. Omission
+  and a guess are both defects: omission makes an unattributable document
+  indistinguishable from an unremarkable one, and a guess corrupts the field the
+  audit reads. This is *silence is not success*
+  ([escape-rate plan](/meta/plans/auto-intake-escape-rate-sampling.md)) applied
+  to attribution.
+- **It is an attestation, not a measurement.** A session writes its own
+  identifier; the repository cannot verify it. A checker can establish
+  **presence and form**, never truthfulness — so read the field as self-reported
+  provenance, evidence about authorship rather than proof of it.
+- **Scope is forward-looking.** The rule binds documents filed from its
+  ratification onward. The existing corpus is mixed — many agent-authored
+  governance documents name no model — and a retrofit sweep is its own decision,
+  not an obligation imposed here (the posture
+  [structured-plan-bodies](/meta/policy/structured-plan-bodies.md) takes toward
+  pre-existing plans).
+- **Enforcement is editorial today.** Presence-and-form is mechanically checkable
+  and is the natural shape of a future `mix brain.verify` rule or warn-only
+  report; until one exists this binds agent judgment, as the oracle-less
+  [coding standards](/meta/policy/elixir-coding-standards.md) conventions do. A
+  checker earns a gate on the standing admission rule, not automatically.
+
+This refines [resource-attribution](/meta/policy/resource-attribution.md), which
+holds that `attribution.agent` names "the **pathway, not the model** (the model
+is in the commit trailer)". That division stands: the pathway belongs in
+`attribution`, and the model belongs in `provenance` — beside the *content's*
+origin, which is what it is. Why it became worth ratifying is recorded in
+[three agent-substrate talks read against this brain](/meta/analysis/agent-substrate-talks-read-against-this-brain.md):
+under fan-out the reviewing node's tier is the property most worth auditing
+afterward, and an unrecorded tier is the audit that cannot be run.
+
+_Source: [`meta/policy/model-attribution.md`](/meta/policy/model-attribution.md)_
+
 ---
 
 ## 7. Conformance (keep the bundle valid)
@@ -1318,10 +1402,11 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   a **non-bundle namespace** like `inbox/` and `survey/`: no `em:` ids, no
   `attribution` (machine-enforced exempt), anchored by date rather than inbound
   links, outside the taxonomy — the operator's synthesis practice, on the record
-  layer. `/journal list` reviews recent entries; a response to an entry is produced
-  only when asked, delivered in chat and persisted verbatim below the entry under a
-  marked `## Response` heading — operator voice above, agent voice below, never
-  interleaved. See `.claude/skills/journal/SKILL.md`.
+  layer. `/journal list` reviews recent entries; every filed entry receives a
+  two-part response by default — an editorial read, then a substantive follow-up
+  (the operator opts out per entry: "file only") — delivered in chat and persisted
+  verbatim below the entry under a marked `## Response` heading — operator voice
+  above, agent voice below, never interleaved. See `.claude/skills/journal/SKILL.md`.
 - **`/ban-phrase`** — add an operator-flagged word or phrase to the
   [banned-phrases register](/meta/policy/banned-phrases.md) (verbatim phrase,
   generalized pattern, the reasoning from the flagging exchange, and a recast),
@@ -1329,6 +1414,21 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   every future session; the operator's invocation is the ratification.
   `/ban-phrase list` renders the register read-only. See
   `.claude/skills/ban-phrase/SKILL.md`.
+- **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
+  tables: every request the operator made (with a done/partial/not-done/declined/
+  superseded status), and what the agent actually did, with the files touched and
+  whether each landed in a commit or is still in the working tree. **Both columns
+  rest on artifacts, never on recall**: the asks are enumerated from the session
+  transcript (`~/.claude/projects/…/<session-id>.jsonl`) and the delivered work
+  from `git log`/`git diff` against `origin/main` — an asks column built from a
+  context-compaction summary drops the asks made before the boundary, silently,
+  which is the failure the skill exists to catch — so the audit is evidence
+  rather than the session's own testimony
+  (see [normative records vs. descriptive
+  traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md));
+  gaps in either direction are reported in prose beneath. Read-only — it opens,
+  merges, and modifies nothing, and is meant to precede the operator's own PR
+  review. See `.claude/skills/review-pr/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

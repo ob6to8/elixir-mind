@@ -10,4 +10,7 @@ current research on automating decision-record capture with LLMs and agents.
 - [Using LLMs in Generating Design Rationale for Software Architecture Decisions (TOSEM 2025)](/knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale.md) — post-hoc rationale reconstruction measured: recall 0.63–0.72, precision ~0.27, 1.6–3.2% misleading — record the why at decision time. `em:ce51fc` _(reference)_
 - [Context Matters: Evaluating Context Strategies for Automated ADR Generation Using LLMs (2026)](/knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation.md) — a 3–5-record recency window is the optimal decision context; context engineering, not model scale, dominates. `em:4f5372` _(reference)_
 - [AgenticAKM: Enroute to Agentic Architecture Knowledge Management (2026)](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md) — multi-agent Extraction/Retrieval/Generation/Validation workflow generating ADRs from repositories. `em:6d6425` _(reference)_
-- [Architecture Without Architects: How AI Coding Agents Shape Software Architecture (2026)](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md) — agents make unreviewed architectural decisions ("vibe architecting"); decision records and review tooling are the proposed governance. `em:7fa867` _(reference)_
+
+## Related
+
+- [agentic/architecture](/knowledge/SWE/agentic/architecture/index.md) — the architecture agents actually produce, and the review practices proposed for it; decision records are one of its remedies
