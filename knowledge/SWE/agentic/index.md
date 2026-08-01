@@ -24,3 +24,4 @@ and the practices they change.
 - [skill-optimization](/knowledge/SWE/agentic/skill-optimization/index.md) — optimizing an agent's instruction/skill file against a score rather than authoring it by judgment: text-space optimizers, edit budgets, and held-out gates
 - [supervision](/knowledge/SWE/agentic/supervision/index.md) — how a human stays in the loop over agent work: the postures available, the consoles built for them, and what makes agent activity legible enough to act on
 - [supply-chain-security](/knowledge/SWE/agentic/supply-chain-security/index.md) — trust and governance risk in the agentic-AI dependency supply chain
+- [workflow-decomposition](/knowledge/SWE/agentic/workflow-decomposition/index.md) — when an LLM-powered workflow should stay in one probabilistic call versus decompose into deterministic parsers, rules, classifiers, and classical ML
