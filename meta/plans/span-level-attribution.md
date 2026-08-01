@@ -3,7 +3,7 @@ type: plan
 title: "Span-level attribution: PROV-aligned provenance for document text"
 description: Move attribution from one record per document to a layered model — structured provenance, a derived doc-side thread edge, deterministic verification of local quotes, and exception-marked text spans over a declared synthesis default — adopting the W3C PROV-DM vocabulary conceptually (agent, activity, quotation, derivation) while keeping YAML frontmatter and inline markup as the serialization and the hand-written Elixir verifier as the checker.
 status: accepted
-provenance: "Agent-distilled from an operator-directed design dialogue examining em:712e01 against the attribution machinery, 2026-08-01; model undisclosed"
+provenance: "Agent-distilled from an operator-directed design dialogue examining em:712e01 against the attribution machinery, 2026-08-01; drafted by Claude Opus 5, revised at the same day's review pass by Claude Fable 5"
 tags: [meta, plan, attribution, provenance, prov-dm, verification, spans, frontmatter, schema]
 timestamp: 2026-08-01
 attribution:
@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on schema formalization and attribution"
   why: "doc-granular attribution forces one record onto documents whose text mixes operator voice, verbatim quotes, thread lifts, and synthesis — and the operator ratified a span-capable redesign before any evaluator work builds on the schema"
+  from: [/meta/threads/2026-08-01-schema-formalization-and-span-attribution-plans.md]
 ---
 
 # Span-level attribution: PROV-aligned provenance for document text
@@ -171,6 +172,22 @@ merge commits, local-terminal sessions, per
 Stamping `model undisclosed` onto a doc whose model *is* recorded discards
 evidence; an earlier draft's example did exactly that and was corrected at
 the 2026-08-01 review pass.
+
+**Known error mode — the trailer names the harness's configured display
+string, not necessarily the model that authored the turn.** Observed
+directly in the 2026-08-01 session that wrote this plan: the operator
+switched models mid-session (`/model`), and commit `db44f6a` — authored
+while the session ran one model — carries a trailer naming the *other*.
+The trailer is therefore strong evidence about a commit whose session never
+switched models, and unreliable for one that did; a mixed-model session
+attributes every doc in a commit to one string regardless. Two consequences
+for phase 1: the recovery pass writes the trailer value as the **best
+available attestation** (never a measurement — the posture
+[model-attribution](/meta/policy/model-attribution.md) already fixes), and
+it must not be presented to the operator as a verified model census. Where
+a session knows it switched, the authoring model belongs in
+`provenance.note` at filing time, since no post-hoc derivation can recover
+it.
 
 Span markup, following the `<routes>` precedent (region tags over prose, one
 class plus a source ref, never nested):

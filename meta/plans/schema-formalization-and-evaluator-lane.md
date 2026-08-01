@@ -3,7 +3,7 @@ type: plan
 title: "Per-key schema formalization and the advisory evaluator lane"
 description: Give every frontmatter key a formal, machine-readable definition co-located with its policy, check values against those definitions in three tiers — deterministic shape (existing gates), deterministic structure over prose (new gate-eligible checks, generalizing the glossary containment check bundle-wide), and semantic fit (an LLM evaluator) — and admit the evaluator through a new advisory CI lane that reports but can never fail the build, keeping the offline zero-dependency gate doctrine intact.
 status: accepted
-provenance: "Agent-distilled from an operator-directed design dialogue examining em:712e01 against the attribution machinery, 2026-08-01; model undisclosed"
+provenance: "Agent-distilled from an operator-directed design dialogue examining em:712e01 against the attribution machinery, 2026-08-01; drafted by Claude Opus 5, revised at the same day's review pass by Claude Fable 5"
 tags: [meta, plan, schema, verification, evaluator, ci, description, iso-704, definitions, gates]
 timestamp: 2026-08-01
 attribution:
@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on schema formalization and attribution"
   why: "the frontmatter schema's semantic obligations (a description that summarizes, a type that fits, a provenance that resolves) are enforced by nothing — the operator ratified formalizing each key's definition and checking values against it, with the fuzzy residue judged by an evaluator that reports without gating"
+  from: [/meta/threads/2026-08-01-schema-formalization-and-span-attribution-plans.md]
 ---
 
 # Per-key schema formalization and the advisory evaluator lane
