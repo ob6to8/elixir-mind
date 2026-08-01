@@ -54,6 +54,7 @@ Frontmatter fields:
 | `description` | Strongly recommended | Single-sentence summary. |
 | `resource` | When applicable | URI uniquely identifying the underlying/source asset (e.g. the original URL). |
 | `provenance` | When applicable | Where the content came from (e.g. "Claude Opus 4.8, chat thread"). Distinct from `resource`: this is the *origin of the statement*, not a canonical asset URI. |
+| `launch` | **Mandatory** on `visualization` | Filename of the document's same-directory sibling `.html` — the self-contained artifact the reader opens. A bare filename, never a path or URL. Distinct from `resource`: that names an *external source asset the document captures*, this names *the document's own artifact*. Machine-enforced (exists, sibling, `.html`); an error on any other type. |
 | `verified` | Only on agent statements | Boolean, and **only for agent-authored statements** (`claim`/`note`/`concept`). `false` = asserted but not checked; `true` = checked and backed by a non-empty `verified_by`. **Omit** on captures — a document that stores a link (`resource`) is not verifiable. Default `false` for AI-generated statements. |
 | `verified_by` | When verified via evidence | Inline YAML list of stable ids (typically `source` captures) that jointly support this statement; targets must **exist** (they need not themselves be `verified`). The only committed representation of evidence edges. |
 | `attribution` | **Mandatory** (bundle documents and governance docs) | Structured map recording the ingestion event — `when`/`channel`/`agent`/`why`, plus append-only `from` on governance docs. Immutable once written (except `from`). See the resource-attribution policy. |
@@ -1097,6 +1098,20 @@ Seed vocabulary:
 - `methodology` — a repeatable, prescriptive procedure or playbook: the distilled
   *how-to* for carrying out a recurring task (distinct from a `note`, which merely
   records an idea, and a `concept`, which defines a mental model).
+- `visualization` — a **self-contained interactive page** the reader launches to
+  manipulate a model directly: an explorable explanation, a live diagram, a
+  parameter sweep. Filed as a **document pair** — the `.md` carries the `em:` id,
+  the prose, and a `launch` field naming its **same-slug sibling `.html`**, which
+  holds the artifact itself (inline CSS and JS, classic `<script>`, no `fetch`, no
+  ES modules, no external hosts, so it opens over `file://` with no build step or
+  server). Distinct from a `snippet` (a fragment to paste elsewhere, not a page to
+  open), a `methodology` (the *how-to* for building one — see
+  [explorable-explanations](/knowledge/knowledge-management/technical-communication/explorable-explanations.md)),
+  and a `reference` (a capture of *someone else's* material, whereas a
+  visualization is authored here). Filing test: *if the reader manipulates it, it
+  is a `visualization`; if they read about manipulating it, it is a
+  `methodology` or `reference`.* Machine-checked — `mix brain.verify` rejects a
+  missing `launch`, or one whose target is absent, non-sibling, or not `.html`.
 - `policy` — a governance rule for how the brain operates; the source from which
   `CLAUDE.md` is compiled (lives under `meta/policy/`).
 - `tutorial` — a long-form explanatory note meant to be read start to finish (the
@@ -1414,6 +1429,21 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   every future session; the operator's invocation is the ratification.
   `/ban-phrase list` renders the register read-only. See
   `.claude/skills/ban-phrase/SKILL.md`.
+- **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
+  tables: every request the operator made (with a done/partial/not-done/declined/
+  superseded status), and what the agent actually did, with the files touched and
+  whether each landed in a commit or is still in the working tree. **Both columns
+  rest on artifacts, never on recall**: the asks are enumerated from the session
+  transcript (`~/.claude/projects/…/<session-id>.jsonl`) and the delivered work
+  from `git log`/`git diff` against `origin/main` — an asks column built from a
+  context-compaction summary drops the asks made before the boundary, silently,
+  which is the failure the skill exists to catch — so the audit is evidence
+  rather than the session's own testimony
+  (see [normative records vs. descriptive
+  traces](/knowledge/SWE/agentic/supervision/normative-records-vs-descriptive-traces.md));
+  gaps in either direction are reported in prose beneath. Read-only — it opens,
+  merges, and modifies nothing, and is meant to precede the operator's own PR
+  review. See `.claude/skills/review-pr/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
 

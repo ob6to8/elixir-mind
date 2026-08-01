@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, types, verification]
 sense: repo
-timestamp: 2026-07-15
+timestamp: 2026-08-01
 attribution:
   when: 2026-07-15T00:00:00Z
   channel: glossary
@@ -29,6 +29,13 @@ Notably the verifier draws *no* distinction among the three statement types
 themselves: the only enforceable difference between a `claim` and a `concept` is
 the word in the frontmatter.
 
-*Seen in:* [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md)
+A ratified-but-unexecuted ruling narrows the class to two. Since only a
+[truth-apt](/beliefs/glossary/truth-apt.md) statement can bear a truth value,
+and a definition is not one, `concept` leaves the group — making `claim` and
+`note` the members, separated from each other by assertoric strength rather
+than by kind (see the
+[concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md)).
+
+*Seen in:* [2026-07-15 concept→document replication thread](/meta/threads/2026-07-15-replicate-concept-document-terminology-from-pr-71.md), [concept-terminology plan](/meta/plans/concept-terminology-and-type-redefinition.md), [2026-08-01 schema-formalization thread](/meta/threads/2026-08-01-schema-formalization-and-span-attribution-plans.md)
 
 *See also:* [verification grounding](/beliefs/glossary/verification-grounding.md), [verified_by](/beliefs/glossary/verified-by.md), [provenance](/beliefs/glossary/provenance.md)

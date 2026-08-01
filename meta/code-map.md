@@ -320,6 +320,12 @@ Enforcement splits by what has a mechanical oracle, mirroring
   * **warn** — moderate containment. Semantic redundancy has no exact
     oracle, so the middle band reports without failing, like the
     routing-ledger coverage warning.
+  * **warn** — a term whose `provenance` narrates coining (the word "coin"
+    in any form: coined, coinage, coining) but whose `tags` omit `coined`.
+    The text match is close to mechanical, but what the tag should *mean*
+    for a term coined by an external source rather than the operator or a
+    repo session is an open editorial question, so this stays warn rather
+    than fail until that's settled.
 
 Generated `## Thread excerpts — route-tagged log` sections, *Seen in:* and
 *See also:* lines are excluded from the repetition check — they are
@@ -378,19 +384,27 @@ blocks into `attribution.from` refs.)
 
 `lib/elixir_mind/links.ex`
 
-Advisory docs-freshness checks: internal-link resolution and index coverage.
+Docs-freshness checks: internal-link resolution and index coverage.
 
-Two warning families (never errors — `mix brain.verify` prints them but
-stays green; per OKF conformance broken links are tolerated, and index
-coverage is ultimately editorial):
+Two advisory warning families (`mix brain.verify` prints them but stays
+green on either — per OKF conformance, broken links are tolerated and a
+wholly absent `index.md` is tolerated too):
 
   1. **Link resolution** — every internal markdown link (`](/abs/path)` or
      `](relative/path)`) in a live doc resolves to a file on disk.
-  2. **Index coverage** — every directory holding `.md` docs has an
-     `index.md`, and every non-reserved doc (and immediate subdirectory)
-     is mentioned in it.
+  2. **Missing index** — a directory holding `.md` docs has no `index.md`
+     at all.
 
-Deliberately exempt, because their content is frozen or placeholder:
+Plus one **hard** check (`unlisted_errors/1`, folded into `mix brain.verify`'s
+pass/fail result): when a directory's `index.md` *does* exist, every
+non-reserved doc and immediate subdirectory in it is mentioned there. OKF
+conformance tolerates an absent index; it says nothing about a stale one,
+and [maintain-reserved-files](/meta/policy/maintain-reserved-files.md)
+already obligates an agent to update the index at filing time — this makes
+that obligation structural instead of editorial.
+
+Deliberately exempt, because their content is frozen, placeholder, or
+foreign:
 
   * `meta/threads/` bodies (frozen verbatim by the capture policy — a broken
     link quoted there is history, not drift);
@@ -402,15 +416,25 @@ Deliberately exempt, because their content is frozen or placeholder:
   * reserved files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) from the
     must-be-listed requirement.
 
+No directory is exempt from the hard check by name. An imported foreign
+corpus (e.g. `meta/evals/cb-eval-export/`, a byte-identical external
+snapshot) still clears it as long as its own parent index links it —
+`unlisted_dirs/4`'s substring match is satisfied by any mention, including
+inside a prose link — and its own subdirectories carry no `index.md` at
+all, which stays the advisory case. `Registry.scan/1` similarly excludes no
+directory by name below `meta/` (itself excluded wholesale, along with a
+handful of tooling/archive directories) — see its moduledoc.
+
 Unlike `Registry.scan/1` this walks the governance namespaces too (`meta/`,
 `inbox/`) — index drift lives exactly where the id gates don't look.
 
 **Functions**
 
-- `check/1` — Run both warning families over the tree rooted at `root`.
+- `check/1` — Run the advisory warning families (link resolution, missing index) over `root`.
 - `doc_paths/1` — All `.md` docs in scope (relative paths), sorted.
 - `internal_targets/1` — Internal markdown link targets in `body`, minus code spans/blocks and external/mailto/anchor/placeholder targets — the same set the resolution check walks. Raw targets (a `#fragment` may still be attached); normalize with `resolve_target/2`.
 - `resolve_target/2` — Normalize an internal link `target` found in `from_path` to a repo-relative path (leading `#fragment` dropped): bundle-absolute targets lose their leading `/`, relative ones resolve against the source doc's directory.
+- `unlisted_errors/1` — Directories whose *existing* `index.md` omits a filed doc or immediate subdirectory — folded into `mix brain.verify`'s pass/fail result. A directory with no `index.md` at all is not a candidate here (that stays the advisory `check/1` case).
 
 
 ### `ElixirMind.Markdown`
@@ -509,9 +533,8 @@ breaks an edge: only the registry view changes.
 Scope: knowledge-bundle concepts only. Governance (`meta/`), skills
 (`.claude/`), tooling (`lib/`, `test/`), the archive (`deprecated/`), the
 candidate feed (`inbox/`), the survey tier (`survey/`), the operator's
-journal (`journal/`), imported eval snapshots (`evals/`), and reserved/root
-files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) are outside the
-registry.
+journal (`journal/`), and reserved/root files (`index.md`, `log.md`,
+`README.md`, `CLAUDE.md`) are outside the registry.
 
 **Functions**
 
@@ -612,10 +635,12 @@ Four sources, all already maintained by existing policy:
     (a `closed` row can still leave deferred work dangling).
 
 Plus, when any exist, the **docs-freshness warnings** from
-`ElixirMind.Links` (unresolved internal links, index-coverage gaps) — the
-digest is the surface an app-based operator actually sees, so advisory
-warnings that would otherwise live only in gate output and CI logs are
-repeated here. The section is omitted entirely when the tree is clean.
+`ElixirMind.Links` (unresolved internal links, directories with no
+`index.md` at all — a stale-but-present index is a hard `mix brain.verify`
+failure now, not an advisory warning here) — the digest is the surface an
+app-based operator actually sees, so advisory warnings that would otherwise
+live only in gate output and CI logs are repeated here. The section is
+omitted entirely when the tree is clean.
 
 The digest ends with a heuristic top-3 priority ranking (issues, then
 in-flight plans, then open todos, then accepted plans, then open strands,
@@ -657,13 +682,32 @@ Like the other `mix brain.*` tools it is **dependency-free** — it reuses
 `ElixirMind.Frontmatter` and `ElixirMind.Markdown` and the standard library
 only, so `mix brain.site` runs offline in CI and any sandbox.
 
+A `type: visualization` document is rendered like any other page, but its
+`launch` artifact — a same-directory sibling `.html`, guaranteed to exist by
+`ElixirMind.Verifier` rule 9 — is additionally copied **verbatim** into the
+matching output directory, unwrapped by the page shell, the same way
+`assets/style.css` and `assets/app.js` are written untouched below. That copy
+is what makes a visualization's "Launch" link resolve on the deployed site
+rather than only in a local checkout.
+
+The copy is written under an `.embed.html` suffix rather than the sibling's
+own name: a source pair `foo.md` + `foo.html` both map to `foo.html` once the
+doc side goes through the usual `.md` → `.html` rename, so the raw artifact
+would silently overwrite its own documentation page on write order alone. The
+rename is site-build-only — the source tree keeps the plain sibling name a
+local `file://` open expects — so a visualization's markdown *source* has its
+`./launch` link target swapped to the renamed copy before rendering, the same
+way an internal `.md` link is swapped to `.html`. Rewriting the source instead
+of the rendered page keeps the change from ever touching the sidebar/
+breadcrumb chrome, which doesn't exist until rendering runs.
+
 All internal links are **relative** (each page carries a `root_prefix` computed
 from its depth), so the site works both at a domain root and under a project
 subpath like `/elixir-mind/` without configuration.
 
 **Functions**
 
-- `build/2` — Build the site from `root` into `out_dir`. Removes and recreates `out_dir`, then writes every page plus `assets/` and `search-index.json`. Returns the number of pages written.
+- `build/2` — Build the site from `root` into `out_dir`. Removes and recreates `out_dir`, then writes every page, each visualization's launch artifact, plus `assets/` and `search-index.json`. Returns the number of pages written.
 - `default_out/0` — Default output directory (relative to repo root).
 
 **Types**
@@ -775,6 +819,16 @@ Rules enforced (each violation is a human-readable error string):
      backfill rule — `from` appears on governance docs only and every ref
      resolves, exempt files carry no attribution, and (once the backfill
      lands) every bundle concept and governance doc carries the field.
+  9. Every `visualization` names its artifact in `launch`, and that artifact
+     exists on disk beside it: a bare `.html` filename, never a path or URL,
+     so the pair travels together and the launch link cannot dangle. The
+     field is an error on any other type — nothing else has an artifact to
+     launch.
+  10. Every directory's *existing* `index.md` lists every doc and immediate
+      subdirectory filed beside it (see `ElixirMind.Links.unlisted_errors/1`).
+      A directory with no `index.md` at all stays advisory (`mix brain.verify`
+      still prints it as a docs-freshness warning, per OKF conformance); this
+      rule only fires once an index exists and has fallen behind.
 
 **Functions**
 
@@ -900,8 +954,10 @@ Verify the glossary layer (see `ElixirMind.Glossary` and the
 [glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)): that
 every term carries a non-empty `description` (its one canonical overview), that
 the index `## Terms` section matches its re-derivation from the term files
-(title-sorted, gloss = description verbatim), and — with a fail/warn split —
-that no body sentence near-restates its entry's description.
+(title-sorted, gloss = description verbatim), that — with a fail/warn split —
+no body sentence near-restates its entry's description, and — warn-only —
+that a term whose `provenance` narrates coining also carries the `coined`
+tag.
 
     mix brain.glossary                # verify; exits non-zero on any failure
     mix brain.glossary --materialize  # regenerate the index `## Terms`
@@ -1072,12 +1128,13 @@ can't judge liveness and falls back to the blob URL at the current branch.
 
 Run the machine checks over the knowledge bundle (see `ElixirMind.Verifier`):
 OKF conformance, stable-id presence/uniqueness/format, `verified_by` edge
-resolution, and grounding of every `verified: true`.
+resolution, grounding of every `verified: true`, and index-listing coverage
+(a directory's *existing* `index.md` must list everything filed beside it).
 
 On a green bundle, also prints advisory docs-freshness warnings (see
-`ElixirMind.Links`): internal links that don't resolve and index-coverage
-gaps. Warnings never fail the task — broken links are tolerated per OKF
-conformance, and index coverage is ultimately editorial.
+`ElixirMind.Links`): internal links that don't resolve, and directories
+with no `index.md` at all. Warnings never fail the task — broken links and
+an absent index are both tolerated per OKF conformance.
 
     mix brain.verify
 

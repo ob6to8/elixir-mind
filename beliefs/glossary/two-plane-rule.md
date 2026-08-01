@@ -5,7 +5,7 @@ title: two-plane rule
 description: An architectural separation between a fast operational plane (ephemeral, high-frequency state — orders, telemetry, queues — living in databases and process state) and a slow epistemic plane (durable, verified beliefs living in the knowledge bundle), with writes to the epistemic plane kept deliberate and low-frequency by policy.
 provenance: "Agent-distilled glossary definition — coined in the dark-factory scenario analysis"
 verified: false
-tags: [glossary, architecture, epistemics, dark-factory]
+tags: [glossary, architecture, epistemics, dark-factory, coined]
 sense: repo
 timestamp: 2026-07-16
 attribution:

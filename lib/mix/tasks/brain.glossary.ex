@@ -6,8 +6,10 @@ defmodule Mix.Tasks.Brain.Glossary do
   [glossary plan](/meta/plans/glossary-single-overview-and-dedup-check.md)): that
   every term carries a non-empty `description` (its one canonical overview), that
   the index `## Terms` section matches its re-derivation from the term files
-  (title-sorted, gloss = description verbatim), and — with a fail/warn split —
-  that no body sentence near-restates its entry's description.
+  (title-sorted, gloss = description verbatim), that — with a fail/warn split —
+  no body sentence near-restates its entry's description, and — warn-only —
+  that a term whose `provenance` narrates coining also carries the `coined`
+  tag.
 
       mix brain.glossary                # verify; exits non-zero on any failure
       mix brain.glossary --materialize  # regenerate the index `## Terms`
@@ -45,7 +47,8 @@ defmodule Mix.Tasks.Brain.Glossary do
         if warns == 0, do: "", else: " (#{warns} warning(s) above — editorial, never failing)"
 
       Mix.shell().info(
-        "\nGlossary verify: descriptions, index sync, and body dedup all check out." <> suffix
+        "\nGlossary verify: descriptions, index sync, body dedup, and coinage marking all " <>
+          "check out." <> suffix
       )
     end
   end

@@ -5,7 +5,7 @@ title: librarian write-broker
 description: A supervised process that solely owns mutation of a knowledge namespace — agents submit proposed concepts as messages, and the librarian runs the intake gauntlet (dedup, verification, grounding checks) and serializes commits, turning concurrent write contention into a mailbox and making integrity checks unbypassable.
 provenance: "Agent-distilled glossary definition — coined in the dark-factory scenario analysis"
 verified: false
-tags: [glossary, architecture, actor-model, intake, write-governance, dark-factory]
+tags: [glossary, architecture, actor-model, intake, write-governance, dark-factory, coined]
 sense: repo
 timestamp: 2026-07-18
 attribution:

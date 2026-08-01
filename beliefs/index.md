@@ -68,6 +68,16 @@ why a *value-laden* belief type escapes the collision that ruled out a
   evaluating is whose judgment stands behind it, staked on a reputation; the
   prior the [human-writing-attribution project](/projects/human-writing-attribution.md)
   operationalizes.
+- [Understanding a decision is not standing to judge it](/beliefs/understanding-is-not-standing-to-judge.md) —
+  an operator who outsourced judgment during design must reconstruct the
+  standing to judge which complexity is incidental and which is load-bearing;
+  comprehension repays one debt, and re-deciding — not re-reading — repays the
+  other. `em:b31b96`
+- [Capability growth relocates agentic risk from model behavior to operator epistemics](/beliefs/capability-growth-relocates-risk-to-operator-epistemics.md) —
+  the realized danger of more capable models is the operator's compounding false
+  assumptions, not model malice: capability invites stripping guidance and
+  verification, and the unverified remainder accumulates as a misaligned mental
+  model of the system. `em:fa6efe`
 
 ## Vocabulary & scratch
 

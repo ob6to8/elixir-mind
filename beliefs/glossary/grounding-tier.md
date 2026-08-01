@@ -10,7 +10,7 @@ attribution:
   channel: glossary
   agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
   why: "the operator's one-abstraction-below generalization, load-bearing in the ratified plan"
-tags: [glossary, documentation, levels, edges, terminology]
+tags: [glossary, documentation, levels, edges, terminology, coined]
 sense: repo
 timestamp: 2026-07-16
 ---

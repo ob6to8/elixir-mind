@@ -23,6 +23,12 @@ defmodule ElixirMind.Glossary do
     * **warn** — moderate containment. Semantic redundancy has no exact
       oracle, so the middle band reports without failing, like the
       routing-ledger coverage warning.
+    * **warn** — a term whose `provenance` narrates coining (the word "coin"
+      in any form: coined, coinage, coining) but whose `tags` omit `coined`.
+      The text match is close to mechanical, but what the tag should *mean*
+      for a term coined by an external source rather than the operator or a
+      repo session is an open editorial question, so this stays warn rather
+      than fail until that's settled.
 
   Generated `## Thread excerpts — route-tagged log` sections, *Seen in:* and
   *See also:* lines are excluded from the repetition check — they are
@@ -65,7 +71,8 @@ defmodule ElixirMind.Glossary do
     [
       description_check(entries),
       index_sync_check(root, entries),
-      repetition_check(entries)
+      repetition_check(entries),
+      coinage_marking_check(entries)
     ]
   end
 
@@ -115,13 +122,24 @@ defmodule ElixirMind.Glossary do
             slug: slug,
             title: fm["title"] || slug,
             description: fm["description"],
+            provenance: fm["provenance"],
+            tags: fm["tags"],
             body: body,
             parsed: true
           }
 
         {:error, _} ->
           # Tolerant consumer: brain.verify owns frontmatter conformance.
-          %{path: rel, slug: slug, title: slug, description: nil, body: "", parsed: false}
+          %{
+            path: rel,
+            slug: slug,
+            title: slug,
+            description: nil,
+            provenance: nil,
+            tags: nil,
+            body: "",
+            parsed: false
+          }
       end
     end)
   end
@@ -286,6 +304,35 @@ defmodule ElixirMind.Glossary do
       word
     end
   end
+
+  # --- check 4: a coined provenance carries the `coined` tag -----------------
+
+  defp coinage_marking_check(entries) do
+    findings =
+      entries
+      |> Enum.filter(&(&1.parsed and mentions_coinage?(&1.provenance)))
+      |> Enum.reject(&tagged_coined?/1)
+      |> Enum.map(& &1.path)
+
+    case findings do
+      [] ->
+        {"coinage marking", :ok,
+         "every term whose `provenance` narrates coining also carries the `coined` tag"}
+
+      paths ->
+        {"coinage marking", :warn,
+         "term(s) whose `provenance` narrates coining but whose `tags` omit `coined` " <>
+           "(editorial — confirm and backfill):\n    " <> Enum.join(paths, "\n    ")}
+    end
+  end
+
+  defp mentions_coinage?(provenance) when is_binary(provenance),
+    do: String.contains?(String.downcase(provenance), "coin")
+
+  defp mentions_coinage?(_), do: false
+
+  defp tagged_coined?(%{tags: tags}) when is_list(tags), do: "coined" in tags
+  defp tagged_coined?(_), do: false
 
   defp format_pct(x), do: "#{round(x * 100)}% contained"
 

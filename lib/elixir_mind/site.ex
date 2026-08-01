@@ -11,6 +11,25 @@ defmodule ElixirMind.Site do
   `ElixirMind.Frontmatter` and `ElixirMind.Markdown` and the standard library
   only, so `mix brain.site` runs offline in CI and any sandbox.
 
+  A `type: visualization` document is rendered like any other page, but its
+  `launch` artifact — a same-directory sibling `.html`, guaranteed to exist by
+  `ElixirMind.Verifier` rule 9 — is additionally copied **verbatim** into the
+  matching output directory, unwrapped by the page shell, the same way
+  `assets/style.css` and `assets/app.js` are written untouched below. That copy
+  is what makes a visualization's "Launch" link resolve on the deployed site
+  rather than only in a local checkout.
+
+  The copy is written under an `.embed.html` suffix rather than the sibling's
+  own name: a source pair `foo.md` + `foo.html` both map to `foo.html` once the
+  doc side goes through the usual `.md` → `.html` rename, so the raw artifact
+  would silently overwrite its own documentation page on write order alone. The
+  rename is site-build-only — the source tree keeps the plain sibling name a
+  local `file://` open expects — so a visualization's markdown *source* has its
+  `./launch` link target swapped to the renamed copy before rendering, the same
+  way an internal `.md` link is swapped to `.html`. Rewriting the source instead
+  of the rendered page keeps the change from ever touching the sidebar/
+  breadcrumb chrome, which doesn't exist until rendering runs.
+
   All internal links are **relative** (each page carries a `root_prefix` computed
   from its depth), so the site works both at a domain root and under a project
   subpath like `/elixir-mind/` without configuration.
@@ -38,8 +57,8 @@ defmodule ElixirMind.Site do
 
   @doc """
   Build the site from `root` into `out_dir`. Removes and recreates `out_dir`,
-  then writes every page plus `assets/` and `search-index.json`. Returns the
-  number of pages written.
+  then writes every page, each visualization's launch artifact, plus `assets/`
+  and `search-index.json`. Returns the number of pages written.
   """
   @spec build(String.t(), String.t()) :: non_neg_integer
   def build(root \\ File.cwd!(), out_dir \\ @default_out) do
@@ -58,6 +77,8 @@ defmodule ElixirMind.Site do
       File.mkdir_p!(Path.dirname(dest))
       File.write!(dest, html)
     end)
+
+    copy_visualization_artifacts(pages, root, out)
 
     File.mkdir_p!(Path.join(out, "assets"))
     File.write!(Path.join(out, "assets/style.css"), css())
@@ -95,7 +116,7 @@ defmodule ElixirMind.Site do
         {:error, _} -> {%{}, raw}
       end
 
-    body = SiteConfig.expand_tokens(body)
+    body = body |> SiteConfig.expand_tokens() |> rewrite_launch_link(fm)
     out = String.replace_suffix(src, ".md", ".html")
     dir = dir_of(src)
     depth = out |> Path.split() |> length() |> Kernel.-(1)
@@ -133,6 +154,42 @@ defmodule ElixirMind.Site do
       true -> :doc
     end
   end
+
+  # --- visualization artifacts ----------------------------------------------
+
+  # The on-site name for a visualization's copied artifact — never the sibling's
+  # own name, which is exactly `page.out` (the doc's rendered page) once `.md`
+  # is swapped for `.html`. Source-tree naming is untouched by this.
+  defp launch_site_name(launch), do: String.replace_suffix(launch, ".html", ".embed.html")
+
+  # A visualization's `launch` sibling is source content, not a rendered page —
+  # Verifier rule 9 already guarantees it exists beside `page.src`, so this is a
+  # plain verbatim copy into the matching output directory, never through
+  # render_page/4 (which would HTML-escape it into an inert page).
+  defp copy_visualization_artifacts(pages, root, out) do
+    pages
+    |> Enum.filter(&(&1.type == "visualization"))
+    |> Enum.each(fn page ->
+      launch = page.fm["launch"]
+      src = Path.join([root, page.dir, launch])
+      dest = Path.join([out, page.dir, launch_site_name(launch)])
+      File.mkdir_p!(Path.dirname(dest))
+      File.cp!(src, dest)
+    end)
+  end
+
+  # Swap a visualization's own `./launch` link target to the renamed on-site
+  # copy, in the *markdown source* — before rendering, so the swap can never
+  # touch sidebar/breadcrumb chrome, which is generated later and doesn't
+  # exist at this point. The source tree's sibling file keeps its plain name
+  # regardless (this never writes back to disk); only this build's in-memory
+  # copy of the body text changes.
+  defp rewrite_launch_link(body, %{"type" => "visualization", "launch" => launch})
+       when is_binary(launch) do
+    String.replace(body, "(./#{launch})", "(./#{launch_site_name(launch)})")
+  end
+
+  defp rewrite_launch_link(body, _fm), do: body
 
   defp title_for(src, fm, body) do
     cond do
