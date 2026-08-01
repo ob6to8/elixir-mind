@@ -37,4 +37,14 @@ deduplicating — because a receiving map overwrites on a repeated key; that is
 same idea under the same name, differing mostly in whether the target container is
 selectable.
 
-*Seen in:* [2026-07-29 Elixir comprehension tutorial thread](/meta/threads/2026-07-29-elixir-comprehension-tutorial.md), [Reading an Elixir comprehension that builds a map](/meta/tutorials/elixir/comprehensions-that-build-maps.md)
+**A bare assignment before `do:` is a filter, not a binding, and this reads as a
+bug in disguise.** `x = expr` is "anything else before `do:`", so it both binds `x`
+*and* discards the row if `expr` is falsy — the same silent-skip behavior the
+generator's pattern match has, but on code that looks like ordinary variable
+assignment. When `expr` can legitimately be `nil` (a map lookup, `get_in`), the
+row vanishes before any later clause written to test for that `nil` ever runs,
+making the intended branch dead code. `Map.get(map, key, sentinel)` with a
+non-falsy [sentinel value](/beliefs/glossary/sentinel-value.md) is the fix: any
+non-`nil`, non-`false` binding survives the implicit filter.
+
+*Seen in:* [2026-07-29 Elixir comprehension tutorial thread](/meta/threads/2026-07-29-elixir-comprehension-tutorial.md), [Reading an Elixir comprehension that builds a map](/meta/tutorials/elixir/comprehensions-that-build-maps.md), [2026-07-31 survey batch, intakes, and the /review-pr skill audit](/meta/threads/2026-07-31-survey-batch-intakes-and-review-pr-skill-audit.md)
