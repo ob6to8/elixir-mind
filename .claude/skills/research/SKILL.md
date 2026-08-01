@@ -10,17 +10,17 @@ about, and write it into today's **inbox digest** — a dated, categorized list 
 candidate links, each with a one-line synopsis and a reason tag — then **auto-intake
 the featured items into the bundle**. The digest is the daily *record* in the
 non-bundle `inbox/` namespace (no `em:` ids); its featured items graduate into filed
-concepts in the same run (§6). This is the standing decision from the
+documents in the same run (§6). This is the standing decision from the
 [auto-intake plan](/meta/plans/auto-intake-featured-research.md): the featuring gates
 (§4) are already the quality filter, so a featured item needs no second human gate —
 the operator's contribution moves from a pre-intake gate to **post-intake editorial**
 (prune, relabel, merge). The digest file itself never acquires an `em:` id; the
-concepts its featured items become do.
+documents its featured items become do.
 
 Read the [operating contract](../../../CLAUDE.md) first. Two rules shape this skill:
 
 - **Links must be processed, not parked** — a bare URL never becomes a bundle
-  concept. `/research` honors this by *processing* every featured item: each is fetched
+  document. `/research` honors this by *processing* every featured item: each is fetched
   and distilled through `/intake` (§6), not parked as a bare link. The only items that
   linger as candidates are those **deferred** for needing a new top-level domain
   (§6) — held in the digest until the operator ratifies the shape.
@@ -44,10 +44,10 @@ convention. Previous days are **never rewritten** — they persist as the archiv
 
 ### 1. Build the query profile from the taxonomy
 - Read the root `index.md`, then each top-level domain's `index.md`, and skim the
-  concept titles/tags under each (Grep/Glob over `*.md`, excluding `deprecated/`
+  document titles/tags under each (Grep/Glob over `*.md`, excluding `deprecated/`
   and `inbox/`). This yields, per domain, a set of interest signals — the topics
-  the brain actively tracks and the specific concepts it has already filed.
-- Note the `em:` ids and titles of recent/high-signal concepts so items can
+  the brain actively tracks and the specific documents it has already filed.
+- Note the `em:` ids and titles of recent/high-signal documents so items can
   back-link to what they extend or challenge (e.g. a new margin datapoint relates
   to an existing margin-collapse `reference`).
 
@@ -76,7 +76,7 @@ An item is **featured** only if it clears every gate below. This is the selectio
 contract — the reason a candidate makes today's digest or gets dropped:
 
 1. **Relevance** — it maps to a domain's interest signals (a topic the brain
-   actively tracks, or a concept it has already filed). No mapping ⇒ not featured,
+   actively tracks, or a document it has already filed). No mapping ⇒ not featured,
    however interesting in the abstract. The taxonomy is the filter.
 2. **Novelty** — it survives both dedup passes (§3): not already in the bundle, and
    not already surfaced in a recent digest (unless it's a genuinely new
@@ -117,7 +117,7 @@ are moving relative to what the brain already tracks*. See the design record in
 - **A perspective, not a re-listing.** 1–3 tight paragraphs. Never restate the item
   synopses — those live in the domain sections below. The read is the layer *above*
   them: the trend, tension, or throughline.
-- **Grounded in `em:` ids.** Name the standing concepts the day bears on
+- **Grounded in `em:` ids.** Name the standing documents the day bears on
   (`em:07610c`, `em:2867ac`, …) so the synthesis is anchored to the actual taxonomy,
   not free-floating commentary. Say whether today's items **reinforce, contest, or
   extend** those filed positions — that *is* the intake-relevant signal.
@@ -141,14 +141,14 @@ are moving relative to what the brain already tracks*. See the design record in
   - the reason tag(s) as inline `` `code` `` badges, then a one-to-two-line
     synopsis of *what it is and why it matters*;
   - a `→ would file under /<kb-path>/` filing hint, and `· relates to em:xxxxxx`
-    when it extends/challenges an existing concept.
+    when it extends/challenges an existing document.
 - Keep synopses distilled — enough to decide intake-or-skip at a glance.
 
 ### 6. Auto-intake the featured items
 Once today's digest is written, **file each featured item into the bundle** by
 running [`/intake`](../intake/SKILL.md) on it. Auto-intake runs on **featured items
 only** — never the ones the quality-over-volume cap dropped, so the cap (§4) is also
-the volume knob on how many concepts a run files.
+the volume knob on how many documents a run files.
 
 For each featured item, in digest order:
 
@@ -158,9 +158,9 @@ For each featured item, in digest order:
   file → mint id → registry → verify. You inherit that dedup and its automatic
   gold-harvest for free — do not re-implement either here.
 - **Prefer update-in-place on a `relates to em:` hint.** When an item carries one,
-  that related concept is intake's dedup target: **update it in place** rather than
+  that related document is intake's dedup target: **update it in place** rather than
   filing a sibling — *unless* the item is a genuinely distinct matter (a contrasting
-  datapoint, not a continuation), which earns its own concept. This keeps
+  datapoint, not a continuation), which earns its own document. This keeps
   [residual fragmentation](/beliefs/glossary/residual-fragmentation.md) small.
 - **Stay inside the known tree — defer, don't propose.** A featured item files
   autonomously into an existing domain (new *subdirectories* under an established
@@ -169,7 +169,7 @@ For each featured item, in digest order:
   `⏸ deferred → needs new top-level domain, awaiting ratification`, and surface it in
   the report. Auto-intake never creates top-level shape — that stays the operator's
   to ratify (taxonomy-evolution protocol).
-- **Attribute what you file.** Every filed/merged-into concept carries an
+- **Attribute what you file.** Every filed/merged-into document carries an
   `attribution` block with `channel: auto-intake` (new files get the full event;
   merges never touch the existing attribution — the event sub-keys are immutable):
 
@@ -182,7 +182,7 @@ For each featured item, in digest order:
   ```
 
   The `why` is the featuring rationale — the digest's category match and reason-tag,
-  landed on the concept itself. The whole auto-filed set — the operator's editorial
+  landed on the document itself. The whole auto-filed set — the operator's editorial
   queue — is the `channel: auto-intake` slice (`mix brain.attribution --channel
   auto-intake`). Do **not** add an `auto-intake` tag; the retired tag's job now
   lives in `attribution.channel`.
@@ -191,7 +191,7 @@ For each featured item, in digest order:
   silently — correct; don't force a synthetic row.
 
 Then **mark each featured digest line** with its outcome, in place: `✓ auto-intaken
-→ /path/to/concept.md` (new file), `✓ merged → /path` (updated in place), or
+→ /path/to/doc.md` (new file), `✓ merged → /path` (updated in place), or
 `⏸ deferred → …`. This is today's digest, written this same run — not a past one —
 so annotating it is not the immutability exception.
 
@@ -203,7 +203,7 @@ so annotating it is not the immutability exception.
 ### 8. Report
 - One-line summary: how many items across which domains, and the path to today's
   digest.
-- **The auto-intake outcome**: how many concepts were newly filed vs. merged in
+- **The auto-intake outcome**: how many documents were newly filed vs. merged in
   place vs. deferred, with the deferred items called out (they await your
   ratification of a new top-level domain). Note any **dedup-recall regression**
   bubbled up from an intake run.
@@ -211,7 +211,7 @@ so annotating it is not the immutability exception.
 ## The intake handoff
 
 Featured items are filed automatically (§6); the operator's role is the
-**editorial pass afterward** — review the `channel: auto-intake` concepts, merge any
+**editorial pass afterward** — review the `channel: auto-intake` documents, merge any
 residual duplicates, relabel, or reject. Two manual paths remain: **ratify a
 deferred item** (approve the new top-level domain, then it files), and **`/intake` a
 non-featured link** the operator wants filed by hand. When marking a *past* digest's
@@ -222,7 +222,7 @@ to digest immutability.
 - The **digest** is not the bundle: it stays under `inbox/` with no `em:` id and no
   `verified` field. Auto-intake (§6) is the only thing that writes into the bundle,
   and it does so through `/intake` (which mints ids and runs the gates) — never by
-  `/research` filing a concept directly.
+  `/research` filing a document directly.
 - Distill synopses; never dump full articles into the digest — that's what
   `/intake` is for (and §6 hands it the URL, not the synopsis).
 - **Auto-intake is bounded to featured items and the known tree.** Never file a

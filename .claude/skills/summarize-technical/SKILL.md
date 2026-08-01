@@ -9,8 +9,8 @@ Turn a technical source into three ordered sections that build on each other, so
 a reader with no background in the subfield can follow the plain-language version
 and come out the other side able to read the technical one fluently.
 
-The pasted material, attached file, or referenced concept is the **input**. If
-nothing was given, ask the operator which paper/article/concept to break down.
+The pasted material, attached file, or referenced document is the **input**. If
+nothing was given, ask the operator which paper/article/document to break down.
 
 ## The three-part structure
 
@@ -55,8 +55,8 @@ exist to close.
 1. **Gather the material.** Read the pasted text, fetch the URL, or read the
    attached file (for PDFs, use the `pages` parameter in batches — see the
    `/intake` skill for the same pattern). If the operator points at an
-   already-filed OKF concept (by title, path, or `resource` URL), read that
-   concept file as the source of truth for what's already been distilled.
+   already-filed OKF document (by title, path, or `resource` URL), read that
+   file as the source of truth for what's already been distilled.
 2. **Identify the source's real technical vocabulary** before writing section 1
    — skim for named methods, metrics, coined terms, and notation. This list
    becomes the candidate glossary; only draft section 1's plain-language account
@@ -67,18 +67,18 @@ exist to close.
    secretly just as jargon-dependent, defeating the point.
 4. **Where this output goes:**
    - If the source is an **already-filed bundle reference/source/concept**,
-     integrate the three-part structure into that concept's body — this
+     integrate the three-part structure into that document's body — this
      supersedes (don't append alongside) whatever distilled prose was there
      before, per the [operating contract](../../../CLAUDE.md)'s update-in-place
      rule. Keep the frontmatter (`id`, `type`, `resource`, etc.) unchanged except
      bumping `timestamp`; keep any existing `# Citations` section at the end, and
-     preserve cross-links to other concepts if they're still relevant to the new
+     preserve cross-links to other documents if they're still relevant to the new
      prose. The commit message records what changed and why.
    - If the source is **not yet in the bundle**, this skill's output is fine as
      plain chat output — nothing requires filing it. If the operator wants it
      captured afterward, that's a separate `/intake` invocation (the three-part
      structure travels naturally into a `reference`'s body).
-5. **Verify before committing** (only applies when a bundle concept was
+5. **Verify before committing** (only applies when a bundle document was
    touched): `mix brain.verify`, and if ids/registry are affected,
    `mix brain.id && mix brain.registry`.
 
@@ -92,6 +92,6 @@ exist to close.
 - Capture the knowledge, don't transcribe: this is not a transcription of the
   source's abstract and conclusion sections back-to-back. Write all three sections from understanding,
   the same way `/intake` distills rather than copies.
-- When updating an existing bundle concept, don't fragment — this replaces that
-  concept's distilled body, it doesn't create a sibling "breakdown" file for the
+- When updating an existing bundle document, don't fragment — this replaces that
+  document's distilled body, it doesn't create a sibling "breakdown" file for the
   same source.

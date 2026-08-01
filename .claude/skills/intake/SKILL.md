@@ -1,12 +1,12 @@
 ---
 name: intake
-description: Process pasted content (text, links, notes, clippings) into one or more distilled OKF concept documents, filed into the correct directory of the second brain. Use whenever the operator pastes material after /intake, or asks to "capture", "file", "save this to the brain", or "intake" something.
+description: Process pasted content (text, links, notes, clippings) into one or more distilled OKF documents, filed into the correct directory of the second brain. Use whenever the operator pastes material after /intake, or asks to "capture", "file", "save this to the brain", or "intake" something.
 ---
 
 # /intake — capture into the second brain
 
 Turn whatever the operator pasted after the invocation into properly-filed
-[OKF](../../../CLAUDE.md) concept document(s). Follow the
+[OKF](../../../CLAUDE.md) document(s). Follow the
 [operating contract](../../../CLAUDE.md) — especially the taxonomy-evolution
 protocol and the controlled `type` vocabulary.
 
@@ -55,18 +55,18 @@ they want to capture.
     "Not on the docs site" is a finding; "does not exist" needs an enumerated
     search space.
 
-### 2. Segment into concepts
-- Decide whether the paste is **one concept or several**. If it covers distinct
+### 2. Segment into documents
+- Decide whether the paste is **one document or several**. If it covers distinct
   things (e.g. three unrelated articles, or a person + a project), split it into
-  multiple concept documents. Otherwise, one paste = one concept.
+  multiple documents. Otherwise, one paste = one document.
 
-For **each** concept:
+For **each** document:
 
 ### 3. Dedup — synonym-expanded search before writing
 Vocabulary mismatch, not typos, is what makes dedup miss: a note titled "poisoning"
 is invisible to a search for "pollution" (measured — run `mix brain.dedup_probe`).
 So don't search only the obvious title words.
-- **Generate 3–5 alternate phrasings** of the concept first: title terms **plus**
+- **Generate 3–5 alternate phrasings** of the document first: title terms **plus**
   synonyms, jargon/plain-language variants, acronyms and their expansions, and the
   words someone who *didn't* write the note would use (e.g. "context pollution" ↔
   "context poisoning"; "stale branch" ↔ "branch doesn't auto-advance on fetch";
@@ -84,7 +84,7 @@ So don't search only the obvious title words.
 > `--expanded` mode of the [dedup probe](/meta/evals/dedup-probe.md).
 
 ### 4. Distill
-- Write a clean concept, not a raw dump:
+- Write a clean document, not a raw dump:
   - `title`: human-readable name.
   - `description`: one sentence.
   - `type`: pick from the controlled vocabulary in the operating contract. If nothing
@@ -113,7 +113,7 @@ So don't search only the obvious title words.
   - Body: distilled prose. Use conventional headings where helpful
     (`# Schema`, `# Examples`, `# Citations`). Keep raw source material under
     `# Citations` or as the `resource` link — not as the whole body.
-  - **Technical sources → layered breakdown.** When the concept captures a
+  - **Technical sources → layered breakdown.** When the document captures a
     technical paper, article, or spec substantial enough to warrant it (typically
     a `reference` or `source`), build the body with
     **[`/summarize-technical`](../summarize-technical/SKILL.md)** instead of flat
@@ -121,7 +121,7 @@ So don't search only the obvious title words.
     technical summary) *is* the distilled body. Invoke it as this step's distill
     action, then continue to the directory/write steps below. Skip it for short
     notes, snippets, people, and projects, where plain distilled prose is right.
-  - Cross-link related existing concepts with bundle-absolute markdown links (`/…`).
+  - Cross-link related existing documents with bundle-absolute markdown links (`/…`).
 
 ### 5. Choose the directory (taxonomy protocol)
 - **Fits an existing directory →** file it there **autonomously**.
@@ -132,7 +132,7 @@ So don't search only the obvious title words.
   that's how the taxonomy bootstraps.)
 
 ### 6. Write the file
-- Filename: kebab-case slug of the title (`some-concept.md`). Use a `YYYY-MM-DD-`
+- Filename: kebab-case slug of the title (`some-topic.md`). Use a `YYYY-MM-DD-`
   prefix **only** for inherently time-ordered/journal entries.
 - Write valid frontmatter (mandatory non-empty `type`) + distilled body.
 - **Mint a stable id** and refresh the compiled registry:
@@ -141,7 +141,7 @@ So don't search only the obvious title words.
 
 ### 7. Maintain reserved files
 - Update the directory's `index.md` (create it if missing): add a bulleted link to
-  the new/updated concept with its one-line description.
+  the new/updated document with its one-line description.
 - If a new top-level directory was created, add it to the bundle-root `index.md`.
 - No log entries — the commit message records what was filed and why.
 
@@ -152,7 +152,7 @@ This runs on **every** intake; the operator does nothing. See the gold doc's
   material (the operator's own words: their request text, a subject line, how they
   described it), append one row to the `## Gold set` table in
   [`/meta/evals/dedup-probe.md`](/meta/evals/dedup-probe.md):
-  `| <that phrasing> | <filed/merged concept's em: id> | target | <2–3 synonym variants> | harvested at intake YYYY-MM-DD |`.
+  `| <that phrasing> | <filed/merged document's em: id> | target | <2–3 synonym variants> | harvested at intake YYYY-MM-DD |`.
   Use the operator's **actual** phrasing as the query — never a synthetic paraphrase.
   If the intake was a bare URL/paste with **no natural phrasing to harvest**, skip
   this silently; don't invent a query.
@@ -161,11 +161,11 @@ This runs on **every** intake; the operator does nothing. See the gold doc's
 - **Escalate only on regression** — if that run's **plain** recall dropped below the
   previous baseline, flag it in your report (step 9). A sustained drop is the trigger
   to adopt tier-2 embedding dedup — the one call that's the operator's. Otherwise say
-  nothing about it. Commit the gold-row + baseline change together with the concept.
+  nothing about it. Commit the gold-row + baseline change together with the document.
 
 ### 9. Report
 Summarize concisely:
-- Each concept written or updated, with its path and `type`.
+- Each document written or updated, with its path and `type`.
 - Any links fetched (and which were summarized vs. captured in full).
 - **Anything awaiting operator ratification** (a proposed new directory or type) —
   surface this clearly and don't create it until approved.
@@ -174,7 +174,7 @@ Summarize concisely:
 ## Guardrails
 - Capture the knowledge, cite the source. Update in place, don't fragment.
 - Never create a new directory or a new `type` without operator ratification.
-- Keep every concept OKF-conformant: parseable frontmatter, non-empty `type`.
+- Keep every document OKF-conformant: parseable frontmatter, non-empty `type`.
 - Never touch `deprecated/`.
 
 ## See also

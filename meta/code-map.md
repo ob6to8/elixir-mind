@@ -63,7 +63,7 @@ sees one snapshot, not a diff) — git review is the safety net.
 - `bundle_errors/4` — Attribution errors for one bundle concept (a `Registry.Entry`). Pass `presence: true` to require the field (the post-backfill regime).
 - `channels/0`
 - `governance_errors/3` — All attribution errors for the governance namespace, given the bundle's id index (for `from` ref resolution). Pass `presence: true` to also require `attribution` on every governance doc (the post-backfill regime).
-- `governance_paths/1` — All governance-side `.md` paths (relative), partitioned into `%{governance: [...], exempt: [...]}`. Governance docs live under `meta/`; exempt files are thread docs, `inbox/` digests, the `survey/` tier (bookmark registers), the `journal/` tier (dated operator entries), `index.md` listings, and generated artifacts (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`, `meta/dev-history.md`).
+- `governance_paths/1` — All governance-side `.md` paths (relative), partitioned into `%{governance: [...], exempt: [...]}`. Governance docs live under `meta/`; exempt files are thread docs, `inbox/` digests, the `survey/` tier (bookmark registers), the `journal/` tier (dated operator entries), `index.md` listings, and generated artifacts (`meta/registry.md`, `meta/preamble.md`, `meta/flows/lineage.md`).
 - `list/2` — List every attributed doc as a row map (`path`/`id`/`when`/`channel`/ `agent`/`why`/`from`), newest first. Options:
 - `presence_enforced?/0`
 - `warnings/1` — Advisory warnings (never fail the gate): ratification-flow governance docs (plan/analysis/elaboration/issue) whose `attribution` lacks a `from` back-link to the thread or doc they were extracted from.
@@ -1027,9 +1027,9 @@ Compile the registry view from the canonical per-file `id:` frontmatter.
 
 Verify the route-tagging layer (see `ElixirMind.RouteTags` and
 `meta/policy/route-tagging.md`): `<routes ref="...">` tag wellformedness, ref
-resolution, that every tagged concept sink carries its dated block, that each
+resolution, that every tagged document sink carries its dated block, that each
 block matches its re-derivation from the current tags, and — at warn level —
-that every concept-routed routing-ledger row is covered by a tag.
+that every document-routed routing-ledger row is covered by a tag.
 
     mix brain.route_tags              # verify; exits non-zero on any failure
     mix brain.route_tags --materialize  # project tags into sinks (write fed

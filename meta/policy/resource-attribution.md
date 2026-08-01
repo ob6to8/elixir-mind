@@ -54,7 +54,9 @@ attribution:
   `elaboration`, `issue`; permitted absent only where no source doc exists).
   Exempt — and it is an **error** for them to carry `attribution`: thread docs
   (they *are* the session record; `pr:` is their anchor), `inbox/` digests
-  (dated and self-describing by construction), and generated artifacts
+  (dated and self-describing by construction), the `survey/` tier (bookmark
+  registers) and the `journal/` tier (dated operator entries, both
+  self-describing by construction like `inbox/`), and generated artifacts
   (`CLAUDE.md`, `meta/registry.md`, `index.md` listings).
 - **Machine-enforced.** `mix brain.verify` checks shape (parseable map, valid
   `when`/`channel`, non-empty `agent`, `why` per the backfill rule), `from` ref

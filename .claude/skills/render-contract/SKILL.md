@@ -43,10 +43,9 @@ scenario test that pins the spine — is narrated in
   policy docs instead.
 - To change a rule, edit its `meta/policy/<id>.md`, or add a new one with the correct
   `section` and `order`, then recompile. The **authoritative section list is the
-  ordered `@sections` in `lib/elixir_mind/contract.ex`** (as of 2026-07-11:
-  composition, directory-structure, filing, type-vocabulary, verification,
-  conformance, skills, session-workflow, git-workflow) — a policy naming any other
-  section fails the compile, so check the code, not this list, when in doubt.
+  ordered `@sections` in `lib/elixir_mind/contract.ex`** — a policy naming any other
+  section fails the compile. Read the code for the current list; it changes
+  independently of this skill doc, so no copy of it is kept here.
 - Adding a genuinely new contract *section* is a compiler change: add
   `{key, heading}` to `@sections` in `lib/elixir_mind/contract.ex` at the position
   it should render, then recompile.
