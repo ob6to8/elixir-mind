@@ -29,9 +29,14 @@ defmodule ElixirMind.Verifier do
        backfill rule — `from` appears on governance docs only and every ref
        resolves, exempt files carry no attribution, and (once the backfill
        lands) every bundle concept and governance doc carries the field.
+    9. Every directory's *existing* `index.md` lists every doc and immediate
+       subdirectory filed beside it (see `ElixirMind.Links.unlisted_errors/1`).
+       A directory with no `index.md` at all stays advisory (`mix brain.verify`
+       still prints it as a docs-freshness warning, per OKF conformance); this
+       rule only fires once an index exists and has fallen behind.
   """
 
-  alias ElixirMind.{Attribution, Registry}
+  alias ElixirMind.{Attribution, Links, Registry}
 
   @statement_types ~w(claim note concept)
   @glossary_dir "beliefs/glossary/"
@@ -51,7 +56,8 @@ defmodule ElixirMind.Verifier do
             grounding_errors(e) ++
             sense_errors(e) ++ Attribution.bundle_errors(e, by_id, root, opts)
         end) ++
-        Attribution.governance_errors(root, by_id, opts)
+        Attribution.governance_errors(root, by_id, opts) ++
+        Links.unlisted_errors(root)
 
     if errors == [], do: :ok, else: {:error, errors}
   end

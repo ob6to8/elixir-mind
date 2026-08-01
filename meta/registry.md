@@ -309,6 +309,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:4b5735` | [beliefs/glossary/llama-cpp](/beliefs/glossary/llama-cpp.md) | concept | false |
 | `em:7ecfb6` | [beliefs/glossary/llm-as-judge](/beliefs/glossary/llm-as-judge.md) | concept | false |
 | `em:27ea1b` | [beliefs/glossary/llm-gateway](/beliefs/glossary/llm-gateway.md) | concept | false |
+| `em:343006` | [beliefs/glossary/llm-wiki](/beliefs/glossary/llm-wiki.md) | concept | false |
 | `em:63b4cd` | [beliefs/glossary/llms-txt](/beliefs/glossary/llms-txt.md) | concept | false |
 | `em:d70706` | [beliefs/glossary/llvm](/beliefs/glossary/llvm.md) | concept | false |
 | `em:6a6b46` | [beliefs/glossary/lockfile](/beliefs/glossary/lockfile.md) | concept | false |
@@ -512,6 +513,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f5710f` | [beliefs/glossary/teleport](/beliefs/glossary/teleport.md) | concept | false |
 | `em:d2fd32` | [beliefs/glossary/terminal-emulator](/beliefs/glossary/terminal-emulator.md) | concept | false |
 | `em:3a30cd` | [beliefs/glossary/terminal-multiplexer](/beliefs/glossary/terminal-multiplexer.md) | concept | false |
+| `em:acddb7` | [beliefs/glossary/terse](/beliefs/glossary/terse.md) | concept | false |
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
 | `em:a2a2bb` | [beliefs/glossary/text-space-optimization](/beliefs/glossary/text-space-optimization.md) | concept | false |
 | `em:a9efbd` | [beliefs/glossary/textual-learning-rate](/beliefs/glossary/textual-learning-rate.md) | concept | false |

@@ -89,11 +89,20 @@ over each entry, accumulating human-readable error strings:
 | **grounding — capture** | a concept with a `resource` (a capture) may not be `verified: true` |
 | **grounding — evidence** | `verified: true` requires a non-empty `verified_by` |
 
-`run/1` returns `:ok` or `{:error, errors}` (the scan errors prepended). The
-takeaway: the verifier is the registry's scan **plus a validation pass**. It adds
-no new files to look at — it adds *judgments* about the files the registry
-already found. This is why `mix brain.verify` never trips over a policy, a
-thread, or a test fixture: none of them were ever in the corpus.
+`run/1` returns `:ok` or `{:error, errors}` (the scan errors prepended). Every
+rule above is the registry's scan **plus a validation pass** — no new files, only
+*judgments* about the files the registry already found.
+
+One rule breaks that pattern: **index-listing coverage**
+(`ElixirMind.Links.unlisted_errors/1` — a directory's *existing* `index.md`
+must list every doc and subdirectory filed beside it, `evals/` excepted). It
+does open a second door, the way RouteTags does below — `Links.doc_paths/1` is
+its own wildcard-plus-exclusion walk, scoped differently from the registry's
+(it *includes* `meta/` and `inbox/`, which the registry excludes as
+non-bundle namespaces, and stays out of `test/`/`deprecated/` like the
+registry does). So `mix brain.verify` still never trips over a fabricated id
+under `test/` — but it does now judge a stale `meta/plans/index.md` the same
+as a stale `knowledge/` one.
 
 ## Scanner 3: RouteTags — a second surface, bridged by id
 
@@ -132,24 +141,30 @@ the current tags so the log stays a derivation, never a hand-kept copy.
 ```
               Path.wildcard + exclusion filter + frontmatter parse
                               │
-                    Registry.scan/1  ◄─────────────── the one crawler
+                    Registry.scan/1  ◄─────────────── the base crawler
                      /            \
             Verifier.run/1     RouteTags.run_checks/1
          (rules over the       (adds meta/threads as a
-          same corpus)          second surface; joins the
-                                two namespaces by id)
+          same corpus, plus     second surface; joins the
+          Links.doc_paths/1     two namespaces by id)
+          for index coverage)
 ```
 
-`Registry.scan/1` is the trunk; the verifier is a rule layer with no new inputs;
-RouteTags is the only tool that opens a second door (into `meta/threads`) and
-then walks back through the registry to resolve what it found.
+`Registry.scan/1` is the trunk every tool starts from; the verifier is mostly a
+rule layer with no new inputs, plus the one index-coverage rule that walks
+`Links.doc_paths/1` instead; RouteTags opens its own second door (into
+`meta/threads`) and then walks back through the registry to resolve what it
+found.
 
 ## A practical consequence
 
-Because all three ultimately gate on the same exclusion filter, **anything under
-an excluded directory is invisible to the whole toolchain.** Put a markdown file
-with a fabricated `em:` id under `test/`, and `mix brain.registry`,
-`mix brain.verify`, and `mix brain.route_tags` all sail past it: `test` is on the
+`test/` and `deprecated/` sit on every tool's exclusion list — the registry's,
+`Links.doc_paths/1`'s, and RouteTags' thread glob alike — so **anything under
+one of those is invisible to the whole toolchain, even though the lists
+otherwise differ** (`Links` walks `meta/` and `inbox/`; the registry doesn't).
+Put a markdown file with a fabricated `em:` id under `test/`, and `mix
+brain.registry`, `mix brain.verify`, and `mix brain.route_tags` all sail past
+it: `test` is on the
 exclusion list, the verifier scans through the registry, and RouteTags only reads
 threads from `meta/threads`. That is precisely what makes on-disk scenario
 fixtures safe — they can carry whatever frontmatter a realistic input needs
@@ -157,8 +172,9 @@ without colliding with the live identity layer.
 
 ## In one sentence
 
-There is one bundle scanner — `Registry.scan/1`, a wildcard-plus-exclusion crawl
-that enumerates knowledge concepts — and the verifier layers rules over its
-output while RouteTags adds a second read over `meta/threads` and rejoins the two
-namespaces by stable id; everything an excluded directory holds is, by
-construction, beneath all three.
+There is one base bundle scanner — `Registry.scan/1`, a wildcard-plus-exclusion
+crawl that enumerates knowledge concepts — and the verifier layers rules over its
+output (plus one index-coverage rule reading `Links.doc_paths/1`'s
+governance-inclusive walk instead) while RouteTags adds a second read over
+`meta/threads` and rejoins the two namespaces by stable id; everything each
+tool's own exclusion list drops is, by construction, invisible to it.

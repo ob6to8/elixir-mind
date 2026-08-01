@@ -42,7 +42,7 @@ sandbox.
 | 5 | `mix brain.contract --check` | freshness | `CLAUDE.md` matches its policy sources |
 | 6 | `mix brain.registry --check` | freshness | `meta/registry.md` matches the on-disk ids |
 | 7 | `mix brain.codemap --check` | freshness | `meta/code-map.md` matches the `lib/` docstrings |
-| 8 | `mix brain.verify` | validation | ids, evidence edges, and grounding all hold |
+| 8 | `mix brain.verify` | validation | ids, evidence edges, grounding, and index-listing coverage all hold |
 | 9 | `mix brain.route_tags` | validation | route tags resolve and sink logs are faithful |
 | 10 | `mix brain.site` | build-artifact | the static site renders without error |
 
@@ -75,12 +75,15 @@ is enough to know what turns them red:
 
 - `mix brain.verify` fails on a malformed or duplicate `em:` id, a `verified_by`
   edge pointing at an id that doesn't exist, a capture (a concept with a
-  `resource`) marked `verified: true`, or a `verified: true` statement with no
-  `verified_by`. On a green bundle it additionally prints **advisory
-  docs-freshness warnings** (`ElixirMind.Links`): internal links that don't
-  resolve and index-coverage gaps. These never turn the gate red — broken links
-  are tolerated per OKF conformance and index coverage is ultimately
-  editorial — but a warning in the output is a prompt to fix the drift in the
+  `resource`) marked `verified: true`, a `verified: true` statement with no
+  `verified_by`, **or a directory whose existing `index.md` omits a doc or
+  subdirectory filed beside it** (`ElixirMind.Links.unlisted_errors/1` —
+  `evals/` excepted, an imported snapshot corpus outside the taxonomy). On a
+  green bundle it additionally prints **advisory docs-freshness warnings**
+  (`ElixirMind.Links.check/1`): internal links that don't resolve, and
+  directories with no `index.md` at all. These never turn the gate red —
+  broken links and a wholly absent index are both tolerated per OKF
+  conformance — but a warning in the output is a prompt to fix the drift in the
   same change. Frozen thread bodies, materialized excerpt logs, code spans, and
   `…` placeholders are exempt.
 - `mix brain.route_tags` fails on a malformed `<routes ref="…">` tag, a ref that

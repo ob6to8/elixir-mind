@@ -1,18 +1,26 @@
 defmodule ElixirMind.Links do
   @moduledoc """
-  Advisory docs-freshness checks: internal-link resolution and index coverage.
+  Docs-freshness checks: internal-link resolution and index coverage.
 
-  Two warning families (never errors — `mix brain.verify` prints them but
-  stays green; per OKF conformance broken links are tolerated, and index
-  coverage is ultimately editorial):
+  Two advisory warning families (`mix brain.verify` prints them but stays
+  green on either — per OKF conformance, broken links are tolerated and a
+  wholly absent `index.md` is tolerated too):
 
     1. **Link resolution** — every internal markdown link (`](/abs/path)` or
        `](relative/path)`) in a live doc resolves to a file on disk.
-    2. **Index coverage** — every directory holding `.md` docs has an
-       `index.md`, and every non-reserved doc (and immediate subdirectory)
-       is mentioned in it.
+    2. **Missing index** — a directory holding `.md` docs has no `index.md`
+       at all.
 
-  Deliberately exempt, because their content is frozen or placeholder:
+  Plus one **hard** check (`unlisted_errors/1`, folded into `mix brain.verify`'s
+  pass/fail result): when a directory's `index.md` *does* exist, every
+  non-reserved doc and immediate subdirectory in it is mentioned there. OKF
+  conformance tolerates an absent index; it says nothing about a stale one,
+  and [maintain-reserved-files](/meta/policy/maintain-reserved-files.md)
+  already obligates an agent to update the index at filing time — this makes
+  that obligation structural instead of editorial.
+
+  Deliberately exempt, because their content is frozen, placeholder, or
+  foreign:
 
     * `meta/threads/` bodies (frozen verbatim by the capture policy — a broken
       link quoted there is history, not drift);
@@ -22,22 +30,26 @@ defmodule ElixirMind.Links do
       external targets (`scheme://`, `mailto:`, pure `#anchor`s);
     * code spans and fenced code blocks (literal text, not rendered links);
     * reserved files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) from the
-      must-be-listed requirement.
+      must-be-listed requirement;
+    * `evals/` from the hard check only — an imported eval-snapshot corpus
+      with its own README/LICENSE, outside the taxonomy (mirrors
+      `Registry`'s existing exclusion of the same directory).
 
   Unlike `Registry.scan/1` this walks the governance namespaces too (`meta/`,
   `inbox/`) — index drift lives exactly where the id gates don't look.
   """
 
   @excluded_dirs ~w(.git .github .githooks .claude _build deps tmp lib test deprecated)
+  @hard_excluded_dirs ~w(evals)
   @reserved_files ~w(index.md log.md README.md CLAUDE.md)
   @frozen_dirs ~w(meta/threads)
   @excerpt_heading "## Thread excerpts — route-tagged log"
 
-  @doc "Run both warning families over the tree rooted at `root`."
+  @doc "Run the advisory warning families (link resolution, missing index) over `root`."
   @spec check(String.t()) :: [String.t()]
   def check(root \\ File.cwd!()) do
     paths = doc_paths(root)
-    link_warnings(paths, root) ++ index_warnings(paths, root)
+    link_warnings(paths, root) ++ missing_index_warnings(paths)
   end
 
   @doc "All `.md` docs in scope (relative paths), sorted."
@@ -125,9 +137,29 @@ defmodule ElixirMind.Links do
     File.exists?(Path.join(root, resolve_target(target, from_path)))
   end
 
-  # --- index coverage --------------------------------------------------------
+  # --- missing index (advisory) -----------------------------------------------
 
-  defp index_warnings(paths, root) do
+  defp missing_index_warnings(paths) do
+    by_dir = Enum.group_by(paths, &Path.dirname/1)
+
+    by_dir
+    |> Enum.sort()
+    |> Enum.reject(fn {_dir, files} -> "index.md" in Enum.map(files, &Path.basename/1) end)
+    |> Enum.map(fn {dir, _files} -> "#{dir}: holds docs but has no index.md" end)
+  end
+
+  # --- index coverage (hard) --------------------------------------------------
+
+  @doc """
+  Directories whose *existing* `index.md` omits a filed doc or immediate
+  subdirectory — folded into `mix brain.verify`'s pass/fail result. A
+  directory with no `index.md` at all is not a candidate here (that stays
+  the advisory `check/1` case); `evals/` is out of scope entirely (see
+  moduledoc).
+  """
+  @spec unlisted_errors(String.t()) :: [String.t()]
+  def unlisted_errors(root \\ File.cwd!()) do
+    paths = doc_paths(root) |> Enum.reject(&hard_excluded?/1)
     by_dir = Enum.group_by(paths, &Path.dirname/1)
 
     Enum.flat_map(Enum.sort(by_dir), fn {dir, files} ->
@@ -140,10 +172,12 @@ defmodule ElixirMind.Links do
         unlisted_files(index_rel, content, basenames) ++
           unlisted_dirs(index_rel, content, dir, by_dir)
       else
-        ["#{dir}: holds docs but has no index.md"]
+        []
       end
     end)
   end
+
+  defp hard_excluded?(path), do: hd(Path.split(path)) in @hard_excluded_dirs
 
   defp unlisted_files(index_rel, content, basenames) do
     basenames

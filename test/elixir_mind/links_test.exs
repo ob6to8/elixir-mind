@@ -93,31 +93,14 @@ defmodule ElixirMind.LinksTest do
     assert Links.check(dir) == []
   end
 
-  # --- index coverage --------------------------------------------------------
-
-  test "a doc not mentioned in its directory's index warns", %{tmp_dir: dir} do
-    indexed(dir, ".", ["listed.md"])
-    write(dir, "listed.md", "body")
-    write(dir, "orphan.md", "body")
-
-    assert [warning] = Links.check(dir)
-    assert warning =~ "index.md: orphan.md is filed here but not listed"
-  end
+  # --- missing index (advisory) -----------------------------------------------
 
   test "a directory holding docs without an index.md warns", %{tmp_dir: dir} do
     indexed(dir, ".", ["bare"])
     write(dir, "bare/doc.md", "body")
 
     assert Enum.any?(Links.check(dir), &(&1 =~ "bare: holds docs but has no index.md"))
-  end
-
-  test "an immediate subdirectory not mentioned in the parent index warns", %{tmp_dir: dir} do
-    indexed(dir, ".", [])
-    indexed(dir, "hidden", ["doc.md"])
-    write(dir, "hidden/doc.md", "body")
-
-    assert [warning] = Links.check(dir)
-    assert warning =~ "index.md: subdirectory hidden/ is not listed"
+    assert Links.unlisted_errors(dir) == []
   end
 
   test "reserved files need not be listed; excluded dirs are invisible", %{tmp_dir: dir} do
@@ -138,5 +121,37 @@ defmodule ElixirMind.LinksTest do
     refute Enum.any?(warnings, &(&1 =~ "deprecated"))
     refute Enum.any?(warnings, &(&1 =~ "lib"))
     assert Enum.any?(warnings, &(&1 =~ "README.md: link `/x.md` does not resolve"))
+  end
+
+  # --- index coverage (hard) --------------------------------------------------
+
+  test "a doc not mentioned in its directory's index is a hard error", %{tmp_dir: dir} do
+    indexed(dir, ".", ["listed.md"])
+    write(dir, "listed.md", "body")
+    write(dir, "orphan.md", "body")
+
+    assert Links.check(dir) == []
+    assert [error] = Links.unlisted_errors(dir)
+    assert error =~ "index.md: orphan.md is filed here but not listed"
+  end
+
+  test "an immediate subdirectory not mentioned in the parent index is a hard error", %{
+    tmp_dir: dir
+  } do
+    indexed(dir, ".", [])
+    indexed(dir, "hidden", ["doc.md"])
+    write(dir, "hidden/doc.md", "body")
+
+    assert Links.check(dir) == []
+    assert [error] = Links.unlisted_errors(dir)
+    assert error =~ "index.md: subdirectory hidden/ is not listed"
+  end
+
+  test "evals/ is out of scope for the hard check even when unlisted", %{tmp_dir: dir} do
+    indexed(dir, ".", [])
+    write(dir, "evals/README.md", "imported snapshot")
+
+    assert Links.unlisted_errors(dir) == []
+    assert Enum.any?(Links.check(dir), &(&1 =~ "evals: holds docs but has no index.md"))
   end
 end
