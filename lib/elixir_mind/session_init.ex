@@ -17,10 +17,12 @@ defmodule ElixirMind.SessionInit do
       (a `closed` row can still leave deferred work dangling).
 
   Plus, when any exist, the **docs-freshness warnings** from
-  `ElixirMind.Links` (unresolved internal links, index-coverage gaps) — the
-  digest is the surface an app-based operator actually sees, so advisory
-  warnings that would otherwise live only in gate output and CI logs are
-  repeated here. The section is omitted entirely when the tree is clean.
+  `ElixirMind.Links` (unresolved internal links, directories with no
+  `index.md` at all — a stale-but-present index is a hard `mix brain.verify`
+  failure now, not an advisory warning here) — the digest is the surface an
+  app-based operator actually sees, so advisory warnings that would otherwise
+  live only in gate output and CI logs are repeated here. The section is
+  omitted entirely when the tree is clean.
 
   The digest ends with a heuristic top-3 priority ranking (issues, then
   in-flight plans, then open todos, then accepted plans, then open strands,

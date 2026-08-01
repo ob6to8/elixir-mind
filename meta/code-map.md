@@ -384,19 +384,27 @@ blocks into `attribution.from` refs.)
 
 `lib/elixir_mind/links.ex`
 
-Advisory docs-freshness checks: internal-link resolution and index coverage.
+Docs-freshness checks: internal-link resolution and index coverage.
 
-Two warning families (never errors — `mix brain.verify` prints them but
-stays green; per OKF conformance broken links are tolerated, and index
-coverage is ultimately editorial):
+Two advisory warning families (`mix brain.verify` prints them but stays
+green on either — per OKF conformance, broken links are tolerated and a
+wholly absent `index.md` is tolerated too):
 
   1. **Link resolution** — every internal markdown link (`](/abs/path)` or
      `](relative/path)`) in a live doc resolves to a file on disk.
-  2. **Index coverage** — every directory holding `.md` docs has an
-     `index.md`, and every non-reserved doc (and immediate subdirectory)
-     is mentioned in it.
+  2. **Missing index** — a directory holding `.md` docs has no `index.md`
+     at all.
 
-Deliberately exempt, because their content is frozen or placeholder:
+Plus one **hard** check (`unlisted_errors/1`, folded into `mix brain.verify`'s
+pass/fail result): when a directory's `index.md` *does* exist, every
+non-reserved doc and immediate subdirectory in it is mentioned there. OKF
+conformance tolerates an absent index; it says nothing about a stale one,
+and [maintain-reserved-files](/meta/policy/maintain-reserved-files.md)
+already obligates an agent to update the index at filing time — this makes
+that obligation structural instead of editorial.
+
+Deliberately exempt, because their content is frozen, placeholder, or
+foreign:
 
   * `meta/threads/` bodies (frozen verbatim by the capture policy — a broken
     link quoted there is history, not drift);
@@ -408,15 +416,25 @@ Deliberately exempt, because their content is frozen or placeholder:
   * reserved files (`index.md`, `log.md`, `README.md`, `CLAUDE.md`) from the
     must-be-listed requirement.
 
+No directory is exempt from the hard check by name. An imported foreign
+corpus (e.g. `meta/evals/cb-eval-export/`, a byte-identical external
+snapshot) still clears it as long as its own parent index links it —
+`unlisted_dirs/4`'s substring match is satisfied by any mention, including
+inside a prose link — and its own subdirectories carry no `index.md` at
+all, which stays the advisory case. `Registry.scan/1` similarly excludes no
+directory by name below `meta/` (itself excluded wholesale, along with a
+handful of tooling/archive directories) — see its moduledoc.
+
 Unlike `Registry.scan/1` this walks the governance namespaces too (`meta/`,
 `inbox/`) — index drift lives exactly where the id gates don't look.
 
 **Functions**
 
-- `check/1` — Run both warning families over the tree rooted at `root`.
+- `check/1` — Run the advisory warning families (link resolution, missing index) over `root`.
 - `doc_paths/1` — All `.md` docs in scope (relative paths), sorted.
 - `internal_targets/1` — Internal markdown link targets in `body`, minus code spans/blocks and external/mailto/anchor/placeholder targets — the same set the resolution check walks. Raw targets (a `#fragment` may still be attached); normalize with `resolve_target/2`.
 - `resolve_target/2` — Normalize an internal link `target` found in `from_path` to a repo-relative path (leading `#fragment` dropped): bundle-absolute targets lose their leading `/`, relative ones resolve against the source doc's directory.
+- `unlisted_errors/1` — Directories whose *existing* `index.md` omits a filed doc or immediate subdirectory — folded into `mix brain.verify`'s pass/fail result. A directory with no `index.md` at all is not a candidate here (that stays the advisory `check/1` case).
 
 
 ### `ElixirMind.Markdown`
@@ -617,10 +635,12 @@ Four sources, all already maintained by existing policy:
     (a `closed` row can still leave deferred work dangling).
 
 Plus, when any exist, the **docs-freshness warnings** from
-`ElixirMind.Links` (unresolved internal links, index-coverage gaps) — the
-digest is the surface an app-based operator actually sees, so advisory
-warnings that would otherwise live only in gate output and CI logs are
-repeated here. The section is omitted entirely when the tree is clean.
+`ElixirMind.Links` (unresolved internal links, directories with no
+`index.md` at all — a stale-but-present index is a hard `mix brain.verify`
+failure now, not an advisory warning here) — the digest is the surface an
+app-based operator actually sees, so advisory warnings that would otherwise
+live only in gate output and CI logs are repeated here. The section is
+omitted entirely when the tree is clean.
 
 The digest ends with a heuristic top-3 priority ranking (issues, then
 in-flight plans, then open todos, then accepted plans, then open strands,
@@ -804,6 +824,11 @@ Rules enforced (each violation is a human-readable error string):
      so the pair travels together and the launch link cannot dangle. The
      field is an error on any other type — nothing else has an artifact to
      launch.
+  10. Every directory's *existing* `index.md` lists every doc and immediate
+      subdirectory filed beside it (see `ElixirMind.Links.unlisted_errors/1`).
+      A directory with no `index.md` at all stays advisory (`mix brain.verify`
+      still prints it as a docs-freshness warning, per OKF conformance); this
+      rule only fires once an index exists and has fallen behind.
 
 **Functions**
 
@@ -1103,12 +1128,13 @@ can't judge liveness and falls back to the blob URL at the current branch.
 
 Run the machine checks over the knowledge bundle (see `ElixirMind.Verifier`):
 OKF conformance, stable-id presence/uniqueness/format, `verified_by` edge
-resolution, and grounding of every `verified: true`.
+resolution, grounding of every `verified: true`, and index-listing coverage
+(a directory's *existing* `index.md` must list everything filed beside it).
 
 On a green bundle, also prints advisory docs-freshness warnings (see
-`ElixirMind.Links`): internal links that don't resolve and index-coverage
-gaps. Warnings never fail the task — broken links are tolerated per OKF
-conformance, and index coverage is ultimately editorial.
+`ElixirMind.Links`): internal links that don't resolve, and directories
+with no `index.md` at all. Warnings never fail the task — broken links and
+an absent index are both tolerated per OKF conformance.
 
     mix brain.verify
 
