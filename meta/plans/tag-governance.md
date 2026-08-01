@@ -5,13 +5,13 @@ description: Resolve the never-ratified status of the tags frontmatter field —
 status: accepted
 provenance: "Claude Code session (2026-07-27) — operator directed the plan's creation after the scar-tissue analysis decomposed tag sprawl into an epistemic root (ungoverned axis) and a mechanical symptom (tagging-practice inconsistency)"
 tags: [meta, plan, tags, taxonomy, governance, dedup, fingerprinting]
-timestamp: 2026-07-27
+timestamp: 2026-08-01
 attribution:
   when: 2026-07-27T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, operator dialogue on the code-cleanliness-trust branch"
   why: "operator directed: create tag governance plan — persisting the epistemic question the scar-tissue analysis surfaced but could not settle"
-  from: [/meta/analysis/scar-tissue-drift-defenses-and-persistence.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md]
+  from: [/meta/analysis/scar-tissue-drift-defenses-and-persistence.md, /meta/threads/2026-07-27-scar-tissue-drift-doctrine-and-link-policy.md, /meta/threads/2026-08-01-schema-formalization-and-span-attribution-plans.md]
 ---
 
 # Tag governance: decide what the tags axis is, then keep it consistent
@@ -90,6 +90,39 @@ or none (singleton tags dominating → (d)).
 **Ratified 2026-07-27** — the operator accepted the recommendation as written
 (the (a)+(c) sequence; (b) deferred, (d) held). The open questions below were
 not individually answered and carry to execution.
+
+## Refinement — the epistemic question answered (ratified 2026-08-01)
+
+The 2026-08-01 schema-formalization dialogue settled problem 1 directly:
+**tags are cross-cutting facets, disjoint from the path; the flat search
+index is derived, not stored.**
+
+- **Storage: facets only.** A stored tag never duplicates a segment of the
+  doc's own path — the path already carries that fact canonically, and a
+  stored duplicate is denormalization that drifts on every file move. A
+  tier-2 lint (per the
+  [schema-formalization plan](/meta/plans/schema-formalization-and-evaluator-lane.md))
+  errors on `tag ∈ own-path-segments`. Worked example: `em:712e01` at
+  `knowledge/SWE/agentic/supervision/` tags both `supervision` and `agentic`
+  (path duplicates — drop under the lint) alongside `compliance`, `audit`,
+  `observability` (true facets — keep).
+- **Query: union with the path, label the basis.** A tag query unions stored
+  tags with path segments at query time, so flat search still finds every
+  doc under `supervision/` without storing the tag. Each hit is labeled
+  `[path]` (canonically filed here) or `[tag]` (touches the facet from
+  elsewhere) — the two matches mean different things and the result surface
+  keeps the distinction. The disjointness lint is what keeps the labels
+  trustworthy. The implicit union excludes namespace roots shared by
+  effectively every document (`knowledge`): a tag the whole bundle matches
+  retrieves nothing.
+- **Consequence for the build order:** `mix brain.tags` (step 2) gains a
+  query mode beside the report — same scan, two outputs — and the
+  normalization pass (step 3) gets a mechanical head start: every
+  path-duplicate tag surfaced by the lint is an adjudication-free removal.
+
+This narrows, rather than reopens, the deferred (b)/(d) decision: with path
+duplicates removed and queries unioning the tree, the trend data measures
+only true facet usage — a cleaner signal for whichever way that call goes.
 
 ## Open questions (carried to execution)
 

@@ -10,7 +10,7 @@ attribution:
   channel: glossary
   agent: "Claude Code agent, /create-pull-request → /add-to-glossary over the session thread"
   why: "operator-coined phrase carrying the plain tier's audience rationale"
-tags: [glossary, documentation, operator, terminology]
+tags: [glossary, documentation, operator, terminology, coined]
 sense: repo
 timestamp: 2026-07-16
 ---

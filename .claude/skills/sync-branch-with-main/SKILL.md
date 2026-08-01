@@ -64,11 +64,19 @@ there is nothing to sync into.
      (`mix brain.verify`, and `mix brain.contract --check` if policy/`CLAUDE.md` may
      be affected) so the merge didn't leave the bundle inconsistent.
    - **Conflicts** — list the conflicted paths (`git status --short` /
-     `git diff --name-only --diff-filter=U`) and stop. Resolve them only if the
-     resolution is unambiguous and within the scope of the current task; otherwise
-     surface the conflicts to the operator and ask how to proceed. Never resolve a
-     conflict by blindly taking one side. If you must abort, `git merge --abort`
-     returns the branch to its pre-merge state.
+     `git diff --name-only --diff-filter=U`) and stop. **Resolve without asking
+     only when every conflicted path is a generated artifact** — `CLAUDE.md`,
+     `meta/registry.md`, `meta/code-map.md`, the `meta/flows/` lineage views, and
+     the `## Thread excerpts — route-tagged log` sections — in which case discard
+     both sides and re-derive from the sources (`mix brain.contract`,
+     `mix brain.registry`, `mix brain.codemap`, `mix brain.lineage`,
+     `mix brain.route_tags --materialize`), then re-run the gate suite.
+     **Every other conflicted path goes to the operator**, including one that
+     looks trivially resolvable: whether a hand-authored conflict is "unambiguous"
+     is a judgment the resolving agent is the least positioned to make, and a
+     wrong resolution in a document body is a silent error no gate catches. Never
+     resolve a conflict by taking one side wholesale. If you must abort,
+     `git merge --abort` returns the branch to its pre-merge state.
 
 6. **Push the updated branch** (only when the operator wants the remote updated —
    e.g. an open PR that should reflect the sync):

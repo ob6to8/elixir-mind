@@ -7,14 +7,16 @@ defmodule ElixirMind.GlossaryTest do
 
   # --- fixtures -------------------------------------------------------------
 
-  defp write_term(dir, slug, title, description, body) do
+  defp write_term(dir, slug, title, description, body, extra \\ []) do
     path = Path.join([dir, "beliefs", "glossary", "#{slug}.md"])
     File.mkdir_p!(Path.dirname(path))
+
+    extra_lines = Enum.map_join(extra, fn {k, v} -> "#{k}: #{v}\n" end)
 
     fm =
       "---\ntype: concept\ntitle: #{title}\n" <>
         if(description == nil, do: "", else: "description: #{description}\n") <>
-        "sense: common\n---\n"
+        "sense: common\n" <> extra_lines <> "---\n"
 
     File.write!(path, fm <> "\n# #{title}\n\n" <> body <> "\n")
     path
@@ -209,6 +211,47 @@ defmodule ElixirMind.GlossaryTest do
       synced_index(dir)
 
       assert status(Glossary.run_checks(dir), "repetition") == :ok
+    end
+  end
+
+  # --- coinage marking check -------------------------------------------------
+
+  describe "coinage marking check" do
+    test "passes when a coined provenance carries the coined tag", %{tmp_dir: dir} do
+      write_term(dir, "widget", "widget", "A thing.", "Expansion.",
+        provenance: "\"Operator-coined term (2026-07-31 session)\"",
+        tags: "[glossary, coined]"
+      )
+
+      synced_index(dir)
+
+      assert status(Glossary.run_checks(dir), "coinage marking") == :ok
+    end
+
+    test "warns when a coined provenance omits the coined tag", %{tmp_dir: dir} do
+      write_term(dir, "widget", "widget", "A thing.", "Expansion.",
+        provenance: "\"Agent-distilled glossary definition; coined in this session\"",
+        tags: "[glossary]"
+      )
+
+      synced_index(dir)
+
+      results = Glossary.run_checks(dir)
+      assert status(results, "coinage marking") == :warn
+
+      {_, :warn, detail} = Enum.find(results, fn {n, _, _} -> n == "coinage marking" end)
+      assert detail =~ "widget.md"
+    end
+
+    test "ignores a term whose provenance never mentions coining", %{tmp_dir: dir} do
+      write_term(dir, "widget", "widget", "A thing.", "Expansion.",
+        provenance: "\"Agent-distilled glossary definition\"",
+        tags: "[glossary]"
+      )
+
+      synced_index(dir)
+
+      assert status(Glossary.run_checks(dir), "coinage marking") == :ok
     end
   end
 end

@@ -5,7 +5,7 @@ title: code map
 description: This brain's generated glossary of its own tooling — meta/code-map.md, compiled from every lib/ module's @moduledoc/@doc/@typedoc by mix brain.codemap so the code that sits alongside the bundle (and carries no em: id) still has a browsable statement of module, function, and type intent.
 provenance: "Agent-distilled glossary definition, coined in the 2026-07-16 code-tutorial session"
 verified: false
-tags: [glossary, tooling, documentation, codegen]
+tags: [glossary, tooling, documentation, codegen, coined]
 sense: repo
 timestamp: 2026-07-23
 attribution:

@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Explorable: Evolutionary Search in Diffusion Latent Space</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:        #f9f9f7;
+    --surface:     #fcfcfb;
+    --surface-2:   #ffffff;
+    --ink:         #0b0b0b;
+    --ink-2:       #52514e;
+    --ink-muted:   #898781;
+    --hair:        #e1e0d9;
+    --border:      rgba(11,11,11,0.10);
+    --accent:      #4a3aa7;
+    --accent-ink:  #ffffff;
+    --series-ga:   #2a78d6;
+    --series-es:   #eb6834;
+    --good:        #0ca30c;
+    --critical:    #d03b3b;
+    --shadow:      0 1px 2px rgba(11,11,11,0.04), 0 8px 24px rgba(11,11,11,0.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page:        #0d0d0d;
+      --surface:     #17171a;
+      --surface-2:   #1e1e22;
+      --ink:         #ffffff;
+      --ink-2:       #c3c2b7;
+      --ink-muted:   #8b8a85;
+      --hair:        #2c2c2e;
+      --border:      rgba(255,255,255,0.10);
+      --accent:      #9085e9;
+      --accent-ink:  #14121f;
+      --series-ga:   #3987e5;
+      --series-es:   #d95926;
+      --good:        #2fce4a;
+      --critical:    #e66767;
+      --shadow:      0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page:        #0d0d0d;
+    --surface:     #17171a;
+    --surface-2:   #1e1e22;
+    --ink:         #ffffff;
+    --ink-2:       #c3c2b7;
+    --ink-muted:   #8b8a85;
+    --hair:        #2c2c2e;
+    --border:      rgba(255,255,255,0.10);
+    --accent:      #9085e9;
+    --accent-ink:  #14121f;
+    --series-ga:   #3987e5;
+    --series-es:   #d95926;
+    --good:        #2fce4a;
+    --critical:    #e66767;
+    --shadow:      0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+
+  .display { font-family: "Iowan Old Style", Charter, "Georgia Pro", Georgia, "Noto Serif", serif; }
+  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 64px) clamp(18px, 5vw, 28px) 96px;
+  }
+
+  header.hero {
+    padding-bottom: 36px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  h1 {
+    font-size: clamp(1.9rem, 4.4vw, 2.5rem);
+    line-height: 1.12;
+    margin: 0 0 16px;
+    text-wrap: balance;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .lede { font-size: 1.08rem; color: var(--ink-2); max-width: 62ch; margin: 0 0 18px; }
+  .source-row {
+    display: flex; flex-wrap: wrap; gap: 10px 22px;
+    font-size: 0.86rem; color: var(--ink-muted);
+  }
+  .source-row a { color: var(--ink-2); text-decoration-color: var(--border); text-underline-offset: 3px; }
+  .source-row a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+  section.panel { margin: 56px 0; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; }
+  .sec-num {
+    font-family: ui-monospace, monospace;
+    font-size: 0.82rem;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border-radius: 5px;
+    padding: 2px 7px;
+    flex: none;
+  }
+  h2 {
+    font-size: 1.36rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .claim {
+    font-size: 1rem;
+    color: var(--ink-2);
+    max-width: 64ch;
+    margin: 0 0 18px;
+  }
+  .claim b { color: var(--ink); font-weight: 600; }
+  .eq {
+    display: block;
+    margin: 14px 0 20px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    border-radius: 8px;
+    font-size: 0.92rem;
+    overflow-x: auto;
+    color: var(--ink);
+  }
+
+  .widget {
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .widget-canvas-wrap { position: relative; width: 100%; }
+  .widget canvas { display: block; width: 100%; height: auto; touch-action: none; }
+  .controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px;
+    padding: 14px 18px;
+    border-top: 1px solid var(--hair);
+    background: var(--surface-2);
+    font-size: 0.86rem;
+  }
+  .controls.top { border-top: none; border-bottom: 1px solid var(--hair); }
+  .ctrl { display: flex; align-items: center; gap: 10px; }
+  .ctrl label { color: var(--ink-2); white-space: nowrap; }
+  .readout {
+    margin-left: auto;
+    font-family: ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.86rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .readout .k { color: var(--ink-muted); }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--hair);
+    outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--surface-2);
+    box-shadow: 0 0 0 1px var(--accent);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--surface-2);
+    box-shadow: 0 0 0 1px var(--accent); cursor: pointer;
+  }
+  input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .switch {
+    display: inline-flex; border: 1px solid var(--hair); border-radius: 7px; overflow: hidden;
+  }
+  .switch button {
+    font: inherit; font-size: 0.82rem; padding: 6px 11px; border: none; cursor: pointer;
+    background: var(--surface-2); color: var(--ink-2);
+  }
+  .switch button.active { background: var(--accent); color: var(--accent-ink); }
+  .switch button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  .predict {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 0.88rem; color: var(--ink-2);
+    padding: 12px 16px; margin-top: 12px;
+    background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+    border: 1px dashed color-mix(in srgb, var(--accent) 45%, var(--hair));
+    border-radius: 9px;
+  }
+  .predict b { color: var(--ink); }
+  .predict .mark { color: var(--accent); font-weight: 700; flex: none; }
+
+  .legend { display: flex; gap: 18px; padding: 12px 18px 0; font-size: 0.82rem; color: var(--ink-2); }
+  .legend .item { display: flex; align-items: center; gap: 7px; }
+  .legend .swatch { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+
+  .caption {
+    font-size: 0.82rem; color: var(--ink-muted);
+    padding: 10px 18px 16px;
+    border-top: 1px solid var(--hair);
+  }
+
+  footer {
+    margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--hair);
+    font-size: 0.84rem; color: var(--ink-muted);
+  }
+  footer a { color: var(--ink-2); }
+  footer p { max-width: 62ch; }
+
+  @media (max-width: 520px) {
+    .controls { gap: 10px 16px; }
+    .readout { margin-left: 0; width: 100%; }
+    input[type="range"] { width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow"><span class="dot"></span>An explorable explanation</p>
+    <h1 class="display">Evolutionary search in a diffusion model's latent space</h1>
+    <p class="lede">Five small widgets, each built the way <em>Circles, Sines, and Signals</em>
+      teaches the Fourier transform: state one equation, then hand you a control over it.
+      The equations belong to a 2025 paper on steering diffusion models with genetic
+      algorithms and evolution strategies — drag things until each claim is either
+      confirmed or broken.</p>
+    <p class="source-row">
+      <span>Modeled on <a href="https://jackschaedler.github.io/circles-sines-signals/" target="_blank" rel="noopener">Circles, Sines, and Signals</a> (Jack Schaedler)</span>
+      <span>Equations from <a href="https://arxiv.org/abs/2506.00299" target="_blank" rel="noopener">arXiv:2506.00299</a> (Jajal et al., 2025)</span>
+    </p>
+  </header>
+
+  <!-- 01 — SHELL -->
+  <section class="panel" id="sec-shell">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="display">Random noise doesn't spread out — it lives on a shell</h2></div>
+    <p class="claim">Sample a vector <span class="mono">z</span> with every coordinate drawn from
+      <span class="mono">N(0,1)</span>. In low dimensions its length varies a lot. In high
+      dimensions, <b>almost every sample lands within a hair's width of the same distance
+      from the origin</b> — a thin spherical shell at radius <span class="mono">√d</span>.
+      This is the fact the whole paper's search machinery is built around.</p>
+    <code class="eq">‖z‖ concentrates near √d, for z ~ N(0, I_d) as d grows</code>
+    <div class="widget">
+      <div class="controls top">
+        <div class="ctrl">
+          <label for="shell-d">dimension <span class="mono">d</span></label>
+          <input id="shell-d" type="range" min="2" max="200" step="1" value="2" />
+        </div>
+        <div class="readout" id="shell-readout"></div>
+      </div>
+      <div class="widget-canvas-wrap"><canvas id="shell-canvas"></canvas></div>
+      <div class="caption">3,000 fresh samples of <span class="mono">‖z‖</span> redrawn on every move. Dashed line marks <span class="mono">√d</span>.</div>
+    </div>
+    <div class="predict"><span class="mark">→</span><span>Drag <span class="mono">d</span> from 2 to 200. The histogram doesn't just shift right — it <b>narrows relative to its own center</b>. That narrowing is why a diffusion model's latent noise is a geometric object with real structure, not "noise" in the loose sense.</span></div>
+  </section>
+
+  <!-- 02 — ROTATION -->
+  <section class="panel" id="sec-rotation">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="display">Why the paper only ever <em>rotates</em> the noise</h2></div>
+    <p class="claim">If a candidate has to stay on the shell, an arbitrary transform is
+      dangerous — stretch it and it falls off. A <b>rotation</b> is safe by construction:
+      it changes direction without changing length.</p>
+    <code class="eq">z' = Q(A) z_T,  Q(A) orthonormal  ⇒  ‖z'‖ = ‖z_T‖  for every angle</code>
+    <div class="widget">
+      <div class="controls top">
+        <div class="ctrl switch" role="group" aria-label="transform type">
+          <button id="rot-mode-rotate" class="active">Rotation (used in the paper)</button>
+          <button id="rot-mode-shear">Arbitrary linear map</button>
+        </div>
+      </div>
+      <div class="widget-canvas-wrap"><canvas id="rot-canvas"></canvas></div>
+      <div class="controls">
+        <div class="ctrl">
+          <label for="rot-angle">angle θ</label>
+          <input id="rot-angle" type="range" min="0" max="360" step="1" value="0" />
+        </div>
+        <div class="readout" id="rot-readout"></div>
+      </div>
+      <div class="caption">The faint outline is every point the vector visits over a full turn. In rotation mode that outline is a perfect circle; the vector never leaves it.</div>
+    </div>
+    <div class="predict"><span class="mark">→</span><span><b>Predict first:</b> switch to "arbitrary linear map," then drag the angle. Does the vector's length stay constant? Watch the outline stop being a circle.</span></div>
+  </section>
+
+  <!-- 03 — CROSSOVER -->
+  <section class="panel" id="sec-crossover">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="display">Mixing two parents never leaves the shell either</h2></div>
+    <p class="claim">The paper's genetic algorithm breeds children by flipping an independent
+      coin per coordinate and taking that parent's value. Both parents are shell-resident
+      Gaussians. Does the mixing probability skew the child's distribution?</p>
+    <code class="eq">Z_i = X_i if coin=1 else Y_i,  X_i,Y_i ~ N(0,1)  ⇒  Z_i ~ N(0,1)  for every p</code>
+    <div class="widget">
+      <div class="controls top">
+        <div class="ctrl">
+          <label for="cross-p">inherit-from-parent-A probability <span class="mono">p</span></label>
+          <input id="cross-p" type="range" min="0" max="100" step="1" value="50" />
+        </div>
+        <div class="readout" id="cross-readout"></div>
+      </div>
+      <div class="widget-canvas-wrap"><canvas id="cross-canvas"></canvas></div>
+      <div class="caption">Bars: 6,000 fresh children at the current <span class="mono">p</span>. Line: the fixed <span class="mono">N(0,1)</span> curve — it never moves.</div>
+    </div>
+    <div class="predict"><span class="mark">→</span><span>Drag <span class="mono">p</span> to an extreme like 5% or 95%. The bars keep hugging the same curve — this is the proof in the paper's appendix, made falsifiable: try to make the child distribution skew, and you can't.</span></div>
+  </section>
+
+  <!-- 04 — SELECTION PRESSURE -->
+  <section class="panel" id="sec-selection">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="display">Genetic algorithms narrow fast; evolution strategies don't</h2></div>
+    <p class="claim">Both families search by generating a population and keeping what scores
+      well. A genetic algorithm's population is discrete: crank up how hard it selects
+      the best candidates (larger tournament size) and diversity collapses within a few
+      generations. An evolution strategy instead nudges a whole probability distribution,
+      and has no tournament step to crank at all — which is structurally why it stays
+      diverse for longer, matching Figure 4 of the paper.</p>
+    <code class="eq">GA: population {ψᵢ}, tournament selection + crossover + mutation      ES: q_φ = N(μ,σ), μ,σ updated from a reward-weighted average</code>
+    <div class="widget">
+      <div class="legend">
+        <span class="item"><span class="swatch" style="background:var(--series-ga)"></span>GA population spread</span>
+        <span class="item"><span class="swatch" style="background:var(--series-es)"></span>ES search-distribution spread</span>
+      </div>
+      <div class="widget-canvas-wrap"><canvas id="sel-canvas"></canvas></div>
+      <div class="controls">
+        <div class="ctrl">
+          <label for="sel-k">GA tournament size <span class="mono">k</span></label>
+          <input id="sel-k" type="range" min="2" max="15" step="1" value="2" />
+        </div>
+        <div class="readout" id="sel-readout"></div>
+      </div>
+      <div class="caption">Toy 1-D landscape, 40 individuals, 60 generations — illustrates the qualitative shape of Fig. 4, not a reproduction of CoSyNE/SNES. The slider only drives the GA; ES has no tournament step, by construction.</div>
+    </div>
+    <div class="predict"><span class="mark">→</span><span>Push <span class="mono">k</span> to 15. The blue GA line collapses to near-zero within a handful of generations. The orange ES line barely notices — it was never wired to that dial.</span></div>
+  </section>
+
+  <!-- 05 — REWARD AS SIMILARITY -->
+  <section class="panel" id="sec-reward">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="display">"Fitness" is a dot product with an unknown good direction</h2></div>
+    <p class="claim">Every candidate the search evaluates gets scored by a reward model.
+      Zoomed all the way out, scoring a direction is scoring how well it agrees with
+      <em>some</em> direction the reward model prefers — the same operation
+      <span class="mono">Σ a[n]·b[n]</span> that Circles, Sines, and Signals uses to
+      introduce the dot product.</p>
+    <code class="eq">reward(ψ) ∝ u · ψ,  for some (unknown, reward-model-defined) direction u</code>
+    <div class="widget">
+      <div class="controls top">
+        <div class="ctrl">
+          <label><input id="reward-pop" type="checkbox" checked /> show a candidate population</label>
+        </div>
+        <div class="readout" id="reward-readout"></div>
+      </div>
+      <div class="widget-canvas-wrap"><canvas id="reward-canvas"></canvas></div>
+      <div class="caption">Drag the pale candidate vector around the ring. The gold vector is the direction the reward model happens to favor — never shown to the real search, only to you.</div>
+    </div>
+    <div class="predict"><span class="mark">→</span><span>Find the angle that makes the readout most negative, then most positive. That's the entire optimization problem every algorithm on this page is solving — just in thousands of dimensions instead of two.</span></div>
+  </section>
+
+  <footer>
+    <p><b>What's illustrative vs. exact:</b> widgets 1–3 compute the real equations directly.
+      Widget 4 is a simplified toy landscape chosen to show the qualitative shape of the
+      paper's population-diversity result, not a reproduction of its actual algorithms
+      (CoSyNE / PGPE / SNES). Widget 5 stands in for a learned reward model with a fixed
+      linear one.</p>
+    <p>Paper: Jajal, Eliopoulos, Chou, Thiruvathukal, Davis, Lu — <a href="https://arxiv.org/abs/2506.00299" target="_blank" rel="noopener">"Inference-Time Alignment of Diffusion Models via Evolutionary Algorithms," arXiv:2506.00299</a>. Method: Jack Schaedler — <a href="https://jackschaedler.github.io/circles-sines-signals/" target="_blank" rel="noopener">Circles, Sines, and Signals</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  // ---- RNG ----------------------------------------------------------
+  let spareGaussian = null;
+  function gaussian() {
+    if (spareGaussian !== null) { const v = spareGaussian; spareGaussian = null; return v; }
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    const mag = Math.sqrt(-2 * Math.log(u));
+    spareGaussian = mag * Math.sin(2 * Math.PI * v);
+    return mag * Math.cos(2 * Math.PI * v);
+  }
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  // ---- Canvas setup (crisp on HiDPI, redraws on resize/theme) -------
+  const registry = [];
+  function makeCanvas(id, aspect) {
+    const canvas = document.getElementById(id);
+    const wrap = canvas.parentElement;
+    const state = { canvas, ctx: canvas.getContext("2d"), w: 0, h: 0, draw: null };
+    function resize() {
+      const rect = wrap.getBoundingClientRect();
+      const w = Math.max(1, rect.width);
+      const h = w * aspect;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.style.height = h + "px";
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      state.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      state.w = w; state.h = h;
+      if (state.draw) state.draw();
+    }
+    new ResizeObserver(resize).observe(wrap);
+    resize();
+    registry.push(state);
+    return state;
+  }
+  function redrawAll() { registry.forEach(function (s) { if (s.draw) s.draw(); }); }
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redrawAll);
+  new MutationObserver(redrawAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  function fmt(v, d) { return (typeof d === "number" ? v.toFixed(d) : v.toString()); }
+
+  // =====================================================================
+  // 01 — Gaussian Annulus: histogram of ||z|| for z ~ N(0, I_d)
+  // =====================================================================
+  (function () {
+    const s = makeCanvas("shell-canvas", 0.56);
+    const dInput = document.getElementById("shell-d");
+    const readout = document.getElementById("shell-readout");
+    const N = 3000, BINS = 40;
+
+    function sampleNorms(d) {
+      const norms = new Float64Array(N);
+      for (let i = 0; i < N; i++) {
+        let sumsq = 0;
+        for (let k = 0; k < d; k++) { const g = gaussian(); sumsq += g * g; }
+        norms[i] = Math.sqrt(sumsq);
+      }
+      return norms;
+    }
+
+    let cache = null, cacheD = -1;
+    s.draw = function () {
+      const d = parseInt(dInput.value, 10);
+      if (d !== cacheD) { cache = sampleNorms(d); cacheD = d; }
+      const norms = cache;
+      const sqrtD = Math.sqrt(d);
+      let mean = 0; for (let i = 0; i < N; i++) mean += norms[i]; mean /= N;
+      let variance = 0; for (let i = 0; i < N; i++) variance += (norms[i] - mean) * (norms[i] - mean);
+      const std = Math.sqrt(variance / N);
+
+      readout.innerHTML =
+        '<span class="k">mean ‖z‖</span> ' + fmt(mean, 2) +
+        '&nbsp;&nbsp;<span class="k">√d</span> ' + fmt(sqrtD, 2) +
+        '&nbsp;&nbsp;<span class="k">spread/mean</span> ' + fmt(std / mean, 3);
+
+      const ctx = s.ctx, W = s.w, H = s.h;
+      const pad = { l: 18, r: 18, t: 16, b: 30 };
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = cssVar("--surface"); ctx.fillRect(0, 0, W, H);
+
+      const lo = 0, hi = Math.max(sqrtD * 1.6, mean + 4 * std + 1);
+      const binW = (hi - lo) / BINS;
+      const counts = new Array(BINS).fill(0);
+      for (let i = 0; i < N; i++) {
+        let b = Math.floor((norms[i] - lo) / binW);
+        b = clamp(b, 0, BINS - 1);
+        counts[b]++;
+      }
+      const maxCount = Math.max.apply(null, counts);
+
+      const plotW = W - pad.l - pad.r, plotH = H - pad.t - pad.b;
+      const x0 = pad.l, y0 = pad.t + plotH;
+
+      // axis
+      ctx.strokeStyle = cssVar("--hair"); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0 + plotW, y0); ctx.stroke();
+
+      // bars
+      ctx.fillStyle = cssVar("--series-ga");
+      const gap = 1.5;
+      for (let b = 0; b < BINS; b++) {
+        const bx = x0 + (b / BINS) * plotW;
+        const bw = plotW / BINS - gap;
+        const bh = (counts[b] / maxCount) * plotH;
+        ctx.globalAlpha = 0.85;
+        roundRectTop(ctx, bx, y0 - bh, Math.max(1, bw), bh, 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      // sqrt(d) marker
+      const markerX = x0 + ((sqrtD - lo) / (hi - lo)) * plotW;
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = cssVar("--ink-muted");
+      ctx.beginPath(); ctx.moveTo(markerX, pad.t); ctx.lineTo(markerX, y0); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = cssVar("--ink-2");
+      ctx.font = "11px ui-monospace, monospace";
+      ctx.textAlign = "center";
+      ctx.fillText("√d = " + fmt(sqrtD, 1), markerX, pad.t - 4 < 10 ? 12 : pad.t - 4);
+
+      // x labels
+      ctx.fillStyle = cssVar("--ink-muted");
+      ctx.font = "10px ui-monospace, monospace";
+      ctx.textAlign = "left";
+      ctx.fillText("0", x0, y0 + 16);
+      ctx.textAlign = "right";
+      ctx.fillText(fmt(hi, 0), x0 + plotW, y0 + 16);
+      ctx.textAlign = "center";
+      ctx.fillText("‖z‖", x0 + plotW / 2, y0 + 16);
+    };
+
+    function roundRectTop(ctx, x, y, w, h, r) {
+      r = Math.min(r, w / 2, h);
+      ctx.beginPath();
+      ctx.moveTo(x, y + h);
+      ctx.lineTo(x, y + r);
+      ctx.arcTo(x, y, x + r, y, r);
+      ctx.lineTo(x + w - r, y);
+      ctx.arcTo(x + w, y, x + w, y + r, r);
+      ctx.lineTo(x + w, y + h);
+      ctx.closePath();
+    }
+
+    dInput.addEventListener("input", s.draw);
+    s.draw();
+  })();
+
+  // =====================================================================
+  // 02 — Rotation vs arbitrary linear map
+  // =====================================================================
+  (function () {
+    const s = makeCanvas("rot-canvas", 0.72);
+    const angleInput = document.getElementById("rot-angle");
+    const readout = document.getElementById("rot-readout");
+    const btnRotate = document.getElementById("rot-mode-rotate");
+    const btnShear = document.getElementById("rot-mode-shear");
+    let mode = "rotate";
+    const A = [[1.55, 0.35], [0.15, 0.65]]; // fixed non-orthonormal matrix for contrast
+
+    function apply(theta) {
+      const v0 = [Math.cos(theta), Math.sin(theta)];
+      if (mode === "rotate") return v0;
+      return [A[0][0] * v0[0] + A[0][1] * v0[1], A[1][0] * v0[0] + A[1][1] * v0[1]];
+    }
+
+    s.draw = function () {
+      const ctx = s.ctx, W = s.w, H = s.h;
+      const cx = W / 2, cy = H / 2;
+      const R = Math.min(W, H) * 0.34;
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = cssVar("--surface"); ctx.fillRect(0, 0, W, H);
+
+      // axes
+      ctx.strokeStyle = cssVar("--hair"); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(cx - W * 0.42, cy); ctx.lineTo(cx + W * 0.42, cy);
+      ctx.moveTo(cx, cy - H * 0.42); ctx.lineTo(cx, cy + H * 0.42); ctx.stroke();
+
+      // trace outline over full turn
+      ctx.beginPath();
+      for (let i = 0; i <= 240; i++) {
+        const t = (i / 240) * Math.PI * 2;
+        const p = apply(t);
+        const x = cx + p[0] * R, y = cy - p[1] * R;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = cssVar("--ink-muted");
+      ctx.setLineDash([3, 4]);
+      ctx.lineWidth = 1.25;
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // current vector
+      const theta = (parseFloat(angleInput.value) * Math.PI) / 180;
+      const p = apply(theta);
+      const x = cx + p[0] * R, y = cy - p[1] * R;
+      const norm = Math.sqrt(p[0] * p[0] + p[1] * p[1]);
+
+      ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+      ctx.fillStyle = cssVar("--ink-muted"); ctx.fill();
+
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y);
+      ctx.strokeStyle = cssVar("--accent"); ctx.lineWidth = 2.5; ctx.stroke();
+
+      ctx.beginPath(); ctx.arc(x, y, 6, 0, Math.PI * 2);
+      ctx.fillStyle = cssVar("--accent"); ctx.fill();
+      ctx.strokeStyle = cssVar("--surface"); ctx.lineWidth = 2; ctx.stroke();
+
+      const within = Math.abs(norm - 1) < 0.02;
+      readout.innerHTML =
+        '<span class="k">‖z\'‖</span> ' + fmt(norm, 3) +
+        '&nbsp;&nbsp;<span class="k">‖z_T‖</span> 1.000' +
+        (mode === "rotate"
+          ? '&nbsp;&nbsp;<span style="color:' + cssVar("--good") + '">on the shell, always</span>'
+          : (within ? '' : '&nbsp;&nbsp;<span style="color:' + cssVar("--critical") + '">off the shell</span>'));
+    };
+
+    function setMode(m) {
+      mode = m;
+      btnRotate.classList.toggle("active", m === "rotate");
+      btnShear.classList.toggle("active", m === "shear");
+      s.draw();
+    }
+    btnRotate.addEventListener("click", function () { setMode("rotate"); });
+    btnShear.addEventListener("click", function () { setMode("shear"); });
+    angleInput.addEventListener("input", s.draw);
+    s.draw();
+  })();
+
+  // =====================================================================
+  // 03 — Uniform crossover preserves the Gaussian marginal
+  // =====================================================================
+  (function () {
+    const s = makeCanvas("cross-canvas", 0.5);
+    const pInput = document.getElementById("cross-p");
+    const readout = document.getElementById("cross-readout");
+    const N = 6000, BINS = 44, LO = -4, HI = 4;
+
+    function stdNormalPdf(x) { return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI); }
+
+    s.draw = function () {
+      const p = parseInt(pInput.value, 10) / 100;
+      readout.innerHTML = '<span class="k">p</span> ' + p.toFixed(2) + '&nbsp;&nbsp;<span class="k">child ~</span> N(0,1) — unchanged';
+
+      const binW = (HI - LO) / BINS;
+      const counts = new Array(BINS).fill(0);
+      for (let i = 0; i < N; i++) {
+        const x = Math.random() < p ? gaussian() : gaussian();
+        let b = Math.floor((x - LO) / binW);
+        if (b >= 0 && b < BINS) counts[b]++;
+      }
+      const maxCount = Math.max.apply(null, counts);
+
+      const ctx = s.ctx, W = s.w, H = s.h;
+      const pad = { l: 18, r: 18, t: 16, b: 26 };
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = cssVar("--surface"); ctx.fillRect(0, 0, W, H);
+      const plotW = W - pad.l - pad.r, plotH = H - pad.t - pad.b;
+      const x0 = pad.l, y0 = pad.t + plotH;
+
+      ctx.strokeStyle = cssVar("--hair"); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0 + plotW, y0); ctx.stroke();
+
+      ctx.fillStyle = cssVar("--series-es");
+      const gap = 1.5;
+      for (let b = 0; b < BINS; b++) {
+        const bx = x0 + (b / BINS) * plotW;
+        const bw = plotW / BINS - gap;
+        const bh = (counts[b] / maxCount) * plotH * 0.92;
+        ctx.globalAlpha = 0.55;
+        ctx.fillRect(bx, y0 - bh, Math.max(1, bw), bh);
+      }
+      ctx.globalAlpha = 1;
+
+      // theoretical curve, area-matched to histogram peak
+      const peakPdf = stdNormalPdf(0);
+      ctx.beginPath();
+      for (let i = 0; i <= 200; i++) {
+        const x = LO + (i / 200) * (HI - LO);
+        const px = x0 + ((x - LO) / (HI - LO)) * plotW;
+        const py = y0 - (stdNormalPdf(x) / peakPdf) * plotH * 0.92;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = cssVar("--ink");
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = cssVar("--ink-muted");
+      ctx.font = "10px ui-monospace, monospace";
+      ctx.textAlign = "center";
+      ctx.fillText("-4", x0, y0 + 16);
+      ctx.fillText("0", x0 + plotW / 2, y0 + 16);
+      ctx.fillText("+4", x0 + plotW, y0 + 16);
+    };
+
+    pInput.addEventListener("input", s.draw);
+    s.draw();
+  })();
+
+  // =====================================================================
+  // 04 — Selection pressure: GA (tournament) vs ES (distribution update)
+  // =====================================================================
+  (function () {
+    const s = makeCanvas("sel-canvas", 0.52);
+    const kInput = document.getElementById("sel-k");
+    const readout = document.getElementById("sel-readout");
+    const POP = 40, GENS = 60;
+
+    function reward(x) { return -x * x; }
+
+    function runGA(k) {
+      let pop = new Float64Array(POP);
+      for (let i = 0; i < POP; i++) pop[i] = (Math.random() * 2 - 1) * 8;
+      const stds = [];
+      for (let g = 0; g < GENS; g++) {
+        stds.push(stdOf(pop));
+        const fit = pop.map(reward);
+        const next = new Float64Array(POP);
+        for (let i = 0; i < POP; i++) {
+          const a = tournamentPick(pop, fit, k);
+          const b = tournamentPick(pop, fit, k);
+          next[i] = (a + b) / 2 + gaussian() * 0.3;
+        }
+        pop = next;
+      }
+      return stds;
+    }
+    function tournamentPick(pop, fit, k) {
+      let bestIdx = Math.floor(Math.random() * POP);
+      for (let t = 1; t < k; t++) {
+        const idx = Math.floor(Math.random() * POP);
+        if (fit[idx] > fit[bestIdx]) bestIdx = idx;
+      }
+      return pop[bestIdx];
+    }
+    function stdOf(arr) {
+      let m = 0; for (let i = 0; i < arr.length; i++) m += arr[i]; m /= arr.length;
+      let v = 0; for (let i = 0; i < arr.length; i++) v += (arr[i] - m) * (arr[i] - m);
+      return Math.sqrt(v / arr.length);
+    }
+
+    function runES() {
+      let mu = 0, sigma = 4.6;
+      const lr = 0.9;
+      const stds = [];
+      for (let g = 0; g < GENS; g++) {
+        stds.push(sigma);
+        const eps = new Float64Array(POP), fit = new Float64Array(POP);
+        for (let i = 0; i < POP; i++) {
+          eps[i] = gaussian();
+          fit[i] = reward(mu + sigma * eps[i]);
+        }
+        let fm = 0; for (let i = 0; i < POP; i++) fm += fit[i]; fm /= POP;
+        let fs = 0; for (let i = 0; i < POP; i++) fs += (fit[i] - fm) * (fit[i] - fm);
+        fs = Math.sqrt(fs / POP) || 1;
+        let grad = 0; for (let i = 0; i < POP; i++) grad += ((fit[i] - fm) / fs) * eps[i];
+        grad /= POP;
+        mu += lr * sigma * grad;
+        sigma *= 0.985; // slow, fixed decay — no tournament analog
+      }
+      return stds;
+    }
+
+    s.draw = function () {
+      const k = parseInt(kInput.value, 10);
+      const gaStds = runGA(k);
+      const esStds = runES();
+      readout.innerHTML =
+        '<span class="k">k</span> ' + k +
+        '&nbsp;&nbsp;<span class="k">GA spread @60</span> ' + fmt(gaStds[GENS - 1], 2) +
+        '&nbsp;&nbsp;<span class="k">ES spread @60</span> ' + fmt(esStds[GENS - 1], 2);
+
+      const ctx = s.ctx, W = s.w, H = s.h;
+      const pad = { l: 30, r: 16, t: 16, b: 28 };
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = cssVar("--surface"); ctx.fillRect(0, 0, W, H);
+      const plotW = W - pad.l - pad.r, plotH = H - pad.t - pad.b;
+      const x0 = pad.l, y0 = pad.t + plotH;
+      const maxY = Math.max(6, Math.max.apply(null, gaStds), Math.max.apply(null, esStds)) * 1.05;
+
+      ctx.strokeStyle = cssVar("--hair"); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x0, pad.t); ctx.lineTo(x0, y0); ctx.lineTo(x0 + plotW, y0); ctx.stroke();
+
+      function plot(stds, color) {
+        ctx.beginPath();
+        for (let g = 0; g < GENS; g++) {
+          const px = x0 + (g / (GENS - 1)) * plotW;
+          const py = y0 - (stds[g] / maxY) * plotH;
+          if (g === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        }
+        ctx.strokeStyle = color; ctx.lineWidth = 2.25; ctx.stroke();
+      }
+      plot(esStds, cssVar("--series-es"));
+      plot(gaStds, cssVar("--series-ga"));
+
+      ctx.fillStyle = cssVar("--ink-muted");
+      ctx.font = "10px ui-monospace, monospace";
+      ctx.textAlign = "left"; ctx.fillText("gen 0", x0, y0 + 16);
+      ctx.textAlign = "right"; ctx.fillText("gen " + GENS, x0 + plotW, y0 + 16);
+      ctx.save();
+      ctx.translate(12, (pad.t + y0) / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.textAlign = "center";
+      ctx.fillText("population spread", 0, 0);
+      ctx.restore();
+    };
+
+    kInput.addEventListener("input", s.draw);
+    s.draw();
+  })();
+
+  // =====================================================================
+  // 05 — Reward as a dot product (drag the candidate)
+  // =====================================================================
+  (function () {
+    const s = makeCanvas("reward-canvas", 0.62);
+    const popToggle = document.getElementById("reward-pop");
+    const readout = document.getElementById("reward-readout");
+    const targetAngle = (38 * Math.PI) / 180;
+    let candAngle = (150 * Math.PI) / 180;
+    let dragging = false;
+
+    const populationAngles = [];
+    for (let i = 0; i < 90; i++) populationAngles.push(Math.random() * Math.PI * 2);
+
+    function posFor(angle, R, cx, cy) { return [cx + Math.cos(angle) * R, cy - Math.sin(angle) * R]; }
+
+    s.draw = function () {
+      const ctx = s.ctx, W = s.w, H = s.h;
+      const cx = W / 2, cy = H / 2;
+      const R = Math.min(W, H) * 0.36;
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = cssVar("--surface"); ctx.fillRect(0, 0, W, H);
+
+      ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.strokeStyle = cssVar("--hair"); ctx.setLineDash([3, 4]); ctx.lineWidth = 1;
+      ctx.stroke(); ctx.setLineDash([]);
+
+      if (popToggle.checked) {
+        const [ux, uy] = [Math.cos(targetAngle), Math.sin(targetAngle)];
+        populationAngles.forEach(function (a) {
+          const dp = Math.cos(a) * ux + Math.sin(a) * uy; // in [-1,1]
+          const [px, py] = posFor(a, R, cx, cy);
+          const t = (dp + 1) / 2;
+          ctx.beginPath(); ctx.arc(px, py, 3.2, 0, Math.PI * 2);
+          ctx.fillStyle = t > 0.5
+            ? "color-mix(in srgb, " + cssVar("--good") + " " + Math.round((t - 0.5) * 200) + "%, transparent)"
+            : "color-mix(in srgb, " + cssVar("--critical") + " " + Math.round((0.5 - t) * 200) + "%, transparent)";
+          ctx.fill();
+        });
+      }
+
+      // axes through origin
+      ctx.strokeStyle = cssVar("--hair"); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(cx - R * 1.15, cy); ctx.lineTo(cx + R * 1.15, cy);
+      ctx.moveTo(cx, cy - R * 1.15); ctx.lineTo(cx, cy + R * 1.15); ctx.stroke();
+
+      const [tx, ty] = posFor(targetAngle, R, cx, cy);
+      const [vx, vy] = posFor(candAngle, R, cx, cy);
+
+      // target vector u (gold)
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(tx, ty);
+      ctx.strokeStyle = cssVar("--series-es"); ctx.lineWidth = 2.5; ctx.stroke();
+      ctx.fillStyle = cssVar("--ink-2"); ctx.font = "11px ui-monospace, monospace";
+      ctx.textAlign = "center"; ctx.fillText("u", tx + Math.cos(targetAngle) * 14, ty - Math.sin(targetAngle) * 14);
+
+      // projection of v onto u
+      const dot = Math.cos(candAngle) * Math.cos(targetAngle) + Math.sin(candAngle) * Math.sin(targetAngle);
+      const projX = cx + dot * Math.cos(targetAngle) * R, projY = cy - dot * Math.sin(targetAngle) * R;
+      ctx.beginPath(); ctx.moveTo(vx, vy); ctx.lineTo(projX, projY);
+      ctx.strokeStyle = cssVar("--ink-muted"); ctx.setLineDash([2, 3]); ctx.lineWidth = 1;
+      ctx.stroke(); ctx.setLineDash([]);
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(projX, projY);
+      ctx.strokeStyle = dot >= 0 ? cssVar("--good") : cssVar("--critical");
+      ctx.lineWidth = 4; ctx.lineCap = "round"; ctx.stroke(); ctx.lineCap = "butt";
+
+      // candidate vector v (draggable, accent)
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(vx, vy);
+      ctx.strokeStyle = cssVar("--accent"); ctx.lineWidth = 2.5; ctx.stroke();
+      ctx.beginPath(); ctx.arc(vx, vy, 7, 0, Math.PI * 2);
+      ctx.fillStyle = cssVar("--accent"); ctx.fill();
+      ctx.strokeStyle = cssVar("--surface"); ctx.lineWidth = 2; ctx.stroke();
+
+      const color = dot >= 0 ? cssVar("--good") : cssVar("--critical");
+      readout.innerHTML =
+        '<span class="k">u · v</span> <span style="color:' + color + '">' + (dot >= 0 ? "+" : "") + fmt(dot, 3) + "</span>";
+    };
+
+    function angleFromEvent(evt) {
+      const rect = s.canvas.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+      const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
+      const clientY = evt.touches ? evt.touches[0].clientY : evt.clientY;
+      return Math.atan2(-(clientY - cy), clientX - cx);
+    }
+    function start(evt) { dragging = true; move(evt); evt.preventDefault(); }
+    function move(evt) {
+      if (!dragging) return;
+      candAngle = angleFromEvent(evt);
+      s.draw();
+      evt.preventDefault();
+    }
+    function end() { dragging = false; }
+
+    s.canvas.addEventListener("mousedown", start);
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", end);
+    s.canvas.addEventListener("touchstart", start, { passive: false });
+    window.addEventListener("touchmove", move, { passive: false });
+    window.addEventListener("touchend", end);
+    popToggle.addEventListener("change", s.draw);
+    s.draw();
+  })();
+
+})();
+</script>
+</body>
+</html>
