@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Haiku 4.5 for most of the session, esca
 tags: [meta, thread, intake, survey, review-pr, route-tags, verifier-bugfix, dedup-probe]
 timestamp: 2026-08-01
 session: https://claude.ai/code/session_01YGagV9xodMZvjYarRVhmX6
+pr: 210
 ---
 
 # 2026-07-31-survey-batch-intakes-and-review-pr-skill-audit
