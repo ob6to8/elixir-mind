@@ -4,6 +4,10 @@ Maintaining code quality and craft under AI-assisted development — the guardra
 review layering, and feedback loops that hold a project to its author's standards
 as agents generate more of its code.
 
+## Methodologies
+
+- [Agent development methodology — TDD-first, atomic PRs, review-gated](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) — the operator's global-tier methodology for agent-driven development: a test-first loop where tests are the ratified contract agents may not weaken, matklad-style test architecture, the Elixir fast loop, one-concern PRs sized for review, layered gates — with the lean vendorable block consuming repos embed. `em:cab2c5` _(methodology)_
+
 ## Documents
 
 - [Why TDD works so well in AI-assisted programming (Jason Gorman)](/knowledge/SWE/agentic/code-quality/why-tdd-works-in-ai-assisted-programming.md) — TDD's small-steps discipline mapped one-to-one onto LLM failure modes (effective context far below advertised limits, broken code polluting later predictions, examples beating descriptions), making red-green-refactor the control loop that keeps an agent close to working code. `em:e7644d` _(reference)_
