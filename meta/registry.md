@@ -217,6 +217,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
 | `em:7c640a` | [beliefs/glossary/github-pages](/beliefs/glossary/github-pages.md) | concept | false |
+| `em:c250c5` | [beliefs/glossary/gloss](/beliefs/glossary/gloss.md) | concept | false |
 | `em:f9daf3` | [beliefs/glossary/goal-structuring-notation](/beliefs/glossary/goal-structuring-notation.md) | concept | false |
 | `em:d9c5d9` | [beliefs/glossary/gold-set](/beliefs/glossary/gold-set.md) | concept | false |
 | `em:61877f` | [beliefs/glossary/golden-test](/beliefs/glossary/golden-test.md) | concept | false |
@@ -335,6 +336,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3a8b96` | [beliefs/glossary/presubmit](/beliefs/glossary/presubmit.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
+| `em:d6666b` | [beliefs/glossary/progressive-disclosure](/beliefs/glossary/progressive-disclosure.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |
 | `em:a924c4` | [beliefs/glossary/prompt-sensitivity](/beliefs/glossary/prompt-sensitivity.md) | concept | false |
 | `em:b79e02` | [beliefs/glossary/proof-of-vulnerability](/beliefs/glossary/proof-of-vulnerability.md) | concept | false |

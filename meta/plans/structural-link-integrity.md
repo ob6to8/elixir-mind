@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, architecture-docs-placement session"
   why: "persists the two-move recommendation from the id-referenced-links analysis so a future session can execute it without re-deriving the judgment"
+  from: [/meta/threads/2026-08-01-refile-architecture-paper-and-link-integrity.md]
 ---
 
 # Structural link integrity: gate link resolution, automate the refile

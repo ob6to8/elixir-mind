@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, architecture-docs-placement session"
   why: "operator asked for the pros/cons/feasibility judgment on id-referenced links to be recorded rather than left in the thread"
+  from: [/meta/threads/2026-08-01-refile-architecture-paper-and-link-integrity.md]
 ---
 
 # Should bundle links be id-referenced with build-time path substitution?
