@@ -253,6 +253,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:184bae` | [beliefs/glossary/git-worktree](/beliefs/glossary/git-worktree.md) | concept | false |
 | `em:680062` | [beliefs/glossary/github-flavored-markdown](/beliefs/glossary/github-flavored-markdown.md) | concept | false |
 | `em:7c640a` | [beliefs/glossary/github-pages](/beliefs/glossary/github-pages.md) | concept | false |
+| `em:c250c5` | [beliefs/glossary/gloss](/beliefs/glossary/gloss.md) | concept | false |
 | `em:f9daf3` | [beliefs/glossary/goal-structuring-notation](/beliefs/glossary/goal-structuring-notation.md) | concept | false |
 | `em:d9c5d9` | [beliefs/glossary/gold-set](/beliefs/glossary/gold-set.md) | concept | false |
 | `em:61877f` | [beliefs/glossary/golden-test](/beliefs/glossary/golden-test.md) | concept | false |
@@ -400,6 +401,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:332bd0` | [beliefs/glossary/probabilistic-delimiter-injection](/beliefs/glossary/probabilistic-delimiter-injection.md) | concept | false |
 | `em:e8c1a9` | [beliefs/glossary/probabilistic-enforcement](/beliefs/glossary/probabilistic-enforcement.md) | concept | false |
 | `em:d042c5` | [beliefs/glossary/product-market-fit](/beliefs/glossary/product-market-fit.md) | concept | false |
+| `em:d6666b` | [beliefs/glossary/progressive-disclosure](/beliefs/glossary/progressive-disclosure.md) | concept | false |
 | `em:8654d1` | [beliefs/glossary/prompt-injection](/beliefs/glossary/prompt-injection.md) | concept | false |
 | `em:a924c4` | [beliefs/glossary/prompt-sensitivity](/beliefs/glossary/prompt-sensitivity.md) | concept | false |
 | `em:b79e02` | [beliefs/glossary/proof-of-vulnerability](/beliefs/glossary/proof-of-vulnerability.md) | concept | false |
@@ -625,6 +627,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3f35e1` | [knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud](/knowledge/SWE/agentic/anthropic/claude-code/sources/cloud-web-user-settings-dont-carry-to-cloud.md) | source |  |
 | `em:a142be` | [knowledge/SWE/agentic/anthropic/claude/artifacts](/knowledge/SWE/agentic/anthropic/claude/artifacts.md) | concept | false |
 | `em:636e39` | [knowledge/SWE/agentic/anthropic/claude/claude-opus-5](/knowledge/SWE/agentic/anthropic/claude/claude-opus-5.md) | reference |  |
+| `em:7fa867` | [knowledge/SWE/agentic/architecture/architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md) | reference |  |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
 | `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
@@ -710,7 +713,6 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:01e477` | [knowledge/knowledge-management/argumentation/gsn-community-standard](/knowledge/knowledge-management/argumentation/gsn-community-standard.md) | source |  |
 | `em:5c3ab0` | [knowledge/knowledge-management/argumentation/toulmin-model-of-argument](/knowledge/knowledge-management/argumentation/toulmin-model-of-argument.md) | reference |  |
 | `em:6d6425` | [knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md) | reference |  |
-| `em:7fa867` | [knowledge/knowledge-management/design-rationale/architecture-without-architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md) | reference |  |
 | `em:4f5372` | [knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation](/knowledge/knowledge-management/design-rationale/context-strategies-for-adr-generation.md) | reference |  |
 | `em:2e4803` | [knowledge/knowledge-management/design-rationale/design-rationale](/knowledge/knowledge-management/design-rationale/design-rationale.md) | concept | false |
 | `em:ce51fc` | [knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale](/knowledge/knowledge-management/design-rationale/llms-recovering-design-rationale.md) | reference |  |

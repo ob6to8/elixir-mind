@@ -10,6 +10,7 @@ and the practices they change.
 - [agent-memory](/knowledge/SWE/agentic/agent-memory/index.md) — how agents persist and reuse experience across sessions: memory architectures, experience graphs, structured vs. raw-trajectory memory
 - [agentic-loop](/knowledge/SWE/agentic/agentic-loop/index.md) — the core execution loop of an LLM agent (reason→act→observe) and the "loop engineering" lexicon around it
 - [anthropic](/knowledge/SWE/agentic/anthropic/index.md) — Anthropic's products: Claude, Claude Code, the Agent SDK, and managed agents
+- [architecture](/knowledge/SWE/agentic/architecture/index.md) — how agents shape software architecture: the structural decisions they make while building, and the review practices proposed to govern them
 - [code-context](/knowledge/SWE/agentic/code-context/index.md) — tools that build and serve structured codebase context (knowledge graphs, indexes) to coding agents
 - [code-quality](/knowledge/SWE/agentic/code-quality/index.md) — maintaining code quality and craft under AI-assisted development: guardrails, review layering, and feedback loops against quality drift
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context

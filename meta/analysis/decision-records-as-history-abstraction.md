@@ -114,7 +114,7 @@ and [agent-memory](/knowledge/SWE/agentic/agent-memory/index.md)):
    - [AgenticAKM (2026)](/knowledge/knowledge-management/design-rationale/agentic-architecture-knowledge-management.md):
      multi-agent workflows generating ADRs from repositories beat naive
      prompting — decision-record authorship is tractable agent work.
-   - [Architecture Without Architects (2026)](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md):
+   - [Architecture Without Architects (2026)](/knowledge/SWE/agentic/architecture/architecture-without-architects.md):
      agents make architectural decisions "almost no one reviews as such"
      ("vibe architecting"); its proposed remedy is precisely decision records
      plus review tooling — the operator-side case for a decision audit surface.

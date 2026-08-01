@@ -18,7 +18,7 @@ attribution:
 # vibe architecting
 
 Coined by the *Architecture Without Architects* paper, captured as
-[architecture-without-architects](/knowledge/knowledge-management/design-rationale/architecture-without-architects.md),
+[architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md),
 whose proposed remedies — review practices, decision records, and tooling that
 surfaces hidden decisions — are the operator-side case for a decision audit
 surface in agent-operated systems. The agent-era sibling of *vibe coding*, one
