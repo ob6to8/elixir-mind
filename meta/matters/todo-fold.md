@@ -3,6 +3,7 @@ type: matter
 title: "Todo fold"
 description: Matter-docs build 3 — migrate meta/todos/ into meta/matters/, retire type todo from the vocabulary with a contract recompile, and repoint the reading surfaces.
 status: done
+pr: 232
 plan: /meta/plans/matter-docs-architecture.md
 order: 3
 provenance: "Claude Fable 5, matter-register consumption session (matter-docs build 2)"

@@ -4,6 +4,7 @@ title: 2026-08-02-todo-fold-into-matters
 description: A fresh thread consumes register row 1 under the interim protocol and delivers matter-docs build 3 — meta/todos/ folds into meta/matters/, type todo retires with a contract recompile, the reading surfaces repoint with queued-row annotation — then retitles the todo-cli plan to the matters store at operator direction and closes.
 tags: [thread, matters, todos, migration, vocabulary, session-init]
 timestamp: 2026-08-02
+pr: 232
 session: https://claude.ai/code/session_01KFww9ccMjBjmzd9ZSEwroC
 ---
 
