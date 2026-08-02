@@ -5,6 +5,7 @@ description: Built the /scope-unit-of-work skill and the model roster it reads, 
 provenance: "Claude Code session (Claude Opus 5), 2026-08-02; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [meta, thread, skills, matters, models, config, separation-of-concerns]
 timestamp: 2026-08-02
+pr: 237
 session: https://claude.ai/code/session_01RzvfWLbiQKhtrSPxV1QLYw
 ---
 
