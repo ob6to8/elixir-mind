@@ -38,4 +38,10 @@ sessions, consumed top-down by fresh threads, per the
 [matter-docs plan](/meta/plans/matter-docs-architecture.md): the global
 delivery order across initiatives is the one datum it alone holds.
 
-*Seen in:* [the TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md), [2026-08-02 methodology-finalization thread](/meta/threads/2026-08-02-methodology-finalization.md), [2026-08-02 matters-vs-plans thread](/meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md)
+A matter is also a first-class document: the controlled `type: matter` in the
+[vocabulary](/meta/policy/controlled-type-vocabulary.md) files each one as a
+governance doc — `status` `open`/`done`/`cancelled`, plus optional
+`plan`/`order` props naming the plan whose build order emits it and its
+position in that plan's sequence, both omitted on standalone matters.
+
+*Seen in:* [the TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md), [2026-08-02 methodology-finalization thread](/meta/threads/2026-08-02-methodology-finalization.md), [2026-08-02 matters-vs-plans thread](/meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md), [2026-08-02 matter-type-vocabulary-adoption thread](/meta/threads/2026-08-02-matter-type-vocabulary-adoption.md)
