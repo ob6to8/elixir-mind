@@ -161,6 +161,36 @@ The Elixir annex is included only in Elixir repos.
   tight loop.
 ```
 
+## Claim provenance (temporary format)
+
+Per-claim source mapping, persisted from the originating session's research
+before its context dies. **Temporary format**: pending phases 3–4 of the
+[span-level attribution plan](/meta/plans/span-level-attribution.md), each row
+converts one-to-one into an `<attr>` span plus structured provenance — the
+*claim anchor* is the future span's content anchor. Basis for every row:
+**search** (retrieved during the 2026-08-01 spike, not model memory); verbatim
+quotes and figures are held in
+[the ranking analysis](/meta/analysis/tdd-rank-for-coding-agent-development.md)'s
+evidence sections and citations.
+
+| § | claim anchor | class | sources |
+|---|---|---|---|
+| 1 | "a test never seen red proves nothing" | synthesis | Willison, red/green TDD pattern (2026-02: confirm failure before implementing, else the test may be vacuous); Anthropic best practices (2025-04: confirm tests fail before coding); [Gorman](/knowledge/SWE/agentic/code-quality/why-tdd-works-in-ai-assisted-programming.md) `em:e7644d` |
+| 1 | "3–5 focused tests … the measured optimum" / whole suite "degrades generation" | synthesis | TENET (arXiv 2509.24148: 3 selected tests 49.18% vs full-suite 33.06%); WebApp1K (2505.09027: doubling tests collapses pass@1) |
+| 1 | "Commit on green; revert on red" / only working code enters context | synthesis | Gorman `em:e7644d` (commit-on-green practice; broken-code-as-context argument) |
+| 1 | "small steps keep each interaction inside the model's effective context" | synthesis | Gorman `em:e7644d`; [context rot](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md) `em:77d68a` |
+| 2 | "never weakens, skips, deletes, or special-cases a test" | synthesis | Beck (2025-06: agent "cheating, for example by disabling or deleting tests"); Böckeler (2025-08: success declared over red tests); METR (2025-06); ImpossibleBench (2510.20270); Anthropic emergent-misalignment (2025-11) |
+| 2 | "agents editing tests, overloading equality, exiting before asserts" | synthesis | ImpossibleBench cheat taxonomy; Anthropic (`sys.exit(0)` harness escape) |
+| 2 | "Humans review tests hardest" | synthesis | Anthropic (2025-04: commit tests once satisfied with them); Willison (2025-03: testing cannot be outsourced to the machine); Dunlop (2026-04: passing AI-written suite enshrined a bad UX — the counter-case this rule answers) |
+| 3 | "Test features and observable contracts, not internals" | synthesis | matklad `em:a5ea86` (the neural-network test) |
+| 3 | "mock impure IO boundaries only" | synthesis | matklad `em:73115b`; Valim (2015) |
+| 4 | "'mock' as a noun, never" a verb | quote | Valim (2015): "I always consider 'mock' to be a noun, never a verb"; Mox docs (behaviour-bound doubles keep `async: true` safe) |
+| 4 | inner-loop flags (`--stale`, `--failed`, `--max-failures`) | synthesis | hexdocs `mix test` documentation |
+| 4 | doctests as example contracts; StreamData shrinking | synthesis | hexdocs ExUnit + StreamData documentation |
+| 5 | "Small PRs review faster, revert less, and draw more comments per line"; ~50–200-line weight | synthesis | Google eng-practices small-CLs; Graphite 50-line data (≈40% faster review, ≈15% fewer reverts) |
+| 5 | "review is the bottleneck" | synthesis | Graphite (2025-10: "code review is the new bottleneck"); Codacy 2026 roundup citing CircleCI (feature-branch throughput +59% while main-branch throughput stalls) and LinearB 2026 (agentic PRs wait 5.3× longer for pickup, run 154% larger) |
+| 7 | "Three failed attempts at the same issue → stop" + document what was tried | synthesis | Dzombak `em:49315a` ("Maximum 3 attempts per issue, then STOP") |
+
 # Citations
 
 Synthesized from the sources filed in this directory and the research spike's
