@@ -161,7 +161,7 @@ split across the exact forms the policy says must not coexist: bare
 concedes enforcement is editorial and scope is forward-only — which,
 combined, produces a rule that nothing will ever bring into conformance.
 (Separately, the open
-[ratify-or-reject todo](/meta/todos/ratify-or-reject-provenance-names-producing-model.md)
+[ratify-or-reject todo](/meta/matters/ratify-or-reject-provenance-names-producing-model.md)
 still asks whether to ratify a rule that the policy set shows as already
 ratified — the todo is stale on its face.)
 

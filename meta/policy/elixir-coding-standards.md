@@ -12,7 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, operator-directed session"
   why: "operator ratified absorbing the transferable coding standards and guardrails from the Zornek AI-drift/LocalCents intake into the contract"
-  from: [/meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md]
+  from: [/meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 **This contract is the coding-standards file.** The Elixir tooling (`lib/`,
 `test/`, the `mix brain.*` tasks) is held to the same anti-drift bar as the
@@ -83,7 +83,7 @@ rapidly or come from authors who do not write Elixir. Grounded in the
   semantically ("a `:stale` result when the artifact lags its sources"), never
   a transcription of the return tuple.
 - **Comments carry durable *why* and never restate the signature.** Future-work
-  asides become `meta/todos/` or `meta/issues/` entries, not `TODO` comments.
+  asides become `meta/matters/` or `meta/issues/` entries, not `TODO` comments.
 - **Discard an ignored return with `_ = expr`** so the disinterest is explicit,
   never a bare dangling expression.
 - **Test through the narrowest public surface** — a module's API or the mix

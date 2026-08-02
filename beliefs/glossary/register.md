@@ -12,7 +12,7 @@ attribution:
   why: "term surfaced by the 2026-07-28 communication-guidance thread's banned-phrases register, joining the existing bookmarks and channels registers"
 tags: [glossary, records, communication]
 sense: dual
-timestamp: 2026-07-28
+timestamp: 2026-08-02
 ---
 
 # register
@@ -27,8 +27,11 @@ timestamp: 2026-07-28
 
 **In this brain:** sense 1 names the maintained rolls — the
 [bookmarks register](/survey/bookmarks.md) of the survey tier, the
-[channels register](/survey/channels.md), and the
+[channels register](/survey/channels.md), the
 [banned-phrases register](/meta/policy/banned-phrases.md), whose entries carry
-their generalized pattern and the reasoning that banned them.
+their generalized pattern and the reasoning that banned them, and the
+[matter register](/meta/matters.md), the ordered pointer view over queued
+[matters](/beliefs/glossary/matter.md) whose one stored datum is the global
+delivery order.
 
-*Seen in:* [2026-07-28 communication-guidance thread](/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md), [banned-phrases policy](/meta/policy/banned-phrases.md), [2026-07-22 survey-tier thread](/meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md)
+*Seen in:* [2026-07-28 communication-guidance thread](/meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md), [banned-phrases policy](/meta/policy/banned-phrases.md), [2026-07-22 survey-tier thread](/meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md), [2026-08-02 stand-up-meta-matters thread](/meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md)
