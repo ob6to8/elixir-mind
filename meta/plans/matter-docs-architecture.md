@@ -2,7 +2,7 @@
 type: plan
 title: "Matter docs: a matter type, plan/order props, and the register as an order-only view"
 description: Execute the ratified matters-vs-plans resolution — each matter becomes a governance doc (type matter, status, optional plan/order props), plans back-link as superstructure, meta/matters.md thins to the order-only pointer view over queued matters, todo folds into matter, and a /matter skill plus a mix brain.matters verifier close the loop.
-status: accepted
+status: in-progress
 provenance: "Claude Fable 5, matter-register consumption session, in ratification dialog with the operator"
 tags: [meta, plan, matters, work-queue, types, skills, verifier]
 timestamp: 2026-08-02
