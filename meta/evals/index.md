@@ -60,6 +60,16 @@ not by pressure from the backlog's size.
   agent re-derive or recall, and does the ratio move as a session lengthens? Design
   only; four instances across two sessions, one of them recorded independently by an
   earlier session that reached the same conclusion. `status: proposed`.
+- [Skill body layout A/B](/meta/evals/skill-body-layout-ab.md) — does sectioning a
+  `SKILL.md` body change what an agent produces, with the rule-set held constant?
+  **Built and run** (2026-08-02): eight worktree-isolated Sonnet 5 subagents over
+  four scoping specs × two layouts returned **71/71 for both**, a null result that
+  moves the house-vocabulary question onto maintainability grounds. Two side
+  findings outweighed the headline — a session-dependent `model:` stamp (now
+  [an issue](/meta/issues/model-determination-is-session-dependent.md)) and the
+  fenced-heading hazard any conformance checker must handle. Instrument artifacts,
+  including the two pinned variant texts and the scorer, in
+  [`skill-body-layout-ab/`](/meta/evals/skill-body-layout-ab/index.md).
 - [Belief-graph grounding eval](/meta/evals/cb-eval-export/MANIFEST.md) — an
   external snapshot, not a `mix brain.*`-scored instrument built here: the
   apples/fruit `conceptual-prototype/` that surfaced a logical-composition gap, and

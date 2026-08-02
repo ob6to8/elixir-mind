@@ -159,3 +159,17 @@ attribution:
   review. See `.claude/skills/review-pr/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
+
+**A skill body's section structure is convention, not yet a rule.** This policy
+governs which skills exist and where a new one goes; nothing here or in any
+doctrine constrains how a `SKILL.md` body is laid out. The corpus has converged
+anyway — `Guardrails` in 15 of 18 skills, `Procedure` in 10, `Dispatch` in 7,
+with `Rules` and `Notes` as unratified synonyms — and the operator has ratified
+promoting that vocabulary to a house convention with a `## Purpose` heading over
+the currently-unheaded lede, enforced only for the required set and the synonym
+ban. Until that policy lands, write a new skill to match its siblings. The
+layout was measured before being adopted: the
+[skill body layout A/B](/meta/evals/skill-body-layout-ab.md) found no behavioral
+difference between prose and labeled sections with the rule-set held constant,
+so the convention rests on maintainability, and a future claim that some layout
+reads better to the model owes that instrument's evidence.
