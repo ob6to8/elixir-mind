@@ -5,6 +5,7 @@ description: A fresh thread consumes register row 1 under the interim protocol's
 provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [thread, matters, skills, work-queue]
 timestamp: 2026-08-02
+pr: 233
 session: https://claude.ai/code/session_016Cmu4d8aRqZ7Ky69JBTLsn
 ---
 
