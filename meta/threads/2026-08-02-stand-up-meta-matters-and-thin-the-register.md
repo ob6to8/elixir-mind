@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained
 tags: [meta, thread, matters, migration, work-queue]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01EbYn88ufkFo5nrH3SjGRcX
+pr: 230
 ---
 
 # 2026-08-02-stand-up-meta-matters-and-thin-the-register

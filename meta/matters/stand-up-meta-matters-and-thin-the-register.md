@@ -5,6 +5,7 @@ description: Matter-docs build 2 — migrate the queued register rows to matter 
 status: done
 plan: /meta/plans/matter-docs-architecture.md
 order: 2
+pr: 230
 provenance: "Claude Fable 5, matter-register consumption session (matter-docs build 2)"
 tags: [meta, matter, matters, migration]
 timestamp: 2026-08-02
