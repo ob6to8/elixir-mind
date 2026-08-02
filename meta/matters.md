@@ -1,7 +1,7 @@
 ---
 type: reference
 title: "Matters — the pending-delivery register"
-description: The ordered, cross-session queue of pending matters — each row a self-contained handoff packet (matter, scope with decisions and refs, context flag) consumed top-down by fresh threads under the atomic-pull-requests policy; rows are removed when their matter's PR merges, and git history is the archive.
+description: The ordered, cross-session queue of pending matters — each row a self-contained handoff packet (matter, scope with decisions and refs, context flag) consumed top-down by fresh threads under the atomic-pull-requests policy; a consumed row moves to the in-doc Consumed log when its matter is delivered, and git history is the full archive.
 provenance: "Maintained by agent sessions under the matter-queue plan; seeded 2026-08-02 from the TDD research-spike session's approved sequence"
 tags: [meta, matters, work-queue, handoff, atomic-prs]
 timestamp: 2026-08-02
@@ -18,8 +18,9 @@ The pending-delivery register, per the
 [matter-queue plan](/meta/plans/matter-queue-and-present-matters.md). One
 [matter](/beliefs/glossary/matter.md) per row, one PR per matter
 ([policy](/meta/policy/git-atomic-pull-requests.md)); consume top-down;
-remove a row when its PR merges. `fresh` = execute in a new thread with this
-row (plus its refs) as the entire handoff.
+when a row's matter is delivered, move it from the queue to the Consumed
+log below (the move lands with the matter's PR). `fresh` = execute in a new
+thread with this row (plus its refs) as the entire handoff.
 
 | # | Matter | Scope — decisions made, where detail lives | Context |
 |---|---|---|---|
@@ -30,3 +31,15 @@ row (plus its refs) as the entire handoff.
 | 5 | Two-sided bias taxonomy implementation | Per the [plan](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) — agent-side path ratification (leading: `knowledge/SWE/agentic/failure-modes/biases/`), per-entry literature-name pass, registers + einstellung refile (`em:837963` → the created [`knowledge/cognitive-science/biases/`](/knowledge/cognitive-science/biases/index.md)) + glossary pointer, thread-corpus backfill tagging, derive-don't-recall doctrine capstone. | fresh |
 | 6 | TDD bookmark promotions | Per the [todo](/meta/todos/promote-the-tdd-survey-bookmarks.md): promote Willison red/green, Superpowers, Swett; intake arXiv 2602.07900 carrying the weighing the todo embeds. | fresh |
 | 7 | Vendor-block pilot | **Blocked on an active consuming repo existing** ([two-level plan](/meta/plans/two-level-agent-methodology-guidance.md) build-order 3): paste the block from `em:cab2c5` into its `CLAUDE.md`, add repo specifics beneath. | fresh |
+
+## Consumed
+
+Delivered matters, newest first — the human-readable index of the queue's
+history. Each row names its landing PR once one exists (a row logged before
+its PR opens gets the number appended then); the row's full scope packet
+stays in git history, in the commit that removed it from the queue.
+
+| Date | Matter | Landed |
+|---|---|---|
+| 2026-08-02 | `deferred-work-is-filed` policy | [the policy](/meta/policy/deferred-work-is-filed.md), section `filing`, compiled into the contract — drafted for ratification at PR review |
+| 2026-08-02 | Methodology finalization (the A-package remnant) | protection ladder, de-"exempt" wording, block v1 final in [`em:cab2c5`](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) — PR #226 |
