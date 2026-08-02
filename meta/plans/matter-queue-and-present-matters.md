@@ -2,7 +2,7 @@
 type: plan
 title: "The matter queue: a persistent register of pending matters and the /present-matters skill"
 description: Persist the cross-session work queue as an ordered register of pending matters (meta/matters.md) whose rows are self-contained handoff packets — matter, scope with decisions and refs, context flag — consumed top-down by fresh threads under the atomic-PR policy, rendered by a /present-matters skill; the register is the durable answer to "how does the next thread know what to do" so no matter ever lives only in a session's memory.
-status: accepted
+status: superseded
 provenance: "Claude Code session (Claude Fable 5), 2026-08-01/02 — designed in the TDD research-spike session's sequencing dialog; register stood up in the same session as the compaction-driven handoff"
 tags: [meta, plan, matters, work-queue, handoff, atomic-prs, skills, context]
 timestamp: 2026-08-02
@@ -11,10 +11,19 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator approved the matter-queue shape and, facing context compaction, directed the handoff machinery be stood up so remaining dev continues in fresh threads"
-  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md]
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md]
 ---
 
 # The matter queue and /present-matters
+
+> **Superseded 2026-08-02** by the
+> [matter-docs plan](/meta/plans/matter-docs-architecture.md): the operator's
+> matters-vs-plans question (register row 1) resolved into the escalation
+> shape this plan's decision list reserved — one doc per matter under a
+> ratified `type: matter`, the register thinned to the order-only pointer
+> view — with the `/present-matters` renderer consolidated into the `/matter`
+> skill. The [matters-vs-plans analysis](/meta/analysis/matters-vs-plans.md)
+> carries the reasoning.
 
 ## Problem
 
