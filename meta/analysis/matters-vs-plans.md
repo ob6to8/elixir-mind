@@ -20,12 +20,7 @@ attribution:
 Operator-raised, verbatim: "what's the difference between matters and plans? is
 it just scope? if so, plans should really just be aggregated collections of
 sequential matters that done sequentially would implement the complete scope of
-the plan. are we unecessarily creating a new data type?" — punted at origin
-into register row 1 and consumed by this analysis. In dialog the question
-sharpened twice: whether unifying plan build-orders with register rows implies
-deriving the register ("which would then imply the matter registry should be
-derived"), and, once the todo fold was on the table, whether `matter` is even
-the right term.
+the plan. are we unecessarily creating a new data type?"
 
 ## A matter is a review quantum; a plan is a decision record
 
@@ -52,14 +47,14 @@ restating a plan's step and diverging from it after an edit.
 
 ## The order is irreducibly a store
 
-The first disposition weighed in-session was conservative: keep the register a
+Two alternatives were weighed. The conservative one: keep the register a
 hand-kept store and contain drift by row discipline — a planned-work row
-quotes or refs its plan step, never restates it. The operator countered with
-the unification: make plan build-orders verbatim copies of register rows, and
-therefore derive the register. The implication is sound — hand-kept verbatim
-copies in two files would be the worst shape, so unified formats demand
-generation — but the generator would have had incomplete sources. Three gaps,
-all live in the seeded register:
+quotes or refs its plan step, never restates it. The operator-proposed one:
+make plan build-orders verbatim copies of register rows, "which would then
+imply the matter registry should be derived". The derivation implication is
+sound — hand-kept verbatim copies in two files would be the worst shape, so
+unified formats demand generation — but the generator would have incomplete
+sources. Three gaps, all present in the register as it stood:
 
 - **The cross-plan order.** Every plan can order its own steps; none can say
   whose step goes first across initiatives. That interleave is an operator
@@ -75,7 +70,7 @@ all live in the seeded register:
 
 ## The resolution: matter docs, register as the order-only view (ratified 2026-08-02)
 
-The operator's second proposal dissolves the tension instead of picking a
+The ratified architecture dissolves the tension instead of picking a
 side: each matter becomes a document (`type: matter`) carrying its own packet,
 with an optional `plan` association and an `order` position inside that plan's
 sequence; plans back-link as superstructure; and the register thins to "a
@@ -141,7 +136,7 @@ the real contender, the Mix-task collision breaks the tie back, and its churn
 clause ("a rename's cost … usually exceeds a marginal terminology gain")
 prices the switch above its gain.
 
-## A tagging mis-route, surfaced en route
+## A tagging mis-route
 
 The operator's question had been route-tagged into the *matter* glossary
 entry's excerpt log, and the operator challenged the placement: "this is a
@@ -149,10 +144,10 @@ development concern, my dialog does not help define the term." Correct — and
 the cause is mechanical rather than editorial: only `em:`-id documents
 aggregate excerpts, and the glossary concept was the only id-bearing document
 near the matter system, so system-development dialog defaulted into a
-definitional surface. Fixed in this delivery by retagging both regions to path
-refs (the plan and the register). The rule of thumb it leaves: **a term's
-excerpt log carries definitional development only; system-development
-discussion back-links by path to the governance docs it concerns.**
+definitional surface. Both regions are retagged to path refs (the plan and
+the register). The rule of thumb it leaves: **a term's excerpt log carries
+definitional development only; system-development discussion back-links by
+path to the governance docs it concerns.**
 
 ## Conclusions
 
