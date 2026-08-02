@@ -60,7 +60,7 @@ build order.
 
 | Date | Matter | Type | Order | Landed |
 |---|---|---|---|---|
-| 2026-08-02 | [Matters-register plan metadata](/meta/matters/matters-register-plan-metadata.md) | independent | - | Type/Order columns on both of this register's tables, projected from the matter docs' `plan`/`order` frontmatter; the instruction filed and consumed as this row's doc |
+| 2026-08-02 | [Matters-register plan metadata](/meta/matters/matters-register-plan-metadata.md) | independent | - | Type/Order columns on both of this register's tables, projected from the matter docs' `plan`/`order` frontmatter; the instruction filed and consumed as this row's doc — PR #231 |
 | 2026-08-02 | Stand up `meta/matters/` + thin this register | [planned](/meta/plans/matter-docs-architecture.md) | 2 | ten matter docs under [`meta/matters/`](/meta/matters/index.md) + this register thinned to the order-only pointer view; [matter-docs plan](/meta/plans/matter-docs-architecture.md) build 2 — PR #230 |
 | 2026-08-02 | `type: matter` vocabulary adoption | [planned](/meta/plans/matter-docs-architecture.md) | 1 | [vocabulary entry](/meta/policy/controlled-type-vocabulary.md) + contract recompile; matter-docs plan flipped `in-progress` riding — PR #229 |
 | 2026-08-02 | Matters-vs-plans definition question | independent | - | [matters-vs-plans analysis](/meta/analysis/matters-vs-plans.md) + the ratified [matter-docs plan](/meta/plans/matter-docs-architecture.md) (`type: matter`, order-only register, todo fold, term kept, former rows 2+3 merged, build queued as rows 1–5); glossary retag riding — PR #228 |

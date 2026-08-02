@@ -3,6 +3,7 @@ type: matter
 title: "Matters-register plan metadata"
 description: Add Type (planned/independent) and Order columns to both tables of the matter register, so each row shows whether a plan's build order emitted its matter and its position in that plan's own sequence.
 status: done
+pr: 231
 provenance: "Claude Fable 5, matters-register metadata session"
 tags: [meta, matter, matters, register]
 timestamp: 2026-08-02
