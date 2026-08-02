@@ -58,9 +58,13 @@ The operator-gated ruling session over the queue below. Landed mid-session:
 queue row 5 resolved by ratifying **session 5 — the governance backlog
 audit** (see Remaining sections) in place of a bare posture ruling; the
 [complete docs rewrite](/meta/plans/complete-docs-rewrite.md) plan filed as
-`proposed` with its sequencing ratified. Rows 1–4 and the
-contract-synchronization sweep are in flight; this entry is completed at the
-session's close.
+`proposed` with its sequencing ratified. After the matter system landed on
+main (2026-08-02), the operator directed the thread's remaining spikes —
+rows 1–4 and the contract-synchronization sweep — broken out of the inline
+thread into five sequenced matters under the
+[decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md)
+plan, delivered via the [matter register](/meta/matters.md) rather than
+in-session; this entry is completed at the session's close.
 
 ## Remaining sections
 
@@ -106,13 +110,13 @@ item by item and ratify dispositions over evidence.
 
 - **Scope**: every active plan (`meta/plans/`, status
   proposed/accepted/in-progress), open issue (`meta/issues/`), and open
-  todo (`meta/todos/`) — 39 / 8 / 18 = 65 items at ratification; the audit
-  reads live state at run time. Per-item census work no existing plan
-  scopes.
+  matter (`meta/matters/`, queued and backlog alike) — 65 items at
+  ratification (2026-08-01, pre-todo-fold; the audit reads live state at
+  run time). Per-item census work no existing plan scopes.
 - **Per-item disposition**, exactly one, each with a one-line cited
   justification: still valid · already satisfied (name what satisfies it —
   e.g. the
-  [ratify-or-reject-provenance todo](/meta/todos/ratify-or-reject-provenance-names-producing-model.md)
+  [ratify-or-reject-provenance matter](/meta/matters/ratify-or-reject-provenance-names-producing-model.md)
   the epistemology review flagged as stale on its face) · superseded by a
   later ratification (name it) · duplicate of another item (name it) ·
   keep with a defer-until condition (state it).
@@ -142,8 +146,13 @@ item by item and ratify dispositions over evidence.
 Row 5 was resolved by ratification rather than ruled bare: the operator
 commissioned session 5 (2026-08-01, decision-queue session) as its
 disposition — a per-item audit-and-ratify pass over the whole governance
-backlog instead of a posture call over the plans alone. The live queue is
-rows 1–4.
+backlog instead of a posture call over the plans alone. Rows 1–4 and the
+contract-synchronization sweep were then broken out (2026-08-02, same
+session) into the five-matter
+[decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md);
+their rulings arrive per matter through the approval-gated
+[`/matter`](/.claude/skills/matter/SKILL.md) protocol, and this table stands
+as the review's record of the questions.
 
 ## Execution hand-offs
 
@@ -237,8 +246,8 @@ session lands; it is unordered relative to sessions 2–3.
 > Run session 5 of `/meta/plans/comprehensive-repo-review-program.md` — the
 > governance backlog audit. Audit every active plan (`meta/plans/`, status
 > proposed/accepted/in-progress), every open issue (`meta/issues/`), and
-> every open todo (`meta/todos/`): read each item in full, then assign
-> exactly one disposition — still valid · already satisfied (name what
+> every open matter (`meta/matters/`, queued and backlog alike): read each
+> item in full, then assign exactly one disposition — still valid · already satisfied (name what
 > satisfies it) · superseded by a later ratification (name it) · duplicate
 > of another item (name it) · keep with a defer-until condition (state the
 > condition) — each with a one-line justification citing evidence, never

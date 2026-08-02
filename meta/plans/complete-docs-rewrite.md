@@ -46,13 +46,15 @@ where they are, and this plan does not restate them:
   thread (PR #223).
 - The contract-synchronization sweep
   ([epistemology review §2–3](/meta/analysis/epistemology-and-governance-review.md))
-  — the decision-queue session's work.
+  — matter 1 of the
+  [decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md).
 
 ## Ratified sequencing (operator, 2026-08-01)
 
 1. **Runs only after the decision-queue rulings and the
-   contract-synchronization sweep land.** Rewriting against rules that are
-   about to change does the work twice.
+   contract-synchronization sweep land** — since 2026-08-02, matters 1–5 of
+   the [decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md).
+   Rewriting against rules that are about to change does the work twice.
 2. **One artifact per matter with the separation plan.** The
    [bundle/library separation plan](/meta/plans/separate-okf-bundle-and-elixir-mind-library.md)
    owns a doc-first phase 1: the README / `meta/preamble.md` / root-index
