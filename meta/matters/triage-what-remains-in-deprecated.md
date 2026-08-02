@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Triage what remains in deprecated/ and decide its fate"
 description: deprecated/ still holds 33 markdown files across sources, assertions, intake, logs, and plans — read-only legacy content that was never dispositioned, leaving a raw-URL backlog and superseded plans sitting outside the taxonomy with no decision recorded.
 status: open
 provenance: "Claude Code session (2026-07-11) — raised during the deprecated-directory triage and machinery deletion; file count re-verified 2026-07-28"
-tags: [meta, todo, deprecated, migration, cleanup]
+tags: [meta, matter, deprecated, migration, cleanup]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

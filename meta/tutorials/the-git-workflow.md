@@ -67,7 +67,7 @@ same commands run identically here, in the hook, and in CI. **Open hardening:** 
 hook is opt-in and is not auto-enabled in web sessions, so its local-first benefit
 is mostly unrealized there — auto-wiring `core.hooksPath` in
 [`session-start.sh`](/.claude/hooks/session-start.sh) is a tracked
-[todo](/meta/todos/wire-pre-commit-hook-in-session-start.md).
+[todo](/meta/matters/wire-pre-commit-hook-in-session-start.md).
 
 ### 3. Pull request — the presubmit
 

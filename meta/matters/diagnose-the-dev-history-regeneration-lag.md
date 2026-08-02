@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Diagnose why meta/dev-history.md fell six PRs behind"
 description: Diagnosed and closed — the lag's cause is the shallow-clone silent no-op, established from the merge graph, but the drift turned out to be within design tolerance rather than a defect, and the committed view was ultimately removed; see the issue it graduated to.
 status: done
 provenance: "Claude Code session (2026-07-28) — observed while regenerating dev-history from an unshallowed clone"
-tags: [meta, todo, dev-history, generated-artifacts, ci, shallow-clone, gates]
+tags: [meta, matter, dev-history, generated-artifacts, ci, shallow-clone, gates]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Decide whether journal entries adopt a carry-forward closing line"
 description: Journal entries accumulate rather than compound — each is self-contained, so a thread running across days has no explicit link forward, and a closing carry-forward line was proposed on day two and never decided.
 status: open
 provenance: "Claude Code session (2026-07-26) — recurring editorial note raised on the second journal entry"
-tags: [meta, todo, journal, convention, editorial]
+tags: [meta, matter, journal, convention, editorial]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

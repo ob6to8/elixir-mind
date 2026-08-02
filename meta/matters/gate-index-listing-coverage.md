@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Gate index-listing coverage: promote the existing advisory check to a hard mix brain.verify failure"
 description: A directory whose index.md already exists but omits a doc or subdirectory filed beside it is now a hard mix brain.verify failure, not an advisory warning; a wholly absent index.md stays advisory per OKF conformance. No directory is excepted by name — a concurrently-merged relocation of evals/ to meta/evals/cb-eval-export/ made an earlier name-based exemption for it unnecessary before this todo closed.
 status: done
 provenance: "Claude Code session (Claude Sonnet 5), 2026-08-01 — surfaced during a terse-brain evaluation that read ElixirMind.Links and found the index-coverage half of it already existed but was non-binding by design"
-tags: [meta, todo, tooling, elixir, verifier, index, ci, gates]
+tags: [meta, matter, tooling, elixir, verifier, index, ci, gates]
 timestamp: 2026-08-01
 attribution:
   when: 2026-08-01T00:00:00Z

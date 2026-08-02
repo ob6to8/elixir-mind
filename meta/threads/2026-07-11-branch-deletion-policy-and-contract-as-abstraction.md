@@ -204,7 +204,7 @@ Everything's recorded and pushed (commit `9386822`), but the headline is: **I co
 **The deletion attempt.** I re-verified all 15 branches were still fully merged into `main` immediately before deleting, then tried `git push origin --delete` — bulk and single-branch both return HTTP 403. This remote environment's GitHub credential can push commits to `claude/*` branches but cannot delete refs, and the GitHub MCP toolset has no delete-branch tool either. So the ratified deletion is an operator step. The issue now contains the exact ready-to-paste command for all 15, or you can click through the [branches page](https://github.com/ob6to8/second-brain/branches) — and once you're there, the "Automatically delete head branches" toggle in Settings → General would close out the go-forward half in the same visit.
 </routes>
 
-<routes ref="meta/todos/triage-the-six-kept-unmerged-claude-branches.md">
+<routes ref="meta/matters/triage-the-six-kept-unmerged-claude-branches.md">
 **The todo.** Filed via the newly-landed `/todo` skill — fittingly, it's the very first entry in `meta/todos/`: [`triage-the-six-kept-unmerged-claude-branches.md`](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md). It details each kept branch — what it holds, from the commit audit — and a suggested disposition: the two substantial actively-worked branches (`code-review-docs-audit`, `epistemic-artifact-beliefs`) flagged as likely heading to their own PRs, the `/sync-branch-with-main` skill worth reviving, two small ones needing a revive-or-retire call, and `glossary-thread-docs` flagged as a probable false orphan to diff against `main` before deciding. "Done" means every branch is merged, ratified-deleted, or explicitly kept with a reason.
 </routes>
 

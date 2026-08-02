@@ -1,9 +1,9 @@
 ---
-type: todo
+type: matter
 title: "Build mix brain.staleness once dated-revision resources pass ~10 docs"
 description: Done when a task exists that checks every doc whose `resource` is a dated-revision path against the source's current revision — but not before the exposure justifies it.
 status: open
-tags: [meta, todo, tooling, staleness, primary-sources]
+tags: [meta, matter, tooling, staleness, primary-sources]
 timestamp: 2026-07-27
 attribution:
   when: 2026-07-27T00:00:00Z

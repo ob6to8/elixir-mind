@@ -74,7 +74,7 @@ policy and content claims.
   the BEAM/Jido satellite-cluster consolidation question.
 - **Duplication beyond the top-10 pairs**; `deprecated/` triage input
   (33 files — feeds the existing
-  [triage todo](/meta/todos/triage-what-remains-in-deprecated.md), not a
+  [triage todo](/meta/matters/triage-what-remains-in-deprecated.md), not a
   new artifact).
 
 ### Session 4 — fixes and decisions (operator-gated)

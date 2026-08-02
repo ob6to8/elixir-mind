@@ -20,7 +20,6 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
 - [registry.md](/meta/registry.md) — **generated** stable-id → concept view (`mix brain.registry`)
 - [threads](/meta/threads/index.md) — archived operator–agent conversations (exchanges only)
-- [todos](/meta/todos/index.md) — lightweight actionable task items (`type: todo`, each with a `status`)
 - [tutorials](/meta/tutorials/index.md) — long-form explanatory notes on how the tooling and governance work
 
 ## Related tooling (not part of the knowledge bundle)
@@ -50,8 +49,8 @@ taxonomy. This is where the rules that compile into the operating contract live.
     (`--expanded` scores synonym-expanded recall). Offline, deterministic, and
     non-gating (a report step in CI) — recall is an editorial trend metric.
   - `mix brain.session_init` — compile the session-start digest: open issues and
-    todos, active plans, dangling ledger strands, and a heuristic top-3 priority
-    ranking.
+    matters (register-queued rows annotated), active plans, dangling ledger
+    strands, and a heuristic top-3 priority ranking.
   - `mix brain.dev_history [--check]` — derive the gitignored `meta/dev-history.md` (per-PR
     features and progress) from the default branch's first-parent merge graph;
     `--check` is lag-tolerant (the checked-in copy cannot contain the merge that

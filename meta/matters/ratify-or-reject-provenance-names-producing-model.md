@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Ratify or reject the thin attribution policy naming the producing model"
 description: The three-level documentation doctrine proposed a thin attribution rule — that provenance names the model that produced a statement — and it has sat awaiting operator ratification since, while the commit trailer and attribution.agent have since taken over adjacent ground.
 status: open
 provenance: "Claude Code session (2026-07-13) — proposed inside the three-level documentation and model doctrine work"
-tags: [meta, todo, attribution, provenance, policy, ratification]
+tags: [meta, matter, attribution, provenance, policy, ratification]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

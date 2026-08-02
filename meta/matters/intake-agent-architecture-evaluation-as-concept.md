@@ -1,9 +1,9 @@
 ---
-type: todo
+type: matter
 title: "Intake the agent-as-computer architecture evaluation as a concept"
 description: The CPU/OS, pure-function, interpreter-tower, and RAM/disk/ROM analogies evaluation is filed as a distilled concept under knowledge/SWE/agentic/agentic-loop/ (or a new agent-architecture shelf).
 status: open
-tags: [meta, todo, intake, agent-architecture]
+tags: [meta, matter, intake, agent-architecture]
 timestamp: 2026-07-13
 attribution:
   when: 2026-07-13T00:00:00Z

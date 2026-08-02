@@ -148,7 +148,7 @@ two disagree often enough that a channel's own blurb is not evidence.
 |---------|-------|--------|----------|------|
 | [Reddit — r/LLMDevs](https://www.reddit.com/r/LLMDevs/) | Practitioner discussion on building with LLMs; surfaces channel and tool names at a granularity no article supplies, but recommendations need checking against actual output — its video thread yielded five keepers out of sixteen nominations | Free to read; Reddit blocks automated fetches, so treat it as a manual-visit channel | — | [r/LLMDevs](https://www.reddit.com/r/LLMDevs/comments/1v6zxz3/recommended_nonbs_youtube_channels/) (2026-07-26) |
 | [LinkedIn](https://www.linkedin.com/) | Practitioner posts that exist nowhere else; captured verbatim because the platform is a poor archive | Freemium — public posts readable, login prompted for more | [Steps of AI Adoption (Boris Cherny)](/knowledge/SWE/agentic/adoption/steps-of-ai-adoption.md) | filed documents (2026-07-26) |
-| Shared chat transcripts | Shared ChatGPT/Claude conversation links, kept as a channel because their content is otherwise unarchivable | Free — link-scoped | — (one queued: [Second brain distinctions](/meta/todos/intake-second-brain-distinctions-chatgpt-conversation.md)) | filed documents (2026-07-26) |
+| Shared chat transcripts | Shared ChatGPT/Claude conversation links, kept as a channel because their content is otherwise unarchivable | Free — link-scoped | — (one queued: [Second brain distinctions](/meta/matters/intake-second-brain-distinctions-chatgpt-conversation.md)) | filed documents (2026-07-26) |
 
 ## Related registers
 

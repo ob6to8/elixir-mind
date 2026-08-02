@@ -127,7 +127,7 @@ the tracker:
 ```
 | Topic | Routed to | Action |
 |---|---|---|
-| <one line> | [<doc>](/path.md) or `unrouted` | [<tracker>](/meta/todos/x.md) │ none: <decision> |
+| <one line> | [<doc>](/path.md) or `unrouted` | [<tracker>](/meta/matters/x.md) │ none: <decision> |
 ```
 
 - **`Routed to` is unchanged** — the document that absorbed the strand's
@@ -255,17 +255,17 @@ auditable and reversible.
 
 | Matter | Filed as |
 |---|---|
-| Gate-suite tutorial table missing 4 gates CI runs | [todo](/meta/todos/refresh-gate-suite-tutorial-gate-table.md) |
-| `deprecated/` triage — 33 files still present | [todo](/meta/todos/triage-what-remains-in-deprecated.md) |
-| Surface `sense` in the glossary index and registry | [todo](/meta/todos/surface-glossary-sense-in-index-and-registry.md) |
-| `source-recall-probe` + `priorities-recitation` evals unbuilt | [todo](/meta/todos/build-the-two-proposed-eval-instruments.md) |
-| `mix brain.channels` generator for the `Ingested` column | [todo](/meta/todos/generate-the-channels-ingested-column.md) — filed independently on `main`; the sweep's duplicate was dropped |
-| Broaden `invisible-degradation` for the model-output sense | [todo](/meta/todos/broaden-invisible-degradation-for-model-output-sense.md) |
-| Cross-model PR review Action: target repo + reviewer model | [todo](/meta/todos/decide-cross-model-pr-review-action-target.md) |
-| Taxonomy stubs + tolerated broken links | [todo](/meta/todos/confirm-taxonomy-stub-folders-and-tolerated-broken-links.md) |
-| Journal carry-forward close convention | [todo](/meta/todos/decide-journal-carry-forward-close-convention.md) |
-| Workflow fan-out convention — graduate to a plan? | [todo](/meta/todos/decide-graduating-workflow-fanout-convention-to-plan.md) |
-| Attribution policy: provenance names the producing model | [todo](/meta/todos/ratify-or-reject-provenance-names-producing-model.md) |
+| Gate-suite tutorial table missing 4 gates CI runs | [todo](/meta/matters/refresh-gate-suite-tutorial-gate-table.md) |
+| `deprecated/` triage — 33 files still present | [todo](/meta/matters/triage-what-remains-in-deprecated.md) |
+| Surface `sense` in the glossary index and registry | [todo](/meta/matters/surface-glossary-sense-in-index-and-registry.md) |
+| `source-recall-probe` + `priorities-recitation` evals unbuilt | [todo](/meta/matters/build-the-two-proposed-eval-instruments.md) |
+| `mix brain.channels` generator for the `Ingested` column | [todo](/meta/matters/generate-the-channels-ingested-column.md) — filed independently on `main`; the sweep's duplicate was dropped |
+| Broaden `invisible-degradation` for the model-output sense | [todo](/meta/matters/broaden-invisible-degradation-for-model-output-sense.md) |
+| Cross-model PR review Action: target repo + reviewer model | [todo](/meta/matters/decide-cross-model-pr-review-action-target.md) |
+| Taxonomy stubs + tolerated broken links | [todo](/meta/matters/confirm-taxonomy-stub-folders-and-tolerated-broken-links.md) |
+| Journal carry-forward close convention | [todo](/meta/matters/decide-journal-carry-forward-close-convention.md) |
+| Workflow fan-out convention — graduate to a plan? | [todo](/meta/matters/decide-graduating-workflow-fanout-convention-to-plan.md) |
+| Attribution policy: provenance names the producing model | [todo](/meta/matters/ratify-or-reject-provenance-names-producing-model.md) |
 | Spec→code traceability | [plan](/meta/plans/spec-to-code-traceability.md) |
 
 ### Recorded `none:`

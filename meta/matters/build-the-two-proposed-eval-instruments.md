@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Build the two proposed eval instruments under meta/evals/"
 description: Both source-recall-probe and priorities-recitation-vs-harness-reminders sit at status proposed with no instrument behind them, and meta/evals/ is scanned by nothing, so a proposed eval is invisible to /priorities and stays proposed indefinitely.
 status: open
 provenance: "Claude Code sessions (2026-07-25, 2026-07-27) — both evals were designed and filed as proposed; statuses re-verified 2026-07-28"
-tags: [meta, todo, evals, instrumentation, measurement]
+tags: [meta, matter, evals, instrumentation, measurement]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

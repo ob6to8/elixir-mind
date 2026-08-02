@@ -627,7 +627,10 @@ SessionStart hook only provisions the toolchain).
 Four sources, all already maintained by existing policy:
 
   * **Open issues** — `meta/issues/*.md` with `status: open`.
-  * **Open todos** — `meta/todos/*.md` with `status: open`.
+  * **Open matters** — `meta/matters/*.md` with `status: open`. A matter
+    queued in the register (`meta/matters.md`) is annotated with its row
+    position and listed first, in register order; backlog matters follow,
+    newest first.
   * **Active plans** — `meta/plans/*.md` with `status` in
     `proposed` / `accepted` / `in-progress`.
   * **Dangling strands** — routing-ledger rows in `meta/threads/*.md` whose
@@ -643,13 +646,13 @@ live only in gate output and CI logs are repeated here. The section is
 omitted entirely when the tree is clean.
 
 The digest ends with a heuristic top-3 priority ranking (issues, then
-in-flight plans, then open todos, then accepted plans, then open strands,
-then paused strands and leftover dangling questions, then proposed plans;
-newer first within a class) and an
+in-flight plans, then open matters — queued before backlog — then accepted
+plans, then open strands, then paused strands and leftover dangling
+questions, then proposed plans; newer first within a class) and an
 agent note asking the agent to state its own top-3 appraisal, using the
 heuristic as a starting point — the script ranks, the agent judges.
 
-An issue/todo/plan may carry an explicit `priority: <integer>` frontmatter
+An issue/matter/plan may carry an explicit `priority: <integer>` frontmatter
 key (1 = most urgent). Flagged items rank above every heuristic class,
 ordered among themselves by the integer — the operator's escape hatch when
 the class weights get it wrong. Strands come from ledger rows, which have
@@ -663,7 +666,7 @@ ledger rows are skipped, never fatal.
 - `active_plans/1` — Plans under meta/plans that are proposed/accepted/in-progress, newest first.
 - `dangling_strands/1` — Routing-ledger rows across meta/threads that still carry work: state `open`/`paused`, or a non-`-` Dangling cell. Newest thread first.
 - `open_issues/1` — Open issues under meta/issues, newest first.
-- `open_todos/1` — Open todos under meta/todos, newest first.
+- `open_matters/1` — Open matters under meta/matters: register-queued ones first (each carrying its row position as `queue_pos`, in register order), then backlog matters (`queue_pos` nil), newest first.
 - `report/1` — Render the full session-init digest for the bundle rooted at `root`.
 
 
@@ -1047,13 +1050,13 @@ Render the open-work digest a fresh session should start from.
 
     mix brain.session_init
 
-Scans `meta/issues/` (status `open`), `meta/todos/` (status `open`),
-`meta/plans/` (status `proposed` / `accepted` / `in-progress`), and the
-`## Routing` ledgers under `meta/threads/` (rows in state `open`/`paused`,
-or with a dangling question), then prints a markdown digest ending in a heuristic top-3
-priority ranking. The SessionStart hook echoes this output into the
-session's context so every thread opens against the same picture of the
-brain's open work.
+Scans `meta/issues/` (status `open`), `meta/matters/` (status `open`, queued
+register rows annotated and listed first), `meta/plans/` (status `proposed` /
+`accepted` / `in-progress`), and the `## Routing` ledgers under
+`meta/threads/` (rows in state `open`/`paused`, or with a dangling question),
+then prints a markdown digest ending in a heuristic top-3 priority ranking.
+Produced on demand by the `/priorities` skill; the SessionStart hook only
+provisions the toolchain.
 
 
 
