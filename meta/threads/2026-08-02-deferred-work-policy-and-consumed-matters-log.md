@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained
 tags: [meta, thread, matters, policy, filing, work-queue]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01CCfy5pcww4EAkwRSrBDNoF
+pr: 227
 ---
 
 # 2026-08-02-deferred-work-policy-and-consumed-matters-log
@@ -191,3 +192,11 @@ On PR width: these row additions are filing motions the `deferred-work-is-filed`
 |---|---|
 | Queue edit: rows 1–2 inserted, rest renumbered 3–9, row text otherwise untouched | committed `a576bcb`, pushed |
 | Branch state | `fd2d7aa` (policy) → `3b6ad64` (Consumed log) → `a576bcb` (queue rows), all gates green |
+
+## User
+
+merge
+
+## Assistant
+
+Your mid-turn "merge" registers as the merge opt-in — this invocation is now `/create-pull-request merge`, so after opening I'll drive CI to green and true-merge. Continuing the capture: reading the previous consumption session's thread doc as the format model, plus the glossary skill and threads index:
