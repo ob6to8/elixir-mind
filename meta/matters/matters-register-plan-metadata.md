@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matters-register metadata session"
   why: "operator-directed register revision, filed as its own matter and consumed in the same session per the instruction's file-execute-consume shape"
+  from: [/meta/threads/2026-08-02-matters-register-plan-metadata.md]
 ---
 
 # Matters-register plan metadata
