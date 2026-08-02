@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator approved the matter-queue shape and, facing context compaction, directed the handoff machinery be stood up so remaining dev continues in fresh threads"
-  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md]
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md]
 ---
 
 # The matter queue and /present-matters

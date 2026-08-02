@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matter-register consumption session (row 1)"
   why: "the operator ratified the matter-doc architecture while consuming the matters-vs-plans question; this plan is its executable spec, superseding the matter-queue plan"
-  from: [/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md]
+  from: [/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md]
 ---
 
 # Matter docs and the order-only register

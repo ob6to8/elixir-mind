@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matter-register consumption session (row 1)"
   why: "row 1 of the matter register — the operator's matters-vs-plans question — required a persisted judgment, and the dialog ratified an architecture worth recording"
-  from: [/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md]
+  from: [/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md]
 ---
 
 # Matters vs. plans
