@@ -44,7 +44,7 @@ stays in git history, in the commit that removed it from the queue.
 
 | Date | Matter | Landed |
 |---|---|---|
-| 2026-08-02 | `type: matter` vocabulary adoption | [vocabulary entry](/meta/policy/controlled-type-vocabulary.md) + contract recompile; matter-docs plan flipped `in-progress` riding |
+| 2026-08-02 | `type: matter` vocabulary adoption | [vocabulary entry](/meta/policy/controlled-type-vocabulary.md) + contract recompile; matter-docs plan flipped `in-progress` riding — PR #229 |
 | 2026-08-02 | Matters-vs-plans definition question | [matters-vs-plans analysis](/meta/analysis/matters-vs-plans.md) + the ratified [matter-docs plan](/meta/plans/matter-docs-architecture.md) (`type: matter`, order-only register, todo fold, term kept, former rows 2+3 merged, build queued as rows 1–5); glossary retag riding — PR #228 |
 | 2026-08-02 | `deferred-work-is-filed` policy | [the policy](/meta/policy/deferred-work-is-filed.md), section `filing`, compiled into the contract — ratified at review, PR #227 |
 | 2026-08-02 | Methodology finalization (the A-package remnant) | protection ladder, de-"exempt" wording, block v1 final in [`em:cab2c5`](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) — PR #226 |

@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained
 tags: [meta, thread, matters, types, vocabulary, contract]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01NsNFJzjuALMpkiUkL8ywcy
+pr: 229
 ---
 
 # 2026-08-02-matter-type-vocabulary-adoption
