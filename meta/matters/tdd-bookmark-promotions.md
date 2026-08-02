@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matter-register consumption session (matter-docs build 2)"
   why: "migrated from the matters register's row packet when the register thinned to the order-only pointer view"
-  from: [/meta/matters.md, /meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md]
+  from: [/meta/matters.md, /meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 
 # TDD bookmark promotions

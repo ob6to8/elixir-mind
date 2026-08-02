@@ -13,7 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, fresh thread consuming the matters-register top row"
   why: "a mid-session 'ride the next session' deferral left unfiled in the TDD research-spike session exposed the gap between concerns-block-the-close and plan-vs-capture; the operator queued this policy for drafting, with ratification at PR review"
-  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md]
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 
 **A work item identified mid-session but not executed in it is filed in the

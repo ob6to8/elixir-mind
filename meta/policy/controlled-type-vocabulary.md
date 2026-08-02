@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md, /meta/threads/2026-08-02-matter-type-vocabulary-adoption.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md, /meta/threads/2026-08-02-matter-type-vocabulary-adoption.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may

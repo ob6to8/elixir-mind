@@ -12,7 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "operator asked whether the file-an-issue-vs-todo-vs-plan decision flow was spelled out anywhere; it was distributed across the type vocabulary with no single procedure, and the decision fires mid-work so it belongs in always-loaded contract context"
-  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 
 **Choosing the artifact is a second question, not the first.**

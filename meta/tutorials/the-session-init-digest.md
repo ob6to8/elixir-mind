@@ -8,7 +8,7 @@ attribution:
   when: 2026-07-12T09:17:10+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md]
+  from: [/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 
 # The session-init digest — how open work finds a session
