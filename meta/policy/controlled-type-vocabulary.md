@@ -84,7 +84,13 @@ Seed vocabulary:
   made, with refs carrying the detail — so a fresh thread can deliver it.
   Spans the scale from a plain small task (a title, a sentence of packet)
   to a plan-emitted build step. Carries a `status`
-  (`open`/`done`/`cancelled`); when a plan's build order
+  (`open`/`done`/`cancelled`) and a `model` — the
+  [roster](/meta/model-roster.md) value for the model that should *deliver*
+  it, stamped at scoping time and **prospective and advisory**, distinct from
+  `provenance`, which retrospectively names the model that *wrote the doc*
+  (the determination behind the stamp lives in a `## Model` body section, not
+  in frontmatter; the stamp binds matters scoped from its ratification onward,
+  and a matter filed before it renders unstamped); when a plan's build order
   emits it, also a `plan` (the bundle-absolute path of that plan) and an
   `order` (integer position in that plan's own sequence) — both keys omitted
   on a standalone matter. Queued-ness is register membership, never a
