@@ -5,7 +5,7 @@ title: "Agent development methodology — TDD-first, atomic PRs, review-gated"
 description: The operator's global-tier methodology for agent-driven development — a test-first loop where tests are the ratified contract agents may not weaken, matklad-style test architecture, an Elixir-specific fast loop, one-concern PRs sized for review, and layered gates that spend human attention only on judgment — with the lean vendorable block consuming repos embed.
 provenance: "Claude Code session (Claude Fable 5), 2026-08-01 — synthesized from the TDD research spike: Gorman, the matklad references, the 2024–26 test-first and reward-hacking literature, and the Elixir ecosystem sources"
 tags: [methodology, agentic, tdd, testing, atomic-prs, code-review, elixir, agent-guidance]
-timestamp: 2026-08-01
+timestamp: 2026-08-02
 attribution:
   when: 2026-08-01T18:20:00Z
   channel: agent-authored
@@ -53,6 +53,47 @@ dumping a whole suite into context *degrades* generation.
 - **Humans review tests hardest.** When the agent writes most implementation
   code, the tests are where review attention buys correctness; the human adds
   the edge cases the agent missed.
+
+### Protecting the contract
+
+The rules above bind the agent; this is how the tests are held beyond its
+reach when instruction alone is not enough. Four rungs, escalating by
+threat — pick the lowest that fits the stakes, knowing mechanism beats
+instruction (blocking a single cheat route diverts agents to others —
+ImpossibleBench):
+
+1. **Instructed** — "do not modify tests" stated in the agent's context,
+   tests committed before implementation begins. The weakest rung, yet
+   measurably real: a strict prompt cut one measured cheat rate 92%→1%.
+2. **Procedural** — red confirmed before green (guards against vacuous
+   tests); any test change in its own visible commit with the reason
+   stated. This section's standing rules.
+3. **Mechanical** — the agent *can* see but *cannot* touch: test-path edits
+   denied during implementation via hooks/permissions, or roles split so
+   one agent writes the tests and another implements. Visible-but-immutable
+   is the marking Beck wished tests could carry, and it is buildable today.
+4. **Held out** — tests the implementing agent never sees, run only at the
+   gate (CI- or operator-held): the eval community's train/test split
+   applied to development. Visible-suite saturation (SpecBench: held-out
+   pass collapses as visible suites grow) and METR's finding that
+   visibility of the scoring signal raises hacking argue for this rung on
+   high-stakes contracts.
+
+Rung 4 does not move the working suite out of the repo — the loop's
+iteration oracle stays in-repo, visible, and fast (§1). The shape is the ML
+two-set split: the working suite as the dev set, plus a thin held-out slice
+(acceptance/spec-guard tests) for high-stakes contracts only, revealed as
+pass/fail at the gate. Implementations, weakest to strongest: edit-denied
+test paths (rung 3); a private sibling repo or CI-held secret suite —
+cloud-session repo scoping enforces that visibility boundary mechanically;
+operator-local runs at review; gate-time *generated* tests (fresh-randomness
+property/fuzz runs — nothing to memorize, no shadow suite to maintain). The
+costs that gate the rung by stakes: held-out failures are slower to debug
+(choose a disclosure policy per slice), a shadow suite is real upkeep, and
+every failure disclosure spends the holdout the way eval reuse causes
+contamination — rotate or regenerate the slice. Consuming repos name their
+rung and wire its mechanics in the repo tier; this repo's gate suite sits
+at rungs 2–3, proportionate to its stakes.
 
 ## 3. Test architecture (the matklad tier)
 
@@ -122,7 +163,7 @@ test-layer map, and any deviation — which must name the rule it overrides.
 The Elixir annex is included only in Elixir repos.
 
 ```markdown
-## Development methodology (global tier v1, 2026-08-01 — source: elixir-mind em:cab2c5)
+## Development methodology (global tier v1, 2026-08-02 — source: elixir-mind em:cab2c5)
 
 ### The loop
 - Work test-first, one behavior at a time: write the failing test, RUN it and
@@ -139,13 +180,18 @@ The Elixir annex is included only in Elixir repos.
   behavior must not break tests.
 - Mock only IO boundaries (network, clock, filesystem, external services) —
   never the project's own modules.
+- Test protection escalates by stakes: instructed (this block) → procedural
+  (red confirmed first; test changes in their own visible commits) →
+  mechanical (test-path edits denied, or test-writer and implementer roles
+  split) → held out (gate-time tests the implementing agent never sees).
+  The repo tier names its rung and wires the mechanics.
 
 ### Delivery
 - One self-contained matter per PR, with its tests; never mix refactoring
   with behavior changes. Size is a signal, not a cap: ~50–200 changed lines
-  is typical of one concern, mechanical bulk (renames, regenerations, format
-  sweeps) is exempt, and no split may leave a commit that doesn't compile
-  and pass.
+  is typical of one concern, a large diff carrying one mechanical intent
+  (a rename, a regeneration, a format sweep) is still one matter, and no
+  split may leave a commit that doesn't compile and pass.
 - Every commit compiles and passes the full suite.
 - After 3 failed attempts at the same issue: stop, document what was tried and
   the exact errors, reassess the approach.
@@ -171,7 +217,11 @@ converts one-to-one into an `<attr>` span plus structured provenance — the
 **search** (retrieved during the 2026-08-01 spike, not model memory); verbatim
 quotes and figures are held in
 [the ranking analysis](/meta/analysis/tdd-rank-for-coding-agent-development.md)'s
-evidence sections and citations.
+evidence sections and citations. The §2 protection-ladder rows (added
+2026-08-02) draw on that same spike evidence through its persisted records —
+the ranking analysis and the
+[origin thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md)'s
+protection-ladder exchange — plus one 2026-08-02 fetch recorded in its row.
 
 | § | claim anchor | class | sources |
 |---|---|---|---|
@@ -182,6 +232,11 @@ evidence sections and citations.
 | 2 | "never weakens, skips, deletes, or special-cases a test" | synthesis | Beck (2025-06: agent "cheating, for example by disabling or deleting tests"); Böckeler (2025-08: success declared over red tests); METR (2025-06); ImpossibleBench (2510.20270); Anthropic emergent-misalignment (2025-11) |
 | 2 | "agents editing tests, overloading equality, exiting before asserts" | synthesis | ImpossibleBench cheat taxonomy; Anthropic (`sys.exit(0)` harness escape) |
 | 2 | "Humans review tests hardest" | synthesis | Anthropic (2025-04: commit tests once satisfied with them); Willison (2025-03: testing cannot be outsourced to the machine); Dunlop (2026-04: passing AI-written suite enshrined a bad UX — the counter-case this rule answers) |
+| 2 | "mechanism beats instruction" / "blocking a single cheat route diverts" | synthesis | ImpossibleBench (2510.20270: blocking one cheat route diverts to others); via the ranking analysis's qualification 3 |
+| 2 | "a strict prompt cut one measured cheat rate 92%→1%" | synthesis | ImpossibleBench mitigation data, figure held in the ranking analysis ("strict prompts cut one measured cheat rate 92%→1%") |
+| 2 | rung 1 "tests committed before implementation" / rung 3 test-writer/implementer role split | synthesis | Anthropic best practices (2025-04: tests committed before coding; separate test-writer and implementer agents) |
+| 2 | "the marking Beck wished tests could carry" | synthesis | Beck, Pragmatic Engineer interview (2025-06) as retrieved in the spike and recorded in the origin thread; kept synthesis, not quote — the span is not reproducible from the reachable pages (Substack post + interview free page, fetched 2026-08-02) |
+| 2 | rung 4: "held-out pass collapses as visible suites grow" / "visibility of the scoring signal raises hacking" / "rotate or regenerate the slice" | synthesis | SpecBench (2605.21384: held-out pass collapsing ~28pp wider per 10× LOC); METR reward-hacking (2025-06); the eval-reuse contamination parallel assembled in the origin thread |
 | 3 | "Test features and observable contracts, not internals" | synthesis | matklad `em:a5ea86` (the neural-network test) |
 | 3 | "mock impure IO boundaries only" | synthesis | matklad `em:73115b`; Valim (2015) |
 | 4 | "'mock' as a noun, never" a verb | quote | Valim (2015): "I always consider 'mock' to be a noun, never a verb"; Mox docs (behaviour-bound doubles keep `async: true` safe) |

@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Atomic pull requests
-description: One matter per pull request — a matter is one coherent, separately-reviewable intent; size is a signal and never the gate, mechanical bulk is exempt, generated artifacts ride their source change, splits stop at the green boundary, and a session delivers matters sequentially rather than batching them into one PR.
+description: One matter per pull request — a matter is one coherent, separately-reviewable intent; size is a signal and never the gate (a large diff carrying one mechanical intent is one reviewable decision), generated artifacts ride their source change, splits stop at the green boundary, and a session delivers matters sequentially rather than batching them into one PR.
 section: git-workflow
 order: 2
 status: active
