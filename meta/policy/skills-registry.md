@@ -116,9 +116,10 @@ attribution:
 - **`/matter`** — work the [matter register](/meta/matters.md): bare `/matter`
   consumes the top queued matter under the approval-gated protocol (print the
   row and its doc's packet as the record, state the approach, wait for operator
-  approval in chat, deliver, then flip the doc `done`, drop the row, and log it
-  under the register's Consumed section — the landing PR number and the done
-  doc's `pr:` stamped at close, once `/create-pull-request` opens it);
+  approval in chat, deliver, then flip the doc `done` and drop the row — the
+  landing `pr:` stamped into the done doc at close, once
+  `/create-pull-request` opens it, with `mix brain.matters` verifying
+  register↔doc agreement and warning on a missing stamp);
   `/matter list [queue|backlog|done|all]` renders the queue and, beneath it,
   the backlog (open matter docs with no register row, sorted by soft integer
   `priority:` where present); `/matter create` files a matter doc under

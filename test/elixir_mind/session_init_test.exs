@@ -115,12 +115,6 @@ defmodule ElixirMind.SessionInitTest do
     |---|---|---|---|
     | 1 | [First up](/meta/matters/first-up.md) | independent | - |
     | 2 | [Second up](/meta/matters/second-up.md) | independent | - |
-
-    ## Consumed
-
-    | Date | Matter | Type | Order | Landed |
-    |---|---|---|---|---|
-    | 2026-08-01 | [Backlog item](/meta/matters/backlog-item.md) | independent | - | not a queue row |
     """
 
     File.write!(Path.join(dir, "meta/matters.md"), register)

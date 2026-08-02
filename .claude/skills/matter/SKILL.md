@@ -56,18 +56,14 @@ it carries) as the entire handoff.
    so the move ships with the matter's PR):
    - flip the matter doc `status: done` and bump its `timestamp`;
    - drop the row from the queue table and renumber the remaining rows;
-   - log it under the register's `## Consumed` section, newest first: date ·
-     matter link · Type · Order · a one-line landing description (the PR
-     number is appended at close, once it exists);
    - move the doc's entry in
      [`meta/matters/index.md`](/meta/matters/index.md) from Open to Done,
      updating its gloss to the delivered fact.
 6. **Close — deferred to PR time, binding this session.** When
    [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md)
-   opens the session's PR, append the PR number to the Consumed row's landing
-   cell and stamp `pr: <N>` into the done doc's frontmatter, committed into
-   the same PR — the landing metadata that eventually retires the Consumed
-   section (matter-docs build 5).
+   opens the session's PR, stamp `pr: <N>` into the done doc's frontmatter,
+   committed into the same PR. The done docs are the delivery history;
+   `mix brain.matters` warns on a done doc still awaiting its stamp.
 
 ## List
 
