@@ -127,6 +127,21 @@ attribution:
   when the operator states a position. One matter per PR
   ([atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md)); matter
   docs are governance (no `em:` ids). See `.claude/skills/matter/SKILL.md`.
+- **`/scope-unit-of-work`** — scope a described unit of work into the artifacts
+  a fresh thread can deliver: either a **single matter** (one reviewable intent,
+  approach already decided) or a **plan with sequenced matters** (several
+  separately-approvable intents, and/or decisions worth recording first), with
+  everything following the invocation taken as the spec. Each emitted matter is
+  stamped with the model that should **deliver** it (`model:` frontmatter, the
+  determination in a `## Model` body section), chosen per matter from
+  [the model roster](/meta/model-roster.md) — the operator's preference data —
+  under [capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md).
+  The unit is filed **unsequenced** (backlog: matter docs, no register row)
+  unless invoked as `/scope-unit-of-work sequence`, which is the operator's
+  ratification to append it to [the register](/meta/matters.md) — matters
+  emitted by a plan always carry that plan's internal `order`, and the queue
+  never inverts it. Scopes and stops; delivery stays with `/matter`. See
+  `.claude/skills/scope-unit-of-work/SKILL.md`.
 - **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
   tables: every request the operator made (with a done/partial/not-done/declined/
   superseded status), and what the agent actually did, with the files touched and
