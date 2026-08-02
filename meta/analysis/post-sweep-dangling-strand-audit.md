@@ -1,10 +1,10 @@
 ---
 type: analysis
 title: "Post-sweep dangling-strand audit: escalation state of the 52 pending strands since 2026-07-28"
-description: Audits every pending routing-ledger strand in the 27 threads captured on or after the ratified 2026-07-28 sweep against all tracker surfaces (matters register and docs, todos, issues, plans, project docs), plus a body-level pass for unrowed deferrals; finds 44 of 52 already discharged, tracked, project-held, or decision-closed, and eight orphans recommended for escalation (seven todo candidates, one issue candidate) awaiting operator ratification.
+description: Audits every pending routing-ledger strand in the 27 threads captured on or after the ratified 2026-07-28 sweep against all tracker surfaces (matters register and docs, todos, issues, plans, project docs), plus a body-level pass for unrowed deferrals; finds 44 of 52 already discharged, tracked, project-held, or decision-closed, and eight orphans recommended for escalation (seven backlog-matter candidates, one issue candidate) awaiting operator ratification — recommendation tier recast in place after the todo fold (PR #232) landed mid-audit.
 provenance: "Claude Fable 5 (orchestration, verification, synthesis); per-strand disposition research by six Claude Sonnet 5 subagents"
 tags: [meta, analysis, routing-ledger, matters, work-queue, audit]
-timestamp: 2026-08-02T09:50:00Z
+timestamp: 2026-08-02T10:40:00Z
 attribution:
   when: 2026-08-02T09:50:00Z
   channel: agent-authored
@@ -33,8 +33,9 @@ leftover `Dangling` cell), at the audit's HEAD (the merge of PR #231).
   artifact level: all 12 artifacts the sweep promoted exist and are live — 11
   `open` todos and the `proposed`
   [spec-to-code-traceability plan](/meta/plans/spec-to-code-traceability.md).
-  It did not re-litigate the sweep's per-strand judgments, which the operator
-  ratified.
+  (The 11 todos are backlog matters at the same slugs since the fold — see the
+  postscript.) It did not re-litigate the sweep's per-strand judgments, which
+  the operator ratified.
 - **In scope: the 52 strands across 27 threads dated 2026-07-28 through
   2026-08-02** — the corpus the sweep predates. The matters layer
   ([register](/meta/matters.md) + [`meta/matters/`](/meta/matters/index.md))
@@ -100,27 +101,27 @@ the eight orphans are detailed in the next section.
 | # | Thread | Topic | State | Disposition | Held at / evidence |
 |---|---|---|---|---|---|
 | 1 | `08-02-deferred-work-policy…` | Matters-vs-plans definition question | open | discharged | [Consumed log](/meta/matters.md), PR #228; [matters-vs-plans](/meta/analysis/matters-vs-plans.md) |
-| 2 | `08-02-deferred-work-policy…` | `/matter` consumption skill | open | tracked-live | [matter-skill](/meta/matters/matter-skill.md) (open; register row 2) |
+| 2 | `08-02-deferred-work-policy…` | `/matter` consumption skill | open | tracked-live | [matter-skill](/meta/matters/matter-skill.md) (open; queued) |
 | 3 | `08-01-terse-brain-evaluation…` | Source hashing + drift detection | open | tracked-live | [plan](/meta/plans/source-hash-and-drift-detection.md) (proposed; carries all three questions) |
 | 4 | `08-01-terse-brain-evaluation…` | Frontmatter facet query surface | open | tracked-live | [plan](/meta/plans/frontmatter-facet-query.md) (proposed; carries all three questions) |
 | 5 | `08-01-terse-brain-evaluation…` | Read-back evidence test vs. fire-and-forget | paused | decision-closed | [terse-brain analysis](/meta/analysis/terse-lang-terse-brain-evaluation.md): sharpens the boundary "without changing the plan's proposed scope" |
 | 6 | `08-01-tdd-research-spike…` | Methodology + vendorable block remnant | open | discharged | Consumed log "Methodology finalization", PR #226; ladder live in [`em:cab2c5`](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) |
-| 7 | `08-01-tdd-research-spike…` | Two-level guidance storage pilot | closed | tracked-live | [plan](/meta/plans/two-level-agent-methodology-guidance.md) (accepted); [vendor-block-pilot](/meta/matters/vendor-block-pilot.md) (open; register row 9, blocker recorded) |
-| 8 | `08-01-tdd-research-spike…` | Matter queue + `/present-matters` | open | tracked-live | superseded into [matter-docs plan](/meta/plans/matter-docs-architecture.md) (in-progress); [matter-skill](/meta/matters/matter-skill.md) (register row 2) |
-| 9 | `08-01-tdd-research-spike…` | Agentic cognitive biases | open | tracked-live | [plan](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) (accepted); [matter](/meta/matters/two-sided-bias-taxonomy-implementation.md) (register row 7) |
+| 7 | `08-01-tdd-research-spike…` | Two-level guidance storage pilot | closed | tracked-live | [plan](/meta/plans/two-level-agent-methodology-guidance.md) (accepted); [vendor-block-pilot](/meta/matters/vendor-block-pilot.md) (open; queued, blocker recorded) |
+| 8 | `08-01-tdd-research-spike…` | Matter queue + `/present-matters` | open | tracked-live | superseded into [matter-docs plan](/meta/plans/matter-docs-architecture.md) (in-progress); [matter-skill](/meta/matters/matter-skill.md) (queued) |
+| 9 | `08-01-tdd-research-spike…` | Agentic cognitive biases | open | tracked-live | [plan](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) (accepted); [matter](/meta/matters/two-sided-bias-taxonomy-implementation.md) (queued) |
 | 10 | `08-01-tdd-research-spike…` | Matter register + compaction handoff | closed | discharged | register live and consuming (six deliveries, PRs #226–#231) |
-| 11 | `08-01-tdd-research-spike…` | dev-history home decision | open | tracked-live | [matter](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) (open; register row 5) |
+| 11 | `08-01-tdd-research-spike…` | dev-history home decision | open | tracked-live | [matter](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) (open; queued) |
 | 12 | `08-01-tdd-research-spike…` | deferred-work-is-filed policy | open | discharged | [policy](/meta/policy/deferred-work-is-filed.md) on `main`, PR #227 |
-| 13 | `08-01-tdd-research-spike…` | 19.8% claim weighing | closed | discharged | weighing embedded verbatim in [promotions todo](/meta/todos/promote-the-tdd-survey-bookmarks.md) |
-| 14 | `08-01-tdd-research-spike…` | TDD survey-bookmark promotions | open | tracked-live | [todo](/meta/todos/promote-the-tdd-survey-bookmarks.md) (open) + [matter](/meta/matters/tdd-bookmark-promotions.md) (register row 8) |
+| 13 | `08-01-tdd-research-spike…` | 19.8% claim weighing | closed | discharged | weighing now carried by [tdd-bookmark-promotions](/meta/matters/tdd-bookmark-promotions.md), where the todo it was audited in folded (PR #232) |
+| 14 | `08-01-tdd-research-spike…` | TDD survey-bookmark promotions | open | tracked-live | [tdd-bookmark-promotions](/meta/matters/tdd-bookmark-promotions.md) (open; queued — the todo/matter double-tracking collapsed when the fold merged the todo in, PR #232) |
 | 15 | `08-01-schema-formalization…` | `em:712e01`'s own defects | open | tracked-live | [plan](/meta/plans/schema-formalization-and-evaluator-lane.md) (accepted; build step 1 carries the fixes) |
 | 16 | `08-01-refile-architecture…` | Link-resolution gate + `mix brain.refile` | open | tracked-live | [plan](/meta/plans/structural-link-integrity.md) (proposed; `--dir` question inside) |
 | 17 | `08-01-llm-workflow-decomposition…` | Dedup gold-set harvest skip | closed | discharged | completed non-event; cell records the skill's own rule firing |
 | 18 | `08-01-llm-workflow-decomposition…` | Open/merge the PR | open | discharged | `pr: 221`; merge `277d93b` |
 | 19 | `08-01-comprehensive-repo-review…` | **alphaXiv connector reauthorization** | open | **orphan** | see § orphans (candidate 8) |
-| 20 | `07-31-todo-surface-cli…` | Elixir todo surface (module/task/IEx) | open | tracked-live | [plan](/meta/plans/todo-cli-and-neovim-surface.md) (proposed) |
-| 21 | `07-31-todo-surface-cli…` | Neovim picker-plugin dependency | paused | tracked-live | same plan, Q1 verbatim in body |
-| 22 | `07-31-todo-surface-cli…` | Editor client worth building at all | paused | tracked-live | same plan, Q2 verbatim in body |
+| 20 | `07-31-todo-surface-cli…` | Elixir todo surface (module/task/IEx) | open | tracked-live | [plan](/meta/plans/matter-cli-and-neovim-surface.md) (proposed; retitled to the matter surface by PR #232) |
+| 21 | `07-31-todo-surface-cli…` | Neovim picker-plugin dependency | paused | tracked-live | same plan, Q1 in its body as audited (pre-retitle) |
+| 22 | `07-31-todo-surface-cli…` | Editor client worth building at all | paused | tracked-live | same plan, Q2 in its body as audited (pre-retitle) |
 | 23 | `07-31-neovim-pr-tree-view…` | Open/merge the PR | open | discharged | `pr: 203`; merge `15982e7` |
 | 24 | `07-31-dvorak-vim-reference…` | Build order for the three follow-ups | paused | tracked-live | [next-steps](/projects/dvorak-vim/next-steps.md) (project-scoped plan, proposed) |
 | 25 | `07-31-agent-substrate-talks…` | Open the PR | open | discharged | `pr: 200`; merge `ce25829` |
@@ -144,7 +145,7 @@ the eight orphans are detailed in the next section.
 | 43 | `07-29-dopamine-effort…` | Open/merge the PR | open | discharged | `pr: 194`; merge `93af3cb` |
 | 44 | `07-28-routing-ledger-orphan-sweep…` | Reconcile steps 2–5 | open | tracked-live | [reconcile plan](/meta/plans/reconcile-dangling-ledger-strands.md) (in-progress) |
 | 45 | `07-28-routing-ledger-orphan-sweep…` | Project hubs as `Action` targets | paused | tracked-live | same plan, `## Open questions` verbatim |
-| 46 | `07-28-owl-rdf-skos…` | Derived RDF/SKOS export | open | tracked-live | [todo](/meta/todos/evaluate-a-derived-rdf-skos-export.md) (open) |
+| 46 | `07-28-owl-rdf-skos…` | Derived RDF/SKOS export | open | tracked-live | [backlog matter](/meta/matters/evaluate-a-derived-rdf-skos-export.md) (open; folded from the todo tier, PR #232) |
 | 47 | `07-28-operator-methodology-shift…` | Comprehension audit | open | tracked-live | [plan](/meta/plans/comprehension-audit.md) (proposed) |
 | 48 | `07-28-ontology-guardrails…` | Ledger post-capture upkeep path | open | tracked-live | [issue](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) (open; stays open until reconcile step 5) |
 | 49 | `07-28-kimi-k3-weight-release…` | Pricing-inversion watch | open | decision-closed | watch note lives in [the doc](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) ("Worth watching the *next* Chinese frontier release's price sheet"); channels-register option offered and not taken |
@@ -156,8 +157,8 @@ the eight orphans are detailed in the next section.
 
 Live deferred work with no tracker. For each: the search space that came up
 empty is `meta/matters.md`, `meta/matters/`, `meta/todos/`, `meta/issues/`,
-and `meta/plans/` (by keyword and synonym, hits inspected), run independently
-twice — once by the batch, once by the orchestrating session — plus the
+and `meta/plans/` (the tree as it stood pre-fold; by keyword and synonym,
+hits inspected), run independently twice — once by the batch, once by the orchestrating session — plus the
 specific extra checks noted per item. Filing awaits operator ratification:
 the reconcile plan's scope boundary ("The sweep reports; the agent and
 operator disposition") governs this audit too.
@@ -169,14 +170,14 @@ operator disposition") governs this audit too.
    compute the parameter table, and render the sonification with the verified
    NRT path". The analysis is hypothesis-status until it runs; the
    [swarm-eval harness plan](/meta/plans/inkling-beam-swarm-eval-harness.md)
-   never mentions it (checked in full). **Recommend: todo** — the approach is
-   fully specified; only the doing remains.
+   never mentions it (checked in full). **Recommend: backlog matter** — the
+   approach is fully specified; only the doing remains.
 2. **Split plain vs. expanded dedup-recall into separate CI trend lines** —
    recommendation 3 of
    [the 615-document re-evaluation](/meta/analysis/second-brain-field-re-evaluation-at-615-documents.md);
    `.github/workflows/ci.yml` runs only the plain probe, and the
    [dedup-recall-probe plan](/meta/plans/dedup-recall-probe.md) (`done`)
-   shipped `--expanded` but no split reporting. **Recommend: todo.**
+   shipped `--expanded` but no split reporting. **Recommend: backlog matter.**
 3. **The unclimbed verification ladder** — the same re-evaluation grades
    verification practice C-range (single-digit `verified: true` coverage of
    ~492 agent-authored statements); every existing mention of the ladder in
@@ -193,35 +194,38 @@ operator disposition") governs this audit too.
    [the tutorials index](/meta/tutorials/elixir/index.md) lists only the one
    existing tutorial, and the
    [code-tutorial plan](/meta/plans/code-tutorial-and-code-map.md) is `done`
-   with no successor. **Recommend: todo.**
+   with no successor. **Recommend: backlog matter.**
 5. **Decide the effort-doctrine filing** — whether to distill the 07-25/07-26/
    07-29 journal entries (operator effort at the intention layer) into a
    standing `doctrine`; `meta/doctrine/` holds nothing on the theme
    (`intent-is-the-source` is adjacent, not this). The thread's follow-up
-   prose pre-synthesizes the content. **Recommend: todo** (a decide-\* todo,
-   the shape the 07-28 sweep used for operator decisions).
+   prose pre-synthesizes the content. **Recommend: backlog matter** (a
+   decide-\* doc, the shape the 07-28 sweep's filings now wear post-fold).
 6. **Build the incident-replay sonification prototype** — the
    [sonification analysis](/meta/analysis/sonifying-an-incident-replay.md)
    carries the full six-layer design and its own live-vs-NRT fork; no `.html`
    sibling exists and no build commit followed the authoring commit.
-   **Recommend: todo**, with the live-vs-rendered decision as its first step.
+   **Recommend: backlog matter**, with the live-vs-rendered decision as its
+   first step.
 7. **Ground the psychoacoustic thresholds as `type: source` captures** — zero
    `type: source` docs on stream ceiling / fusion threshold / interval
    discrimination bundle-wide; the SoNSTAR bookmark in
    [the survey register](/survey/bookmarks.md) is still `surveyed`, never
-   promoted. **Recommend: todo** (promotion + one or two primary refs,
-   `verified_by`-linked into the analysis's claims).
+   promoted. **Recommend: backlog matter** (promotion + one or two primary
+   refs, `verified_by`-linked into the analysis's claims).
 8. **Reauthorize the alphaXiv MCP connector** — named in the
    repo-review thread as needed "before its tools work in future sessions";
    inherently outside the repo's git surface (a claude.ai account setting),
-   so nothing in-bundle can discharge it. **Recommend: todo** — small, but
+   so nothing in-bundle can discharge it. **Recommend: backlog matter** —
+   small, but
    [deferred-work-is-filed](/meta/policy/deferred-work-is-filed.md) (ratified
    the next day) is exactly the rule that would now catch it.
 
-None of the eight is recommended for the matters register directly: none is
+None of the eight is recommended for the register queue directly: none is
 yet committed, review-shaped delivery work — "queued-ness is register
-membership" — so the todo/issue tier is the right landing, with a matter
-minted later for any the operator commits to delivering as a PR.
+membership" — so seven land as backlog matters (open matter docs outside the
+register) and one as an issue, with a register row added for any the operator
+commits to delivering as a PR.
 
 ## Unrowed deferrals — the body-level pass
 
@@ -277,9 +281,32 @@ threads only.
 
 ## Recommendation
 
-Escalate the eight orphans on ratification — seven todos and one issue, each
-with its approach already specified in the source analysis or thread — and
-have the reconcile plan's step-2 backfill consume this audit's disposition
-table for the 27 post-sweep threads exactly as it consumes the step-1 appendix
-for the 109 pre-sweep ones (pointer added to the plan). The audit found no
-strand warranting direct entry into the matters register.
+Escalate the eight orphans on ratification — seven backlog matters and one
+issue, each with its approach already specified in the source analysis or
+thread — and have the reconcile plan's step-2 backfill consume this audit's
+disposition table for the 27 post-sweep threads exactly as it consumes the
+step-1 appendix for the 109 pre-sweep ones (pointer added to the plan). The
+audit found no strand warranting direct entry into the register queue.
+
+## Postscript — the todo fold landed mid-audit
+
+PR #232 consumed register row 1 (the [todo fold](/meta/matters/todo-fold.md))
+between this audit's first commit and its reconciliation: `meta/todos/` is
+gone, its 18 open docs are backlog matters at the same slugs under
+`meta/matters/`, `type: todo` is retired with the `matter` vocabulary entry
+widened to absorb the plain-task sense, and the register renumbered again.
+Three consequences, applied in place:
+
+- **Links repoint; dispositions stand as measured.** The findings table
+  describes the tree at the audit's HEAD (the merge of PR #231); tracker
+  links now target post-fold paths, and register-row numbers are replaced by
+  "queued" — the numbers cited at audit time were renumbered within hours,
+  structural finding 1 confirming itself on this document's own citations.
+- **The recommendation tier is now the matter doc.** "File as todo" became
+  "file as backlog matter" throughout: an open matter doc outside the
+  register is exactly the tier the fold's architecture assigns to
+  live-but-uncommitted work. The issue candidate is unchanged.
+- **Row 14's predicted collapse happened.** The TDD promotions todo/matter
+  double-tracking resolved by folding the todo into
+  [tdd-bookmark-promotions](/meta/matters/tdd-bookmark-promotions.md) — the
+  outcome that row recorded as pending.
