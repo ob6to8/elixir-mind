@@ -55,6 +55,10 @@ was re-sequenced, this session's five matters taking rows 1-5 with the roster-se
 block ahead of the backfill, because the config extraction is where the roster's values get
 ratified and backfilling 30 docs from placeholder values would rewrite all 30.
 
+The whole session landed as [PR #237](https://github.com/ob6to8/elixir-mind/pull/237),
+opened unmerged and handed back — the first thread to close under the method it
+declared, and the reason its own three intents ship together rather than as three PRs.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -562,3 +566,40 @@ I think default sequencing position should be at the head, and should be the cas
 Right on amendment 3 — I was proposing an instance-level fix (suppress artifacts in the moment) for what your own point 3 says is a type-level question. Reframing it as: artifact count is not itself evidence of overhead; suspected bloat becomes a scoped analysis of the system.
 
 Head-sequencing changes the register here, so let me check the policy conventions and then write.
+
+## Assistant
+
+PR open and handed back: **https://github.com/ob6to8/elixir-mind/pull/237** — 8 commits, 27 files, unmerged.
+
+The thread doc is `meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md`, stamped `pr: 237`.
+
+One correction I made without asking, since it changes what the PR says: the narrative's line "queued at register rows 12-16" is now stale in the earlier paragraph but corrected in the appended one — I left the frozen paragraph as written per the freeze rule and let the later paragraph carry the re-sequencing, rather than rewriting a block the capture had already frozen.
+
+## Actions I have taken
+
+| action | result |
+|---|---|
+| Filed the doctrine and its policy | `scoped-units-corrected-forward` + `revision-enters-through-scoping`, both indexed, contract recompiled |
+| Propagated head-insertion | `/matter` create step, `/scope-unit-of-work` §5, register protocol prose |
+| Re-sequenced the register | this session's five at rows 1–5 (roster-separation block, then the Model-column pair); the prior 11 shift to 6–16, plan-internal orders intact |
+| Recorded the cross-plan dependency | the roster-separation plan's ordering section now says *why* it runs first — ratified values before a 30-doc backfill |
+| Extended the thread doc in place | boundary derived via `mix brain.thread_tail`, five appended blocks, ledger grown to 13 rows |
+| Verified the branch against a refreshed `origin/main` | `origin/main` is an ancestor of HEAD — no sync needed, no conflict |
+| Full gate suite + 211 tests | green on every commit |
+| Opened PR #237, stamped `pr:`, pushed | `86dc3fa` |
+
+## Queue as it now stands
+
+| # | Matter | Model |
+|---|---|---|
+| 1 | Extract the model settings to a repo config surface | Claude Opus 5 |
+| 2 | The model-stamping policy | Claude Fable 5 |
+| 3 | Gate model values against the configured roster | Claude Sonnet 5 |
+| 4 | Backfill model stamps on matter docs | Claude Sonnet 5 |
+| 5 | Register Model column and its agreement check | Claude Opus 5 |
+
+Row 1 is where you ratify the roster's tier assignments — the values four of these five stamps were derived from.
+
+Two open strands are recorded in the ledger rather than left in this conversation: whether the method holds once the work is substantially code (the write-run-fix exemption is the stated hypothesis), and that atomic threads weaken the case for route-tag excerpt logs, which is an input for the excerpt-log discipline matter at row 9.
+
+I can watch the PR for CI and review comments via `subscribe_pr_activity` if you want it monitored — not subscribed.
