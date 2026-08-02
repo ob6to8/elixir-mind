@@ -59,6 +59,7 @@ top-down, in fresh threads.
 | cognitive-science domain creation (ratified) | closed | [knowledge/cognitive-science](/knowledge/cognitive-science/index.md) | - |
 | Per-claim provenance for the methodology (proto-granular table) | closed | [agent-development-methodology](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) | - |
 | Matter register + compaction handoff | closed | [matters.md](/meta/matters.md) | consumed top-down by fresh threads |
+| Single-register decision (no per-initiative matters files) | closed | [matter-queue plan](/meta/plans/matter-queue-and-present-matters.md) | - |
 | dev-history home after Pages de-prioritization | open | unrouted | decided: recommit + /create-pull-request fold-in, unshallow guard; [matters](/meta/matters.md) row 5 |
 | deferred-work-is-filed policy | open | unrouted | [matters](/meta/matters.md) row 2 |
 | The 19.8% claim traced to arXiv 2602.07900 | closed | [tdd-rank-for-coding-agent-development](/meta/analysis/tdd-rank-for-coding-agent-development.md) | weighing embedded in the promotions todo (this session) |
@@ -617,3 +618,38 @@ if we are already experiencing compaction, we need to wrap this thread asap. Is 
 ## Assistant
 
 Approved and wrapping — merging #224 now, then executing a compressed handoff in this thread: the matter register (the durable matter list), the matter-queue plan, and a capture-append of everything said since the last freeze, so the next thread needs nothing from this one's memory. Loading the merge tools and deriving the capture boundary in parallel.
+**Both questions have built answers now, and the thread is wrapped.** #224 is merged (true merge, `841fd79`), and the handoff went out as **PR #225** — the last thing awaiting your merge.
+
+> Is there a way for you to pass all the context needed off to the next thread to continue dev? what about the matter list?
+
+Yes — and it's done, as artifacts rather than memory. The matter list is now a committed register: **`meta/matters.md`**, nine rows, each a self-contained handoff packet (the matter, the decisions already made, refs to the plan/todo/policy holding detail, and a `fresh` context flag). Its design is persisted in `meta/plans/matter-queue-and-present-matters.md` (`accepted`). And the conversation since the last capture freeze — the bias-taxonomy dialog, the cognitive-science ratification, the provenance exchange, the sequencing — is appended verbatim to the thread doc, with the routing ledger refreshed so every open strand points at its register row. A fresh thread needs exactly one instruction: *read `meta/matters.md`, take row 1* — nothing from this session's memory is load-bearing anymore.
+
+**Your final steps for this thread:**
+
+1. **Merge #225** (https://github.com/ob6to8/elixir-mind/pull/225) with "Create a merge commit" — it carries the register, the matter-queue plan, the capture append, and the 2602.07900 weighing embedded in the promotions todo. Gates green.
+2. **Then start a fresh thread** and say something like *"take the top matter from meta/matters.md"* — row 1 is the methodology finalization (de-exempt wording, the protection ladder, block ratification). Rows proceed top-down, one PR each; rows 6 (Pages sunset) and 9 (vendor-block pilot) are marked blocked on decisions only you can make, and will sit until you unblock them.
+
+Record pointers, all committed: origin PR #224 → `841fd79`; follow-up PR #225; thread doc `meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md` (`pr: 224` per the write-once origin rule, #225 recorded in its narrative). This thread is done once #225 lands.
+
+## User
+
+should the matters.md be named per this spike? in case there are several matters.md's working simultaneously?
+
+## Assistant
+
+Recommendation: **keep the single fixed path — the singleton is load-bearing — and absorb initiative multiplicity inside the register rather than multiplying registers.** Reasoning, then what I encoded:
+
+The register's job is to be the repo's *delivery sequence*, and the resource it sequences — your review-and-merge lane — is single. Even with several initiatives running at once, their PRs serialize at the same merge gate, so a global order must exist somewhere; per-initiative `matters-<spike>.md` files would just push the ordering problem up a level (which register's row 1 goes next?) while creating a discovery problem the fixed path exists to dissolve — a fresh session reads one known path with zero context, which is the whole handoff mechanism. It also matches the repo's standing pattern: todos, issues, plans, and the bookmarks register are each one flat store with status/refs carrying the grouping, never per-batch silos. And splitting the queue across files invites the cross-register collision failure the matter-disjointness plan already tracks for parallel sessions.
+
+The two real pressures your question names, handled inside the design instead:
+
+- **Several initiatives at once** → an `Initiative` column added to the row schema the moment a second initiative queues its first row (today every row is TDD-spike-born, so adding it now would be a column with one value). Rows from different initiatives interleave in the one global order; each row's refs already point at its initiative's plan, where the detail lives.
+- **Several *sessions consuming simultaneously*** → the actual failure a shared file has is merge conflicts on row removal. The consumption model (top-down, one matter per PR, next matter after the prior merges) makes simultaneity rare by design — but if it bites, the recorded escalation is the natural one: `meta/matters.md` becomes a `meta/matters/` directory, one file per matter, conflict-free, with the ordered view derived. That's a mechanical refactor, not a redesign, so it's a trigger, not a now-decision.
+
+I've encoded exactly this into the matter-queue plan's decision list — singleton path as a decision with its rationale, the initiative-column trigger, and the directory-escalation trigger — and pushed it into open #225, since the question is precisely the kind of design record that plan exists to hold:
+
+**So: no rename — `meta/matters.md` stays the one fixed path**, with the reasoning and both escape hatches now recorded in the matter-queue plan (pushed into #225 as its latest commit, gates green).
+
+The short form of the answer: the register sequences your review-and-merge lane, which is single even when initiatives aren't — so a global order has to live somewhere, and one discoverable path is what lets a zero-context fresh thread find it. Multiple simultaneous initiatives get an `Initiative` column inside the register the day a second one queues a row; and if simultaneous *consumption* ever causes real merge conflicts, the recorded escalation is `meta/matters.md` → a `meta/matters/` directory with one file per matter and a derived ordering — a mechanical refactor, pre-decided so no future session re-derives it.
+
+**#225 remains the one thing awaiting you** — merge with "Create a merge commit" and this thread is fully closed; the next thread starts from `meta/matters.md` row 1.
