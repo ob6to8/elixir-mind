@@ -24,4 +24,5 @@ register is backlog. Listings below are alphabetical. See the
 
 ## Done
 
+- [Matters-register plan metadata](/meta/matters/matters-register-plan-metadata.md) — added Type (planned/independent) and Order columns to both tables of the matter register, projected from the docs' `plan`/`order` frontmatter. `status: done`.
 - [Stand up meta/matters/ and thin the register](/meta/matters/stand-up-meta-matters-and-thin-the-register.md) — migrated the queued register rows to matter docs, thinned `meta/matters.md` to the order-only pointer view, revised its protocol prose, and added this index. `status: done`.
