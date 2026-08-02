@@ -671,6 +671,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `em:988147` | [knowledge/SWE/agentic/context-engineering/streamlining-user-level-claude-md](/knowledge/SWE/agentic/context-engineering/streamlining-user-level-claude-md.md) | reference |  |
 | `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
+| `em:d000f6` | [knowledge/SWE/agentic/execution-environments/fly-io](/knowledge/SWE/agentic/execution-environments/fly-io.md) | reference |  |
+| `em:e75bfc` | [knowledge/SWE/agentic/execution-environments/shellbox](/knowledge/SWE/agentic/execution-environments/shellbox.md) | reference |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
 | `em:b4e21d` | [knowledge/SWE/agentic/frameworks/caveman-agent-output-compression](/knowledge/SWE/agentic/frameworks/caveman-agent-output-compression.md) | reference |  |
 | `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
