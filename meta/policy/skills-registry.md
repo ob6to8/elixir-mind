@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md, /meta/threads/2026-08-02-todo-fold-into-matters.md, /meta/threads/2026-08-02-build-the-matter-skill.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md, /meta/threads/2026-08-02-todo-fold-into-matters.md, /meta/threads/2026-08-02-build-the-matter-skill.md, /meta/threads/2026-08-02-mix-brain-matters-and-consumed-retirement.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -116,9 +116,10 @@ attribution:
 - **`/matter`** — work the [matter register](/meta/matters.md): bare `/matter`
   consumes the top queued matter under the approval-gated protocol (print the
   row and its doc's packet as the record, state the approach, wait for operator
-  approval in chat, deliver, then flip the doc `done`, drop the row, and log it
-  under the register's Consumed section — the landing PR number and the done
-  doc's `pr:` stamped at close, once `/create-pull-request` opens it);
+  approval in chat, deliver, then flip the doc `done` and drop the row — the
+  landing `pr:` stamped into the done doc at close, once
+  `/create-pull-request` opens it, with `mix brain.matters` verifying
+  register↔doc agreement and warning on a missing stamp);
   `/matter list [queue|backlog|done|all]` renders the queue and, beneath it,
   the backlog (open matter docs with no register row, sorted by soft integer
   `priority:` where present); `/matter create` files a matter doc under

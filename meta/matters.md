@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the compaction-driven handoff: persist the approved matter queue so remaining dev continues in fresh threads with no dependence on this session's memory"
-  from: [/meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md, /meta/threads/2026-08-02-matters-register-plan-metadata.md, /meta/threads/2026-08-02-todo-fold-into-matters.md, /meta/threads/2026-08-02-build-the-matter-skill.md]
+  from: [/meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md, /meta/threads/2026-08-02-matters-register-plan-metadata.md, /meta/threads/2026-08-02-todo-fold-into-matters.md, /meta/threads/2026-08-02-build-the-matter-skill.md, /meta/threads/2026-08-02-mix-brain-matters-and-consumed-retirement.md]
 ---
 
 # Matters
@@ -31,39 +31,20 @@ Protocol — operationalized by
 [`/matter`](/.claude/skills/matter/SKILL.md): consume top-down, each matter in
 a fresh thread with its doc (plus the refs it carries) as the entire handoff. A matter whose doc records an
 unmet blocker is skipped — consume the next row. Delivering a matter flips
-its doc `done`, drops its row here, and logs it under Consumed below (the
-move lands with the matter's PR). An open matter doc with no row here is
-backlog: filed, not yet committed to the queue.
+its doc `done` and drops its row here, the move landing with the matter's
+PR; the landing PR is stamped into the done doc (`pr: <N>`) at close, once
+`/create-pull-request` opens it — the done docs under
+[`meta/matters/`](/meta/matters/index.md) are the delivery history. An open
+matter doc with no row here is backlog: filed, not yet committed to the
+queue. `mix brain.matters` verifies this register against the docs: refs
+resolve, row↔doc agreement, and the global order never inverting a plan's
+internal order.
 
 | # | Matter | Type | Order |
 |---|---|---|---|
-| 1 | [mix brain.matters verifier](/meta/matters/mix-brain-matters-verifier.md) | [planned](/meta/plans/matter-docs-architecture.md) | 5 |
-| 2 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
-| 3 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
-| 4 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
-| 5 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
-| 6 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
-| 7 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
-
-## Consumed
-
-Delivered matters, newest first — the human-readable index of the queue's
-history (retires at matter-docs build 5 in favor of landing metadata on done
-docs). Each row names its landing PR once one exists (a row logged before
-its PR opens gets the number appended then); a pre-migration row's full
-scope packet stays in git history, in the commit that removed it from the
-queue, while a matter delivered since the migration keeps its packet in its
-`done` doc. Type and Order read as in the queue above; a pre-migration
-row's values derive from its git-history packet and the emitting plan's
-build order.
-
-| Date | Matter | Type | Order | Landed |
-|---|---|---|---|---|
-| 2026-08-02 | [The /matter skill](/meta/matters/matter-skill.md) | [planned](/meta/plans/matter-docs-architecture.md) | 4 | subcommand-dispatched skill at `.claude/skills/matter/SKILL.md` — bare consume under the approval-gated protocol, `list` rendering queue + backlog inline (soft integer `priority:` on backlog ratified), `create` filing matters backlog-by-default; skills-registry entry + contract recompile; register protocol prose and `/priorities` repointed; retires the planned `/present-matters`; matter-docs plan build 4 — PR #233 |
-| 2026-08-02 | [Todo fold](/meta/matters/todo-fold.md) | [planned](/meta/plans/matter-docs-architecture.md) | 3 | `meta/todos/` folded into [`meta/matters/`](/meta/matters/index.md) — 18 open todos now backlog matters, 2 done kept, the TDD-promotions todo merged into its queued matter doc; `type: todo` retired from the vocabulary + contract recompile; reading surfaces repointed (`mix brain.session_init` with queued-row annotation, `/priorities`, `/todo` skill retired); matter-docs plan build 3 — PR #232 |
-| 2026-08-02 | [Matters-register plan metadata](/meta/matters/matters-register-plan-metadata.md) | independent | - | Type/Order columns on both of this register's tables, projected from the matter docs' `plan`/`order` frontmatter; the instruction filed and consumed as this row's doc — PR #231 |
-| 2026-08-02 | Stand up `meta/matters/` + thin this register | [planned](/meta/plans/matter-docs-architecture.md) | 2 | ten matter docs under [`meta/matters/`](/meta/matters/index.md) + this register thinned to the order-only pointer view; [matter-docs plan](/meta/plans/matter-docs-architecture.md) build 2 — PR #230 |
-| 2026-08-02 | `type: matter` vocabulary adoption | [planned](/meta/plans/matter-docs-architecture.md) | 1 | [vocabulary entry](/meta/policy/controlled-type-vocabulary.md) + contract recompile; matter-docs plan flipped `in-progress` riding — PR #229 |
-| 2026-08-02 | Matters-vs-plans definition question | independent | - | [matters-vs-plans analysis](/meta/analysis/matters-vs-plans.md) + the ratified [matter-docs plan](/meta/plans/matter-docs-architecture.md) (`type: matter`, order-only register, todo fold, term kept, former rows 2+3 merged, build queued as rows 1–5); glossary retag riding — PR #228 |
-| 2026-08-02 | `deferred-work-is-filed` policy | independent | - | [the policy](/meta/policy/deferred-work-is-filed.md), section `filing`, compiled into the contract — ratified at review, PR #227 |
-| 2026-08-02 | Methodology finalization (the A-package remnant) | independent | - | protection ladder, de-"exempt" wording, block v1 final in [`em:cab2c5`](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) — PR #226 |
+| 1 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
+| 2 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
+| 3 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
+| 4 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
+| 5 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
+| 6 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
