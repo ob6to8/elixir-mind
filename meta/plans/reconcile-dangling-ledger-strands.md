@@ -12,7 +12,7 @@ attribution:
   why: "persists the design for reconciling routing-ledger danglers into tracked work per the persist-plans policy, so the freezing question and tool shape survive the session"
   from: [/meta/threads/2026-07-13-track-intake-todos-and-strand-reconciliation-plan.md, /meta/threads/2026-07-28-routing-ledger-orphan-sweep-and-record-queue-split.md]
 tags: [meta, plan, tooling, routing-ledger, priorities, provenance]
-timestamp: 2026-07-28
+timestamp: 2026-08-02
 ---
 
 # Reconcile dangling routing-ledger strands into tracked work
@@ -214,8 +214,12 @@ before step 3 begins.
    into 11 todos and 1 plan, 13 recorded `none:` with a reason. See the appendix.
    The ~24 already-discharged and ~9 decision-closed rows map mechanically to
    their existing artifacts and cell text, and are applied in step 2.
-2. **Backfill `Action`.** Add the column to all 109 thread ledgers, populating
-   it from step 1's dispositions. **Settle the `project`-hub open question
+2. **Backfill `Action`.** Add the column to all thread ledgers (161 at the
+   2026-08-02 recount), populating it from step 1's dispositions and, for
+   threads captured on or after the sweep date, from the
+   [post-sweep audit](/meta/analysis/post-sweep-dangling-strand-audit.md)'s
+   disposition table (52 strands; its eight orphans await ratification before
+   their `Action` cells can be written). **Settle the `project`-hub open question
    first** — it is the only open question this step depends on, and it decides
    whether the two secure-financial-agent rows are written `none:` (the current
    default) or as links. Answering it after the migration means re-touching
