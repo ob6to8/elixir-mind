@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Atomic pull requests
-description: One matter per pull request — a matter is one coherent, separately-reviewable intent; size is a signal and never the gate, mechanical bulk is exempt, generated artifacts ride their source change, splits stop at the green boundary, and a session delivers matters sequentially rather than batching them into one PR.
+description: One matter per pull request — a matter is one coherent, separately-reviewable intent; size is a signal and never the gate (a large diff carrying one mechanical intent is one reviewable decision), generated artifacts ride their source change, splits stop at the green boundary, and a session delivers matters sequentially rather than batching them into one PR.
 section: git-workflow
 order: 2
 status: active
@@ -12,7 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "operator ratified adopting an atomic-PR rule for this repo, shaped so the matter is the unit and line counts never force artificial splits"
-  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-methodology-finalization.md]
 ---
 **One matter per pull request.** A **matter** is one coherent intent a
 reviewer can approve or reject as a whole: an intake batch on one subject, a

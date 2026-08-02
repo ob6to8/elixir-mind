@@ -72,7 +72,7 @@ the start if siblings are plausible.
 
 ## git-workflow
 - [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted as part of the merge motion; later sessions leave lingering branches alone and never survey them; the default branch and unmerged branches need operator approval
-- [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md) — one matter per pull request, where a matter is one separately-reviewable intent; size is a signal never the gate (mechanical bulk exempt), splits stop at the green boundary, generated artifacts ride their source change, and sessions deliver matters sequentially
+- [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md) — one matter per pull request, where a matter is one separately-reviewable intent; size is a signal never the gate (a large diff carrying one mechanical intent is one reviewable decision), splits stop at the green boundary, generated artifacts ride their source change, and sessions deliver matters sequentially
 
 ## tooling-standards
 - [elixir-coding-standards](/meta/policy/elixir-coding-standards.md) — coding conventions for the Elixir tooling and the admission rule for new guardrails; a recurring agent miss updates this policy, never only the offending change
