@@ -211,8 +211,14 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 
 ### 2026-08-01-tdd-research-spike-and-methodology-adoption (2026-08-01)
 
-1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
 
 **[`em:cab2c5`]**
 
 The dials in it that are preference rather than evidence-forced: the 3-attempt stop, the 3–5-focused-tests working set, "test-first by default" (vs. a harder "always"), and the Mox/behaviour mandate. Note the Delivery bullet still carries the "is exempt" wording matter C would fix, and matter D below would add a test-protection line — so the clean sequence is: you rule on C and D, I apply, then you ratify the resulting block once (matter A).
+
+---
+
+**[`em:cab2c5`]**
+
+Proto-granular, done now — citations-as-enough would have bet the mapping on this session's memory surviving until PR 3, and this session has already been through one context compaction. The doc now carries a **`## Claim provenance (temporary format)`** section: fifteen rows, one per prescriptive claim, each with a verbatim *claim anchor* (which becomes the `<attr>` span's content anchor under the span-attribution plan — the rows convert one-to-one, so nothing is thrown away at refactor time), its class (`synthesis`, one `quote` — Valim's mock-as-noun line), basis (`search` — every row was retrieved this session, none from model memory), and its sources (the `em:` captures, the arXiv ids with their figures, Beck/Böckeler/METR/Anthropic for the never-weaken rule, Google/Graphite/Codacy for the delivery numbers, hexdocs for the Elixir mechanics).
