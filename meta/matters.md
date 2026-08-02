@@ -1,8 +1,8 @@
 ---
 type: reference
 title: "Matters — the pending-delivery register"
-description: The ordered, cross-session queue of pending matters — each row a self-contained handoff packet (matter, scope with decisions and refs, context flag) consumed top-down by fresh threads under the atomic-pull-requests policy; a consumed row moves to the in-doc Consumed log when its matter is delivered, and git history is the full archive.
-provenance: "Maintained by agent sessions under the matter-queue plan; seeded 2026-08-02 from the TDD research-spike session's approved sequence"
+description: The ordered pointer view over queued matters — the global delivery sequence across initiatives is the one datum stored here; each row points at a matter doc under meta/matters/, consumed top-down by fresh threads under the atomic-pull-requests policy.
+provenance: "Maintained by agent sessions under the matter-docs plan; seeded 2026-08-02 from the TDD research-spike session's approved sequence"
 tags: [meta, matters, work-queue, handoff, atomic-prs]
 timestamp: 2026-08-02
 attribution:
@@ -15,35 +15,45 @@ attribution:
 # Matters
 
 The pending-delivery register, per the
-[matter-queue plan](/meta/plans/matter-queue-and-present-matters.md). One
+[matter-docs plan](/meta/plans/matter-docs-architecture.md): the ordered
+pointer view over queued matters. Each matter is a doc under
+[`meta/matters/`](/meta/matters/index.md) — the handoff packet lives there;
+the **global delivery order is the one datum stored here**. One
 [matter](/beliefs/glossary/matter.md) per row, one PR per matter
-([policy](/meta/policy/git-atomic-pull-requests.md)); consume top-down;
-when a row's matter is delivered, move it from the queue to the Consumed
-log below (the move lands with the matter's PR). `fresh` = execute in a new
-thread with this row (plus its refs) as the entire handoff.
+([policy](/meta/policy/git-atomic-pull-requests.md)).
 
-| # | Matter | Scope — decisions made, where detail lives | Context |
-|---|---|---|---|
-| 1 | Stand up `meta/matters/` + thin this register | Per [matter-docs plan](/meta/plans/matter-docs-architecture.md) build-order 2: migrate the queued rows to matter docs, reduce this file to the order-only pointer view (the global sequence over queued matters is the one datum stored here), revise its protocol prose, add the directory index. | fresh |
-| 2 | Todo fold | Per [matter-docs plan](/meta/plans/matter-docs-architecture.md) build-order 3: migrate `meta/todos/` to `meta/matters/` (open todos become backlog matters — open, outside this register; done/cancelled keep status), retire `type: todo` from the vocabulary + contract recompile, repoint the reading surfaces (`mix brain.session_init`, `/priorities`, `/todo` skill retired or aliased), indexes. | fresh |
-| 3 | `/matter` skill | Merged former rows 2+3 (operator-approved 2026-08-02), per [matter-docs plan](/meta/plans/matter-docs-architecture.md) build-order 4: bare `/matter` consumes the top pointer under the approval-gated protocol (print the matter as the record, state the approach, wait for approval, deliver, flip the doc `done`, drop the pointer, log per this register's protocol); `/matter list` renders the register; `/matter create` files a matter (absorbing `/todo create`). Skills-registry entry + contract recompile ride; retires the planned `/present-matters`. | fresh |
-| 4 | `mix brain.matters` verifier | Per [matter-docs plan](/meta/plans/matter-docs-architecture.md) build-order 5: pointer refs resolve, the global order never inverts a plan's internal order, row↔doc agreement; then retire this register's Consumed section in favor of landing metadata on done docs. Gate admission per the coding-standards rule. | fresh |
-| 5 | `/create-pull-request` scoping edit | Two gaps, identified in the origin session: the commit step says "the current working changes" and needs *scope to the finished matter*; a repeat invocation in one session appends capture per `brain.thread_tail`, skips re-glossarying already-captured content, and records the follow-up PR in thread prose (`pr:` stays origin — already policy). | fresh |
-| 6 | dev-history recommit + regeneration fold-in | Decision made (operator-approved): recommit the derived `meta/dev-history.md` (currently gitignored, deploy-only — Pages is de-prioritized and a referenced doc needs an in-repo home); fold regeneration into the `/create-pull-request` motion beside the other regenerate-before-commit artifacts, per the [staleness analysis](/meta/analysis/dev-history-staleness-and-ci-regeneration.md)'s own recommendation; include an unshallow guard (the original drift came from shallow clones — [resolved issue](/meta/issues/dev-history-regeneration-silently-skipped-on-shallow-clones.md)); accept the one-PR self-referential lag; update the [meta index](/meta/index.md)'s dev-history line. | fresh |
-| 7 | response-resource-links / Pages-sunset revision | **Blocked on the operator firming the sunset decision.** When it firms: revise [response-resource-links](/meta/policy/response-resource-links.md) (Pages URL is currently "the durable, canonical form" — moves to blob-at-`main` or successor), `mix brain.url --pages`, and the site machinery's disposition. | fresh |
-| 8 | Two-sided bias taxonomy implementation | Per the [plan](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) — agent-side path ratification (leading: `knowledge/SWE/agentic/failure-modes/biases/`), per-entry literature-name pass, registers + einstellung refile (`em:837963` → the created [`knowledge/cognitive-science/biases/`](/knowledge/cognitive-science/biases/index.md)) + glossary pointer, thread-corpus backfill tagging, derive-don't-recall doctrine capstone. | fresh |
-| 9 | TDD bookmark promotions | Per the [todo](/meta/todos/promote-the-tdd-survey-bookmarks.md): promote Willison red/green, Superpowers, Swett; intake arXiv 2602.07900 carrying the weighing the todo embeds. | fresh |
-| 10 | Vendor-block pilot | **Blocked on an active consuming repo existing** ([two-level plan](/meta/plans/two-level-agent-methodology-guidance.md) build-order 3): paste the block from `em:cab2c5` into its `CLAUDE.md`, add repo specifics beneath. | fresh |
+Protocol: consume top-down, each matter in a fresh thread with its doc (plus
+the refs it carries) as the entire handoff. A matter whose doc records an
+unmet blocker is skipped — consume the next row. Delivering a matter flips
+its doc `done`, drops its row here, and logs it under Consumed below (the
+move lands with the matter's PR). An open matter doc with no row here is
+backlog: filed, not yet committed to the queue.
+
+| # | Matter |
+|---|---|
+| 1 | [Todo fold](/meta/matters/todo-fold.md) |
+| 2 | [The /matter skill](/meta/matters/matter-skill.md) |
+| 3 | [mix brain.matters verifier](/meta/matters/mix-brain-matters-verifier.md) |
+| 4 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) |
+| 5 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) |
+| 6 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) |
+| 7 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) |
+| 8 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) |
+| 9 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) |
 
 ## Consumed
 
 Delivered matters, newest first — the human-readable index of the queue's
-history. Each row names its landing PR once one exists (a row logged before
-its PR opens gets the number appended then); the row's full scope packet
-stays in git history, in the commit that removed it from the queue.
+history (retires at matter-docs build 5 in favor of landing metadata on done
+docs). Each row names its landing PR once one exists (a row logged before
+its PR opens gets the number appended then); a pre-migration row's full
+scope packet stays in git history, in the commit that removed it from the
+queue, while a matter delivered since the migration keeps its packet in its
+`done` doc.
 
 | Date | Matter | Landed |
 |---|---|---|
+| 2026-08-02 | Stand up `meta/matters/` + thin this register | ten matter docs under [`meta/matters/`](/meta/matters/index.md) + this register thinned to the order-only pointer view; [matter-docs plan](/meta/plans/matter-docs-architecture.md) build 2 |
 | 2026-08-02 | `type: matter` vocabulary adoption | [vocabulary entry](/meta/policy/controlled-type-vocabulary.md) + contract recompile; matter-docs plan flipped `in-progress` riding — PR #229 |
 | 2026-08-02 | Matters-vs-plans definition question | [matters-vs-plans analysis](/meta/analysis/matters-vs-plans.md) + the ratified [matter-docs plan](/meta/plans/matter-docs-architecture.md) (`type: matter`, order-only register, todo fold, term kept, former rows 2+3 merged, build queued as rows 1–5); glossary retag riding — PR #228 |
 | 2026-08-02 | `deferred-work-is-filed` policy | [the policy](/meta/policy/deferred-work-is-filed.md), section `filing`, compiled into the contract — ratified at review, PR #227 |
