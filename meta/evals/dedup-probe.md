@@ -88,6 +88,7 @@ being mechanically rewritten.
 | the new microsoft skillopt repo and documentation | em:42648b | target | skillopt; text-space optimizer for agent skills; training a skill.md as a trainable parameter; prompt optimization with a validation gate | harvested at intake 2026-07-31 |
 | the evolutionary algorithms paper | em:da2ffb | target | diffusion model evolutionary alignment; inference-time diffusion alignment; evolving latent noise for diffusion models | harvested at intake 2026-07-31 |
 | the circles-sines-signals interactive educational displays | em:4956f3 | target | circles sines and signals; jack schaedler dft explorable; interactive DFT teaching resource | harvested at intake 2026-07-31 |
+| the reference to hologram | em:e2f673 | target | hologram elixir framework; elixir compiles to javascript; hologram vs liveview | harvested at intake 2026-08-02 |
 
 ## Baseline
 
@@ -101,8 +102,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 29 |
-| expanded | 24 | 29 |
+| plain | 8 | 30 |
+| expanded | 24 | 30 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
