@@ -113,6 +113,19 @@ attribution:
   every future session; the operator's invocation is the ratification.
   `/ban-phrase list` renders the register read-only. See
   `.claude/skills/ban-phrase/SKILL.md`.
+- **`/matter`** — work the [matter register](/meta/matters.md): bare `/matter`
+  consumes the top queued matter under the approval-gated protocol (print the
+  row and its doc's packet as the record, state the approach, wait for operator
+  approval in chat, deliver, then flip the doc `done`, drop the row, and log it
+  under the register's Consumed section — the landing PR number and the done
+  doc's `pr:` stamped at close, once `/create-pull-request` opens it);
+  `/matter list [queue|backlog|done|all]` renders the queue and, beneath it,
+  the backlog (open matter docs with no register row, sorted by soft integer
+  `priority:` where present); `/matter create` files a matter doc under
+  [`meta/matters/`](/meta/matters/index.md) — backlog by default, queued only
+  when the operator states a position. One matter per PR
+  ([atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md)); matter
+  docs are governance (no `em:` ids). See `.claude/skills/matter/SKILL.md`.
 - **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
   tables: every request the operator made (with a done/partial/not-done/declined/
   superseded status), and what the agent actually did, with the files touched and

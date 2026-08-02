@@ -2,7 +2,7 @@
 type: matter
 title: "The /matter skill"
 description: Matter-docs build 4 — a subcommand-dispatched /matter skill whose bare invocation consumes the top queued matter under the approval-gated protocol, with list rendering the register and create filing a matter.
-status: open
+status: done
 plan: /meta/plans/matter-docs-architecture.md
 order: 4
 provenance: "Claude Fable 5, matter-register consumption session (matter-docs build 2)"

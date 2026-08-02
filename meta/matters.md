@@ -27,8 +27,9 @@ matter is `independent`, Order `-`. One
 [matter](/beliefs/glossary/matter.md) per row, one PR per matter
 ([policy](/meta/policy/git-atomic-pull-requests.md)).
 
-Protocol: consume top-down, each matter in a fresh thread with its doc (plus
-the refs it carries) as the entire handoff. A matter whose doc records an
+Protocol — operationalized by
+[`/matter`](/.claude/skills/matter/SKILL.md): consume top-down, each matter in
+a fresh thread with its doc (plus the refs it carries) as the entire handoff. A matter whose doc records an
 unmet blocker is skipped — consume the next row. Delivering a matter flips
 its doc `done`, drops its row here, and logs it under Consumed below (the
 move lands with the matter's PR). An open matter doc with no row here is
@@ -36,14 +37,13 @@ backlog: filed, not yet committed to the queue.
 
 | # | Matter | Type | Order |
 |---|---|---|---|
-| 1 | [The /matter skill](/meta/matters/matter-skill.md) | [planned](/meta/plans/matter-docs-architecture.md) | 4 |
-| 2 | [mix brain.matters verifier](/meta/matters/mix-brain-matters-verifier.md) | [planned](/meta/plans/matter-docs-architecture.md) | 5 |
-| 3 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
-| 4 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
-| 5 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
-| 6 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
-| 7 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
-| 8 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
+| 1 | [mix brain.matters verifier](/meta/matters/mix-brain-matters-verifier.md) | [planned](/meta/plans/matter-docs-architecture.md) | 5 |
+| 2 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
+| 3 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
+| 4 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
+| 5 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
+| 6 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
+| 7 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
 
 ## Consumed
 
@@ -59,6 +59,7 @@ build order.
 
 | Date | Matter | Type | Order | Landed |
 |---|---|---|---|---|
+| 2026-08-02 | [The /matter skill](/meta/matters/matter-skill.md) | [planned](/meta/plans/matter-docs-architecture.md) | 4 | subcommand-dispatched skill at `.claude/skills/matter/SKILL.md` — bare consume under the approval-gated protocol, `list` rendering queue + backlog inline (soft integer `priority:` on backlog ratified), `create` filing matters backlog-by-default; skills-registry entry + contract recompile; register protocol prose and `/priorities` repointed; retires the planned `/present-matters`; matter-docs plan build 4 |
 | 2026-08-02 | [Todo fold](/meta/matters/todo-fold.md) | [planned](/meta/plans/matter-docs-architecture.md) | 3 | `meta/todos/` folded into [`meta/matters/`](/meta/matters/index.md) — 18 open todos now backlog matters, 2 done kept, the TDD-promotions todo merged into its queued matter doc; `type: todo` retired from the vocabulary + contract recompile; reading surfaces repointed (`mix brain.session_init` with queued-row annotation, `/priorities`, `/todo` skill retired); matter-docs plan build 3 — PR #232 |
 | 2026-08-02 | [Matters-register plan metadata](/meta/matters/matters-register-plan-metadata.md) | independent | - | Type/Order columns on both of this register's tables, projected from the matter docs' `plan`/`order` frontmatter; the instruction filed and consumed as this row's doc — PR #231 |
 | 2026-08-02 | Stand up `meta/matters/` + thin this register | [planned](/meta/plans/matter-docs-architecture.md) | 2 | ten matter docs under [`meta/matters/`](/meta/matters/index.md) + this register thinned to the order-only pointer view; [matter-docs plan](/meta/plans/matter-docs-architecture.md) build 2 — PR #230 |
