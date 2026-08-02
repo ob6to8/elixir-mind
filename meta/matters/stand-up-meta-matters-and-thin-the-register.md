@@ -13,7 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matter-register consumption session (matter-docs build 2)"
   why: "filed at delivery as the done record of the migration itself, per matter-docs build-order 2"
-  from: [/meta/matters.md]
+  from: [/meta/matters.md, /meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md]
 ---
 
 # Stand up meta/matters/ and thin the register
