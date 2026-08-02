@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-01/02; verbatim retai
 tags: [meta, thread, decision-queue, matters, review, governance]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01DsJqM8LT7LskGcHkD48PZN
+pr: 235
 ---
 
 # 2026-08-01-decision-queue-matter-breakout
