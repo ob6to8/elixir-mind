@@ -174,6 +174,9 @@ structured body before code.
 
 ## Relation to other documents
 
+- [Solving vocabulary mismatch: the alternatives map, and a measured static-embedding answer](/meta/analysis/solving-vocabulary-mismatch-offline.md)
+  — the follow-up spike: resolves failure 1 with a measured static-embedding
+  tier 1.5 and refines recommendation 4's tier-2 boundary.
 - [vector-DB recall analysis](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md)
   — the tier architecture this spike extends downward: its tier 1 (expansion)
   and tier 2 (cached embeddings) stand; the ranked lexical floor slots between
