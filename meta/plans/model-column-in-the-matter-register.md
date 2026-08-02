@@ -2,7 +2,7 @@
 type: plan
 title: "The Model column in the matter register"
 description: Enable the register's queue table to carry each matter's delivering model as a fifth projected cell — widening ElixirMind.Matters from a four-cell row shape to five with a Model↔model agreement check — preceded by the backfill that gives the column something to show.
-status: proposed
+status: accepted
 provenance: "Claude Opus 5, scope-unit-of-work session"
 tags: [meta, plan, matters, register, models, tooling, verifier]
 timestamp: 2026-08-02
