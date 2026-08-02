@@ -662,6 +662,14 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:9d3c07` | [knowledge/SWE/agentic/context-engineering/markdown-folder-beat-a-vector-db-as-agent-knowledge-base](/knowledge/SWE/agentic/context-engineering/markdown-folder-beat-a-vector-db-as-agent-knowledge-base.md) | reference |  |
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
+| `em:43a737` | [knowledge/SWE/agentic/failure-modes/instruction-tuning-can-amplify-cognitive-biases](/knowledge/SWE/agentic/failure-modes/instruction-tuning-can-amplify-cognitive-biases.md) | claim | true |
+| `em:e71983` | [knowledge/SWE/agentic/failure-modes/llm-reasoning-shows-human-like-content-effects](/knowledge/SWE/agentic/failure-modes/llm-reasoning-shows-human-like-content-effects.md) | claim | true |
+| `em:dc4bb0` | [knowledge/SWE/agentic/failure-modes/long-context-use-is-position-biased](/knowledge/SWE/agentic/failure-modes/long-context-use-is-position-biased.md) | claim | true |
+| `em:5b4eda` | [knowledge/SWE/agentic/failure-modes/mapping-agent-failure-modes-to-cognitive-biases](/knowledge/SWE/agentic/failure-modes/mapping-agent-failure-modes-to-cognitive-biases.md) | note | false |
+| `em:1b6809` | [knowledge/SWE/agentic/failure-modes/premise-retraction-persistence](/knowledge/SWE/agentic/failure-modes/premise-retraction-persistence.md) | note | false |
+| `em:acb51d` | [knowledge/SWE/agentic/failure-modes/sources/dasgupta-2022-content-effects-on-reasoning](/knowledge/SWE/agentic/failure-modes/sources/dasgupta-2022-content-effects-on-reasoning.md) | source |  |
+| `em:cea89d` | [knowledge/SWE/agentic/failure-modes/sources/itzhak-2024-instructed-to-bias](/knowledge/SWE/agentic/failure-modes/sources/itzhak-2024-instructed-to-bias.md) | source |  |
+| `em:42f3a0` | [knowledge/SWE/agentic/failure-modes/sources/liu-2023-lost-in-the-middle](/knowledge/SWE/agentic/failure-modes/sources/liu-2023-lost-in-the-middle.md) | source |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
 | `em:b4e21d` | [knowledge/SWE/agentic/frameworks/caveman-agent-output-compression](/knowledge/SWE/agentic/frameworks/caveman-agent-output-compression.md) | reference |  |
 | `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
@@ -689,6 +697,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
+| `em:d5dbe1` | [knowledge/SWE/evals/porting-cognitive-bias-paradigms-into-agent-evals](/knowledge/SWE/evals/porting-cognitive-bias-paradigms-into-agent-evals.md) | methodology |  |
 | `em:1394b9` | [knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) | reference |  |
 | `em:1f1256` | [knowledge/SWE/evals/reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | methodology |  |
 | `em:9baaad` | [knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) | methodology |  |
@@ -728,6 +737,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fdf328` | [knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses](/knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses.md) | source |  |
 | `em:8ad00c` | [knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k26-api-pricing.md) | source |  |
 | `em:b6380e` | [knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing](/knowledge/ai-industry/sources/moonshot-kimi-k3-api-pricing.md) | source |  |
+| `em:3c861f` | [knowledge/cognitive-science/biases/continued-influence-effect](/knowledge/cognitive-science/biases/continued-influence-effect.md) | concept | false |
+| `em:48e815` | [knowledge/cognitive-science/biases/einstellung-effect](/knowledge/cognitive-science/biases/einstellung-effect.md) | concept | false |
+| `em:24b4fd` | [knowledge/cognitive-science/resource-rational-analysis](/knowledge/cognitive-science/resource-rational-analysis.md) | concept | false |
 | `em:9efeba` | [knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping](/knowledge/human-computer-interaction/keyboard-layouts/dvorak-qwerty-positional-mapping.md) | claim | false |
 | `em:59895a` | [knowledge/knowledge-management/argumentation/assurance-cases-and-gsn](/knowledge/knowledge-management/argumentation/assurance-cases-and-gsn.md) | reference |  |
 | `em:148cd9` | [knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments](/knowledge/knowledge-management/argumentation/dung-1995-acceptability-of-arguments.md) | source |  |

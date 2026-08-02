@@ -15,6 +15,7 @@ and the practices they change.
 - [code-quality](/knowledge/SWE/agentic/code-quality/index.md) — maintaining code quality and craft under AI-assisted development: guardrails, review layering, and feedback loops against quality drift
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context
 - [editor-integration](/knowledge/SWE/agentic/editor-integration/index.md) — how coding agents connect to the editor a developer already uses: protocols, plugin ecosystems, and how deeply an agent can reach into a live session
+- [failure-modes](/knowledge/SWE/agentic/failure-modes/index.md) — operational failure modes of LLM agents and their relation to documented human cognitive biases: the mapping's uses and limits, premise-retraction persistence, and the evidence for where mirrored biases come from
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
 - [governance](/knowledge/SWE/agentic/governance/index.md) — enforcement mechanisms for agent-produced work: typed models as the binding layer between prose and code, checking properties at the abstraction level where they're legible
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
