@@ -44,7 +44,12 @@ internal order.
 |---|---|---|---|
 | 1 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
 | 2 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
-| 3 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
-| 4 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
-| 5 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
-| 6 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
+| 3 | [Contract-synchronization sweep](/meta/matters/contract-synchronization-sweep.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 1 |
+| 4 | [Excerpt-log discipline](/meta/matters/excerpt-log-discipline.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 2 |
+| 5 | [Standardize the verbatim-capture filing pattern](/meta/matters/standardize-verbatim-capture-filing.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 3 |
+| 6 | [Settle model-attribution](/meta/matters/settle-model-attribution.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 4 |
+| 7 | [Contract-size counterweight](/meta/matters/contract-size-counterweight.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 5 |
+| 8 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
+| 9 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
+| 10 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
+| 11 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
