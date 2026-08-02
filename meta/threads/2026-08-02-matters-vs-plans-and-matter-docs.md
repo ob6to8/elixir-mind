@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained
 tags: [meta, thread, matters, plans, work-queue, architecture, terminology]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01V4SmiwzSTymGF1CnYUWjbr
+pr: 228
 ---
 
 # 2026-08-02-matters-vs-plans-and-matter-docs
