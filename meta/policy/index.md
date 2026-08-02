@@ -39,6 +39,7 @@ the start if siblings are plausible.
 - [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/todo/plan/doctrine/policy), downstream of plan-vs-capture
 - [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md) — living surfaces state the present; retrospective "used to…" narration belongs in the commit graph, not inline
 - [prefer-established-terminology](/meta/policy/prefer-established-terminology.md) — standard terms of art over bespoke coinages; bespoke terms are glossaried at first use and never churned retroactively
+- [deferred-work-is-filed](/meta/policy/deferred-work-is-filed.md) — a work item identified mid-session but not executed in it is filed (todo, plan, issue, or matters row) in the same turn that identifies it; chat is not a backlog
 
 ## communication
 - [plainspeak-orientation](/meta/policy/plainspeak-orientation.md) — a dense response opens with a short plain-language orientation (what happened, where things stand, what needs deciding) before the full technical presentation; terms are introduced only after the plain statement they label

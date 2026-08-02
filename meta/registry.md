@@ -224,6 +224,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f382b0` | [beliefs/glossary/featuring](/beliefs/glossary/featuring.md) | concept | false |
 | `em:c0ed08` | [beliefs/glossary/feeding-pairs](/beliefs/glossary/feeding-pairs.md) | concept | false |
 | `em:5e1788` | [beliefs/glossary/few-shot-prompting](/beliefs/glossary/few-shot-prompting.md) | concept | false |
+| `em:fa9469` | [beliefs/glossary/fifo-queue](/beliefs/glossary/fifo-queue.md) | concept | false |
 | `em:13607e` | [beliefs/glossary/figure-ground-inversion](/beliefs/glossary/figure-ground-inversion.md) | concept | false |
 | `em:c682e9` | [beliefs/glossary/file-tree-diff](/beliefs/glossary/file-tree-diff.md) | concept | false |
 | `em:63aa2e` | [beliefs/glossary/fine-tuning](/beliefs/glossary/fine-tuning.md) | concept | false |

@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, TDD research-spike session"
   why: "the operator approved the matter-queue shape and, facing context compaction, directed the handoff machinery be stood up so remaining dev continues in fresh threads"
-  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md]
+  from: [/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md, /meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md]
 ---
 
 # The matter queue and /present-matters
@@ -84,6 +84,14 @@ with the one that wrote it.
   register: an `Initiative` column is added the moment a second initiative
   queues its first row; each row's refs already point at its initiative's
   plan.
+- **Consumed rows are logged in-doc** (ratified 2026-08-02, amending the
+  seeded git-history-only archive): a consumed row moves from the queue
+  table to a `## Consumed` section in the register — date, matter, landing —
+  written in the same edit that removes the row, so logging and removal are
+  one motion. This matches the standing pattern for the sibling registers
+  (todos, issues, and plans all keep their done entries visible); entries
+  are pointers only, and git history remains the full archive of each row's
+  scope packet.
 - **Escalation trigger:** if simultaneous consumption ever produces real
   merge conflicts on row removal (rare by design — top-down consumption, one
   matter per PR), the register becomes a `meta/matters/` directory, one file

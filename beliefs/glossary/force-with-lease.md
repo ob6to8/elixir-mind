@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git]
 sense: common
-timestamp: 2026-07-13
+timestamp: 2026-08-02
 attribution:
   when: 2026-07-13T00:00:00Z
   channel: glossary
@@ -19,4 +19,4 @@ attribution:
 
 A guarded variant of `git push --force`. A plain force-push overwrites the remote branch unconditionally, silently discarding any commits someone else pushed since you fetched; `--force-with-lease` first checks that the remote tip is still the value you last observed (your "lease" on it) and refuses the push otherwise. It is the safe way to replace a branch's history — for example when a session [restarts its designated branch](/meta/tutorials/branch-lifecycle-across-merged-prs.md) from the default branch and must overwrite a stale, already-merged remote tip — because it fails loudly instead of clobbering unseen work.
 
-*Seen in:* [2026-07-13 branch-lifecycle tutorial and main catch-up](/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md)
+*Seen in:* [2026-07-13 branch-lifecycle tutorial and main catch-up](/meta/threads/2026-07-13-branch-lifecycle-tutorial-and-main-catchup.md), [2026-08-02 deferred-work policy and consumed-matters log](/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md)
