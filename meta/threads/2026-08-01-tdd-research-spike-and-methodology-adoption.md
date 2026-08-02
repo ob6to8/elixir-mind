@@ -34,7 +34,13 @@ four-rung test-protection ladder and its eval-holdout kinship, per-claim
 provenance in a temp format aligned to the span-attribution plan, and the
 matter-queue/present-matters design — closing with operator approval of a
 nine-row execution sequence delivered as sequential atomic PRs, this thread's
-capture being PR 1.
+capture being PR 1. **Landings:** the origin PR #224 merged as `841fd79`
+(spike, governance adoptions, bias-taxonomy plan, cognitive-science domain,
+claim-provenance table); the compaction-driven handoff — the
+[matter register](/meta/matters.md), its
+[plan](/meta/plans/matter-queue-and-present-matters.md), and this capture
+append — followed as PR #225. Remaining work is consumed from the register,
+top-down, in fresh threads.
 
 ## Routing
 
