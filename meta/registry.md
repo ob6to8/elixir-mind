@@ -267,6 +267,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d9c5d9` | [beliefs/glossary/gold-set](/beliefs/glossary/gold-set.md) | concept | false |
 | `em:61877f` | [beliefs/glossary/golden-test](/beliefs/glossary/golden-test.md) | concept | false |
 | `em:9e28d2` | [beliefs/glossary/goodharts-law](/beliefs/glossary/goodharts-law.md) | concept | false |
+| `em:769e66` | [beliefs/glossary/governance-prose](/beliefs/glossary/governance-prose.md) | concept | false |
 | `em:0c8532` | [beliefs/glossary/graduation](/beliefs/glossary/graduation.md) | concept | false |
 | `em:d19aa3` | [beliefs/glossary/granular-synthesis](/beliefs/glossary/granular-synthesis.md) | concept | false |
 | `em:1af093` | [beliefs/glossary/graph-engineering](/beliefs/glossary/graph-engineering.md) | concept | false |

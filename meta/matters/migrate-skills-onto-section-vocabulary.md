@@ -14,6 +14,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work form-evaluation session"
   why: "the corpus must conform before the conformance gate joins CI, or the gate's own matter lands red"
+  from: [/meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 
 # Migrate the 18 skills onto the section vocabulary

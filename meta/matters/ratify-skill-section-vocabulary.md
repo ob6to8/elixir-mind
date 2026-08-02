@@ -14,6 +14,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work form-evaluation session"
   why: "operator ratified the vocabulary, the ## Purpose heading, and the required-set-only gate scope; the rule needs a canonical home before the migration or the checker can cite it"
+  from: [/meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 
 # Ratify the skill section vocabulary

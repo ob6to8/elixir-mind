@@ -14,6 +14,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work form-evaluation session"
   why: "the vocabulary has a mechanical oracle, and the coding standards route any such standard to a gate rather than to contract prose"
+  from: [/meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 
 # Gate skill section conformance

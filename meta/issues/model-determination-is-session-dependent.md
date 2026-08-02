@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work form-evaluation session"
   why: "an A/B eval of the skill's body layout produced four independent scopings of one unit as a side effect, and the model stamps disagreed in a pattern the single-run case could never have surfaced"
+  from: [/meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 
 # A matter's `model:` stamp is session-dependent

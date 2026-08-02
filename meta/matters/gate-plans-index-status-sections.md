@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work form-evaluation session"
   why: "an eval run scoping an unrelated spec reported the drift in passing; confirmed against frontmatter across the whole index and found to be three rows and a missing gate, not a one-off typo"
+  from: [/meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 
 # Reconcile the plans index against plan status, and gate the agreement
