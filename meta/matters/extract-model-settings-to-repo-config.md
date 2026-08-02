@@ -27,8 +27,9 @@ The design and the rejected alternatives are in
 
 **Deliver:**
 
-1. **The config surface**, per the operator's ruling at the gate — see the
-   blocker below.
+1. **The enumeration in `config/config.exs`**, beside `site_base_url` and
+   `repo_url`: each model's name, its `model:` value, and its one-line
+   disposition (what it is sent, what it is not).
 2. **`lib/elixir_mind/model_config.ex`** — the only reader, mirroring
    `ElixirMind.SiteConfig` including its `@default_*` fallback so a bare
    checkout still runs: `roster/0`, `values/0`, `valid?/1`, `table/0`.
@@ -37,23 +38,18 @@ The design and the rejected alternatives are in
    rendered table so the contract's copy is *compiled from* the setting and
    cannot drift. This is the property that makes config authoritative rather
    than merely parallel.
-4. **Redirect the inbound links** — the contract, `meta/index.md`,
-   [`/matter`](/.claude/skills/matter/SKILL.md), and
+4. **Redirect the inbound links and delete the roster document.** The contract,
+   `meta/index.md`, [`/matter`](/.claude/skills/matter/SKILL.md), and
    [`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md) all
-   point at the roster document today — and retire it (recommend deletion over
-   a hollow pointer doc).
+   point at it today. It is deleted, not left as a pointer.
 
-**Frozen by the plan, not reopened here:** the `model:` value form stays the
-**display form** (`Claude Opus 5`), matching the commit trailer. Queued register
-row 12 backfills 30 docs with those strings; changing the form here would force
-that backfill to be redone.
-
-**Blocker — the operator's ruling on the config form.** Elixir application
-config (`config/config.exs` + the reader) mirrors the `site_base_url` precedent
-exactly and needs no new parsing; a standalone root-level settings file reads as
-"settings" to a non-Elixir operator but needs a parser this repo has no
-dependency for. Recommendation is Elixir config. Take the ruling at the approval
-gate before writing anything.
+**Settled before delivery — constraints, not gate questions.** The config form
+is **Elixir application config**, on the `site_base_url` precedent and the
+zero-dependency stance; the roster document is **deleted**; and the `model:`
+value form stays the **display form** (`Claude Opus 5`), matching the commit
+trailer. That last one matters operationally: queued register row 12 backfills
+30 docs with those strings, and changing the form here would force that backfill
+to be redone.
 
 **Verify:** `mix brain.contract --check` (the token must round-trip),
 `mix brain.codemap --check`, `mix brain.verify`, `mix test

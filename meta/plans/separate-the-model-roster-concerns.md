@@ -2,7 +2,7 @@
 type: plan
 title: "Separate the model roster's concerns: settings, rule, and judgment"
 description: The roster is three artifacts wearing one type — an enumerated settings table, a determination procedure, and schema rules already triplicated into the contract and two skills — so extract the settings to a repo config surface, absorb the rules into one terse policy, and leave the standing direction with the existing doctrine.
-status: proposed
+status: accepted
 provenance: "Claude Opus 5, scope-unit-of-work session"
 tags: [meta, plan, models, config, policy, separation-of-concerns, matters]
 timestamp: 2026-08-02
@@ -74,17 +74,17 @@ which stands unchanged.
 - ├── model: vs provenance          # schema rule (also in contract + 2 skills)
 - └── maintenance rules             # undetermined-is-stated (also in 1 skill)
 
-+ <config surface>                  # data: the enumerated models + dispositions
++ config/config.exs                 # data: the enumerated models + dispositions
 + meta/policy/model-stamping.md     # the rule, absorbing the existing copies
 + meta/doctrine/capability-matched-model-selection.md   # unchanged — the direction
-+ meta/model-roster.md              # RETIRED or reduced to a pointer
+- meta/model-roster.md              # DELETED
 ```
 
 Reader module, mirroring `ElixirMind.SiteConfig`:
 
 ```diff
   config/config.exs
-+   config :elixir_mind, models: [...]     # if the Elixir-config form wins
++   config :elixir_mind, models: [...]
 
 + lib/elixir_mind/model_config.ex
 +   roster/0        → the enumerated models
@@ -95,10 +95,7 @@ Reader module, mirroring `ElixirMind.SiteConfig`:
 ## File-tree diff
 
 ```
-config/config.exs                      # MODIFIED — the model list (Elixir-config form)
-  — or —
-models.exs / models.yml (repo root)    # NEW — a standalone settings file (loose-config form)
-
+config/config.exs                      # MODIFIED — the model list
 lib/elixir_mind/model_config.ex        # NEW — the one reader; the SiteConfig analog
 lib/elixir_mind/contract.ex            # MODIFIED — expand a {{model_roster}} token,
                                        #   exactly as {{site_base_url}} is expanded today
@@ -106,7 +103,7 @@ lib/elixir_mind/matters.ex             # MODIFIED — `model:` ∈ values/0 chec
 meta/policy/model-stamping.md          # NEW — the absorbed rule
 meta/policy/controlled-type-vocabulary.md  # MODIFIED — the `matter` entry's model
                                        #   paragraph shrinks to a link
-meta/model-roster.md                   # DELETED or reduced to a pointer
+meta/model-roster.md                   # DELETED
 .claude/skills/matter/SKILL.md         # MODIFIED — quote the policy, drop the restatement
 .claude/skills/scope-unit-of-work/SKILL.md  # MODIFIED — same
 meta/index.md, CLAUDE.md, meta/code-map.md  # MODIFIED — listings and regenerations
@@ -169,8 +166,12 @@ constraint rather than reopening it.
 
 ## Decision list
 
-**Recommended shape**: config for the enumeration, one terse absorbing policy
-for the rule, doctrine untouched, the roster document retired.
+**Ratified shape**: the enumeration lives in **Elixir application config**
+(`config/config.exs` + `ElixirMind.ModelConfig`), the rule becomes **one new
+terse policy** that the `matter` type-vocabulary entry links to, the doctrine is
+untouched, and `meta/model-roster.md` is **deleted** rather than left as a
+pointer. All three were open at filing and are settled; the matters carry them
+as constraints, not as gate questions.
 
 **Alternatives rejected:**
 
@@ -185,31 +186,25 @@ for the rule, doctrine untouched, the roster document retired.
   mid-work has to be in the contract to reach a fresh agent
   ([governance-artifact-routing](/meta/policy/governance-artifact-routing.md):
   persistence and reach are different axes). A rule in a config file is inert.
-- **Fold the rule into the existing `matter` type-vocabulary entry rather than
-  a new policy.** A live contender, not clearly wrong — it keeps the contract
-  from gaining an entry. Rejected as the default because the rule also governs
-  `## Model` body sections and the prospective/retrospective boundary, which are
-  not facts about the `matter` type; carried as open question 2 for the gate.
+- **Folding the rule into the existing `matter` type-vocabulary entry rather
+  than writing a new policy.** A live contender — it keeps the contract from
+  gaining an entry. Rejected because the rule also governs `## Model` body
+  sections and the prospective/retrospective boundary, which are not facts about
+  the `matter` type.
+- **A standalone settings file** (root-level `models.yml`), editable without
+  touching Elixir and reading as "settings" to a non-Elixir operator. Rejected
+  on the `site_base_url` precedent and the zero-dependency stance: this repo has
+  no YAML dependency for a root settings file, while Elixir config is read by
+  the toolchain with no new parsing.
+- **Keeping `meta/model-roster.md` as a pointer document.** Rejected — a
+  document holding nothing but redirects is the surface
+  [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md)
+  warns about. Inbound links (the contract, `meta/index.md`, and both skills)
+  are redirected in matter 1's commit.
 
 **Open questions:**
 
-1. **Which config form?** Elixir application config (`config/config.exs` +
-   `ElixirMind.ModelConfig`) exactly mirrors the `site_base_url` precedent and
-   is readable by the toolchain with zero new parsing. A standalone settings
-   file (root-level `models.yml`) is editable without touching Elixir and reads
-   as "settings" to a non-Elixir operator, at the cost of a parser this repo
-   has no dependency for. **Recommend Elixir config**, on the precedent and the
-   zero-dependency stance — but the operator's word was *config* in the loose
-   sense, so this is theirs to rule.
-2. **New policy, or absorb into the `matter` type entry?** Recommend a new
-   terse policy (~120 words) that the type entry links to, since the rule
-   outgrows the type.
-3. **Does `meta/model-roster.md` survive as a pointer, or get deleted?**
-   Recommend deletion — a pointer document that holds nothing is the surface
-   [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md)
-   warns about. Inbound links (contract, two skills, `meta/index.md`) are
-   redirected in matter 1's commit either way.
-4. **Interaction with [settle model-attribution](/meta/matters/settle-model-attribution.md)**
+1. **Interaction with [settle model-attribution](/meta/matters/settle-model-attribution.md)**
    (queued row 6): if that matter retracts or folds
    [model-attribution](/meta/policy/model-attribution.md), the
    prospective/retrospective half of this policy loses its counterpart. Whichever

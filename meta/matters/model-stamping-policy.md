@@ -48,11 +48,10 @@ the tier guidance stay in
 [capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md),
 which this policy implements and does not restate.
 
-**Open at the gate:** whether this is a new policy at all, or an expansion of
-the `matter` type-vocabulary entry that avoids adding a contract entry.
-Recommendation is a new policy — the rule governs body structure and the
-attribution boundary, which are not facts about the `matter` type — but the
-counter-argument is real and the operator rules.
+**Settled before delivery:** this is a **new policy**, not an expansion of the
+`matter` type-vocabulary entry. The rule governs `## Model` body structure and
+the prospective/retrospective attribution boundary, neither of which is a fact
+about the `matter` type; the type entry shrinks to a link.
 
 **Watch:** [settle model-attribution](/meta/matters/settle-model-attribution.md)
 (queued row 6) may retract or fold
