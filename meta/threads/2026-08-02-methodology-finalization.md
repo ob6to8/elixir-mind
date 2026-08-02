@@ -63,3 +63,50 @@ Now applying the edits to the methodology doc — (b) the subsection under §2:
 All gates green — 201 tests pass, contract/registry/codemap current, bundle verifies, route tags and glossary check out, site builds (the warnings shown are pre-existing advisory ones). The contract check confirms the policy `description` edit needs no recompile.
 
 Quick self-review of the changed doc before committing:
+
+## Assistant
+
+Matter delivered — **PR #226 is open and awaiting your merge: https://github.com/ob6to8/elixir-mind/pull/226**
+
+In plain terms: I took the register's top row (the methodology finalization left over from the TDD spike) and executed it end to end. The methodology document now has its missing section on how tests are protected from the agent implementing against them; the leftover "is exempt" phrasing — which implied a size cap the policy doesn't have — is gone from every living surface; and the paste-into-other-repos block is now the finalized v1 you conditionally ratified, dials exactly as drafted. No blocking questions arose: the row's handoff packet was self-contained, as designed — this was also the register's first fresh-thread consumption, and the mechanism worked.
+
+**What I created**
+
+| type | doc | why this type |
+|---|---|---|
+| thread doc | [`meta/threads/2026-08-02-methodology-finalization.md`](https://github.com/ob6to8/elixir-mind/blob/claude/meta-matters-top-bujixu/meta/threads/2026-08-02-methodology-finalization.md) | the session's frozen record (routing ledger, route tags, `pr: 226` stamped) |
+| glossary `concept` | `protection-ladder` (`em:07519b`) | repo coinage now load-bearing in the methodology |
+
+**What I modified**
+
+| file | thrust of the change |
+|---|---|
+| [`agent-development-methodology.md`](https://github.com/ob6to8/elixir-mind/blob/claude/meta-matters-top-bujixu/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) (`em:cab2c5`) | "Protecting the contract" subsection under §2 (four rungs + the two-set-split clarification); one protection line in the block; Delivery bullet de-exempted; version line dated to the finalized text; six new claim-provenance rows |
+| `meta/policy/index.md` + `git-atomic-pull-requests.md` | gloss and `description` de-exempted (the description was a third surface with the identical defect, found in session — same intent, so it rode; the policy body was already correct); thread stamped into the policy's `attribution.from` |
+| [`meta/matters.md`](https://github.com/ob6to8/elixir-mind/blob/claude/meta-matters-top-bujixu/meta/matters.md) | row 1 removed in this PR (so removal lands exactly at merge, per the register's rule); rows renumbered — `deferred-work-is-filed` policy is the new top |
+| `held-out-set.md`, `matter.md` (glossary) | dev-loop application added; register sentence moved to present tense |
+
+**Actions I have taken**
+
+| action | result |
+|---|---|
+| Verified Beck's "immutable annotation" span against both reachable sources | not reproducible (Substack post + interview free page; transcript podcast-gated) → attributed as **synthesis, not quotation**, with the failed reproduction recorded in its provenance row |
+| Full gate suite on all three commits | green — 201 tests; contract/registry/codemap current; bundle, route-tag, glossary, lineage checks pass |
+| Pushed `a2e57d0` → `441236b` → `4d8f714`, opened PR #226 | open against `main` |
+
+**Your options from here**
+
+| # | option | what it entails |
+|---|---|---|
+| 1 | Review and merge #226 | use **"Create a merge commit"** — never squash/rebase; highest-leverage review targets: the §2 subsection and the finalized block |
+| 2 | Have me watch the PR | I subscribe to its CI/review events and respond — say the word |
+
+After #226 lands, the next fresh thread picks up the new row 1 (`deferred-work-is-filed` policy) with the same opener you used here.
+
+## User
+
+merge
+
+## Assistant
+
+Merging under the explicit opt-in — the step-9 concerns gate passes (nothing emerged since opening: no new commits, no surprises). Checking CI first, never merging red:
