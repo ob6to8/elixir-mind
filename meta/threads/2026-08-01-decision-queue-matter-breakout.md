@@ -256,3 +256,21 @@ Alternatives weighed: top of queue (rejected — rows 1–2 are small and improv
 
 confirm register edit
 
+
+## Assistant
+
+The close is complete — **PR #235 is open and handed back to you**: https://github.com/ob6to8/elixir-mind/pull/235
+
+**Completion facts:**
+
+| Step | Result |
+|---|---|
+| Register edit | Five matters queued at rows 3–7, existing rows renumbered 8–11; `mix brain.matters` green (`ef9a616`) |
+| Capture | `meta/threads/2026-08-01-decision-queue-matter-breakout.md` — mechanical render from the session log under the verbatim drop rule, routing ledger (8 strands, all closed), three path-ref tag regions, materialize + verify green |
+| Glossary | No-op — the session's terms (`matter`, `register`, backlog-as-matter) are already glossaried by the matter-system build sessions |
+| `from` stamps | Thread appended to the program plan's list; written onto both new plans and all five matter packets |
+| PR | #235 open on `main`, seven commits, gate suite green throughout; `pr: 235` stamped into the thread doc and pushed (`087b89d`) |
+
+The branch holds, in order: the session-5 ratification, the docs-rewrite plan, the main merge, the five-matter breakout, the ratified register placement, and the capture. Merging is yours per the bare invocation; the next `/matter` in a fresh thread will pick up row 1 (`/create-pull-request` scoping edit), and your five enter at row 3 with the contract-synchronization sweep.
+
+I can watch the PR for CI results and review comments (`subscribe_pr_activity`) if you'd like — say the word.
