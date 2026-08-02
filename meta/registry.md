@@ -654,7 +654,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:636e39` | [knowledge/SWE/agentic/anthropic/claude/claude-opus-5](/knowledge/SWE/agentic/anthropic/claude/claude-opus-5.md) | reference |  |
 | `em:7fa867` | [knowledge/SWE/agentic/architecture/architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md) | reference |  |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
+| `em:9673c2` | [knowledge/SWE/agentic/code-context/doma](/knowledge/SWE/agentic/code-context/doma.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
+| `em:f65f82` | [knowledge/SWE/agentic/code-context/sources/doma-release-post](/knowledge/SWE/agentic/code-context/sources/doma-release-post.md) | source |  |
 | `em:cab2c5` | [knowledge/SWE/agentic/code-quality/agent-development-methodology](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) | methodology |  |
 | `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
 | `em:49315a` | [knowledge/SWE/agentic/code-quality/getting-good-results-from-claude-code](/knowledge/SWE/agentic/code-quality/getting-good-results-from-claude-code.md) | reference |  |
