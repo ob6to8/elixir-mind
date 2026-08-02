@@ -3,6 +3,7 @@ type: matter
 title: "mix brain.matters verifier"
 description: Matter-docs build 5 — a mix brain.matters verifier for pointer-ref resolution, order-inversion, and row↔doc agreement, after which the register's Consumed section retires.
 status: done
+pr: 234
 plan: /meta/plans/matter-docs-architecture.md
 order: 5
 provenance: "Claude Fable 5, matter-register consumption session (matter-docs build 2)"

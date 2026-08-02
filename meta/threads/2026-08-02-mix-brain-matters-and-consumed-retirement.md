@@ -5,6 +5,7 @@ description: A register-consumption session delivers matter-docs build 5 — Eli
 provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [thread, matters, verifier, tooling, work-queue]
 timestamp: 2026-08-02
+pr: 234
 session: https://claude.ai/code/session_012RbGDhSXNHAudAv1RxCWJe
 ---
 
