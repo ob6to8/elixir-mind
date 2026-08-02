@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-08-02; verbatim retaine
 tags: [meta, thread, intake, phoenix, elixir, inertia.js, liveview, hologram, web-frameworks]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01ESFwypWk6RzT5UQLZS2pyu
+pr: 236
 ---
 
 # 2026-08-02-phoenix-inertia-hologram-intake
