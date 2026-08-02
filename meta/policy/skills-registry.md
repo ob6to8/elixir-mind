@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -82,12 +82,8 @@ attribution:
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
   rather than blindly resolving them; retries only on network errors. See
   `.claude/skills/sync-branch-with-main/SKILL.md`.
-- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
-  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
-  the index); `/todo list` shows the todos grouped by `status`. See
-  `.claude/skills/todo/SKILL.md`.
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
-  `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
+  `mix brain.session_init` (open issues, open matters, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
   on-demand appraisal of open work, produced when asked rather than injected at
   session start. Read-only. See `.claude/skills/priorities/SKILL.md`.

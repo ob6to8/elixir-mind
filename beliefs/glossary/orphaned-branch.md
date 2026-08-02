@@ -42,7 +42,7 @@ Reading the five rows you're showing:
 
 ---
 
-**[`em:a9113e`]**  (co-feeds: `meta/todos/triage-the-six-kept-unmerged-claude-branches.md`)
+**[`em:a9113e`]**  (co-feeds: `meta/matters/triage-the-six-kept-unmerged-claude-branches.md`)
 
 **Worth saving — one big, four small:**
 

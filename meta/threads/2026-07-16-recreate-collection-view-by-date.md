@@ -119,7 +119,7 @@ Which scope?
 
 ## Assistant
 
-<routes ref="/meta/plans/collection-view-by-date.md /meta/plans/index.md /meta/todos/index.md /meta/issues/index.md /beliefs/glossary/timestamp.md /beliefs/glossary/attribution.md">
+<routes ref="/meta/plans/collection-view-by-date.md /meta/plans/index.md /meta/matters/index.md /meta/issues/index.md /beliefs/glossary/timestamp.md /beliefs/glossary/attribution.md">
 Pushed. Done.
 
 ## Summary

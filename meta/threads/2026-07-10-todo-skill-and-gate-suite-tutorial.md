@@ -47,7 +47,7 @@ Create meta/todos, which will hold files of type todo. New todos can be added wi
 
 ## Assistant
 
-<routes ref=".claude/skills/todo/SKILL.md meta/policy/controlled-type-vocabulary.md">
+<routes ref="meta/policy/controlled-type-vocabulary.md">
 No hardcoded type list — types are open (tolerant consumer), governed only by the policy vocabulary. Everything is clear. Here's my plan:
 
 1. Add `todo` to the controlled type vocabulary policy, then re-render `CLAUDE.md`.
@@ -60,7 +60,7 @@ The operator's request itself ratifies the new `todo` type and `meta/todos/` dir
 
 ## Assistant
 
-<routes ref=".claude/skills/todo/SKILL.md meta/policy/controlled-type-vocabulary.md">
+<routes ref="meta/policy/controlled-type-vocabulary.md">
 Done. Committed and pushed to `claude/meta-todos-skill-j42my8`.
 
 ## What I built

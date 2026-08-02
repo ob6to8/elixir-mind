@@ -576,19 +576,20 @@ once persistence is warranted does this policy apply — *which* governance type
 | a reasoned judgment answering a question, against evidence | `analysis` | [`meta/analysis/`](/meta/analysis/index.md) |
 | a durable explainer meant to be read start to finish | `tutorial` | [`meta/tutorials/`](/meta/tutorials/index.md) |
 | something *wrong* — a defect, or a live concern about how the brain behaves | `issue` | [`meta/issues/`](/meta/issues/index.md) |
-| a plain task to complete, approach already obvious | `todo` | [`meta/todos/`](/meta/todos/index.md) |
+| work to deliver — a plain task or a whole PR-shaped unit, approach already decided | `matter` | [`meta/matters/`](/meta/matters/index.md) |
 | a *proposed change* whose design/decisions must be recorded before executing | `plan` | [`meta/plans/`](/meta/plans/index.md) |
 | a standing *direction* that shapes judgment without prescribing an action | `doctrine` | [`meta/doctrine/`](/meta/doctrine/index.md) |
 | an enforceable *rule* for how the brain operates | `policy` | [`meta/policy/`](/meta/policy/index.md) |
 
 **The pairs that actually get confused:**
 
-- **issue vs. todo** — an issue is a *problem to diagnose* (something behaves
-  wrongly; the fix may not be known). A todo is a *task to do* (the approach is
+- **issue vs. matter** — an issue is a *problem to diagnose* (something behaves
+  wrongly; the fix may not be known). A matter is *work to do* (the approach is
   known; it just needs doing). "Merges keep conflicting" is an issue; "wire the
-  hook in the session-start script" is a todo.
-- **todo vs. plan** — if the *approach* needs deciding, it is a plan; if only the
-  *doing* remains, it is a todo. A plan that would contain no decisions is a todo.
+  hook in the session-start script" is a matter.
+- **matter vs. plan** — if the *approach* needs deciding, it is a plan; if only
+  the *doing* remains, it is a matter. A plan that would contain no decisions is
+  a matter.
 - **analysis vs. plan** — an analysis concludes with a *judgment* ("X is the
   better shape, and here is why"); a plan commits to *work* ("build X in this
   order"). An analysis whose residue is action may be retyped as a plan rather
@@ -678,10 +679,11 @@ _Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-e
 same turn that identifies it — chat is not a backlog.** The moment a session
 names work it will not do now — "I'll do X later", "this should eventually
 Y", a defect noticed in passing, an edit deferred to a future session — the
-item gets a durable home before the turn ends: a `todo`, `plan`, or `issue`
-per [governance-artifact-routing](/meta/policy/governance-artifact-routing.md),
-or a row in the [matters register](/meta/matters.md) when it is a pending
-[matter](/beliefs/glossary/matter.md) awaiting its own PR. A deferral that
+item gets a durable home before the turn ends: a `matter`, `plan`, or `issue`
+per [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) —
+with a row in the [matters register](/meta/matters.md) when the
+[matter](/beliefs/glossary/matter.md) is committed to the delivery queue
+(an open matter outside the register is backlog). A deferral that
 lives only in the conversation has no surfacing mechanism — it survives
 exactly as long as someone remembers it
 ([a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md)).
@@ -696,9 +698,9 @@ exactly as long as someone remembers it
 - **The trigger is naming the deferral, not the item's size.**
   [plan-vs-capture](/meta/policy/plan-vs-capture.md) already forces
   plan-scale deferred work into a persisted plan; this rule closes the
-  todo-scale gap beneath it — the small "later" too minor for a plan.
-  A filing can be a three-line todo or one register row; smallness is a
-  reason to file cheaply, never to skip filing.
+  task-scale gap beneath it — the small "later" too minor for a plan.
+  A filing can be a three-line backlog matter or one register row; smallness
+  is a reason to file cheaply, never to skip filing.
 - **A ledger strand records the deferral; it does not queue it.** A captured
   thread's `open`/`paused` routing rows are the record layer
   ([routing-ledger](/meta/policy/routing-ledger.md)), and the
@@ -1038,7 +1040,7 @@ into an open thread.
   with recommendations, per
   [response-work-report-format](/meta/policy/response-work-report-format.md).
 - **The disposition is the operator's.** Fix it now, file it as an
-  issue/todo, or proceed accepting it — the agent recommends but does not
+  issue/matter, or proceed accepting it — the agent recommends but does not
   choose. Unilaterally filing an issue and mentioning it post-merge is the
   pattern this policy exists to stop.
 - **The session's driving question is answered before the close, not after.**
@@ -1051,7 +1053,7 @@ into an open thread.
   nothing said only there is discoverable later, and the operator's memory is
   exactly what this system exists to offload. Beyond the completion facts,
   every sentence in a closing report must point at a durable home — the plan,
-  a todo, an issue, the thread doc. Next-session context ("for whenever you
+  a matter, an issue, the thread doc. Next-session context ("for whenever you
   pick this up, step 2 is…") is the failure signature: that content belongs in
   the artifact [`/priorities`](/.claude/skills/priorities/SKILL.md) reads,
   filed before the close, with the close at most pointing at it. A statement
@@ -1211,29 +1213,26 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
-- `todo` — a lightweight actionable task item: a single thing to be done, tracked
-  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
-  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
-  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
-  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
-- `matter` — the review-quantized unit of delivery: one coherent intent a
+- `matter` — the review-quantized unit of work: one coherent intent a
   reviewer can approve or reject as a whole (one matter per PR, per
   [atomic pull requests](/meta/policy/git-atomic-pull-requests.md)), filed
   as a self-contained handoff packet — the intent plus the decisions already
   made, with refs carrying the detail — so a fresh thread can deliver it.
-  Carries a `status` (`open`/`done`/`cancelled`); when a plan's build order
+  Spans the scale from a plain small task (a title, a sentence of packet)
+  to a plan-emitted build step. Carries a `status`
+  (`open`/`done`/`cancelled`); when a plan's build order
   emits it, also a `plan` (the bundle-absolute path of that plan) and an
   `order` (integer position in that plan's own sequence) — both keys omitted
   on a standalone matter. Queued-ness is register membership, never a
   status: an open matter listed in [the matter register](/meta/matters.md)
-  is committed and globally ordered; an open matter outside it is backlog.
-  Distinct from a `plan` (a *decision record* whose build order emits
-  matters — a matter is the delivery unit itself and needs no plan behind
-  it), an `issue` (a tracked *problem* that may never become work; an issue
-  spawns a matter when its fix is decided), and a `todo` (a plain task item,
-  not committed to delivery as a PR) — a matter is *committed work shaped to
-  fit review* (lives under `meta/matters/`, governance namespace, no `em:`
-  id).
+  is committed and globally ordered; an open matter outside it is **backlog**
+  (filed, awaiting queueing or pickup). Distinct from a `plan` (a *decision
+  record* whose build order emits matters — a matter is the delivery unit
+  itself and needs no plan behind it), an `issue` (a tracked *problem* that
+  may never become work; an issue spawns a matter when its fix is decided),
+  and a `methodology` (a *repeatable* how-to — a matter is done once) — a
+  matter is *work to deliver, shaped to fit review* (lives under
+  `meta/matters/`, governance namespace, no `em:` id).
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked
@@ -1487,12 +1486,8 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
   rather than blindly resolving them; retries only on network errors. See
   `.claude/skills/sync-branch-with-main/SKILL.md`.
-- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
-  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
-  the index); `/todo list` shows the todos grouped by `status`. See
-  `.claude/skills/todo/SKILL.md`.
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
-  `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
+  `mix brain.session_init` (open issues, open matters, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
   on-demand appraisal of open work, produced when asked rather than injected at
   session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
@@ -1859,7 +1854,7 @@ rapidly or come from authors who do not write Elixir. Grounded in the
   semantically ("a `:stale` result when the artifact lags its sources"), never
   a transcription of the return tuple.
 - **Comments carry durable *why* and never restate the signature.** Future-work
-  asides become `meta/todos/` or `meta/issues/` entries, not `TODO` comments.
+  asides become `meta/matters/` or `meta/issues/` entries, not `TODO` comments.
 - **Discard an ignored return with `_ = expr`** so the disinterest is explicit,
   never a bare dangling expression.
 - **Test through the narrowest public surface** — a module's API or the mix

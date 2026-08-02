@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Refresh the gate-suite tutorial's table to the current CI gate list"
 description: The gate-suite tutorial's numbered table stops at ten gates and omits three that CI actually runs — brain.glossary, brain.lineage --check, and brain.dedup_probe — so a reader planning a local pass against it under-runs the suite.
 status: open
 provenance: "Claude Code session (2026-07-23) — residual drift noticed during the AI-drift intake; re-verified against .github/workflows/ci.yml on 2026-07-28"
-tags: [meta, todo, gates, ci, tutorial, drift]
+tags: [meta, matter, gates, ci, tutorial, drift]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

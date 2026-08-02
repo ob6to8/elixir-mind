@@ -1,6 +1,6 @@
 ---
 name: priorities
-description: List the brain's open work as a prioritized appraisal — open issues, todos, active plans, and dangling thread strands, with a heuristic top-3 the agent refines with judgment. Use when the operator says "/priorities", "what should I work on", "what's the top priority", or "show me open work".
+description: List the brain's open work as a prioritized appraisal — open issues, matters, active plans, and dangling thread strands, with a heuristic top-3 the agent refines with judgment. Use when the operator says "/priorities", "what should I work on", "what's the top priority", or "show me open work".
 ---
 
 # /priorities — the open-work appraisal
@@ -24,7 +24,8 @@ hatch, and why *the script ranks, the agent judges* — are narrated in
    mix brain.session_init
    ```
    (If Elixir is missing in this sandbox, install it: `apt-get install -y elixir`.)
-   The task reads `meta/issues/` (status `open`), `meta/todos/` (status `open`),
+   The task reads `meta/issues/` (status `open`), `meta/matters/` (status `open`,
+   register-queued rows annotated and listed first),
    `meta/plans/` (`proposed`/`accepted`/`in-progress`), and the `## Routing`
    ledgers under `meta/threads/` (rows `open`/`paused`, or carrying a dangling
    question), then prints a markdown digest closing with a heuristic top-3.
@@ -37,9 +38,10 @@ hatch, and why *the script ranks, the agent judges* — are narrated in
 
 ## Notes
 - **Read-only.** This skill changes no files — it is a reader, not a gate. To act
-  on a pick, hand off to the relevant skill (`/todo`, `/issue`, `/plan`) or open
-  the doc directly.
-- **The operator's escape hatch.** An issue/todo/plan carrying an integer
+  on a pick, hand off to the relevant skill (`/issue`, `/plan`) or open the doc
+  directly; a queued matter is consumed per the
+  [matter register](/meta/matters.md)'s protocol.
+- **The operator's escape hatch.** An issue/matter/plan carrying an integer
   `priority:` frontmatter key (1 = most urgent) is pinned above every heuristic
   class. If the ranking is wrong, that key — not this skill — is where the
   operator corrects it.

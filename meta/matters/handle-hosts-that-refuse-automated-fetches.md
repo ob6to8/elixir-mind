@@ -1,9 +1,9 @@
 ---
-type: todo
+type: matter
 title: "Give the fetching skills a stated fallback for hosts that refuse automated fetches"
 description: Done when /bookmarks, /research, and /intake say what to do when a host blocks the sandbox — record the block, ask the operator to paste, and never substitute a search result for the blocked page.
 status: open
-tags: [meta, todo, skills, fetching, reddit, egress]
+tags: [meta, matter, skills, fetching, reddit, egress]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T04:30:00Z

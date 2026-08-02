@@ -9,7 +9,10 @@ defmodule ElixirMind.SessionInit do
   Four sources, all already maintained by existing policy:
 
     * **Open issues** — `meta/issues/*.md` with `status: open`.
-    * **Open todos** — `meta/todos/*.md` with `status: open`.
+    * **Open matters** — `meta/matters/*.md` with `status: open`. A matter
+      queued in the register (`meta/matters.md`) is annotated with its row
+      position and listed first, in register order; backlog matters follow,
+      newest first.
     * **Active plans** — `meta/plans/*.md` with `status` in
       `proposed` / `accepted` / `in-progress`.
     * **Dangling strands** — routing-ledger rows in `meta/threads/*.md` whose
@@ -25,13 +28,13 @@ defmodule ElixirMind.SessionInit do
   omitted entirely when the tree is clean.
 
   The digest ends with a heuristic top-3 priority ranking (issues, then
-  in-flight plans, then open todos, then accepted plans, then open strands,
-  then paused strands and leftover dangling questions, then proposed plans;
-  newer first within a class) and an
+  in-flight plans, then open matters — queued before backlog — then accepted
+  plans, then open strands, then paused strands and leftover dangling
+  questions, then proposed plans; newer first within a class) and an
   agent note asking the agent to state its own top-3 appraisal, using the
   heuristic as a starting point — the script ranks, the agent judges.
 
-  An issue/todo/plan may carry an explicit `priority: <integer>` frontmatter
+  An issue/matter/plan may carry an explicit `priority: <integer>` frontmatter
   key (1 = most urgent). Flagged items rank above every heuristic class,
   ordered among themselves by the integer — the operator's escape hatch when
   the class weights get it wrong. Strands come from ledger rows, which have
@@ -50,7 +53,7 @@ defmodule ElixirMind.SessionInit do
   @weights %{
     issue: 0,
     plan_in_progress: 1,
-    todo: 2,
+    matter: 2,
     plan_accepted: 3,
     strand_open: 4,
     strand_paused: 5,
@@ -62,21 +65,21 @@ defmodule ElixirMind.SessionInit do
   @spec report(String.t()) :: String.t()
   def report(root \\ File.cwd!()) do
     issues = open_issues(root)
-    todos = open_todos(root)
+    matters = open_matters(root)
     plans = active_plans(root)
     strands = dangling_strands(root)
 
     """
     # Session init — open work digest
 
-    Compiled by `mix brain.session_init` from `meta/issues/`, `meta/todos/`,
+    Compiled by `mix brain.session_init` from `meta/issues/`, `meta/matters/`,
     `meta/plans/`, and the routing ledgers under `meta/threads/`.
 
     #{section("Open issues", Enum.map(issues, &issue_line/1))}
-    #{section("Open todos", Enum.map(todos, &issue_line/1))}
+    #{section("Open matters", Enum.map(matters, &matter_line/1))}
     #{section("Active plans", Enum.map(plans, &plan_line/1))}
     #{section("Dangling strands (from thread ledgers)", Enum.map(strands, &strand_line/1))}
-    #{freshness_section(root)}#{priorities_section(issues, todos, plans, strands)}
+    #{freshness_section(root)}#{priorities_section(issues, matters, plans, strands)}
     > **Agent note:** state your top-3 priority appraisal for the operator —
     > start from the heuristic ranking above, adjust it with judgment, and say
     > why.
@@ -93,14 +96,41 @@ defmodule ElixirMind.SessionInit do
     |> sort_newest_first()
   end
 
-  # --- open todos -----------------------------------------------------------
+  # --- open matters ---------------------------------------------------------
 
-  @doc "Open todos under meta/todos, newest first."
-  def open_todos(root) do
-    root
-    |> docs_in("meta/todos")
-    |> Enum.filter(&(status(&1) == "open"))
-    |> sort_newest_first()
+  @doc """
+  Open matters under meta/matters: register-queued ones first (each carrying
+  its row position as `queue_pos`, in register order), then backlog matters
+  (`queue_pos` nil), newest first.
+  """
+  def open_matters(root) do
+    queue = register_positions(root)
+
+    {queued, backlog} =
+      root
+      |> docs_in("meta/matters")
+      |> Enum.filter(&(status(&1) == "open"))
+      |> Enum.map(&Map.put(&1, :queue_pos, queue["/" <> &1.rel_path]))
+      |> Enum.split_with(& &1.queue_pos)
+
+    Enum.sort_by(queued, & &1.queue_pos) ++ sort_newest_first(backlog)
+  end
+
+  # The register (meta/matters.md) stores the global delivery order as pointer
+  # rows `| N | [Title](/meta/matters/slug.md) | … |`; rows under its
+  # `## Consumed` heading are history, not queue.
+  defp register_positions(root) do
+    case File.read(Path.join(root, "meta/matters.md")) do
+      {:ok, content} ->
+        content
+        |> String.split("## Consumed")
+        |> hd()
+        |> then(&Regex.scan(~r{^\|\s*(\d+)\s*\|\s*\[[^\]]+\]\((/meta/matters/[^)#]+)\)}m, &1))
+        |> Map.new(fn [_, pos, path] -> {path, String.to_integer(pos)} end)
+
+      _ ->
+        %{}
+    end
   end
 
   # --- active plans ---------------------------------------------------------
@@ -239,6 +269,12 @@ defmodule ElixirMind.SessionInit do
   defp issue_line(doc),
     do: "- **#{doc.title}** — #{doc.description || "no description"} (`/#{doc.rel_path}`)"
 
+  defp matter_line(%{queue_pos: pos} = doc) when is_integer(pos),
+    do:
+      "- **#{doc.title}** (queued ##{pos}) — #{doc.description || "no description"} (`/#{doc.rel_path}`)"
+
+  defp matter_line(doc), do: issue_line(doc)
+
   defp plan_line(doc),
     do:
       "- **#{doc.title}** (`#{doc.status}`) — #{doc.description || "no description"} (`/#{doc.rel_path}`)"
@@ -275,12 +311,13 @@ defmodule ElixirMind.SessionInit do
 
   # --- heuristic priorities -------------------------------------------------
 
-  defp priorities_section(issues, todos, plans, strands) do
-    # Each source list is already newest-first; Enum.sort_by/2 is stable, so
-    # sorting on weight alone keeps that recency order within a class. A strand
-    # whose ledger routed to an already-picked doc is the same matter — skip it.
+  defp priorities_section(issues, matters, plans, strands) do
+    # Each source list is already in its display order (newest-first; matters
+    # queued-first); Enum.sort_by/2 is stable, so sorting on weight alone keeps
+    # that order within a class. A strand whose ledger routed to an
+    # already-picked doc is the same matter — skip it.
     picks =
-      candidates(issues, todos, plans, strands)
+      candidates(issues, matters, plans, strands)
       |> Enum.sort_by(&sort_key/1)
       |> Enum.reduce([], fn c, acc ->
         if Enum.any?(acc, &(&1.path && String.contains?(c.routed_to || "", &1.path))),
@@ -308,7 +345,7 @@ defmodule ElixirMind.SessionInit do
   defp sort_key(%{priority: p}) when is_integer(p), do: {0, p}
   defp sort_key(c), do: {1, @weights[c.class]}
 
-  defp candidates(issues, todos, plans, strands) do
+  defp candidates(issues, matters, plans, strands) do
     issue_cands =
       Enum.map(issues, fn d ->
         %{
@@ -320,13 +357,14 @@ defmodule ElixirMind.SessionInit do
         }
       end)
 
-    todo_cands =
-      Enum.map(todos, fn d ->
+    matter_cands =
+      Enum.map(matters, fn d ->
         %{
-          class: :todo,
+          class: :matter,
           path: d.rel_path,
           priority: d.priority,
           routed_to: nil,
+          queue_pos: d.queue_pos,
           label: "**#{d.title}** (`/#{d.rel_path}`)"
         }
       end)
@@ -367,16 +405,19 @@ defmodule ElixirMind.SessionInit do
         }
       end)
 
-    issue_cands ++ todo_cands ++ plan_cands ++ strand_cands
+    issue_cands ++ matter_cands ++ plan_cands ++ strand_cands
   end
 
   defp why(%{priority: p}) when is_integer(p),
     do: "operator-flagged `priority: #{p}` — pinned above the heuristic classes"
 
+  defp why(%{class: :matter, queue_pos: pos}) when is_integer(pos),
+    do: "queued matter — committed at register row #{pos}, consumed top-down"
+
   defp why(%{class: class}), do: why(class)
 
   defp why(:issue), do: "open operational issue — tracked problems outrank new work"
-  defp why(:todo), do: "open todo — an explicitly recorded task awaiting completion"
+  defp why(:matter), do: "open backlog matter — filed work awaiting queueing or pickup"
   defp why(:plan_in_progress), do: "plan already in progress — finish what is started"
   defp why(:plan_accepted), do: "accepted plan awaiting execution"
   defp why(:strand_open), do: "open thread strand — live work left unrouted or unresolved"

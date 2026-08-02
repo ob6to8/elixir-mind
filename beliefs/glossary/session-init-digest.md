@@ -2,12 +2,12 @@
 id: em:6f2442
 type: concept
 title: session-init digest
-description: A machine-compiled summary of a knowledge base's open work — open issues, open todos, active plans, and dangling thread strands — surfaced on demand by the /priorities skill and ending in a heuristic priority ranking for the agent to refine.
+description: A machine-compiled summary of a knowledge base's open work — open issues, open matters, active plans, and dangling thread strands — surfaced on demand by the /priorities skill and ending in a heuristic priority ranking for the agent to refine.
 provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, session-init, hooks, tooling]
 sense: repo
-timestamp: 2026-07-12
+timestamp: 2026-08-02
 attribution:
   when: 2026-07-11T19:30:56+02:00
   channel: glossary
@@ -23,13 +23,16 @@ brain it is `mix brain.session_init`, surfaced by the
 [`/priorities`](/.claude/skills/priorities/SKILL.md) skill (it was originally
 auto-injected at every session start via the SessionStart hook; that coupling
 was retired in favor of the on-demand skill): a scan of open
-issues, open todos, active plans, and dangling routing-ledger [strands](/beliefs/glossary/strand.md), ending in a
+issues, open [matters](/beliefs/glossary/matter.md) (register-queued rows
+annotated and listed first), active plans, and dangling routing-ledger
+[strands](/beliefs/glossary/strand.md), ending in a
 heuristic top-3 priority ranking that the agent is asked to refine with
 judgment — the script ranks, the agent judges. The ranking order is: open
-issues, in-progress plans, open todos, accepted plans, open strands, paused
+issues, in-progress plans, open matters (queued before backlog), accepted
+plans, open strands, paused
 strands, leftover dangling questions, proposed plans — newer first within a
 class; canonically the `@weights` map in `lib/elixir_mind/session_init.ex`.
-An explicit integer `priority:` frontmatter key on an issue/todo/plan pins it
+An explicit integer `priority:` frontmatter key on an issue/matter/plan pins it
 above every heuristic class (1 = most urgent), the operator's manual override. Distinct from the
 [digest](/beliefs/glossary/digest.md) sense used by the research inbox (a day's candidate
 items); this one summarizes internal state, not external material.
