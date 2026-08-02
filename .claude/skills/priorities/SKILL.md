@@ -39,7 +39,8 @@ hatch, and why *the script ranks, the agent judges* — are narrated in
 ## Notes
 - **Read-only.** This skill changes no files — it is a reader, not a gate. To act
   on a pick, hand off to the relevant skill (`/issue`, `/plan`) or open the doc
-  directly; a queued matter is consumed per the
+  directly; a queued matter is consumed via
+  [`/matter`](/.claude/skills/matter/SKILL.md), per the
   [matter register](/meta/matters.md)'s protocol.
 - **The operator's escape hatch.** An issue/matter/plan carrying an integer
   `priority:` frontmatter key (1 = most urgent) is pinned above every heuristic

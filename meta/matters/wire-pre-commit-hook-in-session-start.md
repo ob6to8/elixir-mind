@@ -5,13 +5,13 @@ description: The pre-commit gate exists at .githooks/pre-commit but is opt-in pe
 status: open
 provenance: "Claude Code session (2026-07-26) — surfaced by the version-control workflow audit"
 tags: [meta, matter, git, pre-commit, hooks, ci, session-start]
-timestamp: 2026-07-26
+timestamp: 2026-08-02
 attribution:
   when: 2026-07-26T00:00:00Z
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "the audit's highest-leverage quick win — a one-line change that makes the local-first gate real for web sessions"
-  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md, /meta/threads/2026-08-02-build-the-matter-skill.md]
 ---
 
 # Auto-wire the pre-commit hook in `session-start.sh`
@@ -33,3 +33,9 @@ degrades gracefully when `mix` is absent (it already exits `0` in that case).
 
 Surfaced by the
 [version-control audit](/meta/analysis/version-control-workflow-vs-trunk-based-reference.md).
+
+**Update (2026-08-02):** [`session-start.sh`](/.claude/hooks/session-start.sh)
+already contains this wiring — a guarded `git config core.hooksPath .githooks`
+block — and the done-when criteria held in a fresh web sandbox:
+`core.hooksPath` read `.githooks` and a commit fired the full gate suite
+locally. On pickup: confirm and flip this doc `done`.

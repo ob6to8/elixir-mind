@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matter-register consumption session (row 1)"
   why: "the operator ratified the matter-doc architecture while consuming the matters-vs-plans question; this plan is its executable spec, superseding the matter-queue plan"
-  from: [/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md, /meta/threads/2026-08-02-matter-type-vocabulary-adoption.md]
+  from: [/meta/threads/2026-08-02-deferred-work-policy-and-consumed-matters-log.md, /meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md, /meta/threads/2026-08-02-matter-type-vocabulary-adoption.md, /meta/threads/2026-08-02-build-the-matter-skill.md]
 ---
 
 # Matter docs and the order-only register
@@ -115,7 +115,12 @@ attribution: { ... }          # standard governance attribution
   carries the weighing; `matter` ratified.
 - **Rejected: `em:` ids on matter docs** — work-tracking docs are governance,
   outside the identity registry, like the todos they absorb.
-- **Open:** whether `/matter list` renders the backlog inline or a separate
-  subcommand does; whether backlog matters may carry a soft `priority` where
-  order would be fake precision; the alias window for `/todo` during the
-  transition.
+- **Resolved at build 4 (operator-ratified 2026-08-02):** `/matter list`
+  renders the backlog inline beneath the queue (filter arguments slice it) —
+  the backlog's failure mode is invisibility, and a separate subcommand is a
+  surface that must be remembered; backlog matters may carry the existing
+  integer `priority:` key (1 = most urgent, the key `mix brain.session_init`
+  already honors) as the soft signal, with the queue never sorted by it — a
+  queued row's position is its exact order; and the `/todo` alias window is
+  moot — build 3 retired the skill outright and `/matter create` absorbs
+  filing with no alias.
