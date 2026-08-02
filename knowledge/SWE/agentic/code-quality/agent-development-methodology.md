@@ -1,0 +1,218 @@
+---
+id: em:cab2c5
+type: methodology
+title: "Agent development methodology — TDD-first, atomic PRs, review-gated"
+description: The operator's global-tier methodology for agent-driven development — a test-first loop where tests are the ratified contract agents may not weaken, matklad-style test architecture, an Elixir-specific fast loop, one-concern PRs sized for review, and layered gates that spend human attention only on judgment — with the lean vendorable block consuming repos embed.
+provenance: "Claude Code session (Claude Fable 5), 2026-08-01 — synthesized from the TDD research spike: Gorman, the matklad references, the 2024–26 test-first and reward-hacking literature, and the Elixir ecosystem sources"
+tags: [methodology, agentic, tdd, testing, atomic-prs, code-review, elixir, agent-guidance]
+timestamp: 2026-08-01
+attribution:
+  when: 2026-08-01T18:20:00Z
+  channel: agent-authored
+  agent: "Claude Code agent, TDD research-spike session"
+  why: "the operator asked to implement a stricter development methodology, TDD-ranked and matklad-prioritized, for agent-driven work"
+---
+
+# Agent development methodology — TDD-first, atomic PRs, review-gated
+
+The **global tier** of the operator's development methodology: what binds every
+agent session in every consuming repo. The evidence and ranking behind it are
+in [where TDD ranks for coding-agent development](/meta/analysis/tdd-rank-for-coding-agent-development.md);
+the storage/distribution design is the
+[two-level guidance plan](/meta/plans/two-level-agent-methodology-guidance.md).
+Repos embed only the [vendorable block](#the-vendorable-block) below; this doc
+is the canonical, ratified source it derives from.
+
+## 1. The loop — test-first, one behavior at a time
+
+Work red → green → refactor, at behavior granularity:
+
+1. **State the behavior** (one sentence, or one example pair) before any code.
+2. **Write the failing test and run it** — a test never seen red proves
+   nothing.
+3. **Implement minimally to green.** Run the *focused* test, not the world.
+4. **Refactor on green** — one smell at a time, re-running tests after each.
+5. **Commit on green; revert on red** that resists a bounded fix — only
+   working code may enter the next step's context.
+
+Why this loop for agents specifically: small steps keep each interaction
+inside the model's effective context; broken code left in context poisons
+subsequent predictions; and examples-as-tests specify intent more precisely
+than prose ([Gorman](/knowledge/SWE/agentic/code-quality/why-tdd-works-in-ai-assisted-programming.md)).
+Keep **3–5 focused tests** in play per behavior — the measured optimum;
+dumping a whole suite into context *degrades* generation.
+
+## 2. Tests are the contract
+
+- **The test suite is the ratified spec surface.** An agent never weakens,
+  skips, deletes, or special-cases a test to make it pass. A genuinely wrong
+  test is changed in its own visible step, with the reason stated.
+- **A failing test is information, never an obstacle.** The documented failure
+  mode — agents editing tests, overloading equality, exiting before asserts —
+  is why this rule is absolute, not stylistic.
+- **Humans review tests hardest.** When the agent writes most implementation
+  code, the tests are where review attention buys correctness; the human adds
+  the edge cases the agent missed.
+
+## 3. Test architecture (the matklad tier)
+
+- **Test features and observable contracts, not internals** — a test that
+  breaks under a refactor that preserves behavior is coupled to the wrong
+  thing ([test features, not code](/knowledge/SWE/testing/how-to-test-features-not-code.md)).
+- **Optimize purity; let extent be natural.** Keep logic sans-IO so most
+  tests are pure, fast, and unflakeable; don't shrink test extent by mocking
+  your own code — **mock impure IO boundaries only**
+  ([purity and extent](/knowledge/SWE/testing/unit-vs-integration-purity-and-extent.md)).
+- **Funnel cases through a shared check helper / fixture builder**; drive from
+  serializable data so cases survive interface changes.
+- **Climb to properties** for universal invariants (round-trips, idempotence,
+  bounds); keep example tests for specified behaviors.
+
+## 4. Elixir specifics
+
+- **Contracts are behaviours; mocks are nouns.** Every external dependency
+  gets a behaviour; test doubles are Mox mocks defined against it —
+  "mock" as a noun, never ad-hoc global rewriting — which is what keeps the
+  suite `async: true`-safe and the loop fast.
+- **The inner loop**: `mix compile --warnings-as-errors` →
+  `mix test path/file_test.exs:LINE` or `mix test --stale --max-failures 1` →
+  `mix test --failed` → full `mix test --warnings-as-errors` +
+  `mix format --check-formatted` before commit. Tag slow/integration suites
+  and exclude them from the tight loop.
+- **Doctests for example-shaped contracts**; **StreamData** properties for the
+  pure core, where shrinking hands back minimal counterexamples.
+
+## 5. Atomic delivery
+
+- **One self-contained concern per PR** — a behavior with its tests, or a
+  refactor, never both mixed. **The matter is the unit; size is a signal,
+  never the gate.** ~50–200 changed lines is the natural weight of one
+  concern, and unexplained bulk is a smell to justify — but a large diff
+  carrying one mechanical intent (a rename, a regeneration, a format sweep)
+  is one reviewable decision, and a small diff carrying two separable
+  decisions still splits. Small PRs review faster, revert less, and draw more
+  comments per line — and with agents the constraint has inverted: generation
+  is cheap and **review is the bottleneck**, so output must be decomposed to
+  fit reviewer attention, not batched to amortize it.
+- **Every commit compiles and passes tests.** Stack dependent PRs rather than
+  letting one grow.
+- **Refactorings ship separately** from behavior changes.
+
+## 6. Layered gates — spend human attention on judgment only
+
+1. Machine gates: compile clean, format, full tests, lint — before any human
+   looks.
+2. Agent self-review of the diff (cheap, catches real issues).
+3. Human review: architecture, intent-vs-tests alignment, and the tests
+   themselves.
+
+## 7. Stop discipline
+
+Three failed attempts at the same issue → stop; write down what was tried,
+the exact errors, and the current hypothesis; reassess the approach (or
+escalate to the operator) instead of thrashing. Document-then-reassess beats
+a fourth attempt with poisoned context.
+
+## The vendorable block
+
+Consuming repos paste this verbatim into `CLAUDE.md` (per the
+[two-level plan](/meta/plans/two-level-agent-methodology-guidance.md)), then
+add repo specifics beneath it: the concrete test/build/lint commands, the
+test-layer map, and any deviation — which must name the rule it overrides.
+The Elixir annex is included only in Elixir repos.
+
+```markdown
+## Development methodology (global tier v1, 2026-08-01 — source: elixir-mind em:cab2c5)
+
+### The loop
+- Work test-first, one behavior at a time: write the failing test, RUN it and
+  see it fail, implement minimally to green, refactor on green, commit.
+- Keep 3–5 focused tests in play per behavior; run the focused test while
+  iterating, the full suite before committing.
+- Only working code enters the next step: commit on green; if a change resists
+  a bounded fix, revert rather than pile on.
+
+### Tests are the contract
+- NEVER weaken, skip, delete, or special-case a test to make it pass. If a
+  test is genuinely wrong, change it in its own commit and state why.
+- Test observable behavior/contracts, not internals; a refactor that preserves
+  behavior must not break tests.
+- Mock only IO boundaries (network, clock, filesystem, external services) —
+  never the project's own modules.
+
+### Delivery
+- One self-contained matter per PR, with its tests; never mix refactoring
+  with behavior changes. Size is a signal, not a cap: ~50–200 changed lines
+  is typical of one concern, mechanical bulk (renames, regenerations, format
+  sweeps) is exempt, and no split may leave a commit that doesn't compile
+  and pass.
+- Every commit compiles and passes the full suite.
+- After 3 failed attempts at the same issue: stop, document what was tried and
+  the exact errors, reassess the approach.
+
+### Elixir annex
+- Every external dependency sits behind a behaviour; test doubles are Mox
+  mocks against that behaviour (keeps `async: true` safe). No ad-hoc mocking.
+- Inner loop: `mix test <file>:<line>` or `mix test --stale --max-failures 1`;
+  then `mix test --failed`; before commit: `mix test --warnings-as-errors`
+  and `mix format --check-formatted`.
+- Use doctests for example-shaped contracts and StreamData properties for
+  pure-core invariants. Tag slow/integration tests and exclude them from the
+  tight loop.
+```
+
+## Claim provenance (temporary format)
+
+Per-claim source mapping, persisted from the originating session's research
+before its context dies. **Temporary format**: pending phases 3–4 of the
+[span-level attribution plan](/meta/plans/span-level-attribution.md), each row
+converts one-to-one into an `<attr>` span plus structured provenance — the
+*claim anchor* is the future span's content anchor. Basis for every row:
+**search** (retrieved during the 2026-08-01 spike, not model memory); verbatim
+quotes and figures are held in
+[the ranking analysis](/meta/analysis/tdd-rank-for-coding-agent-development.md)'s
+evidence sections and citations.
+
+| § | claim anchor | class | sources |
+|---|---|---|---|
+| 1 | "a test never seen red proves nothing" | synthesis | Willison, red/green TDD pattern (2026-02: confirm failure before implementing, else the test may be vacuous); Anthropic best practices (2025-04: confirm tests fail before coding); [Gorman](/knowledge/SWE/agentic/code-quality/why-tdd-works-in-ai-assisted-programming.md) `em:e7644d` |
+| 1 | "3–5 focused tests … the measured optimum" / whole suite "degrades generation" | synthesis | TENET (arXiv 2509.24148: 3 selected tests 49.18% vs full-suite 33.06%); WebApp1K (2505.09027: doubling tests collapses pass@1) |
+| 1 | "Commit on green; revert on red" / only working code enters context | synthesis | Gorman `em:e7644d` (commit-on-green practice; broken-code-as-context argument) |
+| 1 | "small steps keep each interaction inside the model's effective context" | synthesis | Gorman `em:e7644d`; [context rot](/knowledge/SWE/agentic/context-engineering/context-rot-chroma-research.md) `em:77d68a` |
+| 2 | "never weakens, skips, deletes, or special-cases a test" | synthesis | Beck (2025-06: agent "cheating, for example by disabling or deleting tests"); Böckeler (2025-08: success declared over red tests); METR (2025-06); ImpossibleBench (2510.20270); Anthropic emergent-misalignment (2025-11) |
+| 2 | "agents editing tests, overloading equality, exiting before asserts" | synthesis | ImpossibleBench cheat taxonomy; Anthropic (`sys.exit(0)` harness escape) |
+| 2 | "Humans review tests hardest" | synthesis | Anthropic (2025-04: commit tests once satisfied with them); Willison (2025-03: testing cannot be outsourced to the machine); Dunlop (2026-04: passing AI-written suite enshrined a bad UX — the counter-case this rule answers) |
+| 3 | "Test features and observable contracts, not internals" | synthesis | matklad `em:a5ea86` (the neural-network test) |
+| 3 | "mock impure IO boundaries only" | synthesis | matklad `em:73115b`; Valim (2015) |
+| 4 | "'mock' as a noun, never" a verb | quote | Valim (2015): "I always consider 'mock' to be a noun, never a verb"; Mox docs (behaviour-bound doubles keep `async: true` safe) |
+| 4 | inner-loop flags (`--stale`, `--failed`, `--max-failures`) | synthesis | hexdocs `mix test` documentation |
+| 4 | doctests as example contracts; StreamData shrinking | synthesis | hexdocs ExUnit + StreamData documentation |
+| 5 | "Small PRs review faster, revert less, and draw more comments per line"; ~50–200-line weight | synthesis | Google eng-practices small-CLs; Graphite 50-line data (≈40% faster review, ≈15% fewer reverts) |
+| 5 | "review is the bottleneck" | synthesis | Graphite (2025-10: "code review is the new bottleneck"); Codacy 2026 roundup citing CircleCI (feature-branch throughput +59% while main-branch throughput stalls) and LinearB 2026 (agentic PRs wait 5.3× longer for pickup, run 154% larger) |
+| 7 | "Three failed attempts at the same issue → stop" + document what was tried | synthesis | Dzombak `em:49315a` ("Maximum 3 attempts per issue, then STOP") |
+
+# Citations
+
+Synthesized from the sources filed in this directory and the research spike's
+evidence base — primarily
+[Gorman](/knowledge/SWE/agentic/code-quality/why-tdd-works-in-ai-assisted-programming.md),
+[Dzombak's playbook](/knowledge/SWE/agentic/code-quality/getting-good-results-from-claude-code.md),
+the matklad pair
+([features](/knowledge/SWE/testing/how-to-test-features-not-code.md),
+[purity/extent](/knowledge/SWE/testing/unit-vs-integration-purity-and-extent.md)),
+and the quantitative record assembled in
+[the ranking analysis](/meta/analysis/tdd-rank-for-coding-agent-development.md)
+(test-first gains, dose effects, PR-size and review-queue data, reward-hacking
+mitigations).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:cab2c5">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-tdd-research-spike-and-methodology-adoption (2026-08-01)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:cab2c5`]**
+
+The dials in it that are preference rather than evidence-forced: the 3-attempt stop, the 3–5-focused-tests working set, "test-first by default" (vs. a harder "always"), and the Mox/behaviour mandate. Note the Delivery bullet still carries the "is exempt" wording matter C would fix, and matter D below would add a test-protection line — so the clean sequence is: you rule on C and D, I apply, then you ratify the resulting block once (matter A).

@@ -1070,6 +1070,34 @@ as its presence.
 
 _Source: [`meta/policy/assertions-name-their-basis.md`](/meta/policy/assertions-name-their-basis.md)_
 
+**Answer a multi-subject message inline, under quotes of its subjects.** When
+an operator message carries more than one subject — several questions,
+corrections, or decisions in one message — the response takes the **email
+inline-reply form**: each subject's load-bearing passage is quoted verbatim
+as a blockquote, and the answer sits directly beneath its quote, keeping the
+operator's order. A single-subject message keeps ordinary prose.
+
+- **The quote is the referent, so it is verbatim.** Lift the shortest span
+  that identifies the subject (elisions marked `…`); never paraphrase inside
+  the quotation — each answer is audited against the operator's own wording.
+  This is [quote-primary-sources](/meta/policy/quote-primary-sources.md)
+  applied with the operator's message as the source.
+- **Answers stay under their quotes.** A subject is answered where it is
+  quoted, not deferred to a summary the operator must re-map onto their
+  questions; cross-subject synthesis, when needed, follows the interleaved
+  body rather than replacing it.
+- **Composes with the response conventions, in this order.** A
+  [plainspeak orientation](/meta/policy/plainspeak-orientation.md) still
+  opens a dense response, above the interleaved body; the
+  [work-report tables](/meta/policy/response-work-report-format.md) still
+  close it. Decisions argued under a quote appear in the questions table as
+  one-line index rows pointing back to their subject — the table stays the
+  ledger, the interleaved body keeps the judgment.
+- **Scope.** Delivered responses to operator messages. Thread renders keep
+  the delivered text verbatim, as always.
+
+_Source: [`meta/policy/inline-reply-quoting.md`](/meta/policy/inline-reply-quoting.md)_
+
 ---
 
 ## 5. Controlled `type` vocabulary
@@ -1661,6 +1689,39 @@ _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
   operator to ratify, as with any destructive change.
 
 _Source: [`meta/policy/git-branch-deletion.md`](/meta/policy/git-branch-deletion.md)_
+
+**One matter per pull request.** A **matter** is one coherent intent a
+reviewer can approve or reject as a whole: an intake batch on one subject, a
+policy adoption, an analysis, a feature with its tests, a refactor. The test
+is independence — *if the operator could plausibly want to merge one part
+while rejecting another, those are two matters.* This implements the
+delivery half of [verified increments](/meta/doctrine/verified-increments.md):
+generation is cheap and review attention is the bottleneck, so work is shaped
+to fit review, not batched to amortize it.
+
+- **Size is a signal, never the gate.** There is no line cap: a large diff
+  carrying one mechanical intent — a rename, a regeneration, a format sweep,
+  a verbatim thread capture — is one reviewable decision, while a small diff
+  carrying two separable decisions still splits. Treat unexplained bulk as a
+  smell to justify, not a threshold to enforce.
+- **Splits stop at the green boundary.** Never split where each half cannot
+  compile and pass the suite alone, and never sever a change from its tests —
+  atomicity in the one-matter sense outranks smallness.
+- **Generated artifacts ride their source change.** A contract recompile
+  travels with its policy edit, the registry with its minting, index updates
+  with their filing — a regeneration is part of the matter that caused it.
+- **Sessions deliver sequentially.** Finish a matter, open its PR
+  (`/create-pull-request`, scoped to that matter), and start the next matter
+  after it lands; a session holding several finished, unmerged matters says
+  so and hands the remainder to the operator instead of silently widening the
+  open PR. Follow-up PRs from one session are the expected shape — the thread
+  doc's `pr:` stays the origin PR and later PRs land in narrative prose, per
+  the session-capture policy.
+- **The daily `/research` run is one matter by construction** (digest plus its
+  auto-intakes), as is any operator-directed batch with a single stated
+  purpose.
+
+_Source: [`meta/policy/git-atomic-pull-requests.md`](/meta/policy/git-atomic-pull-requests.md)_
 
 ---
 
