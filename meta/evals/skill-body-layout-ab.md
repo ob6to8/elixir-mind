@@ -179,6 +179,17 @@ as each run lands or they are gone.
 
 ## Scope of the finding
 
+**The labels tested are not the labels adopted.** Variant B used
+`INSTRUCTION` · `ARGUMENTS` · `DELIVERABLES` · `ARTIFACTS` · `REMEMBER`; the
+convention ratified from this result uses `Purpose` · `Dispatch`/`Procedure` ·
+`Guardrails`
+([skill-section-vocabulary](/meta/plans/skill-section-vocabulary.md)). What was
+measured is *sectioned versus prose*, not those particular strings, and the
+null result is only claimed at that grain. A reader should not cite this eval
+as evidence for the specific vocabulary — the vocabulary was chosen from corpus
+convergence, and the eval's contribution was to remove the performance argument
+from the decision, not to supply one.
+
 Four specs, one skill, one model tier, one roster revision, two runs per cell. The
 null result is a null result *at this power*: two runs per cell cannot detect a
 small effect, and nothing here establishes that layout never matters — only that
