@@ -83,19 +83,21 @@ that embody it.
 
 ## Open questions — punted to implementation-time ratification
 
-1. **Paths.** The operator's leading candidate for the agent side:
+1. **Paths — human side resolved, agent side still open.** The human side
+   was ratified and created 2026-08-02:
+   **[`knowledge/cognitive-science/biases/`](/knowledge/cognitive-science/biases/index.md)**
+   (new `cognitive-science` domain under `knowledge/`, operator-ratified in
+   the originating session after its own answer to "are these biases in
+   fact beliefs?" — **no**: this bundle's `belief` type is an operator-held,
+   value-laden decision prior, while a bias description is epistemic
+   knowledge, `concept`, so it lives in the knowledge taxonomy). The agent
+   side stays open with the operator's leading candidate recorded:
    `knowledge/SWE/agentic/failure-modes/biases/` (creating the wider
-   `failure-modes/` register D4 implies, into which biases nest). The human
-   side is genuinely open: `beliefs/cognitive-biases/` was floated, but the
-   session's own answer to "are these biases in fact beliefs?" is **no** —
-   this bundle's `belief` type is an operator-held, value-laden decision
-   prior, while a bias description is epistemic knowledge (`concept`), so a
-   `knowledge/` home is more principled; no cognitive-science domain exists
-   yet, so the human side likely needs a **new top-level or new domain
-   directory**, which requires its own ratification. Interim state stands:
-   [einstellung-effect](/beliefs/glossary/einstellung-effect.md)
-   (`em:837963`) remains a glossary entry until refile — stable ids survive
-   moves by design, so nothing durable is spent by waiting.
+   `failure-modes/` register D4 implies, into which biases nest). Interim
+   state stands: [einstellung-effect](/beliefs/glossary/einstellung-effect.md)
+   (`em:837963`) remains a glossary entry until the implementation refiles
+   it into the created human-side register — stable ids survive moves by
+   design, so nothing durable is spent by waiting.
 2. **A sub-glossary for agentic biases.** Whether the agentic register also
    surfaces as its own glossary section (the operator: surfacing
    "agentic-bias" itself "leads to a sub glossary") versus plain pointer
@@ -105,13 +107,15 @@ that embody it.
 ## Desired shape (paths illustrative pending Q1)
 
 ```
-knowledge/SWE/agentic/failure-modes/          # NEW — the genus register (hub + index)
+knowledge/cognitive-science/                  # CREATED 2026-08-02 — ratified domain
+  biases/                                     # CREATED 2026-08-02 — human register
+    index.md                                  # in place; entries arrive at implementation
+    einstellung-effect.md                     # refiled em:837963; human evidence only
+knowledge/SWE/agentic/failure-modes/          # NEW (path pending Q1 agent side) — genus register
   biases/                                     # NEW — agentic biases (D4 subclass)
     index.md
     stale-premise-perseveration.md            # or the literature's name, per D3
     <position-effects, sycophancy, …>.md      # each: em: id, concept, agent evidence only
-<human-side path per Q1>/
-    einstellung-effect.md                     # refiled em:837963; human evidence only
 beliefs/glossary/
   einstellung-effect.md                       # MODIFIED — becomes a pointer entry (D5)
 meta/doctrine/
@@ -120,7 +124,8 @@ meta/doctrine/
 
 ## Build order (fresh implementing thread)
 
-1. Ratify Q1 (paths) and Q2 (sub-glossary) at the thread's opening.
+1. Ratify the agent-side path (Q1 remainder) and Q2 (sub-glossary) at the
+   thread's opening; the human-side register already exists.
 2. Literature pass per seed entry (D3's naming rule): the stale-premise /
    Einstellung parallel first, then position/recency effects, sycophancy,
    format anchoring — each grounded in its reference docs
