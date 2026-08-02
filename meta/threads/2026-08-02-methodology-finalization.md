@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02; verbatim retained
 tags: [meta, thread, methodology, tdd, test-protection, matters, atomic-prs]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01T1qaAPJR186EfqnoSu1pZY
+pr: 226
 ---
 
 # 2026-08-02-methodology-finalization
