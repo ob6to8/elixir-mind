@@ -13,6 +13,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [evals](/meta/evals/index.md) — repeatable eval gold sets and their baselines: the fixtures a `mix brain.*` task re-scores on every run (distinct from a point-in-time `analysis`)
 - [flows](/meta/flows/index.md) — per-flow connective docs: the file-by-file touch-sequence of a canonical run, tying together the skill, the CI-checked scenario, and the why (supersedes the old `session-workflow.md` guide + `verification-flows/`)
 - [issues](/meta/issues/index.md) — tracked operational problems and open concerns about the brain's tooling/automation (`type: issue`, each with a `status`)
+- [matters.md](/meta/matters.md) — the pending-delivery register: the ordered cross-session queue of matters awaiting their own PRs, each row a self-contained handoff packet consumed top-down by fresh threads (see the [matter-queue plan](/meta/plans/matter-queue-and-present-matters.md))
 - [plans](/meta/plans/index.md) — design/decision records for proposed changes to the brain or its tooling (`type: plan`, each with a `status`)
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract

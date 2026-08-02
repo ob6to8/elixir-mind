@@ -32,6 +32,18 @@ Approved by the operator 2026-08-01, deliberately deferred to its own PR per
    LLM-Based Software Engineering Agents") — the counter-study the analysis
    cites from its abstract plus HN-relayed body figures; a full capture would
    let the analysis's caveated numbers be checked against the paper body.
+   **The intake carries this weighing** (operator-directed): the paper's
+   subjects are agents *improvising* tests mid-solve on SWE-bench — mostly
+   print-statement observation probes, weakly correlated with resolution,
+   unmoved by prompt interventions ("Current agent-written testing practices
+   reshape process and cost more than final task outcomes", abstract) — so it
+   cuts against *unreviewed improvised test-writing motion*, not against
+   tests-as-ratified-contract (human-reviewed assertions, red-confirmed,
+   protected from edits), which is precisely what its subjects lacked. It
+   sharpens the ranking's contract-discipline conditional rather than
+   reversing the verdict. HN-relayed body figures to check against the paper:
+   +19.8% output tokens for no gain; regressions 6.08%→9.94% under imposed
+   TDD prompting.
 
 Each promotion runs the full `/intake` distill pass and records
 `status: promoted → <link>` on its register row in

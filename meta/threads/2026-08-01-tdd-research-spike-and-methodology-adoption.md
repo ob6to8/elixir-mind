@@ -44,15 +44,18 @@ capture being PR 1.
 | Intake: Dzombak 2025-08 playbook + aged assessment | closed | [getting-good-results-from-claude-code](/knowledge/SWE/agentic/code-quality/getting-good-results-from-claude-code.md) | - |
 | Intake: Dzombak 2025-12 user-level CLAUDE.md | closed | [streamlining-user-level-claude-md](/knowledge/SWE/agentic/context-engineering/streamlining-user-level-claude-md.md) | - |
 | TDD ranking research spike | closed | [tdd-rank-for-coding-agent-development](/meta/analysis/tdd-rank-for-coding-agent-development.md) | - |
-| Agent development methodology + vendorable block | open | [agent-development-methodology](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) | A-package (de-exempt wording, protection ladder, claim-provenance table) lands in PR 3 |
+| Agent development methodology + vendorable block | open | [agent-development-methodology](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) | claim-provenance table landed in PR #224; the remnant (de-exempt wording, protection ladder, block finalization) is [matters](/meta/matters.md) row 1 |
 | Two-level guidance storage design | closed | [two-level-agent-methodology-guidance](/meta/plans/two-level-agent-methodology-guidance.md) | pilot deferred until a consuming repo is active |
 | Verified-increments doctrine + atomic-PR policy | closed | [verified-increments](/meta/doctrine/verified-increments.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md) | - |
 | Inline-reply-quoting policy | closed | [inline-reply-quoting](/meta/policy/inline-reply-quoting.md) | - |
-| Matter queue + /present-matters | open | unrouted | plan + seeded register + skill land in PR 2 |
-| Agentic cognitive biases + in-the-wild instances | open | unrouted | K plan lands in PR 5; implementation in a fresh thread; this thread is backfill-tagging material |
-| dev-history home after Pages de-prioritization | open | unrouted | G (recommit + /create-pull-request regeneration fold-in, unshallow guard) executes in a fresh thread |
-| deferred-work-is-filed policy | open | unrouted | draft lands in PR 4 for ratification |
-| The 19.8% claim traced to arXiv 2602.07900 | closed | [tdd-rank-for-coding-agent-development](/meta/analysis/tdd-rank-for-coding-agent-development.md) | weighing embed into the promotions todo lands in PR 2 |
+| Matter queue + /present-matters | open | [matter-queue plan](/meta/plans/matter-queue-and-present-matters.md), [matters.md](/meta/matters.md) | /present-matters skill is [matters](/meta/matters.md) row 3 |
+| Agentic cognitive biases + in-the-wild instances | open | [two-sided-bias-taxonomy plan](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | implementation is [matters](/meta/matters.md) row 7; this thread is backfill-tagging material |
+| cognitive-science domain creation (ratified) | closed | [knowledge/cognitive-science](/knowledge/cognitive-science/index.md) | - |
+| Per-claim provenance for the methodology (proto-granular table) | closed | [agent-development-methodology](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) | - |
+| Matter register + compaction handoff | closed | [matters.md](/meta/matters.md) | consumed top-down by fresh threads |
+| dev-history home after Pages de-prioritization | open | unrouted | decided: recommit + /create-pull-request fold-in, unshallow guard; [matters](/meta/matters.md) row 5 |
+| deferred-work-is-filed policy | open | unrouted | [matters](/meta/matters.md) row 2 |
+| The 19.8% claim traced to arXiv 2602.07900 | closed | [tdd-rank-for-coding-agent-development](/meta/analysis/tdd-rank-for-coding-agent-development.md) | weighing embedded in the promotions todo (this session) |
 | TDD survey-bookmark promotions | open | [promote-the-tdd-survey-bookmarks](/meta/todos/promote-the-tdd-survey-bookmarks.md) | promotions run as their own later PR |
 | TMS / belief-revision prior art | closed | unrouted | - |
 
@@ -493,3 +496,118 @@ Awaiting **proceed**.
 
 proceed
 instruct me at each step
+## Assistant
+
+**PR 1 is open: https://github.com/ob6to8/elixir-mind/pull/224** — the full spike and governance batch, with the session captured as `meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md` (15-strand routing ledger, route tags materialized into the four bundle sinks, `pr: 224` stamped), three glossary terms added (`test-driven-development`, `einstellung-effect`, `matter`), and `attribution.from` stamped on all six governance docs. Every commit passed the full gate suite.
+
+**Your step now:**
+
+1. Review #224 — the highest-leverage review targets are the analysis's verdict section, the two policies (`git-atomic-pull-requests`, `inline-reply-quoting`) since they bind every future session once merged, and the thread doc's routing ledger (it's the matter queue's durable record until PR 2 lands).
+2. Merge it with **"Create a merge commit"** — never "Squash and merge" or "Rebase and merge"; a squash would sever the session trailers and cited SHAs the provenance layer depends on. If the merge button defaults to squash, use its dropdown to switch.
+3. Say **"merged"** (or anything) and I immediately start PR 2: the matter-queue plan, the seeded `meta/matters.md` register, and the `/present-matters` skill.
+
+I can also subscribe this session to #224's CI and review events if you want me watching it — say the word; otherwise I'll wait for your merge signal.
+
+## User
+
+re: beliefs/glossary/einstellung-effect.md‎
+both operator (human) and the agent have bias behaviors. in humans they are called cognitive biases. what are they called in agents? "agentic-bias"? "conflation-modes"? "failure-modes?" what i have seen is that some cognitive biases are unique to humans, and some "agentic-biases" are unique to agents, and there is a venn diagram overlap of when they share what appear to be parallel or like biases. this distinction needs to be made in the taxonomy. 
+in this case, I would actually prefer to see this filed as beliefs/cognitive-biases/einstellung-effect.md, so that the document gains the implicit "type" of cognitive bias via the path, per okf protocol - even if it is still surfaced in the glossary. meanwhile, there should be another type, ie. "agentic-bias", which represents all biases and failure modes that agents demonstrate. When they overlap, such as we're seeing here, they should cross-link to eachother. the cognitive bias section should explain strictly human behavior related evidence, the agentic bias section should list agentic only. they could each be called einstellung-effect.md, as they would be differentiated by their path. Thoughts? let's address this and then I will continue working through the pr. If this is a bigger question that should be undertaken in a larger thread to not blow the context here, lets accept this format for now, punt, and create a plan detailing this new taxonomy
+
+## Assistant
+
+Your structure is right, and I'll take the punt you offered — with the design substance answered now so it lands in the cognitive-biases plan (PR 5, later this session) rather than being re-derived in the implementing thread. PR 1 needs no change for this: `em:837963` is precisely the mechanism that makes accepting today's path free — identity survives refiles by design, so the move to its final home rides the plan's implementation without breaking anything that cites it.
+
+Thoughts on the four design points, so the plan can encode them:
+
+**Naming, and the boundary it implies.** For the agent side I'd adopt your coinage **agentic bias** (glossaried, `sense: repo` — the literature says "cognitive biases in LLMs," which is serviceable but presumes the human frame this taxonomy exists to question). The definitional boundary matters more than the name: I'd bound it to *bias-shaped* failures — systematic, directional deviations arising from architecture or training (stale-premise perseveration, position/recency effects, sycophancy, format anchoring, verbosity preference) — rather than "all biases and failure modes." Failure modes is the wider genus: reward hacking and test-gaming are goal-directed *behaviors*, not biases, and folding everything into one section makes it a grab-bag that duplicates existing homes (reward-hacking already has its glossary entry and reference cluster). Recommendation: the section is `agentic-biases`, biases only; discrete failure behaviors stay where they live and cross-link as consequences. This is the plan's first ratification question, with that as my recommendation.
+
+**The venn overlap is analogical, not mechanistic — and the docs should say so.** Your einstellung case is the type specimen: the human version comes from practiced procedural set (Luchins's water-jars); the agent version from an append-only context with no retraction operation. Same phenomenology, different machinery. So the paired same-slug docs should each hold strictly their own side's evidence (your requirement), cross-link under an explicit "parallel" relation, and never claim identity — that caveat is what keeps the two-sided structure epistemically honest rather than metaphor smuggled into taxonomy. Human-only entries (affect-rooted ones like loss aversion) and agent-only entries (token-repetition loops, context-position effects) simply have no twin, which the venn accommodates by absence.
+
+**Path-as-type: correct, and it means no new controlled `type` is needed.** Same-slug files differentiated by path is exactly "the tree is the taxonomy," and it argues *against* adding `agentic-bias` to the controlled type vocabulary — the controlled types name document *kind* (`concept`, `reference`, `claim`), the path names subject domain, and a type that duplicates the path would be redundant by your own argument. Both sides' entries stay `type: concept`. If you meant "type" in the path-implicit sense, we already agree; if you did want a controlled-vocabulary entry, that's ratification question two, with "no" as my recommendation.
+
+**Location and glossary surfacing.** Symmetric siblings — `beliefs/cognitive-biases/` and `beliefs/agentic-biases/`, both beside `glossary/` — is the cleanest fit for your same-slug cross-link scheme, and the glossary precedent (definitions carrying `em:` ids under `/beliefs/`) already establishes the pattern. The alternative home (`knowledge/SWE/agentic/…`, where the earlier plan draft put the compendium) splits the pair across namespaces and breaks the path symmetry, so I'd drop it. Glossary surfacing uses the existing **pointer-entry** convention: `beliefs/glossary/einstellung-effect.md` becomes a thin pointer deferring to the filed doc, so the term stays findable in the glossary without duplicating the body — and the glossary verifier's checks are satisfied by the pointer. New directories directly under `/beliefs/` are a shape change, which the plan's ratification covers.
+
+**What happens now:** nothing blocks on this. Continue your review of #224 and merge it (true merge commit) as planned — the einstellung entry ships where it is, correctly tagged and id-carrying. The K plan I write in PR 5 absorbs all of the above as its taxonomy section (two-sided registers, the bias/failure-mode boundary question, pointer mechanics, the refile of `em:837963` as an implementation step), and the fresh implementing thread executes it with full context from the plan rather than from this conversation. Say **"merged"** when #224 lands and I start PR 2.
+
+## User
+
+agree though the path comes into question, though maybe that should be punted on as well for now. but it seems like it should be:
+knowledge/swe/agentic/failure-modes/biases/
+then possibly surfaced in the glossary, though it may be that agentic-bias should be surfaced, and that leads to a sub glossary
+
+agree re: naming, i would say that in the case an agentic bias IS discretely defined in name, even though it might be a mirror of a cognitive bias, it should be named as such, while still cross linked to the analagous cog bias. in this case, we should only call the agentic bias einstellung-effect.md  if there is no name in the literature that refers to this particular bias
+
+agree with you on type: remaining concept
+
+are these biases in fact beliefs? if not, maybe the temporary location works. agree to your location rec and glossary pointer rec
+
+will you commit a plan detailing this?
+
+## Assistant
+
+Yes — committing it now. Since the plan's design core is the compendium itself, this *is* the row-9 plan pulled forward (the separate PR 5 slot dissolves), and it lands in open #224 per your ask — widening it by two files, which I'll flag for your review pass. Writing it with your refinements encoded as ratified vs. punted.
+
+All encoded and committed — the plan is in #224 now ([two-sided-bias-taxonomy-and-compendium](https://github.com/ob6to8/elixir-mind/blob/claude/tdd-methodology-research-ms22qe/meta/plans/two-sided-bias-taxonomy-and-compendium.md), plus its index entry; gates green). Point-by-point:
+
+> though the path comes into question, though maybe that should be punted on as well for now. but it seems like it should be: knowledge/swe/agentic/failure-modes/biases/ … possibly surfaced in the glossary, though it may be that agentic-bias should be surfaced, and that leads to a sub glossary
+
+Punted as open question 1, with your candidate recorded as the leading option — and noted that it's a quietly elegant one: `failure-modes/` as the genus directory with `biases/` nested inside it *is* the D4 boundary (biases ⊂ failure modes) expressed as tree structure, so the path does the taxonomic work. The sub-glossary idea is open question 2, deferred until the register's size is known since it interacts with the glossary verifier's index-sync scope.
+
+> i would say that in the case an agentic bias IS discretely defined in name, even though it might be a mirror of a cognitive bias, it should be named as such … only call the agentic bias einstellung-effect.md if there is no name in the literature that refers to this particular bias
+
+Encoded as D3: every agentic-bias filing opens with a literature check, takes the literature's agent-specific name when one exists, and falls back to the human parallel's slug only when none does — with the check recorded in the entry's provenance. The implementing thread runs that check per entry; whether "stale-premise perseveration" has a settled literature name is exactly the kind of thing it will establish rather than assume.
+
+> agree with you on type: remaining concept
+
+D2, ratified.
+
+> are these biases in fact beliefs? if not, maybe the temporary location works. agree to your location rec and glossary pointer rec
+
+They are not — and the question corrected my earlier symmetry recommendation. In this bundle's vocabulary a `belief` is an operator-held, *value-laden decision prior*, deliberately outside the verification ladder; a bias description is epistemic knowledge about how minds or models fail — `concept` territory, checkable against literature. So `/beliefs/` was a stretch for both sides, and the plan records the human side's home as genuinely open (a `knowledge/` location is more principled, but no cognitive-science domain exists yet, so it likely needs a new domain directory — its own ratification at implementation). The temporary location therefore stands exactly as you say: `einstellung-effect` stays a glossary entry through this PR, refiled at implementation, with `em:837963` guaranteeing nothing that cites it breaks. Glossary pointers stay ratified as D5.
+
+> will you commit a plan detailing this?
+
+Done — committed into open #224 (widening it by two files, per your ask while mid-review: the plan and the plans index entry). One sequence consequence: this plan absorbs what was the PR-5 slot, so the remaining sequence after you merge is **PR 2** (matter register + `/present-matters`), **PR 3** (methodology A-package), **PR 4** (`deferred-work-is-filed` policy), then the fresh-thread matters (dev-history, bias-taxonomy implementation, bookmark promotions).
+
+**Your step:** finish reviewing #224 — the two new files are the only additions since your review started — and merge with **"Create a merge commit"** (not squash/rebase). Say **"merged"** and I start PR 2.
+
+## User
+
+create a cognitive science domain in knowledge and create the bias folder there. add this to the plan
+
+back to the review:
+
+with something like:
+knowledge/SWE/agentic/code-quality/agent-development-methodology.md
+this is an assemblance of information devoid of provenance or attribution. we have specced out the work to have granular provenance, and we have done the research which has allowed for the generation of this file, but the two have not combined and this file risks losing attribution which may be held in your temporary memory. could we just do a proto-granular claim attribution here? Or, for now, should we count the citations section as being enough?
+
+## Assistant
+
+Two executions: the ratified `cognitive-science` domain (your instruction is the ratification the taxonomy protocol needs), and — my recommendation on the provenance question is **do the proto-granular table now**, since the claim-to-source mapping lives in this session's memory and one context compaction has already occurred; citations-as-enough would bet the mapping on nothing else going wrong before PR 3. Checking the knowledge index format first.
+
+Both executed and pushed into #224 (two commits, matters kept separate; gates green on each).
+
+> create a cognitive science domain in knowledge and create the bias folder there. add this to the plan
+
+Done — your instruction being the ratification the taxonomy protocol requires. Created: `knowledge/cognitive-science/index.md` (domain hub) and `knowledge/cognitive-science/biases/index.md` (the human-side register, entries arriving at implementation, with the einstellung refile named as its first). Listed in `knowledge/index.md` and the bundle-root `index.md`. The plan's open question 1 is rewritten: human side **resolved and created**, agent side remains the only open path (your `failure-modes/biases/` candidate recorded), and the desired-shape tree + build order now reflect that the human register already exists.
+
+> this is an assemblance of information devoid of provenance or attribution. we have specced out the work to have granular provenance … could we just do a proto-granular claim attribution here? Or, for now, should we count the citations section as being enough?
+
+<routes ref="em:cab2c5">
+Proto-granular, done now — citations-as-enough would have bet the mapping on this session's memory surviving until PR 3, and this session has already been through one context compaction. The doc now carries a **`## Claim provenance (temporary format)`** section: fifteen rows, one per prescriptive claim, each with a verbatim *claim anchor* (which becomes the `<attr>` span's content anchor under the span-attribution plan — the rows convert one-to-one, so nothing is thrown away at refactor time), its class (`synthesis`, one `quote` — Valim's mock-as-noun line), basis (`search` — every row was retrieved this session, none from model memory), and its sources (the `em:` captures, the arXiv ids with their figures, Beck/Böckeler/METR/Anthropic for the never-weaken rule, Google/Graphite/Codacy for the delivery numbers, hexdocs for the Elixir mechanics).
+</routes>
+
+One calibration on "devoid": the doc did carry frontmatter `provenance`, an `attribution` block, a citations section, and inline links — what it lacked, and what your review correctly caught, is that the *quantified prescriptions* (3–5 tests, the size data, the absolutist never-weaken rule) traced to their evidence only through a hop into the ranking analysis. Now each traces in place. Consequence for the sequence: PR 3's A-package shrinks to the de-exempt wording, the protection ladder, and block finalization.
+
+**Your step:** the review delta since you started is now — the bias-taxonomy plan + its index entry, the two `cognitive-science` indexes + the two parent-index lines, the plan's Q1 rewrite, and the methodology's new provenance table. Merge #224 with **"Create a merge commit"** when satisfied, say **"merged"**, and I start PR 2.
+
+## User
+
+work approved, ready to merge
+
+if we are already experiencing compaction, we need to wrap this thread asap. Is there a way for you to pass all the context needed off to the next thread to continue dev? what about the matter list?
+
+## Assistant
+
+Approved and wrapping — merging #224 now, then executing a compressed handoff in this thread: the matter register (the durable matter list), the matter-queue plan, and a capture-append of everything said since the last freeze, so the next thread needs nothing from this one's memory. Loading the merge tools and deriving the capture boundary in parallel.
