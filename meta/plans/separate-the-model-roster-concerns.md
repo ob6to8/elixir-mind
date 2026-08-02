@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "operator asked whether the model settings belong in repo config rather than a reference OKF document, and whether the remainder is a policy"
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
 ---
 
 # Separate the model roster's concerns

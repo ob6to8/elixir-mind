@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "order 3 of the roster-separation plan — the payoff that makes the machine-readable enumeration worth extracting"
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
 timestamp: 2026-08-02
 ---
 

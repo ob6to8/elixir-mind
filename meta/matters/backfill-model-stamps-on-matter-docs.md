@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "order 1 of the register Model column plan — the column lands populated only if the docs are stamped first, and the stamps are independently useful to /matter list the day they land"
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
 timestamp: 2026-08-02
 ---
 

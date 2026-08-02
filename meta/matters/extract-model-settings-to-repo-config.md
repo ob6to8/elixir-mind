@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "order 1 of the roster-separation plan — the config form decides the value vocabulary both later matters bind to"
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
 timestamp: 2026-08-02
 ---
 
@@ -42,6 +43,14 @@ The design and the rejected alternatives are in
    `meta/index.md`, [`/matter`](/.claude/skills/matter/SKILL.md), and
    [`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md) all
    point at it today. It is deleted, not left as a pointer.
+
+**The values themselves are unratified — ratify them here.** The roster's tier
+assignments (which motion each model is sent) were drafted by the agent that
+filed the roster and have never been ratified; five matter docs already carry
+`model:` stamps derived from them. This delivery is the moment to settle them,
+because writing them into config is what makes them the repo's answer: present
+the proposed table at the approval gate and take the operator's edits before
+committing. The *form* is frozen (below); the *content* is not.
 
 **Settled before delivery — constraints, not gate questions.** The config form
 is **Elixir application config**, on the `site_base_url` precedent and the

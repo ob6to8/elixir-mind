@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "/scope-unit-of-work must evaluate which model should deliver each matter, and the doctrine deliberately binds no model names — the roster is the instance layer that judgment reads"
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
 ---
 
 # Model roster

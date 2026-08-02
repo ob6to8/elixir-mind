@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "operator scoped the register Model column as a unit of work after the /scope-unit-of-work build reported the four-cell constraint as a blocker"
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
 ---
 
 # The Model column in the matter register
