@@ -37,6 +37,23 @@ that filed the roster and are now stamped on five matters. That ratification is 
 the config-extraction matter, which is the delivery where the values become the repo's
 answer.
 
+The close then folded in the infrastructure the session's own shape had exposed. Opening
+the PR halted on a concerns-gate item — the branch carried three separable intents against
+[atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md) — and the operator's answer
+was a working method rather than a disposition: a thread carries one scoped unit, revision
+of what it delivered enters as a new `/scope-unit-of-work` unit, and the PR stands as
+written. Ratified in-thread after an amendment exchange (in-flight completion and gate
+failures are delivery, not revision; review-time revisions are filed before merge; artifact
+count is not itself evidence of overhead — suspected bloat is scoped as an analysis of the
+system) and declared as
+[scoped units, corrected forward](/meta/doctrine/scoped-units-corrected-forward.md) with
+[revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md) as its
+enforceable half. One rule reached beyond revisions: queueing inserts at the **head**, never
+the tail, since tail-parking is the unranked case that belongs in backlog — so the register
+was re-sequenced, this session's five matters taking rows 1-5 with the roster-separation
+block ahead of the backfill, because the config extraction is where the roster's values get
+ratified and backfilling 30 docs from placeholder values would rewrite all 30.
+
 ## Routing
 
 | Topic | State | Routed to | Dangling |
@@ -47,7 +64,11 @@ answer.
 | `/matter list` gains a Model column joined from the docs | closed | [matter skill](/.claude/skills/matter/SKILL.md) | - |
 | The register Model column and the silent digest-degradation hazard | closed | [model-column-in-the-matter-register](/meta/plans/model-column-in-the-matter-register.md) | - |
 | Separating the roster's concerns: config, policy, doctrine | closed | [separate-the-model-roster-concerns](/meta/plans/separate-the-model-roster-concerns.md) | - |
-| Queueing the five emitted matters at rows 12-16 | closed | [matter register](/meta/matters.md) | - |
+| Queueing the five emitted matters, re-sequenced to rows 1-5 at the head | closed | [matter register](/meta/matters.md) | - |
+| The working method: one scoped unit per thread, revision as a following unit | closed | [scoped-units-corrected-forward](/meta/doctrine/scoped-units-corrected-forward.md) | - |
+| Its enforceable rules, including head-insertion for all queueing | closed | [revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md) | - |
+| Whether the method holds once the work is substantially code | open | [scoped-units-corrected-forward](/meta/doctrine/scoped-units-corrected-forward.md) | untested; the write-run-fix exemption is the hypothesis, revisited rather than abandoned if insufficient |
+| Route tags weaken as threads become atomic by construction | open | [excerpt-log discipline](/meta/matters/excerpt-log-discipline.md) | an input that matter should weigh, not yet weighed |
 | Whether `model:` presence earns a warn-level check | open | [gate-model-values-against-the-roster](/meta/matters/gate-model-values-against-the-roster.md) | warn vs fail severity, ruled at that matter's approval gate |
 | Interaction with the queued settle-model-attribution matter | paused | [model-stamping-policy](/meta/matters/model-stamping-policy.md) | if model-attribution is retracted or folded, the prospective/retrospective clause is written against whatever survives |
 
@@ -378,3 +399,165 @@ Both plans' internal orders are preserved and non-interleaved, which `mix brain.
 Five queued matters came out of this session, behind the 11 that were already there. Whenever you want the session closed, `/create-pull-request` captures the thread, stamps `attribution.from` on both plans, all five matters, and the roster, and opens the PR.
 
 </routes>
+
+## Assistant
+
+Capture, glossary, and stamping are committed and pushed (`a83535e`). Halting before the PR — the concerns gate turned up one item that's yours to disposition, not mine.
+
+## The blocker
+
+This branch carries **three separable intents**, and [atomic-pull-requests](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/git-atomic-pull-requests.md) says a session holding several finished matters "says so and hands the remainder to the operator instead of silently widening the open PR":
+
+1. the `/scope-unit-of-work` skill, the model roster, and the `model:` stamp (commits `7a96311`, `d31069f` partly);
+2. the Model-column plan and its two matters;
+3. the roster-separation plan and its three matters.
+
+By the policy's own independence test you could plausibly approve (1) and reject (3) — indeed (3) *revises* what (1) filed. So on a literal reading this is three PRs.
+
+**My recommendation: open one PR anyway.** The three are causally chained rather than merely batched — (2) and (3) exist because the skill was built and run, and running it twice is what verified it; every artifact is a scoping document, so there's no code in (2) or (3) a reviewer could reject independently in practice. Splitting now would mean branch surgery to carve commits into three heads, for a review boundary you were already inside turn by turn. The alternative, if you'd rather have the record clean: I split at the commit boundaries into three stacked branches and open three PRs in dependency order.
+
+## Questions you need to answer
+
+| # | question | my recommendation |
+|---|---|---|
+| 1 | One PR for all three intents, or split into three? | **One PR.** The chain is causal, nothing in it is independently rejectable in practice, and the split costs branch surgery |
+
+Everything else in the closing inventory has a durable home already: the unratified roster values are filed into the config-extraction matter (not left as a chat deferral), the open severity question sits in the gate matter, and the `settle-model-attribution` interaction is the surviving open question in the roster-separation plan. Nothing is waiting to be said only in a post-merge message.
+
+## Actions I have taken
+
+| action | result |
+|---|---|
+| `/capture` | `meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md` — 12 exchanges rendered from the session log with the drop rule applied mechanically; the mid-turn "metaphor" message recovered from the queued-command record; 9-row routing ledger; path-ref route tags (this session fed no `em:` sinks) |
+| `/add-to-glossary` | one new term — `model roster` (`em:f0582b`, `sense: repo`) — plus the `model:`/`provenance` distinction merged into `matter`; registry and glossary index regenerated |
+| `attribution.from` stamping | both plans, all five matters, and the roster; both `brain.verify` warnings cleared |
+| Full gate suite + 211 tests | green |
+| Pushed | `a83535e` |
+
+Say the word on question 1 and I'll open the PR (or the three).
+
+## User
+
+<routes ref="meta/doctrine/scoped-units-corrected-forward.md meta/policy/revision-enters-through-scoping.md">
+
+yes, this is a new workflow I am going to try where I either execute 
+
+1. a matter, or 
+
+2./scope-unit-of-work with a description (which is how this thread would have started had that skill existed) to either be peristed or executed there.
+
+in the case of 1, or 2 and executed in thread, I am going to try keeping the PR as written. then, for any feedback or revisions, i will provide it as /scope-unit-of-work , as i have done here, and generally sequence it. so, the following PRs would be the execution of the follow up matters/plans.
+
+the reason being, 
+1 - this forces a scoping discipline to threads and PRs and they can only spawn new atomic threads, its not possible to lead to sprawling threads where many topics and units of work are being executed across domains in ways that need to be untangled later via route-tagging
+2 - it further tightens all dev scope to matters/PRs
+3 - rather than focus on specific changes to generated artifacts, I am trying to leverage decisions across all instances of a changed type in the codebase, where applicable. 
+
+in other words, i'd rather accept some inefficiency or bloat in a PR then actively address it in a following PR, than narrate an arbitrary string of instructions to change in the thread
+
+I don't know if this process will hold up long term when I start editing the code, but for now it conceptually seems much cleaner to me
+
+levy your opinion, and once we find agreement, this should be declared into doctrine/policy
+
+at that point we should be ready to close this thread
+
+</routes>
+
+## Assistant
+
+<routes ref="meta/policy/revision-enters-through-scoping.md">
+
+I agree with the workflow, with three amendments — one of them load-bearing enough that without it the rule breaks the first time a test fails.
+
+The short version: routing revisions through scoping closes the last big hole in this brain's record-keeping. Every other class of decision already has a durable home — deferrals get filed, close-time concerns block the close, plans persist decisions — but *revision instructions* have stayed pure chat, and they're the highest-frequency decision type there is. This fixes that, and it does it by making the thread's shape match the PR's shape at the front instead of reassembling it afterward.
+
+> 1 - this forces a scoping discipline to threads and PRs and they can only spawn new atomic threads
+
+Right, and this session is the evidence for it: I halted a moment ago precisely because this thread carries three separable intents, which is the failure the rule prevents. Under it, this would have been three threads. One precision though — it prevents *unrelated* topics, not depth. My second `/scope-unit-of-work` invocation still fanned into an evaluation, three matters, and a plan. Atomicity of *intent*, not of size.
+
+> 3 - rather than focus on specific changes to generated artifacts, i am trying to leverage decisions across all instances of a changed type in the codebase, where applicable
+
+This is the strongest of the three and the least obvious. In-thread revision naturally produces instance-level patches ("fix this doc"); a scoped matter naturally asks "what's the rule, and which instances does it touch?" That's exactly how the backfill matter came out covering all 30 open docs rather than the two I'd just made. It's the same move the coding standards already make for agent misses — *"A recurring agent miss is fixed by updating this policy and recompiling the contract, never only in the offending change"* — generalized from agent behavior to artifacts.
+
+> I don't know if this process will hold up long term when I start editing the code
+
+My read is the opposite of your worry: it holds up *better* for code, because code has a mechanical oracle. A delivered code matter is verifiably done, so a later request is more plausibly genuine new scope. What breaks is the inner loop — you cannot scope-and-defer through a failing test. Hence amendment 1.
+
+## The three amendments
+
+**1. In-flight completion is not revision.** While a matter is being delivered — before its PR opens — correcting work *inside its approved scope*, and fixing anything the gate suite rejects, is part of delivering it. The test is one question: was it in the approved scope and done wrong (fix now, it's incomplete delivery), or outside it (scope it)? Without this, a red CI run becomes a new matter, which is absurd, and the write→run→fix loop for code becomes impossible.
+
+**2. A revision identified at review time is filed before the PR merges.** "Keep the PR as written and correct forward" only works if the forward correction actually exists as an artifact. Otherwise it's merge-and-forget, and the accepted bloat becomes permanent bloat. This is [concerns-block-the-close](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/concerns-block-the-close.md) extended one step past the open.
+
+**3. File the cheapest artifact that carries the intent.** The real failure mode of this workflow isn't inefficiency — it's *scoping inflation*: the governance layer growing faster than the work. This session produced two plans, five matters, and a glossary term for what is substantively one skill and a table. Most feedback should be a three-line matter; a plan only when there are decisions to record. The skill already says "a plan that would contain no decisions is a matter" — the policy should say it about feedback specifically.
+
+One smaller point, not an amendment: "generally sequence it" shouldn't harden into "always at the tail." A one-line correction to something that just landed shouldn't sit behind fifteen rows; the register lets you state a position, and this rule shouldn't quietly remove that.
+
+## An implication you may want to notice
+
+If threads become atomic by construction, **route tags weaken as a mechanism**. You described route-tagging as the untangling layer for sprawling threads — this workflow prevents the sprawl instead of untangling it, which means one thread routes to roughly one sink and the excerpt log approaches a copy of the thread. The [excerpt-log discipline matter](https://github.com/ob6to8/elixir-mind/blob/main/meta/matters/excerpt-log-discipline.md) (queued, row 4, already measuring the logs at ~20% of knowledge-corpus lines) is where that should be weighed. I'm not proposing anything here — just noting the input it should carry.
+
+## Proposed artifacts — the actual text
+
+Both, per [governance-artifact-routing](https://github.com/ob6to8/elixir-mind/blob/main/meta/policy/governance-artifact-routing.md): the direction shapes judgment (doctrine), the rules must fire unprompted mid-work in every fresh session (policy, so it compiles into the contract). Same pairing as capability-matched-model-selection ↔ model-attribution.
+
+**`meta/doctrine/scoped-units-corrected-forward.md`** — the direction:
+
+> Work enters a thread as one scoped unit and leaves as one PR. Imperfection in a delivered unit is corrected by a *following* unit, not by narrated revision inside the thread that produced it. Accepting bloat in a landed PR and scoping its correction is preferred to steering mid-thread, because a narrated instruction leaves no artifact, has no review boundary, and reaches one instance where a scoped correction reaches the type.
+
+**`meta/policy/revision-enters-through-scoping.md`** — the rules, terse:
+
+1. A working thread begins with exactly one entry point: `/matter`, or `/scope-unit-of-work <spec>` (persisted, or executed in-thread). It does not take on a second unit.
+2. Revision of delivered work enters through `/scope-unit-of-work` as a new unit. The PR stands as written.
+3. **In-flight completion is not revision** — inside the approved scope, and any gate failure, is delivery. Outside it, scope it.
+4. A revision identified at review time is **filed before the PR merges**.
+5. File the cheapest artifact carrying the intent — usually a one-line matter.
+6. Position in the queue is the operator's; a correction need not go to the tail.
+
+## Questions you need to answer
+
+| # | question | my recommendation |
+|---|---|---|
+| 1 | Accept the three amendments as written? | Yes — 1 is required for code work at all; 2 keeps "correct forward" from becoming "forget"; 3 is the guard against scoping inflation |
+| 2 | Doctrine + policy pair, or policy alone? | The pair. Policy alone loses the *why*, and the why is what an agent needs to judge an unlisted case — but I'd hear the argument for policy-only given the contract-size pressure |
+
+## Actions I have taken
+
+| action | result |
+|---|---|
+| Held the PR unopened | your "yes" answered my blocking question — one PR, kept as written |
+| Nothing filed yet | the doctrine and policy text above is a draft for your ratification, not committed |
+
+On your "yes": say the word on the two questions and I'll write both artifacts, recompile the contract, and run the close — PR opened, `pr:` stamped into `2026-08-02-scope-unit-of-work-skill-and-model-stamping.md`, handed back to you unmerged.
+
+</routes>
+
+## User
+
+<routes ref="meta/doctrine/scoped-units-corrected-forward.md meta/matters.md">
+
+"Right, and this session is the evidence for it: I halted a moment ago precisely because this thread carries three separable intents, which is the failure the rule prevents. Under it, this would have been three threads. One precision though — it prevents unrelated topics, not depth. My second /scope-unit-of-work invocation still fanned into an evaluation, three matters, and a plan. Atomicity of intent, not of size." - yes, i would say that this entire thread landing in a single pr is topic canonical - it is a single matter, described and then implemented, with subsequent revision matters authored and persisted. then, infrastructure which depends on the context (what we're describing now) folded in. what does NOT happen (ie. the invariants/guardrails) are:
+
+1. No new matter is executed, or defined that does not naturally extend from revisions to the initial matter implementation or infra related to the thread
+2. No direct feedback given for changes to be made to the work that has been done in the thread
+
+
+re: amendments
+1 . yes agree that fixing brokeness is within scope
+
+2. yes, why i consider the atomic pr to necessarily include revision matters
+3. this is governance inflation only if you can concretely identify duplication or inefficiency. if its all necessary, according to the bounds of this system, then its necessary, and reduction could only happen by addressing the system itself. if suspicious, this wouldmean scoping a new matter to analyze the system according to these concerns
+
+
+I think default sequencing position should be at the head, and should be the case here. i don't think anything should ever be scoped to the tail unless the item specifically requires all items that preceed it to be done. sequencing in the register carries implicit info regarding prioritization, sequencing at the end is a weak sort of "I don't want to forget this but i don't know how to prioritize it". that should be an unsequenced matter. if you only sequence at the head, save for matters that require specific ordering, then you know that the entire sequenced list was added either as the top priority or as top as it could get with dependencies listed before
+
+1 - see above
+2 - agree
+
+</routes>
+
+## Assistant
+
+Right on amendment 3 — I was proposing an instance-level fix (suppress artifacts in the moment) for what your own point 3 says is a type-level question. Reframing it as: artifact count is not itself evidence of overhead; suspected bloat becomes a scoped analysis of the system.
+
+Head-sequencing changes the register here, so let me check the policy conventions and then write.

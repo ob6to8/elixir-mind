@@ -132,9 +132,12 @@ says so.
 
 With `sequence`, append rows to [the register](/meta/matters.md)'s queue table:
 
-1. **Append at the tail** in the plan's own `order`, contiguous with the
-   existing numbering, unless the operator states a position (then insert there
-   and renumber beneath).
+1. **Insert at the head** in the plan's own `order`, renumbering beneath —
+   never at the tail
+   ([revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md)).
+   A unit is placed lower only when it genuinely requires preceding rows to
+   land first, or when the operator states a position. A unit that cannot be
+   ranked is not queued at all: it stays an unsequenced backlog matter.
 2. **Never invert a plan's internal order** — rows sharing a `plan` must appear
    in ascending `order`; `mix brain.matters` fails on inversion.
 3. **Cells are exactly four** — `# · Matter · Type · Order`. The Type cell is

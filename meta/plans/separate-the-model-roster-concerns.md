@@ -155,15 +155,19 @@ be rewritten. Matter 2 sits between them and is genuinely order-free; it is
 placed second because a policy written after the config exists can point at it
 instead of describing a plan.
 
-**Cross-plan hazard — this unit touches queued row 12.** The
-[Model-column plan](/meta/plans/model-column-in-the-matter-register.md)'s
-backfill (register row 12) stamps `model:` onto 30 docs. If matter 1 changes the
-*form* of the value — display names (`Claude Opus 5`) to model ids
-(`claude-opus-5`) — that backfill is redone. **Decision taken here to de-risk
-it: the value form is frozen as the display form**, matching the commit
-trailer, so the two units are order-independent. Any later move to ids becomes
-its own migration with its own rename pass, and matter 1 inherits that
-constraint rather than reopening it.
+**Cross-plan ordering — this unit runs ahead of the Model-column plan.** That
+plan's backfill stamps `model:` onto 30 docs, reading the roster's values.
+Two couplings follow, and they point in different directions:
+
+- **The value *form* is frozen** as the display form (`Claude Opus 5`),
+  matching the commit trailer, so a form change can never invalidate the
+  backfill. Any later move to ids is its own migration with its own rename
+  pass.
+- **The values themselves are not frozen** — they are unratified, and matter 1
+  is where they get ratified. Backfilling 30 docs from placeholder values and
+  ratifying afterward would rewrite all 30. So this plan's matters are queued
+  **ahead of** the backfill, and that is a genuine dependency rather than a
+  preference.
 
 ## Decision list
 

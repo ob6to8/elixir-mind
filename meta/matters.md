@@ -40,21 +40,27 @@ queue. `mix brain.matters` verifies this register against the docs: refs
 resolve, row↔doc agreement, and the global order never inverting a plan's
 internal order.
 
+Queueing inserts at the **head**, never the tail
+([revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md)):
+a row sits lower only when it depends on preceding rows, so the order here
+carries real prioritization rather than arrival time. A matter that cannot be
+ranked stays an unsequenced backlog doc.
+
 | # | Matter | Type | Order |
 |---|---|---|---|
-| 1 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
-| 2 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
-| 3 | [Contract-synchronization sweep](/meta/matters/contract-synchronization-sweep.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 1 |
-| 4 | [Excerpt-log discipline](/meta/matters/excerpt-log-discipline.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 2 |
-| 5 | [Standardize the verbatim-capture filing pattern](/meta/matters/standardize-verbatim-capture-filing.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 3 |
-| 6 | [Settle model-attribution](/meta/matters/settle-model-attribution.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 4 |
-| 7 | [Contract-size counterweight](/meta/matters/contract-size-counterweight.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 5 |
-| 8 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
-| 9 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
-| 10 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
-| 11 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |
-| 12 | [Backfill model stamps on matter docs](/meta/matters/backfill-model-stamps-on-matter-docs.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 1 |
-| 13 | [Register Model column and its agreement check](/meta/matters/register-model-column-and-agreement-check.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 2 |
-| 14 | [Extract the model settings to a repo config surface](/meta/matters/extract-model-settings-to-repo-config.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 1 |
-| 15 | [The model-stamping policy](/meta/matters/model-stamping-policy.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 2 |
-| 16 | [Gate model values against the configured roster](/meta/matters/gate-model-values-against-the-roster.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 3 |
+| 1 | [Extract the model settings to a repo config surface](/meta/matters/extract-model-settings-to-repo-config.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 1 |
+| 2 | [The model-stamping policy](/meta/matters/model-stamping-policy.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 2 |
+| 3 | [Gate model values against the configured roster](/meta/matters/gate-model-values-against-the-roster.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 3 |
+| 4 | [Backfill model stamps on matter docs](/meta/matters/backfill-model-stamps-on-matter-docs.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 1 |
+| 5 | [Register Model column and its agreement check](/meta/matters/register-model-column-and-agreement-check.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 2 |
+| 6 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
+| 7 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
+| 8 | [Contract-synchronization sweep](/meta/matters/contract-synchronization-sweep.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 1 |
+| 9 | [Excerpt-log discipline](/meta/matters/excerpt-log-discipline.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 2 |
+| 10 | [Standardize the verbatim-capture filing pattern](/meta/matters/standardize-verbatim-capture-filing.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 3 |
+| 11 | [Settle model-attribution](/meta/matters/settle-model-attribution.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 4 |
+| 12 | [Contract-size counterweight](/meta/matters/contract-size-counterweight.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 5 |
+| 13 | [response-resource-links / Pages-sunset revision](/meta/matters/response-resource-links-pages-sunset-revision.md) | independent | - |
+| 14 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
+| 15 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
+| 16 | [Vendor-block pilot](/meta/matters/vendor-block-pilot.md) | [planned](/meta/plans/two-level-agent-methodology-guidance.md) | 3 |

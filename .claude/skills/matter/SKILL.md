@@ -117,9 +117,12 @@ files one matter whose shape is already settled.
    [`meta/matters/index.md`](/meta/matters/index.md) (Open section,
    alphabetical).
 3. **Backlog by default.** A new matter gets a register row **only** when the
-   operator explicitly queues it, at a position they state (renumber beneath
-   it). A backlog matter may carry an integer `priority:` (1 = most urgent) —
-   the coarse urgency signal where exact order would be fake precision.
+   operator explicitly queues it. Queueing puts it at the **head** unless it
+   depends on preceding rows or the operator states a position — never at the
+   tail
+   ([revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md)).
+   A backlog matter may carry an integer `priority:` (1 = most urgent) — the
+   coarse urgency signal where exact order would be fake precision.
 4. **Verify**: `mix brain.verify`.
 
 ## Guardrails
