@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-queue session"
   why: "the review's contract-sync sweep, broken out of the decision-queue thread as matter 1 of its sequence"
+  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # Contract-synchronization sweep

@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "the review spans sessions by construction; this plan is the cross-session build order and status ledger persist-plans requires for deferred work"
-  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md, /meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # Comprehensive repo review — program

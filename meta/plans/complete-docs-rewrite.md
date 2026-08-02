@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-queue session"
   why: "operator-commissioned during the decision-queue session: a wholesale reader-facing docs pass, kept distinct from the review program's corrective sweeps, filed with its sequencing ratified up front"
+  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # Complete docs rewrite: the reader-facing surfaces

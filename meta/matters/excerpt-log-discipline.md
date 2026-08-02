@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-queue session"
   why: "decision-queue row 2, broken out as matter 2 of the sequence"
+  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # Excerpt-log discipline

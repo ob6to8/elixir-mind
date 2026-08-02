@@ -11,6 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-queue session"
   why: "operator-directed 2026-08-02: the thread's series of spikes breaks out into sequenced matters contained by a plan, now that the matter system exists"
+  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # The decision-queue matter sequence

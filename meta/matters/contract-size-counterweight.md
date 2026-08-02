@@ -13,6 +13,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, decision-queue session"
   why: "decision-queue row 4, broken out as matter 5 of the sequence — deliberately last, so the trend baseline measures the settled post-sweep text"
+  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # Contract-size counterweight
