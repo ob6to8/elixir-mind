@@ -63,6 +63,10 @@ shouldn't have been.
 
 `Claude Sonnet 5` — well-specified execution against a fully decided mapping
 table, with no open judgment: every edit is named above, and the gate suite plus
-`mix brain.contract --check` bear the correctness burden. This is the roster's
-Sonnet row, and it is the one stamp all four independent scopings of this unit
-agreed on.
+`mix brain.contract --check` bear the correctness burden. All four independent
+scopings agreed on this stamp — the only unanimous one in the set. It is also
+the first matter to land squarely in the roster's new **governance-prose row**
+(skill bodies, index glosses, register rows → Sonnet by default), which replaces
+the strained reading the earlier runs had to make: nothing mechanically checks a
+`SKILL.md`'s prose, so Sonnet's "gated by the suite" qualifier did not literally
+apply until that row existed.

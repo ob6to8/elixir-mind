@@ -85,10 +85,38 @@ does not apply to prose nothing mechanically checks.
    consistency as meaningful.
 
 Option 1 is the smallest change that removes the observed divergence; option 2
-is what makes the field reproducible in general. They compose. This issue does
-not choose — the ruling is the operator's, and the choice interacts with the
-accepted [separate-the-model-roster-concerns](/meta/plans/separate-the-model-roster-concerns.md)
-plan, which is already going to rewrite where this procedure lives.
+is what makes the field reproducible in general. They compose.
+
+## Ruling — option 1 adopted, 2026-08-02
+
+The operator adopted **option 1**. [The roster](/meta/model-roster.md) now
+carries a governance-prose row sending skill bodies, index glosses, and register
+rows to Sonnet 5 by default, with two boundaries stated so the row is decidable
+rather than merely present: policies and doctrine are **excluded** (canonical
+bodies, still Fable's, however small the edit), and an edit whose *content* is a
+fresh decision rather than the rendering of a made one is stamped by the
+decision's weight, not as prose.
+
+**What that closes**, and what it does not:
+
+- **Closed** — the gap both eval runs hit directly: a pure `SKILL.md`-body edit
+  had no row, and Sonnet's "gated by the suite" qualifier did not literally
+  apply to prose nothing mechanically checks. It has a home now.
+- **Closed** — the matter-1 Fable/Opus split, by the exclusion rather than by
+  the new row: writing a policy stays Fable's regardless of size, so the
+  reading that produced the Opus dissent no longer competes.
+- **Open** — the general case. Option 2 (an explicit precedence over the four
+  questions) is **not** adopted, so a matter scoring on two axes still resolves
+  by the "hardest motion" metaphor. The boundary clause added here decides one
+  recurring collision — prose versus the decision inside it — not the family.
+- **Unmeasured** — whether the divergence rate actually falls. The instrument
+  that found it ([skill body layout A/B](/meta/evals/skill-body-layout-ab.md))
+  can be re-run against the amended roster; nobody has.
+
+This issue stays **open** on the residual. It interacts with the accepted
+[separate-the-model-roster-concerns](/meta/plans/separate-the-model-roster-concerns.md)
+plan, which will move this procedure to a policy and the enumeration to config —
+the new row and its boundaries port with it.
 
 ## Scope of the finding
 

@@ -62,9 +62,10 @@ place in the compiled contract. Recommend the `skills` section immediately after
 
 `Claude Fable 5` — canonical policy prose that compiles into the contract and
 becomes the source every future skill author derives from; the output *is* the
-artifact, which is the roster's Fable row. Three of four independent scopings of
-this unit stamped Fable; the dissent read it as a boundary decision the other
-matters bind to and stamped Opus. Both are defensible, and that ambiguity is
-itself filed as
-[an issue](/meta/issues/model-determination-is-session-dependent.md) — the
-majority is recorded here rather than one session's reading.
+artifact, which is the roster's Fable row. Three of four independent scopings
+stamped Fable and one stamped Opus, reading it as the boundary decision the
+other matters bind to. That split is now **settled by rule**: the roster's
+governance-prose row explicitly excludes policies and doctrine, which stay
+Fable's however small the edit, and the vocabulary this policy states is
+already operator-ratified — so the writing renders a made decision rather than
+containing an open one.
