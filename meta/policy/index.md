@@ -36,10 +36,10 @@ the start if siblings are plausible.
 - [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
 - [provenance-lives-in-metadata](/meta/policy/provenance-lives-in-metadata.md) — bodies and index glosses never restate sourcing the frontmatter already records; a source appears in prose only as a plain link when it is load-bearing content (the test: does removing it lose meaning, or only credit?)
-- [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/todo/plan/doctrine/policy), downstream of plan-vs-capture
+- [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/matter/plan/doctrine/policy), downstream of plan-vs-capture
 - [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md) — living surfaces state the present; retrospective "used to…" narration belongs in the commit graph, not inline
 - [prefer-established-terminology](/meta/policy/prefer-established-terminology.md) — standard terms of art over bespoke coinages; bespoke terms are glossaried at first use and never churned retroactively
-- [deferred-work-is-filed](/meta/policy/deferred-work-is-filed.md) — a work item identified mid-session but not executed in it is filed (todo, plan, issue, or matters row) in the same turn that identifies it; chat is not a backlog
+- [deferred-work-is-filed](/meta/policy/deferred-work-is-filed.md) — a work item identified mid-session but not executed in it is filed (matter, plan, or issue — with a register row when queued) in the same turn that identifies it; chat is not a backlog
 
 ## communication
 - [plainspeak-orientation](/meta/policy/plainspeak-orientation.md) — a dense response opens with a short plain-language orientation (what happened, where things stand, what needs deciding) before the full technical presentation; terms are introduced only after the plain statement they label

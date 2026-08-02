@@ -83,7 +83,7 @@ rapidly or come from authors who do not write Elixir. Grounded in the
   semantically ("a `:stale` result when the artifact lags its sources"), never
   a transcription of the return tuple.
 - **Comments carry durable *why* and never restate the signature.** Future-work
-  asides become `meta/todos/` or `meta/issues/` entries, not `TODO` comments.
+  asides become `meta/matters/` or `meta/issues/` entries, not `TODO` comments.
 - **Discard an ignored return with `_ = expr`** so the disinterest is explicit,
   never a bare dangling expression.
 - **Test through the narrowest public surface** — a module's API or the mix

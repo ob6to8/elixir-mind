@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Surface the glossary `sense` field in the index and registry views"
 description: Glossary terms carry a sense (common vs. repo-specific) that is invisible in both /beliefs/glossary/index.md and meta/registry.md, so a reader browsing either view cannot tell a standard term of art from a bundle coinage without opening each file.
 status: open
 provenance: "Claude Code session (2026-07-13) — deferred in the glossary sense-disambiguation plan, which shipped the field without the display surfaces"
-tags: [meta, todo, glossary, registry, index, disambiguation]
+tags: [meta, matter, glossary, registry, index, disambiguation]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

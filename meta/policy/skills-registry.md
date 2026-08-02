@@ -82,12 +82,8 @@ attribution:
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
   rather than blindly resolving them; retries only on network errors. See
   `.claude/skills/sync-branch-with-main/SKILL.md`.
-- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
-  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
-  the index); `/todo list` shows the todos grouped by `status`. See
-  `.claude/skills/todo/SKILL.md`.
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
-  `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
+  `mix brain.session_init` (open issues, open matters, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
   on-demand appraisal of open work, produced when asked rather than injected at
   session start. Read-only. See `.claude/skills/priorities/SKILL.md`.

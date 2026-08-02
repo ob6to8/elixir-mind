@@ -32,7 +32,7 @@ into an open thread.
   with recommendations, per
   [response-work-report-format](/meta/policy/response-work-report-format.md).
 - **The disposition is the operator's.** Fix it now, file it as an
-  issue/todo, or proceed accepting it — the agent recommends but does not
+  issue/matter, or proceed accepting it — the agent recommends but does not
   choose. Unilaterally filing an issue and mentioning it post-merge is the
   pattern this policy exists to stop.
 - **The session's driving question is answered before the close, not after.**
@@ -45,7 +45,7 @@ into an open thread.
   nothing said only there is discoverable later, and the operator's memory is
   exactly what this system exists to offload. Beyond the completion facts,
   every sentence in a closing report must point at a durable home — the plan,
-  a todo, an issue, the thread doc. Next-session context ("for whenever you
+  a matter, an issue, the thread doc. Next-session context ("for whenever you
   pick this up, step 2 is…") is the failure signature: that content belongs in
   the artifact [`/priorities`](/.claude/skills/priorities/SKILL.md) reads,
   filed before the close, with the close at most pointing at it. A statement

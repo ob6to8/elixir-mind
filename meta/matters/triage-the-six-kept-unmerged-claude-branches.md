@@ -1,9 +1,9 @@
 ---
-type: todo
+type: matter
 title: "Triage the six kept unmerged claude/* branches"
 description: Each of the six unmerged branches kept on 2026-07-11 ends up merged, superseded-and-deleted, or explicitly retired — none left in limbo.
 status: open
-tags: [meta, todo, git, branches]
+tags: [meta, matter, git, branches]
 timestamp: 2026-07-13
 attribution:
   when: 2026-07-11T19:38:44+00:00

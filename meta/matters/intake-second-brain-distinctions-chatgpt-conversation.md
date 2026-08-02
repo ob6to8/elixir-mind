@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Intake the \"Second brain distinctions\" ChatGPT conversation as a reference"
 description: The shared ChatGPT conversation is filed as a distilled type reference capture (resource = the share URL) under knowledge/knowledge-management/, or the operator decides the analysis already absorbs it and cancels.
 status: open
 resource: https://chatgpt.com/share/6a54cdde-a238-83ea-91f8-d5d70ebc8488
-tags: [meta, todo, intake, knowledge-management]
+tags: [meta, matter, intake, knowledge-management]
 timestamp: 2026-07-13
 attribution:
   when: 2026-07-13T00:00:00Z

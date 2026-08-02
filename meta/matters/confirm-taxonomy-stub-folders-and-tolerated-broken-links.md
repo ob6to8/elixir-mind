@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Confirm the empty taxonomy stub folders and the tolerated broken links in frozen namespaces"
 description: The agentic-coding to agentic restructure left claude-managed-agents/ holding only an index.md, and left broken links in frozen inbox/ and threads/ content that were tolerated rather than decided — two small confirmations that were requested and never given.
 status: open
 provenance: "Claude Code session (2026-07-13) — raised at the end of the anthropic-node restructure; stub folder re-verified 2026-07-28"
-tags: [meta, todo, taxonomy, links, housekeeping]
+tags: [meta, matter, taxonomy, links, housekeeping]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

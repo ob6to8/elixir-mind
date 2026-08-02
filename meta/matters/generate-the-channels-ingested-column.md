@@ -1,9 +1,9 @@
 ---
-type: todo
+type: matter
 title: "Generate the channels register's Ingested column with mix brain.channels"
 description: Done when the Ingested column is derived from filed documents' resource URIs and gated with --check, instead of being hand-maintained and silently driftable.
 status: open
-tags: [meta, todo, tooling, channels, generated-artifacts]
+tags: [meta, matter, tooling, channels, generated-artifacts]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T04:30:00Z
@@ -32,7 +32,7 @@ section, but a documented check nobody runs is not a gate.
 The [coding standards](/meta/policy/elixir-coding-standards.md) admit a check
 when its signal beats its upkeep *and* it runs offline as a plain `mix` task
 with no dependencies. Unlike
-[`mix brain.staleness`](/meta/todos/build-mix-brain-staleness-when-dated-resources-grow.md),
+[`mix brain.staleness`](/meta/matters/build-mix-brain-staleness-when-dated-resources-grow.md),
 which needs network and therefore fails the offline half, this task reads only
 the bundle: parse each document's `resource`, group by channel, compare against
 the register. Fully offline, deterministic, dependency-free — the same shape as

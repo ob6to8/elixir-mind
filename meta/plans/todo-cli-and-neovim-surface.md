@@ -18,9 +18,9 @@ attribution:
 
 ## Problem
 
-The brain already has a task store. [`meta/todos/`](/meta/todos/index.md) holds
+The brain already has a task store. [`meta/todos/`](/meta/matters/index.md) holds
 `type: todo` documents with a controlled `status`, the
-[`/todo`](/.claude/skills/todo/SKILL.md) skill files and lists them, and
+`/todo` skill files and lists them, and
 [`ElixirMind.SessionInit`](/lib/elixir_mind/session_init.ex) reads them into the
 [`/priorities`](/.claude/skills/priorities/SKILL.md) digest. What it does not
 have is a **mechanical** surface: every todo operation today is an LLM action.
@@ -285,8 +285,8 @@ Mix.Tasks.Brain.Todo.run(["list", "--format", "ndjson"])  # captured via ExUnit
 - `Mix.Tasks.Brain.SessionInit` is the template for the task wrapper: `@shortdoc`,
   `@moduledoc` with a usage block, `use Mix.Task`, `@impl Mix.Task` (never
   `@impl true`, per the contract's coding standards).
-- The todo file template is fixed by the [`/todo`](/.claude/skills/todo/SKILL.md)
-  skill's Create step; `create/1` must emit exactly that shape, including a
+- The todo file template is fixed by the `/todo` skill's
+  Create step; `create/1` must emit exactly that shape, including a
   valid `attribution` map, or `mix brain.verify` fails on the written file.
 - Tests: `test/elixir_mind/session_init_test.exs` shows the fixture-bundle
   pattern to copy.

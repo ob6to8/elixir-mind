@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Decide whether the Workflow fan-out execution convention graduates into a ratified plan"
 description: The analysis on executing ratified plans via Workflow fresh-context fan-out ends with four open questions and an explicit ask about whether it should become a plan, a pilot, and eventually a methodology — none of which was answered.
 status: open
 provenance: "Claude Code session (2026-07-16) — the analysis was filed with its open questions unresolved"
-tags: [meta, todo, workflow, execution, methodology, plans]
+tags: [meta, matter, workflow, execution, methodology, plans]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

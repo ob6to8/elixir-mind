@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Deferred work is filed
-description: A work item identified mid-session but not executed in it is filed — todo, plan, issue, or matters-register row — in the same turn that identifies it; chat is not a backlog, and the close-time inventory verifies filings rather than performing them.
+description: A work item identified mid-session but not executed in it is filed — matter, plan, or issue, with a matters-register row when queued for delivery — in the same turn that identifies it; chat is not a backlog, and the close-time inventory verifies filings rather than performing them.
 section: filing
 order: 18
 status: active
@@ -20,10 +20,11 @@ attribution:
 same turn that identifies it — chat is not a backlog.** The moment a session
 names work it will not do now — "I'll do X later", "this should eventually
 Y", a defect noticed in passing, an edit deferred to a future session — the
-item gets a durable home before the turn ends: a `todo`, `plan`, or `issue`
-per [governance-artifact-routing](/meta/policy/governance-artifact-routing.md),
-or a row in the [matters register](/meta/matters.md) when it is a pending
-[matter](/beliefs/glossary/matter.md) awaiting its own PR. A deferral that
+item gets a durable home before the turn ends: a `matter`, `plan`, or `issue`
+per [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) —
+with a row in the [matters register](/meta/matters.md) when the
+[matter](/beliefs/glossary/matter.md) is committed to the delivery queue
+(an open matter outside the register is backlog). A deferral that
 lives only in the conversation has no surfacing mechanism — it survives
 exactly as long as someone remembers it
 ([a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md)).
@@ -38,9 +39,9 @@ exactly as long as someone remembers it
 - **The trigger is naming the deferral, not the item's size.**
   [plan-vs-capture](/meta/policy/plan-vs-capture.md) already forces
   plan-scale deferred work into a persisted plan; this rule closes the
-  todo-scale gap beneath it — the small "later" too minor for a plan.
-  A filing can be a three-line todo or one register row; smallness is a
-  reason to file cheaply, never to skip filing.
+  task-scale gap beneath it — the small "later" too minor for a plan.
+  A filing can be a three-line backlog matter or one register row; smallness
+  is a reason to file cheaply, never to skip filing.
 - **A ledger strand records the deferral; it does not queue it.** A captured
   thread's `open`/`paused` routing rows are the record layer
   ([routing-ledger](/meta/policy/routing-ledger.md)), and the

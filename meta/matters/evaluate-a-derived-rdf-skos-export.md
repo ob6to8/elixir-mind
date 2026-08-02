@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Evaluate a derived RDF/SKOS export of the bundle (mix brain.rdf)"
 description: The bundle's frontmatter is already triple-shaped and its taxonomy/glossary are already a SKOS-shaped concept scheme, so a derived RDF/JSON-LD export would make the corpus SPARQL-queryable and interoperable at no cost to the authored substrate; decide whether the interoperability is wanted before building the task.
 status: open
 provenance: "Claude Code session, 2026-07-28 — the one open strand left by the OWL/RDF/SKOS comparison"
-tags: [meta, todo, rdf, skos, semantic-web, derived-views, tooling, interoperability]
+tags: [meta, matter, rdf, skos, semantic-web, derived-views, tooling, interoperability]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T10:20:00Z

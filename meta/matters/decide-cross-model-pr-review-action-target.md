@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Decide the cross-model PR review Action's target repo and default reviewer model"
 description: The cross-model PR review GitHub Action is designed and documented but not installed anywhere, blocked on two operator decisions — which dev repo receives cross-model-review.yml, and which model reviews by default.
 status: open
 provenance: "Claude Code session (2026-07-21) — the Shape C artifact from the multi-model dev-environment work"
-tags: [meta, todo, ci, github-actions, multi-model, code-review]
+tags: [meta, matter, ci, github-actions, multi-model, code-review]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z

@@ -192,7 +192,7 @@ standing cost on every agent's context. No instrument asks whether any policy
 changed agent behavior. The closest design,
 [priorities recitation vs. harness reminders](/meta/evals/priorities-recitation-vs-harness-reminders.md),
 is `status: proposed` and unbuilt — and per
-[an existing todo](/meta/todos/build-the-two-proposed-eval-instruments.md),
+[an existing todo](/meta/matters/build-the-two-proposed-eval-instruments.md),
 `meta/evals/` is read by no digest, so a proposed eval "stays proposed by default
 rather than by decision."
 

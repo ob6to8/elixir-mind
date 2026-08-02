@@ -1,10 +1,10 @@
 ---
-type: todo
+type: matter
 title: "Broaden the invisible-degradation glossary entry for the model-output sense"
 description: The glossary entry for invisible-degradation covers one sense, and a second reading — degradation in model output that a reader cannot detect from the output alone — was raised and left unresolved between adding a paragraph and minting a distinct term.
 status: open
 provenance: "Claude Code session (2026-07-27) — surfaced during the LLM-security intakes"
-tags: [meta, todo, glossary, terminology, llm-security]
+tags: [meta, matter, glossary, terminology, llm-security]
 timestamp: 2026-07-28
 attribution:
   when: 2026-07-28T00:00:00Z
