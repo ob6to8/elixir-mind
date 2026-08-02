@@ -238,9 +238,9 @@ humans kept — the spec substitutes for shared memory. This bundle is itself
 evidence: an iterative shop whose standing written context (contract,
 plans, packets) far exceeds what a human team would write down.
 
-**Scenario-dependence, on five axes.** The honest answer to "is one generally
-better" is that the industry treats it as a dial, and the axes that set it
-are stable across sources:
+**Scenario-dependence, on five axes.** The industry treats "which is better"
+as a dial rather than a verdict, and the axes that set it are stable across
+sources:
 
 1. **Requirement certainty** — known and stable favors spec; discovered
    favors iteration.
