@@ -277,3 +277,25 @@ The dials in it that are preference rather than evidence-forced: the 3-attempt s
 **[`em:cab2c5`]**
 
 Proto-granular, done now — citations-as-enough would have bet the mapping on this session's memory surviving until PR 3, and this session has already been through one context compaction. The doc now carries a **`## Claim provenance (temporary format)`** section: fifteen rows, one per prescriptive claim, each with a verbatim *claim anchor* (which becomes the `<attr>` span's content anchor under the span-attribution plan — the rows convert one-to-one, so nothing is thrown away at refactor time), its class (`synthesis`, one `quote` — Valim's mock-as-noun line), basis (`search` — every row was retrieved this session, none from model memory), and its sources (the `em:` captures, the arXiv ids with their figures, Beck/Böckeler/METR/Anthropic for the never-weaken rule, Google/Graphite/Codacy for the delivery numbers, hexdocs for the Elixir mechanics).
+
+### 2026-08-02-methodology-finalization (2026-08-02)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:cab2c5`]**
+
+I now have the complete picture of the matter. Before executing, I need the supporting refs: the ranking analysis (which holds the protection-ladder evidence), the two-level guidance plan (which governs the block's versioning), and the matter-queue plan (which governs how a consumed row is closed out). Let me also map every "exempt" occurrence.
+
+---
+
+**[`em:cab2c5`]**  (co-feeds: `meta/policy/git-atomic-pull-requests.md`)
+
+Branch is set up at `origin/main` (PR #225's merge), working tree clean. The policy body already carries the correct framing — only its `description` frontmatter, the index gloss, and the vendorable block have the "exempt" defect. Let me create the task list and verify the Beck "immutable annotation" quote from its primary source before I write it into the doc.
+
+---
+
+**[`em:cab2c5`]**
+
+Verification outcome: the "immutable annotation" span is not reproducible from either reachable Beck source (the Substack post yields only "Any indication that the genie was cheating, for example by disabling or deleting tests"; the interview's free page only confirms the deleting-tests problem; the full transcript is podcast-gated). Per the quote-primary-sources policy, that phrase gets no quotation marks — I'll attribute it as synthesis and record exactly that in the provenance row.
+
+Now applying the edits to the methodology doc — (b) the subsection under §2:

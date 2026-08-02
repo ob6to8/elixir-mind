@@ -420,6 +420,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b79e02` | [beliefs/glossary/proof-of-vulnerability](/beliefs/glossary/proof-of-vulnerability.md) | concept | false |
 | `em:e59bab` | [beliefs/glossary/proof-of-work](/beliefs/glossary/proof-of-work.md) | concept | false |
 | `em:4849ca` | [beliefs/glossary/property-based-testing](/beliefs/glossary/property-based-testing.md) | concept | false |
+| `em:07519b` | [beliefs/glossary/protection-ladder](/beliefs/glossary/protection-ladder.md) | concept | false |
 | `em:573229` | [beliefs/glossary/proto-belief-document](/beliefs/glossary/proto-belief-document.md) | concept | false |
 | `em:322fa9` | [beliefs/glossary/prov-dm](/beliefs/glossary/prov-dm.md) | concept | false |
 | `em:e8818e` | [beliefs/glossary/prov-o](/beliefs/glossary/prov-o.md) | concept | false |

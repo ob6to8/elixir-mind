@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, git, pull-requests, review, atomicity]
 sense: repo
-timestamp: 2026-08-01
+timestamp: 2026-08-02
 attribution:
   when: 2026-08-01T23:20:00Z
   channel: glossary
@@ -28,8 +28,9 @@ analysis, a feature with its tests.
 Distinct from a [strand](/beliefs/glossary/strand.md) — a routing-ledger row
 tracks a *topic* through a session's record, while a matter is a unit of
 *delivery*; one strand may produce several matters, and one matter may close
-several strands. The planned matter register and `/present-matters` skill
-(see the [TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md))
-sequence pending matters across sessions.
+several strands. [The matter register](/meta/matters.md) sequences pending
+matters across sessions, consumed top-down by fresh threads with each row a
+self-contained handoff packet, per the
+[matter-queue plan](/meta/plans/matter-queue-and-present-matters.md).
 
-*Seen in:* [the TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md)
+*Seen in:* [the TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md), [2026-08-02 methodology-finalization thread](/meta/threads/2026-08-02-methodology-finalization.md)
