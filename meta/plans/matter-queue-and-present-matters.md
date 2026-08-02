@@ -73,5 +73,21 @@ with the one that wrote it.
   [reconcile-dangling-strands plan](/meta/plans/reconcile-dangling-ledger-strands.md)
   is separating record from work-queue, and this register is where the queue
   half lands).
+- **One register, fixed path — never per-initiative files** (operator-raised,
+  decided 2026-08-02): the register sequences the repo's *delivery lane*,
+  which is single (one operator, sequential merges), so a global order must
+  exist somewhere and per-initiative `matters-<spike>.md` files would only
+  push the ordering question up a level while breaking the zero-context
+  discovery property (a fresh session reads one known path). Matches the
+  standing pattern — todos, issues, plans, and the bookmarks register are
+  single flat stores. Initiative multiplicity is handled **inside** the
+  register: an `Initiative` column is added the moment a second initiative
+  queues its first row; each row's refs already point at its initiative's
+  plan.
+- **Escalation trigger:** if simultaneous consumption ever produces real
+  merge conflicts on row removal (rare by design — top-down consumption, one
+  matter per PR), the register becomes a `meta/matters/` directory, one file
+  per matter with a derived ordered view — a mechanical refactor recorded
+  here so it need not be re-derived.
 - **Open:** whether the register eventually generalizes to a
   `mix brain.matters` derived view once rows carry structure worth checking.
