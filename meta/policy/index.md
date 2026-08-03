@@ -36,9 +36,10 @@ the start if siblings are plausible.
 - [plan-vs-capture](/meta/policy/plan-vs-capture.md) — persist a prospective plan only for deferred/cold-handoff/cross-session work; in-session work is recorded by its commit and thread capture
 - [merge-strategy](/meta/policy/merge-strategy.md) — PRs land via a true merge commit only; squash/rebase disallowed because commit history is provenance
 - [provenance-lives-in-metadata](/meta/policy/provenance-lives-in-metadata.md) — bodies and index glosses never restate sourcing the frontmatter already records; a source appears in prose only as a plain link when it is load-bearing content (the test: does removing it lose meaning, or only credit?)
-- [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/todo/plan/doctrine/policy), downstream of plan-vs-capture
+- [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) — which governance type to file (analysis/tutorial/issue/matter/plan/doctrine/policy), downstream of plan-vs-capture
 - [living-text-is-present-tense](/meta/policy/living-text-is-present-tense.md) — living surfaces state the present; retrospective "used to…" narration belongs in the commit graph, not inline
 - [prefer-established-terminology](/meta/policy/prefer-established-terminology.md) — standard terms of art over bespoke coinages; bespoke terms are glossaried at first use and never churned retroactively
+- [deferred-work-is-filed](/meta/policy/deferred-work-is-filed.md) — a work item identified mid-session but not executed in it is filed (matter, plan, or issue — with a register row when queued) in the same turn that identifies it; chat is not a backlog
 
 ## communication
 - [plainspeak-orientation](/meta/policy/plainspeak-orientation.md) — a dense response opens with a short plain-language orientation (what happened, where things stand, what needs deciding) before the full technical presentation; terms are introduced only after the plain statement they label
@@ -47,8 +48,10 @@ the start if siblings are plausible.
 - [negative-findings-name-their-scope](/meta/policy/negative-findings-name-their-scope.md) — a claim that something does not exist or is not stated is a claim about a search space, so it names the space actually searched; enumerate before a decision rests on it
 - [negate-only-explicit-cases](/meta/policy/negate-only-explicit-cases.md) — a negative statement earns its place only when the case it negates is explicit (raised in-document, a default the reader would assume, or a rule being overridden); otherwise state the rule positively, and an edit that removes a negation's referent recasts the negation in the same motion
 - [banned-phrases](/meta/policy/banned-phrases.md) — the register of words and phrases banned from agent-composed prose, each entry carrying its pattern and reasoning; grown via `/ban-phrase`, where the operator's invocation is the ratification
+- [revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md) — a thread carries one scoped unit entered through `/matter` or `/scope-unit-of-work`, admits only revisions extending it and the infrastructure its context requires, and takes no narrated instructions to change what it has already done; in-flight completion and gate failures are delivery, review-time revisions are filed before merge, and queueing inserts at the head rather than the tail
 - [concerns-block-the-close](/meta/policy/concerns-block-the-close.md) — once a closing flow is invoked, any concern the session still holds blocks the irreversible step as a question the operator dispositions; the driving question is verified before the close, handoff context is filed where `/priorities` reads, and a merged close introduces nothing that lives only in the thread
 - [assertions-name-their-basis](/meta/policy/assertions-name-their-basis.md) — an actionable assertion makes its basis legible (checked: cite what was checked; recalled: mark it plainly), uniformly by citations and markers rather than episodic diligence narration; a recommendation names the unchecked premise it would fall with
+- [inline-reply-quoting](/meta/policy/inline-reply-quoting.md) — a response to a multi-subject operator message takes the email inline-reply form: each subject's passage quoted verbatim, the answer directly beneath it, in the operator's order; orientation still opens, tables still close
 
 ## type-vocabulary
 - [controlled-type-vocabulary](/meta/policy/controlled-type-vocabulary.md) — the controlled, deliberately-growing list of document `type` values
@@ -71,6 +74,7 @@ the start if siblings are plausible.
 
 ## git-workflow
 - [git-branch-deletion](/meta/policy/git-branch-deletion.md) — head branches are deleted as part of the merge motion; later sessions leave lingering branches alone and never survey them; the default branch and unmerged branches need operator approval
+- [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md) — one matter per pull request, where a matter is one separately-reviewable intent; size is a signal never the gate (a large diff carrying one mechanical intent is one reviewable decision), splits stop at the green boundary, generated artifacts ride their source change, and sessions deliver matters sequentially
 
 ## tooling-standards
 - [elixir-coding-standards](/meta/policy/elixir-coding-standards.md) — coding conventions for the Elixir tooling and the admission rule for new guardrails; a recurring agent miss updates this policy, never only the offending change

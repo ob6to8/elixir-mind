@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, evals, benchmarks, methodology]
 sense: common
-timestamp: 2026-07-20
+timestamp: 2026-08-02
 attribution:
   when: 2026-07-20T23:23:55+00:00
   channel: glossary
@@ -17,8 +17,8 @@ attribution:
 
 # held-out set
 
-The standard cure for [contamination](/beliefs/glossary/contamination.md), inherited from machine learning's train/test split. For corpus-maintenance benchmarking it means generating a fresh synthetic corpus and answer key that never lands in any repo the agent reads — the constructible-[ground-truth](/beliefs/glossary/ground-truth.md) affordance is exactly the generator.
+The standard cure for [contamination](/beliefs/glossary/contamination.md), inherited from machine learning's train/test split. For corpus-maintenance benchmarking it means generating a fresh synthetic corpus and answer key that never lands in any repo the agent reads — the constructible-[ground-truth](/beliefs/glossary/ground-truth.md) affordance is exactly the generator. The same discipline is the top rung of the [protection ladder](/beliefs/glossary/protection-ladder.md) for development: a thin held-out slice of acceptance tests run only at the gate, kept beside the visible in-repo working suite — and each disclosed failure spends the holdout the way eval reuse causes contamination, so slices rotate or regenerate.
 
-*Seen in:* [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md)
+*Seen in:* [2026-07-20 evals and observation-records thread](/meta/threads/2026-07-20-evals-harness-ledger-and-observation-records.md), [2026-08-02 methodology-finalization thread](/meta/threads/2026-08-02-methodology-finalization.md)
 
 *See also:* [holdout scenario](/beliefs/glossary/holdout-scenario.md), [contamination](/beliefs/glossary/contamination.md)

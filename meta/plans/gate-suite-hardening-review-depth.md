@@ -94,5 +94,5 @@ output, or both); whether complexity is a gate or a warn given `lib/` is small.
    worth the offline-invariant tradeoff.
 
 Independent of this plan and already tracked: auto-wiring the pre-commit hook
-([todo](/meta/todos/wire-pre-commit-hook-in-session-start.md)) and generated-artifact
+([todo](/meta/matters/wire-pre-commit-hook-in-session-start.md)) and generated-artifact
 merge handling ([issue](/meta/issues/generated-artifact-merge-conflicts.md)).

@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, agents, anthropic, sdk, harness]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-08-03
 attribution:
   when: 2026-07-13T12:00:00Z
   channel: glossary
@@ -25,4 +25,4 @@ library embedded in your software, and
 [Claude Managed Agents](/beliefs/glossary/claude-managed-agents.md) is the option
 where Anthropic hosts both the loop and the execution sandbox for you.
 
-*Seen in:* [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md)
+*Seen in:* [2026-07-13 advisor-pattern thread](/meta/threads/2026-07-13-advisor-pattern-and-rolling-your-own-harness.md) · [2026-08-03 stack-direction thread](/meta/threads/2026-08-03-stack-direction-journal-and-eval-stack-evaluation.md)

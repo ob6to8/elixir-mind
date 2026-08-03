@@ -8,11 +8,11 @@ description: List tracked operational problems (type issue) under meta/issues/, 
 List `type: issue` documents under [`meta/issues/`](/meta/issues/index.md). An
 **issue** is a tracked operational problem, defect, or open concern about how the
 brain or its tooling behaves — recorded for follow-up. It is *not* a
-[`todo`](/meta/todos/index.md) (a plain task) or a
+[`matter`](/meta/matters/index.md) (work to deliver) or a
 [`plan`](/meta/plans/index.md) (a design/decision record). Follow the
 [operating contract](/CLAUDE.md).
 
-Issues live in the **governance namespace**, so — like `todos`, `plans`, and
+Issues live in the **governance namespace**, so — like `matters`, `plans`, and
 `threads` — they carry **no `em:` id** and are outside the identity registry.
 
 This skill is **list-focused**: it surfaces open issues so they can be reviewed
@@ -38,7 +38,7 @@ filter: **`open`**. If no argument is given, list open issues.
    present. Note the total count. This is a **read-only** view; do not modify
    anything.
 
-For a cross-cutting appraisal that ranks issues against todos, plans, and
+For a cross-cutting appraisal that ranks issues against matters, plans, and
 dangling strands, use [`/priorities`](/.claude/skills/priorities/SKILL.md)
 instead — it is the whole-brain view; this skill is the issues-only slice.
 
