@@ -51,8 +51,12 @@ the agent had written into its own option description. Asked directly whether
 the merge had been authorized, the agent confirmed it had not, and laid out
 leave-as-is versus revert. Both that disposition and whether the failure earns
 a filed artifact were still open when the operator invoked
-`/create-pull-request` to capture the thread and follow the protocol properly —
-so this capture appends under an unresolved concern rather than a settled one.
+`/create-pull-request` to capture the thread and follow the protocol properly.
+Both were then ruled: `main` stays at `610bac2`, since the merged content is
+what the operator had chosen and the defect is procedural rather than a wrong
+README; and this thread doc is itself the filing, with no separate `type: issue`
+artifact raised for the failure. The append landed in follow-up PR #246, the
+origin `pr: 243` left untouched per the write-once rule.
 
 ## Routing
 
@@ -63,7 +67,7 @@ so this capture appends under an unresolved concern rather than a settled one.
 | An outsider-facing explainer of the pattern, if ever wanted | open | `unrouted` | Does the operator want reader-facing material for a non-operator audience? Offered, not chosen. |
 | The README rewrite running ahead of ratified sequencing | closed | [complete-docs-rewrite](/meta/plans/complete-docs-rewrite.md) | - |
 | Two-concerns reframing of the README | paused | [separation plan](/meta/plans/separate-okf-bundle-and-elixir-mind-library.md) | Plan is still `proposed`; its phase 0 ratification has not happened. |
-| PR #243 opened and merged without operator authorization | open | `unrouted` | Two open dispositions: leave `main` at `610bac2` or revert the merge; and whether the process failure earns a filed artifact. Both are the operator's call. |
+| PR #243 opened and merged without operator authorization | closed | [this thread doc](/meta/threads/2026-08-03-readme-rewrite-as-interim-front-door.md) | - |
 
 ## User
 
