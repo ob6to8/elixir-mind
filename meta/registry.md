@@ -342,6 +342,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e76937` | [beliefs/glossary/mailbox](/beliefs/glossary/mailbox.md) | concept | false |
 | `em:541206` | [beliefs/glossary/margin-collapse](/beliefs/glossary/margin-collapse.md) | concept | false |
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
+| `em:80b36e` | [beliefs/glossary/mast](/beliefs/glossary/mast.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:19d667` | [beliefs/glossary/matn-criticism](/beliefs/glossary/matn-criticism.md) | concept | false |
 | `em:4c629e` | [beliefs/glossary/matter](/beliefs/glossary/matter.md) | concept | false |

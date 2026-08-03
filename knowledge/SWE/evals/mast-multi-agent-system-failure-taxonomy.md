@@ -156,3 +156,49 @@ exactly the failure classes a mechanical gate exists to close off.
   Ramchandran, Zaharia, Gonzalez, Stoica, *Why Do Multi-Agent LLM Systems
   Fail?* (NeurIPS 2025, Datasets & Benchmarks Track):
   <https://arxiv.org/abs/2503.13657>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ec728d">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-03-mast-multi-agent-failure-taxonomy-intake (2026-08-03)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:ec728d`]**
+
+the Berkeley multi-agent-failure taxonomy paper (evals), see if you can find
+
+---
+
+**[`em:ec728d`]**  (co-feeds: `/meta/evals/dedup-probe.md`)
+
+Found and filed the paper the operator asked about. Here's the ledger:
+
+**What I created**
+
+| Type | Doc | Why this type |
+|---|---|---|
+| `reference` | [`knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md`](https://github.com/ob6to8/elixir-mind/blob/claude/berkeley-multi-agent-failure-taxonomy-xsdaai/knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md) (`em:ec728d`) | Captured/summarized external paper, following the same pattern as the existing FActScore/SAFE capture in the same directory |
+
+**What I modified**
+
+| File | Change |
+|---|---|
+| `knowledge/SWE/evals/index.md` | Added the new reference under `## References` |
+| `meta/evals/dedup-probe.md` | Harvested one gold-set row (`the berkeley multi-agent-failure taxonomy paper` → `em:ec728d`) and refreshed the baseline |
+| `meta/registry.md` | Regenerated after minting the new id |
+
+**Actions I have taken**
+
+| Action | Result |
+|---|---|
+| Located the paper | arXiv 2503.13657, "Why Do Multi-Agent LLM Systems Fail?" (Cemri et al., UC Berkeley + collaborators, NeurIPS 2025) — builds MAST, a 14-mode/3-category failure taxonomy from 1,600+ annotated multi-agent traces |
+| Deduped | No existing bundle doc covers this specific paper or taxonomy (searched "multi-agent", "failure mode/taxonomy", "MAST", "agent eval") |
+| Ran the gate suite | `mix brain.verify`, `brain.route_tags`, `brain.glossary`, `brain.matters`, `mix test` all pass (pre-commit hook ran them) |
+| Dedup recall check | Plain recall held at 27% (8/30) — no regression, so no escalation needed |
+| Committed and pushed | Branch `claude/berkeley-multi-agent-failure-taxonomy-xsdaai`, commit `acba4a0` |
+
+The paper: UC Berkeley researchers found multi-agent LLM systems fail 41–86.7% of the time on benchmarks, and built a 14-failure-mode taxonomy across three categories (system design issues, inter-agent misalignment, task verification) from over 1,600 annotated execution traces. Their case studies show that fixing the *architecture* based on which failure mode dominates gains 9–16 points using the *same* underlying model — the ceiling is organizational, not raw capability. I cross-linked it in the doc to this brain's own material on the observer-subagent pattern, agent teams, scar-tissue drift, and the verification-grounding/gate-suite policies, since several of MAST's named modes map directly onto concerns already tracked here.
+
+No new directory or type was needed — it fit cleanly into the existing `knowledge/SWE/evals/` reference collection. I have not opened a pull request since none was requested; the branch is pushed and ready if you want one.
