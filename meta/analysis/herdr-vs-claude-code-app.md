@@ -4,12 +4,13 @@ title: "Herdr vs. the Claude Code app: a multiplexer for agents next to one of t
 description: Herdr is a self-hosted, vendor-agnostic terminal multiplexer that gives any CLI coding agent persistent, remote-reattachable PTY sessions behind a mouse-driven pane UI and a control API; the Claude Code app is Anthropic's own agent bundled with a first-party harness (CLI, Anthropic-hosted cloud runtime, desktop/mobile, IDE extensions) that already ships persistence, remote access, and peer multi-agent coordination for its own sessions but nothing that hosts other vendors' agents — so the two overlap on capability more than they compete on category, and herdr lists Claude Code as one of its native backends rather than as a rival. Extended with a concrete build: splitting compute into an always-on herdr control-plane node plus disposable per-session VMs cloned from a shared base image (Shellbox `duplicate`/Fly Machine or Sprite clone) reproduces CCR's environment→snapshot→ephemeral-session model, though org-managed settings injection, native cross-vendor agent-teaming, and CCR's own credential-custody boundary have no off-the-shelf equivalent and would need bespoke glue.
 provenance: "Claude Code session (Claude Sonnet 5), 2026-08-02 — operator asked for a compare-and-contrast analysis of herdr (https://herdr.dev/) against the Claude Code app, then to expand it with the infra design needed to approximate CCR's architecture using herdr plus Fly.io (https://fly.io/) and Shellbox (https://shellbox.dev/); herdr.dev, shellbox.dev, and Fly.io's Machines/pricing/private-networking docs fetched directly this session, Fly Sprites facts drawn from secondary press coverage after Fly's own Sprites page returned only its CLI-install stub, Claude Code facts grounded against this bundle's existing documented/verified notes on Claude Code's cloud runtime and agent teams, plus this session's own live Claude Code tool roster (Monitor, ScheduleWakeup, mcp__Claude_Code_Remote__* triggers) as direct evidence of its remote/background surface."
 tags: [meta, analysis, claude-code, herdr, fly-io, shellbox, sandboxes, infrastructure, agentic, terminal, multiplexer, remote-access, comparison]
-timestamp: 2026-08-02
+timestamp: 2026-08-03
 attribution:
   when: 2026-08-02
   channel: agent-authored
   agent: "Claude Code agent, operator request in chat"
   why: "operator asked for a compare-and-contrast analysis of herdr against the Anthropic Claude Code app"
+  from: [/meta/threads/2026-08-03-herdr-vs-claude-code-analysis.md]
 ---
 
 # Herdr vs. the Claude Code app
@@ -37,9 +38,13 @@ than they compete — herdr names Claude Code as one of its native integrations.
 
 ### Herdr — a self-hosted, agent-agnostic terminal multiplexer
 
-Fetched from herdr.dev (2026-08-02). Herdr's own framing: *"One terminal. The
-whole herd,"* and *"a binary, not an app."* It is a multiplexer purpose-built
-for running several coding agents at once, not a coding agent itself:
+Fetched from herdr.dev (2026-08-02); see also this bundle's own standing
+capture of herdr, [`knowledge/SWE/dev-tools/herdr.md`](/knowledge/SWE/dev-tools/herdr.md)
+(`em:eb9f29`, filed 2026-07-29 against herdr's comparison matrix and its
+GitHub repo), for herdr's positioning against tmux/Zellij, cmux, and Warp.
+Herdr's own framing: *"One terminal. The whole herd,"* and *"a binary, not an
+app."* It is a multiplexer purpose-built for running several coding agents at
+once, not a coding agent itself:
 
 - **Persistent PTY sessions.** Each agent runs *"in its own real terminal, on a
   server that keeps it alive when you close the laptop,"* so a session survives
