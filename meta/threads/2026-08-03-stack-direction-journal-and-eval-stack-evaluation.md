@@ -5,6 +5,7 @@ description: The operator files a hybrid journal entry — a snapshot of the sta
 provenance: "Claude Code session (Claude Fable 5), 2026-08-03; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped"
 tags: [thread, journal, stack-direction, beam, evals]
 timestamp: 2026-08-03
+pr: 239
 session: https://claude.ai/code/session_01ENUwpNe88mYwwE4JmbjhNs
 ---
 
