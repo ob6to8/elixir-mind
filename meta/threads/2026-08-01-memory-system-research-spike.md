@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-01 to 2026-08-03; ver
 tags: [meta, thread, intake, agent-memory, landscape, retrieval, elixir, projects]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01T38LBFJw6gPyLPC6YcJfUp
+pr: 250
 ---
 
 # 2026-08-01-memory-system-research-spike
