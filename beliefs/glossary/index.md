@@ -11,6 +11,7 @@ system works.
 
 ## Terms
 
+- [6PN](/beliefs/glossary/6pn.md) — Fly.io's private networking layer — a mesh of WireGuard tunnels over IPv6 connecting every Machine in an organization by default, with a `.internal` DNS server for app/region/machine discovery, invisible to the public internet.
 - [abliteration](/beliefs/glossary/abliteration.md) — A weight-space edit that suppresses a model's refusal behavior by projecting the residual-writing matrices away from a learned refusal direction, producing a descendant that answers requests its parent would decline.
 - [abstract syntax tree](/beliefs/glossary/abstract-syntax-tree.md) — The tree-shaped data structure a parser produces from source code — nodes for the program's constructs, stripped of surface syntax — which programs can then inspect, transform, and render back to source.
 - [active parameters](/beliefs/glossary/active-parameters.md) — The subset of a mixture-of-experts model's weights that participate in computing any single token, reported alongside the total count and routinely mistaken for a memory figure.
@@ -222,6 +223,7 @@ system works.
 - [file-tree diff](/beliefs/glossary/file-tree-diff.md) — A directory-tree listing annotated in diff syntax — NEW, MODIFIED, removed — showing where a change's files will live, so the layout impact of a change is reviewable before any code exists.
 - [fine-tuning](/beliefs/glossary/fine-tuning.md) — Further training an already-pretrained model on task- or domain-specific data so the desired behavior is encoded in its weights rather than supplied in the prompt at inference time.
 - [FinOps](/beliefs/glossary/finops.md) — An organizational discipline for governing variable cloud (and, by extension, AI/token) spend — pairing engineering, finance, and business stakeholders around real-time cost visibility, accountability per team or workload, and continuous optimization, rather than after-the-fact budget review.
+- [Firecracker](/beliefs/glossary/firecracker.md) — An open-source (Amazon, 2018) minimal virtual machine monitor built on KVM, purpose-built for launching lightweight "microVMs" in milliseconds with a tiny memory footprint and a reduced attack surface versus a full VM.
 - [first-order logic (FOL)](/beliefs/glossary/first-order-logic.md) — The standard formal language of objects, predicates, and quantifiers, with Tarskian semantics; sound and complete (Gödel 1929) but only semidecidable — the fully formal pole of knowledge representation.
 - [first-parent history](/beliefs/glossary/first-parent-history.md) — The git log traversal (git log --first-parent) that follows only each merge commit's first parent, reading a branch's history as one entry per merge — on a PR-driven default branch, one line per landed pull request.
 - [fitness for purpose](/beliefs/glossary/fitness-for-purpose.md) — The principle that an artifact or layer is judged against the function it must serve, not one global standard — so different layers legitimately optimize for different, even opposed, properties.
