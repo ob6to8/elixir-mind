@@ -19,6 +19,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:0c4913` | [beliefs/dont-review-code-length-specs](/beliefs/dont-review-code-length-specs.md) | belief |  |
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `em:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
+| `em:0563fb` | [beliefs/glossary/6pn](/beliefs/glossary/6pn.md) | concept | false |
 | `em:b78fb8` | [beliefs/glossary/abliteration](/beliefs/glossary/abliteration.md) | concept | false |
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
 | `em:dffd70` | [beliefs/glossary/active-parameters](/beliefs/glossary/active-parameters.md) | concept | false |
@@ -27,6 +28,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b56f3f` | [beliefs/glossary/address-space](/beliefs/glossary/address-space.md) | concept | false |
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
 | `em:27e6ac` | [beliefs/glossary/admission-rule](/beliefs/glossary/admission-rule.md) | concept | false |
+| `em:8c84dc` | [beliefs/glossary/adversarial-verification](/beliefs/glossary/adversarial-verification.md) | concept | false |
 | `em:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |
 | `em:3cbfb6` | [beliefs/glossary/agent-as-driver](/beliefs/glossary/agent-as-driver.md) | concept | false |
 | `em:dbaf55` | [beliefs/glossary/agent-as-presenter](/beliefs/glossary/agent-as-presenter.md) | concept | false |
@@ -231,6 +233,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c682e9` | [beliefs/glossary/file-tree-diff](/beliefs/glossary/file-tree-diff.md) | concept | false |
 | `em:63aa2e` | [beliefs/glossary/fine-tuning](/beliefs/glossary/fine-tuning.md) | concept | false |
 | `em:496b87` | [beliefs/glossary/finops](/beliefs/glossary/finops.md) | concept | false |
+| `em:150277` | [beliefs/glossary/firecracker](/beliefs/glossary/firecracker.md) | concept | false |
 | `em:d818b8` | [beliefs/glossary/first-order-logic](/beliefs/glossary/first-order-logic.md) | concept | false |
 | `em:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `em:2aa700` | [beliefs/glossary/fitness-for-purpose](/beliefs/glossary/fitness-for-purpose.md) | concept | false |
@@ -739,6 +742,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8b9548` | [knowledge/SWE/version-control/git/git-worktrees-for-parallel-agents](/knowledge/SWE/version-control/git/git-worktrees-for-parallel-agents.md) | concept | false |
 | `em:f08c54` | [knowledge/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/knowledge/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source |  |
 | `em:a3d27b` | [knowledge/SWE/version-control/git/sources/pro-git-remote-tracking-branches](/knowledge/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source |  |
+| `em:e2f673` | [knowledge/SWE/web-frameworks/hologram](/knowledge/SWE/web-frameworks/hologram.md) | reference |  |
+| `em:e83408` | [knowledge/SWE/web-frameworks/phoenix-liveview-vs-inertia-vs-spa](/knowledge/SWE/web-frameworks/phoenix-liveview-vs-inertia-vs-spa.md) | reference |  |
 | `em:07610c` | [knowledge/ai-industry/ai-margin-collapse-glm-5-2](/knowledge/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `em:2867ac` | [knowledge/ai-industry/ai-roi-runway-outside-tech-sector](/knowledge/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `em:51aede` | [knowledge/ai-industry/open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | claim | true |
