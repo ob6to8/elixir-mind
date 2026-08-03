@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md, /meta/threads/2026-08-02-todo-fold-into-matters.md, /meta/threads/2026-08-02-build-the-matter-skill.md, /meta/threads/2026-08-02-mix-brain-matters-and-consumed-retirement.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-14-create-pull-request-merge-opt-in.md, /meta/threads/2026-07-22-survey-tier-and-bookmarks-register.md, /meta/threads/2026-07-25-journal-skill-and-first-entry.md, /meta/threads/2026-07-26-living-text-present-tense-policy.md, /meta/threads/2026-07-28-communication-guidance-and-banned-phrases.md, /meta/threads/2026-07-28-operator-methodology-shift-and-comprehension-audit.md, /meta/threads/2026-08-02-todo-fold-into-matters.md, /meta/threads/2026-08-02-build-the-matter-skill.md, /meta/threads/2026-08-02-mix-brain-matters-and-consumed-retirement.md, /meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 - **`/intake`** — process pasted content into one or more filed documents. See
   `.claude/skills/intake/SKILL.md`. This is the primary way knowledge enters the
@@ -127,6 +127,21 @@ attribution:
   when the operator states a position. One matter per PR
   ([atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md)); matter
   docs are governance (no `em:` ids). See `.claude/skills/matter/SKILL.md`.
+- **`/scope-unit-of-work`** — scope a described unit of work into the artifacts
+  a fresh thread can deliver: either a **single matter** (one reviewable intent,
+  approach already decided) or a **plan with sequenced matters** (several
+  separately-approvable intents, and/or decisions worth recording first), with
+  everything following the invocation taken as the spec. Each emitted matter is
+  stamped with the model that should **deliver** it (`model:` frontmatter, the
+  determination in a `## Model` body section), chosen per matter from
+  [the model roster](/meta/model-roster.md) — the operator's preference data —
+  under [capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md).
+  The unit is filed **unsequenced** (backlog: matter docs, no register row)
+  unless invoked as `/scope-unit-of-work sequence`, which is the operator's
+  ratification to append it to [the register](/meta/matters.md) — matters
+  emitted by a plan always carry that plan's internal `order`, and the queue
+  never inverts it. Scopes and stops; delivery stays with `/matter`. See
+  `.claude/skills/scope-unit-of-work/SKILL.md`.
 - **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
   tables: every request the operator made (with a done/partial/not-done/declined/
   superseded status), and what the agent actually did, with the files touched and
@@ -144,3 +159,17 @@ attribution:
   review. See `.claude/skills/review-pr/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
+
+**A skill body's section structure is convention, not yet a rule.** This policy
+governs which skills exist and where a new one goes; nothing here or in any
+doctrine constrains how a `SKILL.md` body is laid out. The corpus has converged
+anyway — `Guardrails` in 15 of 18 skills, `Procedure` in 10, `Dispatch` in 7,
+with `Rules` and `Notes` as unratified synonyms — and the operator has ratified
+promoting that vocabulary to a house convention with a `## Purpose` heading over
+the currently-unheaded lede, enforced only for the required set and the synonym
+ban. Until that policy lands, write a new skill to match its siblings. The
+layout was measured before being adopted: the
+[skill body layout A/B](/meta/evals/skill-body-layout-ab.md) found no behavioral
+difference between prose and labeled sections with the rule-set held constant,
+so the convention rests on maintainability, and a future claim that some layout
+reads better to the model owes that instrument's evidence.

@@ -267,6 +267,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:d9c5d9` | [beliefs/glossary/gold-set](/beliefs/glossary/gold-set.md) | concept | false |
 | `em:61877f` | [beliefs/glossary/golden-test](/beliefs/glossary/golden-test.md) | concept | false |
 | `em:9e28d2` | [beliefs/glossary/goodharts-law](/beliefs/glossary/goodharts-law.md) | concept | false |
+| `em:769e66` | [beliefs/glossary/governance-prose](/beliefs/glossary/governance-prose.md) | concept | false |
 | `em:0c8532` | [beliefs/glossary/graduation](/beliefs/glossary/graduation.md) | concept | false |
 | `em:d19aa3` | [beliefs/glossary/granular-synthesis](/beliefs/glossary/granular-synthesis.md) | concept | false |
 | `em:1af093` | [beliefs/glossary/graph-engineering](/beliefs/glossary/graph-engineering.md) | concept | false |
@@ -341,6 +342,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e76937` | [beliefs/glossary/mailbox](/beliefs/glossary/mailbox.md) | concept | false |
 | `em:541206` | [beliefs/glossary/margin-collapse](/beliefs/glossary/margin-collapse.md) | concept | false |
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
+| `em:80b36e` | [beliefs/glossary/mast](/beliefs/glossary/mast.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:19d667` | [beliefs/glossary/matn-criticism](/beliefs/glossary/matn-criticism.md) | concept | false |
 | `em:4c629e` | [beliefs/glossary/matter](/beliefs/glossary/matter.md) | concept | false |
@@ -348,6 +350,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1c5e08` | [beliefs/glossary/mean-reciprocal-rank](/beliefs/glossary/mean-reciprocal-rank.md) | concept | false |
 | `em:6c220e` | [beliefs/glossary/megaprompt](/beliefs/glossary/megaprompt.md) | concept | false |
 | `em:45649c` | [beliefs/glossary/mental-model](/beliefs/glossary/mental-model.md) | concept | false |
+| `em:ab825a` | [beliefs/glossary/messages-api](/beliefs/glossary/messages-api.md) | concept | false |
 | `em:715a40` | [beliefs/glossary/metered-paywall](/beliefs/glossary/metered-paywall.md) | concept | false |
 | `em:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
 | `em:577155` | [beliefs/glossary/minimal-inconsistent-subset](/beliefs/glossary/minimal-inconsistent-subset.md) | concept | false |
@@ -356,6 +359,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:4a34b3` | [beliefs/glossary/model-as-a-service](/beliefs/glossary/model-as-a-service.md) | concept | false |
 | `em:acf52e` | [beliefs/glossary/model-cascade](/beliefs/glossary/model-cascade.md) | concept | false |
 | `em:c66f10` | [beliefs/glossary/model-context-protocol](/beliefs/glossary/model-context-protocol.md) | concept | false |
+| `em:f0582b` | [beliefs/glossary/model-roster](/beliefs/glossary/model-roster.md) | concept | false |
 | `em:43bac4` | [beliefs/glossary/monitor-by-exception](/beliefs/glossary/monitor-by-exception.md) | concept | false |
 | `em:9a0a9e` | [beliefs/glossary/motor-program](/beliefs/glossary/motor-program.md) | concept | false |
 | `em:334e60` | [beliefs/glossary/mounting-point](/beliefs/glossary/mounting-point.md) | concept | false |
@@ -589,6 +593,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `em:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
+| `em:7eaa13` | [beliefs/glossary/wave](/beliefs/glossary/wave.md) | concept | false |
 | `em:21524a` | [beliefs/glossary/web-audio-api](/beliefs/glossary/web-audio-api.md) | concept | false |
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
@@ -682,6 +687,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3b0352` | [knowledge/SWE/agentic/mcp/mcp-tools-primitive](/knowledge/SWE/agentic/mcp/mcp-tools-primitive.md) | reference |  |
 | `em:9b5d41` | [knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md) | snippet |  |
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
+| `em:bd4cce` | [knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery](/knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery.md) | methodology |  |
 | `em:2f847a` | [knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies](/knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies.md) | source |  |
 | `em:9318af` | [knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | source |  |
 | `em:c880d8` | [knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | reference |  |
@@ -699,6 +705,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
+| `em:ec728d` | [knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy](/knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md) | reference |  |
 | `em:1394b9` | [knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) | reference |  |
 | `em:1f1256` | [knowledge/SWE/evals/reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | methodology |  |
 | `em:9baaad` | [knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) | methodology |  |
