@@ -593,6 +593,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `em:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
+| `em:7eaa13` | [beliefs/glossary/wave](/beliefs/glossary/wave.md) | concept | false |
 | `em:21524a` | [beliefs/glossary/web-audio-api](/beliefs/glossary/web-audio-api.md) | concept | false |
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
@@ -686,6 +687,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3b0352` | [knowledge/SWE/agentic/mcp/mcp-tools-primitive](/knowledge/SWE/agentic/mcp/mcp-tools-primitive.md) | reference |  |
 | `em:9b5d41` | [knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action](/knowledge/SWE/agentic/multi-model/cross-model-pr-review-github-action.md) | snippet |  |
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
+| `em:bd4cce` | [knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery](/knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery.md) | methodology |  |
 | `em:2f847a` | [knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies](/knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies.md) | source |  |
 | `em:9318af` | [knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | source |  |
 | `em:c880d8` | [knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | reference |  |
