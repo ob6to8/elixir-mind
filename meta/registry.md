@@ -702,6 +702,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
+| `em:ec728d` | [knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy](/knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md) | reference |  |
 | `em:1394b9` | [knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) | reference |  |
 | `em:1f1256` | [knowledge/SWE/evals/reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | methodology |  |
 | `em:9baaad` | [knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) | methodology |  |
