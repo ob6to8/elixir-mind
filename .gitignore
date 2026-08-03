@@ -12,6 +12,11 @@ erl_crash.dump
 # ExUnit @tag :tmp_dir scratch fixtures
 /tmp/
 
+# Worktrees the harness creates for isolation-mode subagents. Each is a full
+# checkout of this repo, created and reclaimed by the agent runtime — scaffolding
+# for a session, never content.
+/.claude/worktrees/
+
 # Generated static site (built by `mix brain.site`, deployed from CI)
 /_site/
 
