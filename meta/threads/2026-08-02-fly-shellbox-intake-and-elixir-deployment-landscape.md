@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02/03; verbatim retai
 tags: [meta, thread, intake, fly-io, shellbox, execution-environments, elixir, beam, deployment, merge]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01Qn9UuadQJQe1qydCXwPbn7
+pr: 248
 ---
 
 # 2026-08-02-fly-shellbox-intake-and-elixir-deployment-landscape
