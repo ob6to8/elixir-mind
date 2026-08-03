@@ -10,7 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, scope-unit-of-work skill session"
   why: "/scope-unit-of-work must evaluate which model should deliver each matter, and the doctrine deliberately binds no model names — the roster is the instance layer that judgment reads"
-  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md]
+  from: [/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md, /meta/threads/2026-08-02-skill-body-layout-ab-and-section-vocabulary.md]
 ---
 
 # Model roster
@@ -40,6 +40,25 @@ capability.
 | Opus 5 | `Claude Opus 5` | Judgment with no oracle behind it — design decisions, verification verdicts, taxonomy calls, tooling changes to `lib/` where a wrong shape propagates | Bulk extraction; index upkeep |
 | Sonnet 5 | `Claude Sonnet 5` | Well-specified execution against a decided shape — a matter whose packet leaves no decisions, gated by `mix brain.verify`/the suite | Anything whose approach is still open at delivery |
 | Haiku 4.5 | `Claude Haiku 4.5` | High-volume, low-stakes-per-item passes — candidate sweeps, format transforms, listing regeneration | Canonical bodies; any judgment call |
+
+**Governance-prose edits — skills, indexes, glosses, registers — are Sonnet
+work by default.** A `SKILL.md` body, an `index.md` gloss, a register row: prose
+on a governance surface, read to act rather than to establish a truth.
+**Policies and doctrine are not in this row** — they are canonical bodies that
+compile into the contract and stay Fable's, however small the edit. It fits
+none of the four rows cleanly — it is not a canonical body (Fable), carries no
+open decision (Opus), is not bulk (Haiku), and no oracle checks its content, so
+Sonnet's "gated by `mix brain.verify`/the suite" qualifier does not literally
+apply either. Send it to **Sonnet 5** anyway: the failure mode is visible on
+sight and cheap to correct, which is the property that actually distinguishes
+the delegable tiers.
+
+**The boundary that makes this row usable:** if the edit's *content* is a fresh
+decision rather than the rendering of one already made, it is the decision, not
+the prose — stamp it by the decision's weight. Writing a policy that states an
+already-ratified rule is governance prose; choosing what the rule should say is
+a taxonomy call. The same edit can be either, and which one it is depends on
+what the packet leaves open.
 
 **Effort level is the second lever, and it is orthogonal.** Per
 [effort level](/beliefs/glossary/effort-level.md), model choice is *which*
