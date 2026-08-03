@@ -79,9 +79,9 @@ inbound links (`mix brain.orphans` excludes them by design).
    "dictated by the operator") is optional and rarely needed.
 6. **Cross-link lightly.** Where the entry names a document that already exists in
    the bundle, link it (bundle-absolute path) at first mention — a navigation aid,
-   not an edit. Do not create documents, glossary terms, or todos from the entry
+   not an edit. Do not create documents, glossary terms, or matters from the entry
    unasked; if an entry contains something that plainly wants to be a
-   [`todo`](/.claude/skills/todo/SKILL.md) or an intake, *offer* it after filing.
+   [matter](/meta/matters/index.md) or an intake, *offer* it after filing.
 7. **Maintain reserved files.** Add the entry (newest first) to
    [`journal/index.md`](/journal/index.md): date link + the one-line description.
 8. **Verify & report.** Run `mix brain.verify`. Report the path written and any

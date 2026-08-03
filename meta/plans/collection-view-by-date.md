@@ -17,7 +17,7 @@ attribution:
 # Plan — collection views by date
 
 **Status:** `done` for the ratified scope — the three governance indexes
-([plans](/meta/plans/index.md), [todos](/meta/todos/index.md),
+([plans](/meta/plans/index.md), [todos](/meta/matters/index.md),
 [issues](/meta/issues/index.md)) are ordered by most recent `timestamp` and each
 states the convention in its header, and this plan records the design. The
 heavier surfaces (§Deferred) were surveyed and deliberately not built.
@@ -58,7 +58,7 @@ Same-day ties break by `attribution.when`, newest first.
 
 1. **Index ordering convention.** Entries in
    [`meta/plans/index.md`](/meta/plans/index.md),
-   [`meta/todos/index.md`](/meta/todos/index.md), and
+   [`meta/todos/index.md`](/meta/matters/index.md), and
    [`meta/issues/index.md`](/meta/issues/index.md) are kept ordered by
    `timestamp`, most recent first, *within* each existing status section (the
    status grouping stays primary — it is what the listing skills dispatch on).

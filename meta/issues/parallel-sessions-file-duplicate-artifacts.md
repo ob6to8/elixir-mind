@@ -40,7 +40,7 @@ A conflict stops you; a duplicate does not.
 
 | Matter | This session filed | A parallel session filed |
 |---|---|---|
-| Generate the channels register's `Ingested` column | `generate-the-channels-register-ingested-column.md` | [`generate-the-channels-ingested-column.md`](/meta/todos/generate-the-channels-ingested-column.md) |
+| Generate the channels register's `Ingested` column | `generate-the-channels-register-ingested-column.md` | [`generate-the-channels-ingested-column.md`](/meta/matters/generate-the-channels-ingested-column.md) |
 | Ledger has no post-capture upkeep path for a resolved strand | the [strand plan](/meta/plans/reconcile-dangling-ledger-strands.md)'s core design section | [`routing-ledger-has-no-post-capture-upkeep-path`](/meta/issues/routing-ledger-has-no-post-capture-upkeep-path.md) |
 
 Both were caught by accident, not by any check — the first surfaced only because
