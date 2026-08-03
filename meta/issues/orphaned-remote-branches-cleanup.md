@@ -29,7 +29,7 @@ confirms **zero merged `claude/*` branches remain** (21 refs dropped, including
 this issue's own branch and later-merged PRs' heads). The 2026-07-13 content
 audit of the surviving unmerged branches — what's portable, what's a false
 orphan — is recorded in the
-[triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md).
+[triage todo](/meta/matters/triage-the-six-kept-unmerged-claude-branches.md).
 The only condition left before `status: resolved` is confirming the
 **"Automatically delete head branches"** setting is enabled (Settings →
 General → Pull Requests), which agents cannot see or set.
@@ -37,7 +37,7 @@ General → Pull Requests), which agents cannot see or set.
 **Update (2026-07-11, deletion attempt):** the operator ratified deleting the
 15 merged branches and **keeping** all 6 unmerged ones (their final disposition
 is tracked in the
-[triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md)).
+[triage todo](/meta/matters/triage-the-six-kept-unmerged-claude-branches.md)).
 The agent re-verified all 15 as merged and attempted deletion, but **this
 remote environment's GitHub credential cannot delete refs** — `git push origin
 --delete` returns HTTP 403 even for a single branch, and no GitHub MCP
@@ -111,6 +111,6 @@ Resolve when: (1) the operator deletes the 15 merged branches (ratified
 auto-delete setting is enabled. The unmerged-branch triage is no longer a
 resolution condition — the operator ratified keeping all 6, and their final
 disposition is tracked separately in the
-[triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md).
+[triage todo](/meta/matters/triage-the-six-kept-unmerged-claude-branches.md).
 Then set `status: resolved`, note the outcome here, and move the entry from
 **Open** to **Resolved** in [the issues index](/meta/issues/index.md).

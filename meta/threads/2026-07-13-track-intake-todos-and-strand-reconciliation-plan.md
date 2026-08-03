@@ -92,7 +92,7 @@ No — none of the three are `todo` items. The only todo on `main` is the pre-ex
 
 So the plan is durably tracked as a plan (the correct genre for it — a proposed shape change, not a plain task). The two intakes are only "tracked" as dangling ledger strands inside the frozen thread doc — which `/priorities` does scan, but they're easy to lose sight of since they live buried in one thread's ledger rather than as first-class open work.
 
-<routes ref="/meta/todos/intake-agent-architecture-evaluation-as-concept.md /meta/todos/intake-second-brain-distinctions-chatgpt-conversation.md">
+<routes ref="/meta/matters/intake-agent-architecture-evaluation-as-concept.md /meta/matters/intake-second-brain-distinctions-chatgpt-conversation.md">
 If you'd like harder tracking, I can file the two intakes as `todo` items (`/todo create …`) so they show up in `/todo list` and `/issue`/`/priorities` as explicit open tasks. The plan I'd leave as-is — it's already in the right place. Want me to create those two todos?
 </routes>
 
@@ -102,7 +102,7 @@ Yes, and create a plan to scan all routing ledgers for dangling strands like thi
 
 ## Assistant
 
-<routes ref="/meta/todos/intake-agent-architecture-evaluation-as-concept.md /meta/todos/intake-second-brain-distinctions-chatgpt-conversation.md /meta/plans/reconcile-dangling-ledger-strands.md">
+<routes ref="/meta/matters/intake-agent-architecture-evaluation-as-concept.md /meta/matters/intake-second-brain-distinctions-chatgpt-conversation.md /meta/plans/reconcile-dangling-ledger-strands.md">
 Done — committed and pushed to a freshly-restarted `claude/agent-architecture-concepts-gvn77t` (off the latest `main`, since PR #80 had merged).
 
 **Two todos** now track the intakes as first-class open work:

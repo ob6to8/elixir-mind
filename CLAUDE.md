@@ -576,19 +576,20 @@ once persistence is warranted does this policy apply — *which* governance type
 | a reasoned judgment answering a question, against evidence | `analysis` | [`meta/analysis/`](/meta/analysis/index.md) |
 | a durable explainer meant to be read start to finish | `tutorial` | [`meta/tutorials/`](/meta/tutorials/index.md) |
 | something *wrong* — a defect, or a live concern about how the brain behaves | `issue` | [`meta/issues/`](/meta/issues/index.md) |
-| a plain task to complete, approach already obvious | `todo` | [`meta/todos/`](/meta/todos/index.md) |
+| work to deliver — a plain task or a whole PR-shaped unit, approach already decided | `matter` | [`meta/matters/`](/meta/matters/index.md) |
 | a *proposed change* whose design/decisions must be recorded before executing | `plan` | [`meta/plans/`](/meta/plans/index.md) |
 | a standing *direction* that shapes judgment without prescribing an action | `doctrine` | [`meta/doctrine/`](/meta/doctrine/index.md) |
 | an enforceable *rule* for how the brain operates | `policy` | [`meta/policy/`](/meta/policy/index.md) |
 
 **The pairs that actually get confused:**
 
-- **issue vs. todo** — an issue is a *problem to diagnose* (something behaves
-  wrongly; the fix may not be known). A todo is a *task to do* (the approach is
+- **issue vs. matter** — an issue is a *problem to diagnose* (something behaves
+  wrongly; the fix may not be known). A matter is *work to do* (the approach is
   known; it just needs doing). "Merges keep conflicting" is an issue; "wire the
-  hook in the session-start script" is a todo.
-- **todo vs. plan** — if the *approach* needs deciding, it is a plan; if only the
-  *doing* remains, it is a todo. A plan that would contain no decisions is a todo.
+  hook in the session-start script" is a matter.
+- **matter vs. plan** — if the *approach* needs deciding, it is a plan; if only
+  the *doing* remains, it is a matter. A plan that would contain no decisions is
+  a matter.
 - **analysis vs. plan** — an analysis concludes with a *judgment* ("X is the
   better shape, and here is why"); a plan commits to *work* ("build X in this
   order"). An analysis whose residue is action may be retyped as a plan rather
@@ -678,10 +679,11 @@ _Source: [`meta/policy/prefer-established-terminology.md`](/meta/policy/prefer-e
 same turn that identifies it — chat is not a backlog.** The moment a session
 names work it will not do now — "I'll do X later", "this should eventually
 Y", a defect noticed in passing, an edit deferred to a future session — the
-item gets a durable home before the turn ends: a `todo`, `plan`, or `issue`
-per [governance-artifact-routing](/meta/policy/governance-artifact-routing.md),
-or a row in the [matters register](/meta/matters.md) when it is a pending
-[matter](/beliefs/glossary/matter.md) awaiting its own PR. A deferral that
+item gets a durable home before the turn ends: a `matter`, `plan`, or `issue`
+per [governance-artifact-routing](/meta/policy/governance-artifact-routing.md) —
+with a row in the [matters register](/meta/matters.md) when the
+[matter](/beliefs/glossary/matter.md) is committed to the delivery queue
+(an open matter outside the register is backlog). A deferral that
 lives only in the conversation has no surfacing mechanism — it survives
 exactly as long as someone remembers it
 ([a surface that must be remembered will be forgotten](/beliefs/remembered-surfaces-are-forgotten-surfaces.md)).
@@ -696,9 +698,9 @@ exactly as long as someone remembers it
 - **The trigger is naming the deferral, not the item's size.**
   [plan-vs-capture](/meta/policy/plan-vs-capture.md) already forces
   plan-scale deferred work into a persisted plan; this rule closes the
-  todo-scale gap beneath it — the small "later" too minor for a plan.
-  A filing can be a three-line todo or one register row; smallness is a
-  reason to file cheaply, never to skip filing.
+  task-scale gap beneath it — the small "later" too minor for a plan.
+  A filing can be a three-line backlog matter or one register row; smallness
+  is a reason to file cheaply, never to skip filing.
 - **A ledger strand records the deferral; it does not queue it.** A captured
   thread's `open`/`paused` routing rows are the record layer
   ([routing-ledger](/meta/policy/routing-ledger.md)), and the
@@ -1038,7 +1040,7 @@ into an open thread.
   with recommendations, per
   [response-work-report-format](/meta/policy/response-work-report-format.md).
 - **The disposition is the operator's.** Fix it now, file it as an
-  issue/todo, or proceed accepting it — the agent recommends but does not
+  issue/matter, or proceed accepting it — the agent recommends but does not
   choose. Unilaterally filing an issue and mentioning it post-merge is the
   pattern this policy exists to stop.
 - **The session's driving question is answered before the close, not after.**
@@ -1051,7 +1053,7 @@ into an open thread.
   nothing said only there is discoverable later, and the operator's memory is
   exactly what this system exists to offload. Beyond the completion facts,
   every sentence in a closing report must point at a durable home — the plan,
-  a todo, an issue, the thread doc. Next-session context ("for whenever you
+  a matter, an issue, the thread doc. Next-session context ("for whenever you
   pick this up, step 2 is…") is the failure signature: that content belongs in
   the artifact [`/priorities`](/.claude/skills/priorities/SKILL.md) reads,
   filed before the close, with the close at most pointing at it. A statement
@@ -1211,29 +1213,32 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
-- `todo` — a lightweight actionable task item: a single thing to be done, tracked
-  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
-  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
-  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
-  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
-- `matter` — the review-quantized unit of delivery: one coherent intent a
+- `matter` — the review-quantized unit of work: one coherent intent a
   reviewer can approve or reject as a whole (one matter per PR, per
   [atomic pull requests](/meta/policy/git-atomic-pull-requests.md)), filed
   as a self-contained handoff packet — the intent plus the decisions already
   made, with refs carrying the detail — so a fresh thread can deliver it.
-  Carries a `status` (`open`/`done`/`cancelled`); when a plan's build order
+  Spans the scale from a plain small task (a title, a sentence of packet)
+  to a plan-emitted build step. Carries a `status`
+  (`open`/`done`/`cancelled`) and a `model` — the
+  [roster](/meta/model-roster.md) value for the model that should *deliver*
+  it, stamped at scoping time and **prospective and advisory**, distinct from
+  `provenance`, which retrospectively names the model that *wrote the doc*
+  (the determination behind the stamp lives in a `## Model` body section, not
+  in frontmatter; the stamp binds matters scoped from its ratification onward,
+  and a matter filed before it renders unstamped); when a plan's build order
   emits it, also a `plan` (the bundle-absolute path of that plan) and an
   `order` (integer position in that plan's own sequence) — both keys omitted
   on a standalone matter. Queued-ness is register membership, never a
   status: an open matter listed in [the matter register](/meta/matters.md)
-  is committed and globally ordered; an open matter outside it is backlog.
-  Distinct from a `plan` (a *decision record* whose build order emits
-  matters — a matter is the delivery unit itself and needs no plan behind
-  it), an `issue` (a tracked *problem* that may never become work; an issue
-  spawns a matter when its fix is decided), and a `todo` (a plain task item,
-  not committed to delivery as a PR) — a matter is *committed work shaped to
-  fit review* (lives under `meta/matters/`, governance namespace, no `em:`
-  id).
+  is committed and globally ordered; an open matter outside it is **backlog**
+  (filed, awaiting queueing or pickup). Distinct from a `plan` (a *decision
+  record* whose build order emits matters — a matter is the delivery unit
+  itself and needs no plan behind it), an `issue` (a tracked *problem* that
+  may never become work; an issue spawns a matter when its fix is decided),
+  and a `methodology` (a *repeatable* how-to — a matter is done once) — a
+  matter is *work to deliver, shaped to fit review* (lives under
+  `meta/matters/`, governance namespace, no `em:` id).
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked
@@ -1487,12 +1492,8 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   changes and a later PR merges cleanly. Refuses to run on `main`; surfaces conflicts
   rather than blindly resolving them; retries only on network errors. See
   `.claude/skills/sync-branch-with-main/SKILL.md`.
-- **`/todo`** — add and list `type: todo` task items under `meta/todos/`. Dispatches on
-  a subcommand argument: `/todo create <title>` files a new open todo (and maintains
-  the index); `/todo list` shows the todos grouped by `status`. See
-  `.claude/skills/todo/SKILL.md`.
 - **`/priorities`** — list the brain's open work as a prioritized appraisal: runs
-  `mix brain.session_init` (open issues, open todos, active plans, dangling ledger
+  `mix brain.session_init` (open issues, open matters, active plans, dangling ledger
   strands) and closes with a heuristic top-3 the agent refines with judgment — the
   on-demand appraisal of open work, produced when asked rather than injected at
   session start. Read-only. See `.claude/skills/priorities/SKILL.md`.
@@ -1522,6 +1523,35 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   every future session; the operator's invocation is the ratification.
   `/ban-phrase list` renders the register read-only. See
   `.claude/skills/ban-phrase/SKILL.md`.
+- **`/matter`** — work the [matter register](/meta/matters.md): bare `/matter`
+  consumes the top queued matter under the approval-gated protocol (print the
+  row and its doc's packet as the record, state the approach, wait for operator
+  approval in chat, deliver, then flip the doc `done` and drop the row — the
+  landing `pr:` stamped into the done doc at close, once
+  `/create-pull-request` opens it, with `mix brain.matters` verifying
+  register↔doc agreement and warning on a missing stamp);
+  `/matter list [queue|backlog|done|all]` renders the queue and, beneath it,
+  the backlog (open matter docs with no register row, sorted by soft integer
+  `priority:` where present); `/matter create` files a matter doc under
+  [`meta/matters/`](/meta/matters/index.md) — backlog by default, queued only
+  when the operator states a position. One matter per PR
+  ([atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md)); matter
+  docs are governance (no `em:` ids). See `.claude/skills/matter/SKILL.md`.
+- **`/scope-unit-of-work`** — scope a described unit of work into the artifacts
+  a fresh thread can deliver: either a **single matter** (one reviewable intent,
+  approach already decided) or a **plan with sequenced matters** (several
+  separately-approvable intents, and/or decisions worth recording first), with
+  everything following the invocation taken as the spec. Each emitted matter is
+  stamped with the model that should **deliver** it (`model:` frontmatter, the
+  determination in a `## Model` body section), chosen per matter from
+  [the model roster](/meta/model-roster.md) — the operator's preference data —
+  under [capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md).
+  The unit is filed **unsequenced** (backlog: matter docs, no register row)
+  unless invoked as `/scope-unit-of-work sequence`, which is the operator's
+  ratification to append it to [the register](/meta/matters.md) — matters
+  emitted by a plan always carry that plan's internal `order`, and the queue
+  never inverts it. Scopes and stops; delivery stays with `/matter`. See
+  `.claude/skills/scope-unit-of-work/SKILL.md`.
 - **`/review-pr`** — render an ask-vs-delivered audit of the current session as two
   tables: every request the operator made (with a done/partial/not-done/declined/
   superseded status), and what the agent actually did, with the files touched and
@@ -1539,6 +1569,20 @@ _Source: [`meta/policy/okf-conformance.md`](/meta/policy/okf-conformance.md)_
   review. See `.claude/skills/review-pr/SKILL.md`.
 
 New skills are added under `.claude/skills/<name>/SKILL.md`.
+
+**A skill body's section structure is convention, not yet a rule.** This policy
+governs which skills exist and where a new one goes; nothing here or in any
+doctrine constrains how a `SKILL.md` body is laid out. The corpus has converged
+anyway — `Guardrails` in 15 of 18 skills, `Procedure` in 10, `Dispatch` in 7,
+with `Rules` and `Notes` as unratified synonyms — and the operator has ratified
+promoting that vocabulary to a house convention with a `## Purpose` heading over
+the currently-unheaded lede, enforced only for the required set and the synonym
+ban. Until that policy lands, write a new skill to match its siblings. The
+layout was measured before being adopted: the
+[skill body layout A/B](/meta/evals/skill-body-layout-ab.md) found no behavioral
+difference between prose and labeled sections with the rule-set held constant,
+so the convention rests on maintainability, and a future claim that some layout
+reads better to the model owes that instrument's evidence.
 
 _Source: [`meta/policy/skills-registry.md`](/meta/policy/skills-registry.md)_
 
@@ -1726,6 +1770,57 @@ matter, not on archival.
 
 _Source: [`meta/policy/route-tagging.md`](/meta/policy/route-tagging.md)_
 
+**A thread carries one scoped unit, and revision of what it delivered enters
+as a new one.** The enforceable half of
+[scoped units, corrected forward](/meta/doctrine/scoped-units-corrected-forward.md):
+narrated revision instructions are the last class of decision that lives only
+in a transcript, and they reach one instance where a scoped correction reaches
+the type.
+
+- **Two entry points, once.** A working thread begins either by delivering a
+  queued [matter](/beliefs/glossary/matter.md)
+  ([`/matter`](/.claude/skills/matter/SKILL.md)) or by scoping a described unit
+  ([`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md)) —
+  which may be persisted for a later thread or executed in this one. The thread
+  does not take on a second unit.
+- **What may join the thread.** Only two things: **revision matters** that
+  extend the initial unit's implementation, and **infrastructure the thread's
+  own context requires**. No matter is executed or defined that does not
+  naturally extend from one of those. A thread so shaped is *topic-canonical* —
+  a unit, its implementation, the revision matters it authored, and the
+  infrastructure it needed — and lands as one pull request.
+- **No narrated feedback on work the thread has done.** A change to what this
+  thread already produced enters as a new `/scope-unit-of-work` unit, not as
+  instructions in the conversation. The pull request stands as written; the
+  correction is a following unit.
+- **In-flight completion is not revision.** Before the unit's pull request is
+  opened, correcting work *inside its approved scope*, and fixing anything the
+  gate suite rejects, is part of delivering it. The test is one question: was
+  it in the approved scope and done wrong (finish it), or outside it (scope
+  it)? The write-run-fix loop of a single delivery is never a revision.
+- **A revision identified at review time is filed before the pull request
+  merges.** Correcting forward requires the forward correction to exist as an
+  artifact; otherwise accepted bloat becomes permanent bloat. This extends
+  [concerns block the close](/meta/policy/concerns-block-the-close.md) one step
+  past the open.
+- **Artifact count is not evidence of overhead.** If what was filed is
+  necessary under these rules, it is necessary. Suspected duplication or
+  inefficiency is scoped as an *analysis of the system*, never resolved by
+  suppressing artifacts mid-thread.
+
+**Queue position — binds all queueing, not only revisions.** A matter is
+sequenced at the **head** of [the register](/meta/matters.md) by default, and
+placed lower only when it genuinely requires preceding rows to land first
+(a plan's internal `order` is such a dependency and is never inverted).
+**Nothing is appended to the tail.** Tail-parking encodes "I don't want to
+forget this but cannot rank it", which is precisely an **unsequenced backlog
+matter** — filed, findable, unranked. Reserving the register for head
+insertions and stated dependencies is what makes its order carry real
+prioritization: every row was either the top priority when queued, or as high
+as its dependencies allowed.
+
+_Source: [`meta/policy/revision-enters-through-scoping.md`](/meta/policy/revision-enters-through-scoping.md)_
+
 ---
 
 ## 10. Git workflow
@@ -1859,7 +1954,7 @@ rapidly or come from authors who do not write Elixir. Grounded in the
   semantically ("a `:stale` result when the artifact lags its sources"), never
   a transcription of the return tuple.
 - **Comments carry durable *why* and never restate the signature.** Future-work
-  asides become `meta/todos/` or `meta/issues/` entries, not `TODO` comments.
+  asides become `meta/matters/` or `meta/issues/` entries, not `TODO` comments.
 - **Discard an ignored return with `_ = expr`** so the disinterest is explicit,
   never a bare dangling expression.
 - **Test through the narrowest public surface** — a module's API or the mix

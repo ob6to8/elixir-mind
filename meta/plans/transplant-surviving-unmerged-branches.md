@@ -20,7 +20,7 @@ attribution:
 
 **Proposed** — commissioned 2026-07-13 immediately after the content audit
 recorded in the
-[triage todo](/meta/todos/triage-the-six-kept-unmerged-claude-branches.md).
+[triage todo](/meta/matters/triage-the-six-kept-unmerged-claude-branches.md).
 Executes the "port" verdicts from that audit and closes the loop opened by the
 [orphaned-remote-branches issue](/meta/issues/orphaned-remote-branches-cleanup.md).
 

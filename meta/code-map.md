@@ -465,6 +465,56 @@ result so the link works from the page's depth in the output tree. External URLs
 - `to_html/2` — Render a markdown `body` to an HTML fragment.
 
 
+### `ElixirMind.Matters`
+
+`lib/elixir_mind/matters.ex`
+
+Machine checks over the matters layer: the register (`meta/matters.md`) —
+the order-only pointer view whose one authored datum is the global delivery
+order — against the matter docs under `meta/matters/` it points at (see
+the matter-docs plan and the `matter` entry of
+`meta/policy/controlled-type-vocabulary.md`).
+
+Rules enforced (`run_checks/1`; each is a named check result):
+
+  1. **Register shape** — every table row in the register is a queue row:
+     four cells; `#` cells run 1..N contiguously from the top; the Matter
+     cell links a `/meta/matters/*.md` doc; the Type cell is `independent`
+     or a `[planned](…)` link; the Order cell is `-` or an integer; no doc
+     is queued twice.
+  2. **Ref resolution and doc shape** — every queue row's doc exists; every
+     matter doc parses, is `type: matter`, and carries a `status` in
+     open/done/cancelled; `plan`/`order` appear together or not at all,
+     with `plan` resolving to an existing doc and `order` a positive
+     integer; a `pr` key, when present, is a positive integer.
+  3. **Row↔doc agreement** — a queued doc is `status: open`; the row's
+     Type cell names exactly the doc's `plan` (`independent` ⇔ no `plan`);
+     the Order cell mirrors the doc's `order` (`-` ⇔ absent).
+  4. **Plan-order inversion** — the global queue never inverts a plan's
+     internal sequence: rows whose docs share a `plan` appear in ascending
+     `order`.
+  5. **Landing metadata** (warn, never fail) — a `status: done` matter doc
+     records the PR that landed it (`pr: <N>`). The `/matter` close flow
+     stamps the number at `/create-pull-request` time, after the doc is
+     already flipped `done`, so a doc awaiting its stamp is a warning, not
+     a failure.
+
+`queue_positions/1` is the tolerant read of the same register consumed by
+`ElixirMind.SessionInit` — doc path → row position, skipping anything
+malformed. The strictness lives in `run_checks/1`; the digest, like every
+bundle consumer, degrades quietly per OKF conformance.
+
+**Functions**
+
+- `queue_positions/1` — Doc path (bundle-absolute) → queue position, from the register's rows. Tolerant: malformed rows are skipped, and a missing register yields an empty map.
+- `run_checks/1` — Run all checks against the bundle at `root`. Returns results in check order; a missing register file passes every check vacuously (the docs-side shape checks still run over whatever is filed).
+
+**Types**
+
+- `result/0`
+- `status/0`
+
+
 ### `ElixirMind.Orphans`
 
 `lib/elixir_mind/orphans.ex`
@@ -627,7 +677,10 @@ SessionStart hook only provisions the toolchain).
 Four sources, all already maintained by existing policy:
 
   * **Open issues** — `meta/issues/*.md` with `status: open`.
-  * **Open todos** — `meta/todos/*.md` with `status: open`.
+  * **Open matters** — `meta/matters/*.md` with `status: open`. A matter
+    queued in the register (`meta/matters.md`) is annotated with its row
+    position and listed first, in register order; backlog matters follow,
+    newest first.
   * **Active plans** — `meta/plans/*.md` with `status` in
     `proposed` / `accepted` / `in-progress`.
   * **Dangling strands** — routing-ledger rows in `meta/threads/*.md` whose
@@ -643,13 +696,13 @@ live only in gate output and CI logs are repeated here. The section is
 omitted entirely when the tree is clean.
 
 The digest ends with a heuristic top-3 priority ranking (issues, then
-in-flight plans, then open todos, then accepted plans, then open strands,
-then paused strands and leftover dangling questions, then proposed plans;
-newer first within a class) and an
+in-flight plans, then open matters — queued before backlog — then accepted
+plans, then open strands, then paused strands and leftover dangling
+questions, then proposed plans; newer first within a class) and an
 agent note asking the agent to state its own top-3 appraisal, using the
 heuristic as a starting point — the script ranks, the agent judges.
 
-An issue/todo/plan may carry an explicit `priority: <integer>` frontmatter
+An issue/matter/plan may carry an explicit `priority: <integer>` frontmatter
 key (1 = most urgent). Flagged items rank above every heuristic class,
 ordered among themselves by the integer — the operator's escape hatch when
 the class weights get it wrong. Strands come from ledger rows, which have
@@ -663,7 +716,7 @@ ledger rows are skipped, never fatal.
 - `active_plans/1` — Plans under meta/plans that are proposed/accepted/in-progress, newest first.
 - `dangling_strands/1` — Routing-ledger rows across meta/threads that still carry work: state `open`/`paused`, or a non-`-` Dangling cell. Newest thread first.
 - `open_issues/1` — Open issues under meta/issues, newest first.
-- `open_todos/1` — Open todos under meta/todos, newest first.
+- `open_matters/1` — Open matters under meta/matters: register-queued ones first (each carrying its row position as `queue_pos`, in register order), then backlog matters (`queue_pos` nil), newest first.
 - `report/1` — Render the full session-init digest for the bundle rooted at `root`.
 
 
@@ -993,6 +1046,23 @@ the cross-flow flowchart index at `meta/flows/lineage.md`.
 
 
 
+### `Mix.Tasks.Brain.Matters`
+
+`lib/mix/tasks/brain.matters.ex`
+
+Verify the matters layer (see `ElixirMind.Matters` and the matter-docs
+plan): the register's queue rows are well-formed and point at existing
+matter docs, every doc's `plan`/`order`/`status`/`pr` keys are shaped per
+the vocabulary, each row's Type/Order cells agree with its doc's
+frontmatter, the global order never inverts a plan's internal sequence,
+and — at warn level — every `status: done` doc records its landing PR.
+
+    mix brain.matters   # verify; exits non-zero on any failure
+
+Warnings never fail the task; only `:fail` results do.
+
+
+
 ### `Mix.Tasks.Brain.Orphans`
 
 `lib/mix/tasks/brain.orphans.ex`
@@ -1047,13 +1117,13 @@ Render the open-work digest a fresh session should start from.
 
     mix brain.session_init
 
-Scans `meta/issues/` (status `open`), `meta/todos/` (status `open`),
-`meta/plans/` (status `proposed` / `accepted` / `in-progress`), and the
-`## Routing` ledgers under `meta/threads/` (rows in state `open`/`paused`,
-or with a dangling question), then prints a markdown digest ending in a heuristic top-3
-priority ranking. The SessionStart hook echoes this output into the
-session's context so every thread opens against the same picture of the
-brain's open work.
+Scans `meta/issues/` (status `open`), `meta/matters/` (status `open`, queued
+register rows annotated and listed first), `meta/plans/` (status `proposed` /
+`accepted` / `in-progress`), and the `## Routing` ledgers under
+`meta/threads/` (rows in state `open`/`paused`, or with a dangling question),
+then prints a markdown digest ending in a heuristic top-3 priority ranking.
+Produced on demand by the `/priorities` skill; the SessionStart hook only
+provisions the toolchain.
 
 
 

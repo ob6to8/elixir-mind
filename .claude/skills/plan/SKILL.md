@@ -10,10 +10,10 @@ List `type: plan` documents under [`meta/plans/`](/meta/plans/index.md). A
 tooling — motivation, the shape of the change, scope boundaries, and open
 questions — so a future session can execute against something concrete. It is
 *not* an [`issue`](/meta/issues/index.md) (a problem to track) or a
-[`todo`](/meta/todos/index.md) (a plain task). Follow the
-[operating contract](/CLAUDE.md).
+[`matter`](/meta/matters/index.md) (work to deliver, no design needed). Follow
+the [operating contract](/CLAUDE.md).
 
-Plans live in the **governance namespace**, so — like `issues`, `todos`, and
+Plans live in the **governance namespace**, so — like `issues`, `matters`, and
 `threads` — they carry **no `em:` id** and are outside the identity registry.
 
 This skill is **list-focused**: it surfaces active plans so they can be reviewed
@@ -41,7 +41,7 @@ history). If no argument is given, list active plans.
    bundle-absolute link to the file, and the `priority:` flag when present. Note
    the total count. This is a **read-only** view; do not modify anything.
 
-For a cross-cutting appraisal that ranks plans against issues, todos, and
+For a cross-cutting appraisal that ranks plans against issues, matters, and
 dangling strands, use [`/priorities`](/.claude/skills/priorities/SKILL.md)
 instead — it is the whole-brain view; this skill is the plans-only slice.
 

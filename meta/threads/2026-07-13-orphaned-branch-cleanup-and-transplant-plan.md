@@ -87,7 +87,7 @@ Continue from where you left off.
 
 Investigation complete — here's the verdict on every surviving unmerged branch. Yes, there is genuinely mergeable material, but with one structural caveat that changes how it must land: **`main` has been reorganized since these branches were cut** (`SWE/` → `knowledge/`, `glossary/` → `beliefs/glossary/`, hand-kept logs retired), so none of them can be plainly merged — a straight merge would resurrect dead paths. Useful content gets *transplanted* onto a fresh branch under the new layout instead.
 
-<routes ref="em:a9113e meta/todos/triage-the-six-kept-unmerged-claude-branches.md">
+<routes ref="em:a9113e meta/matters/triage-the-six-kept-unmerged-claude-branches.md">
 **Worth saving — one big, four small:**
 
 - **`epistemic-artifact-beliefs`** — the high-value one: 57 files / ~2,240 lines genuinely absent from `main`. Primary-source captures (Doyle 1979, de Kleer 1986, GSN Standard), layered breakdowns of five prior-art references, a belief-decomposition analysis + plan, and ~29 glossary terms. It directly feeds your active epistemic-overlay plan. Deserves its own dedicated transplant session (the glossary has since been deduped, so its 29 terms need reconciling).

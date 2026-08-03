@@ -1,7 +1,7 @@
 ---
 type: plan
 title: "Comprehensive repo review: program, session ledger, and remaining sections"
-description: The cross-session spine of the operator-commissioned code/content/epistemology review — what session 1 covered and found, which sections remain (glossary-scale content sweep, SWE deep-dive, thread-fidelity checks), and the decision queue the review surfaced for the operator.
+description: The cross-session spine of the operator-commissioned code/content/epistemology review — what session 1 covered and found, which sections remain (glossary-scale content sweep, SWE deep-dive, thread-fidelity checks, governance backlog audit), and the decision queue the review surfaced for the operator.
 status: in-progress
 provenance: "Claude Fable 5, Claude Code session"
 tags: [meta, plan, review, program, audit]
@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, comprehensive-review session"
   why: "the review spans sessions by construction; this plan is the cross-session build order and status ledger persist-plans requires for deferred work"
-  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md]
+  from: [/meta/threads/2026-08-01-comprehensive-repo-review-session-1.md, /meta/threads/2026-08-01-decision-queue-matter-breakout.md]
 ---
 
 # Comprehensive repo review — program
@@ -52,6 +52,20 @@ passes) with every severe claim re-verified directly before filing —
 reproductions run for code defects, greps/fetches named inline for
 policy and content claims.
 
+### Decision-queue session — 2026-08-01 (in progress)
+
+The operator-gated ruling session over the queue below. Landed mid-session:
+queue row 5 resolved by ratifying **session 5 — the governance backlog
+audit** (see Remaining sections) in place of a bare posture ruling; the
+[complete docs rewrite](/meta/plans/complete-docs-rewrite.md) plan filed as
+`proposed` with its sequencing ratified. After the matter system landed on
+main (2026-08-02), the operator directed the thread's remaining spikes —
+rows 1–4 and the contract-synchronization sweep — broken out of the inline
+thread into five sequenced matters under the
+[decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md)
+plan, delivered via the [matter register](/meta/matters.md) rather than
+in-session; this entry is completed at the session's close.
+
 ## Remaining sections
 
 ### Session 2 — the unsampled corpora
@@ -74,7 +88,7 @@ policy and content claims.
   the BEAM/Jido satellite-cluster consolidation question.
 - **Duplication beyond the top-10 pairs**; `deprecated/` triage input
   (33 files — feeds the existing
-  [triage todo](/meta/todos/triage-what-remains-in-deprecated.md), not a
+  [triage todo](/meta/matters/triage-what-remains-in-deprecated.md), not a
   new artifact).
 
 ### Session 4 — fixes and decisions (operator-gated)
@@ -88,6 +102,37 @@ The execution session(s) for what the review filed, in recommended order:
    contradiction fixes (§3) + `/render-contract`.
 4. The content fixes (kimi-k3 retracted figures; OKF `log.md` line).
 
+### Session 5 — the governance backlog audit
+
+Ratified by the operator 2026-08-01 (decision-queue session), replacing
+queue row 5: instead of ruling on backlog *posture* bare, audit the backlog
+item by item and ratify dispositions over evidence.
+
+- **Scope**: every active plan (`meta/plans/`, status
+  proposed/accepted/in-progress), open issue (`meta/issues/`), and open
+  matter (`meta/matters/`, queued and backlog alike) — 65 items at
+  ratification (2026-08-01, pre-todo-fold; the audit reads live state at
+  run time). Per-item census work no existing plan scopes.
+- **Per-item disposition**, exactly one, each with a one-line cited
+  justification: still valid · already satisfied (name what satisfies it —
+  e.g. the
+  [ratify-or-reject-provenance matter](/meta/matters/ratify-or-reject-provenance-names-producing-model.md)
+  the epistemology review flagged as stale on its face) · superseded by a
+  later ratification (name it) · duplicate of another item (name it) ·
+  keep with a defer-until condition (state it).
+- **Deliverable**: one audit table plus a disposition recommendation per
+  item, filed as `type: analysis`, for the operator's ratification pass —
+  the audit recommends; it applies nothing.
+- **Coordination edges**:
+  [reconcile-dangling-ledger-strands](/meta/plans/reconcile-dangling-ledger-strands.md)
+  (in-progress) and
+  [matter-disjointness-check-for-parallel-filing](/meta/plans/matter-disjointness-check-for-parallel-filing.md)
+  touch adjacent ground (ledger-strand dispositioning; duplicate detection
+  at filing time). The audit consumes their state; it does not redo them.
+- **Ordering**: after the decision-queue session lands (its ratifications
+  are part of the supersession landscape the audit judges against);
+  independent of sessions 2–3.
+
 ## Questions the review leaves with the operator
 
 | # | Decision | Review's recommendation |
@@ -96,7 +141,18 @@ The execution session(s) for what the review filed, in recommended order:
 | 2 | Excerpt-log discipline (20.1% of knowledge text and growing) | Ratify a selection/size rule or render-collapsed convention |
 | 3 | Verbatim-capture filing pattern (three in use) | Standardize on sibling-`source`; retype the strays |
 | 4 | Contract size counterweight (15,153 words, monotonic) | Warn-only word-count trend in CI + relocation pass on the five longest policies |
-| 5 | Plan-backlog posture (38 active plans vs ~1 execution/session) | Triage pass: supersede or defer-with-date the stale `accepted` set |
+| 5 | Plan-backlog posture (38 active plans vs ~1 execution/session) | Triage pass: supersede or defer-with-date the stale `accepted` set — **resolved 2026-08-01**: replaced by session 5, the governance backlog audit |
+
+Row 5 was resolved by ratification rather than ruled bare: the operator
+commissioned session 5 (2026-08-01, decision-queue session) as its
+disposition — a per-item audit-and-ratify pass over the whole governance
+backlog instead of a posture call over the plans alone. Rows 1–4 and the
+contract-synchronization sweep were then broken out (2026-08-02, same
+session) into the five-matter
+[decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md);
+their rulings arrive per matter through the approval-gated
+[`/matter`](/.claude/skills/matter/SKILL.md) protocol, and this table stands
+as the review's record of the questions.
 
 ## Execution hand-offs
 
@@ -108,7 +164,9 @@ with the tooling review last, doubling as review context for the fix PR).
 Model selection follows
 [capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md):
 strongest tier where the output is unoracled judgment, cheaper tiers where
-the gate suite is the oracle.
+the gate suite is the oracle. Extended 2026-08-01 (decision-queue session):
+session 5, the governance backlog audit, runs after the decision-queue
+session lands; it is unordered relative to sessions 2–3.
 
 ### Fix thread — Sonnet-tier (fully specified defects; mechanical oracle)
 
@@ -182,6 +240,29 @@ the gate suite is the oracle.
 > Same method and deliverable shape as session 2. If this completes the
 > program's remaining sections, move the program plan to `status: done`
 > with a closing ledger entry. Then `/create-pull-request`.
+
+### Session 5, governance backlog audit — Opus-tier (criterion-guided grading over ~65 items; the operator's ratification pass is the oracle)
+
+> Run session 5 of `/meta/plans/comprehensive-repo-review-program.md` — the
+> governance backlog audit. Audit every active plan (`meta/plans/`, status
+> proposed/accepted/in-progress), every open issue (`meta/issues/`), and
+> every open matter (`meta/matters/`, queued and backlog alike): read each
+> item in full, then assign exactly one disposition — still valid · already satisfied (name what
+> satisfies it) · superseded by a later ratification (name it) · duplicate
+> of another item (name it) · keep with a defer-until condition (state the
+> condition) — each with a one-line justification citing evidence, never
+> graded from the title alone.
+>
+> Two in-flight efforts touch adjacent ground:
+> `/meta/plans/reconcile-dangling-ledger-strands.md` (in-progress) and
+> `/meta/plans/matter-disjointness-check-for-parallel-filing.md`. Consume
+> their state as input; do not redo or absorb their work.
+>
+> Deliverable: one `type: analysis` under `meta/analysis/` per the
+> session-1 house pattern — the audit table plus a per-item disposition
+> recommendation for the operator's ratification pass; apply no
+> dispositions in the audit session itself. Update the program plan's
+> session ledger, then `/create-pull-request`.
 
 ## Deferred
 

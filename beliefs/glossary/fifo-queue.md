@@ -23,7 +23,8 @@ priority queue (served by rank, regardless of arrival).
 
 **In this brain:** the [matters register](/meta/matters.md) is consumed as
 one — the top row is always the next [matter](/beliefs/glossary/matter.md)
-delivered, and a delivered row moves to the register's Consumed log. FIFO by
+delivered, and a delivered row is dropped, the landing recorded on its done
+doc (`pr: <N>`). FIFO by
 default rather than by invariant: the operator reorders rows deliberately
 (bumping an urgent matter to the top), which a strict FIFO would not allow.
 

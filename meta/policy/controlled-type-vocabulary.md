@@ -11,7 +11,7 @@ attribution:
   when: 2026-07-05T12:30:48+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md, /meta/threads/2026-08-02-matter-type-vocabulary-adoption.md]
+  from: [/meta/threads/2026-07-05-greenfield-okf-bootstrap-and-verification-layer.md, /meta/threads/2026-07-13-resource-attribution-property-spec-and-build.md, /meta/threads/2026-07-26-structured-plan-bodies-and-belief-layer.md, /meta/threads/2026-07-27-secure-financial-agent-and-projects-namespace.md, /meta/threads/2026-08-02-matter-type-vocabulary-adoption.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 OKF requires a `type` but registers no vocabulary. This bundle uses a **controlled
 list** so the brain stays queryable. It **grows deliberately** — an agent may
@@ -77,29 +77,32 @@ Seed vocabulary:
   `plan` (intended *work* to execute), a `tutorial` (explanatory *how/why*), and a
   `note` (a distilled idea) — an analysis is a *reasoned judgment on a question*
   (lives under `meta/analysis/`).
-- `todo` — a lightweight actionable task item: a single thing to be done, tracked
-  until it is finished. Carries a `status` (`open`/`done`/`cancelled`). Distinct from
-  an `issue` (a *problem* to diagnose and track), a `plan` (a *design/decision
-  record*), and a `methodology` (a *repeatable* how-to) — a todo is a plain *task to
-  complete*, added and listed with the `/todo` skill (lives under `meta/todos/`).
-- `matter` — the review-quantized unit of delivery: one coherent intent a
+- `matter` — the review-quantized unit of work: one coherent intent a
   reviewer can approve or reject as a whole (one matter per PR, per
   [atomic pull requests](/meta/policy/git-atomic-pull-requests.md)), filed
   as a self-contained handoff packet — the intent plus the decisions already
   made, with refs carrying the detail — so a fresh thread can deliver it.
-  Carries a `status` (`open`/`done`/`cancelled`); when a plan's build order
+  Spans the scale from a plain small task (a title, a sentence of packet)
+  to a plan-emitted build step. Carries a `status`
+  (`open`/`done`/`cancelled`) and a `model` — the
+  [roster](/meta/model-roster.md) value for the model that should *deliver*
+  it, stamped at scoping time and **prospective and advisory**, distinct from
+  `provenance`, which retrospectively names the model that *wrote the doc*
+  (the determination behind the stamp lives in a `## Model` body section, not
+  in frontmatter; the stamp binds matters scoped from its ratification onward,
+  and a matter filed before it renders unstamped); when a plan's build order
   emits it, also a `plan` (the bundle-absolute path of that plan) and an
   `order` (integer position in that plan's own sequence) — both keys omitted
   on a standalone matter. Queued-ness is register membership, never a
   status: an open matter listed in [the matter register](/meta/matters.md)
-  is committed and globally ordered; an open matter outside it is backlog.
-  Distinct from a `plan` (a *decision record* whose build order emits
-  matters — a matter is the delivery unit itself and needs no plan behind
-  it), an `issue` (a tracked *problem* that may never become work; an issue
-  spawns a matter when its fix is decided), and a `todo` (a plain task item,
-  not committed to delivery as a PR) — a matter is *committed work shaped to
-  fit review* (lives under `meta/matters/`, governance namespace, no `em:`
-  id).
+  is committed and globally ordered; an open matter outside it is **backlog**
+  (filed, awaiting queueing or pickup). Distinct from a `plan` (a *decision
+  record* whose build order emits matters — a matter is the delivery unit
+  itself and needs no plan behind it), an `issue` (a tracked *problem* that
+  may never become work; an issue spawns a matter when its fix is decided),
+  and a `methodology` (a *repeatable* how-to — a matter is done once) — a
+  matter is *work to deliver, shaped to fit review* (lives under
+  `meta/matters/`, governance namespace, no `em:` id).
 - `elaboration` — a persisted expansion of a technical **phrase or short passage**:
   the quoted target, definitions of the terms it uses, and a less technical overview
   of the concepts and actions it describes — produced by `/elaborate` and back-linked

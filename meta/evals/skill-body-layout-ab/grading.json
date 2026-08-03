@@ -1,0 +1,728 @@
+{
+  "eval1-single-matter|variant-A": [
+    [
+      "frontmatter complete [plan-show-subcommand.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [plan-show-subcommand.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [plan-show-subcommand.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [plan-show-subcommand.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [plan-show-subcommand.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [plan-show-subcommand.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "exactly one matter",
+      true,
+      "1 matter file(s)"
+    ],
+    [
+      "no plan emitted",
+      true,
+      "0 plan file(s)"
+    ],
+    [
+      "no plan/order keys [plan-show-subcommand.md]",
+      true,
+      "plan=None order=None"
+    ],
+    [
+      "register untouched (self-report)",
+      true,
+      "register_modified=False"
+    ]
+  ],
+  "eval1-single-matter|variant-B": [
+    [
+      "frontmatter complete [plan-show-sub-command.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [plan-show-sub-command.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [plan-show-sub-command.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [plan-show-sub-command.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [plan-show-sub-command.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [plan-show-sub-command.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "exactly one matter",
+      true,
+      "1 matter file(s)"
+    ],
+    [
+      "no plan emitted",
+      true,
+      "0 plan file(s)"
+    ],
+    [
+      "no plan/order keys [plan-show-sub-command.md]",
+      true,
+      "plan=None order=None"
+    ],
+    [
+      "register untouched (self-report)",
+      true,
+      "register_modified=False"
+    ]
+  ],
+  "eval2-plan-shaped|variant-A": [
+    [
+      "frontmatter complete [gate-skill-section-heading-conformance.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [gate-skill-section-heading-conformance.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [gate-skill-section-heading-conformance.md]",
+      true,
+      "model='Claude Opus 5'"
+    ],
+    [
+      "## Model section present [gate-skill-section-heading-conformance.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [gate-skill-section-heading-conformance.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [gate-skill-section-heading-conformance.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "model='Claude Fable 5'"
+    ],
+    [
+      "## Model section present [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "plan emitted",
+      true,
+      "1 plan file(s)"
+    ],
+    [
+      "multiple matters emitted",
+      true,
+      "3 matter(s)"
+    ],
+    [
+      "carries plan key [gate-skill-section-heading-conformance.md]",
+      true,
+      "plan='/meta/plans/skill-section-heading-vocabulary.md'"
+    ],
+    [
+      "carries order key [gate-skill-section-heading-conformance.md]",
+      true,
+      "order='3'"
+    ],
+    [
+      "carries plan key [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-section-heading-vocabulary.md'"
+    ],
+    [
+      "carries order key [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "order='2'"
+    ],
+    [
+      "carries plan key [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-section-heading-vocabulary.md'"
+    ],
+    [
+      "carries order key [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "order='1'"
+    ],
+    [
+      "orders are a contiguous 1..N set",
+      true,
+      "orders=[1, 2, 3]"
+    ],
+    [
+      "register untouched without `sequence` (self-report)",
+      true,
+      "register_modified=False"
+    ]
+  ],
+  "eval2-plan-shaped|variant-B": [
+    [
+      "frontmatter complete [gate-skill-section-conformance.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [gate-skill-section-conformance.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [gate-skill-section-conformance.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [gate-skill-section-conformance.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [gate-skill-section-conformance.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [gate-skill-section-conformance.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [ratify-skill-section-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [ratify-skill-section-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [ratify-skill-section-vocabulary.md]",
+      true,
+      "model='Claude Fable 5'"
+    ],
+    [
+      "## Model section present [ratify-skill-section-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [ratify-skill-section-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [ratify-skill-section-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "plan emitted",
+      true,
+      "1 plan file(s)"
+    ],
+    [
+      "multiple matters emitted",
+      true,
+      "3 matter(s)"
+    ],
+    [
+      "carries plan key [gate-skill-section-conformance.md]",
+      true,
+      "plan='/meta/plans/skill-body-section-vocabulary.md'"
+    ],
+    [
+      "carries order key [gate-skill-section-conformance.md]",
+      true,
+      "order='3'"
+    ],
+    [
+      "carries plan key [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-body-section-vocabulary.md'"
+    ],
+    [
+      "carries order key [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "order='2'"
+    ],
+    [
+      "carries plan key [ratify-skill-section-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-body-section-vocabulary.md'"
+    ],
+    [
+      "carries order key [ratify-skill-section-vocabulary.md]",
+      true,
+      "order='1'"
+    ],
+    [
+      "orders are a contiguous 1..N set",
+      true,
+      "orders=[1, 2, 3]"
+    ],
+    [
+      "register untouched without `sequence` (self-report)",
+      true,
+      "register_modified=False"
+    ]
+  ],
+  "eval3-sequence|variant-A": [
+    [
+      "frontmatter complete [gate-skill-section-heading-conformance.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [gate-skill-section-heading-conformance.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [gate-skill-section-heading-conformance.md]",
+      true,
+      "model='Claude Opus 5'"
+    ],
+    [
+      "## Model section present [gate-skill-section-heading-conformance.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [gate-skill-section-heading-conformance.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [gate-skill-section-heading-conformance.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "model='Claude Fable 5'"
+    ],
+    [
+      "## Model section present [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "plan emitted",
+      true,
+      "1 plan file(s)"
+    ],
+    [
+      "multiple matters emitted",
+      true,
+      "3 matter(s)"
+    ],
+    [
+      "carries plan key [gate-skill-section-heading-conformance.md]",
+      true,
+      "plan='/meta/plans/skill-section-heading-vocabulary.md'"
+    ],
+    [
+      "carries order key [gate-skill-section-heading-conformance.md]",
+      true,
+      "order='3'"
+    ],
+    [
+      "carries plan key [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-section-heading-vocabulary.md'"
+    ],
+    [
+      "carries order key [migrate-skills-onto-section-heading-vocabulary.md]",
+      true,
+      "order='2'"
+    ],
+    [
+      "carries plan key [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-section-heading-vocabulary.md'"
+    ],
+    [
+      "carries order key [ratify-skill-section-heading-vocabulary.md]",
+      true,
+      "order='1'"
+    ],
+    [
+      "orders are a contiguous 1..N set",
+      true,
+      "orders=[1, 2, 3]"
+    ],
+    [
+      "register modified with `sequence`",
+      true,
+      "register_modified=True"
+    ],
+    [
+      "inserted at HEAD, not tail",
+      true,
+      "insert_point='head'"
+    ],
+    [
+      "register rows are exactly 4 cells",
+      true,
+      "cell counts seen: [4] over 19 row(s)"
+    ]
+  ],
+  "eval3-sequence|variant-B": [
+    [
+      "frontmatter complete [gate-skill-section-conformance.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [gate-skill-section-conformance.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [gate-skill-section-conformance.md]",
+      true,
+      "model='Claude Opus 5'"
+    ],
+    [
+      "## Model section present [gate-skill-section-conformance.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [gate-skill-section-conformance.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [gate-skill-section-conformance.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "model='Claude Sonnet 5'"
+    ],
+    [
+      "## Model section present [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "frontmatter complete [ratify-skill-section-vocabulary.md]",
+      true,
+      "all present"
+    ],
+    [
+      "type is matter [ratify-skill-section-vocabulary.md]",
+      true,
+      "type='matter'"
+    ],
+    [
+      "model in roster vocabulary [ratify-skill-section-vocabulary.md]",
+      true,
+      "model='Claude Opus 5'"
+    ],
+    [
+      "## Model section present [ratify-skill-section-vocabulary.md]",
+      true,
+      "found"
+    ],
+    [
+      "no em: id minted [ratify-skill-section-vocabulary.md]",
+      true,
+      "none"
+    ],
+    [
+      "status open [ratify-skill-section-vocabulary.md]",
+      true,
+      "status='open'"
+    ],
+    [
+      "plan emitted",
+      true,
+      "1 plan file(s)"
+    ],
+    [
+      "multiple matters emitted",
+      true,
+      "3 matter(s)"
+    ],
+    [
+      "carries plan key [gate-skill-section-conformance.md]",
+      true,
+      "plan='/meta/plans/skill-section-vocabulary.md'"
+    ],
+    [
+      "carries order key [gate-skill-section-conformance.md]",
+      true,
+      "order='3'"
+    ],
+    [
+      "carries plan key [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-section-vocabulary.md'"
+    ],
+    [
+      "carries order key [migrate-skills-onto-section-vocabulary.md]",
+      true,
+      "order='2'"
+    ],
+    [
+      "carries plan key [ratify-skill-section-vocabulary.md]",
+      true,
+      "plan='/meta/plans/skill-section-vocabulary.md'"
+    ],
+    [
+      "carries order key [ratify-skill-section-vocabulary.md]",
+      true,
+      "order='1'"
+    ],
+    [
+      "orders are a contiguous 1..N set",
+      true,
+      "orders=[1, 2, 3]"
+    ],
+    [
+      "register modified with `sequence`",
+      true,
+      "register_modified=True"
+    ],
+    [
+      "inserted at HEAD, not tail",
+      true,
+      "insert_point='head'"
+    ],
+    [
+      "register rows are exactly 4 cells",
+      true,
+      "cell counts seen: [4] over 19 row(s)"
+    ]
+  ],
+  "eval4-collision|variant-A": [
+    [
+      "recognized the existing artifact",
+      true,
+      "extended_existing=True"
+    ],
+    [
+      "did not file a duplicate matter",
+      true,
+      "0 new matter file(s) in outputs"
+    ],
+    [
+      "did not emit a plan",
+      true,
+      "0 plan file(s)"
+    ]
+  ],
+  "eval4-collision|variant-B": [
+    [
+      "recognized the existing artifact",
+      true,
+      "extended_existing=True"
+    ],
+    [
+      "did not file a duplicate matter",
+      true,
+      "0 new matter file(s) in outputs"
+    ],
+    [
+      "did not emit a plan",
+      true,
+      "0 plan file(s)"
+    ]
+  ]
+}
