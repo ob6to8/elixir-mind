@@ -26,4 +26,4 @@ files on one machine with no supervising runtime; the comparison with a
 [Jido](/beliefs/glossary/jido.md)/BEAM build of the same design is in
 [agent teams vs. BEAM/Jido](/meta/analysis/agent-teams-vs-beam-jido.md).
 
-*Seen in:* [2026-07-26 agent-teams intake thread](/meta/threads/2026-07-26-agent-teams-intake-and-beam-jido-comparison.md), [agent-teams reference](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md), [agent teams vs. BEAM/Jido analysis](/meta/analysis/agent-teams-vs-beam-jido.md)
+*Seen in:* [2026-07-26 agent-teams intake thread](/meta/threads/2026-07-26-agent-teams-intake-and-beam-jido-comparison.md), [agent-teams reference](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md), [agent teams vs. BEAM/Jido analysis](/meta/analysis/agent-teams-vs-beam-jido.md), [Herdr vs. the Claude Code app](/meta/analysis/herdr-vs-claude-code-app.md)
