@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, GitHub task session"
   why: "operator asked for an evaluation of complete-spec prompting against this repo's iterative methodology — pros and cons, industry standing, best practices of each, and what the genre's structure (declared boundaries and invariants) could fold into the workflow here"
+  from: [/meta/threads/2026-08-02-complete-spec-prompting-vs-iterative-delivery.md]
 ---
 
 # Complete-spec prompting read against this brain's iterative delivery
