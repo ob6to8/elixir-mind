@@ -740,6 +740,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8b9548` | [knowledge/SWE/version-control/git/git-worktrees-for-parallel-agents](/knowledge/SWE/version-control/git/git-worktrees-for-parallel-agents.md) | concept | false |
 | `em:f08c54` | [knowledge/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch](/knowledge/SWE/version-control/git/sources/gitglossary-branch-and-remote-tracking-branch.md) | source |  |
 | `em:a3d27b` | [knowledge/SWE/version-control/git/sources/pro-git-remote-tracking-branches](/knowledge/SWE/version-control/git/sources/pro-git-remote-tracking-branches.md) | source |  |
+| `em:e2f673` | [knowledge/SWE/web-frameworks/hologram](/knowledge/SWE/web-frameworks/hologram.md) | reference |  |
+| `em:e83408` | [knowledge/SWE/web-frameworks/phoenix-liveview-vs-inertia-vs-spa](/knowledge/SWE/web-frameworks/phoenix-liveview-vs-inertia-vs-spa.md) | reference |  |
 | `em:07610c` | [knowledge/ai-industry/ai-margin-collapse-glm-5-2](/knowledge/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `em:2867ac` | [knowledge/ai-industry/ai-roi-runway-outside-tech-sector](/knowledge/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `em:51aede` | [knowledge/ai-industry/open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | claim | true |
