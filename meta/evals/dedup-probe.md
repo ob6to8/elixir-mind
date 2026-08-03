@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md, /meta/threads/2026-07-31-herdr-cmux-terminal-tool-comparison-intake.md, /meta/threads/2026-07-31-microsoft-skillopt-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md, /meta/threads/2026-07-31-herdr-cmux-terminal-tool-comparison-intake.md, /meta/threads/2026-07-31-microsoft-skillopt-intake.md, /meta/threads/2026-08-03-mast-multi-agent-failure-taxonomy-intake.md, /meta/threads/2026-08-02-phoenix-inertia-hologram-intake.md]
 ---
 
 # Dedup recall probe — gold set
@@ -89,6 +89,7 @@ being mechanically rewritten.
 | the evolutionary algorithms paper | em:da2ffb | target | diffusion model evolutionary alignment; inference-time diffusion alignment; evolving latent noise for diffusion models | harvested at intake 2026-07-31 |
 | the circles-sines-signals interactive educational displays | em:4956f3 | target | circles sines and signals; jack schaedler dft explorable; interactive DFT teaching resource | harvested at intake 2026-07-31 |
 | the reference to hologram | em:e2f673 | target | hologram elixir framework; elixir compiles to javascript; hologram vs liveview | harvested at intake 2026-08-02 |
+| the berkeley multi-agent-failure taxonomy paper | em:ec728d | target | MAST taxonomy; why do multi-agent LLM systems fail; multi-agent system failure modes | harvested at intake 2026-08-03 |
 
 ## Baseline
 
@@ -102,8 +103,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 30 |
-| expanded | 24 | 30 |
+| plain | 9 | 31 |
+| expanded | 25 | 31 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
