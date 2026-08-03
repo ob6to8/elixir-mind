@@ -30,4 +30,4 @@ routing (*which agent needs me*) reliably and cheaply, and cannot reach edit
 granularity (*what is this agent about to change*), which requires typed events
 from the harness rather than a scrape of its display.
 
-*Seen in:* [agent supervision consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md), [agent pairing vs. herdr and cmux](/projects/agent-pairing/comparison-herdr-cmux.md)
+*Seen in:* [agent supervision consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md), [agent pairing vs. herdr and cmux](/projects/agent-pairing/comparison-herdr-cmux.md), [Herdr vs. the Claude Code app](/meta/analysis/herdr-vs-claude-code-app.md)

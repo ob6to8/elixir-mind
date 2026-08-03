@@ -13,3 +13,4 @@ Software engineering knowledge.
 - [software-design](/knowledge/SWE/software-design/index.md) — software design patterns, architectural styles, and the trade-offs between them
 - [testing](/knowledge/SWE/testing/index.md) — test design, strategy, and what makes tests fast and reliable
 - [version-control](/knowledge/SWE/version-control/index.md) — tracking changes to code over time
+- [web-frameworks](/knowledge/SWE/web-frameworks/index.md) — backend/frontend integration patterns and specific web frameworks
