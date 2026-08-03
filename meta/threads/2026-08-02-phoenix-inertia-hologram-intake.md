@@ -25,7 +25,12 @@ of the already-established `SWE` domain): the Phoenix frontend-options
 comparison (`em:e83408`) and Hologram (`em:e2f673`, cross-checked against its
 own docs at hologram.page). A dedup gold-set row was harvested from the
 operator's "hologram" phrasing; the baseline showed no regression. The full
-gate suite passed and the operator's session moved into `/create-pull-request`.
+gate suite passed and the operator's session moved into `/create-pull-request`,
+opening PR #236. The operator then asked to sync the branch with `origin/main`;
+that merge (two conflicts, both resolved by keeping both sides' concurrent
+additions rather than discarding either) and the redaction of this closing
+exchange from the render, at the operator's direction, are recorded in prose
+here rather than verbatim — see the note at the end of this doc's render.
 
 ## Routing
 
@@ -33,6 +38,7 @@ gate suite passed and the operator's session moved into `/create-pull-request`.
 |---|---|---|---|
 | Intake the Phoenix+Inertia reddit thread | closed | [Phoenix frontend options in practice](/knowledge/SWE/web-frameworks/phoenix-liveview-vs-inertia-vs-spa.md) | - |
 | Also intake the thread's Hologram reference | closed | [Hologram](/knowledge/SWE/web-frameworks/hologram.md) | - |
+| Sync branch with `origin/main` | closed | `unrouted` | - |
 
 ## User
 
@@ -76,3 +82,15 @@ I fetched the Reddit thread (direct access was blocked by network policy — rec
 
 No new directory ratification was needed — `web-frameworks` sits under the already-established `SWE` top-level domain, so it was filed autonomously per the taxonomy-evolution protocol. Continuing now with capture and the PR.
 </routes>
+
+## Assistant
+
+PR #236 is open with everything landed: [ob6to8/elixir-mind#236](https://github.com/ob6to8/elixir-mind/pull/236).
+
+Would you like me to watch it for CI failures and review comments? I can subscribe to PR activity so I catch anything automatically. Otherwise, it's ready for you to review and merge whenever you like — this skill doesn't merge on its own unless asked.
+
+## User
+
+merge main into branch
+
+*(At the operator's direction, the exchange after this point — syncing the branch with `origin/main`, resolving two merge conflicts, and this closing `/create-pull-request` invocation — is omitted from this render. See [PR #236](https://github.com/ob6to8/elixir-mind/pull/236) and the branch's own commit history for that work.)*
