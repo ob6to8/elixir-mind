@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-03; verbatim retained
 tags: [meta, thread, architecture, spin-out, modularity, plans]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01HPhAHEVnjjcNbievKMZRSZ
+pr: 247
 ---
 
 # 2026-08-03-modular-features-stage-in-the-spin-out-plan
