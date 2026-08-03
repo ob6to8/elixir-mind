@@ -1,0 +1,386 @@
+{
+  "eval1-single-matter/variant-A": {
+    "run": {
+      "blocking_questions": [],
+      "eval": "eval1-single-matter",
+      "extended_existing": false,
+      "files_created": [
+        "meta/matters/plan-show-subcommand.md"
+      ],
+      "files_modified": [
+        "meta/matters/index.md"
+      ],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": null,
+          "path": "meta/matters/plan-show-subcommand.md",
+          "plan": null
+        }
+      ],
+      "plan_path": null,
+      "register_modified": false,
+      "register_rows_added": [],
+      "shape_chosen": "matter",
+      "variant": "A",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 820227,
+      "tool_uses": 42,
+      "total_tokens": 175332
+    }
+  },
+  "eval1-single-matter/variant-B": {
+    "run": {
+      "blocking_questions": [
+        "Should the show output include the attribution ingestion-event map, or stay confined to content fields (title/description/status/priority/provenance/tags/timestamp) the way /plan list keeps its rendering terse? Assumed: content fields only, recorded as a decision-already-made in the matter doc.",
+        "Is the from key expected in this matter's attribution given there is no captured thread doc backing this filing (this session was not captured/PR'd)? Assumed: omit from, since resource-attribution.md requires it only on plan/analysis/elaboration/issue, not matter."
+      ],
+      "eval": "eval1-single-matter",
+      "extended_existing": false,
+      "files_created": [
+        "meta/matters/plan-show-sub-command.md"
+      ],
+      "files_modified": [
+        "meta/matters/index.md"
+      ],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": null,
+          "path": "meta/matters/plan-show-sub-command.md",
+          "plan": null
+        }
+      ],
+      "plan_path": null,
+      "register_modified": false,
+      "register_rows_added": [],
+      "shape_chosen": "matter",
+      "variant": "B",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 633831,
+      "tool_uses": 51,
+      "total_tokens": 191346
+    }
+  },
+  "eval2-plan-shaped/variant-A": {
+    "run": {
+      "blocking_questions": [
+        "The skill's own worked example names 'one matter vs. five' as the canonical shape-changing decision that should block; this spec had the analogous decision (1 matter vs. a plan with N matters, and N=?). Running unattended, I resolved it myself instead of asking: plan + 3 sequenced matters (ratify vocabulary / migrate skills / build+gate the checker), reasoned from the independence test (each is separately mergeable/rejectable) and the green-boundary rule (the gate cannot land before the skills it checks conform, which forces migration and gating apart, which in turn separates from the antecedent vocabulary decision). See the plan's Decision list for the full argument and the rejected alternatives (1 matter; gate-before-migrate warn-only)."
+      ],
+      "eval": "eval2-plan-shaped",
+      "extended_existing": false,
+      "files_created": [
+        "meta/plans/skill-section-heading-vocabulary.md",
+        "meta/matters/ratify-skill-section-heading-vocabulary.md",
+        "meta/matters/migrate-skills-onto-section-heading-vocabulary.md",
+        "meta/matters/gate-skill-section-heading-conformance.md"
+      ],
+      "files_modified": [
+        "meta/matters/index.md",
+        "meta/plans/index.md"
+      ],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Fable 5",
+          "order": 1,
+          "path": "meta/matters/ratify-skill-section-heading-vocabulary.md",
+          "plan": "/meta/plans/skill-section-heading-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": 2,
+          "path": "meta/matters/migrate-skills-onto-section-heading-vocabulary.md",
+          "plan": "/meta/plans/skill-section-heading-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Opus 5",
+          "order": 3,
+          "path": "meta/matters/gate-skill-section-heading-conformance.md",
+          "plan": "/meta/plans/skill-section-heading-vocabulary.md"
+        }
+      ],
+      "plan_path": "meta/plans/skill-section-heading-vocabulary.md",
+      "register_modified": false,
+      "register_rows_added": [],
+      "shape_chosen": "plan+matters",
+      "variant": "A",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 1184664,
+      "tool_uses": 58,
+      "total_tokens": 306682
+    }
+  },
+  "eval2-plan-shaped/variant-B": {
+    "run": {
+      "blocking_questions": [],
+      "eval": "eval2-plan-shaped",
+      "extended_existing": false,
+      "files_created": [
+        "meta/plans/skill-body-section-vocabulary.md",
+        "meta/matters/ratify-skill-section-vocabulary.md",
+        "meta/matters/migrate-skills-onto-section-vocabulary.md",
+        "meta/matters/gate-skill-section-conformance.md"
+      ],
+      "files_modified": [
+        "meta/plans/index.md",
+        "meta/matters/index.md"
+      ],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Fable 5",
+          "order": 1,
+          "path": "meta/matters/ratify-skill-section-vocabulary.md",
+          "plan": "/meta/plans/skill-body-section-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": 2,
+          "path": "meta/matters/migrate-skills-onto-section-vocabulary.md",
+          "plan": "/meta/plans/skill-body-section-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": 3,
+          "path": "meta/matters/gate-skill-section-conformance.md",
+          "plan": "/meta/plans/skill-body-section-vocabulary.md"
+        }
+      ],
+      "plan_path": "meta/plans/skill-body-section-vocabulary.md",
+      "register_modified": false,
+      "register_rows_added": [],
+      "shape_chosen": "plan+matters",
+      "variant": "B",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 1230365,
+      "tool_uses": 71,
+      "total_tokens": 294301
+    }
+  },
+  "eval3-sequence/variant-A": {
+    "run": {
+      "blocking_questions": [],
+      "eval": "eval3-sequence",
+      "extended_existing": false,
+      "files_created": [
+        "meta/plans/skill-section-heading-vocabulary.md",
+        "meta/matters/ratify-skill-section-heading-vocabulary.md",
+        "meta/matters/migrate-skills-onto-section-heading-vocabulary.md",
+        "meta/matters/gate-skill-section-heading-conformance.md"
+      ],
+      "files_modified": [
+        "meta/matters.md",
+        "meta/matters/index.md",
+        "meta/plans/index.md"
+      ],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Fable 5",
+          "order": 1,
+          "path": "meta/matters/ratify-skill-section-heading-vocabulary.md",
+          "plan": "/meta/plans/skill-section-heading-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": 2,
+          "path": "meta/matters/migrate-skills-onto-section-heading-vocabulary.md",
+          "plan": "/meta/plans/skill-section-heading-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Opus 5",
+          "order": 3,
+          "path": "meta/matters/gate-skill-section-heading-conformance.md",
+          "plan": "/meta/plans/skill-section-heading-vocabulary.md"
+        }
+      ],
+      "plan_path": "meta/plans/skill-section-heading-vocabulary.md",
+      "register_insert_point": "head",
+      "register_modified": true,
+      "register_rows_added": [
+        {
+          "matter": "Ratify the SKILL.md section-heading vocabulary",
+          "order": 1,
+          "position": 1,
+          "type": "planned"
+        },
+        {
+          "matter": "Migrate the 18 skills onto the section-heading vocabulary",
+          "order": 2,
+          "position": 2,
+          "type": "planned"
+        },
+        {
+          "matter": "Build mix brain.skill_sections and join the gate suite",
+          "order": 3,
+          "position": 3,
+          "type": "planned"
+        }
+      ],
+      "shape_chosen": "plan+matters",
+      "variant": "A",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 1307491,
+      "tool_uses": 82,
+      "total_tokens": 378218
+    }
+  },
+  "eval3-sequence/variant-B": {
+    "run": {
+      "blocking_questions": [],
+      "eval": "eval3-sequence",
+      "extended_existing": false,
+      "files_created": [
+        "meta/plans/skill-section-vocabulary.md",
+        "meta/matters/ratify-skill-section-vocabulary.md",
+        "meta/matters/migrate-skills-onto-section-vocabulary.md",
+        "meta/matters/gate-skill-section-conformance.md"
+      ],
+      "files_modified": [
+        "meta/matters.md",
+        "meta/matters/index.md",
+        "meta/plans/index.md"
+      ],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Opus 5",
+          "order": 1,
+          "path": "meta/matters/ratify-skill-section-vocabulary.md",
+          "plan": "/meta/plans/skill-section-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "order": 2,
+          "path": "meta/matters/migrate-skills-onto-section-vocabulary.md",
+          "plan": "/meta/plans/skill-section-vocabulary.md"
+        },
+        {
+          "has_model_section": true,
+          "model": "Claude Opus 5",
+          "order": 3,
+          "path": "meta/matters/gate-skill-section-conformance.md",
+          "plan": "/meta/plans/skill-section-vocabulary.md"
+        }
+      ],
+      "plan_path": "meta/plans/skill-section-vocabulary.md",
+      "register_insert_point": "head",
+      "register_modified": true,
+      "register_rows_added": [
+        {
+          "matter": "Ratify the SKILL.md section-heading vocabulary",
+          "order": 1,
+          "position": 1,
+          "type": "planned"
+        },
+        {
+          "matter": "Migrate the 18 skills onto the section-heading vocabulary",
+          "order": 2,
+          "position": 2,
+          "type": "planned"
+        },
+        {
+          "matter": "Gate skill-section conformance with mix brain.skill_sections",
+          "order": 3,
+          "position": 3,
+          "type": "planned"
+        }
+      ],
+      "shape_chosen": "plan+matters",
+      "variant": "B",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 1090553,
+      "tool_uses": 59,
+      "total_tokens": 293725
+    }
+  },
+  "eval4-collision/variant-A": {
+    "run": {
+      "blocking_questions": [
+        "Operator's phrase 'so a bad value fails rather than sitting there' could be read as specifying :fail severity, but the existing matter doc explicitly recommends :warn (not :fail), citing the coding-standards admission rule (a checker earns a gate on the standing rule, not automatically) and reasoning that this guards an advisory datum -- a stale value misroutes a recommendation, it does not corrupt the bundle. The doc already defers the final call to 'the operator's ruling at the gate' (delivery time). Resolved by leaving that recommendation untouched and reading the operator's phrase as describing the current total absence of validation (a bad value today just silently sits in the doc) rather than as a new instruction to hard-fail; recommend the operator confirm :warn vs :fail when matter 3 is actually delivered.",
+        "The skill's search-before-filing step says a matched existing artifact is 'extended ... edit it', but the match found (meta/matters/gate-model-values-against-the-roster.md, and the plan that emits it) is already a current, word-for-word-equivalent scope of the ask -- same problem statement (down to the same gpt-4 / Claude Opus Five / typo examples), same fix, same verify steps -- with nothing new in the operator's spec to merge. Resolved by making no content edit: bumping timestamp or padding the body with no substantive change would misstate 'last meaningful change' and add narration the contract's living-text-is-present-tense / provenance-lives-in-metadata rules discourage. Extended by pointing at the existing artifact rather than by textual change."
+      ],
+      "eval": "eval4-collision",
+      "extended_existing": true,
+      "extended_path": "/meta/matters/gate-model-values-against-the-roster.md",
+      "files_created": [],
+      "files_modified": [],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "path": "/meta/matters/gate-model-values-against-the-roster.md"
+        }
+      ],
+      "plan_path": null,
+      "register_modified": false,
+      "register_rows_added": [],
+      "shape_chosen": "matter",
+      "variant": "A",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 504172,
+      "tool_uses": 34,
+      "total_tokens": 193821
+    }
+  },
+  "eval4-collision/variant-B": {
+    "run": {
+      "blocking_questions": [],
+      "eval": "eval4-collision",
+      "extended_existing": true,
+      "extended_path": "meta/matters/gate-model-values-against-the-roster.md",
+      "files_created": [],
+      "files_modified": [],
+      "matters": [
+        {
+          "has_model_section": true,
+          "model": "Claude Sonnet 5",
+          "path": "meta/matters/gate-model-values-against-the-roster.md"
+        }
+      ],
+      "plan_path": null,
+      "register_modified": false,
+      "register_rows_added": [],
+      "shape_chosen": "matter",
+      "variant": "B",
+      "verify_passed": true,
+      "verify_ran": true
+    },
+    "timing": {
+      "duration_ms": 345616,
+      "tool_uses": 28,
+      "total_tokens": 179629
+    }
+  }
+}

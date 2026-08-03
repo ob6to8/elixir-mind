@@ -15,6 +15,7 @@ taxonomy. This is where the rules that compile into the operating contract live.
 - [issues](/meta/issues/index.md) — tracked operational problems and open concerns about the brain's tooling/automation (`type: issue`, each with a `status`)
 - [matters](/meta/matters/index.md) — the matter docs: review-quantized delivery units filed as self-contained handoff packets (`type: matter`, each with a `status`; queue order lives in [matters.md](/meta/matters.md))
 - [matters.md](/meta/matters.md) — the pending-delivery register: the ordered pointer view over queued matters, the global delivery sequence its one stored datum, consumed top-down by fresh threads (see the [matter-docs plan](/meta/plans/matter-docs-architecture.md))
+- [model-roster.md](/meta/model-roster.md) — the operator's roster of models available to this repo and the motion each is sent: the run-time binding table [capability-matched-model-selection](/meta/doctrine/capability-matched-model-selection.md) declines to hardcode, read by [`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md) when it stamps a matter's `model:`
 - [plans](/meta/plans/index.md) — design/decision records for proposed changes to the brain or its tooling (`type: plan`, each with a `status`)
 - [policy](/meta/policy/index.md) — the `type: policy` rules that compile into `/CLAUDE.md`
 - [preamble.md](/meta/preamble.md) — fixed framing text prepended to the compiled contract
