@@ -193,6 +193,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:927fe0` | [beliefs/glossary/dvorak-simplified-keyboard](/beliefs/glossary/dvorak-simplified-keyboard.md) | concept | false |
 | `em:b35eea` | [beliefs/glossary/dynamic-workflows](/beliefs/glossary/dynamic-workflows.md) | concept | false |
 | `em:436ebc` | [beliefs/glossary/earcon](/beliefs/glossary/earcon.md) | concept | false |
+| `em:0ec567` | [beliefs/glossary/ears-notation](/beliefs/glossary/ears-notation.md) | concept | false |
 | `em:08334b` | [beliefs/glossary/effort-level](/beliefs/glossary/effort-level.md) | concept | false |
 | `em:837963` | [beliefs/glossary/einstellung-effect](/beliefs/glossary/einstellung-effect.md) | concept | false |
 | `em:16e171` | [beliefs/glossary/elaboration-type](/beliefs/glossary/elaboration-type.md) | concept | false |
@@ -531,6 +532,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1f7dca` | [beliefs/glossary/source-of-truth](/beliefs/glossary/source-of-truth.md) | concept | false |
 | `em:0c6f63` | [beliefs/glossary/source-recall](/beliefs/glossary/source-recall.md) | concept | false |
 | `em:c78837` | [beliefs/glossary/source-type](/beliefs/glossary/source-type.md) | concept | false |
+| `em:9cec7a` | [beliefs/glossary/spec-driven-development](/beliefs/glossary/spec-driven-development.md) | concept | false |
 | `em:38d006` | [beliefs/glossary/speculative-decoding](/beliefs/glossary/speculative-decoding.md) | concept | false |
 | `em:c13e28` | [beliefs/glossary/spin-out](/beliefs/glossary/spin-out.md) | concept | false |
 | `em:4218e7` | [beliefs/glossary/spir-v](/beliefs/glossary/spir-v.md) | concept | false |
