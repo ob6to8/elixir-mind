@@ -27,6 +27,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b56f3f` | [beliefs/glossary/address-space](/beliefs/glossary/address-space.md) | concept | false |
 | `em:1d61f9` | [beliefs/glossary/adjudication](/beliefs/glossary/adjudication.md) | concept | false |
 | `em:27e6ac` | [beliefs/glossary/admission-rule](/beliefs/glossary/admission-rule.md) | concept | false |
+| `em:8c84dc` | [beliefs/glossary/adversarial-verification](/beliefs/glossary/adversarial-verification.md) | concept | false |
 | `em:bb0ef0` | [beliefs/glossary/advisor-pattern](/beliefs/glossary/advisor-pattern.md) | concept | false |
 | `em:3cbfb6` | [beliefs/glossary/agent-as-driver](/beliefs/glossary/agent-as-driver.md) | concept | false |
 | `em:dbaf55` | [beliefs/glossary/agent-as-presenter](/beliefs/glossary/agent-as-presenter.md) | concept | false |
