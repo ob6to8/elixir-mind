@@ -79,3 +79,23 @@ vendor's own surfaces, PyPI mirrors, and site testimonials).
   raw file) — all quoted spans above.
 - GitHub page fetch 2026-08-01 (stars/forks/tree); libraries.io PyPI record;
   graperoot.dev.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:c71155">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-memory-system-research-spike (2026-08-01)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:c71155`]**
+
+**What GrapeRoot is:** not a memory system in the Mem0 sense and not a curated wiki in the mex sense — it's a context *pre-loading* engine (Python, ~969 stars): a semantic code graph ranks and pre-packs code into the prompt before the model sees it, weighted by what you've touched in the session ("Compounding Context for AI Coding Assistants"). Two structural facts matter more than its features: the launcher is Apache-2.0 but "The `graperoot` graph engine (PyPI): proprietary", and its cross-session memory (`context-store.json`, "Persistent decisions/tasks/facts across sessions") lives in a gitignored directory — outside version control entirely. Its benchmark table ($0.49→$0.27 per prompt, 11.7→3.5 turns, "10 out of 10 prompts" cost wins over "50+ engineering prompts") is vendor-run with methodology hosted on its own site and no model named in the README; one web search found no HN or Reddit threads, only the vendor's surfaces and testimonials.
+
+---
+
+**[`em:c71155`]**  (co-feeds: `em:dd64c2 /meta/analysis/agent-memory-strategy-for-elixir-mind.md`)
+
+1. **It's orthogonal to the sidecar plan.** GrapeRoot optimizes token economics — pre-packing a prompt cheaply — while the engine plan answers recall quality — can intake find the document a new item should merge into. Different corpus (code vs knowledge bundle), different objective, Python with a closed core, so the Elixir gap claim and the plan's incumbent map are untouched. The one connection: the plan's deferred session-start router now has a second exemplar alongside mex's.
+2. **Its memory design is a counter-exemplar that strengthens the decline.** Keeping cross-session decisions in gitignored JSON — unversioned, unreviewable, provenance-free — is the exact polarity Letta abandoned when it moved memory *into* git. One 2026 entrant on the far side doesn't reverse the convergence; it clarifies what the convergence is about: not files as a format, but memory that is versioned, reviewable, and attributable — the property this repo's governance enforces.
+3. **One genuine refinement to the [landscape](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/knowledge/SWE/agentic/agent-memory/memory-systems-landscape.md):** retrieval posture is a three-way axis, now written in — agentic pull (Claude Code's bet), external index (the Milvus position), and graph pre-load (GrapeRoot productizes it) — with the leading coding agent on the first pole and the other two carrying the burden of proof.

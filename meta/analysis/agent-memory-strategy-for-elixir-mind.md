@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, memory-system research spike session"
   why: "operator asked what this repo could gain from the mex/SuperLocalMemory strategy, at what tradeoff, and whether an Elixir-native port is advised, viable, and a market gap"
+  from: [/meta/threads/2026-08-01-memory-system-research-spike.md]
 ---
 
 # The agent-memory strategy read against this bundle

@@ -164,3 +164,21 @@ in both topologies.
 - **Assumption to re-verify at build time (refresh rule):** anubis_mcp still
   the de-facto MCP SDK; Bumblebee still current; the incumbent map above
   unchanged enough that the differentiation holds.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:50bbc3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-memory-system-research-spike (2026-08-01)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:50bbc3`]**  (co-feeds: `em:6733b4`)
+
+The Elixir gap check is back, and it sharpens the thesis: the niche is not empty — ~15 single-author experiments appeared in the last six months (jido_memory, mnemosyne, jiyi, recollect, graphonomous, plus Arcana as a mature RAG substrate) — but every entrant is a store-canonical memory database in the Mem0 mold, none has credible evaluation, and none is file-canonical. The differentiated open slot is exactly what this brain would want: a derived-index recall sidecar where markdown stays the source of truth. All building blocks confirmed active (anubis_mcp as de-facto MCP standard, Bumblebee text embeddings, exqlite with FTS5 compiled in, pgvector/sqlite-vec/hnswlib). mex turns out to be TypeScript at ~1.2k stars; SuperLocalMemory is Python at ~201 stars.
+
+---
+
+**[`em:50bbc3`]**  (co-feeds: `em:6733b4`)
+
+- **The Elixir verdict.** Gap: real but not empty — the sweep enumerated ~35 hex.pm searches, GitHub, Elixir Forum, and both awesome-lists, finding ~15 single-author 2026 experiments, all store-canonical, none above 30 stars, no Mem0 port, no official MCP-org Elixir SDK, and no file-canonical eval-first entrant. Viable: anubis_mcp 1.14.0, Bumblebee 0.7.1, exqlite with FTS5 compiled in, pgvector at ~1M downloads. Advised: yes, as the [elixir-agent-memory project](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/projects/elixir-agent-memory.md) with a [structured plan](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/projects/elixir-agent-memory/design-and-build-order.md) — FTS5 tier and eval harness first, adoption into `/intake` gated on a side-by-side gold-set measurement, with the crowding risk stated (fifteen entrants in six months; the plan's refresh rule re-checks the incumbent map before build).

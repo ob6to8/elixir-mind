@@ -298,3 +298,42 @@ Primary and secondary sources are linked inline throughout; the sweep ran
 2026-08-01 via two background research agents (web search + direct fetches;
 star counts from same-day GitHub page fetches; figures marked "secondary"
 or "search-summary" where the primary page was not fetched directly).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:dd64c2">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-memory-system-research-spike (2026-08-01)
+
+4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:dd64c2`]**  (co-feeds: `em:a0fbd5 em:fe3522 em:6733b4`)
+
+https://github.com/mex-memory/mex
+https://github.com/qualixar/superlocalmemory
+then
+
+* do a research spike into alternatives, the landscape, learnings, what is hype what is proven etc
+* do an analysis of this repo with respects to this strategy - what could be gained, and what might be tradeoffs, if there are any
+* consider porting these concepts to an elixir native solution (if one does not already exist)
+* if that idea is advised, viable, and its a gap in the market, create a plan
+
+---
+
+**[`em:dd64c2`]**  (co-feeds: `em:6733b4`)
+
+**In plain terms:** I read and filed both repos you pointed at, then ran two background research sweeps — one across the whole memory-tools field, one across the Elixir ecosystem. The headline from the field sweep is good news for this repo: during 2026 the leading memory vendors moved *toward* what this brain already is — Letta rebuilt its coding-agent memory on git-versioned markdown files, LangChain shipped a markdown-wiki memory, and every first-party memory feature (Claude Code, the Anthropic API memory tool) is a file directory. The one place the field is genuinely ahead of this repo is search quality over what's stored — a weakness this brain had already graded (C−) and designed a fix for (the "tier-2" embedding dedup) without ever building it. So the Elixir idea landed in a reshaped form: not a port of either repo, but a small standalone Elixir engine that builds disposable search indexes over a markdown bundle while the files stay the source of truth — with this brain as its first customer. I opened that as a project with a full build plan.
+
+---
+
+**[`em:dd64c2`]**
+
+- **Hype vs proven.** The field's benchmark of record (LoCoMo) has ~6.4% wrong gold answers per an independent audit, and Mem0 and Zep each published accusations that the other misconfigured their comparison; Letta measured plain files+grep at 74.0% beating Mem0's graph variant at 68.5% on that same benchmark. Production-proven: first-party file-based memory and curated-file practice. Contested: vendor-run benchmark claims and graph-memory premiums. All quoted from both sides with URLs in the [landscape reference](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/knowledge/SWE/agentic/agent-memory/memory-systems-landscape.md).
+
+---
+
+**[`em:dd64c2`]**  (co-feeds: `em:c71155 /meta/analysis/agent-memory-strategy-for-elixir-mind.md`)
+
+1. **It's orthogonal to the sidecar plan.** GrapeRoot optimizes token economics — pre-packing a prompt cheaply — while the engine plan answers recall quality — can intake find the document a new item should merge into. Different corpus (code vs knowledge bundle), different objective, Python with a closed core, so the Elixir gap claim and the plan's incumbent map are untouched. The one connection: the plan's deferred session-start router now has a second exemplar alongside mex's.
+2. **Its memory design is a counter-exemplar that strengthens the decline.** Keeping cross-session decisions in gitignored JSON — unversioned, unreviewable, provenance-free — is the exact polarity Letta abandoned when it moved memory *into* git. One 2026 entrant on the far side doesn't reverse the convergence; it clarifies what the convergence is about: not files as a format, but memory that is versioned, reviewable, and attributable — the property this repo's governance enforces.
+3. **One genuine refinement to the [landscape](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/knowledge/SWE/agentic/agent-memory/memory-systems-landscape.md):** retrieval posture is a three-way axis, now written in — agentic pull (Claude Code's bet), external index (the Milvus position), and graph pre-load (GrapeRoot productizes it) — with the leading coding agent on the first pole and the other two carrying the burden of proof.

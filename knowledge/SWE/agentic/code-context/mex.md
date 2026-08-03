@@ -82,3 +82,37 @@ position in the wider memory-tool field is mapped in the
 
 - README, github.com/mex-memory/mex (fetched 2026-08-01) — all quoted spans
   above.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a0fbd5">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-memory-system-research-spike (2026-08-01)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:a0fbd5`]**  (co-feeds: `em:fe3522 em:dd64c2 em:6733b4`)
+
+https://github.com/mex-memory/mex
+https://github.com/qualixar/superlocalmemory
+then
+
+* do a research spike into alternatives, the landscape, learnings, what is hype what is proven etc
+* do an analysis of this repo with respects to this strategy - what could be gained, and what might be tradeoffs, if there are any
+* consider porting these concepts to an elixir native solution (if one does not already exist)
+* if that idea is advised, viable, and its a gap in the market, create a plan
+
+---
+
+**[`em:a0fbd5`]**  (co-feeds: `em:fe3522`)
+
+**Done so far** — both repos are fetched and filed as `reference` docs (verbatim spans re-confirmed against the raw READMEs before quoting):
+
+- `knowledge/SWE/agentic/code-context/mex.md` — mex turns out to be a Tree-sitter+SQLite code graph fused to a version-controlled markdown wiki with drift detection; filed beside GitNexus and Codebase-Memory, which share its genre. Its philosophy ("Markdown is the durable interface.") is this bundle's own bet applied to codebase knowledge.
+- `knowledge/SWE/agentic/agent-memory/superlocalmemory.md` — a solo-authored, AGPL, maximalist local-first memory engine (five retrieval channels, self-reported LoCoMo scores, "sheaf cohomology" branding). Filed with vendor claims quoted verbatim and marked as vendor-run; its own README scopes the headline 87.7% to a single conversation.
+
+---
+
+**[`em:a0fbd5`]**  (co-feeds: `em:fe3522`)
+
+- **The seeds.** [mex](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/knowledge/SWE/agentic/code-context/mex.md) is substance-leaning (curated markdown + deterministic code graph + drift detection, on-trend with the field's convergence) filed beside GitNexus in `code-context/`; its maker is unnamed on its own site and no HN thread was found in the sweep's queries. [SuperLocalMemory](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/knowledge/SWE/agentic/agent-memory/superlocalmemory.md) is the maximalist counter-example — five retrieval channels, "sheaf cohomology" branding, self-authored preprints, a 1-point Show HN — filed with every claim quoted verbatim and marked vendor-run.

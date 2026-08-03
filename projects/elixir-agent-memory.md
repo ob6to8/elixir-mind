@@ -75,3 +75,40 @@ number is recall@k on versioned gold sets of natural-phrasing queries, the
 - [AI agent memory management — when markdown files are all you need](/knowledge/SWE/agentic/context-engineering/ai-agent-memory-management-markdown-files.md) — the search progression (grep → BM25 → hybrid) this engine's tiers mirror
 - [Would a vector DB improve recall as this bundle scales?](/meta/analysis/vector-db-recall-for-the-scaling-bundle.md) — the tier-2 contract and the no-ANN arithmetic
 - [SuperLocalMemory](/knowledge/SWE/agentic/agent-memory/superlocalmemory.md) — the maximalist counter-example: five channels, store-canonical, vendor-run benchmarks
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:6733b4">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-01-memory-system-research-spike (2026-08-01)
+
+4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:6733b4`]**  (co-feeds: `em:a0fbd5 em:fe3522 em:dd64c2`)
+
+https://github.com/mex-memory/mex
+https://github.com/qualixar/superlocalmemory
+then
+
+* do a research spike into alternatives, the landscape, learnings, what is hype what is proven etc
+* do an analysis of this repo with respects to this strategy - what could be gained, and what might be tradeoffs, if there are any
+* consider porting these concepts to an elixir native solution (if one does not already exist)
+* if that idea is advised, viable, and its a gap in the market, create a plan
+
+---
+
+**[`em:6733b4`]**  (co-feeds: `em:50bbc3`)
+
+The Elixir gap check is back, and it sharpens the thesis: the niche is not empty — ~15 single-author experiments appeared in the last six months (jido_memory, mnemosyne, jiyi, recollect, graphonomous, plus Arcana as a mature RAG substrate) — but every entrant is a store-canonical memory database in the Mem0 mold, none has credible evaluation, and none is file-canonical. The differentiated open slot is exactly what this brain would want: a derived-index recall sidecar where markdown stays the source of truth. All building blocks confirmed active (anubis_mcp as de-facto MCP standard, Bumblebee text embeddings, exqlite with FTS5 compiled in, pgvector/sqlite-vec/hnswlib). mex turns out to be TypeScript at ~1.2k stars; SuperLocalMemory is Python at ~201 stars.
+
+---
+
+**[`em:6733b4`]**  (co-feeds: `em:dd64c2`)
+
+**In plain terms:** I read and filed both repos you pointed at, then ran two background research sweeps — one across the whole memory-tools field, one across the Elixir ecosystem. The headline from the field sweep is good news for this repo: during 2026 the leading memory vendors moved *toward* what this brain already is — Letta rebuilt its coding-agent memory on git-versioned markdown files, LangChain shipped a markdown-wiki memory, and every first-party memory feature (Claude Code, the Anthropic API memory tool) is a file directory. The one place the field is genuinely ahead of this repo is search quality over what's stored — a weakness this brain had already graded (C−) and designed a fix for (the "tier-2" embedding dedup) without ever building it. So the Elixir idea landed in a reshaped form: not a port of either repo, but a small standalone Elixir engine that builds disposable search indexes over a markdown bundle while the files stay the source of truth — with this brain as its first customer. I opened that as a project with a full build plan.
+
+---
+
+**[`em:6733b4`]**  (co-feeds: `em:50bbc3`)
+
+- **The Elixir verdict.** Gap: real but not empty — the sweep enumerated ~35 hex.pm searches, GitHub, Elixir Forum, and both awesome-lists, finding ~15 single-author 2026 experiments, all store-canonical, none above 30 stars, no Mem0 port, no official MCP-org Elixir SDK, and no file-canonical eval-first entrant. Viable: anubis_mcp 1.14.0, Bumblebee 0.7.1, exqlite with FTS5 compiled in, pgvector at ~1M downloads. Advised: yes, as the [elixir-agent-memory project](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/projects/elixir-agent-memory.md) with a [structured plan](https://github.com/ob6to8/elixir-mind/blob/claude/memory-system-research-jan4n8/projects/elixir-agent-memory/design-and-build-order.md) — FTS5 tier and eval harness first, adoption into `/intake` gated on a side-by-side gold-set measurement, with the crowding risk stated (fifteen entrants in six months; the plan's refresh rule re-checks the incumbent map before build).
