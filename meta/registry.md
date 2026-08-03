@@ -342,6 +342,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e76937` | [beliefs/glossary/mailbox](/beliefs/glossary/mailbox.md) | concept | false |
 | `em:541206` | [beliefs/glossary/margin-collapse](/beliefs/glossary/margin-collapse.md) | concept | false |
 | `em:d49345` | [beliefs/glossary/markdown-renderer](/beliefs/glossary/markdown-renderer.md) | concept | false |
+| `em:80b36e` | [beliefs/glossary/mast](/beliefs/glossary/mast.md) | concept | false |
 | `em:15fe73` | [beliefs/glossary/materialize](/beliefs/glossary/materialize.md) | concept | false |
 | `em:19d667` | [beliefs/glossary/matn-criticism](/beliefs/glossary/matn-criticism.md) | concept | false |
 | `em:4c629e` | [beliefs/glossary/matter](/beliefs/glossary/matter.md) | concept | false |
@@ -704,6 +705,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
+| `em:ec728d` | [knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy](/knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md) | reference |  |
 | `em:1394b9` | [knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) | reference |  |
 | `em:1f1256` | [knowledge/SWE/evals/reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | methodology |  |
 | `em:9baaad` | [knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) | methodology |  |
