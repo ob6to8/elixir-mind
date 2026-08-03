@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, architecture, configuration, spin-out]
 sense: repo
-timestamp: 2026-07-17
+timestamp: 2026-08-03
 attribution:
   when: 2026-07-17T18:10:00Z
   channel: glossary
@@ -26,9 +26,13 @@ library generic over N bundles. The design keeps governance where it belongs
 while *what the list contains* remains a per-bundle, operator-ratified act.
 The existing `site_base_url`/`repo_url` entries are the pattern the rest of
 the surface (notably the `em:`
-[id prefix](/beliefs/glossary/stable-id.md)) follows.
+[id prefix](/beliefs/glossary/stable-id.md)) follows. The deferred
+modular-features stage extends the manifest with a `features` field (default:
+all on) keying the verifier's check sets — the
+[feature-flag](/beliefs/glossary/feature-flag.md) surface through which à la
+carte adoption happens inside the one library.
 
-*Seen in:* [2026-07-17 library spin-out spec thread](/meta/threads/2026-07-17-library-spin-out-spec.md), [2026-07-28 swappable-bundle spec and library naming thread](/meta/threads/2026-07-28-swappable-bundle-spec-and-library-naming.md)
+*Seen in:* [2026-07-17 library spin-out spec thread](/meta/threads/2026-07-17-library-spin-out-spec.md), [2026-07-28 swappable-bundle spec and library naming thread](/meta/threads/2026-07-28-swappable-bundle-spec-and-library-naming.md), [2026-08-03 modular-features stage thread](/meta/threads/2026-08-03-modular-features-stage-in-the-spin-out-plan.md)
 
 ## Thread excerpts — route-tagged log
 

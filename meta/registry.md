@@ -221,6 +221,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:143384` | [beliefs/glossary/fan-out](/beliefs/glossary/fan-out.md) | concept | false |
 | `em:e7689f` | [beliefs/glossary/fast-forward-merge](/beliefs/glossary/fast-forward-merge.md) | concept | false |
 | `em:f518a7` | [beliefs/glossary/fault-injection](/beliefs/glossary/fault-injection.md) | concept | false |
+| `em:b16a13` | [beliefs/glossary/feature-flag](/beliefs/glossary/feature-flag.md) | concept | false |
+| `em:8da2af` | [beliefs/glossary/feature-triple](/beliefs/glossary/feature-triple.md) | concept | false |
 | `em:f382b0` | [beliefs/glossary/featuring](/beliefs/glossary/featuring.md) | concept | false |
 | `em:c0ed08` | [beliefs/glossary/feeding-pairs](/beliefs/glossary/feeding-pairs.md) | concept | false |
 | `em:5e1788` | [beliefs/glossary/few-shot-prompting](/beliefs/glossary/few-shot-prompting.md) | concept | false |
