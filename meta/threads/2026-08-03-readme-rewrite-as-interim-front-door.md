@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5, then Claude Opus 5), 2026-08-0
 tags: [meta, thread, documentation, readme, plans, sequencing, governance]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01MiR6n6KDB9tNEwhei9oJEG
+pr: 243
 ---
 
 # 2026-08-03-readme-rewrite-as-interim-front-door
