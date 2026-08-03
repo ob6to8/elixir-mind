@@ -6,6 +6,7 @@ provenance: "Claude Code session (model undisclosed — the environment withhold
 tags: [meta, thread, methodology, specs, planning, matters, industry]
 timestamp: 2026-08-03T21:05:00Z
 session: https://claude.ai/code/session_01AVyQKcCnhpi7YjPdJuX8mR
+pr: 249
 ---
 
 # 2026-08-02-complete-spec-prompting-vs-iterative-delivery
