@@ -9,6 +9,11 @@ operator's voice is kept faithful; only dictation noise is cleaned.
 
 ## Entries
 
+- [2026-08-03](/journal/2026-08-03.md) — A snapshot of the stack-and-direction
+  decision — the integrated Claude Code app workflow pulling toward all-in
+  Anthropic adoption, the BEAM's fit for agent-swarm evals pulling toward
+  Elixir, and a request to evaluate the two eval-stack scenarios against each
+  other.
 - [2026-07-31](/journal/2026-07-31.md) — The auditability thesis — that truly
   auditing agent work requires understanding it down to the foundation — the
   repo nearing the "complexity escape" of the previous attempt and the decision
