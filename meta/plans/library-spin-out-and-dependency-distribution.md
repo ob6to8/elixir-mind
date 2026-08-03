@@ -11,7 +11,7 @@ attribution:
   why: "graduates the deferred Phase 4 spin-out of the bundle/library separation plan into its own executable spec, recording the dependency-distribution decision the operator asked about"
   from: [/meta/threads/2026-07-17-library-spin-out-spec.md, /meta/threads/2026-07-28-swappable-bundle-spec-and-library-naming.md]
 tags: [meta, plan, architecture, separation-of-concerns, spin-out, hex, dependency, tooling]
-timestamp: 2026-07-28
+timestamp: 2026-08-03
 ---
 
 # Library spin-out: knowledge-base repos consuming Elixir Mind as a packaged dependency
@@ -397,6 +397,113 @@ ExUnit (in the library repo)
   manifest surface and needs no new parser).
 - **Open questions surfaced:** 5–7 below.
 
+## Deferred: modular features — à la carte adoption
+
+The trajectory's third stage, recorded 2026-08-03 (after the parent plan's
+separation and this plan's spin-out): the library's features become
+**individually adoptable** — a second bundle takes route-tagging, or the
+verification ladder, without taking the whole opinionated stack. Two of its
+prerequisites are riders on phases already specced; everything else stays
+deferred behind an explicit trigger.
+
+**The unit of adoption is a feature triple, not an Elixir module.** A feature
+is a gate (its checks and mix task), its policy text (the contract fragment
+stating its law), and usually a skill (the agent procedure operating it) —
+plus the frontmatter keys it claims (`verified`/`verified_by` for the
+verification ladder, `attribution` for attribution, `launch` for
+visualizations). Adopting a feature means taking all three members; formally
+defining one means declaring all three plus its dependency edges.
+
+**The composition points already exist in single-tenant form.** The contract
+compiler composes `CLAUDE.md` from per-concern policies; CI runs the gate
+suite as a union of independent checks; skills are per-name directories. This
+stage makes those three points compositional over an enabled-feature set; it
+invents no new ones.
+
+**Features form a DAG, not a flat menu.** The module graph is already
+hub-and-spoke: feature modules depend on the kernel (`Frontmatter` ·
+`Registry` · `Links` · `SiteConfig`, absorbed into `Bundle`) and — apart from
+the aggregating reporters (`Verifier` unions the check sets, `SessionInit`
+the open-work surfaces) and the retiring `attribution/backfill.ex` (open
+question 6) — not on each other (cross-module reference sweep of `lib/` at
+`684530d`). The load-bearing edges are conventions rather than code:
+route-tag refs are stable ids applied over thread docs, so route-tagging
+requires identity and session capture, and an adopter of "just route-tagging"
+takes those with it. Illustrative sketch — the normative enumeration and edge
+list are the profile spec's job (rider 1):
+
+```
+kernel — document model + identity  (Frontmatter · Registry · Links · Bundle)
+├── attribution
+├── verification ladder             (verified/verified_by; statement types)
+├── contract compilation            (meta/policy → CLAUDE.md)
+├── glossary
+├── matters / open-work tracking
+├── site / publishing
+└── session capture (threads)
+    └── route-tagging               (id refs over thread docs — needs both parents)
+reporters over enabled features: verifier (checks) · session-init (open work)
+```
+
+**Mechanism vs. ratified instance, per feature.** The profile/manifest test
+above already splits library *shape* from bundle *values*; this stage applies
+the same split to policy prose. A feature ships its policy as a **template**;
+an adopter ratifies it — verbatim or amended — into their own `meta/policy/`,
+and their contract compiles from their own policies exactly as today.
+Ratification stays a per-bundle governance act (the posture the vocabularies
+row already takes), so adopting a feature means knowingly adopting its law,
+and personal register content (banned phrases, channel lists) never ships as
+another bundle's default.
+
+**Two riders on phases already specced** — cheap now, and they pay whether or
+not packaging ever happens:
+
+1. **Profile-spec rider (parent plan, Phase 2).** The metadata-profile spec
+   is written as a **core profile plus per-feature extensions**, each
+   extension declaring the feature's frontmatter keys, checks, conventions,
+   and dependencies on other features. That document *is* each feature's
+   formal definition, and it serves adopt-by-reading — the realistic first
+   adoption mode, since the policies are published — even if per-feature
+   packaging never ships.
+2. **Manifest rider (parent plan, Phase 3 — the config surface above).** The
+   manifest gains a `features` field (default: all on) and the verifier
+   becomes a check-runner over feature-keyed check sets:
+
+   ```elixir
+   config :elixir_mind,
+     # …manifest fields above…
+     features: :all  # or an explicit list of feature keys
+   ```
+
+   Flags deliver the à la carte property inside one package: a bundle that
+   skips a feature does not ratify its policy template and does not run its
+   checks.
+
+**Deferred behind a trigger — a second consumer wanting a partial install.**
+Per-feature Hex packages (per-feature versioning, a cross-feature
+compatibility matrix) and a stable third-party check/plugin API are the
+expensive form of this stage, and they serve adopters who do not yet exist;
+once the riders land they become mechanical, so deferring them costs no
+rework. One standing decision is expected to re-open if external adopters
+materialize: the
+[coding standards](/meta/policy/elixir-coding-standards.md) decline a
+declarative constraint layer while it is "written by the same people who
+write the verifier" — external feature adopters are precisely "authors who
+do not write Elixir", that decision's named re-open condition, and the cost
+belongs to the future that has such adopters.
+
+### Decision list (modular features)
+
+- **Recommended:** feature modularity as manifest flags in one library; each
+  feature's formal definition banked in the Phase 2 profile spec; physical
+  packaging deferred behind the second-consumer trigger.
+- **Rejected:** runtime/service decomposition (the toolchain is offline,
+  zero-dependency mix tasks and every composition point is compile/check
+  time, so a service boundary would have nothing to serve); per-feature
+  packages now (N packages × one maintainer × zero external adopters); a
+  third-party plugin API designed ahead of its first user.
+- **Open question surfaced:** 8 below.
+
 ## What each knowledge-base repo keeps
 
 - **A thin `mix.exs`** — the knowledge repo's own app name, the
@@ -510,3 +617,9 @@ ExUnit (in the library repo)
    rename still carries its weight) is an operator call; the plan above
    deliberately keeps the operator-facing command surface stable in the
    meantime.
+8. **Feature granularity and enumeration** (modular-features stage). Which
+   capabilities are features and which are kernel — is attribution separable
+   or part of the document model? are `inbox/` research and the survey tier
+   features at all, or bundle-side conventions with no library half? — is
+   settled when the Phase 2 profile spec's per-feature extensions are
+   written; the edge list declared there is the normative one.

@@ -11,7 +11,7 @@ attribution:
   why: "persists the operator's two-concerns framing and the doc-first delineation path per the persist-plans policy, so the boundary decision and the deferred spin-out survive the session"
   from: [/meta/threads/2026-07-15-bundle-library-separation-plan.md, /meta/threads/2026-07-17-library-spin-out-spec.md, /meta/threads/2026-07-28-swappable-bundle-spec-and-library-naming.md]
 tags: [meta, plan, architecture, separation-of-concerns, okf, tooling, governance]
-timestamp: 2026-07-28
+timestamp: 2026-08-03
 ---
 
 # Separate the two concerns: the OKF knowledge bundle and the Elixir Mind library
@@ -113,6 +113,12 @@ session, no code changes):
   route-tag format, extracted from the policies' prose into one normative
   reference that a second collection could implement. Decide its home (it is
   a *library* deliverable even while it lives here).
+- Structure the spec as a **core profile plus per-feature extensions** — each
+  extension declaring its feature's frontmatter keys, checks, conventions,
+  and dependencies on other features — per the
+  [spin-out plan](/meta/plans/library-spin-out-and-dependency-distribution.md)'s
+  deferred modular-features stage (added 2026-08-03), so each feature is
+  formally defined and individually adoptable.
 
 **Phase 3 — configurability audit** (deferred; own session):
 
