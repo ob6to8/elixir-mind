@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-08-03; verbatim retaine
 tags: [meta, thread, intake, evals, multi-agent, mast, berkeley, agentic]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_012vz3HdRemY4cEYi1D7eTkf
+pr: 241
 ---
 
 # 2026-08-03-mast-multi-agent-failure-taxonomy-intake
