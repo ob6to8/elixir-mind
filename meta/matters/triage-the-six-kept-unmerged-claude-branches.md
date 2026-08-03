@@ -4,7 +4,7 @@ title: "Triage the six kept unmerged claude/* branches"
 description: Each of the six unmerged branches kept on 2026-07-11 ends up merged, superseded-and-deleted, or explicitly retired — none left in limbo.
 status: open
 tags: [meta, matter, git, branches]
-timestamp: 2026-07-13
+timestamp: 2026-08-03
 attribution:
   when: 2026-07-11T19:38:44+00:00
   channel: backfill
@@ -64,6 +64,19 @@ reason. The two ports are executed (per the
 **remaining is operator-only**: delete the two false orphans
 (`glossary-thread-docs`, `glossary-doctrine-policy`) and the two now-ported
 source branches (`git-fetch-merge-skill`, `ccr-architecture-notes`).
+
+**Update 2026-08-03 — one deletion remains, ratified and executable by any
+credentialed context.** Verified against the remote (`git ls-remote`):
+`glossary-thread-docs-zwfk6i`, `glossary-doctrine-policy-lkabog`, and
+`ccr-architecture-notes-csbiuv` are already absent. The last branch,
+`git-fetch-merge-skill-ke7adg` (content ported per the transplant plan — a
+zero-loss delete), had its deletion **ratified by the operator 2026-08-03**;
+the executing session's push credential was scoped to its own session branch
+(`403` on the ref deletion) and the GitHub MCP surface carries no ref-deletion
+tool, so the delete itself is still pending. Done means: that one branch is
+deleted — one click on the GitHub branches page, or one
+`git push origin --delete claude/git-fetch-merge-skill-ke7adg` from any
+context whose credential covers it; no further ratification needed.
 
 ---
 
