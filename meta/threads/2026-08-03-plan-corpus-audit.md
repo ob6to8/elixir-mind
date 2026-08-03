@@ -57,6 +57,7 @@ standing on a superseded repo.
 | Tier 1–3 follow-ups (status flips, the de-todo sweep, per-plan refreshes) | open | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | options offered, none chosen — each becomes a backlog matter doc only once the operator ratifies it |
 | Seven operator decisions surfaced by the audit | open | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | five need rulings; model-attribution and Pages are already carried by existing artifacts |
 | Correcting the analysis's write-once `attribution` fields | closed | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | - |
+| Coverage gap: the five plans the merge brought | closed | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | - |
 | Session 5's issue and matter thirds | open | [comprehensive-repo-review-program](/meta/plans/comprehensive-repo-review-program.md) | a following pass audits the open issues and open matters against the same baseline |
 
 ## User

@@ -52,8 +52,13 @@ that arrived in the merge —
 [model-column-in-the-matter-register](/meta/plans/model-column-in-the-matter-register.md),
 [skill-section-vocabulary](/meta/plans/skill-section-vocabulary.md) (all
 accepted) and [complete-docs-rewrite](/meta/plans/complete-docs-rewrite.md)
-(proposed) — are **not evaluated here**; they postdate the audit and are
-structured by construction. Each finding below carries its correction inline.
+(proposed) — were evaluated in a following pass (2026-08-03, at the operator's
+direction, since leaving four live accepted plans uncovered would make this
+audit's corpus-wide claim false at HEAD) and have their own verdict section
+below. Two of them were filed `proposed` and flipped to `accepted`
+afterward, which is exactly why their index entries drifted; three of the five
+are artifact-kit structured, not all. Each finding below carries its correction
+inline.
 
 **Cite matters by name, never by register row.** Row numbers renumber on every
 delivery — the audit's original row citations went stale within a day, and
@@ -285,6 +290,48 @@ The remaining 16:
 [research-daily-read-synthesis](/meta/plans/research-daily-read-synthesis.md),
 [flows-genre-and-scenario-testing](/meta/plans/flows-genre-and-scenario-testing.md).
 
+### The five merge arrivals (evaluated in a following pass)
+
+All five are entirely unshipped — no `ModelConfig`, no `SkillSections`, no
+`model` key anywhere in `ElixirMind.Matters`, no `model-stamping` or
+`skill-section-vocabulary` policy, and the register header is still four cells.
+Being days old, none has drifted in the way the older corpus has; what they
+have instead is **census staleness measured in hours** and collisions with each
+other that no one has written down.
+
+| Plan | Status | Verdict | Standing |
+|---|---|---|---|
+| [decision-queue-matter-sequence](/meta/plans/decision-queue-matter-sequence.md) | accepted | keep-as-is | All five matters exist as queued rows in the right order; anchors clean; index entry correct on placement, gloss status, and content |
+| [skill-section-vocabulary](/meta/plans/skill-section-vocabulary.md) | accepted | keep-as-is | Every census figure re-verified exact (15 `Guardrails` / 10 `Procedure` / 7 `Dispatch`, `Purpose` in 0 of 18) and the capture fence hazard is real — the most anchor-sound plan in the corpus alongside post-action-readback |
+| [separate-the-model-roster-concerns](/meta/plans/separate-the-model-roster-concerns.md) | accepted | refresh (light) | Anchors exact to the line; two stale positional cites; index entry misfiled under Proposed; its open question is now *determined* by the queue rather than open |
+| [model-column-in-the-matter-register](/meta/plans/model-column-in-the-matter-register.md) | accepted | refresh (substantive) | Census 2× stale (11 → 21 queued rows) and its "all 30 open docs are unstamped" premise is now false; collides head-on with `derive`, queued nine rows ahead; index entry misfiled *and* gloss contradicts frontmatter |
+| [complete-docs-rewrite](/meta/plans/complete-docs-rewrite.md) | proposed | refresh | Emits no matters, so it has no delivery vehicle; flow-doc count off by one and one of those is generated; its index-gloss surface is 143 files, a magnitude the plan never states; three uncited scope collisions |
+
+Three refreshes, concretely. **`model-column`** needs its census restated (48
+docs, 41 open, 21 queued, **11 already stamped** — so 13 rather than all
+queued rows would render `-`, which weakens but does not overturn its
+backfill-first rationale) and a cross-plan ordering section stating its cell
+arithmetic *conditionally*: one more than whatever the row shape is at
+delivery, four today and three after `derive` lands. **`separate-the-model-
+roster-concerns`** needs its two row cites dropped for names, and its open
+question closed with what the queue already decided — plus a reciprocal watch
+line on the settle-matter, which today carries no pointer back. **`complete-
+docs-rewrite`** needs its scope inventory corrected (9 flow docs, one of them
+generated and omitted from the flows index's own listing; 143 `index.md`
+files) and its three uncited collisions named: `derived-index-listings` over
+the gloss surface, `three-level-documentation` over the 16 tutorials it would
+rewrite, and the queued gate-suite-tutorial refresh sitting inside its
+tutorials scope.
+
+One boundary the pass confirmed rather than found: `skill-section-vocabulary`
+subsumes neither skills-cluster plan. It draws its line against
+policy-canonical correctly (*which content* belongs in a skill vs. *how it is
+arranged*), and its mechanism is compatible — policy-canonical's marker is a
+blockquote, not an H2, so it passes the section gate untouched. Against the
+priority-1 compile-skills-registry it is orthogonal (body headings vs.
+frontmatter), which is precisely why the two-scanner collision above went
+unnoticed.
+
 ## Corpus-level findings
 
 **1. Pre-2026-08 plans are not wired into the matter system — the audit's
@@ -297,15 +344,20 @@ matters. Neither does any *pre-2026-08* accepted-but-unexecuted plan (the mind
 rename, the separation program's Phase 1, tag-governance step 2, span
 phase 1, concept-terminology execution).
 
-The gap is a legacy one rather than a design one, which the merge
-demonstrates: since 2026-08-01 every plan filed through
-[`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md) emits
-matters by construction — five plans account for 14 of the register's 21 rows
-— while every plan predating the skill still carries a build order that
-emitted nothing. So the mechanism works and was simply never applied
-backward. A session consuming `/matter` top-down now delivers **21** queued
-rows before touching the operator's stated #1; two ranking surfaces, nothing
-reconciling them.
+The gap is largely a legacy one, which the merge demonstrates: five recent
+plans account for 14 of the register's 21 rows, while every plan predating
+[`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md) carries a
+build order that emitted nothing. But the discriminator is **neither the date
+nor the skill** — it is whether the filing session chose to emit, and both
+counterexamples arrived in the same merge: `complete-docs-rewrite` was filed
+*after* the skill existed and emits **zero** matters (it has no register row
+and no matter doc, so it has no delivery vehicle at all), while
+`decision-queue-matter-sequence` came out of a session that did not use the
+skill and emits **five**. The skill makes emission the default; it does not
+make it structural, and one plan escaped it four days into the new regime. A
+session consuming `/matter` top-down now delivers **21** queued rows before
+touching the operator's stated #1; two ranking surfaces, nothing reconciling
+them.
 
 **2. The todo retirement left its vocabulary in eleven active plans.** The
 fold (PRs #229–#234) repointed links mechanically but left prose: a routing
@@ -353,6 +405,21 @@ establishes the stamp is session-dependent precisely on the matters where the
 tier choice costs most — four independent scoping runs split 3–1 on both
 judgment-weighted matters.
 
+The follow-up pass over the merge arrivals put the real count higher still:
+five more prospective-axis artifacts exist beyond those named above
+([the register Model column plan](/meta/plans/model-column-in-the-matter-register.md)
+and its two matters, plus the config-extraction and roster-gating matters),
+taking the model question to roughly **nineteen artifacts across the two
+axes**. It also settles a question the roster plan left open. That plan says
+of its overlap with the settle-matter "whichever lands second reconciles;
+neither is blocked" — but the register decides: the roster matters are queued
+at rows 7–9 and the settle-matter at row 20, so the settle-matter is
+unconditionally the reconciling side, and its packet names neither the roster
+plan nor the model-stamping matter. Its option (c), *retract*, would by then be
+retracting a policy whose prospective counterpart has already been ratified and
+compiled into the contract. **Tier 4 #2's "no ratification needed" holds for
+the ruling, but that packet needs a scope edit before it is consumable.**
+
 **4. The 2026-08-01 ratification wave is internally consistent but ratified
 over stale censuses.** The build-order chain (span phase 1 →
 schema-formalization phase 2 → concept-terminology execution; toolchain floor
@@ -399,16 +466,33 @@ module→policy), `implemented_by` (three-level-documentation, policy→code),
 want one shared decision. Extraction/judging machinery: three artifacts each
 specify an extract-statements-and-LLM-judge component (belief-decomposition,
 span OQ1, schema tier 3) with a sharing requirement recorded only for one
-pair. And a fourth collision arrived with the merge: `ElixirMind.Matters`'s
-row shape now has three claimants —
+pair. And three more collisions arrived with the merge. **`ElixirMind.Matters`'s row
+shape has three claimants** —
 [derive the register's row numbering](/meta/matters/derive-the-register-row-numbering.md)
 takes `parse_row/1` from four cells to three,
 [the register Model column](/meta/matters/register-model-column-and-agreement-check.md)
 takes it to five, and
 [matter-cli-and-neovim-surface](/meta/plans/matter-cli-and-neovim-surface.md)
-holds a file-tree diff over the same module. The first two name each other
-("whichever lands second refreshes its cell arithmetic"); the plan names
-neither.
+holds a file-tree diff over the same module; all three edit the same two
+functions and the same moduledoc paragraph, whose "four cells" sentence one
+deletes while another edits it. The naming is **one-directional**: `derive`
+carries an interaction clause naming the Model column, while neither the
+Model-column matter nor its plan names `derive`, and `matter-cli` names none of
+them. Nor is the burden symmetric, as `derive`'s "whichever lands second
+refreshes its cell arithmetic" implies — `derive` is queued nine rows ahead, so
+it lands first with near-certainty and the refresh falls entirely on the side
+that was never told.
+
+**Index glosses have two claimants**: `complete-docs-rewrite` puts "the
+one-line listing descriptions in every `index.md`" (143 files) in scope as a
+hand-rewritten surface, while
+[derived-index-listings](/meta/plans/derived-index-listings.md) would retire
+that surface into a generator, moving bullet text into a new write-time
+`summary:` field. Whichever lands first changes what the other is editing;
+neither names the other. **And `.claude/skills/*/SKILL.md` has two scanners**:
+skill-section-vocabulary's fence-aware heading parser and compile-skills-
+registry's frontmatter scanner — two parsers and two 18-file sweeps over the
+same files, sharing the fence-stripping problem, neither citing the other.
 
 **9. Index-gloss drift is systemic, not policy-index-specific.** The open
 issue
@@ -434,6 +518,17 @@ now misfiled rather than one, and `model-column-in-the-matter-register`'s
 gloss ends `status: proposed` while its frontmatter reads `accepted` — a
 gloss/frontmatter contradiction that is neither a placement error nor in that
 matter's table.
+
+The two merge arrivals also make the *mechanism* legible, which the audit
+could not see from the older instances: **an accept-after-filing commit updates
+the frontmatter and skips the index entry.** Both plans were filed `proposed`
+with matching glosses, then flipped; the roster plan's accept commit rewrote
+its gloss text but left it in the Proposed section, and the Model-column plan's
+accept commit touched neither. Two distinct failure modes, one motion. A third
+class sits underneath both and no gate can see it: **stale positional cites**.
+The audit's own no-row-numbers rule has eight live violations across plans,
+matters, and the index — six introduced by the merge arrivals — each of which
+goes wrong on the next renumber, which is precisely what `derive` makes routine.
 
 **10. Remote-branch reality has outrun most branch-tracking artifacts.** The
 transplant residue is stale in two of its three homes — the
@@ -511,18 +606,32 @@ frontmatter flips, because both plans' status and placement currently agree —
 they are consistently wrong, so the new gate would pass them. What remains
 beside the two flips: the stale glosses of finding 9 across the plans,
 issues, and matters indexes, plus the `model-column` gloss's
-`proposed`/`accepted` contradiction. The gloss half overlaps
-[complete-docs-rewrite](/meta/plans/complete-docs-rewrite.md)'s in-scope
-index-gloss pass, which is sequenced behind the decision-queue matters —
-these are factual corrections rather than that plan's coherence rewrite, and
-making them now does not pre-empt it.
+`proposed`/`accepted` contradiction. The gloss half touches two other artifacts, and both point the same way. It
+overlaps [complete-docs-rewrite](/meta/plans/complete-docs-rewrite.md)'s
+in-scope index-gloss pass — but that plan emits no matters and holds no
+register row, so it is not merely sequenced behind the decision-queue block, it
+has **no delivery vehicle at all**, which removes any stranding risk from
+correcting now; the later 143-file pass would simply find those glosses already
+right, which is the cheap direction. It also overlaps the queued
+[contract-synchronization sweep](/meta/matters/contract-synchronization-sweep.md),
+which already owns two named gloss fixes (the `model-attribution` entry in the
+policy index and the `/capture` entry in skills-registry) — **carve those two
+out of this tier or it collides with a queued matter.**
 
-**Tier 2 — the de-todo sweep (one mechanical matter).** Replace retired
-`todo` vocabulary across the eleven active plans of finding 2 with
+**Tier 2 — two mechanical sweeps (one matter, or two).** First, replace
+retired `todo` vocabulary across the eleven active plans of finding 2 with
 `matter`/`meta/matters/` per
 [governance-artifact-routing](/meta/policy/governance-artifact-routing.md),
 including reconcile's normative tracker set and library-spin-out's manifest
-sketch.
+sketch. The merge arrivals carry none of it, so this scope did not grow.
+Second, the same class one level down: **eight live stale positional cites**
+("queued row 6", "row 12", "all 11 rows") across two plans, three matter docs,
+and two plans-index glosses, six of them introduced by the merge arrivals. Each
+is wrong at the next renumber — which
+[derive the register's row numbering](/meta/matters/derive-the-register-row-numbering.md)
+is queued to make routine — so replacing them with names is the same
+one-pass fix as the de-todo sweep and closes the class before the numbering
+starts moving.
 
 **Tier 3 — substantive per-plan refreshes.** Route by vehicle: (a) plans
 whose stale text misleads a cold reader *now* — concept-terminology's census
@@ -535,14 +644,19 @@ audit's appendix carries the per-plan edit lists so any vehicle can execute
 without re-deriving.
 
 **Tier 4 — operator decisions surfaced (blocking their plans, not each
-other):**
+other).** These are **not** the review program's decision queue, despite the
+name collision: that queue's five rows became the queued decision-queue matter
+sequence, which carries exactly one of the seven below (#2) and leaves the
+other six untouched. A session reading rows 17–21 as discharging Tier 4 would
+be wrong.
 
-1. **Matter-system wiring** (finding 1): emit matters for the *pre-2026-08*
-   accepted plans' next build steps — at minimum the operator's priority-1
+1. **Matter-system wiring** (finding 1): emit matters for the accepted plans'
+   next build steps — at minimum the operator's priority-1
    compile-skills-registry — or explicitly re-rank. `/scope-unit-of-work`
-   already answers this forward for every newly-scoped unit; what is
-   unanswered is backward, for the ~20 accepted and in-progress plans that
-   predate the skill and emitted nothing.
+   makes emission the *default* forward but not a guarantee (one plan filed
+   after it emits nothing), and nothing at all reaches backward to the ~20
+   accepted and in-progress plans that predate it. Worth deciding whether
+   accepting a plan should require its first build step to exist as a matter.
 2. **Model-attribution reconciliation** (finding 3): **already queued** as
    [settle model-attribution](/meta/matters/settle-model-attribution.md),
    carrying this audit's recommendation (span D5/D6 controls; absorb the
