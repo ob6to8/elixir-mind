@@ -9,7 +9,7 @@ attribution:
   when: 2026-07-12T09:50:13+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md, /meta/threads/2026-07-31-herdr-cmux-terminal-tool-comparison-intake.md, /meta/threads/2026-07-31-microsoft-skillopt-intake.md]
+  from: [/meta/threads/2026-07-12-dedup-recall-probe-and-synonym-intake.md, /meta/threads/2026-07-18-observer-subagent-pattern-intake.md, /meta/threads/2026-07-23-ai-drift-intake-and-coding-standards-ratification.md, /meta/threads/2026-07-27-journal-avatars-and-extended-mind-intake.md, /meta/threads/2026-07-28-kimi-k3-weight-release-implications.md, /meta/threads/2026-07-28-debugging-agent-harnesses-on-weak-models.md, /meta/threads/2026-07-29-isnad-claim-verification-intake.md, /meta/threads/2026-07-29-rag-evaluation-reddit-intake.md, /meta/threads/2026-07-29-graphrag-serialization-claim-and-its-critic.md, /meta/threads/2026-07-31-agent-substrate-talks-intake-analysis-and-ratifications.md, /meta/threads/2026-07-31-herdr-cmux-terminal-tool-comparison-intake.md, /meta/threads/2026-07-31-microsoft-skillopt-intake.md, /meta/threads/2026-08-03-mast-multi-agent-failure-taxonomy-intake.md]
 ---
 
 # Dedup recall probe — gold set
@@ -68,6 +68,7 @@ being mechanically rewritten.
 | context poisoning | em:784985 | target | logical context poisoning | The concept's exact wording — a control hit, deliberately paired with the row-1 "pollution" miss to isolate vocabulary as the failure. |
 | kv cache | em:266c5e em:1cac23 | negative | — | A non-duplicate pair: kv-cache-compression-history (survey of eviction/quantization) vs vericache-lossless-kv-cache (one lossless technique). They share heavy vocabulary but must **not** be judged duplicates. Seeded for the later duplicate-judgment tiers; not scored in v1. |
 | context rot | em:77d68a em:c0961a | negative | — | Another non-duplicate pair: the context-rot capture vs effective-context-engineering-for-agents, which merely discusses the phenomenon. Overlapping vocabulary, distinct concepts. Not scored in v1. |
+| TDD with coding agents | em:e7644d | target | TDD; test-driven development; AI-assisted programming | Operator's phrasing ("where TDD ranks … for developing with coding agents") at the TDD research-spike intake; the capture says "TDD" and "AI-assisted programming" but never the "coding agents" phrasing, so the plain query misses and the variants recover it. Harvested at intake 2026-08-01. |
 | lossless kv cache | em:1cac23 | quarantine | — | Gold answer is time-relative: once supersession is modeled, a newer lossless-KV concept could supersede VeriCache and become the correct dedup target. Undefined until then (see the [epistemic overlay plan](/meta/plans/epistemic-overlay.md)); parsed and reported, never scored. |
 | what is the new observer subagent pattern in claude code | em:02731b | target | observer agents; watchdog agent; agent watching another agent; advisory oversight subagent | harvested at intake 2026-07-18 |
 | the founders playbook - building an ai native startup | em:54cf3c | target | anthropic founder playbook; ai-native startup playbook; startup lifecycle playbook | harvested at intake 2026-07-20 |
@@ -87,6 +88,7 @@ being mechanically rewritten.
 | the new microsoft skillopt repo and documentation | em:42648b | target | skillopt; text-space optimizer for agent skills; training a skill.md as a trainable parameter; prompt optimization with a validation gate | harvested at intake 2026-07-31 |
 | the evolutionary algorithms paper | em:da2ffb | target | diffusion model evolutionary alignment; inference-time diffusion alignment; evolving latent noise for diffusion models | harvested at intake 2026-07-31 |
 | the circles-sines-signals interactive educational displays | em:4956f3 | target | circles sines and signals; jack schaedler dft explorable; interactive DFT teaching resource | harvested at intake 2026-07-31 |
+| the berkeley multi-agent-failure taxonomy paper | em:ec728d | target | MAST taxonomy; why do multi-agent LLM systems fail; multi-agent system failure modes | harvested at intake 2026-08-03 |
 
 ## Baseline
 
@@ -100,8 +102,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 8 | 28 |
-| expanded | 23 | 28 |
+| plain | 8 | 30 |
+| expanded | 25 | 30 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
