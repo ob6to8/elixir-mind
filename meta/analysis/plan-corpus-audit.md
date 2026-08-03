@@ -1,15 +1,15 @@
 ---
 type: analysis
-title: "The plan corpus audited against HEAD and the matter queue (2026-08-03)"
+title: "The plan corpus audited against HEAD and the matter queue (2026-08-02)"
 description: Audits all 59 plans against the repo at 4d008ee and the matter register's direction of travel — the plans third of the review program's session 5 — finding two accepted plans verifiably executed and due to flip done, 25 active plans needing refresh, and none retiring outright; the corpus-level defects are structural — pre-2026-08 plans are not wired to the matter queue, the todo retirement left its vocabulary in eleven active plans, one attribution question now spans seven artifacts on two axes, and index glosses drift systemically. Corrected at the 684530d merge, which grew the corpus to 64 plans and the register to 21 rows.
 provenance: "Claude Fable 5, 12-subagent cluster evaluation with in-session synthesis and spot verification"
 tags: [meta, analysis, plans, audit, drift, matters, governance]
 timestamp: 2026-08-03
 attribution:
-  when: 2026-08-02T12:20:00Z
+  when: 2026-08-02T18:15:00Z
   channel: agent-authored
   agent: "Claude Code agent, operator-commissioned plan-corpus audit session"
-  why: "the operator commissioned a comprehensive audit of every plan against the repo and the matter list — the review program's decision-queue row 5 (plan-backlog triage), executed"
+  why: "the operator commissioned a comprehensive audit of every plan against the repo and the matter list — delivering the plans third of the review program's session 5, the governance backlog audit"
   from: [/meta/threads/2026-08-03-plan-corpus-audit.md]
 ---
 

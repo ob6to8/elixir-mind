@@ -2,7 +2,7 @@
 type: reference
 title: 2026-08-03-plan-corpus-audit
 description: An operator-commissioned audit of every plan against the repo and the matter queue — 59 plans evaluated by a twelve-cluster subagent fan-out with adversarial verification, finding two executed plans still filed accepted, 25 active plans needing refresh, none retiring, and twelve corpus-level findings; then re-checked against a same-day main merge that changed no verdict but falsified the audit's counts, its register-row citations, and its own framing.
-provenance: "Claude Code session (Claude Fable 5, then Claude Opus 5 from the merge onward), 2026-08-03; verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped. Render deliberately truncated: at operator direction the transcript following the `merge main into thread` message is omitted; the narrative and ledger below cover that work, and its commits are in the PR."
+provenance: "Claude Code session (Claude Fable 5, then Claude Opus 5 from the merge onward), spanning 2026-08-02 (the audit) and 2026-08-03 (the main merge, the corrections, and this capture); verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped. Render deliberately truncated: at operator direction the transcript following the `merge main into thread` message is omitted; the narrative and ledger below cover that work, and its commits are in the PR."
 tags: [thread, plans, audit, drift, matters, governance]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01CTBqPfzgjM4VpE84J679Lv
@@ -33,8 +33,9 @@ before reaching it. Two of the twelve subagents lost their verification pass to
 a session usage limit; both were re-verified directly against the tree rather
 than reported unverified.
 
-The session then merged `origin/main` (73 files, clean) and re-checked the
-audit against it, which is where the second half of the work went. The merge
+The session then paused overnight and resumed the next day, merging
+`origin/main` (73 files, clean) and re-checking the audit against it, which is
+where the second half of the work went. The merge
 changed **no verdict** — both mark-done plans were byte-unchanged — but it
 falsified the audit's censuses, every register-row citation it made, and its
 own framing paragraph: the review-program decision-queue row it claimed to
@@ -55,7 +56,7 @@ standing on a superseded repo.
 | Audit re-checked and corrected against the `684530d` merge | closed | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | - |
 | Tier 1–3 follow-ups (status flips, the de-todo sweep, per-plan refreshes) | open | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | options offered, none chosen — each becomes a backlog matter doc only once the operator ratifies it |
 | Seven operator decisions surfaced by the audit | open | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | five need rulings; model-attribution and Pages are already carried by existing artifacts |
-| The analysis's filing date and the `attribution` correction question | paused | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | whether the write-once `attribution.when`/`why` may be corrected in the session that mis-wrote them |
+| Correcting the analysis's write-once `attribution` fields | closed | [plan-corpus-audit](/meta/analysis/plan-corpus-audit.md) | - |
 | Session 5's issue and matter thirds | open | [comprehensive-repo-review-program](/meta/plans/comprehensive-repo-review-program.md) | a following pass audits the open issues and open matters against the same baseline |
 
 ## User
