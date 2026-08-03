@@ -47,7 +47,15 @@ spans the scale from a plain small task (a title, a sentence of packet) to a
 plan-emitted build step; an open matter outside the register is **backlog** —
 filed, awaiting queueing or pickup.
 
-*Seen in:* [the TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md), [2026-08-02 methodology-finalization thread](/meta/threads/2026-08-02-methodology-finalization.md), [2026-08-02 matters-vs-plans thread](/meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md), [2026-08-02 matter-type-vocabulary-adoption thread](/meta/threads/2026-08-02-matter-type-vocabulary-adoption.md), [2026-08-02 stand-up-meta-matters thread](/meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md), [2026-08-02 build-the-matter-skill thread](/meta/threads/2026-08-02-build-the-matter-skill.md), [2026-08-02 mix-brain-matters-and-consumed-retirement thread](/meta/threads/2026-08-02-mix-brain-matters-and-consumed-retirement.md)
+A matter also carries a `model:` — the
+[roster](/beliefs/glossary/model-roster.md) value for the model that should
+*deliver* it, with the determination in a `## Model` body section. The stamp is
+**prospective and advisory**, which is what distinguishes it from
+[`provenance`](/beliefs/glossary/provenance.md): one recommends who should do
+the work, the other records who wrote the doc, and on an agent-scoped matter
+they routinely differ.
+
+*Seen in:* [the TDD research-spike thread](/meta/threads/2026-08-01-tdd-research-spike-and-methodology-adoption.md), [git-atomic-pull-requests](/meta/policy/git-atomic-pull-requests.md), [2026-08-02 methodology-finalization thread](/meta/threads/2026-08-02-methodology-finalization.md), [2026-08-02 matters-vs-plans thread](/meta/threads/2026-08-02-matters-vs-plans-and-matter-docs.md), [2026-08-02 matter-type-vocabulary-adoption thread](/meta/threads/2026-08-02-matter-type-vocabulary-adoption.md), [2026-08-02 stand-up-meta-matters thread](/meta/threads/2026-08-02-stand-up-meta-matters-and-thin-the-register.md), [2026-08-02 build-the-matter-skill thread](/meta/threads/2026-08-02-build-the-matter-skill.md), [2026-08-02 mix-brain-matters-and-consumed-retirement thread](/meta/threads/2026-08-02-mix-brain-matters-and-consumed-retirement.md), [2026-08-02 scope-unit-of-work thread](/meta/threads/2026-08-02-scope-unit-of-work-skill-and-model-stamping.md)
 
 ## Thread excerpts — route-tagged log
 
