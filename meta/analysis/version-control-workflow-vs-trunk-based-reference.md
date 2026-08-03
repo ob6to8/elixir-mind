@@ -89,7 +89,7 @@ the dominant flow only learns of a red gate from CI, not locally. One-line fix:
 have [`session-start.sh`](/.claude/hooks/session-start.sh) set `core.hooksPath`.
 This is the highest-leverage item — it makes the local-first advice actually true
 for how the brain is worked. Filed as a
-[todo](/meta/todos/wire-pre-commit-hook-in-session-start.md).
+[todo](/meta/matters/wire-pre-commit-hook-in-session-start.md).
 
 **A single "current state" document.** Already solved, better than a pinned issue:
 the [retire-hand-kept-logs](/meta/plans/retire-hand-kept-logs.md) policy killed hand
@@ -110,7 +110,7 @@ regenerated the registry do not conflict; the merge just re-derives it. Filed as
 ## Recommendations, prioritized
 
 1. **Auto-wire the pre-commit hook in `session-start.sh`** — makes local-first real
-   for web sessions (one line). → [todo](/meta/todos/wire-pre-commit-hook-in-session-start.md)
+   for web sessions (one line). → [todo](/meta/matters/wire-pre-commit-hook-in-session-start.md)
 2. **Neutralize generated-artifact merge conflicts** via rebuild-on-merge — kills the
    recurring conflict class. → [issue](/meta/issues/generated-artifact-merge-conflicts.md)
 3. **Add a pre-deploy link-crawl**, plus optional banned-word / Credo / second-model

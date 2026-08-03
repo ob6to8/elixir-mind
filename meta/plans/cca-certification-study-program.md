@@ -365,8 +365,8 @@ open phase.** The rest is the fresh-context handoff.
 - `ElixirMind.SiteConfig` (`lib/elixir_mind/site_config.ex`) — the exclusion list.
 - `mix brain.url` — response-side links, per
   [response-resource-links](/meta/policy/response-resource-links.md).
-- [`/todo` SKILL.md](/.claude/skills/todo/SKILL.md) — the dispatch-on-subcommand
-  shape `/cca-practice` should copy.
+- [`/bookmarks` SKILL.md](/.claude/skills/bookmarks/SKILL.md) — the
+  dispatch-on-subcommand shape `/cca-practice` should copy.
 
 ## Open questions
 

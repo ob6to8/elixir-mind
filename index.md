@@ -36,6 +36,7 @@ emerges as knowledge is filed and evolves collaboratively; see the
   brain knows
   - [SWE](/knowledge/SWE/index.md) — software engineering knowledge
   - [ai-industry](/knowledge/ai-industry/index.md) — market, economic, and competitive analysis of the AI industry
+  - [cognitive-science](/knowledge/cognitive-science/index.md) — how minds process information and where they systematically fail: the human cognitive-bias register, cross-linked analogically to its agentic parallels
   - [machine-learning](/knowledge/machine-learning/index.md) — technical ML knowledge: models, architectures, and training methods
   - [media-production](/knowledge/media-production/index.md) — producing audio and video with code: synthesis, sequencing/time models, and scripted video assembly
   - [human-computer-interaction](/knowledge/human-computer-interaction/index.md) — how people drive machines: input methods, keyboard layouts, and editing models

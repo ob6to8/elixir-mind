@@ -101,7 +101,7 @@ meta/policy/
   offline requirement outright — the same reasoning that already keeps
   `mix brain.verify`'s docs-freshness warnings advisory rather than gating,
   and the same shape as the deferred
-  [`mix brain.staleness`](/meta/todos/build-mix-brain-staleness-when-dated-resources-grow.md)
+  [`mix brain.staleness`](/meta/matters/build-mix-brain-staleness-when-dated-resources-grow.md)
   todo for dated-revision resources (a close cousin worth reconciling at
   build time — see open question 3).
 - **The hash lives beside `resource`, not inside it** — `resource` stays a

@@ -25,7 +25,7 @@ defmodule ElixirMind.SessionInitTest do
     write_doc(dir, rel_path, [type: "reference", title: "thread"], body)
   end
 
-  test "collects open issues, todos, active plans, and pending strands", %{tmp_dir: dir} do
+  test "collects open issues, matters, active plans, and pending strands", %{tmp_dir: dir} do
     write_doc(dir, "meta/issues/broken.md",
       type: "issue",
       title: "Broken thing",
@@ -34,16 +34,16 @@ defmodule ElixirMind.SessionInitTest do
       timestamp: "2026-07-09"
     )
 
-    write_doc(dir, "meta/todos/do-thing.md",
-      type: "todo",
+    write_doc(dir, "meta/matters/do-thing.md",
+      type: "matter",
       title: "Do the thing",
       description: "Thing is done.",
       status: "open",
       timestamp: "2026-07-09"
     )
 
-    write_doc(dir, "meta/todos/done-thing.md",
-      type: "todo",
+    write_doc(dir, "meta/matters/done-thing.md",
+      type: "matter",
       title: "Old thing",
       status: "done",
       timestamp: "2026-07-08"
@@ -78,14 +78,59 @@ defmodule ElixirMind.SessionInitTest do
     ])
 
     assert [%{title: "Broken thing"}] = SessionInit.open_issues(dir)
-    assert [%{title: "Do the thing"}] = SessionInit.open_todos(dir)
+    assert [%{title: "Do the thing", queue_pos: nil}] = SessionInit.open_matters(dir)
     assert [%{title: "Next plan", status: "proposed"}] = SessionInit.active_plans(dir)
 
     strands = SessionInit.dangling_strands(dir)
     assert Enum.map(strands, & &1.topic) == ["Live strand", "Deferred strand"]
   end
 
-  test "report ranks issues above todos above strands", %{tmp_dir: dir} do
+  test "register-queued matters come first, in register order, annotated", %{tmp_dir: dir} do
+    write_doc(dir, "meta/matters/first-up.md",
+      type: "matter",
+      title: "First up",
+      description: "Top of the queue.",
+      status: "open",
+      timestamp: "2026-07-01"
+    )
+
+    write_doc(dir, "meta/matters/second-up.md",
+      type: "matter",
+      title: "Second up",
+      status: "open",
+      timestamp: "2026-07-02"
+    )
+
+    write_doc(dir, "meta/matters/backlog-item.md",
+      type: "matter",
+      title: "Backlog item",
+      status: "open",
+      timestamp: "2026-07-09"
+    )
+
+    register = """
+    # Matters
+
+    | # | Matter | Type | Order |
+    |---|---|---|---|
+    | 1 | [First up](/meta/matters/first-up.md) | independent | - |
+    | 2 | [Second up](/meta/matters/second-up.md) | independent | - |
+    """
+
+    File.write!(Path.join(dir, "meta/matters.md"), register)
+
+    assert [
+             %{title: "First up", queue_pos: 1},
+             %{title: "Second up", queue_pos: 2},
+             %{title: "Backlog item", queue_pos: nil}
+           ] = SessionInit.open_matters(dir)
+
+    report = SessionInit.report(dir)
+    assert report =~ "**First up** (queued #1)"
+    assert report =~ "queued matter — committed at register row 1"
+  end
+
+  test "report ranks issues above matters above strands", %{tmp_dir: dir} do
     write_doc(dir, "meta/issues/broken.md",
       type: "issue",
       title: "Broken thing",
@@ -93,8 +138,8 @@ defmodule ElixirMind.SessionInitTest do
       timestamp: "2026-07-09"
     )
 
-    write_doc(dir, "meta/todos/do-thing.md",
-      type: "todo",
+    write_doc(dir, "meta/matters/do-thing.md",
+      type: "matter",
       title: "Do the thing",
       status: "open",
       timestamp: "2026-07-09"
@@ -115,7 +160,7 @@ defmodule ElixirMind.SessionInitTest do
     report = SessionInit.report(dir)
 
     assert report =~ "## Open issues (1)"
-    assert report =~ "## Open todos (1)"
+    assert report =~ "## Open matters (1)"
     assert report =~ "## Active plans (1)"
     assert report =~ "## Dangling strands (from thread ledgers) (2)"
 

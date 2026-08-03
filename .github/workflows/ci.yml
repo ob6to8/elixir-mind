@@ -57,6 +57,9 @@ jobs:
       - name: Glossary verifies (descriptions, index sync, body dedup)
         run: mix brain.glossary
 
+      - name: Matters verify (register refs, row↔doc agreement, plan order)
+        run: mix brain.matters
+
       - name: Flow lineage views are derived and current
         run: mix brain.lineage --check
 

@@ -1,14 +1,14 @@
 ---
 type: tutorial
 title: The session-init digest — how open work finds a fresh session
-description: How mix brain.session_init compiles the brain's open work (issues, todos, active plans, dangling ledger strands) into a digest surfaced on demand by the /priorities skill, how the heuristic top-3 ranking and its class weights work, the operator's priority escape hatch, and why the script ranks but the agent judges.
+description: How mix brain.session_init compiles the brain's open work (issues, matters, active plans, dangling ledger strands) into a digest surfaced on demand by the /priorities skill, how the heuristic top-3 ranking and its class weights work, the operator's priority escape hatch, and why the script ranks but the agent judges.
 tags: [meta, tooling, elixir, session-init, digest, priorities, hooks, workflow]
-timestamp: 2026-07-12
+timestamp: 2026-08-02
 attribution:
   when: 2026-07-12T09:17:10+00:00
   channel: backfill
   agent: "reconstructed by mix brain.attribution --backfill, 2026-07-13"
-  from: [/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md]
+  from: [/meta/threads/2026-07-12-docs-audit-wiki-verdict-and-freshness-warnings.md, /meta/threads/2026-08-02-todo-fold-into-matters.md]
 ---
 
 # The session-init digest — how open work finds a session
@@ -36,7 +36,10 @@ The digest invents no bookkeeping. It reads exactly the surfaces that existing
 policies already require to be kept current, which is what makes it free:
 
 1. **Open issues** — `meta/issues/*.md` with `status: open`.
-2. **Open todos** — `meta/todos/*.md` with `status: open`.
+2. **Open matters** — `meta/matters/*.md` with `status: open`. A matter
+   queued in [the register](/meta/matters.md) is annotated with its row
+   position and listed first, in register order; backlog matters follow,
+   newest first.
 3. **Active plans** — `meta/plans/*.md` with `status` in
    `proposed` / `accepted` / `in-progress` (done and superseded plans are
    history, not work).
@@ -46,7 +49,8 @@ policies already require to be kept current, which is what makes it free:
    still leave deferred work dangling ("resolved, but the operator still owes a
    decision on X"), and the digest refuses to let a closed checkbox hide it.
 
-Each source list is sorted newest first. The scanner is a tolerant consumer per
+Each source list is sorted newest first (matters: queued rows first, then
+backlog by recency). The scanner is a tolerant consumer per
 [OKF conformance](/meta/policy/okf-conformance.md): an unparseable file or a
 malformed ledger row is skipped, never fatal — a broken thread doc must not be
 able to take down every future session's startup.
@@ -67,7 +71,7 @@ The digest ends with a ranked top-3, computed from fixed class weights
 |--------|-------|-----------|
 | 0 | open issue | tracked problems outrank new work |
 | 1 | plan `in-progress` | finish what is started |
-| 2 | open todo | an explicitly recorded task |
+| 2 | open matter | recorded work to deliver — queued rows before backlog |
 | 3 | plan `accepted` | ratified, awaiting execution |
 | 4 | strand `open` | live work left unrouted or unresolved |
 | 5 | strand `paused` | blocked on a dangling question |
@@ -95,7 +99,7 @@ fidelity while coverage stays editorial.
 ## The escape hatch — `priority:` frontmatter
 
 When the class weights get it wrong, the operator overrides them: an issue,
-todo, or plan may carry an integer `priority:` frontmatter key (1 = most
+matter, or plan may carry an integer `priority:` frontmatter key (1 = most
 urgent). Flagged items rank **above every heuristic class**, ordered among
 themselves by the integer. Strands cannot be flagged — they are ledger rows
 with no frontmatter of their own; flag the doc the strand routes to instead.
