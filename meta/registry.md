@@ -127,6 +127,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e1e447` | [beliefs/glossary/contrastive-divergence](/beliefs/glossary/contrastive-divergence.md) | concept | false |
 | `em:8510f4` | [beliefs/glossary/control-case](/beliefs/glossary/control-case.md) | concept | false |
 | `em:f3e4cb` | [beliefs/glossary/control-plane](/beliefs/glossary/control-plane.md) | concept | false |
+| `em:5bf220` | [beliefs/glossary/copy-on-write](/beliefs/glossary/copy-on-write.md) | concept | false |
 | `em:ffbaec` | [beliefs/glossary/core-hookspath](/beliefs/glossary/core-hookspath.md) | concept | false |
 | `em:318d41` | [beliefs/glossary/correctly-rounded](/beliefs/glossary/correctly-rounded.md) | concept | false |
 | `em:b467a5` | [beliefs/glossary/council-round](/beliefs/glossary/council-round.md) | concept | false |
@@ -229,6 +230,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c682e9` | [beliefs/glossary/file-tree-diff](/beliefs/glossary/file-tree-diff.md) | concept | false |
 | `em:63aa2e` | [beliefs/glossary/fine-tuning](/beliefs/glossary/fine-tuning.md) | concept | false |
 | `em:496b87` | [beliefs/glossary/finops](/beliefs/glossary/finops.md) | concept | false |
+| `em:f20db7` | [beliefs/glossary/firecracker](/beliefs/glossary/firecracker.md) | concept | false |
 | `em:d818b8` | [beliefs/glossary/first-order-logic](/beliefs/glossary/first-order-logic.md) | concept | false |
 | `em:894631` | [beliefs/glossary/first-parent-history](/beliefs/glossary/first-parent-history.md) | concept | false |
 | `em:2aa700` | [beliefs/glossary/fitness-for-purpose](/beliefs/glossary/fitness-for-purpose.md) | concept | false |
@@ -322,6 +324,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:862042` | [beliefs/glossary/let-it-crash](/beliefs/glossary/let-it-crash.md) | concept | false |
 | `em:768cc8` | [beliefs/glossary/lethal-trifecta](/beliefs/glossary/lethal-trifecta.md) | concept | false |
 | `em:792b23` | [beliefs/glossary/lexical-search](/beliefs/glossary/lexical-search.md) | concept | false |
+| `em:1b9998` | [beliefs/glossary/libcluster](/beliefs/glossary/libcluster.md) | concept | false |
 | `em:5dec1d` | [beliefs/glossary/libghostty](/beliefs/glossary/libghostty.md) | concept | false |
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
@@ -353,7 +356,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ab825a` | [beliefs/glossary/messages-api](/beliefs/glossary/messages-api.md) | concept | false |
 | `em:715a40` | [beliefs/glossary/metered-paywall](/beliefs/glossary/metered-paywall.md) | concept | false |
 | `em:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |
+| `em:dbab99` | [beliefs/glossary/microvm](/beliefs/glossary/microvm.md) | concept | false |
 | `em:577155` | [beliefs/glossary/minimal-inconsistent-subset](/beliefs/glossary/minimal-inconsistent-subset.md) | concept | false |
+| `em:c11ff0` | [beliefs/glossary/mix-release](/beliefs/glossary/mix-release.md) | concept | false |
 | `em:102785` | [beliefs/glossary/mix-task](/beliefs/glossary/mix-task.md) | concept | false |
 | `em:ad7525` | [beliefs/glossary/mixture-of-experts](/beliefs/glossary/mixture-of-experts.md) | concept | false |
 | `em:4a34b3` | [beliefs/glossary/model-as-a-service](/beliefs/glossary/model-as-a-service.md) | concept | false |
@@ -486,6 +491,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:10be28` | [beliefs/glossary/sampling-mcp](/beliefs/glossary/sampling-mcp.md) | concept | false |
 | `em:c50864` | [beliefs/glossary/satisfaction-metric](/beliefs/glossary/satisfaction-metric.md) | concept | false |
 | `em:e36a9b` | [beliefs/glossary/sbvr](/beliefs/glossary/sbvr.md) | concept | false |
+| `em:d8a833` | [beliefs/glossary/scale-to-zero](/beliefs/glossary/scale-to-zero.md) | concept | false |
 | `em:fc5c76` | [beliefs/glossary/scaled-score](/beliefs/glossary/scaled-score.md) | concept | false |
 | `em:2ad710` | [beliefs/glossary/scar-tissue](/beliefs/glossary/scar-tissue.md) | concept | false |
 | `em:4f4f5c` | [beliefs/glossary/scenario-test](/beliefs/glossary/scenario-test.md) | concept | false |

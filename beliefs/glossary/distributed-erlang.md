@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, distributed-erlang, beam, otp, distribution, clustering]
 sense: common
-timestamp: 2026-07-16
+timestamp: 2026-08-03
 attribution:
   when: 2026-07-16T07:00:26Z
   channel: glossary
@@ -32,10 +32,14 @@ young ones like [Jido](/beliefs/glossary/jido.md), whose identity, recovery, and
 signal bus are all node-local) stay single-node-first, because distribution forces
 genuinely hard choices — split-brain/netsplit handling, the CAP tradeoff on the
 registry, and state-handoff races. Building it yourself typically means composing
-`libcluster` (node discovery), `Horde` or a hand-rolled registry (distributed
-naming + handoff), and a distributed pubsub — a net-new layer, not a config flag.
+[libcluster](/beliefs/glossary/libcluster.md) (node discovery), `Horde` or a
+hand-rolled registry (distributed naming + handoff), and a distributed pubsub —
+a net-new layer, not a config flag. Deployment-wise it has one hard
+infrastructure requirement: nodes must reach each other on a private network,
+which is the property that separates Elixir-viable hosting platforms from the
+rest.
 
-*Seen in:* [2026-07-16 Jido-caveats thread](/meta/threads/2026-07-16-jido-caveats-and-build-agent-linter-loop.md), [jido-distribution-gap-and-req-llm-cognition-dependency analysis](/meta/analysis/jido-distribution-gap-and-req-llm-cognition-dependency.md)
+*Seen in:* [2026-07-16 Jido-caveats thread](/meta/threads/2026-07-16-jido-caveats-and-build-agent-linter-loop.md), [jido-distribution-gap-and-req-llm-cognition-dependency analysis](/meta/analysis/jido-distribution-gap-and-req-llm-cognition-dependency.md), [2026-08-02 fly/shellbox intake thread](/meta/threads/2026-08-02-fly-shellbox-intake-and-elixir-deployment-landscape.md)
 
 *See also:* [BEAM](/beliefs/glossary/beam.md), [OTP](/beliefs/glossary/otp.md), [actor model](/beliefs/glossary/actor-model.md)
 </content>
