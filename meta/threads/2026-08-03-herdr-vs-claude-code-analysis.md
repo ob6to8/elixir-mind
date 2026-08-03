@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-08-02–2026-08-03; ver
 tags: [meta, thread, analysis, claude-code, herdr, fly-io, shellbox, git, comparison]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01WnQUE5PtV3SgAwqwbzQVWW
+pr: 244
 ---
 
 # 2026-08-03-herdr-vs-claude-code-analysis
