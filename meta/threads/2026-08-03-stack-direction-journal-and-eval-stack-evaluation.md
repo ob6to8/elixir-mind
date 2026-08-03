@@ -44,8 +44,8 @@ for instruments), endorsed the harness consolidation, located the
 premature-niching worry in the research question rather than the stack, and
 recommended naming the first publishable eval as the compressing act instead
 of cutting a commitment — deferral-with-a-trigger being the house pattern.
-The exchange was appended here per the update-in-place rule and landed as a
-follow-up PR (`pr:` stays 239, the origin anchor).
+The exchange was appended here per the update-in-place rule and landed as
+follow-up PR #240 (`pr:` stays 239, the origin anchor).
 
 ## Routing
 
