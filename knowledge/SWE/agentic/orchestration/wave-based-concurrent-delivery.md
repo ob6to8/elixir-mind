@@ -136,3 +136,57 @@ Procedure section directly.
   and [execute-phase workflow](https://github.com/gsd-build/get-shit-done/blob/main/get-shit-done/workflows/execute-phase.md):
   "Execute each selected wave in sequence. Within a wave: parallel if
   `PARALLELIZATION=true`, sequential if `false`."
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:bd4cce">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-03-matter-list-audit-and-wave-delivery-methodology (2026-08-03)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:bd4cce`]**
+
+The one collision no grouping avoids: **the register renumbers**. Delivery drops a row and the `#` column re-sequences (observable in history — the roster matters entered as rows 14–16 and are rows 4–6 today), so any two concurrent deliveries conflict on `meta/matters.md`, plus small adjacent-line conflicts in `meta/matters/index.md` (open→done moves). These are mechanical to resolve — drop both rows, renumber once, and the row↔doc agreement check makes a botched resolution loud — but every concurrent pair pays it. If you want real parallelism as standing practice, a small tooling matter would dissolve it: make the `#` column derived (rendered by `mix brain.matters` or dropped in favor of implicit position), so the authored artifact has no per-row serial to conflict on.
+
+Second-class conflicts are the generated artifacts — `CLAUDE.md`, `meta/registry.md`, `meta/code-map.md`, indexes. These always conflict textually when two branches both regenerate, and always resolve the same way: merge the *sources*, re-run the generator. That is a known recipe, not a risk.
+
+The content itself partitions into lanes that barely touch:
+
+| Lane | Surface | Matters | Internal constraint |
+|---|---|---|---|
+| **A — skills + policy/contract** | `.claude/skills/`, `meta/policy/`, `CLAUDE.md` | 1→2→3ᵃ, 5, 9→10, then disambiguate and (if promoted) handle-hosts | Serialize within the lane — rows 2, 5, 9, 10 overlap on skill files; 9 and 10 edit the *same section* of `/create-pull-request` |
+| **B — lib/ tooling** | `lib/`, `test/`, `config/` | 4, 6, 8, gate-plans-index | 6 and 8 both edit `matters.ex` + its test — serialize those two; the rest touch disjoint modules (`model_config.ex`, `links.ex`, `skill_sections.ex`) |
+| **C — knowledge tree** | `knowledge/`, `survey/`, `beliefs/glossary/` | 17, 18, both old intakes, broaden-invisible-degradation | Effectively conflict-free with everything — disjoint directories; only registry/index regeneration overlaps |
+| **D — wide-touch, run solo** | 30 matter docs at once | 7 (backfill) | It edits every open matter doc, so it conflicts with *any* in-flight delivery that touches a packet or flips a doc — give it a quiet window |
+
+ᵃ Row 3 is lib/ work but plan-locked behind row 2.
+
+A concrete concurrent schedule respecting all plan-internal orders:
+
+- **Wave 1:** row 1 (A) ∥ row 4 (B) ∥ row 17 (C) ∥ the wire-pre-commit flip. Rows 1 and 4 both recompile the contract — first to merge wins, the other runs `/sync-branch-with-main` and regenerates.
+- **Wave 2:** row 2 (A) ∥ row 6 (B) ∥ row 18 (C) ∥ gate-plans-index (B — different module than 6).
+- **Wave 3:** row 3 (B) ∥ row 5 (A) ∥ — and row 7 solo immediately after this wave clears, since the queue's packets stop changing then.
+- **Wave 4:** rows 9→10 serial (A) ∥ row 8 (B) ∥ disambiguate (A — different file than 9/10).
+- **Wave 5:** rows 11→15 serial — the decision-queue plan is contract-dense and self-ordered, the one stretch that genuinely resists parallelism ∥ any remaining lane-C work beside it.
+- **After:** refresh-gate-suite-tutorial, once the gate roster is stable.
+
+That schedule turns a 19-row serial queue into roughly five sessions of wall-clock depth for the parallelizable stretch, at the cost of one register-renumber resolution per wave.
+
+---
+
+**[`em:bd4cce`]**
+
+I reached for it as standard parallel-scheduling vocabulary — in compilers and DAG scheduling this is *wavefront* or *level* scheduling: topologically level a dependency graph, run each level in parallel, run the levels in sequence (that provenance is from memory; the term-of-art status is not in doubt). I did not consciously take it from get-shit-done — though GSD's docs are popular enough that I can't rule out training-data influence on which word came to hand; introspection on word choice is not reliable.
+
+Whether it's the *same usage* I checked directly against the framework's own docs today, and yes — semantically identical. GSD's USER-GUIDE, under "Execution Wave Coordination": "GSD groups plans into waves (parallel where independent, sequential where dependent), spawns a fresh 200k-context executor per plan, and commits each task atomically." And its execute-phase workflow: "Execute each selected wave in sequence. Within a wave: parallel if `PARALLELIZATION=true`, sequential if `false`." Parallel within a wave, sequential across waves, grouped by dependency — the same concept I used, both convergent on the standard scheduling idea rather than one borrowing from the other.
+
+One real difference in setting, which shaped the methodology doc: GSD's wave executors work inside one working tree and the framework serializes the commits, so its wave problem is pure scheduling. Our units are separate sessions on separate branches, each landing through its own reviewed merge — so the load-bearing addition here is **merge-surface partitioning** (which units may fly together), which is exactly what your audit request surfaced. The doc quotes and cites GSD as prior art for the term. Incidentally, the brain already knew GSD before today — solely as the case study in the trust-state-inversion capture (the May 2026 governance collapse), which is its own kind of footnote on framework dependence.
+
+Sources: [GSD USER-GUIDE](https://github.com/gsd-build/get-shit-done/blob/main/docs/USER-GUIDE.md), [execute-phase workflow](https://github.com/gsd-build/get-shit-done/blob/main/get-shit-done/workflows/execute-phase.md)
+
+---
+
+**[`em:bd4cce`]**
+
+Filed as [wave-based concurrent delivery of a serialized work queue](https://github.com/ob6to8/elixir-mind/blob/claude/matter-list-audit-sequence-rt6udk/knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery.md) (`em:bd4cce`, `type: methodology`) on a new `knowledge/SWE/agentic/orchestration/` shelf — a subdirectory under the established `agentic` domain, created autonomously per the taxonomy protocol with its `index.md` and parent listing. It's written as a general technology, not a register manual: a seven-step procedure (audit against HEAD → classify write surfaces → partition into lanes → cut a wave → launch as one approval batch → merge in sequence → barrier and reconcile), a conflict-class table with the resolution rule for each (authored content is designed away by the partition; queue serials re-derive mechanically; generated artifacts regenerate from merged sources, never hand-merge; listings stay alphabetical so insertions resolve obviously), and a bounds section — the sharpest bound being that a wave of N units is N concurrent review obligations, so width is capped by your attention, not by lane count. The bundle-specific mapping (register, matter docs, `mix brain.matters`, `/sync-branch-with-main`, the generated class) sits in one closing table, so a future orchestration skill can cite the doc as its design and a session told to "run a wave" can follow the Procedure section directly — the skill-vs-referenced-instruction choice stays open, as you framed it.

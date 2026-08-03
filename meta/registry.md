@@ -592,6 +592,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e19e32` | [beliefs/glossary/wake-sleep-algorithm](/beliefs/glossary/wake-sleep-algorithm.md) | concept | false |
 | `em:de14e6` | [beliefs/glossary/warn-pass](/beliefs/glossary/warn-pass.md) | concept | false |
 | `em:a8f067` | [beliefs/glossary/warrant](/beliefs/glossary/warrant.md) | concept | false |
+| `em:7eaa13` | [beliefs/glossary/wave](/beliefs/glossary/wave.md) | concept | false |
 | `em:21524a` | [beliefs/glossary/web-audio-api](/beliefs/glossary/web-audio-api.md) | concept | false |
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |

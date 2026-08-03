@@ -12,6 +12,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, matter-list audit session"
   why: "the audit's concurrency grouping found the register's authored row serials collide on every concurrent delivery pair; the operator ratified filing the structural fix as the wave program's prerequisite"
+  from: [/meta/threads/2026-08-03-matter-list-audit-and-wave-delivery-methodology.md]
 ---
 
 # Derive the register's row numbering
