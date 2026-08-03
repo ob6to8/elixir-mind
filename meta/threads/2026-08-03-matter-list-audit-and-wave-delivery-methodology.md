@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-03; verbatim retained
 tags: [meta, thread, matters, register, audit, waves, orchestration, concurrency]
 timestamp: 2026-08-03
 session: https://claude.ai/code/session_01RR5E5wizhvUAXjYNKtf6Gi
+pr: 242
 ---
 
 # 2026-08-03-matter-list-audit-and-wave-delivery-methodology
