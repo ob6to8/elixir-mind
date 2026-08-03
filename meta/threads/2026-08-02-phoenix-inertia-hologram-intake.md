@@ -28,9 +28,10 @@ operator's "hologram" phrasing; the baseline showed no regression. The full
 gate suite passed and the operator's session moved into `/create-pull-request`,
 opening PR #236. The operator then asked to sync the branch with `origin/main`;
 that merge (two conflicts, both resolved by keeping both sides' concurrent
-additions rather than discarding either) and the redaction of this closing
-exchange from the render, at the operator's direction, are recorded in prose
-here rather than verbatim — see the note at the end of this doc's render.
+additions rather than discarding either) is recorded here in prose only, at
+the operator's direction — the render below stops at the "merge main into
+branch" request, and everything after it (the sync itself, and this and the
+prior closing `/create-pull-request` invocations) is omitted entirely.
 
 ## Routing
 
@@ -92,5 +93,3 @@ Would you like me to watch it for CI failures and review comments? I can subscri
 ## User
 
 merge main into branch
-
-*(At the operator's direction, the exchange after this point — syncing the branch with `origin/main`, resolving two merge conflicts, and this closing `/create-pull-request` invocation — is omitted from this render. See [PR #236](https://github.com/ob6to8/elixir-mind/pull/236) and the branch's own commit history for that work.)*
