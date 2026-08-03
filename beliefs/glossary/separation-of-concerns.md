@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, architecture, design]
 sense: common
-timestamp: 2026-07-15
+timestamp: 2026-08-03
 attribution:
   when: 2026-07-15T09:40:00Z
   channel: glossary
@@ -25,4 +25,4 @@ bundle (an opinionated OKF collection) and the Elixir Mind library (the tooling
 and the metadata schema it enforces) — cohabiting one root today, delineated by
 the [separation plan](/meta/plans/separate-okf-bundle-and-elixir-mind-library.md).
 
-*Seen in:* [2026-07-15 bundle-library separation thread](/meta/threads/2026-07-15-bundle-library-separation-plan.md)
+*Seen in:* [2026-07-15 bundle-library separation thread](/meta/threads/2026-07-15-bundle-library-separation-plan.md) · [2026-08-03 README rewrite as interim front door](/meta/threads/2026-08-03-readme-rewrite-as-interim-front-door.md)
