@@ -2,7 +2,7 @@
 type: reference
 title: 2026-08-03-plan-corpus-audit
 description: An operator-commissioned audit of every plan against the repo and the matter queue — 59 plans evaluated by a twelve-cluster subagent fan-out with adversarial verification, finding two executed plans still filed accepted, 25 active plans needing refresh, none retiring, and twelve corpus-level findings; then re-checked against a same-day main merge that changed no verdict but falsified the audit's counts, its register-row citations, and its own framing.
-provenance: "Claude Code session (Claude Fable 5, then Claude Opus 5 from the merge onward), spanning 2026-08-02 (the audit) and 2026-08-03 (the main merge, the corrections, and this capture); verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped. Render deliberately truncated: at operator direction the transcript following the `merge main into thread` message is omitted; the narrative and ledger below cover that work, and its commits are in the PR."
+provenance: "Claude Code session (Claude Fable 5, then Claude Opus 5 from the merge onward), spanning 2026-08-02 (the audit) and 2026-08-03 (the main merge, the corrections, and this capture); verbatim retained messages — tool calls, tool results, reasoning, and short pre-tool narration stripped. Render deliberately truncated: at operator direction it ends after the audit report, omitting the operator's `merge main into thread` message and every exchange following it; the narrative and ledger below cover that work, and its commits are in the PR."
 tags: [thread, plans, audit, drift, matters, governance]
 timestamp: 2026-08-03
 pr: 245
@@ -127,6 +127,3 @@ The branch is pushed and holds only the audit; say `/create-pull-request` when y
 
 </routes>
 
-## User
-
-merge main into thread
