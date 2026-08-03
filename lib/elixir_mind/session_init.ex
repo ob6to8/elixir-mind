@@ -104,7 +104,7 @@ defmodule ElixirMind.SessionInit do
   (`queue_pos` nil), newest first.
   """
   def open_matters(root) do
-    queue = register_positions(root)
+    queue = ElixirMind.Matters.queue_positions(root)
 
     {queued, backlog} =
       root
@@ -114,23 +114,6 @@ defmodule ElixirMind.SessionInit do
       |> Enum.split_with(& &1.queue_pos)
 
     Enum.sort_by(queued, & &1.queue_pos) ++ sort_newest_first(backlog)
-  end
-
-  # The register (meta/matters.md) stores the global delivery order as pointer
-  # rows `| N | [Title](/meta/matters/slug.md) | … |`; rows under its
-  # `## Consumed` heading are history, not queue.
-  defp register_positions(root) do
-    case File.read(Path.join(root, "meta/matters.md")) do
-      {:ok, content} ->
-        content
-        |> String.split("## Consumed")
-        |> hd()
-        |> then(&Regex.scan(~r{^\|\s*(\d+)\s*\|\s*\[[^\]]+\]\((/meta/matters/[^)#]+)\)}m, &1))
-        |> Map.new(fn [_, pos, path] -> {path, String.to_integer(pos)} end)
-
-      _ ->
-        %{}
-    end
   end
 
   # --- active plans ---------------------------------------------------------

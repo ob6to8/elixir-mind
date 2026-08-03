@@ -11,5 +11,6 @@ methodology.
 
 ## References
 
+- [MAST: Multi-Agent System Failure Taxonomy](/knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md) — UC Berkeley's 14-mode, 3-category taxonomy of why multi-agent LLM systems fail, built from 1,600+ annotated traces across 7 MAS frameworks; targeted fixes informed by the taxonomy gained 9.4–15.6 points using identical models. `em:ec728d` _(reference)_
 - [Decompose-then-verify factuality evaluation (FActScore, SAFE)](/knowledge/SWE/evals/decompose-then-verify-factuality.md) — atomize long-form output into facts, verify each against a knowledge source, aggregate mechanically; validated at scale by FActScore (EMNLP 2023) and SAFE/LongFact (NeurIPS 2024).
 - [r/LLMDevs — "evaluation is so much harder than actually building the model wrapper"](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) — verbatim capture of the discussion thread the methodology above distills. `em:1394b9` _(reference)_

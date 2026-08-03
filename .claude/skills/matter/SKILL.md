@@ -56,34 +56,36 @@ it carries) as the entire handoff.
    so the move ships with the matter's PR):
    - flip the matter doc `status: done` and bump its `timestamp`;
    - drop the row from the queue table and renumber the remaining rows;
-   - log it under the register's `## Consumed` section, newest first: date ·
-     matter link · Type · Order · a one-line landing description (the PR
-     number is appended at close, once it exists);
    - move the doc's entry in
      [`meta/matters/index.md`](/meta/matters/index.md) from Open to Done,
      updating its gloss to the delivered fact.
 6. **Close — deferred to PR time, binding this session.** When
    [`/create-pull-request`](/.claude/skills/create-pull-request/SKILL.md)
-   opens the session's PR, append the PR number to the Consumed row's landing
-   cell and stamp `pr: <N>` into the done doc's frontmatter, committed into
-   the same PR — the landing metadata that eventually retires the Consumed
-   section (matter-docs build 5).
+   opens the session's PR, stamp `pr: <N>` into the done doc's frontmatter,
+   committed into the same PR. The done docs are the delivery history;
+   `mix brain.matters` warns on a done doc still awaiting its stamp.
 
 ## List
 
 Read-only render of open work: the queue, then the backlog beneath it.
 
 1. **Read** the register's queue table, and every `meta/matters/*.md` (skip
-   `index.md`), parsing `title`, `description`, `status`, `plan`/`order`,
-   `priority` (if any), and `timestamp`.
+   `index.md`), parsing `title`, `description`, `status`, `model`,
+   `plan`/`order`, `priority` (if any), and `timestamp`.
 2. **Filter** by the argument. Default (**queue + backlog**): the queue rows in
    register order, then the backlog (open docs with no register row). `done`
    and `all` add delivered/cancelled matters; `queue`/`backlog` slice to one
    section.
-3. **Render** compactly — the queue as its rows (# · matter · Type · Order),
+3. **Render** compactly — the queue as **# · matter · Type · Order · Model**,
    the backlog beneath as title + one-line gloss, sorted by integer
    `priority:` where present (1 = most urgent), unprioritized after,
    alphabetical within. Note the counts. This changes no files.
+
+**The Model column is read from the docs, not the register.** Each matter's
+`model:` frontmatter — the roster's recommendation for the delivering session
+([model roster](/meta/model-roster.md)) — is joined onto the row at render
+time; a doc with no stamp renders `—`. The register's rows stay exactly four
+cells, which `mix brain.matters` enforces, so the model is never stored there.
 
 For the cross-surface appraisal ranking matters against issues, plans, and
 dangling strands, use
@@ -93,10 +95,15 @@ slice.
 ## Create
 
 File a matter doc — the self-contained handoff packet — under `meta/matters/`.
+For a whole unit of work that may need a plan and several sequenced matters,
+use [`/scope-unit-of-work`](/.claude/skills/scope-unit-of-work/SKILL.md); this
+files one matter whose shape is already settled.
 
 1. **Write the doc** at `meta/matters/<kebab-slug>.md` (slug from the title):
    - frontmatter: `type: matter`, `title`, `description` (the packet in one
-     sentence), `status: open`, `plan` + `order` **only** when a plan's build
+     sentence), `status: open`, `model` — the [roster](/meta/model-roster.md)
+     value for the model that should *deliver* it, distinct from `provenance`
+     below — `plan` + `order` **only** when a plan's build
      order emits it (omitted on a standalone matter — absence is omission),
      `provenance` naming the producing model
      ([model-attribution](/meta/policy/model-attribution.md)), `tags`,
@@ -104,14 +111,18 @@ File a matter doc — the self-contained handoff packet — under `meta/matters/
      (`when`/`channel`/`agent`/`why`).
    - body: the intent plus the decisions already made, refs carrying the
      detail — enough that a fresh thread can deliver it with the doc as the
-     entire handoff.
+     entire handoff — then a `## Model` section carrying the determination
+     behind the `model:` stamp in one or two sentences.
 2. **Index it**: add the entry to
    [`meta/matters/index.md`](/meta/matters/index.md) (Open section,
    alphabetical).
 3. **Backlog by default.** A new matter gets a register row **only** when the
-   operator explicitly queues it, at a position they state (renumber beneath
-   it). A backlog matter may carry an integer `priority:` (1 = most urgent) —
-   the coarse urgency signal where exact order would be fake precision.
+   operator explicitly queues it. Queueing puts it at the **head** unless it
+   depends on preceding rows or the operator states a position — never at the
+   tail
+   ([revision-enters-through-scoping](/meta/policy/revision-enters-through-scoping.md)).
+   A backlog matter may carry an integer `priority:` (1 = most urgent) — the
+   coarse urgency signal where exact order would be fake precision.
 4. **Verify**: `mix brain.verify`.
 
 ## Guardrails
