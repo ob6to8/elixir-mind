@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Opus 5), 2026-08-02; verbatim retained 
 tags: [meta, thread, skills, evals, prompt-format, models, roster, vocabulary, matters]
 timestamp: 2026-08-02
 session: https://claude.ai/code/session_01JasBqu3coxyMcANFZDoztD
+pr: 238
 ---
 
 # 2026-08-02-skill-body-layout-ab-and-section-vocabulary
