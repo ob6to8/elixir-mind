@@ -80,3 +80,23 @@ scope list excludes stemming, stopwords, fuzzy matching, and "embeddings or
 models of any kind", so the mechanism is ranked lexical matching throughout —
 see the [doma reference](/knowledge/SWE/agentic/code-context/doma.md) for that
 reading.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:f65f82">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-02-retrieval-spike-doma-intake-and-static-embeddings (2026-08-02)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:f65f82`]**  (co-feeds: `em:8df8d1`)
+
+The post is fully recovered, verbatim, with both comments — the author's positioning ("doma's biggest strength is semantic indexing … as far as finding the correct file in the first try when you don't know where the content lives") is exactly the claim my analysis needs to weigh. One key technical note already: BM25 is *lexical* ranked retrieval — it won't bridge the vocabulary-mismatch failure this bundle actually measured, which matters for the recommendation.
+
+Now: the full README for the reference doc, the dedup sweep, and branch setup.
+
+---
+
+**[`em:f65f82`]**  (co-feeds: `em:9673c2`)
+
+**On doma** ([reference](https://github.com/ob6to8/elixir-mind/blob/claude/repo-search-research-e0uvk9/knowledge/SWE/agentic/code-context/doma.md), [release post captured verbatim](https://github.com/ob6to8/elixir-mind/blob/claude/repo-search-research-e0uvk9/knowledge/SWE/agentic/code-context/sources/doma-release-post.md)): its design is excellent for this bundle — heading-level chunks, breadcrumb+snippet output for agents, a gitignored freshness-checked index that independently arrives at your derived-views-stay-disposable doctrine. But adopting the binary would put a per-platform executable from a day-old, bus-factor-one project (author: "I made doma for myself and don't plan to put much ongoing work into it") into a toolchain whose admission rule is "plain `mix` task with no dependencies" — and it would still only fix failures 2 and 3. The release post's "semantically relevant results" claim is relevance *ranking*, not semantics. Verdict: decline as dependency, adopt as design template.

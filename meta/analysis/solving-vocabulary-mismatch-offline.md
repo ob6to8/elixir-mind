@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, retrieval research-spike session"
   why: "the operator accepted the beyond-grep recommendation and asked what other alternative approaches exist and whether vocabulary mismatch (its failure 1) can be solved"
+  from: [/meta/threads/2026-08-02-retrieval-spike-doma-intake-and-static-embeddings.md]
 ---
 
 # Solving vocabulary mismatch: the alternatives map, and a measured static-embedding answer

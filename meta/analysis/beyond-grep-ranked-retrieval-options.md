@@ -10,6 +10,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, retrieval research-spike session"
   why: "the operator asked for a research spike on improving the repo's grep-primary search, with doma considered amongst the options"
+  from: [/meta/threads/2026-08-02-retrieval-spike-doma-intake-and-static-embeddings.md]
 ---
 
 # Beyond grep: which retrieval layer this bundle should adopt

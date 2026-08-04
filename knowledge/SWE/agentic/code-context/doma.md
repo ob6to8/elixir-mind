@@ -117,3 +117,21 @@ Whether this bundle should adopt it, copy it, or pass is weighed in
 - doma repository — <https://github.com/L34Z/doma>
 - Release post, captured verbatim —
   [doma release post — "All my homies hate grep"](/knowledge/SWE/agentic/code-context/sources/doma-release-post.md)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:9673c2">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-02-retrieval-spike-doma-intake-and-static-embeddings (2026-08-02)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:9673c2`]**
+
+Full README captured — doma is deliberately lexical (no stemming, no stopwords, no embeddings; camelCase-aware tokenization), deterministic, with a gitignored derivable index. Its engineering doctrine mirrors this repo's own. Marking source-gathering nearly done; now the dedup sweep and a check for existing search-related plans/issues.
+
+---
+
+**[`em:9673c2`]**  (co-feeds: `em:f65f82`)
+
+**On doma** ([reference](https://github.com/ob6to8/elixir-mind/blob/claude/repo-search-research-e0uvk9/knowledge/SWE/agentic/code-context/doma.md), [release post captured verbatim](https://github.com/ob6to8/elixir-mind/blob/claude/repo-search-research-e0uvk9/knowledge/SWE/agentic/code-context/sources/doma-release-post.md)): its design is excellent for this bundle — heading-level chunks, breadcrumb+snippet output for agents, a gitignored freshness-checked index that independently arrives at your derived-views-stay-disposable doctrine. But adopting the binary would put a per-platform executable from a day-old, bus-factor-one project (author: "I made doma for myself and don't plan to put much ongoing work into it") into a toolchain whose admission rule is "plain `mix` task with no dependencies" — and it would still only fix failures 2 and 3. The release post's "semantically relevant results" claim is relevance *ranking*, not semantics. Verdict: decline as dependency, adopt as design template.

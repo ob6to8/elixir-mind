@@ -160,3 +160,19 @@ Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref=
 **[`em:8df8d1`]**
 
 Reddit is unreachable from this environment by every ordinary route, so getting the thread took a detour — I've filed the working route as its own snippet. Below is the substance.
+
+### 2026-08-02-retrieval-spike-doma-intake-and-static-embeddings (2026-08-02)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:8df8d1`]**  (co-feeds: `em:f65f82`)
+
+The post is fully recovered, verbatim, with both comments — the author's positioning ("doma's biggest strength is semantic indexing … as far as finding the correct file in the first try when you don't know where the content lives") is exactly the claim my analysis needs to weigh. One key technical note already: BM25 is *lexical* ranked retrieval — it won't bridge the vocabulary-mismatch failure this bundle actually measured, which matters for the recommendation.
+
+Now: the full README for the reference doc, the dedup sweep, and branch setup.
+
+---
+
+**[`em:8df8d1`]**
+
+One better move: a snippet for the Reddit-block workaround already exists (`reddit-thread-when-fetch-is-blocked.md`, via redlib mirrors) — but redlib is now blocked too, and arctic-shift is the route that worked today. That's an update-in-place, not a new doc. Reading it, then writing everything.
