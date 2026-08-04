@@ -50,7 +50,10 @@ directed a follow-up:
 fix [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md)
 (a parallel session had hit the identical gold-set conflict the same day). The
 union merge landed as `d510e6d`; the PR was then driven to green and
-true-merged.
+true-merged as `1dadff2`. The conflict fix — the `regen` merge driver,
+`union` listings, and `mix brain.regen` — was delivered on the restarted
+branch and landed via the follow-up **PR #252**, which also carries this
+thread continuation.
 
 ## Routing
 
