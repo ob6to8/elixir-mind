@@ -377,6 +377,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:acf52e` | [beliefs/glossary/model-cascade](/beliefs/glossary/model-cascade.md) | concept | false |
 | `em:c66f10` | [beliefs/glossary/model-context-protocol](/beliefs/glossary/model-context-protocol.md) | concept | false |
 | `em:f0582b` | [beliefs/glossary/model-roster](/beliefs/glossary/model-roster.md) | concept | false |
+| `em:16a947` | [beliefs/glossary/model2vec](/beliefs/glossary/model2vec.md) | concept | false |
 | `em:43bac4` | [beliefs/glossary/monitor-by-exception](/beliefs/glossary/monitor-by-exception.md) | concept | false |
 | `em:9a0a9e` | [beliefs/glossary/motor-program](/beliefs/glossary/motor-program.md) | concept | false |
 | `em:334e60` | [beliefs/glossary/mounting-point](/beliefs/glossary/mounting-point.md) | concept | false |
@@ -467,6 +468,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5e7da1` | [beliefs/glossary/recall](/beliefs/glossary/recall.md) | concept | false |
 | `em:0b95ed` | [beliefs/glossary/recall-at-k](/beliefs/glossary/recall-at-k.md) | concept | false |
 | `em:c86162` | [beliefs/glossary/recall-probe](/beliefs/glossary/recall-probe.md) | concept | false |
+| `em:3a365d` | [beliefs/glossary/reciprocal-rank-fusion](/beliefs/glossary/reciprocal-rank-fusion.md) | concept | false |
 | `em:5ab369` | [beliefs/glossary/recitation](/beliefs/glossary/recitation.md) | concept | false |
 | `em:d8f3bb` | [beliefs/glossary/recursive-descent-parser](/beliefs/glossary/recursive-descent-parser.md) | concept | false |
 | `em:ae9b26` | [beliefs/glossary/red-test](/beliefs/glossary/red-test.md) | concept | false |
@@ -498,6 +500,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:570e22` | [beliefs/glossary/routing-ledger](/beliefs/glossary/routing-ledger.md) | concept | false |
 | `em:e55bda` | [beliefs/glossary/run](/beliefs/glossary/run.md) | concept | false |
 | `em:371597` | [beliefs/glossary/safe](/beliefs/glossary/safe.md) | concept | false |
+| `em:57087f` | [beliefs/glossary/safetensors](/beliefs/glossary/safetensors.md) | concept | false |
 | `em:52184b` | [beliefs/glossary/safety-state](/beliefs/glossary/safety-state.md) | concept | false |
 | `em:c56e31` | [beliefs/glossary/same-lineage-comparison](/beliefs/glossary/same-lineage-comparison.md) | concept | false |
 | `em:10be28` | [beliefs/glossary/sampling-mcp](/beliefs/glossary/sampling-mcp.md) | concept | false |
@@ -550,7 +553,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1e9cde` | [beliefs/glossary/staleness-propagation](/beliefs/glossary/staleness-propagation.md) | concept | false |
 | `em:4599c9` | [beliefs/glossary/state-space-model](/beliefs/glossary/state-space-model.md) | concept | false |
 | `em:0fd614` | [beliefs/glossary/statement-type](/beliefs/glossary/statement-type.md) | concept | false |
+| `em:bb293e` | [beliefs/glossary/static-embeddings](/beliefs/glossary/static-embeddings.md) | concept | false |
 | `em:efad31` | [beliefs/glossary/static-site-generator](/beliefs/glossary/static-site-generator.md) | concept | false |
+| `em:569507` | [beliefs/glossary/stop-hook](/beliefs/glossary/stop-hook.md) | concept | false |
 | `em:bb2968` | [beliefs/glossary/strand](/beliefs/glossary/strand.md) | concept | false |
 | `em:c60c8e` | [beliefs/glossary/structured-data](/beliefs/glossary/structured-data.md) | concept | false |
 | `em:7820f1` | [beliefs/glossary/stylometry](/beliefs/glossary/stylometry.md) | concept | false |
@@ -617,6 +622,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:adf537` | [beliefs/glossary/webhook](/beliefs/glossary/webhook.md) | concept | false |
 | `em:d8d057` | [beliefs/glossary/well-founded-support](/beliefs/glossary/well-founded-support.md) | concept | false |
 | `em:e862bb` | [beliefs/glossary/word-error-rate](/beliefs/glossary/word-error-rate.md) | concept | false |
+| `em:35a507` | [beliefs/glossary/wordpiece](/beliefs/glossary/wordpiece.md) | concept | false |
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
@@ -681,9 +687,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:636e39` | [knowledge/SWE/agentic/anthropic/claude/claude-opus-5](/knowledge/SWE/agentic/anthropic/claude/claude-opus-5.md) | reference |  |
 | `em:7fa867` | [knowledge/SWE/agentic/architecture/architecture-without-architects](/knowledge/SWE/agentic/architecture/architecture-without-architects.md) | reference |  |
 | `em:532b22` | [knowledge/SWE/agentic/code-context/codebase-memory-mcp](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) | reference |  |
+| `em:9673c2` | [knowledge/SWE/agentic/code-context/doma](/knowledge/SWE/agentic/code-context/doma.md) | reference |  |
 | `em:b89ea1` | [knowledge/SWE/agentic/code-context/gitnexus](/knowledge/SWE/agentic/code-context/gitnexus.md) | reference |  |
 | `em:c71155` | [knowledge/SWE/agentic/code-context/graperoot](/knowledge/SWE/agentic/code-context/graperoot.md) | reference |  |
 | `em:a0fbd5` | [knowledge/SWE/agentic/code-context/mex](/knowledge/SWE/agentic/code-context/mex.md) | reference |  |
+| `em:f65f82` | [knowledge/SWE/agentic/code-context/sources/doma-release-post](/knowledge/SWE/agentic/code-context/sources/doma-release-post.md) | source |  |
 | `em:cab2c5` | [knowledge/SWE/agentic/code-quality/agent-development-methodology](/knowledge/SWE/agentic/code-quality/agent-development-methodology.md) | methodology |  |
 | `em:1ec778` | [knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents](/knowledge/SWE/agentic/code-quality/elixir-coding-conventions-localcents.md) | reference |  |
 | `em:49315a` | [knowledge/SWE/agentic/code-quality/getting-good-results-from-claude-code](/knowledge/SWE/agentic/code-quality/getting-good-results-from-claude-code.md) | reference |  |

@@ -645,8 +645,8 @@ re-engages.
 - A feature-level comparison of memory systems for AI coding agents — 81 systems across 79 features, each claim backed by public source citations.
 
 ### [Let Claude Code search your repo, not crawl it](https://www.reddit.com/r/LLMDevs/comments/1uy4sca/let_claude_code_search_your_repo_not_crawl_it/)
-- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `code-search` `repo-context` `ai-agents`
-- (unfetched: reddit.com blocked to fetch) r/LLMDevs post arguing Claude Code should search a repo via Glob/Grep/Read rather than crawl or pre-index it.
+- **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `code-search` `repo-context` `ai-agents` `bm25` `hybrid-search`
+- r/LLMDevs post (2026-07-16) announcing [infino-ai/code-context](https://github.com/infino-ai/code-context), an open-source MCP code-search plugin for Claude Code: a local hybrid index — BM25 fused with local-model embeddings into one ranked list — plus SQL to rank and aggregate across files, incremental, fully local; pitched against agents "grepping around and reading files". (fetched 2026-08-02 via the Arctic Shift archive API; the 2026-07-22 placeholder written under a reddit block had guessed the post's argument backwards)
 
 ### [Skills evals](https://www.reddit.com/r/LLMDevs/comments/1uxv3tk/skills_evals/)
 - **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `claude-code` `skills` `evals` `agent-testing`
