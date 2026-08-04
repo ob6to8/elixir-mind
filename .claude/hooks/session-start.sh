@@ -28,6 +28,12 @@ if command -v git >/dev/null 2>&1; then
   repo="${CLAUDE_PROJECT_DIR:-$PWD}"
   if [ -d "$repo/.git" ] && [ -d "$repo/.githooks" ]; then
     git -C "$repo" config core.hooksPath .githooks 2>/dev/null || true
+    # The `regen` merge driver referenced by .gitattributes: resolve a merge
+    # conflict on a generated artifact by keeping ours, to be re-derived with
+    # `mix brain.regen` — the freshness gates reject the merge commit until
+    # that has happened (see meta/issues/generated-artifact-merge-conflicts.md).
+    git -C "$repo" config merge.regen.driver true 2>/dev/null || true
+    git -C "$repo" config merge.regen.name "keep ours; re-derive via mix brain.regen" 2>/dev/null || true
   fi
 fi
 

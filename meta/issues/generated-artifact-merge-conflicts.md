@@ -2,7 +2,7 @@
 type: issue
 title: "Generated/shared artifacts are recurring merge-conflict magnets across parallel sessions"
 description: Worktree isolation prevents working-tree collisions but not merge-level ones — parallel sessions that each regenerate the same generated artifact (CLAUDE.md, registry.md, code-map.md, derived index.md files) 3-way-conflict at merge time, as seen in PRs #97/#98; the fix is to rebuild these files on merge rather than merge them line-by-line, and to lane sessions by domain where they are independent.
-status: open
+status: resolved
 provenance: "Claude Code session (2026-07-26) — surfaced by the version-control workflow audit"
 tags: [meta, issue, git, merge, generated-artifacts, ci, parallel-sessions]
 timestamp: 2026-07-26
@@ -11,7 +11,7 @@ attribution:
   channel: agent-authored
   agent: "Claude Code agent, version-control-audit session"
   why: "the audit identified a recurring merge-conflict class worth tracking as a problem, distinct from the recommended fix"
-  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md]
+  from: [/meta/threads/2026-07-26-version-control-audit-and-response-format-policies.md, /meta/threads/2026-08-02-retrieval-spike-doma-intake-and-static-embeddings.md]
 ---
 
 # Generated/shared artifacts are recurring merge-conflict magnets
@@ -64,3 +64,46 @@ dedicated plan when this is picked up.
 `status: resolved` once conflicts on the generated artifacts no longer require a
 hand-merge — a merge driver or a post-merge regeneration step is in place and pinned
 by a test or a demonstrated conflicting-merge that resolves cleanly.
+
+## Resolution (2026-08-04) — candidate fix 1, rebuild-on-merge
+
+Implemented as the merge-driver shape, operator-directed after this class hit
+the same session twice in one day (and a parallel session independently, on
+the same gold-set table):
+
+- **`.gitattributes`** (committed) assigns the five whole-file generated
+  artifacts — `CLAUDE.md`, `meta/registry.md`, `meta/code-map.md`,
+  `meta/flows/lineage.md`, `beliefs/glossary/index.md` — a **`regen`** merge
+  driver: resolve as `ours` at merge time, then re-derive. Correctness is not
+  the driver's job: the pre-commit/CI **freshness gates already reject a merge
+  commit whose generated artifacts are stale**, so the driver only removes the
+  useless hand-merge, and the re-derivation restores truth.
+- **`mix brain.regen`** (new task) re-derives all committed generated
+  artifacts in one motion — contract, registry, code map, lineage views,
+  glossary index, route-tag excerpt logs, dedup-probe baseline — the
+  post-merge step the driver assumes.
+- **The issue's "derived `index.md` listings"** get git's built-in **`union`**
+  driver (no configuration needed): the observed conflict is always two
+  sessions inserting entries at the same anchor, and union keeps both sides'
+  lines. A same-line double-edit would duplicate rather than conflict — a
+  visible-in-review failure accepted in exchange for eliminating the common
+  case.
+- **Wiring:** the `regen` driver needs per-clone config; the SessionStart hook
+  (`.claude/hooks/session-start.sh`) sets `merge.regen.driver=true` beside its
+  existing `core.hooksPath` config, so every web session has it. A clone
+  without the config falls back to git's default text merge — no worse than
+  before. The [sync skill](/.claude/skills/sync-branch-with-main/SKILL.md)'s
+  conflict step now names the driver and the `mix brain.regen` follow-through.
+- **Pinned by the demonstrated conflicting merge** the resolution condition
+  asks for: a scratch repo with both sides appending different lines to a
+  `merge=regen` registry and a `merge=union` index — previously two conflicts —
+  merges with exit 0, the registry resolved as ours and the index holding both
+  entries.
+
+Out of scope, deliberately: `meta/evals/dedup-probe.md` (a hand-kept gold set
+whose single-line `attribution.from` list collides as a same-line edit, where
+union would duplicate a YAML key) and `meta/matters.md` (row order is
+semantic). Their append conflicts remain the sync skill's ask-the-operator
+case. Candidate fix 2 (postsubmit CI regeneration) was declined — it spends a
+trunk commit per conflict for what the driver does at merge time; fix 3
+(laning) remains complementary and unbuilt.

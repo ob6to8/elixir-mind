@@ -64,13 +64,18 @@ there is nothing to sync into.
      (`mix brain.verify`, and `mix brain.contract --check` if policy/`CLAUDE.md` may
      be affected) so the merge didn't leave the bundle inconsistent.
    - **Conflicts** — list the conflicted paths (`git status --short` /
-     `git diff --name-only --diff-filter=U`) and stop. **Resolve without asking
+     `git diff --name-only --diff-filter=U`) and stop. Most generated artifacts
+     and `index.md` listings no longer conflict at all: `.gitattributes` gives
+     the generated files a `regen` merge driver (auto-resolve as ours; the
+     SessionStart hook configures it) and the listings git's built-in `union`
+     driver — after any merge that auto-resolved a generated file, run
+     **`mix brain.regen`** so the artifact is re-derived from the merged
+     sources before the gates judge the commit. **Resolve without asking
      only when every conflicted path is a generated artifact** — `CLAUDE.md`,
      `meta/registry.md`, `meta/code-map.md`, the `meta/flows/` lineage views, and
      the `## Thread excerpts — route-tagged log` sections — in which case discard
-     both sides and re-derive from the sources (`mix brain.contract`,
-     `mix brain.registry`, `mix brain.codemap`, `mix brain.lineage`,
-     `mix brain.route_tags --materialize`), then re-run the gate suite.
+     both sides and re-derive from the sources (`mix brain.regen`, or the
+     individual generators), then re-run the gate suite.
      **Every other conflicted path goes to the operator**, including one that
      looks trivially resolvable: whether a hand-authored conflict is "unambiguous"
      is a judgment the resolving agent is the least positioned to make, and a
