@@ -711,6 +711,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
 | `em:d000f6` | [knowledge/SWE/agentic/execution-environments/fly-io](/knowledge/SWE/agentic/execution-environments/fly-io.md) | reference |  |
 | `em:e75bfc` | [knowledge/SWE/agentic/execution-environments/shellbox](/knowledge/SWE/agentic/execution-environments/shellbox.md) | reference |  |
+| `em:abdca2` | [knowledge/SWE/agentic/expertise/ai-makes-weak-engineers-less-harmful](/knowledge/SWE/agentic/expertise/ai-makes-weak-engineers-less-harmful.md) | reference |  |
+| `em:457a88` | [knowledge/SWE/agentic/expertise/how-does-ai-impact-skill-formation](/knowledge/SWE/agentic/expertise/how-does-ai-impact-skill-formation.md) | reference |  |
+| `em:3d9101` | [knowledge/SWE/agentic/expertise/llms-reward-expertise](/knowledge/SWE/agentic/expertise/llms-reward-expertise.md) | reference |  |
+| `em:69cd30` | [knowledge/SWE/agentic/expertise/programming-with-ai-agents-as-theory-building](/knowledge/SWE/agentic/expertise/programming-with-ai-agents-as-theory-building.md) | reference |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
 | `em:b4e21d` | [knowledge/SWE/agentic/frameworks/caveman-agent-output-compression](/knowledge/SWE/agentic/frameworks/caveman-agent-output-compression.md) | reference |  |
 | `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
@@ -761,6 +765,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:51e5f3` | [knowledge/SWE/security/open-weight-cyber-capability-gap](/knowledge/SWE/security/open-weight-cyber-capability-gap.md) | reference |  |
 | `em:f03f9c` | [knowledge/SWE/software-design/entity-component-systems-in-elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | reference |  |
 | `em:414265` | [knowledge/SWE/software-design/the-architect-as-amplifier](/knowledge/SWE/software-design/the-architect-as-amplifier.md) | reference |  |
+| `em:ccee99` | [knowledge/SWE/software-design/you-cant-design-software-you-dont-work-on](/knowledge/SWE/software-design/you-cant-design-software-you-dont-work-on.md) | reference |  |
 | `em:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
 | `em:b1ba4b` | [knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |
 | `em:f6e843` | [knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs](/knowledge/SWE/testing/exunit-dependency-free-fixtures-and-diffs.md) | reference |  |
