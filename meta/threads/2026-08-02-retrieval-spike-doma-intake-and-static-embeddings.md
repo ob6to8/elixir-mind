@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-02–04; verbatim ret
 tags: [meta, thread, retrieval, search, bm25, static-embeddings, doma, intake, dedup, agent-failure]
 timestamp: 2026-08-04
 session: https://claude.ai/code/session_01SrCTJhjtb5X99jPkg1wBBc
+pr: 251
 ---
 
 # 2026-08-02-retrieval-spike-doma-intake-and-static-embeddings
