@@ -60,3 +60,33 @@ may determine what it's like to be a software engineer for the next decade."
 - Source: <https://www.seangoedecke.com/how-does-ai-impact-skill-formation/>
 - The study under discussion: Anthropic Fellows, "How AI Impacts Skill
   Formation" — <https://www.anthropic.com/research/AI-assistance-coding-skills>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:457a88">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-04-goedecke-expertise-essays-intake (2026-08-04)
+
+4 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:457a88`]**  (co-feeds: `survey/bookmarks.md`)
+
+None of the five URLs are filed or bookmarked — all five are new documents. The survey tier does hold the Anthropic skill-formation paper Goedecke's third article analyzes, so I'll cite it rather than treat this as its promotion. Let me check two more related docs for cross-linking, then verify my key quotes against the sources.
+
+---
+
+**[`em:457a88`]**  (co-feeds: `em:3d9101 em:69cd30 em:abdca2 em:ccee99 knowledge/SWE/agentic/expertise/index.md`)
+
+All quotes are now verified with exact spans. Now for the filing decision — articles 1, 2, 3, and 5 form a coherent cluster on how AI-assisted development interacts with the human engineer's expertise (its leverage, formation, retention, and distribution); no existing `agentic/` subdirectory covers that, so I'll create `knowledge/SWE/agentic/expertise/` (a subdirectory under an established domain — autonomous per the taxonomy protocol). Article 4 is a pure software-design essay and files into the existing `software-design/`. Let me check the id-minting task, then write.
+
+---
+
+**[`em:457a88`]**  (co-feeds: `em:3d9101 em:69cd30 em:abdca2 em:ccee99`)
+
+Your five links were all new to the brain — none were already filed or parked in the survey tier. Four of them turned out to be one coherent subject: how AI-assisted development interacts with the human engineer's expertise — where it stays the leverage point, how it forms, whether agents can hold it, and what happens to the ability distribution. No existing directory covered that, so I created a new subdirectory for it under the established agentic domain, [`knowledge/SWE/agentic/expertise/`](https://github.com/ob6to8/elixir-mind/blob/claude/ai-software-engineering-expertise-tat4rl/knowledge/SWE/agentic/expertise/index.md) — a within-domain subdirectory, so created autonomously per the taxonomy protocol rather than held for ratification. The fifth essay is a pure software-design piece and filed into the existing `software-design/` directory. Every quote in the filed docs was verified verbatim against the source in a second fetch pass before being quoted; the commit passed the full gate suite and is pushed to the session branch. No PR was opened — that stays with `/create-pull-request`.
+
+---
+
+**[`em:457a88`]**  (co-feeds: `survey/bookmarks.md`)
+
+One connection into the survey tier: the Anthropic Fellows skill-formation study that the third essay analyzes is already a surveyed bookmark in `survey/bookmarks.md`. The filed doc cites the paper's URL directly; the bookmark row stays `surveyed` since this intake captured Goedecke's commentary, not the paper itself — promoting the paper into its own `reference` remains available if you want the primary source filed too.

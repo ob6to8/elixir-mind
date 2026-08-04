@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition — surfaced in the localized-c
 verified: false
 tags: [glossary, cognition, comprehension, generated-code, orchestration]
 sense: common
-timestamp: 2026-07-20
+timestamp: 2026-08-04
 attribution:
   when: 2026-07-20T20:52:33Z
   channel: glossary
@@ -26,7 +26,10 @@ coupling, so the model no longer forms for free and must be produced deliberatel
 In this brain that production is the reason the capture, routing-ledger, and
 route-tag machinery exists; the standing intention is stated in
 [comprehension of generated code](/meta/doctrine/comprehension-of-generated-code.md).
+Naur's [theory building](/beliefs/glossary/theory-building.md) is the strong,
+named version of the claim: the retained model — not the code — is the
+engineer's primary output.
 
-*Seen in:* [2026-07-20 localized-code-conversation thread](/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md), [localized-code-conversation analysis](/meta/analysis/localized-code-conversation-vs-linear-thread.md), [comprehension-of-generated-code doctrine](/meta/doctrine/comprehension-of-generated-code.md)
+*Seen in:* [2026-07-20 localized-code-conversation thread](/meta/threads/2026-07-20-localized-code-conversation-and-comprehension-doctrine.md), [localized-code-conversation analysis](/meta/analysis/localized-code-conversation-vs-linear-thread.md), [comprehension-of-generated-code doctrine](/meta/doctrine/comprehension-of-generated-code.md), [2026-08-04 Goedecke expertise essays intake thread](/meta/threads/2026-08-04-goedecke-expertise-essays-intake.md)
 
 *See also:* [code map](/beliefs/glossary/code-map.md), [cognitive debt](/beliefs/glossary/cognitive-debt.md)

@@ -290,6 +290,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:8c4c5c` | [beliefs/glossary/grounding-tier](/beliefs/glossary/grounding-tier.md) | concept | false |
 | `em:ff4d55` | [beliefs/glossary/hallucination](/beliefs/glossary/hallucination.md) | concept | false |
 | `em:ac0e23` | [beliefs/glossary/harness](/beliefs/glossary/harness.md) | concept | false |
+| `em:d14dec` | [beliefs/glossary/heavy-tailed-distribution](/beliefs/glossary/heavy-tailed-distribution.md) | concept | false |
 | `em:430dbb` | [beliefs/glossary/held-out-set](/beliefs/glossary/held-out-set.md) | concept | false |
 | `em:11642d` | [beliefs/glossary/hex](/beliefs/glossary/hex.md) | concept | false |
 | `em:eea0d0` | [beliefs/glossary/hip](/beliefs/glossary/hip.md) | concept | false |
@@ -533,6 +534,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:30dc3f` | [beliefs/glossary/single-overview-convention](/beliefs/glossary/single-overview-convention.md) | concept | false |
 | `em:8ea139` | [beliefs/glossary/single-source-of-truth](/beliefs/glossary/single-source-of-truth.md) | concept | false |
 | `em:aa0003` | [beliefs/glossary/skill](/beliefs/glossary/skill.md) | concept | false |
+| `em:9e16ff` | [beliefs/glossary/skill-formation](/beliefs/glossary/skill-formation.md) | concept | false |
 | `em:3be9b0` | [beliefs/glossary/skill-namespacing](/beliefs/glossary/skill-namespacing.md) | concept | false |
 | `em:7c0b1d` | [beliefs/glossary/skill-to-skill-delegation](/beliefs/glossary/skill-to-skill-delegation.md) | concept | false |
 | `em:8995e9` | [beliefs/glossary/skos](/beliefs/glossary/skos.md) | concept | false |
@@ -576,6 +578,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
 | `em:a2a2bb` | [beliefs/glossary/text-space-optimization](/beliefs/glossary/text-space-optimization.md) | concept | false |
 | `em:a9efbd` | [beliefs/glossary/textual-learning-rate](/beliefs/glossary/textual-learning-rate.md) | concept | false |
+| `em:414eec` | [beliefs/glossary/theory-building](/beliefs/glossary/theory-building.md) | concept | false |
 | `em:089fb2` | [beliefs/glossary/thread-doc](/beliefs/glossary/thread-doc.md) | concept | false |
 | `em:8af8b6` | [beliefs/glossary/three-island-problem](/beliefs/glossary/three-island-problem.md) | concept | false |
 | `em:ffa597` | [beliefs/glossary/three-level-documentation](/beliefs/glossary/three-level-documentation.md) | concept | false |
