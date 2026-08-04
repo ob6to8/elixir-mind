@@ -16,6 +16,7 @@ and the practices they change.
 - [context-engineering](/knowledge/SWE/agentic/context-engineering/index.md) — structuring, curating, and managing LLM conversation/agent context
 - [editor-integration](/knowledge/SWE/agentic/editor-integration/index.md) — how coding agents connect to the editor a developer already uses: protocols, plugin ecosystems, and how deeply an agent can reach into a live session
 - [execution-environments](/knowledge/SWE/agentic/execution-environments/index.md) — compute services agents and developers run code on: persistent, suspendable microVM platforms, their isolation and credential models, and their idle-time economics
+- [expertise](/knowledge/SWE/agentic/expertise/index.md) — how AI-assisted development interacts with the human engineer's expertise: the theory in the engineer's head as the primary artifact, expertise as the steering bottleneck, skill formation under delegation, and floor-raising across the ability distribution
 - [frameworks](/knowledge/SWE/agentic/frameworks/index.md) — libraries for building and orchestrating agents
 - [governance](/knowledge/SWE/agentic/governance/index.md) — enforcement mechanisms for agent-produced work: typed models as the binding layer between prose and code, checking properties at the abstraction level where they're legible
 - [mcp](/knowledge/SWE/agentic/mcp/index.md) — the Model Context Protocol: the open client-host-server standard for connecting agents to external context and capabilities
