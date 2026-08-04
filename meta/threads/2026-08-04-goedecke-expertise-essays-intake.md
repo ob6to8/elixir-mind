@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-04; verbatim retained
 tags: [meta, thread, intake, goedecke, expertise, agentic-coding, software-design]
 timestamp: 2026-08-04
 session: https://claude.ai/code/session_015oJsVEwaSHkyBUq8HRsDT2
+pr: 253
 ---
 
 # 2026-08-04-goedecke-expertise-essays-intake
