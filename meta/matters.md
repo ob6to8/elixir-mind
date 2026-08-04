@@ -48,24 +48,30 @@ ranked stays an unsequenced backlog doc.
 
 | # | Matter | Type | Order |
 |---|---|---|---|
-| 1 | [Auto-wire the pre-commit hook in session-start.sh](/meta/matters/wire-pre-commit-hook-in-session-start.md) | independent | - |
-| 2 | [Derive the register's row numbering](/meta/matters/derive-the-register-row-numbering.md) | independent | - |
-| 3 | [Ratify the skill section vocabulary](/meta/matters/ratify-skill-section-vocabulary.md) | [planned](/meta/plans/skill-section-vocabulary.md) | 1 |
-| 4 | [Migrate the 18 skills onto the section vocabulary](/meta/matters/migrate-skills-onto-section-vocabulary.md) | [planned](/meta/plans/skill-section-vocabulary.md) | 2 |
-| 5 | [Gate skill section conformance](/meta/matters/gate-skill-section-conformance.md) | [planned](/meta/plans/skill-section-vocabulary.md) | 3 |
-| 6 | [Disambiguate `order` from `sequence` in /scope-unit-of-work](/meta/matters/disambiguate-order-versus-sequence-in-scope-unit-of-work.md) | independent | - |
-| 7 | [Extract the model settings to a repo config surface](/meta/matters/extract-model-settings-to-repo-config.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 1 |
-| 8 | [The model-stamping policy](/meta/matters/model-stamping-policy.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 2 |
-| 9 | [Gate model values against the configured roster](/meta/matters/gate-model-values-against-the-roster.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 3 |
-| 10 | [Backfill model stamps on matter docs](/meta/matters/backfill-model-stamps-on-matter-docs.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 1 |
-| 11 | [Register Model column and its agreement check](/meta/matters/register-model-column-and-agreement-check.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 2 |
-| 12 | [Reconcile the plans index against plan status, and gate the agreement](/meta/matters/gate-plans-index-status-sections.md) | independent | - |
-| 13 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
-| 14 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
-| 15 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
-| 16 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
-| 17 | [Contract-synchronization sweep](/meta/matters/contract-synchronization-sweep.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 1 |
-| 18 | [Excerpt-log discipline](/meta/matters/excerpt-log-discipline.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 2 |
-| 19 | [Standardize the verbatim-capture filing pattern](/meta/matters/standardize-verbatim-capture-filing.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 3 |
-| 20 | [Settle model-attribution](/meta/matters/settle-model-attribution.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 4 |
-| 21 | [Contract-size counterweight](/meta/matters/contract-size-counterweight.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 5 |
+| 1 | [Union-safe attribution.from lists](/meta/matters/union-safe-attribution-from-lists.md) | independent | - |
+| 2 | [Encode hook-directives-are-never-answers as a policy and a sync-skill guardrail](/meta/matters/encode-hook-directives-are-never-answers.md) | independent | - |
+| 3 | [brain.search build 1: the BM25 core](/meta/matters/brain-search-bm25-core.md) | [planned](/meta/plans/brain-search-ranked-retrieval.md) | 1 |
+| 4 | [brain.search build 2: the CLI and corpora](/meta/matters/brain-search-cli-and-corpora.md) | [planned](/meta/plans/brain-search-ranked-retrieval.md) | 2 |
+| 5 | [brain.search build 3: probe trend line and intake wiring](/meta/matters/brain-search-probe-and-intake-wiring.md) | [planned](/meta/plans/brain-search-ranked-retrieval.md) | 3 |
+| 6 | [brain.search build 4: the static-embedding tier](/meta/matters/brain-search-static-embedding-tier.md) | [planned](/meta/plans/brain-search-ranked-retrieval.md) | 4 |
+| 7 | [Auto-wire the pre-commit hook in session-start.sh](/meta/matters/wire-pre-commit-hook-in-session-start.md) | independent | - |
+| 8 | [Derive the register's row numbering](/meta/matters/derive-the-register-row-numbering.md) | independent | - |
+| 9 | [Ratify the skill section vocabulary](/meta/matters/ratify-skill-section-vocabulary.md) | [planned](/meta/plans/skill-section-vocabulary.md) | 1 |
+| 10 | [Migrate the 18 skills onto the section vocabulary](/meta/matters/migrate-skills-onto-section-vocabulary.md) | [planned](/meta/plans/skill-section-vocabulary.md) | 2 |
+| 11 | [Gate skill section conformance](/meta/matters/gate-skill-section-conformance.md) | [planned](/meta/plans/skill-section-vocabulary.md) | 3 |
+| 12 | [Disambiguate `order` from `sequence` in /scope-unit-of-work](/meta/matters/disambiguate-order-versus-sequence-in-scope-unit-of-work.md) | independent | - |
+| 13 | [Extract the model settings to a repo config surface](/meta/matters/extract-model-settings-to-repo-config.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 1 |
+| 14 | [The model-stamping policy](/meta/matters/model-stamping-policy.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 2 |
+| 15 | [Gate model values against the configured roster](/meta/matters/gate-model-values-against-the-roster.md) | [planned](/meta/plans/separate-the-model-roster-concerns.md) | 3 |
+| 16 | [Backfill model stamps on matter docs](/meta/matters/backfill-model-stamps-on-matter-docs.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 1 |
+| 17 | [Register Model column and its agreement check](/meta/matters/register-model-column-and-agreement-check.md) | [planned](/meta/plans/model-column-in-the-matter-register.md) | 2 |
+| 18 | [Reconcile the plans index against plan status, and gate the agreement](/meta/matters/gate-plans-index-status-sections.md) | independent | - |
+| 19 | [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) | independent | - |
+| 20 | [dev-history recommit + regeneration fold-in](/meta/matters/dev-history-recommit-and-regeneration-fold-in.md) | independent | - |
+| 21 | [Two-sided bias taxonomy implementation](/meta/matters/two-sided-bias-taxonomy-implementation.md) | [planned](/meta/plans/two-sided-bias-taxonomy-and-compendium.md) | 1 |
+| 22 | [TDD bookmark promotions](/meta/matters/tdd-bookmark-promotions.md) | independent | - |
+| 23 | [Contract-synchronization sweep](/meta/matters/contract-synchronization-sweep.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 1 |
+| 24 | [Excerpt-log discipline](/meta/matters/excerpt-log-discipline.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 2 |
+| 25 | [Standardize the verbatim-capture filing pattern](/meta/matters/standardize-verbatim-capture-filing.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 3 |
+| 26 | [Settle model-attribution](/meta/matters/settle-model-attribution.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 4 |
+| 27 | [Contract-size counterweight](/meta/matters/contract-size-counterweight.md) | [planned](/meta/plans/decision-queue-matter-sequence.md) | 5 |
