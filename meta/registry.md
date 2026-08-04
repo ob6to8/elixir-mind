@@ -365,6 +365,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6c220e` | [beliefs/glossary/megaprompt](/beliefs/glossary/megaprompt.md) | concept | false |
 | `em:a490ca` | [beliefs/glossary/memory-injection](/beliefs/glossary/memory-injection.md) | concept | false |
 | `em:45649c` | [beliefs/glossary/mental-model](/beliefs/glossary/mental-model.md) | concept | false |
+| `em:ab3267` | [beliefs/glossary/merge-driver](/beliefs/glossary/merge-driver.md) | concept | false |
 | `em:ab825a` | [beliefs/glossary/messages-api](/beliefs/glossary/messages-api.md) | concept | false |
 | `em:715a40` | [beliefs/glossary/metered-paywall](/beliefs/glossary/metered-paywall.md) | concept | false |
 | `em:5fdc55` | [beliefs/glossary/methodology-type](/beliefs/glossary/methodology-type.md) | concept | false |

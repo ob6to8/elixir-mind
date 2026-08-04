@@ -1,0 +1,20 @@
+# Merge strategies for the parallel-session conflict magnets
+# (see meta/issues/generated-artifact-merge-conflicts.md).
+#
+# Append-only listings: the common conflict is two sessions inserting entries
+# at the same anchor; git's built-in union driver keeps both sides' lines.
+# (Generic rule first — later, more specific lines override it.)
+index.md merge=union
+
+# Generated artifacts: never 3-way-merge their text — the right resolution is
+# "re-derive from the merged sources". The `regen` driver resolves as `ours`
+# at merge time (configured by .claude/hooks/session-start.sh:
+# `git config merge.regen.driver true`); `mix brain.regen` then re-derives
+# every generated artifact, and the pre-commit/CI freshness gates reject the
+# merge commit until that has happened. Without the driver configured, git
+# falls back to the default text merge — at worst today's behavior.
+CLAUDE.md merge=regen
+meta/registry.md merge=regen
+meta/code-map.md merge=regen
+meta/flows/lineage.md merge=regen
+beliefs/glossary/index.md merge=regen
