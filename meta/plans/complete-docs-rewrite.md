@@ -5,13 +5,13 @@ description: A wholesale rewrite pass over the reader-facing documentation — R
 status: proposed
 provenance: "Claude Fable 5, Claude Code session"
 tags: [meta, plan, documentation, rewrite, reader-facing]
-timestamp: 2026-08-01
+timestamp: 2026-08-03
 attribution:
   when: 2026-08-01T19:43:00Z
   channel: agent-authored
   agent: "Claude Code agent, decision-queue session"
   why: "operator-commissioned during the decision-queue session: a wholesale reader-facing docs pass, kept distinct from the review program's corrective sweeps, filed with its sequencing ratified up front"
-  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md]
+  from: [/meta/threads/2026-08-01-decision-queue-matter-breakout.md, /meta/threads/2026-08-03-readme-rewrite-as-interim-front-door.md]
 ---
 
 # Complete docs rewrite: the reader-facing surfaces
@@ -49,6 +49,25 @@ where they are, and this plan does not restate them:
   ([epistemology review §2–3](/meta/analysis/epistemology-and-governance-review.md))
   — matter 1 of the
   [decision-queue matter sequence](/meta/plans/decision-queue-matter-sequence.md).
+
+## Interim state — the README (operator, 2026-08-03)
+
+`README.md` was rewritten whole ahead of constraint 1, by a session that
+forked before that constraint reached `main`. Presented with the conflict,
+the operator accepted the rewrite as an **interim front door** rather than
+reverting it: the prior text was stale — it named the retired `/todo` skill
+and a gate list predating `mix brain.matters` — and this plan's blocking
+matters have no scheduled delivery.
+
+What that leaves for this plan:
+
+- The README's **content** is current as of 2026-08-03, so the staleness
+  half of its rewrite is already done.
+- Its **framing** is not, and constraint 2 is untouched by the interim. The
+  rewrite presents the repo as a single deliverable, which is the conflation
+  the [separation plan](/meta/plans/separate-okf-bundle-and-elixir-mind-library.md)'s
+  phase 1 exists to end; that reframing is still decided there, and replaces
+  the interim's opening rather than starting from the pre-2026-08-03 text.
 
 ## Ratified sequencing (operator, 2026-08-01)
 
