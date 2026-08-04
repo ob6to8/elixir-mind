@@ -39,7 +39,18 @@ skill, then wrongly treated the stop hook's generic "commit and push" as the
 operator's answer and completed its own recommended keep-both resolution. The
 operator flagged the unapproved action and directed it filed as
 [an open issue](/meta/issues/hook-directive-taken-as-operator-approval.md),
-then invoked `/create-pull-request`.
+then invoked `/create-pull-request` — PR #251 opened and was handed back.
+
+On the operator's `Merge`, `main` had moved eight PRs ahead and the sync
+conflicted in five files; the agent paused the union resolution as a blocking
+question, and when the stop hook fired mid-pause, aborted the merge instead of
+resolving — the issue's fix shape, exercised. The operator ratified
+keep-everything in plainspeak, invoked `/create-pull-request merge`, and
+directed a follow-up:
+fix [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md)
+(a parallel session had hit the identical gold-set conflict the same day). The
+union merge landed as `d510e6d`; the PR was then driven to green and
+true-merged.
 
 ## Routing
 
@@ -54,6 +65,7 @@ then invoked `/create-pull-request`.
 | Stop-hook directive taken as operator approval | open | [hook-directive-taken-as-operator-approval](/meta/issues/hook-directive-taken-as-operator-approval.md) | guardrail/policy fix not yet applied |
 | "lost in the middle" gold row re-adjudication | open | [dedup-probe](/meta/evals/dedup-probe.md) | add `em:1b3160` or note the glossary route — awaiting adjudication |
 | Ratify the `mix brain.search` build (BM25 + tier 1.5) | open | [solving-vocabulary-mismatch-offline](/meta/analysis/solving-vocabulary-mismatch-offline.md) | operator ratification → `type: plan` per persist-plans |
+| Fix the parallel-session append-conflict pattern (operator-directed follow-up) | open | [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md) | rebuild-on-merge implementation in progress this session |
 
 ## User
 
@@ -295,3 +307,84 @@ Clock confirms 2026-08-04; session id env var present (`cse_…` → the session
 </routes>
 
 The log turns out to be lossy — it holds only 11 assistant text blocks, missing most of my ≥300-char narrations from the two spike turns (worker-restart rotation is the likely cause). Per the capture skill, render-from-context is the sanctioned fallback, and I hold every delivered block verbatim; I'll use the mechanical render for the blocks the log does hold and splice the rest from context. Reading the full mechanical render and the glossary skill now.
+
+Both directives are complete. **PR #251 is open and handed back to you** (bare invocation — I have not merged it): https://github.com/ob6to8/elixir-mind/pull/251
+
+| action | result |
+|---|---|
+| Filed the failure as a `type: issue` | [`meta/issues/hook-directive-taken-as-operator-approval.md`](https://github.com/ob6to8/elixir-mind/blob/claude/repo-search-research-e0uvk9/meta/issues/hook-directive-taken-as-operator-approval.md), `status: open`, with the failure class (an automation signal impersonating a human answer during a human-gated pause) and the abort-don't-resolve fix shape; issues index updated. "Type agent failure" is carried in the tags and body — the controlled vocabulary has no such `type`, so it files as `issue` |
+| Captured the session | thread doc **`meta/threads/2026-08-02-retrieval-spike-doma-intake-and-static-embeddings.md`** — verbatim render (the host log had rotated away most spike-turn blocks, so those were rendered from context per the capture skill's fallback, stated in the doc's provenance), routing ledger with three open strands, route tags, excerpt logs materialized into the doma/release-post/snippet sinks |
+| Glossaried the thread | six new terms: static embeddings, model2vec, WordPiece, safetensors, reciprocal rank fusion, stop hook |
+| Stamped `attribution.from` | both spike analyses, the new issue, and the dedup-probe gold doc now trace to the thread |
+| Committed, pushed, opened PR #251, stamped `pr: 251` | commits `86720a1` + `e083bef`; every commit passed the full pre-commit gate suite (verify, route-tags, glossary, freshness checks, 211 tests) |
+
+The three open strands, each with a durable home: the issue's guardrail fix (issue doc), the "lost in the middle" gold-row re-adjudication (companion analysis, rec 4), and ratification of the `mix brain.search` build (both analyses — a `type: plan` follows your ratification).
+
+If you'd like, I can watch PR #251 for CI results and review comments (`subscribe_pr_activity`) — say the word; otherwise it's yours to merge.
+
+## User
+
+Merge
+
+## Assistant
+
+<routes ref="/meta/issues/generated-artifact-merge-conflicts.md">
+`main` gained eight PRs while this one was open, and the sync now conflicts in five files. One of them (`meta/registry.md`) is a generated artifact I can re-derive autonomously — but the rest are hand-authored listings and the gold doc, and the `merge` flow's own step-9 gate blocks on exactly this ("a judgment call made mid-flow"). Given what I filed an issue about one message ago, I'm pausing this one properly. Enumerating the hunks so the question is concrete.
+</routes>
+
+<routes ref="/meta/issues/hook-directive-taken-as-operator-approval.md /meta/issues/generated-artifact-merge-conflicts.md">
+The merge is paused in-conflict, and this time it waits for you. Every hunk across the five files is the same shape — **append-append collisions with zero substantive overlap** (eight PRs landed on `main` while this one was open):
+
+| file | this branch added | `main` added | proposed resolution |
+|---|---|---|---|
+| `meta/evals/dedup-probe.md` (gold set) | the "grep is the primary search mechanism" row | four rows from three intakes (agent-memory, fly/shellbox ×2, hologram) | **keep all five** |
+| same file (`attribution.from`) | my thread path | three intake thread paths | **union of all** |
+| same file (`## Baseline`) | 9/31 | 12/34 | discard both, **regenerate** (`--update-baseline`, 35 targets) |
+| `meta/threads/index.md` | my thread entry | five thread entries | **keep all six** |
+| `meta/analysis/index.md` | my two glosses | two glosses | **keep all four** |
+| `code-context/index.md` | doma entry + Subdirectories section | mex entry | **keep both + the section** |
+| `meta/registry.md` | — | — | generated: **re-derive** (autonomous per the sync skill) |
+
+If you approve, I resolve as above, re-run the gates, push, wait for CI green, and complete the true merge of PR #251. If a stop hook fires before you answer, I'll `git merge --abort` and hold — not resolve.
+
+One corroborating find while enumerating: `main`'s fly-shellbox thread records a **parallel session hitting this same gold-set append-append conflict and union-resolving it when its stop hook directed commit-and-push** — the issue's failure class occurred independently twice on the same day, which strengthens the case for the guardrail fix it proposes.
+
+Proceed with the union resolution?
+</routes>
+
+## User
+
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+## Assistant
+
+<routes ref="/meta/issues/hook-directive-taken-as-operator-approval.md">
+Merge aborted, per the rule the issue records: a hook directive is never an answer to a pending blocking question. The tree is clean and the branch matches its pushed remote (`e083bef`), so the hook's condition is satisfied with nothing committed and nothing resolved.
+
+The blocking question from my last message stands exactly as posed: **approve the union resolution** (keep all five gold rows, union the `from` lists, keep all index entries on both sides, regenerate the baseline and registry), after which I'll redo the merge — it takes seconds — push, wait for CI, and complete the true merge of PR #251. Or name a different disposition.
+</routes>
+
+## User
+
+Explain in plainspeak what is happening and what you recommend
+
+## Assistant
+
+<routes ref="/meta/issues/hook-directive-taken-as-operator-approval.md /meta/issues/generated-artifact-merge-conflicts.md">
+Here's the situation in plain terms.
+
+**What's happening:** Your pull request — all the search research, the doma write-ups, the incident issue, the session record — is approved, green, and ready. But while it sat open, eight other pull requests from other working sessions landed on the main branch first. A few of them touched the same files this one touches. Not the same *sentences* — the same *lists*. Files like "the table of test queries," "the list of past sessions," and "the list of analyses" are ones every session appends a line or two to. Git can merge two edits to different parts of a file on its own, but when two branches each add lines at the *same spot in the same list*, it can't know how to interleave them, so it stops and asks a human. That's the "merge conflict": not a disagreement, just two additions standing in the same doorway.
+
+**Why I'm paused:** the repo's rule is that conflicts in hand-written files get resolved by you, not me — and earlier today I broke that rule once by pushing ahead when your automatic "don't leave work uncommitted" reminder fired, which you rightly flagged and we filed as an issue. When that same reminder fired again a few minutes ago, I did what the issue says to do instead: I *undid* the half-finished merge, leaving everything clean and exactly as it was. Nothing was lost; the merge takes seconds to redo. So right now the PR is simply waiting on one decision from you.
+
+**What I recommend:** approve the "keep everything" resolution. Every conflicting spot is two sessions adding their own independent lines — my test-query row next to their four, my session-record entry next to their five, my doma entry next to their new "mex" entry. Keeping all of them drops nothing, rewrites nothing, and contradicts nothing; the two summary tables and the id registry are machine-generated, so I regenerate those rather than hand-merging them. Then I re-run the checks, push, let CI go green, and complete the merge of PR #251.
+
+There's no downside I can see to the keep-everything path — the only alternatives would be dropping someone's lines (bad) or you hand-editing the files yourself (slower, same result). A "go ahead" is all I need.
+
+One observation worth having on your radar: this will keep happening as long as several sessions run in parallel and all append to the same few files — main's history shows another session hit this exact conflict in the same table yesterday. The repo already has an open issue about that pattern (`generated-artifact-merge-conflicts`); the eventual fix lives there, not in this PR.
+</routes>
+
+## User
+
+Keep everything, merge, run /create-pull-request merge, then fix the generated-artifact-merge-conflicts issue
