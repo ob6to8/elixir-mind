@@ -65,7 +65,7 @@ true-merged.
 | Stop-hook directive taken as operator approval | open | [hook-directive-taken-as-operator-approval](/meta/issues/hook-directive-taken-as-operator-approval.md) | guardrail/policy fix not yet applied |
 | "lost in the middle" gold row re-adjudication | open | [dedup-probe](/meta/evals/dedup-probe.md) | add `em:1b3160` or note the glossary route — awaiting adjudication |
 | Ratify the `mix brain.search` build (BM25 + tier 1.5) | open | [solving-vocabulary-mismatch-offline](/meta/analysis/solving-vocabulary-mismatch-offline.md) | operator ratification → `type: plan` per persist-plans |
-| Fix the parallel-session append-conflict pattern (operator-directed follow-up) | open | [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md) | rebuild-on-merge implementation in progress this session |
+| Fix the parallel-session append-conflict pattern (operator-directed follow-up) | closed | [generated-artifact-merge-conflicts](/meta/issues/generated-artifact-merge-conflicts.md) | - |
 
 ## User
 
@@ -388,3 +388,43 @@ One observation worth having on your radar: this will keep happening as long as 
 ## User
 
 Keep everything, merge, run /create-pull-request merge, then fix the generated-artifact-merge-conflicts issue
+
+## Assistant
+
+<routes ref="/meta/issues/generated-artifact-merge-conflicts.md">
+The issue names three candidate fixes and its resolution condition ("a merge driver or a post-merge regeneration step … pinned by a test or a demonstrated conflicting-merge that resolves cleanly"). Design settled: option 1 — a committed `.gitattributes` with a `regen` driver (keep-ours, then regenerate; the freshness gates already force correctness at commit time) for the five whole-file generated artifacts, plus git's built-in `union` driver for the append-only `index.md` listings the issue also names. First, re-polling CI to complete the PR #251 merge.
+</routes>
+
+<routes ref="/meta/issues/generated-artifact-merge-conflicts.md">
+Everything in your directive is done. In plain terms: the pile-up was untangled exactly as you approved (nobody's lines dropped), your PR is now merged into main, and the underlying disease — machine-generated files causing pointless merge conflicts between parallel sessions — is fixed at the git level, so those conflicts stop happening at all.
+
+## PR #251 — merged
+
+| step | result |
+|---|---|
+| Union resolution (ratified) | all five files keep both sides' entries; baseline regenerated (plain 12/35, expanded 29/35 — no regression); registry re-derived; merge commit `d510e6d` |
+| Capture appended first | the PR-opening report, the merge saga, the hook-abort, the plainspeak explanation, and your directive are all in the thread doc (`f4ffcc3`), per the update-in-place rule |
+| CI → true merge | both `verify` runs green; **merged as `1dadff2`**, head branch auto-deleted |
+
+Thread doc: `meta/threads/2026-08-02-retrieval-spike-doma-intake-and-static-embeddings.md` (`pr: 251`).
+
+## The generated-artifact fix — delivered and demonstrated
+
+Resolved via the issue's candidate fix 1, rebuild-on-merge, on the restarted branch (commit `ace4546`, pushed, all gates green):
+
+- **`.gitattributes`** (committed): the five machine-generated files (`CLAUDE.md`, registry, code map, lineage views, glossary index) get a `regen` merge driver — a conflict auto-resolves as "ours" and is then re-derived, with the existing freshness gates refusing any commit where that re-derivation didn't happen. The append-only `index.md` listings get git's built-in `union` driver, which keeps both sides' inserted lines.
+- **`mix brain.regen`** (new task): re-derives every generated artifact in one motion — the post-merge step the driver assumes.
+- **Wiring**: the SessionStart hook now configures the driver in every web session's clone; a clone without it just falls back to today's behavior.
+- **Pinned by demonstration**, per the issue's own resolution condition: a scratch merge that previously produced two conflicts now completes with exit 0 — generated file resolved for regeneration, index holding both entries.
+- Deliberately still manual: the dedup gold set (its one-line `from:` list collides as a same-line edit, where union would corrupt YAML) and the matter register (row order is semantic). The issue is flipped `resolved` with this decision record; the sync skill's conflict step teaches the new flow.
+
+The fix sits on `claude/repo-search-research-e0uvk9` awaiting a PR — say `/create-pull-request` (or `merge`) and I'll run the close for it. Still open by your earlier choice: the `hook-directive-taken-as-operator-approval` issue (its guardrail edit remains unapplied), the "lost in the middle" gold-row re-adjudication, and ratification of the `mix brain.search` build.
+</routes>
+
+## User
+
+/create-pull-request to capture transcript
+
+## User
+
+Then merge
