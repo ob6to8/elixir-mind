@@ -35,6 +35,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:dbaf55` | [beliefs/glossary/agent-as-presenter](/beliefs/glossary/agent-as-presenter.md) | concept | false |
 | `em:37a83f` | [beliefs/glossary/agent-memory](/beliefs/glossary/agent-memory.md) | concept | false |
 | `em:58d708` | [beliefs/glossary/agent-multiplexer](/beliefs/glossary/agent-multiplexer.md) | concept | false |
+| `em:55363b` | [beliefs/glossary/agent-native](/beliefs/glossary/agent-native.md) | concept | false |
 | `em:76ccba` | [beliefs/glossary/agent-swarm](/beliefs/glossary/agent-swarm.md) | concept | false |
 | `em:4e18d8` | [beliefs/glossary/agent-teams](/beliefs/glossary/agent-teams.md) | concept | false |
 | `em:2523b4` | [beliefs/glossary/agent-time-horizon](/beliefs/glossary/agent-time-horizon.md) | concept | false |
@@ -177,6 +178,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:90e275` | [beliefs/glossary/digital-twin](/beliefs/glossary/digital-twin.md) | concept | false |
 | `em:802d4e` | [beliefs/glossary/directed-acyclic-graph](/beliefs/glossary/directed-acyclic-graph.md) | concept | false |
 | `em:2b2532` | [beliefs/glossary/direction-of-fit](/beliefs/glossary/direction-of-fit.md) | concept | false |
+| `em:0410b1` | [beliefs/glossary/dirty-scheduler](/beliefs/glossary/dirty-scheduler.md) | concept | false |
 | `em:537412` | [beliefs/glossary/disposition](/beliefs/glossary/disposition.md) | concept | false |
 | `em:bec37f` | [beliefs/glossary/distill-dont-dump](/beliefs/glossary/distill-dont-dump.md) | concept | false |
 | `em:04befc` | [beliefs/glossary/distillation-target](/beliefs/glossary/distillation-target.md) | concept | false |
@@ -394,6 +396,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:54995c` | [beliefs/glossary/non-bundle-namespace](/beliefs/glossary/non-bundle-namespace.md) | concept | false |
 | `em:724e2f` | [beliefs/glossary/non-monotonic-reasoning](/beliefs/glossary/non-monotonic-reasoning.md) | concept | false |
 | `em:7eb410` | [beliefs/glossary/non-realtime-rendering](/beliefs/glossary/non-realtime-rendering.md) | concept | false |
+| `em:de0504` | [beliefs/glossary/normalization-of-deviance](/beliefs/glossary/normalization-of-deviance.md) | concept | false |
 | `em:0c343a` | [beliefs/glossary/normative-conclusion](/beliefs/glossary/normative-conclusion.md) | concept | false |
 | `em:760063` | [beliefs/glossary/nyquist-shannon-sampling-theorem](/beliefs/glossary/nyquist-shannon-sampling-theorem.md) | concept | false |
 | `em:617977` | [beliefs/glossary/observer-agent](/beliefs/glossary/observer-agent.md) | concept | false |

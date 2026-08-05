@@ -32,6 +32,6 @@ guessing is the score-maximizing strategy. Distinct from
 structural defect of a conclusion lacking supporting evidence rather than the
 behavior of asserting one.
 
-*Seen in:* [Kimi K3](/knowledge/machine-learning/kimi-k3.md), [Split retrieval and generation evaluation for RAG](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) ([groundedness](/beliefs/glossary/groundedness.md) checks catching it without ground truth)
+*Seen in:* [Kimi K3](/knowledge/machine-learning/kimi-k3.md), [Split retrieval and generation evaluation for RAG](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) ([groundedness](/beliefs/glossary/groundedness.md) checks catching it without ground truth), [Analysis of vibecoded outputs](/knowledge/SWE/agentic/expertise/vibecoded-outputs-analysis-mostawesomedude.md) (named "confabulation" there — models asserting code was clean or tests were passing when neither held up)
 
 *See also:* [ungrounded inference](/beliefs/glossary/ungrounded-inference.md), [Artificial Analysis Intelligence Index](/beliefs/glossary/artificial-analysis-intelligence-index.md)
