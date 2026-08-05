@@ -234,3 +234,67 @@ any vendor is not observable from outside, and absence from documentation is
 not evidence of absence in practice. The accretion argument is mechanistic
 rather than measured: it predicts the observed outcome but no attempt was made
 here to confirm it against any organization's instruction-file history.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:ed8315">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-05-anthropic-context-engineering-intake-and-instruction-conflict (2026-08-05)
+
+9 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:ed8315`]**  (co-feeds: `em:0dc544`)
+
+https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models
+
+For example, when we read transcripts of our own internal usage of Claude Code, we see several conflicting messages in a single request like “leave documentation as appropriate,” or “DO NOT add comments” as our system prompt, skills, and user requests clash with each other. 
+
+what system of auditing does anthropic maintain to prevent contradictory instruction across contextual sources? is there a record of this? how did this slip through, unless auditing has been until now (apparently) prohibitively challenging?
+
+---
+
+**[`em:ed8315`]**
+
+The short version: **there is no auditing system for instruction conflict, and there wasn't one to slip past.** Anthropic found these conflicts the way you'd find them in your own repo — a person read session transcripts and noticed the model had been handed contradictory orders. The tooling they shipped in response (`/doctor`) checks whether your config files parse, whether skills are unused, whether text duplicates what's already in the codebase. It does not check whether two loaded instructions disagree. Your instinct that auditing has been prohibitively challenging is right, and I think it's stronger than "challenging" — the check has no clean definition of correct.
+
+---
+
+**[`em:ed8315`]**
+
+None that is published, on the surfaces I searched. The nearest thing is `/doctor` (alias `/checkup`), and its scope is worth stating precisely because the gap is the interesting part. Per Anthropic's configuration docs it reports "installation health, invalid settings files, unused extensions, duplicate subagent names in the same directory, and checked-in `CLAUDE.md` content Claude can derive from the codebase" — plus, per the v2.1.205 release note, unused skills/MCP servers/plugins "versus their context cost", dedup of local against checked-in `CLAUDE.md`, and slow hooks.
+
+---
+
+**[`em:ed8315`]**
+
+**Settings are a real override system.** Permissions, hooks, env — those merge deterministically in code before the model sees anything. Per the config docs: "Managed settings always win when present. Among the rest, the closer scope overrides the broader one in the order local, then project, then user." One value survives the merge. That is reliable, because it's a function.
+
+---
+
+**[`em:ed8315`]**
+
+**Instructions are not an override system.** There is no merge step. `/context` shows what occupies the window "broken down by category: system prompt, system tools, MCP tools, custom subagents..., memory files, skills, and conversation messages" — all of it, coexisting. Nothing is resolved away. Every layer's text arrives simultaneously and the model arbitrates on the fly. There is no documented precedence rule saying a skill beats CLAUDE.md, because there is no code that would implement one.
+
+---
+
+**[`em:ed8315`]**
+
+Here's the hinge, which I just checked. The post's load-bearing evidence is that deleting 80% produced "no measurable loss on our coding evaluations." That result is **identical under both hypotheses**:
+
+---
+
+**[`em:ed8315`]**
+
+**No — Anthropic has never advised CLAUDE.md for worst-case avoidance. They advise the opposite, repeatedly and explicitly.** From the memory docs: CLAUDE.md and auto memory are "context, not enforced configuration. To block an action regardless of what Claude decides, use a PreToolUse hook instead." And on the org-wide deployment page: "Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer." There's even a routing table sending "Block specific tools, commands, or file paths" to managed settings and leaving CLAUDE.md with style and "behavioral instructions."
+
+---
+
+**[`em:ed8315`]**
+
+A company CLAUDE.md is a normative document with three properties that rarely co-occur:
+
+---
+
+**[`em:ed8315`]**
+
+**It ratchets.** Adding a line is cheap and socially rewarded — you're helping. Removing one means arguing that a colleague's contribution was worthless, against no evidence either way, since none exists. Additions face no resistance and deletions face a person. Monotonic growth is the equilibrium.

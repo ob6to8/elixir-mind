@@ -115,3 +115,19 @@ which finds the same verbosity-hurts-larger-models effect on the output side.
   <https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models>
 - Section headings as published: *Unhobbling Claude* · *Then and now* ·
   *Applying this to your context* · *Try simplifying*
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:0dc544">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-05-anthropic-context-engineering-intake-and-instruction-conflict (2026-08-05)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:0dc544`]**  (co-feeds: `em:ed8315`)
+
+https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models
+
+For example, when we read transcripts of our own internal usage of Claude Code, we see several conflicting messages in a single request like “leave documentation as appropriate,” or “DO NOT add comments” as our system prompt, skills, and user requests clash with each other. 
+
+what system of auditing does anthropic maintain to prevent contradictory instruction across contextual sources? is there a record of this? how did this slip through, unless auditing has been until now (apparently) prohibitively challenging?

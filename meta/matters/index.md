@@ -12,6 +12,7 @@ register is backlog. Listings below are alphabetical. See the
 
 ## Open
 
+- [Audit the contract for unfalsifiable rules and accreted bulk](/meta/matters/audit-the-contract-for-unfalsifiable-rules.md) — classify every contract rule as gated, gateable, editorial, or inert, plus duplicate pairs, contradiction candidates, and provenance skew; classify and report, cut nothing. Complements the size counterweight on the enforcement axis rather than the quantitative one. `status: open`.
 - [/create-pull-request scoping edit](/meta/matters/create-pull-request-scoping-edit.md) — scope the skill's commit step to the finished matter and define its repeat-invocation behavior in a continued session. `status: open`.
 - [Auto-wire the pre-commit hook in `session-start.sh`](/meta/matters/wire-pre-commit-hook-in-session-start.md) — set `git config core.hooksPath .githooks` in the session-start hook so fresh web-session sandboxes get the local gate suite automatically. `status: open`.
 - [Backfill model stamps on the open matter docs](/meta/matters/backfill-model-stamps-on-matter-docs.md) — all 30 open matter docs predate the `model:` stamp, so stamp each with the roster's delivering-model value and a `## Model` determination; `/matter list` shows them the day they land. `status: open`.

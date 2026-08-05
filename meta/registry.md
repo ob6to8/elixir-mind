@@ -20,6 +20,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `em:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
 | `em:0563fb` | [beliefs/glossary/6pn](/beliefs/glossary/6pn.md) | concept | false |
+| `em:96c282` | [beliefs/glossary/ablation](/beliefs/glossary/ablation.md) | concept | false |
 | `em:b78fb8` | [beliefs/glossary/abliteration](/beliefs/glossary/abliteration.md) | concept | false |
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
 | `em:dffd70` | [beliefs/glossary/active-parameters](/beliefs/glossary/active-parameters.md) | concept | false |
@@ -604,6 +605,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:927eb2` | [beliefs/glossary/typed-edge](/beliefs/glossary/typed-edge.md) | concept | false |
 | `em:f2a039` | [beliefs/glossary/unchecked-premise](/beliefs/glossary/unchecked-premise.md) | concept | false |
 | `em:570738` | [beliefs/glossary/ungrounded-inference](/beliefs/glossary/ungrounded-inference.md) | concept | false |
+| `em:d0d15d` | [beliefs/glossary/unhobbling](/beliefs/glossary/unhobbling.md) | concept | false |
 | `em:05fab0` | [beliefs/glossary/unique-name-assumption](/beliefs/glossary/unique-name-assumption.md) | concept | false |
 | `em:b9eb99` | [beliefs/glossary/validation-gate](/beliefs/glossary/validation-gate.md) | concept | false |
 | `em:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
