@@ -1,7 +1,7 @@
 ---
 type: matter
 title: "Protect verbatim artifacts from whole-file regeneration"
-description: Document the measured whole-file-rewrite fidelity failure — a Write regenerates every character, so quoted material inside a rewritten file is paraphrased rather than preserved — and scope what a standalone checksum-verification library would take, since the brain's verbatim surfaces (thread captures, route-tag excerpt logs, quoted sources) have no oracle protecting them today.
+description: Document the measured whole-file-rewrite fidelity failure — a Write regenerates every character, so quoted material inside a rewritten file is paraphrased rather than preserved — and scope this brain's implementation of the shared verbatim-integrity specification, since its verbatim surfaces (thread captures, route-tag excerpt logs, quoted sources) have no oracle protecting them today.
 status: open
 model: Claude Opus 5
 provenance: "Claude Fable 5, socrates-genesis session"
@@ -88,10 +88,17 @@ Nothing equivalent guards thread docs or quoted spans.
    a `settings.json` deny rule (`"deny": ["Write(meta/threads/**)"]`) or a
    `PreToolUse` hook denying `Write` on protected paths — both verified
    available; the hook can explain the refusal to the agent.
-5. **Whether socrates should host it.** The socrates plugin has the same need
-   for its own thread and example artifacts, and a verbatim-integrity checker is
-   a natural capability for a system whose subject is statement fidelity. The
-   open question is whether that is a shared dependency or a duplicated concern.
+5. **~~Whether socrates should host it.~~ Settled 2026-08-05: neither system
+   hosts it.** The operator ruled out a dependency in either direction — this
+   brain must not bundle to socrates, nor socrates to this brain. The shared
+   thing is a **specification** (manifest format, hash discipline, verifier
+   contract), implemented natively by each consumer: a `mix` task here beside
+   the existing gates, a plugin capability and `PreToolUse` hook there. The
+   architectural sketch lives at
+   [`design/verbatim-integrity.md`](https://github.com/ob6to8/socrates/blob/main/design/verbatim-integrity.md)
+   in the socrates repo; this matter scopes the elixir-mind implementation of
+   it. The precedent is OKF: a format this repo implements, not a library it
+   imports.
 
 ## Notes
 
