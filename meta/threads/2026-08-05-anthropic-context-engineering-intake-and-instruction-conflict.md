@@ -4,6 +4,7 @@ title: "Anthropic's Claude 5 context-engineering post — intake, and the instru
 description: An /intake of Anthropic's context-engineering post that turned into an audit of the instruction layer itself — no mechanical oracle for conflict, no override semantics despite the layered presentation, an ablation that cannot distinguish newly-redundant from never-load-bearing, and the social asymmetry that makes such a layer accrete.
 tags: [thread, intake, context-engineering, claude-code, instruction-conflict, governance, oracles]
 timestamp: 2026-08-05
+pr: 255
 session: https://claude.ai/code/session_01FB7Lcdq3rB6Wq14t91X2r8
 ---
 
