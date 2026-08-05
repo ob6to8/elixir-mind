@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-08-05; verbatim retaine
 tags: [meta, thread, intake, ai-security, agentic, elixir, expertise, mcp]
 timestamp: 2026-08-05T16:10:00Z
 session: https://claude.ai/code/session_01CVX5YYV2eF84Hcd2e1JbEu
+pr: 256
 ---
 
 # 2026-08-05-reading-list-batch-intake
