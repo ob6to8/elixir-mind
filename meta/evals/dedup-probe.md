@@ -94,6 +94,7 @@ being mechanically rewritten.
 | a good reference for shellbox | em:e75bfc | target | ssh linux boxes; suspended vm on disconnect; pay per minute dev box | harvested at intake 2026-08-02 |
 | the reference to hologram | em:e2f673 | target | hologram elixir framework; elixir compiles to javascript; hologram vs liveview | harvested at intake 2026-08-02 |
 | the berkeley multi-agent-failure taxonomy paper | em:ec728d | target | MAST taxonomy; why do multi-agent LLM systems fail; multi-agent system failure modes | harvested at intake 2026-08-03 |
+| what system of auditing does anthropic maintain to prevent contradictory instruction across contextual sources | em:ed8315 | target | conflicting instructions across system prompt and skills; contradictory guidance CLAUDE.md vs skill; no mechanical oracle for instruction conflict; claude doctor semantic check | harvested at intake 2026-08-05 |
 
 ## Baseline
 
@@ -107,8 +108,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 12 | 35 |
-| expanded | 29 | 35 |
+| plain | 12 | 36 |
+| expanded | 29 | 36 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets
