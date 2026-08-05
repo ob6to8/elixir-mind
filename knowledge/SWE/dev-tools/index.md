@@ -15,3 +15,5 @@ than used.
 - [cmux](/knowledge/SWE/dev-tools/cmux.md) — open-source, libghostty-based
   native macOS terminal with per-pane git/PR/port status for running AI coding
   agents in parallel
+- [LLM — Simon Willison's multi-provider CLI and Python library](/knowledge/SWE/dev-tools/llm-cli-tool.md) — one interface across OpenAI, Claude, Gemini, Llama, and Ollama, logging every run to SQLite, with embeddings, structured extraction, and a plugin ecosystem
+- [Litestream — streaming SQLite replication](/knowledge/SWE/dev-tools/litestream.md) — a standalone process that streams SQLite's write-ahead log to cheap object storage with no code changes, giving single-server apps disaster recovery without a multi-server database

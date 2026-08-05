@@ -681,6 +681,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:33e0c7` | [knowledge/SWE/agentic/anthropic/claude-code/agent-teams](/knowledge/SWE/agentic/anthropic/claude-code/agent-teams.md) | reference |  |
 | `em:53f32a` | [knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions](/knowledge/SWE/agentic/anthropic/claude-code/claude-code-settings-and-permissions.md) | reference |  |
 | `em:52aefa` | [knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture](/knowledge/SWE/agentic/anthropic/claude-code/cloud-environment-architecture.md) | note | false |
+| `em:cdd51c` | [knowledge/SWE/agentic/anthropic/claude-code/fable-is-relentlessly-proactive](/knowledge/SWE/agentic/anthropic/claude-code/fable-is-relentlessly-proactive.md) | reference |  |
 | `em:8a9ed7` | [knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam](/knowledge/SWE/agentic/anthropic/claude-code/hook-events-as-supervision-seam.md) | reference |  |
 | `em:c55c81` | [knowledge/SWE/agentic/anthropic/claude-code/model-selection-and-delegation](/knowledge/SWE/agentic/anthropic/claude-code/model-selection-and-delegation.md) | reference |  |
 | `em:02731b` | [knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern](/knowledge/SWE/agentic/anthropic/claude-code/observer-subagent-pattern.md) | reference |  |
@@ -720,12 +721,16 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:abdca2` | [knowledge/SWE/agentic/expertise/ai-makes-weak-engineers-less-harmful](/knowledge/SWE/agentic/expertise/ai-makes-weak-engineers-less-harmful.md) | reference |  |
 | `em:457a88` | [knowledge/SWE/agentic/expertise/how-does-ai-impact-skill-formation](/knowledge/SWE/agentic/expertise/how-does-ai-impact-skill-formation.md) | reference |  |
 | `em:3d9101` | [knowledge/SWE/agentic/expertise/llms-reward-expertise](/knowledge/SWE/agentic/expertise/llms-reward-expertise.md) | reference |  |
+| `em:d27de7` | [knowledge/SWE/agentic/expertise/metr-ai-productivity-study-is-really-good](/knowledge/SWE/agentic/expertise/metr-ai-productivity-study-is-really-good.md) | reference |  |
 | `em:69cd30` | [knowledge/SWE/agentic/expertise/programming-with-ai-agents-as-theory-building](/knowledge/SWE/agentic/expertise/programming-with-ai-agents-as-theory-building.md) | reference |  |
+| `em:563b18` | [knowledge/SWE/agentic/expertise/vibecoded-outputs-analysis-mostawesomedude](/knowledge/SWE/agentic/expertise/vibecoded-outputs-analysis-mostawesomedude.md) | reference |  |
 | `em:1b6814` | [knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform](/knowledge/SWE/agentic/frameworks/archestra-open-source-enterprise-ai-platform.md) | reference |  |
 | `em:b4e21d` | [knowledge/SWE/agentic/frameworks/caveman-agent-output-compression](/knowledge/SWE/agentic/frameworks/caveman-agent-output-compression.md) | reference |  |
 | `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
+| `em:134093` | [knowledge/SWE/agentic/frameworks/jido-assembly-slack-clone](/knowledge/SWE/agentic/frameworks/jido-assembly-slack-clone.md) | reference |  |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
 | `em:ed8315` | [knowledge/SWE/agentic/governance/instruction-conflict-has-no-mechanical-oracle](/knowledge/SWE/agentic/governance/instruction-conflict-has-no-mechanical-oracle.md) | claim | false |
+| `em:d146ff` | [knowledge/SWE/agentic/governance/model-based-agentic-software-engineering-mage](/knowledge/SWE/agentic/governance/model-based-agentic-software-engineering-mage.md) | reference |  |
 | `em:e4d9cf` | [knowledge/SWE/agentic/governance/models-and-the-semantic-gap](/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md) | reference |  |
 | `em:121acc` | [knowledge/SWE/agentic/mcp/mcp-architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) | reference |  |
 | `em:be781f` | [knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28](/knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28.md) | reference |  |
@@ -734,6 +739,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:db4e6c` | [knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling](/knowledge/SWE/agentic/multi-model/provider-agnostic-coding-agent-tooling.md) | note | false |
 | `em:bd4cce` | [knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery](/knowledge/SWE/agentic/orchestration/wave-based-concurrent-delivery.md) | methodology |  |
 | `em:2f847a` | [knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies](/knowledge/SWE/agentic/prompt-design/brevity-constraints-reverse-performance-hierarchies.md) | source |  |
+| `em:79c1a1` | [knowledge/SWE/agentic/prompt-design/proofreader-prompt-pattern](/knowledge/SWE/agentic/prompt-design/proofreader-prompt-pattern.md) | snippet |  |
 | `em:9318af` | [knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | source |  |
 | `em:c880d8` | [knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | reference |  |
 | `em:42648b` | [knowledge/SWE/agentic/skill-optimization/skillopt](/knowledge/SWE/agentic/skill-optimization/skillopt.md) | reference |  |
@@ -747,6 +753,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5a89af` | [knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic](/knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic.md) | reference |  |
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
 | `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
+| `em:86f6df` | [knowledge/SWE/dev-tools/litestream](/knowledge/SWE/dev-tools/litestream.md) | reference |  |
+| `em:45adfd` | [knowledge/SWE/dev-tools/llm-cli-tool](/knowledge/SWE/dev-tools/llm-cli-tool.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
@@ -763,15 +771,19 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:41be22` | [knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) | reference |  |
 | `em:96a4d0` | [knowledge/SWE/llm-engineering/turbofieldfare-gemma4-apple-silicon](/knowledge/SWE/llm-engineering/turbofieldfare-gemma4-apple-silicon.md) | reference |  |
 | `em:1cac23` | [knowledge/SWE/llm-engineering/vericache-lossless-kv-cache](/knowledge/SWE/llm-engineering/vericache-lossless-kv-cache.md) | reference |  |
+| `em:41ab78` | [knowledge/SWE/performance/profiling-rust-nifs-in-elixir](/knowledge/SWE/performance/profiling-rust-nifs-in-elixir.md) | reference |  |
 | `em:57c28a` | [knowledge/SWE/security/agent-data-injection](/knowledge/SWE/security/agent-data-injection.md) | reference |  |
 | `em:cc0c87` | [knowledge/SWE/security/air-gapped-operations](/knowledge/SWE/security/air-gapped-operations.md) | concept | false |
 | `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
 | `em:f96824` | [knowledge/SWE/security/confidential-computing-for-llm-inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md) | concept | false |
 | `em:7da513` | [knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md) | concept | false |
 | `em:a1ec42` | [knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports](/knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports.md) | reference |  |
+| `em:b2676a` | [knowledge/SWE/security/normalization-of-deviance-in-ai](/knowledge/SWE/security/normalization-of-deviance-in-ai.md) | reference |  |
 | `em:51e5f3` | [knowledge/SWE/security/open-weight-cyber-capability-gap](/knowledge/SWE/security/open-weight-cyber-capability-gap.md) | reference |  |
+| `em:f9f0d5` | [knowledge/SWE/security/openai-cyberattack-huggingface](/knowledge/SWE/security/openai-cyberattack-huggingface.md) | reference |  |
 | `em:f03f9c` | [knowledge/SWE/software-design/entity-component-systems-in-elixir](/knowledge/SWE/software-design/entity-component-systems-in-elixir.md) | reference |  |
 | `em:414265` | [knowledge/SWE/software-design/the-architect-as-amplifier](/knowledge/SWE/software-design/the-architect-as-amplifier.md) | reference |  |
+| `em:fab63b` | [knowledge/SWE/software-design/unified-modeling-language-introduction](/knowledge/SWE/software-design/unified-modeling-language-introduction.md) | reference |  |
 | `em:ccee99` | [knowledge/SWE/software-design/you-cant-design-software-you-dont-work-on](/knowledge/SWE/software-design/you-cant-design-software-you-dont-work-on.md) | reference |  |
 | `em:d58da3` | [knowledge/SWE/testing/elixir-mind-testing-methodology](/knowledge/SWE/testing/elixir-mind-testing-methodology.md) | methodology |  |
 | `em:b1ba4b` | [knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency](/knowledge/SWE/testing/elixir-snapshot-libraries-require-a-dependency.md) | reference |  |

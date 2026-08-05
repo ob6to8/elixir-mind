@@ -283,6 +283,10 @@ James C. Davis, "Models and the Semantic Gap," *Model-Based Agentic Software
 Engineering* (MAGE), ch. 2.2 —
 <https://davisjam.github.io/model-based-agentic-software-engineering/book/2.2-models-and-the-semantic-gap.html>
 
+# See also
+
+- [Model-Based Agentic Software Engineering (MAGE) — framework overview](/knowledge/SWE/agentic/governance/model-based-agentic-software-engineering-mage.md) — the book/framework this chapter belongs to, at whole-framework granularity
+
 ## Thread excerpts — route-tagged log
 
 Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e4d9cf">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.

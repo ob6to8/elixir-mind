@@ -6,7 +6,7 @@ description: "Goedecke's argument that domain expertise, not prompting technique
 resource: https://www.seangoedecke.com/llms-reward-expertise/
 provenance: "Sean Goedecke, seangoedecke.com essay, published 2026-07-24"
 tags: [ai-assisted-development, expertise, prompting, domain-knowledge, human-ai-collaboration]
-timestamp: 2026-08-04T07:05:00Z
+timestamp: 2026-08-05T00:00:00Z
 attribution:
   when: 2026-08-04T07:05:00Z
   channel: intake
@@ -55,9 +55,25 @@ From the delegation side,
 makes the same gate explicit: only someone already expert can judge what is
 safe to hand to the model.
 
+## HN discussion
+
+The [Hacker News thread](https://news.ycombinator.com/item?id=49161518) on
+this essay surfaced counterexamples the essay itself doesn't address:
+commenters reported non-technical people successfully building a Telegram
+bot and installing Linux with a free Gemini tier, and non-technical
+colleagues shipping working apps with Claude Desktop — suggesting motivation
+and tinkering curiosity can substitute for domain vocabulary in at least some
+cases, and that tool choice matters (purpose-built tools like Lovable were
+reported as more forgiving for complete beginners than a generic chatbot).
+The thread's synthesis: non-technical users can produce *working*
+prototypes without expertise, but the architecture underneath tends to be
+worse — expertise still gates the ceiling even where it doesn't gate getting
+something running at all.
+
 # Citations
 
 - Source: <https://www.seangoedecke.com/llms-reward-expertise/>
+- HN discussion: <https://news.ycombinator.com/item?id=49161518>
 
 ## Thread excerpts — route-tagged log
 
