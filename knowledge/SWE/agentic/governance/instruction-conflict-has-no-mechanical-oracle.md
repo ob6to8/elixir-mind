@@ -2,7 +2,7 @@
 id: em:ed8315
 type: claim
 title: "Instruction conflict across composed context sources has no mechanical oracle"
-description: Contradictory instructions arriving from system prompt, skills, memory files, and the user request produce no error signal — the model silently picks one — so the defect is caught by reading transcripts rather than by validation, and the tooling that exists audits structure and cost rather than semantic agreement.
+description: Contradictory instructions arriving from system prompt, skills, memory files, and the user request produce no error signal — the model silently picks one — so the defect is caught by reading transcripts rather than by validation; the tooling that exists audits structure and cost rather than semantic agreement, and the instruction layer implements no override despite presenting as layered configuration, so anything that must hold belongs in the deterministic layer instead.
 provenance: "Claude Code session, model undisclosed — synthesized from Anthropic's context-engineering post and the Claude Code configuration docs"
 tags: [agentic, governance, context-engineering, instruction-conflict, claude-code, oracles, verification, claude-md, skills]
 timestamp: 2026-08-05
@@ -88,14 +88,47 @@ properties make the check genuinely resistant:
    clash requires understanding both, which means the detector is itself a
    language model — an expensive, non-deterministic gate over a combinatorial
    number of source pairings.
-4. **Conflicts are frequently intentional.** A specific instruction overriding
-   a general default is the mechanism by which layered configuration is
-   *supposed* to work. A detector cannot distinguish a legitimate override from
-   an accidental contradiction without knowing precedence intent that is
-   usually unwritten.
+4. **Conflicts are frequently intentional — and the layer cannot tell.** A
+   specific instruction overriding a general default is what an author usually
+   *means* by layering. But the instruction layer implements no override, so
+   the ambiguity that defeats a detector is the same ambiguity that defeats the
+   model at runtime: neither can separate an intended override from an
+   accidental contradiction, because the intent is nowhere encoded.
 
 Property 4 is the one that defeats naive tooling: a checker that flagged every
 disagreement between layers would fire constantly on correct configurations.
+
+## Layered instructions are not an override system
+
+The phrase "layered configuration" conflates two mechanisms with opposite
+reliability, and the conflation is the trap.
+
+| | Settings (permissions, hooks, env) | Instructions (system prompt, memory files, skills, user turn) |
+|---|---|---|
+| Resolution | deterministic merge, executed in code before the model runs | **none** — every layer's text coexists in the context window |
+| Precedence | documented and total: managed wins; otherwise local, then project, then user | undocumented; no rule states that a skill beats a memory file |
+| Losing value | discarded by the merge; never reaches the model | still present, still read, still competing |
+| Failure mode | a value is overridden as specified | the model arbitrates, silently, per request |
+
+Only the first column is an override system. The second is prompt
+concatenation presenting as configuration — it has scopes, file hierarchies,
+and precedence-flavored documentation, which invites an expectation of
+deterministic resolution that nothing implements. Claude Code's own
+documentation states the split plainly, and states which side carries a
+guarantee:
+
+> CLAUDE.md and permissions solve different problems. CLAUDE.md tells Claude
+> how your project works so it makes good decisions. Permissions and hooks
+> enforce limits regardless of what Claude decides. Use CLAUDE.md for "we do it
+> this way here." Use permissions or hooks for security boundaries and anything
+> that must never happen, where you need a guarantee instead of guidance.
+
+**The design rule that follows:** anything that must hold goes in the
+deterministic layer — hooks, permissions, a gate suite, generated artifacts
+checked with `--check`. The instruction layer is advisory by construction, and
+treating it as binding is a category error regardless of how the instruction is
+worded or where it is placed. Reliability is bought by moving a rule to a layer
+that can enforce it, never by phrasing it more emphatically.
 
 ## The transferable rule
 
