@@ -2,7 +2,7 @@
 id: em:ed8315
 type: claim
 title: "Instruction conflict across composed context sources has no mechanical oracle"
-description: Contradictory instructions arriving from system prompt, skills, memory files, and the user request produce no error signal — the model silently picks one — so the defect is caught by reading transcripts rather than by validation; the tooling that exists audits structure and cost rather than semantic agreement, and the instruction layer implements no override despite presenting as layered configuration, so anything that must hold belongs in the deterministic layer instead.
+description: Contradictory instructions arriving from system prompt, skills, memory files, and the user request produce no error signal — the model silently picks one — so the defect is caught by reading transcripts rather than by validation; the tooling that exists audits structure and cost rather than semantic agreement, and the instruction layer implements no override despite presenting as layered configuration, so anything that must hold belongs in the deterministic layer instead; the same blindness recurs at evaluation time, where an ablation that moves no metric cannot distinguish newly-redundant from never-load-bearing, and at governance time, where unfalsifiable claims resolve by standing and the layer accretes.
 provenance: "Claude Code session, model undisclosed — synthesized from Anthropic's context-engineering post and the Claude Code configuration docs"
 tags: [agentic, governance, context-engineering, instruction-conflict, claude-code, oracles, verification, claude-md, skills]
 timestamp: 2026-08-05
@@ -148,12 +148,89 @@ framing applies directly: a governance check must fire where the property
 becomes legible, and instruction conflict becomes legible only at the level of
 the fully-composed request — a level no current tool materializes.
 
+## The eval is blind in the same way the authoring was
+
+The no-oracle problem does not stop at authoring time. It recurs at evaluation
+time, and the second occurrence is what makes the first uncorrectable.
+
+Anthropic's stated evidence for the deletion is that removing over 80% of the
+system prompt produced **"no measurable loss on our coding evaluations."** That
+result is identical under two incompatible hypotheses:
+
+- **(a) Newly redundant** — the instructions were load-bearing for earlier
+  models and stopped being so.
+- **(b) Never load-bearing** — the instructions were not doing measurable work
+  at any point.
+
+An ablation that does not move a metric shows the ablated thing is not
+contributing **now**. It carries no information about whether it ever did.
+Separating (a) from (b) requires the cross-generation counterfactual: apply the
+same deletion to the older model and show *that* one regresses. The post does
+not report such an experiment, an ablation, or any eval methodology beyond the
+headline result — checked by querying the source directly for one. Its causal
+claim, that the constraints **"were once needed to avoid worst case
+scenarios"**, is therefore asserted rather than demonstrated.
+
+**The retroactive necessity claim is also the wrong shape for the layer.** An
+instruction shifts a distribution; it cannot bound a tail. "Avoiding worst
+cases" is a claim about the tail — exactly the property the guidance layer is
+documented not to have, and exactly what users are told to route to hooks and
+permissions instead. Whether the deleted constraints ever prevented anything is
+unmeasurable in principle, not merely unmeasured: it would require the
+counterfactual distribution over bad outcomes that never happened.
+
+**The transferable rule:** *a deletion that does not move your evals is not
+evidence the deleted thing was obsolete — it is evidence your evals never
+measured it.* Prompt content is not attributed in aggregate benchmarks, so the
+instrument that would have caught bloat at authoring time is the same one
+missing at deletion time. This applies to any compiled instruction artifact,
+including this bundle's own contract: trimming it and observing nothing break
+is uninformative unless something was measuring the trimmed rule.
+
+## Why the layer accretes
+
+The absence of an oracle has a social consequence, and it is the mechanism that
+produces removable bulk without anyone acting badly.
+
+A shared instruction file is a normative document whose claims **cannot be
+settled empirically**. No experiment adjudicates "always write tests first", so
+the question resolves by standing — seniority, tenure, persuasiveness — and the
+outcome is then encoded in a form indistinguishable from a technical fact.
+Preference is laundered into policy.
+
+The asymmetry compounds it. **Adding a line is cheap and socially rewarded**;
+removing one means arguing that a colleague's contribution was worthless,
+against no evidence in either direction, because none exists. Additions meet no
+resistance, deletions meet a person, and monotonic growth is the equilibrium.
+Compliance completes the loop: an agent visibly following a rule reads as
+validation, though compliance and benefit are unrelated quantities.
+
+Three further properties make the document hard to govern. It binds every
+change while **appearing in no diff**, so its influence is total and its
+attribution nil. It homogenizes — every engineer's agent inherits the same
+priors, collapsing approach diversity toward whoever wrote the file. And it is
+neither code, docs, nor policy, so it has no test, no reader who would notice
+staleness, and no review cadence.
+
+None of this requires bad actors. A document that cannot be measured, cannot be
+attributed, and is socially expensive to cut will accumulate until something
+forces a reckoning — which is the outcome actually observed.
+
 ## Status of this claim
 
-Filed unverified. The negative half — that no conflict-detection auditing is
-published — is scoped to what was searched: Anthropic's Claude Code
-documentation host (via its `llms.txt` page index), the `/doctor` and
-configuration-debugging pages, the originating blog post, and a general web
-search. It is a claim about **published** mechanisms; internal evaluation
-practice at any vendor is not observable from outside, and its absence from
-documentation is not evidence of its absence in practice.
+Filed unverified. Two negative halves, each scoped to what was actually
+searched:
+
+- **No conflict-detection auditing is published** — scoped to Anthropic's
+  Claude Code documentation host (enumerated via its `llms.txt` page index),
+  the `/doctor` release note, the configuration-debugging and memory pages, the
+  originating blog post, and a general web search.
+- **No cross-generation ablation is reported** — scoped to the originating blog
+  post, queried directly for any experiment, ablation, generational
+  comparison, or eval methodology.
+
+Both are claims about **published** artifacts. Internal evaluation practice at
+any vendor is not observable from outside, and absence from documentation is
+not evidence of absence in practice. The accretion argument is mechanistic
+rather than measured: it predicts the observed outcome but no attempt was made
+here to confirm it against any organization's instruction-file history.
