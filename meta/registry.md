@@ -20,6 +20,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:1b3c79` | [beliefs/future-beliefs](/beliefs/future-beliefs.md) | note |  |
 | `em:0b648f` | [beliefs/glossary](/beliefs/glossary.md) | concept | false |
 | `em:0563fb` | [beliefs/glossary/6pn](/beliefs/glossary/6pn.md) | concept | false |
+| `em:96c282` | [beliefs/glossary/ablation](/beliefs/glossary/ablation.md) | concept | false |
 | `em:b78fb8` | [beliefs/glossary/abliteration](/beliefs/glossary/abliteration.md) | concept | false |
 | `em:35c992` | [beliefs/glossary/abstract-syntax-tree](/beliefs/glossary/abstract-syntax-tree.md) | concept | false |
 | `em:dffd70` | [beliefs/glossary/active-parameters](/beliefs/glossary/active-parameters.md) | concept | false |
@@ -604,6 +605,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:927eb2` | [beliefs/glossary/typed-edge](/beliefs/glossary/typed-edge.md) | concept | false |
 | `em:f2a039` | [beliefs/glossary/unchecked-premise](/beliefs/glossary/unchecked-premise.md) | concept | false |
 | `em:570738` | [beliefs/glossary/ungrounded-inference](/beliefs/glossary/ungrounded-inference.md) | concept | false |
+| `em:d0d15d` | [beliefs/glossary/unhobbling](/beliefs/glossary/unhobbling.md) | concept | false |
 | `em:05fab0` | [beliefs/glossary/unique-name-assumption](/beliefs/glossary/unique-name-assumption.md) | concept | false |
 | `em:b9eb99` | [beliefs/glossary/validation-gate](/beliefs/glossary/validation-gate.md) | concept | false |
 | `em:36436d` | [beliefs/glossary/vector-database](/beliefs/glossary/vector-database.md) | concept | false |
@@ -709,6 +711,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:649457` | [knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation](/knowledge/SWE/agentic/context-engineering/granularity-aware-evaluation-for-dialogue-topic-segmentation.md) | reference |  |
 | `em:c81829` | [knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt](/knowledge/SWE/agentic/context-engineering/graph-serialization-format-in-the-prompt.md) | reference |  |
 | `em:9d3c07` | [knowledge/SWE/agentic/context-engineering/markdown-folder-beat-a-vector-db-as-agent-knowledge-base](/knowledge/SWE/agentic/context-engineering/markdown-folder-beat-a-vector-db-as-agent-knowledge-base.md) | reference |  |
+| `em:0dc544` | [knowledge/SWE/agentic/context-engineering/new-rules-of-context-engineering-claude-5](/knowledge/SWE/agentic/context-engineering/new-rules-of-context-engineering-claude-5.md) | reference |  |
 | `em:d479e3` | [knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions](/knowledge/SWE/agentic/context-engineering/routing-non-linear-work-sessions.md) | concept | false |
 | `em:988147` | [knowledge/SWE/agentic/context-engineering/streamlining-user-level-claude-md](/knowledge/SWE/agentic/context-engineering/streamlining-user-level-claude-md.md) | reference |  |
 | `em:ca359c` | [knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape](/knowledge/SWE/agentic/editor-integration/neovim-agent-tooling-landscape.md) | reference |  |
@@ -722,6 +725,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:b4e21d` | [knowledge/SWE/agentic/frameworks/caveman-agent-output-compression](/knowledge/SWE/agentic/frameworks/caveman-agent-output-compression.md) | reference |  |
 | `em:31e85b` | [knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration](/knowledge/SWE/agentic/frameworks/gitlord-git-backed-agent-orchestration.md) | reference |  |
 | `em:eeb2bb` | [knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration](/knowledge/SWE/agentic/frameworks/sagents-elixir-agent-orchestration.md) | reference |  |
+| `em:ed8315` | [knowledge/SWE/agentic/governance/instruction-conflict-has-no-mechanical-oracle](/knowledge/SWE/agentic/governance/instruction-conflict-has-no-mechanical-oracle.md) | claim | false |
 | `em:e4d9cf` | [knowledge/SWE/agentic/governance/models-and-the-semantic-gap](/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md) | reference |  |
 | `em:121acc` | [knowledge/SWE/agentic/mcp/mcp-architecture](/knowledge/SWE/agentic/mcp/mcp-architecture.md) | reference |  |
 | `em:be781f` | [knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28](/knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28.md) | reference |  |
