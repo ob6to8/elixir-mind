@@ -12,6 +12,8 @@ ability distribution.
 - [LLMs reward expertise (Sean Goedecke)](/knowledge/SWE/agentic/expertise/llms-reward-expertise.md) — domain expertise, not prompting technique, is what LLM use rewards: specifying the desired solution and judging what comes back is the bottleneck, illustrated by Terence Tao's expert-mode ChatGPT usage.
 - [How does AI impact skill formation? (Sean Goedecke)](/knowledge/SWE/agentic/expertise/how-does-ai-impact-skill-formation.md) — the Anthropic Fellows study's no-speedup headline hides a retyping confound (AI users were 25% faster without it); reduced learning-per-task is real but engineers are paid to deliver, and task volume may offset it.
 - [AI makes weak engineers less harmful (Sean Goedecke)](/knowledge/SWE/agentic/expertise/ai-makes-weak-engineers-less-harmful.md) — engineering ability is heavy-tailed and the weakest engineers were net-negative; frontier coding agents raise that floor to line-by-line-functional output, turning the weakest engineers into Claude intermediaries.
+- [METR's AI Productivity Study is Really Good (Sean Goedecke)](/knowledge/SWE/agentic/expertise/metr-ai-productivity-study-is-really-good.md) — an RCT on experienced developers in familiar codebases found they predicted and believed a ~20% speedup from AI but measured 19% slower; expert-in-familiar-code may be close to the worst case for AI acceleration.
+- [Analysis of vibecoded outputs (MostAwesomeDude)](/knowledge/SWE/agentic/expertise/vibecoded-outputs-analysis-mostawesomedude.md) — five AI-chatbot coding submissions examined for confabulation, hackiness, and overfitting; you cannot inherit someone else's Naur theory by reading their output, only by building your own.
 
 ## Related
 

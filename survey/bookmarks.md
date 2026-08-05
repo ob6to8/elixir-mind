@@ -1251,7 +1251,7 @@ re-engages.
 - Convert any text to a graph of knowledge for Graph Augmented Generation or Knowledge Graph-based QnA systems.
 
 ### [Litestream - Streaming SQLite Replication](https://litestream.io/)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** `sqlite-replication` `database-backup` `cloud-storage` `single-server-deployment` `disaster-recovery`
+- **Added:** 2026-07-23 · **Status:** promoted → [Litestream](/knowledge/SWE/dev-tools/litestream.md) · **Tags:** `sqlite-replication` `database-backup` `cloud-storage` `single-server-deployment` `disaster-recovery`
 - Safely run your application on a single server with continuous database replication to cloud storage, enabling point-in-time recovery without complexity.
 
 ### [Models.dev - An open-source database of AI models](https://models.dev)

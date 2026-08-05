@@ -6,7 +6,7 @@ description: "Goedecke's argument that domain expertise, not prompting technique
 resource: https://www.seangoedecke.com/llms-reward-expertise/
 provenance: "Sean Goedecke, seangoedecke.com essay, published 2026-07-24"
 tags: [ai-assisted-development, expertise, prompting, domain-knowledge, human-ai-collaboration]
-timestamp: 2026-08-04T07:05:00Z
+timestamp: 2026-08-05T00:00:00Z
 attribution:
   when: 2026-08-04T07:05:00Z
   channel: intake
@@ -55,9 +55,25 @@ From the delegation side,
 makes the same gate explicit: only someone already expert can judge what is
 safe to hand to the model.
 
+## HN discussion
+
+The [Hacker News thread](https://news.ycombinator.com/item?id=49161518) on
+this essay surfaced counterexamples the essay itself doesn't address:
+commenters reported non-technical people successfully building a Telegram
+bot and installing Linux with a free Gemini tier, and non-technical
+colleagues shipping working apps with Claude Desktop — suggesting motivation
+and tinkering curiosity can substitute for domain vocabulary in at least some
+cases, and that tool choice matters (purpose-built tools like Lovable were
+reported as more forgiving for complete beginners than a generic chatbot).
+The thread's synthesis: non-technical users can produce *working*
+prototypes without expertise, but the architecture underneath tends to be
+worse — expertise still gates the ceiling even where it doesn't gate getting
+something running at all.
+
 # Citations
 
 - Source: <https://www.seangoedecke.com/llms-reward-expertise/>
+- HN discussion: <https://news.ycombinator.com/item?id=49161518>
 
 ## Thread excerpts — route-tagged log
 
@@ -76,3 +92,26 @@ All quotes are now verified with exact spans. Now for the filing decision — ar
 **[`em:3d9101`]**  (co-feeds: `em:69cd30 em:457a88 em:abdca2 em:ccee99`)
 
 Your five links were all new to the brain — none were already filed or parked in the survey tier. Four of them turned out to be one coherent subject: how AI-assisted development interacts with the human engineer's expertise — where it stays the leverage point, how it forms, whether agents can hold it, and what happens to the ability distribution. No existing directory covered that, so I created a new subdirectory for it under the established agentic domain, [`knowledge/SWE/agentic/expertise/`](https://github.com/ob6to8/elixir-mind/blob/claude/ai-software-engineering-expertise-tat4rl/knowledge/SWE/agentic/expertise/index.md) — a within-domain subdirectory, so created autonomously per the taxonomy protocol rather than held for ratification. The fifth essay is a pure software-design piece and filed into the existing `software-design/` directory. Every quote in the filed docs was verified verbatim against the source in a second fetch pass before being quoted; the commit passed the full gate suite and is pushed to the session branch. No PR was opened — that stays with `/create-pull-request`.
+
+### 2026-08-05-reading-list-batch-intake (2026-08-05)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:3d9101`]**  (co-feeds: `em:be781f em:e4d9cf em:d146ff em:86f6df`)
+
+Filed the batch. Everything's committed and pushed to `claude/research-intake-links-nhi01p`; no PR opened, since that's `/create-pull-request`'s job, not `/intake`'s.
+
+**What happened:** Of your 21 links, 4 were exact matches for documents already in the brain (Naur's paper and the Goedecke essay reading it were both already captured together; the Seldon and Dzombak posts were already filed word-for-word) — those needed no action. Three more links weren't new *documents* so much as new *angles* on things already filed — Simon Willison's take on stateless MCP, a Hacker News discussion of an existing essay, and the wider MAGE book/repo around a chapter already captured — so those got merged into the existing docs instead of creating near-duplicates. The `litestream.io` link turned out to already be sitting in the bookmark tier from an earlier session, so this intake promoted it to a filed reference. The rest — twelve documents — were genuinely new and got filed across security, several `agentic/` subdirectories, `dev-tools`, `software-design`, and one new subdirectory (`knowledge/SWE/performance/`, created autonomously since it sits under the already-established `SWE` domain). One fetch (the Reddit Jido thread) was blocked by the host; I covered the same material from the `jido.run` blog post instead and left the Reddit URL as an uncaptured citation.
+
+---
+
+**[`em:3d9101`]**  (co-feeds: `em:be781f em:e4d9cf survey/bookmarks.md`)
+
+**What I modified**
+
+| File | Change |
+|---|---|
+| [The MCP 2026-07-28 specification](https://github.com/ob6to8/elixir-mind/blob/claude/research-intake-links-nhi01p/knowledge/SWE/agentic/mcp/mcp-spec-2026-07-28.md) | added a "Practitioner reception" section from Willison's stateless-mcp post |
+| [LLMs reward expertise](https://github.com/ob6to8/elixir-mind/blob/claude/research-intake-links-nhi01p/knowledge/SWE/agentic/expertise/llms-reward-expertise.md) | added the HN discussion's counterexamples and its non-technical-user nuance |
+| [Models and the semantic gap (MAGE, ch. 2.2)](https://github.com/ob6to8/elixir-mind/blob/claude/research-intake-links-nhi01p/knowledge/SWE/agentic/governance/models-and-the-semantic-gap.md) | cross-linked to the new whole-framework overview doc |
+| `survey/bookmarks.md` | flipped the litestream.io row to `status: promoted → …` |
