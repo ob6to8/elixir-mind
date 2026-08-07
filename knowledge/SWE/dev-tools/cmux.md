@@ -16,6 +16,10 @@ attribution:
 
 # cmux
 
+Compared head-to-head against [herdr](/knowledge/SWE/dev-tools/herdr.md) — the
+human-scheduler seat versus the agent-scheduler seat — in
+[two shapes of the same agent multiplexer](/knowledge/SWE/dev-tools/herdr-and-cmux-two-shapes.md).
+
 cmux (Manaflow AI) is a native macOS [terminal emulator](/beliefs/glossary/terminal-emulator.md) —
 not a multiplexer layered over one — built in Swift/AppKit rather than
 Electron, using [libghostty](/beliefs/glossary/libghostty.md)

@@ -149,6 +149,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6e5432` | [beliefs/glossary/currency-check](/beliefs/glossary/currency-check.md) | concept | false |
 | `em:8f223c` | [beliefs/glossary/cyber-range](/beliefs/glossary/cyber-range.md) | concept | false |
 | `em:08a552` | [beliefs/glossary/cyclomatic-complexity](/beliefs/glossary/cyclomatic-complexity.md) | concept | false |
+| `em:fadc83` | [beliefs/glossary/daemon](/beliefs/glossary/daemon.md) | concept | false |
 | `em:197b02` | [beliefs/glossary/dark-factory](/beliefs/glossary/dark-factory.md) | concept | false |
 | `em:2d756f` | [beliefs/glossary/data-residency](/beliefs/glossary/data-residency.md) | concept | false |
 | `em:cd979f` | [beliefs/glossary/decision-graph](/beliefs/glossary/decision-graph.md) | concept | false |
@@ -457,6 +458,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ea7acc` | [beliefs/glossary/provenance](/beliefs/glossary/provenance.md) | concept | false |
 | `em:1341c6` | [beliefs/glossary/provider-lock-in](/beliefs/glossary/provider-lock-in.md) | concept | false |
 | `em:2a8b9e` | [beliefs/glossary/ptx](/beliefs/glossary/ptx.md) | concept | false |
+| `em:519b70` | [beliefs/glossary/pty](/beliefs/glossary/pty.md) | concept | false |
 | `em:b74c61` | [beliefs/glossary/pure-function](/beliefs/glossary/pure-function.md) | concept | false |
 | `em:801f40` | [beliefs/glossary/pydantic](/beliefs/glossary/pydantic.md) | concept | false |
 | `em:ca9f72` | [beliefs/glossary/quantization](/beliefs/glossary/quantization.md) | concept | false |
@@ -756,6 +758,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5a89af` | [knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic](/knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic.md) | reference |  |
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
 | `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
+| `em:2ffa8b` | [knowledge/SWE/dev-tools/herdr-and-cmux-two-shapes](/knowledge/SWE/dev-tools/herdr-and-cmux-two-shapes.md) | reference |  |
 | `em:86f6df` | [knowledge/SWE/dev-tools/litestream](/knowledge/SWE/dev-tools/litestream.md) | reference |  |
 | `em:45adfd` | [knowledge/SWE/dev-tools/llm-cli-tool](/knowledge/SWE/dev-tools/llm-cli-tool.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |

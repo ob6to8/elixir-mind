@@ -6,7 +6,7 @@ description: An open-source (Apache-2.0), single-binary Rust terminal multiplexe
 resource: https://herdr.dev/
 provenance: "Distilled from herdr.dev, its /compare comparison matrix (https://herdr.dev/compare/#matrix), and the ogulcancelik/herdr GitHub repository, fetched 2026-07-29"
 tags: [terminal, terminal-multiplexer, ai-agents, developer-tools, rust]
-timestamp: 2026-08-03
+timestamp: 2026-08-07
 attribution:
   when: 2026-07-29T00:00:00Z
   channel: intake
@@ -25,6 +25,27 @@ existing terminal rather than replacing it, and ships tmux-style keybindings
 (`ctrl+b q` to detach). Install via `curl -fsSL https://herdr.dev/install.sh |
 sh`, `brew install herdr`, or `mise use -g herdr`; stable on Linux/macOS, beta
 on Windows.
+
+## Architecture: a daemon plus a TUI client
+
+herdr splits into a background [daemon](/beliefs/glossary/daemon.md) and a
+[TUI](/beliefs/glossary/tui.md) client that runs inside the operator's existing
+terminal. The daemon owns the [PTYs](/beliefs/glossary/pty.md) — it allocates
+one pseudoterminal per agent pane, forks the agent CLI against the slave end,
+and retains the master end — so it is the parent process of every agent, the
+holder of all terminal state, and the only process that can arbitrate access to
+a pane. Clients attach and detach (`ctrl+b q`) without disturbing any of that,
+which is what makes detach/reattach and SSH-reachability first-class rather
+than workarounds, and what places the socket API (including the event-driven
+`agent wait --until done|blocked`) in the daemon. The limit is inherent: a
+power cycle kills the daemon, and nothing resurrects a dead PTY.
+
+Because state is inferred by evaluating manifests against a terminal snapshot
+rather than reported by agent hooks, screen detection is the primary path — the
+contrast [cmux](/knowledge/SWE/dev-tools/cmux.md) is judged on in
+[two shapes of the same agent multiplexer](/knowledge/SWE/dev-tools/herdr-and-cmux-two-shapes.md).
+The full unpacking of the ownership claim is in
+[the daemon owns the PTYs](/meta/elaborations/herdr-daemon-owns-the-ptys.md).
 
 ## What it adds over a plain multiplexer
 

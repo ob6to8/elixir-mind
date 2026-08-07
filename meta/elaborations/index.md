@@ -22,6 +22,11 @@ mouthful in its context*.
 
 ## Contents
 
+- [the daemon owns the PTYs; clients attach and detach](/meta/elaborations/herdr-daemon-owns-the-ptys.md) —
+  unpacks herdr's architecture sentence: what a background daemon holding one
+  pseudoterminal per agent pane is actually doing, what owning a PTY means
+  concretely, and why that ownership makes detach, reattach, and
+  SSH-reachability first-class rather than workarounds.
 - [RPC-driving shines at interrogation rather than editing](/meta/elaborations/rpc-interrogation-as-sensor.md) —
   unpacks why agent control of a live editor over its RPC socket pays off as a
   read channel (querying LSP diagnostics and editor state as a sensor) rather
