@@ -745,6 +745,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:79c1a1` | [knowledge/SWE/agentic/prompt-design/proofreader-prompt-pattern](/knowledge/SWE/agentic/prompt-design/proofreader-prompt-pattern.md) | snippet |  |
 | `em:9318af` | [knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread](/knowledge/SWE/agentic/provenance/isnad-reddit-discussion-thread.md) | source |  |
 | `em:c880d8` | [knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance](/knowledge/SWE/agentic/provenance/isnad-rijal-claim-level-provenance.md) | reference |  |
+| `em:225073` | [knowledge/SWE/agentic/provenance/prompt-persistence-and-pr-association](/knowledge/SWE/agentic/provenance/prompt-persistence-and-pr-association.md) | reference |  |
 | `em:42648b` | [knowledge/SWE/agentic/skill-optimization/skillopt](/knowledge/SWE/agentic/skill-optimization/skillopt.md) | reference |  |
 | `em:87c81a` | [knowledge/SWE/agentic/supervision/agent-as-driver-pairing-inversion](/knowledge/SWE/agentic/supervision/agent-as-driver-pairing-inversion.md) | concept | false |
 | `em:b4bb5e` | [knowledge/SWE/agentic/supervision/agent-supervision-consoles](/knowledge/SWE/agentic/supervision/agent-supervision-consoles.md) | reference |  |
