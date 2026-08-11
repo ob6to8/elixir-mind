@@ -779,6 +779,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:cc0c87` | [knowledge/SWE/security/air-gapped-operations](/knowledge/SWE/security/air-gapped-operations.md) | concept | false |
 | `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
 | `em:f96824` | [knowledge/SWE/security/confidential-computing-for-llm-inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md) | concept | false |
+| `em:2511d9` | [knowledge/SWE/security/hybrid-inference-pseudonymized-egress](/knowledge/SWE/security/hybrid-inference-pseudonymized-egress.md) | concept | false |
 | `em:7da513` | [knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md) | concept | false |
 | `em:a1ec42` | [knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports](/knowledge/SWE/security/llms-in-malware-analysis-scripts-over-reports.md) | reference |  |
 | `em:b2676a` | [knowledge/SWE/security/normalization-of-deviance-in-ai](/knowledge/SWE/security/normalization-of-deviance-in-ai.md) | reference |  |
@@ -861,6 +862,11 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:715616` | [projects/dvorak-vim/next-steps](/projects/dvorak-vim/next-steps.md) | plan |  |
 | `em:6733b4` | [projects/elixir-agent-memory](/projects/elixir-agent-memory.md) | project |  |
 | `em:50bbc3` | [projects/elixir-agent-memory/design-and-build-order](/projects/elixir-agent-memory/design-and-build-order.md) | plan |  |
+| `em:567d37` | [projects/estate-management-agent](/projects/estate-management-agent.md) | project |  |
+| `em:d1b3c1` | [projects/estate-management-agent/architecture](/projects/estate-management-agent/architecture.md) | plan |  |
+| `em:925461` | [projects/estate-management-agent/privacy](/projects/estate-management-agent/privacy.md) | plan |  |
+| `em:5084c8` | [projects/estate-management-agent/product-spec](/projects/estate-management-agent/product-spec.md) | plan |  |
+| `em:a56a3f` | [projects/estate-management-agent/verification](/projects/estate-management-agent/verification.md) | plan |  |
 | `em:763ec8` | [projects/human-writing-attribution](/projects/human-writing-attribution.md) | project |  |
 | `em:fe5ca6` | [projects/human-writing-attribution/overlap-tool](/projects/human-writing-attribution/overlap-tool.md) | plan |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |

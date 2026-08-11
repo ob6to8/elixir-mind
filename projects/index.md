@@ -43,3 +43,10 @@ project accrues research to the brain rather than to one repo.
   agentic system for processing sensitive financial documents (taxes, bank
   statements) with no data egress and a typed capability boundary
   ([docs](/projects/secure-financial-agent/index.md))
+- [Estate management agent](/projects/estate-management-agent.md) — a
+  self-hosted single point of reference for a high-net-worth principal's
+  whole estate: an evidence-backed register with portfolio, budgeting,
+  legal, and readiness support, aiding directly while routing every
+  judgment that constitutes advice to the principal's professionals; raw
+  data stays local, frontier reasoning sits behind a pseudonymizing gateway
+  ([docs](/projects/estate-management-agent/index.md))
