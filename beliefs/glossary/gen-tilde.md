@@ -7,7 +7,7 @@ provenance: "Agent-distilled glossary definition"
 verified: false
 tags: [glossary, gen, dsp, max-msp, compilation, audio]
 sense: common
-timestamp: 2026-07-28T22:40:00Z
+timestamp: 2026-08-14
 attribution:
   when: 2026-07-28T22:40:00Z
   channel: glossary
@@ -28,5 +28,9 @@ arithmetic plus the one-sample `history` delay. Wakefield & Taylor's
 [ramps as time](/knowledge/media-production/sequencing/ramps-as-time.md) (its
 trigger-free time model), and the verbatim
 [course-notes capture](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md).
+Via [Max for Live](/beliefs/glossary/max-for-live.md) the same engine runs inside an
+Ableton Live set, which is what makes the bundle's gen~ corpus directly
+executable in a DAW
+([M4L as a programmable DSP substrate](/knowledge/media-production/daw-control/ableton/max-for-live-programmability.md)).
 
-*Seen in:* [2026-07-28 code-driven AV production thread](/meta/threads/2026-07-28-code-driven-av-production-and-declared-cadence.md), [gen-inspired-music-dsl analysis](/projects/code-driven-av-production/gen-inspired-music-dsl.md), [declared-cadence-swarm-auditability analysis](/meta/analysis/declared-cadence-swarm-auditability.md)
+*Seen in:* [2026-07-28 code-driven AV production thread](/meta/threads/2026-07-28-code-driven-av-production-and-declared-cadence.md), [gen-inspired-music-dsl analysis](/projects/code-driven-av-production/gen-inspired-music-dsl.md), [declared-cadence-swarm-auditability analysis](/meta/analysis/declared-cadence-swarm-auditability.md), [2026-08-14 bitwig-shell-control thread](/meta/threads/2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit.md)

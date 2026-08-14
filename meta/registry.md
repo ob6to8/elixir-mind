@@ -190,6 +190,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f607ce` | [beliefs/glossary/doxastic-logic](/beliefs/glossary/doxastic-logic.md) | concept | false |
 | `em:f5523f` | [beliefs/glossary/draft-pull-request](/beliefs/glossary/draft-pull-request.md) | concept | false |
 | `em:683301` | [beliefs/glossary/drift-class](/beliefs/glossary/drift-class.md) | concept | false |
+| `em:d5bc37` | [beliefs/glossary/drivenbymoss](/beliefs/glossary/drivenbymoss.md) | concept | false |
 | `em:9074c1` | [beliefs/glossary/dry](/beliefs/glossary/dry.md) | concept | false |
 | `em:e1a8ee` | [beliefs/glossary/dual-llm-pattern](/beliefs/glossary/dual-llm-pattern.md) | concept | false |
 | `em:48b2f1` | [beliefs/glossary/dual-use](/beliefs/glossary/dual-use.md) | concept | false |
@@ -341,6 +342,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:5dec1d` | [beliefs/glossary/libghostty](/beliefs/glossary/libghostty.md) | concept | false |
 | `em:01be3a` | [beliefs/glossary/librarian-write-broker](/beliefs/glossary/librarian-write-broker.md) | concept | false |
 | `em:f97e44` | [beliefs/glossary/lineage](/beliefs/glossary/lineage.md) | concept | false |
+| `em:67a6f6` | [beliefs/glossary/live-object-model](/beliefs/glossary/live-object-model.md) | concept | false |
 | `em:564fb9` | [beliefs/glossary/living-surface](/beliefs/glossary/living-surface.md) | concept | false |
 | `em:4b5735` | [beliefs/glossary/llama-cpp](/beliefs/glossary/llama-cpp.md) | concept | false |
 | `em:7ecfb6` | [beliefs/glossary/llm-as-judge](/beliefs/glossary/llm-as-judge.md) | concept | false |
@@ -365,6 +367,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:19d667` | [beliefs/glossary/matn-criticism](/beliefs/glossary/matn-criticism.md) | concept | false |
 | `em:4c629e` | [beliefs/glossary/matter](/beliefs/glossary/matter.md) | concept | false |
 | `em:9be927` | [beliefs/glossary/maturity-model](/beliefs/glossary/maturity-model.md) | concept | false |
+| `em:5386c5` | [beliefs/glossary/max-for-live](/beliefs/glossary/max-for-live.md) | concept | false |
 | `em:1c5e08` | [beliefs/glossary/mean-reciprocal-rank](/beliefs/glossary/mean-reciprocal-rank.md) | concept | false |
 | `em:6c220e` | [beliefs/glossary/megaprompt](/beliefs/glossary/megaprompt.md) | concept | false |
 | `em:a490ca` | [beliefs/glossary/memory-injection](/beliefs/glossary/memory-injection.md) | concept | false |
@@ -405,6 +408,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:6e1259` | [beliefs/glossary/on-behalf-of-delegation](/beliefs/glossary/on-behalf-of-delegation.md) | concept | false |
 | `em:5a4acb` | [beliefs/glossary/onset-detection](/beliefs/glossary/onset-detection.md) | concept | false |
 | `em:da67e8` | [beliefs/glossary/ontology](/beliefs/glossary/ontology.md) | concept | false |
+| `em:f8d2bb` | [beliefs/glossary/open-sound-control](/beliefs/glossary/open-sound-control.md) | concept | false |
 | `em:02dc95` | [beliefs/glossary/open-weights](/beliefs/glossary/open-weights.md) | concept | false |
 | `em:d845c0` | [beliefs/glossary/open-world-assumption](/beliefs/glossary/open-world-assumption.md) | concept | false |
 | `em:c40dab` | [beliefs/glossary/openai-compatible-api](/beliefs/glossary/openai-compatible-api.md) | concept | false |
@@ -582,6 +586,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:3d4be4` | [beliefs/glossary/test-oracle](/beliefs/glossary/test-oracle.md) | concept | false |
 | `em:a2a2bb` | [beliefs/glossary/text-space-optimization](/beliefs/glossary/text-space-optimization.md) | concept | false |
 | `em:a9efbd` | [beliefs/glossary/textual-learning-rate](/beliefs/glossary/textual-learning-rate.md) | concept | false |
+| `em:b22423` | [beliefs/glossary/the-grid](/beliefs/glossary/the-grid.md) | concept | false |
 | `em:414eec` | [beliefs/glossary/theory-building](/beliefs/glossary/theory-building.md) | concept | false |
 | `em:089fb2` | [beliefs/glossary/thread-doc](/beliefs/glossary/thread-doc.md) | concept | false |
 | `em:8af8b6` | [beliefs/glossary/three-island-problem](/beliefs/glossary/three-island-problem.md) | concept | false |
@@ -840,6 +845,12 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ee3948` | [knowledge/media-production/audio-synthesis/generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | reference |  |
 | `em:ff1ed5` | [knowledge/media-production/audio-synthesis/supercollider-nrt-rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md) | note | false |
 | `em:98a026` | [knowledge/media-production/audio-synthesis/wakefield-gen-course-notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md) | source |  |
+| `em:2f2e0f` | [knowledge/media-production/daw-control/ableton/ableton-control-surfaces](/knowledge/media-production/daw-control/ableton/ableton-control-surfaces.md) | note | false |
+| `em:576364` | [knowledge/media-production/daw-control/ableton/max-for-live-programmability](/knowledge/media-production/daw-control/ableton/max-for-live-programmability.md) | note | false |
+| `em:a1b6d2` | [knowledge/media-production/daw-control/bitwig/bitwig-control-surfaces](/knowledge/media-production/daw-control/bitwig/bitwig-control-surfaces.md) | note | false |
+| `em:4a51b2` | [knowledge/media-production/daw-control/bitwig/drivenbymoss-osc](/knowledge/media-production/daw-control/bitwig/drivenbymoss-osc.md) | reference |  |
+| `em:892df3` | [knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary](/knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary.md) | note | false |
+| `em:b91fe3` | [knowledge/media-production/daw-control/osc-from-the-shell](/knowledge/media-production/daw-control/osc-from-the-shell.md) | snippet |  |
 | `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |
 | `em:507eb9` | [knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md) | note | false |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
@@ -851,6 +862,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c3c2f8` | [projects/agent-pairing/opportunity-assessment](/projects/agent-pairing/opportunity-assessment.md) | analysis |  |
 | `em:857398` | [projects/agent-pairing/realtime-sonification-layer](/projects/agent-pairing/realtime-sonification-layer.md) | analysis |  |
 | `em:fa721a` | [projects/agent-pairing/stack-lua-zig-elixir-jido](/projects/agent-pairing/stack-lua-zig-elixir-jido.md) | analysis |  |
+| `em:e36f3a` | [projects/bitwig-shell-control](/projects/bitwig-shell-control.md) | project |  |
+| `em:bb3021` | [projects/bitwig-shell-control/architecture-and-build-order](/projects/bitwig-shell-control/architecture-and-build-order.md) | plan |  |
+| `em:13fa3b` | [projects/bitwig-shell-control/daw-agentic-fit-bitwig-vs-ableton](/projects/bitwig-shell-control/daw-agentic-fit-bitwig-vs-ableton.md) | analysis |  |
 | `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |
