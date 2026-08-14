@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Fable 5), 2026-08-14; verbatim retained
 tags: [meta, thread, bitwig, ableton, daw-control, media-production, projects]
 timestamp: 2026-08-14
 session: https://claude.ai/code/session_013ZVo38EdZt6pLLoDjDEZda
+pr: 257
 ---
 
 # 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit
