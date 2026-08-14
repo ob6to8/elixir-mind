@@ -9,6 +9,10 @@ one in realtime.
 
 ## Contents
 
+- [ableton](/knowledge/media-production/daw-control/ableton/index.md) —
+  Ableton Live's control planes: Remote Scripts, Max for Live / the Live
+  Object Model, AbletonOSC, and the MCP-server ecosystem — plus M4L as a
+  programmable DSP substrate
 - [bitwig](/knowledge/media-production/daw-control/bitwig/index.md) — Bitwig
   Studio's control planes: the Open Controller API, the DrivenByMoss OSC
   address space, and the Grid's parameter surface

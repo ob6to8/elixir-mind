@@ -36,6 +36,10 @@ truth (see the knowledge docs below).
   — the plan: transport choice (OSC over the WebSocket bridge), the `bw`
   command surface, the Grid remote-control convention, phased build order
   from a zero-code smoke test to a named-parameter mapping layer.
+- [Agentic DAW fit — Bitwig vs. Ableton Live](/projects/bitwig-shell-control/daw-agentic-fit-bitwig-vs-ableton.md)
+  — the comparison behind this project's scope: Bitwig for performing what
+  exists (this system), Ableton + Max for Live as the deeper substrate if an
+  agent is to *construct* sound design — a sibling project if wanted.
 
 ## Knowledge filed (the split rule)
 

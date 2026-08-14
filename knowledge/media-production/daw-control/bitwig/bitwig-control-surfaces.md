@@ -71,7 +71,11 @@ Shell-first realtime control wants **DrivenByMoss OSC** (documented, current,
 bidirectional, zero code to adopt); the **Controller API** is the endgame
 when a bespoke address space or richer introspection is needed; **MIDI** is
 the fallback for one-off knob mappings; the **WebSocket bridge** is the
-option to re-evaluate if structured queries become load-bearing.
+option to re-evaluate if structured queries become load-bearing. For
+agent-native (MCP) consumers, packaged bridges over the Controller API
+already exist: [WigAI](https://github.com/fabb/WigAI) (an extension serving
+MCP at `localhost:61169/mcp`; Bitwig 5.2.7+, Java 21) and
+[bitwig-mcp-server](https://github.com/WeModulate/bitwig-mcp-server).
 
 ## Citations
 
