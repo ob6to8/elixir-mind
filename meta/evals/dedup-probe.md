@@ -108,8 +108,8 @@ cross-check — warn and trend, don't fail).
 
 | mode | hits | targets |
 |------|------|---------|
-| plain | 12 | 36 |
-| expanded | 29 | 36 |
+| plain | 13 | 36 |
+| expanded | 30 | 36 |
 
 The gap between the two rows above is the offline, repeatable measurement of how
 much recall the tier-1 `/intake` synonym-expansion change recovers: the targets

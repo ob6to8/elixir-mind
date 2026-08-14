@@ -840,6 +840,10 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:ee3948` | [knowledge/media-production/audio-synthesis/generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | reference |  |
 | `em:ff1ed5` | [knowledge/media-production/audio-synthesis/supercollider-nrt-rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md) | note | false |
 | `em:98a026` | [knowledge/media-production/audio-synthesis/wakefield-gen-course-notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md) | source |  |
+| `em:a1b6d2` | [knowledge/media-production/daw-control/bitwig/bitwig-control-surfaces](/knowledge/media-production/daw-control/bitwig/bitwig-control-surfaces.md) | note | false |
+| `em:4a51b2` | [knowledge/media-production/daw-control/bitwig/drivenbymoss-osc](/knowledge/media-production/daw-control/bitwig/drivenbymoss-osc.md) | reference |  |
+| `em:892df3` | [knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary](/knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary.md) | note | false |
+| `em:b91fe3` | [knowledge/media-production/daw-control/osc-from-the-shell](/knowledge/media-production/daw-control/osc-from-the-shell.md) | snippet |  |
 | `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |
 | `em:507eb9` | [knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md) | note | false |
 | `em:54cf3c` | [knowledge/startups/founders-playbook-ai-native-startup](/knowledge/startups/founders-playbook-ai-native-startup.md) | methodology |  |
@@ -851,6 +855,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:c3c2f8` | [projects/agent-pairing/opportunity-assessment](/projects/agent-pairing/opportunity-assessment.md) | analysis |  |
 | `em:857398` | [projects/agent-pairing/realtime-sonification-layer](/projects/agent-pairing/realtime-sonification-layer.md) | analysis |  |
 | `em:fa721a` | [projects/agent-pairing/stack-lua-zig-elixir-jido](/projects/agent-pairing/stack-lua-zig-elixir-jido.md) | analysis |  |
+| `em:e36f3a` | [projects/bitwig-shell-control](/projects/bitwig-shell-control.md) | project |  |
+| `em:bb3021` | [projects/bitwig-shell-control/architecture-and-build-order](/projects/bitwig-shell-control/architecture-and-build-order.md) | plan |  |
 | `em:2cbef7` | [projects/code-driven-av-production](/projects/code-driven-av-production.md) | project |  |
 | `em:78d356` | [projects/code-driven-av-production/declared-grid-av-production](/projects/code-driven-av-production/declared-grid-av-production.md) | analysis |  |
 | `em:708db6` | [projects/code-driven-av-production/gen-inspired-music-dsl](/projects/code-driven-av-production/gen-inspired-music-dsl.md) | analysis |  |

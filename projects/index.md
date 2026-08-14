@@ -16,6 +16,11 @@ project accrues research to the brain rather than to one repo.
   them gate, amend, and correct edits before they land; broker plus thin editor
   clients, Neovim first
   ([docs](/projects/agent-pairing/index.md))
+- [Bitwig shell control](/projects/bitwig-shell-control.md) — a shell-first
+  realtime control surface for Bitwig Studio: transport, mixer, device and
+  Grid parameters, clips, and live notes driven from a terminal over the
+  DrivenByMoss OSC address space, with an ergonomic `bw` CLI to follow
+  ([docs](/projects/bitwig-shell-control/index.md))
 - [Code-driven AV production](/projects/code-driven-av-production.md) — a
   scriptable music-and-video pipeline: ffmpeg picture cuts and SuperCollider
   non-realtime sound rendered from one declared timing grid, run on the
