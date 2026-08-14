@@ -758,6 +758,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
 | `em:86f6df` | [knowledge/SWE/dev-tools/litestream](/knowledge/SWE/dev-tools/litestream.md) | reference |  |
 | `em:45adfd` | [knowledge/SWE/dev-tools/llm-cli-tool](/knowledge/SWE/dev-tools/llm-cli-tool.md) | reference |  |
+| `em:5a2280` | [knowledge/SWE/dev-tools/neovim-command-discovery-plugins](/knowledge/SWE/dev-tools/neovim-command-discovery-plugins.md) | note | false |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
@@ -863,6 +864,8 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:50bbc3` | [projects/elixir-agent-memory/design-and-build-order](/projects/elixir-agent-memory/design-and-build-order.md) | plan |  |
 | `em:763ec8` | [projects/human-writing-attribution](/projects/human-writing-attribution.md) | project |  |
 | `em:fe5ca6` | [projects/human-writing-attribution/overlap-tool](/projects/human-writing-attribution/overlap-tool.md) | plan |  |
+| `em:b90524` | [projects/neovim-commands](/projects/neovim-commands.md) | project |  |
+| `em:253029` | [projects/neovim-commands/architecture-and-build-order](/projects/neovim-commands/architecture-and-build-order.md) | plan |  |
 | `em:f6de6f` | [projects/secure-financial-agent](/projects/secure-financial-agent.md) | project |  |
 | `em:0d4f26` | [projects/secure-financial-agent/architecture](/projects/secure-financial-agent/architecture.md) | plan |  |
 | `em:6e97e5` | [projects/secure-financial-agent/spec-completion](/projects/secure-financial-agent/spec-completion.md) | plan |  |

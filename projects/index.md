@@ -39,6 +39,11 @@ project accrues research to the brain rather than to one repo.
   report, so readers evaluate the human judgment directly instead of
   inferring authorship from style
   ([docs](/projects/human-writing-attribution/index.md))
+- [Neovim commands](/projects/neovim-commands.md) — a personal, git-versioned
+  corpus of Neovim commands, one markdown file per intent in category
+  directories, surfaced inside the editor by a thin fuzzy picker that answers
+  "next tab" with `gt`, its alternates, and notes
+  ([docs](/projects/neovim-commands/index.md))
 - [Secure financial agent](/projects/secure-financial-agent.md) — a locally-hosted
   agentic system for processing sensitive financial documents (taxes, bank
   statements) with no data egress and a typed capability boundary

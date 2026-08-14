@@ -17,3 +17,4 @@ than used.
   agents in parallel
 - [LLM — Simon Willison's multi-provider CLI and Python library](/knowledge/SWE/dev-tools/llm-cli-tool.md) — one interface across OpenAI, Claude, Gemini, Llama, and Ollama, logging every run to SQLite, with embeddings, structured extraction, and a plugin ecosystem
 - [Litestream — streaming SQLite replication](/knowledge/SWE/dev-tools/litestream.md) — a standalone process that streams SQLite's write-ahead log to cheap object storage with no code changes, giving single-server apps disaster recovery without a multi-server database
+- [Neovim command-discovery plugins — the genre map](/knowledge/SWE/dev-tools/neovim-command-discovery-plugins.md) — the four genres that answer "what's the command?" inside Neovim (cheatsheet search, config palettes, mapping introspection, prefix discovery), a maintained exemplar of each, and the file-per-entry corpus model none of them uses
