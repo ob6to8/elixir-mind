@@ -168,3 +168,34 @@ if structured query becomes load-bearing.
   Bitwig 6.x (its page says "Bitwig 5.3+", no explicit 6 statement — phase 0
   answers it); whether `bw` wants a daemon mode later (declined for now, see
   boundary decisions).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:bb3021">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:bb3021`]**  (co-feeds: `em:b91fe3 em:4a51b2`)
+
+**The ten-minute path** (commands composed from the cited docs, unexecuted here): install DrivenByMoss from mossgrabers.de, add its **Open Sound Control** controller in Bitwig's settings, note the receive/send ports, then:
+
+```sh
+oscsend localhost 8000 /play i 1                  # transport starts
+oscsend localhost 8000 /device/param/1/value i 96 # selected Grid patch, slot 1 moves
+oscsend localhost 8000 /vkb_midi/1/note/60 i 100  # play middle C into it
+oscdump 9000                                      # watch Bitwig's state stream back
+```
+
+---
+
+**[`em:bb3021`]**  (co-feeds: `em:a1b6d2`)
+
+**The design in one paragraph:** ride DrivenByMoss OSC as the sole transport (documented address space, bidirectional, release cadence tracking Bitwig's); reject the community WebSocket-RPC bridge as primary (its README targets Extension API 8–10, a Bitwig 3.x-era surface — staleness risk against Bitwig 6) and defer a bespoke controller extension until the OSC surface proves insufficient; build `bw` as an Elixir escript (`:gen_udp` + the OSCx encode/decode library) with verbs like `bw play`, `bw track 3 volume 0.8`, `bw param 1 0.5`, `bw sweep`, `bw watch`, and a phase-3 mapping layer so `bw grid cutoff 0.7` resolves named parameters per patch.
+
+---
+
+**[`em:bb3021`]**
+
+One premise to know before phase 0: the plan assumes your macOS machine from the AV-production project's record (`brew install liblo`), and the 8000/9000 ports in the examples are conventional defaults from training — read the real values off the extension's settings pane.

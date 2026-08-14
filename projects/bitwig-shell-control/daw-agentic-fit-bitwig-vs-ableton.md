@@ -102,3 +102,50 @@ plus DrivenByMoss. Momentum and worked examples favor Live.
   if Suite isn't owned; nothing here was executed against either DAW — the
   reach claims are documentation-grounded, the stability claims
   community-reported.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:13fa3b">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+6 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:13fa3b`]**
+
+commit
+what about ableton, via its extensions api, might it allow for more granular control of sound design?
+which application is better set up to leverage agentic control and generative sound design/composition?
+
+---
+
+**[`em:13fa3b`]**  (co-feeds: `em:2f2e0f`)
+
+Clean tree confirmed, and the comparison-doc precedent is `type: analysis` in the project namespace. The Ableton picture is forming: AbletonOSC exposes the whole Live Object Model (with a NIME 2023 paper behind it), Live 12.4 is current, and there's a crowded ecosystem of Ableton MCP servers built for exactly the agentic use you're asking about. Now the depth checks: LOM's composition surface, Max for Live as a programmable DSP substrate, and whether Bitwig has MCP/note-writing equivalents.
+
+---
+
+**[`em:13fa3b`]**  (co-feeds: `em:576364`)
+
+Two anchors landed: Bitwig *can* write notes programmatically (`Clip.setStep` → `NoteStep` with note-expression), and Max patches — including gen~ DSP with its GenExpr codebox — are JSON files that tools like py2max can generate offline, which is the crux of the granularity question. Last research pass: AbletonOSC's actual API surface and Max for Live's packaging.
+
+---
+
+**[`em:13fa3b`]**
+
+Both questions are researched, filed into the brain, and pushed (`889311d`). The short answer before the detail: your first commit request was already satisfied last turn, Ableton *is* more granular for sound design — but through Max for Live rather than a Bitwig-style extensions API, because its patches are text files an agent can literally write — and for agentic/generative work the honest verdict is a role split: Ableton is the deeper substrate for an agent that *constructs* sound design, Bitwig remains a fine (and officially cleaner) target for an agent that *performs* it, so the `bw` plan stands unchanged.
+
+---
+
+**[`em:13fa3b`]**  (co-feeds: `em:2f2e0f em:576364`)
+
+Yes — categorically — but the granularity lives in a different place than the phrase "extensions api" suggests. Ableton's stack is inverted from Bitwig's: its Remote Scripts substrate (Python inside Live) is *unofficial and undocumented*, while Bitwig's Controller API is official and versioned. What rides Live's substrate is nonetheless deeper, in two distinct ways:
+
+- **Control reach.** [AbletonOSC](https://github.com/ob6to8/elixir-mind/blob/claude/bitwig-shell-realtime-control-3xp3sj/knowledge/media-production/daw-control/ableton/ableton-control-surfaces.md) (Daniel Jones, NIME 2023, Live 11+, UDP 11000/11001) aims to "expose the entire Live Object Model API" — not just parameters but *set structure*: `/live/song/create_midi_track`, `create_scene`, `create_clip`, note add/remove with per-note properties, bulk enumeration of a device's whole parameter map (names/mins/maxes in one query), and push listeners including beat events. Bitwig's published surface is bank-paged and cursor-centric by comparison; it can write notes (`Clip.setStep` → `NoteStep`, with per-note expression) but can't grow or reflect over the project the same way.
+- **DSP constructability — this is the real answer to "granular sound design."** [Max for Live makes the instrument itself a text artifact](https://github.com/ob6to8/elixir-mind/blob/claude/bitwig-shell-realtime-control-3xp3sj/knowledge/media-production/daw-control/ableton/max-for-live-programmability.md): `.maxpat`/`.gendsp` files are JSON, gen~'s codebox takes GenExpr (per-sample DSP as C-like code), and py2max generates patcher files offline. An agent can write, diff, and version the DSP graph. The Grid, per the boundary doc filed last turn, is parameter-addressable but patch-closed — you perform it, you don't author it programmatically. Two caveats: M4L requires Suite (or Standard + the add-on, checked against Ableton's help center), and graph changes run at write-load-play cadence — the realtime loop on *both* DAWs is still parameters and notes.
+
+---
+
+**[`em:13fa3b`]**  (co-feeds: `em:2f2e0f`)
+
+**Ableton, for the generative/constructive ambition; Bitwig holds for live performance control — and the two conclusions don't conflict.** The [analysis](https://github.com/ob6to8/elixir-mind/blob/claude/bitwig-shell-realtime-control-3xp3sj/projects/bitwig-shell-control/daw-agentic-fit-bitwig-vs-ableton.md) argues it on three axes: control reach (Ableton ahead on structure/reflection, Bitwig on contractual stability), DSP constructability (one-sided for Ableton via M4L), and agent ecosystem (six-plus active Ableton MCP servers — one of which evals arbitrary Python inside Live — versus two for Bitwig: WigAI and bitwig-mcp-server, both now cited in the Bitwig surfaces doc). A point specific to your brain: the gen~ corpus already filed here (Wakefield's notes, the primitive-reduction model) is *directly executable knowledge* on the M4L side — gen~ is the same engine — so the Ableton path starts with a paid-for head start. The counterweight: the SuperCollider/NRT path in code-driven-av-production already gives fully-code DSP with no licensing gate; M4L's pitch over it is living inside a session with a player's workflow. Named premises: I've assumed Bitwig is your DAW (implied by the original ask, unconfirmed), your Live edition/M4L ownership is unknown, and nothing was executed against either DAW from this container — reach claims are documentation-grounded.

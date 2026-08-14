@@ -71,3 +71,24 @@ than audio-rate.
   [the codebox tutorial](https://cycling74.com/tutorials/gen~-for-beginners-part-5-the-codebox-operator) (Cycling '74)
 - [py2max](https://github.com/shakfu/py2max) — offline .maxpat generation
 - [Max for Live bundled in Live](https://help.ableton.com/hc/en-us/articles/360000036850-Max-for-Live-bundled-in-Live) (Ableton)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:576364">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:576364`]**  (co-feeds: `em:13fa3b`)
+
+Two anchors landed: Bitwig *can* write notes programmatically (`Clip.setStep` → `NoteStep` with note-expression), and Max patches — including gen~ DSP with its GenExpr codebox — are JSON files that tools like py2max can generate offline, which is the crux of the granularity question. Last research pass: AbletonOSC's actual API surface and Max for Live's packaging.
+
+---
+
+**[`em:576364`]**  (co-feeds: `em:2f2e0f em:13fa3b`)
+
+Yes — categorically — but the granularity lives in a different place than the phrase "extensions api" suggests. Ableton's stack is inverted from Bitwig's: its Remote Scripts substrate (Python inside Live) is *unofficial and undocumented*, while Bitwig's Controller API is official and versioned. What rides Live's substrate is nonetheless deeper, in two distinct ways:
+
+- **Control reach.** [AbletonOSC](https://github.com/ob6to8/elixir-mind/blob/claude/bitwig-shell-realtime-control-3xp3sj/knowledge/media-production/daw-control/ableton/ableton-control-surfaces.md) (Daniel Jones, NIME 2023, Live 11+, UDP 11000/11001) aims to "expose the entire Live Object Model API" — not just parameters but *set structure*: `/live/song/create_midi_track`, `create_scene`, `create_clip`, note add/remove with per-note properties, bulk enumeration of a device's whole parameter map (names/mins/maxes in one query), and push listeners including beat events. Bitwig's published surface is bank-paged and cursor-centric by comparison; it can write notes (`Clip.setStep` → `NoteStep`, with per-note expression) but can't grow or reflect over the project the same way.
+- **DSP constructability — this is the real answer to "granular sound design."** [Max for Live makes the instrument itself a text artifact](https://github.com/ob6to8/elixir-mind/blob/claude/bitwig-shell-realtime-control-3xp3sj/knowledge/media-production/daw-control/ableton/max-for-live-programmability.md): `.maxpat`/`.gendsp` files are JSON, gen~'s codebox takes GenExpr (per-sample DSP as C-like code), and py2max generates patcher files offline. An agent can write, diff, and version the DSP graph. The Grid, per the boundary doc filed last turn, is parameter-addressable but patch-closed — you perform it, you don't author it programmatically. Two caveats: M4L requires Suite (or Standard + the add-on, checked against Ableton's help center), and graph changes run at write-load-play cadence — the realtime loop on *both* DAWs is still parameters and notes.

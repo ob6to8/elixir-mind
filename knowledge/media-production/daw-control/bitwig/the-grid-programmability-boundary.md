@@ -80,3 +80,21 @@ vocabulary — see
 - [DrivenByMoss OSC register](https://github.com/git-moss/DrivenByMoss-Documentation/blob/master/Generic-Tools-Protocols/Open-Sound-Control-(OSC).md)
 - Remote-controls / macro practice: [KVR forum on remote control pages](https://www.kvraudio.com/forum/viewtopic.php?t=545302),
   [KVR forum on macros](https://www.kvraudio.com/forum/viewtopic.php?t=525038)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:892df3">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:892df3`]**  (co-feeds: `em:a1b6d2`)
+
+Research is sufficient. The picture: DrivenByMoss 26.6.3 (July 2026) gives Bitwig a documented OSC address space with feedback; the Grid is officially "controllable from the same Open Controller API" via remote controls; patch *topology* editing has no API. Now I'll set up the branch and check the id-minting workflow before writing the docs.
+
+---
+
+**[`em:892df3`]**  (co-feeds: `em:e36f3a`)
+
+**The short version:** yes, and the fastest form of it needs no new code. A free, actively maintained Bitwig extension (DrivenByMoss, 26.6.3 as of 2026-07-26) turns a running Bitwig into a network endpoint that plain shell commands can drive *and observe* — transport, tempo, mixer, any parameter a device or Grid patch exposes, clip/scene launching, even playing notes into a Grid synth. The one hard boundary the research found: nothing external can rewire a Grid patch's module graph. Realtime control means *performing* a patch through the remote-control slots it exports and swapping presets to change DSP topology — so patches get authored once in the GUI with their remote controls treated as a public interface. I filed the research into the brain, opened a project around it, and wrote the build plan for `bw`, a small Elixir CLI that makes the raw control surface ergonomic. Nothing here has touched a live Bitwig — none runs in this container — so the plan's phase 0 is a ten-minute smoke test on your machine.

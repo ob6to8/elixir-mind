@@ -72,3 +72,27 @@ pipeline's material.
 - **Next decision.** Ratify the plan's recommendation (Elixir escript over
   the DrivenByMoss OSC plane) or redirect; committing spawns the external
   `bw` repository and, if queued, a delivery matter per build phase.
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:e36f3a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+3 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:e36f3a`]**
+
+could you introduce some sort of shell based realtime control of the grid and dsp and/or other features in bitwig?
+
+---
+
+**[`em:e36f3a`]**
+
+Bitwig appears nowhere in the bundle yet — this is a fresh subject, and "the Grid" here means Bitwig's modular environment, distinct from the existing project's *declared timing grid*. The existing `code-driven-av-production` project deliberately keeps the DAW out of the render path, so realtime DAW control is a new sibling project. Let me check the house style for project docs and knowledge references.
+
+---
+
+**[`em:e36f3a`]**  (co-feeds: `em:892df3`)
+
+**The short version:** yes, and the fastest form of it needs no new code. A free, actively maintained Bitwig extension (DrivenByMoss, 26.6.3 as of 2026-07-26) turns a running Bitwig into a network endpoint that plain shell commands can drive *and observe* — transport, tempo, mixer, any parameter a device or Grid patch exposes, clip/scene launching, even playing notes into a Grid synth. The one hard boundary the research found: nothing external can rewire a Grid patch's module graph. Realtime control means *performing* a patch through the remote-control slots it exports and swapping presets to change DSP topology — so patches get authored once in the GUI with their remote controls treated as a public interface. I filed the research into the brain, opened a project around it, and wrote the build plan for `bw`, a small Elixir CLI that makes the raw control surface ergonomic. Nothing here has touched a live Bitwig — none runs in this container — so the plan's phase 0 is a ten-minute smoke test on your machine.

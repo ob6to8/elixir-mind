@@ -93,3 +93,22 @@ writable.
   [the Grid's programmability boundary](/knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary.md)).
 - **Actively maintained** — release cadence tracks Bitwig's, unlike the
   WebSocket-RPC bridge (README targets Extension API 8–10, Bitwig 3.x era).
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:4a51b2">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+1 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:4a51b2`]**  (co-feeds: `em:b91fe3 em:bb3021`)
+
+**The ten-minute path** (commands composed from the cited docs, unexecuted here): install DrivenByMoss from mossgrabers.de, add its **Open Sound Control** controller in Bitwig's settings, note the receive/send ports, then:
+
+```sh
+oscsend localhost 8000 /play i 1                  # transport starts
+oscsend localhost 8000 /device/param/1/value i 96 # selected Grid patch, slot 1 moves
+oscsend localhost 8000 /vkb_midi/1/note/60 i 100  # play middle C into it
+oscdump 9000                                      # watch Bitwig's state stream back
+```

@@ -88,3 +88,21 @@ MCP at `localhost:61169/mcp`; Bitwig 5.2.7+, Java 21) and
   `getOscModule` example via [programtalk extract](https://programtalk.com/java-more-examples/com.bitwig.extension.api.opensoundcontrol.OscAddressSpace.registerDefaultMethod()/),
   community OSC extensions ([charles-bitwig-osc](https://github.com/CharlesHolbrow/charles-bitwig-osc))
 - MIDI mapping: [Bitwig userguide, MIDI controllers](https://www.bitwig.com/userguide/latest/midi_controllers/)
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:a1b6d2">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-14-bitwig-shell-control-incubation-and-agentic-daw-fit (2026-08-14)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:a1b6d2`]**  (co-feeds: `em:892df3`)
+
+Research is sufficient. The picture: DrivenByMoss 26.6.3 (July 2026) gives Bitwig a documented OSC address space with feedback; the Grid is officially "controllable from the same Open Controller API" via remote controls; patch *topology* editing has no API. Now I'll set up the branch and check the id-minting workflow before writing the docs.
+
+---
+
+**[`em:a1b6d2`]**  (co-feeds: `em:bb3021`)
+
+**The design in one paragraph:** ride DrivenByMoss OSC as the sole transport (documented address space, bidirectional, release cadence tracking Bitwig's); reject the community WebSocket-RPC bridge as primary (its README targets Extension API 8–10, a Bitwig 3.x-era surface — staleness risk against Bitwig 6) and defer a bespoke controller extension until the OSC surface proves insufficient; build `bw` as an Elixir escript (`:gen_udp` + the OSCx encode/decode library) with verbs like `bw play`, `bw track 3 volume 0.8`, `bw param 1 0.5`, `bw sweep`, `bw watch`, and a phase-3 mapping layer so `bw grid cutoff 0.7` resolves named parameters per patch.
