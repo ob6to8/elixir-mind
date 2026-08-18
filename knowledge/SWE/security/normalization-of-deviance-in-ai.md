@@ -57,6 +57,11 @@ matches
 both treat model output as attacker-influenced input to the next system, not
 as a trusted instruction source.
 
+A concrete, dated case study of this exact failure —an eval's only safeguard
+being an instruction telling the model it was sandboxed, rather than an
+actual control on what it could reach — is
+[Three real-world incidents in AI cybersecurity evals](/knowledge/SWE/security/anthropic-cybersecurity-eval-incidents.md).
+
 # Citations
 
 - Source: <https://embracethered.com/blog/posts/2025/the-normalization-of-deviance-in-ai/>

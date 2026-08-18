@@ -6,7 +6,7 @@ description: An open-source (Apache-2.0), single-binary Rust terminal multiplexe
 resource: https://herdr.dev/
 provenance: "Distilled from herdr.dev, its /compare comparison matrix (https://herdr.dev/compare/#matrix), and the ogulcancelik/herdr GitHub repository, fetched 2026-07-29"
 tags: [terminal, terminal-multiplexer, ai-agents, developer-tools, rust]
-timestamp: 2026-08-03
+timestamp: 2026-08-18
 attribution:
   when: 2026-07-29T00:00:00Z
   channel: intake
@@ -41,6 +41,20 @@ rather than opaque processes in a pane:
 - **150+ community plugins** via a GitHub-based marketplace.
 - **Remote attachment** from a phone or any SSH client, with a responsive
   mobile interface.
+
+## Usage
+
+Herdr is mouse-native but fully keyboard-driven as an option. Run `herdr` from
+any project directory to launch or reattach to a background session — it
+auto-creates a workspace if none exists. Workspaces are project-level
+containers holding tabs, panes, and agents. Mouse controls: click to focus,
+drag borders to resize, right-click for context menus, all with full keyboard
+alternatives. Detaching (`prefix+q`, default prefix `Ctrl+B`) or simply
+closing the terminal leaves the server and any running agents alive — "you do
+not manage sockets; if you detach, agents keep running." Reattach by running
+`herdr` again from the same directory; `herdr server stop` ends the session
+for good. Common bindings: `prefix+v` split pane, `prefix+c` new tab,
+`prefix+w` switch workspace.
 
 ## Positioning against the field
 
@@ -79,6 +93,7 @@ consumed by.
 # Citations
 
 - herdr.dev — <https://herdr.dev/>
+- herdr quick-start docs — <https://herdr.dev/docs/quick-start/>
 - herdr comparison matrix — <https://herdr.dev/compare/#matrix>
 - GitHub: ogulcancelik/herdr — <https://github.com/ogulcancelik/herdr>
 - Compared against the Claude Code app, with a concrete build for

@@ -760,16 +760,26 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:f3beb0` | [knowledge/SWE/agentic/supply-chain-security/trust-state-inversion](/knowledge/SWE/agentic/supply-chain-security/trust-state-inversion.md) | reference |  |
 | `em:7d4960` | [knowledge/SWE/agentic/workflow-decomposition/ai-bill-as-a-management-discipline](/knowledge/SWE/agentic/workflow-decomposition/ai-bill-as-a-management-discipline.md) | reference |  |
 | `em:5a89af` | [knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic](/knowledge/SWE/agentic/workflow-decomposition/when-llm-workflows-should-be-deterministic.md) | reference |  |
+| `em:738593` | [knowledge/SWE/dev-tools/atuin](/knowledge/SWE/dev-tools/atuin.md) | reference |  |
+| `em:d138ff` | [knowledge/SWE/dev-tools/catppuccin](/knowledge/SWE/dev-tools/catppuccin.md) | reference |  |
+| `em:c06647` | [knowledge/SWE/dev-tools/cheatsheet-nvim](/knowledge/SWE/dev-tools/cheatsheet-nvim.md) | reference |  |
+| `em:8f8a6b` | [knowledge/SWE/dev-tools/chezmoi](/knowledge/SWE/dev-tools/chezmoi.md) | reference |  |
 | `em:16581e` | [knowledge/SWE/dev-tools/cmux](/knowledge/SWE/dev-tools/cmux.md) | reference |  |
 | `em:eb9f29` | [knowledge/SWE/dev-tools/herdr](/knowledge/SWE/dev-tools/herdr.md) | reference |  |
 | `em:86f6df` | [knowledge/SWE/dev-tools/litestream](/knowledge/SWE/dev-tools/litestream.md) | reference |  |
 | `em:45adfd` | [knowledge/SWE/dev-tools/llm-cli-tool](/knowledge/SWE/dev-tools/llm-cli-tool.md) | reference |  |
+| `em:a082f1` | [knowledge/SWE/dev-tools/opentui](/knowledge/SWE/dev-tools/opentui.md) | reference |  |
+| `em:f13f81` | [knowledge/SWE/dev-tools/sebastien-rousseau-ai-aware-dotfiles](/knowledge/SWE/dev-tools/sebastien-rousseau-ai-aware-dotfiles.md) | reference |  |
+| `em:0ecaed` | [knowledge/SWE/dev-tools/ssh-terminal-app-ratatui-russh](/knowledge/SWE/dev-tools/ssh-terminal-app-ratatui-russh.md) | reference |  |
+| `em:edcaa2` | [knowledge/SWE/dev-tools/starship](/knowledge/SWE/dev-tools/starship.md) | reference |  |
 | `em:fed9ce` | [knowledge/SWE/dev-tools/superlogical](/knowledge/SWE/dev-tools/superlogical.md) | reference |  |
+| `em:9a3434` | [knowledge/SWE/dev-tools/zsh-guide](/knowledge/SWE/dev-tools/zsh-guide.md) | reference |  |
 | `em:7309de` | [knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models](/knowledge/SWE/evals/debugging-agent-harnesses-on-weak-models.md) | methodology |  |
 | `em:d6cb97` | [knowledge/SWE/evals/decompose-then-verify-factuality](/knowledge/SWE/evals/decompose-then-verify-factuality.md) | reference |  |
 | `em:ec728d` | [knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy](/knowledge/SWE/evals/mast-multi-agent-system-failure-taxonomy.md) | reference |  |
 | `em:1394b9` | [knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread](/knowledge/SWE/evals/rag-evaluation-is-harder-than-the-pipeline-reddit-thread.md) | reference |  |
 | `em:1f1256` | [knowledge/SWE/evals/reading-a-self-published-benchmark](/knowledge/SWE/evals/reading-a-self-published-benchmark.md) | methodology |  |
+| `em:144256` | [knowledge/SWE/evals/smevals-eval-framework](/knowledge/SWE/evals/smevals-eval-framework.md) | reference |  |
 | `em:9baaad` | [knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag](/knowledge/SWE/evals/split-retrieval-and-generation-evaluation-for-rag.md) | methodology |  |
 | `em:bab1d2` | [knowledge/SWE/gpu-programming/zig-gpu-backends](/knowledge/SWE/gpu-programming/zig-gpu-backends.md) | reference |  |
 | `em:ea15aa` | [knowledge/SWE/llm-engineering/chroma-vector-database](/knowledge/SWE/llm-engineering/chroma-vector-database.md) | reference |  |
@@ -783,6 +793,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:41ab78` | [knowledge/SWE/performance/profiling-rust-nifs-in-elixir](/knowledge/SWE/performance/profiling-rust-nifs-in-elixir.md) | reference |  |
 | `em:57c28a` | [knowledge/SWE/security/agent-data-injection](/knowledge/SWE/security/agent-data-injection.md) | reference |  |
 | `em:cc0c87` | [knowledge/SWE/security/air-gapped-operations](/knowledge/SWE/security/air-gapped-operations.md) | concept | false |
+| `em:464bf7` | [knowledge/SWE/security/anthropic-cybersecurity-eval-incidents](/knowledge/SWE/security/anthropic-cybersecurity-eval-incidents.md) | reference |  |
 | `em:72d927` | [knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis](/knowledge/SWE/security/beyond-refusal-safety-state-in-vulnerability-analysis.md) | reference |  |
 | `em:f96824` | [knowledge/SWE/security/confidential-computing-for-llm-inference](/knowledge/SWE/security/confidential-computing-for-llm-inference.md) | concept | false |
 | `em:7da513` | [knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines](/knowledge/SWE/security/indirect-prompt-injection-in-document-pipelines.md) | concept | false |
