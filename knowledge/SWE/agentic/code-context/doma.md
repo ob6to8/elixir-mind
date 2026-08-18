@@ -92,8 +92,9 @@ to find where something lives, before you answer."
 - **Maturity:** released 2026-08-01; single author, who states "I made doma for
   myself and don't plan to put much ongoing work into it" — prebuilt binaries
   per platform, little-endian hosts only.
-- **Sibling:** [doyo](https://github.com/L34Z/doyo) (DOcument YOinker), "which
-  yoinks a project's docs into a local Markdown tree for doma to index".
+- **Sibling:** [doyo](/knowledge/SWE/agentic/code-context/doyo.md) (DOcument
+  YOinker), "which yoinks a project's docs into a local Markdown tree for doma
+  to index".
 
 ## Relation to other captures
 
