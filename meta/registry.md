@@ -865,6 +865,9 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
 | `em:d5ca81` | [knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md) | concept | true |
 | `em:ee3948` | [knowledge/media-production/audio-synthesis/generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | reference |  |
+| `em:7cdaf6` | [knowledge/media-production/audio-synthesis/loopmaster-groovemaster-livecoding-dsp](/knowledge/media-production/audio-synthesis/loopmaster-groovemaster-livecoding-dsp.md) | reference |  |
+| `em:bc60f3` | [knowledge/media-production/audio-synthesis/rust-audio-dsp-ecosystem](/knowledge/media-production/audio-synthesis/rust-audio-dsp-ecosystem.md) | reference |  |
+| `em:f988c6` | [knowledge/media-production/audio-synthesis/serum2-preset-toolkit](/knowledge/media-production/audio-synthesis/serum2-preset-toolkit.md) | reference |  |
 | `em:ff1ed5` | [knowledge/media-production/audio-synthesis/supercollider-nrt-rendering](/knowledge/media-production/audio-synthesis/supercollider-nrt-rendering.md) | note | false |
 | `em:98a026` | [knowledge/media-production/audio-synthesis/wakefield-gen-course-notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md) | source |  |
 | `em:2f2e0f` | [knowledge/media-production/daw-control/ableton/ableton-control-surfaces](/knowledge/media-production/daw-control/ableton/ableton-control-surfaces.md) | note | false |
@@ -873,6 +876,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:4a51b2` | [knowledge/media-production/daw-control/bitwig/drivenbymoss-osc](/knowledge/media-production/daw-control/bitwig/drivenbymoss-osc.md) | reference |  |
 | `em:892df3` | [knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary](/knowledge/media-production/daw-control/bitwig/the-grid-programmability-boundary.md) | note | false |
 | `em:b91fe3` | [knowledge/media-production/daw-control/osc-from-the-shell](/knowledge/media-production/daw-control/osc-from-the-shell.md) | snippet |  |
+| `em:6d4051` | [knowledge/media-production/sequencing/numerology-generative-midi-sequencer](/knowledge/media-production/sequencing/numerology-generative-midi-sequencer.md) | reference |  |
 | `em:b50c01` | [knowledge/media-production/sequencing/ramps-as-time](/knowledge/media-production/sequencing/ramps-as-time.md) | concept | true |
 | `em:507eb9` | [knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly](/knowledge/media-production/video-editing/ffmpeg-frame-accurate-assembly.md) | note | false |
 | `em:333fce` | [knowledge/startups/fortuitous-decade-indie-software-developer](/knowledge/startups/fortuitous-decade-indie-software-developer.md) | reference |  |
