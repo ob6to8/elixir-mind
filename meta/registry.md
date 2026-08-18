@@ -638,6 +638,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:e862bb` | [beliefs/glossary/word-error-rate](/beliefs/glossary/word-error-rate.md) | concept | false |
 | `em:35a507` | [beliefs/glossary/wordpiece](/beliefs/glossary/wordpiece.md) | concept | false |
 | `em:535978` | [beliefs/glossary/workflow-tool](/beliefs/glossary/workflow-tool.md) | concept | false |
+| `em:a86bdf` | [beliefs/glossary/working-copy-as-commit](/beliefs/glossary/working-copy-as-commit.md) | concept | false |
 | `em:964c3a` | [beliefs/glossary/write-time-vs-build-time](/beliefs/glossary/write-time-vs-build-time.md) | concept | false |
 | `em:751e4e` | [beliefs/glossary/yaml](/beliefs/glossary/yaml.md) | concept | false |
 | `em:01abda` | [beliefs/only-what-the-other-side-produced-is-evidence](/beliefs/only-what-the-other-side-produced-is-evidence.md) | belief |  |
