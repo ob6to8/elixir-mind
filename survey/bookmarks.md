@@ -2060,9 +2060,9 @@ re-engages.
 - **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** 
 - Page content unavailable.
 
-### [Unknown - PDF Unreadable](https://pages.cs.wisc.edu/~remzi/Naur.pdf)
-- **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** 
-- PDF binary content could not be parsed.
+### [Programming as Theory Building (Peter Naur, 1985)](https://pages.cs.wisc.edu/~remzi/Naur.pdf)
+- **Added:** 2026-07-23 · **Status:** promoted → [/knowledge/SWE/agentic/expertise/naur-programming-as-theory-building.md](/knowledge/SWE/agentic/expertise/naur-programming-as-theory-building.md) · **Tags:** `theory-building` `mental-models` `naur` `program-comprehension`
+- Naur's 1985 argument that the true product of programming is the team's mental theory of the program, not the code; promoted via /intake 2026-08-18 (the scanned PDF has no extractable text layer, so the filed reference cross-checks its quotes against secondary sources)
 
 ### [Random Tarot Card](https://randomtarotcard.com/)
 - **Added:** 2026-07-23 · **Status:** surveyed · **Tags:** 
@@ -2933,4 +2933,8 @@ re-engages.
 ### [Terax: One Developer Built an AI Terminal Better Than Warp](https://www.youtube.com/watch?v=3L8htHUzAI4)
 - **Added:** 2026-07-22 · **Status:** surveyed · **Tags:** `ai-terminal` `rust` `tauri` `developer-tools` `terminal`
 - Overview of Terax, a 7MB open-source AI-native terminal built with Tauri 2/Rust bundling a terminal, code editor, file explorer, and web preview.
+
+### [Underpass — peer-to-peer encrypted file transfer & chat](https://underpassapp.com/Underpass.html)
+- **Added:** 2026-08-18 · **Status:** surveyed · **Tags:** `macos` `ios` `p2p` `privacy` `encryption` `file-transfer`
+- A no-account, no-server Mac/iOS app making a direct AES-128-encrypted P2P connection between devices (LAN or internet) for file transfer, inline images, and text/emoji chat, by indie developer Jeff Johnson — a thin product page, parked here rather than fully filed. See also [A fortuitous decade as an indie software developer](/knowledge/startups/fortuitous-decade-indie-software-developer.md), Johnson's own retrospective naming Underpass as his commercially unsuccessful ($3,000 lifetime revenue) passion project.
 

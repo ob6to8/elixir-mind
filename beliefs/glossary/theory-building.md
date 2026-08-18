@@ -28,4 +28,4 @@ testing the hypotheses) but cannot retain them across sessions, so the durable
 theory stays with the human — the gap
 [agent-memory](/knowledge/SWE/agentic/agent-memory/index.md) systems target.
 
-*Seen in:* [2026-08-04 Goedecke expertise essays intake thread](/meta/threads/2026-08-04-goedecke-expertise-essays-intake.md), [programming (with AI agents) as theory building](/knowledge/SWE/agentic/expertise/programming-with-ai-agents-as-theory-building.md), Peter Naur, "Programming as Theory Building" (1985) — https://pages.cs.wisc.edu/~remzi/Naur.pdf
+*Seen in:* [2026-08-04 Goedecke expertise essays intake thread](/meta/threads/2026-08-04-goedecke-expertise-essays-intake.md), [programming (with AI agents) as theory building](/knowledge/SWE/agentic/expertise/programming-with-ai-agents-as-theory-building.md), [Peter Naur, "Programming as Theory Building" (1985)](/knowledge/SWE/agentic/expertise/naur-programming-as-theory-building.md)

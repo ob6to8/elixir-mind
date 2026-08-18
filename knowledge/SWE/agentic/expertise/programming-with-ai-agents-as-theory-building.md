@@ -54,8 +54,7 @@ retention gap is precisely the target of
 # Citations
 
 - Source: <https://www.seangoedecke.com/programming-with-ai-agents-as-theory-building/>
-- Peter Naur, "Programming as Theory Building" (1985):
-  <https://pages.cs.wisc.edu/~remzi/Naur.pdf>
+- [Peter Naur, "Programming as Theory Building" (1985)](/knowledge/SWE/agentic/expertise/naur-programming-as-theory-building.md)
 
 ## Thread excerpts — route-tagged log
 

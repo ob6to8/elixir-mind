@@ -9,3 +9,4 @@ analysis* of the AI industry; this domain is about *running the company*.
 ## Documents
 
 - [The Founder's Playbook: Building an AI-Native Startup](/knowledge/startups/founders-playbook-ai-native-startup.md) — Anthropic's stage-by-stage playbook (Idea, MVP, Launch, Scale) for founders building with AI as core infrastructure. `em:54cf3c` _(methodology)_
+- [A fortuitous decade as an indie software developer (Jeff Johnson)](/knowledge/startups/fortuitous-decade-indie-software-developer.md) — five lean years followed by a lucky platform-timing break (iOS 15 Safari extensions), explicitly framed by its author as survivorship bias rather than a repeatable playbook.

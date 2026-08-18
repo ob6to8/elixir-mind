@@ -26,3 +26,4 @@ than used.
 - [Atuin](/knowledge/SWE/dev-tools/atuin.md) — shell history replacement storing rich per-command metadata in local SQLite, with optional end-to-end-encrypted sync and a fuzzy-search UI
 - [A User's Guide to the Z-Shell](/knowledge/SWE/dev-tools/zsh-guide.md) — Peter Stephenson's long-form Zsh reference, the canonical guide on the zsh.sourceforge.io project site
 - [OpenTUI](/knowledge/SWE/dev-tools/opentui.md) — Zig-implemented terminal UI library with TypeScript/React/Solid bindings, flexbox layout, and in-terminal multimedia
+- [feedpaper — turning RSS subscriptions into an e-ink newspaper](/knowledge/SWE/dev-tools/rss-to-eink-newspaper.md) — a Homebrew CLI converting unread Feedbin items into an EPUB for a screenless e-ink reader
