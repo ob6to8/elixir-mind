@@ -828,6 +828,7 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:07610c` | [knowledge/ai-industry/ai-margin-collapse-glm-5-2](/knowledge/ai-industry/ai-margin-collapse-glm-5-2.md) | reference |  |
 | `em:2867ac` | [knowledge/ai-industry/ai-roi-runway-outside-tech-sector](/knowledge/ai-industry/ai-roi-runway-outside-tech-sector.md) | reference |  |
 | `em:51aede` | [knowledge/ai-industry/open-weights-stopped-being-a-price-weapon](/knowledge/ai-industry/open-weights-stopped-being-a-price-weapon.md) | claim | true |
+| `em:805f4d` | [knowledge/ai-industry/sources/artificial-analysis-deepseek-v4-flash](/knowledge/ai-industry/sources/artificial-analysis-deepseek-v4-flash.md) | source |  |
 | `em:6e26e0` | [knowledge/ai-industry/sources/artificial-analysis-kimi-k3-aa-briefcase](/knowledge/ai-industry/sources/artificial-analysis-kimi-k3-aa-briefcase.md) | source |  |
 | `em:0d3bac` | [knowledge/ai-industry/sources/artificial-analysis-kimi-k3-intelligence-index](/knowledge/ai-industry/sources/artificial-analysis-kimi-k3-intelligence-index.md) | source |  |
 | `em:fdf328` | [knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses](/knowledge/ai-industry/sources/kimi-k3-license-commercial-clauses.md) | source |  |
@@ -857,12 +858,16 @@ immutable; paths may change. Reference concepts by id (e.g. in `verified_by`).
 | `em:68279d` | [knowledge/knowledge-management/technical-communication/escalating-example-exposition](/knowledge/knowledge-management/technical-communication/escalating-example-exposition.md) | methodology |  |
 | `em:e12137` | [knowledge/knowledge-management/technical-communication/explorable-explanations](/knowledge/knowledge-management/technical-communication/explorable-explanations.md) | methodology |  |
 | `em:dfadfb` | [knowledge/knowledge-management/technical-communication/phantom-sketch-artist-method](/knowledge/knowledge-management/technical-communication/phantom-sketch-artist-method.md) | methodology |  |
+| `em:e307c9` | [knowledge/machine-learning/agent-based-modeling/boids-swarm-intelligence-force-field-variant](/knowledge/machine-learning/agent-based-modeling/boids-swarm-intelligence-force-field-variant.md) | reference |  |
+| `em:25aa97` | [knowledge/machine-learning/ai-and-mathematics/ai-out-remembers-not-outthinks-mathematicians](/knowledge/machine-learning/ai-and-mathematics/ai-out-remembers-not-outthinks-mathematicians.md) | reference |  |
+| `em:e4e835` | [knowledge/machine-learning/ai-and-mathematics/end-of-mathematics-institutional-incentives](/knowledge/machine-learning/ai-and-mathematics/end-of-mathematics-institutional-incentives.md) | reference |  |
 | `em:871b41` | [knowledge/machine-learning/deep-learning/architecting-awareness-hybrid-diffusion-transformer](/knowledge/machine-learning/deep-learning/architecting-awareness-hybrid-diffusion-transformer.md) | reference |  |
 | `em:1370e8` | [knowledge/machine-learning/deep-learning/deep-belief-networks](/knowledge/machine-learning/deep-learning/deep-belief-networks.md) | concept |  |
 | `em:70f026` | [knowledge/machine-learning/evolutionary-computation/evolutionary-search-in-latent-space](/knowledge/machine-learning/evolutionary-computation/evolutionary-search-in-latent-space.md) | visualization |  |
 | `em:da2ffb` | [knowledge/machine-learning/evolutionary-computation/inference-time-diffusion-alignment-via-evolutionary-algorithms](/knowledge/machine-learning/evolutionary-computation/inference-time-diffusion-alignment-via-evolutionary-algorithms.md) | reference |  |
 | `em:68d1b3` | [knowledge/machine-learning/kimi-k3](/knowledge/machine-learning/kimi-k3.md) | reference |  |
 | `em:28fac6` | [knowledge/machine-learning/open-weight-frontier-models-mid-2026](/knowledge/machine-learning/open-weight-frontier-models-mid-2026.md) | reference |  |
+| `em:a77fb7` | [knowledge/machine-learning/qwen-3-8-27b](/knowledge/machine-learning/qwen-3-8-27b.md) | reference |  |
 | `em:d5ca81` | [knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction](/knowledge/media-production/audio-synthesis/gen-dsp-primitive-reduction.md) | concept | true |
 | `em:ee3948` | [knowledge/media-production/audio-synthesis/generating-sound-organizing-time](/knowledge/media-production/audio-synthesis/generating-sound-organizing-time.md) | reference |  |
 | `em:7cdaf6` | [knowledge/media-production/audio-synthesis/loopmaster-groovemaster-livecoding-dsp](/knowledge/media-production/audio-synthesis/loopmaster-groovemaster-livecoding-dsp.md) | reference |  |
