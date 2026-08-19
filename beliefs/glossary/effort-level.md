@@ -23,4 +23,10 @@ Effort levels apply to a session (via `/model <alias>`, settings, or environment
 
 **Anthropic's model-selection heuristic:** when output is wrong, ask "did it not try hard enough (raise effort) or not know enough (switch models)?" — the diagnostic shapes which lever to reach for first.
 
-*Seen in:* [/meta/threads/2026-08-01-skill-model-selection](/meta/threads/2026-08-01-skill-model-selection.md)
+The same named-tier vocabulary (`low`/`high`/`xhigh`) shows up outside
+Claude Code too: Alibaba's Qwen 3.8 27B ships an `xhigh` reasoning-effort
+default that, left untuned, burns tens of thousands of tokens deliberating
+over trivial prompts — the same lever, the same failure mode of over-trusting
+the default, on a different vendor's model.
+
+*Seen in:* [/meta/threads/2026-08-01-skill-model-selection](/meta/threads/2026-08-01-skill-model-selection.md), [Qwen 3.8 27B — capable vision/code local model, undermined by default overthinking](/knowledge/machine-learning/qwen-3-8-27b.md)

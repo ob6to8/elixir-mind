@@ -14,6 +14,7 @@ ability distribution.
 - [AI makes weak engineers less harmful (Sean Goedecke)](/knowledge/SWE/agentic/expertise/ai-makes-weak-engineers-less-harmful.md) — engineering ability is heavy-tailed and the weakest engineers were net-negative; frontier coding agents raise that floor to line-by-line-functional output, turning the weakest engineers into Claude intermediaries.
 - [METR's AI Productivity Study is Really Good (Sean Goedecke)](/knowledge/SWE/agentic/expertise/metr-ai-productivity-study-is-really-good.md) — an RCT on experienced developers in familiar codebases found they predicted and believed a ~20% speedup from AI but measured 19% slower; expert-in-familiar-code may be close to the worst case for AI acceleration.
 - [Analysis of vibecoded outputs (MostAwesomeDude)](/knowledge/SWE/agentic/expertise/vibecoded-outputs-analysis-mostawesomedude.md) — five AI-chatbot coding submissions examined for confabulation, hackiness, and overfitting; you cannot inherit someone else's Naur theory by reading their output, only by building your own.
+- [Programming as Theory Building (Peter Naur, 1985)](/knowledge/SWE/agentic/expertise/naur-programming-as-theory-building.md) — the primary source behind the "theory building" thesis above: the true product of programming is the team's mental theory, not the code, and a program "dies" (unrevivable from documentation alone) once the team holding that theory disperses. `source`
 
 ## Related
 

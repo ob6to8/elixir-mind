@@ -18,3 +18,12 @@ DSP models and render backends for producing sound with code.
 - [Wakefield — Gen course notes](/knowledge/media-production/audio-synthesis/wakefield-gen-course-notes.md)
   — primary-source extracts from gen~'s author: operator count, single-sample
   feedback, the no-triggers rule, patch-as-compiler-specification
+- [loopmaster / groovemaster: livecoding music in the browser via WASM DSP](/knowledge/media-production/audio-synthesis/loopmaster-groovemaster-livecoding-dsp.md)
+  — function-call signal generators compiled to a WebAssembly DSP engine, no
+  install
+- [Rust audio DSP ecosystem: rust.audio and the awesome-audio-dsp list](/knowledge/media-production/audio-synthesis/rust-audio-dsp-ecosystem.md)
+  — the community hub and its 19-category curated list of DSP libraries,
+  cookbooks, and plugin-dev resources (language-agnostic, not Rust-only)
+- [serum2gen: a CLI/Python toolkit for Xfer Serum 2 preset files](/knowledge/media-production/audio-synthesis/serum2-preset-toolkit.md)
+  — reverse-engineered .SerumPreset editing plus optional VAE-based preset
+  generation; unrelated to gen~ despite the name

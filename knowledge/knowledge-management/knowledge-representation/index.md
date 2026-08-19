@@ -8,6 +8,7 @@ languages.
 
 - [Truth maintenance systems (TMS / RMS)](/knowledge/knowledge-management/knowledge-representation/truth-maintenance-systems.md) — Doyle's JTMS and de Kleer's ATMS: beliefs tracked with their justifications in a bipartite dependency graph, revised when premises change.
 - [FOL and OWL: fully formal knowledge representation](/knowledge/knowledge-management/knowledge-representation/first-order-logic-and-owl.md) — the fully formal pole: provable entailment and its decidability/authoring costs.
+- [ISO 704:2022 — Terminology work: Principles and methods](/knowledge/knowledge-management/knowledge-representation/iso-704-terminology-work-principles-and-methods.md) — the standard's own principles for the object/concept/definition/designation relationship that a controlled vocabulary and glossary informally reinvent.
 
 ## Sources
 

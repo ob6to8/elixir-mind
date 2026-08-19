@@ -11,6 +11,7 @@ gets architectural understanding without exploring a repo file by file.
 - [Codebase-Memory — tree-sitter code knowledge graph served over MCP](/knowledge/SWE/agentic/code-context/codebase-memory-mcp.md) — the same precompute-the-graph bet as GitNexus, benchmarked: ~10× fewer tokens and 2.1× fewer tool calls vs file-exploration (83% vs 92% answer quality) across 31 repos. `em:532b22` _(reference)_
 - [mex — a living wiki for your codebase, maintained by coding agents](/knowledge/SWE/agentic/code-context/mex.md) — fuses a deterministic Tree-sitter+SQLite code graph with a version-controlled markdown wiki: task-aware context routing under token budgets, drift detection between docs and code, and symbol grounding pinning wiki claims to exact code nodes. `em:a0fbd5` _(reference)_
 - [doma — single-binary BM25 ranked search over code and docs for agents](/knowledge/SWE/agentic/code-context/doma.md) — dependency-free Odin binary that chunks markdown at headings and code at top-level definitions, returning ranked passages with breadcrumbs and snippets; deliberately lexical-only (no stemming, stopwords, or embeddings), with a disposable freshness-checked index. `em:9673c2` _(reference)_
+- [doyo — single-binary documentation yoinker for LLM context](/knowledge/SWE/agentic/code-context/doyo.md) — dependency-light Odin binary that pulls a GitHub repo's or site's documentation into a local Markdown tree, preferring llms.txt manifests over heuristic HTML-to-Markdown conversion; doma's fetch-side sibling. _(reference)_
 
 ## Subdirectories
 
