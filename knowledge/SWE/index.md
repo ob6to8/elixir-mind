@@ -12,6 +12,7 @@ Software engineering knowledge.
 - [infrastructure](/knowledge/SWE/infrastructure/index.md) — server/infrastructure management concepts and terminology
 - [llm-engineering](/knowledge/SWE/llm-engineering/index.md) — making LLM inference and retrieval cheaper, faster, or more capable
 - [performance](/knowledge/SWE/performance/index.md) — profiling, benchmarking, and optimization technique, including across a language boundary
+- [rust](/knowledge/SWE/rust/index.md) — the Rust language: ecosystem tooling conventions, learning resources, and practitioner essays
 - [security](/knowledge/SWE/security/index.md) — vulnerability analysis, secure coding, and LLM assistance at the defensive/misuse boundary
 - [self-hosting](/knowledge/SWE/self-hosting/index.md) — self-hosting personal/consumer software: deployment options and operational notes
 - [software-design](/knowledge/SWE/software-design/index.md) — software design patterns, architectural styles, and the trade-offs between them

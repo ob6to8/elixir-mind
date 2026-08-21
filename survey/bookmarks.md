@@ -2938,3 +2938,19 @@ re-engages.
 - **Added:** 2026-08-18 · **Status:** surveyed · **Tags:** `macos` `ios` `p2p` `privacy` `encryption` `file-transfer`
 - A no-account, no-server Mac/iOS app making a direct AES-128-encrypted P2P connection between devices (LAN or internet) for file transfer, inline images, and text/emoji chat, by indie developer Jeff Johnson — a thin product page, parked here rather than fully filed. See also [A fortuitous decade as an indie software developer](/knowledge/startups/fortuitous-decade-indie-software-developer.md), Johnson's own retrospective naming Underpass as his commercially unsuccessful ($3,000 lifetime revenue) passion project.
 
+### Berkeley, CA — local
+
+No existing directory fits local-geography/community-org material (not knowledge, not a project, not a belief); parked here per the operator's own choice rather than proposing a new top-level directory for four items.
+
+### [Berkeleyside](https://www.berkeleyside.org/)
+- **Added:** 2026-08-21 · **Status:** surveyed · **Tags:** `berkeley` `local-news` `california`
+- Independent, nonprofit local news site covering Berkeley, California.
+
+### [Berkeley Path Wanderers Association](https://www.berkeleypaths.org/)
+- **Added:** 2026-08-21 · **Status:** surveyed · **Tags:** `berkeley` `local-org` `walking` `volunteer`
+- Volunteer-driven nonprofit that builds and maintains Berkeley's network of pedestrian paths and stairways (136 paths/stairways, 9+ miles, 4,000+ volunteer hours to date); leads guided and self-guided walks.
+
+### [Ecocivilization Coalition](https://www.ecociv.org/)
+- **Added:** 2026-08-21 · **Status:** surveyed · **Tags:** `berkeley` `ecocivilization` `nonprofit`
+- A strategic initiative of the Institute for Ecological Civilization pursuing a "life-affirming" post-growth worldview shift, coordinating allied movements, and incubating alternative models; filed under Berkeley at the operator's direction (its own page states no Berkeley affiliation).
+
