@@ -81,3 +81,39 @@ believe convenient things.
 - Source: <https://www.tedinski.com/2018/01/30/the-one-ring-problem-abstraction-and-power.html>
 - Discussion thread (fetch-blocked by Reddit's anti-bot protection; not captured):
   <https://www.reddit.com/r/programming/comments/7u2bfo/the_one_ring_problem_abstraction_and_our_quest/>
+
+## Thread excerpts — route-tagged log
+
+Append-only, per-thread, date-stamped excerpts, generated from the `<routes ref="em:b9158a">` regions of the threads that fed this matter and re-derivable via `mix brain.route_tags` — never hand-edit.
+
+### 2026-08-21-reading-list-batch-intake-65-links (2026-08-21)
+
+2 tagged region(s), lifted whole. Refs shown are the full ref-set of each region (this matter plus any it co-feeds).
+
+**[`em:b9158a`]**  (co-feeds: `em:f38c06 em:aa3f68 em:8be1fe`)
+
+All four batches are running in the background. While those work, here's where things stand and what still needs your input.
+
+**A batch of ~65 unique links, four are running now:**
+- Batch A — agent memory, MCP dedup, AI code-review tooling, Cursor's agent-orchestration posts → `knowledge/SWE/agentic/*`
+- Batch B — benchmarks and papers (lilybench, livebench, SYCON-Bench, arxiv/alphaxiv) → `knowledge/SWE/evals/`, `ai-industry/`, `machine-learning/`
+- Batch C — the Rust cluster (rust-analyzer/cargo-xtask, matklad essays, zinit/bottom/zoxide, rustlings, bash guide) → new `knowledge/SWE/rust/` + `dev-tools/`
+- Batch D — general SWE essays (abstraction, reasoning, testing, AI-era practice) → `software-design/`, `testing/`, `agentic/expertise/`
+
+---
+
+**[`em:b9158a`]**  (co-feeds: `em:f38c06 em:aa3f68 em:8be1fe em:0a7cd9`)
+
+The full batch is filed, verified, committed, and pushed. Here's where it landed.
+
+You pasted a reading list of roughly 65 distinct links (after dedup). I split fetching and distillation across four parallel research passes by topic, each writing into its own directories to avoid collisions, then filed the handful of items none of them owned myself, minted ids and rebuilt the registry in one pass at the end, and ran the full gate suite (format, compile, `mix brain.verify`, route-tags, glossary, matters, lineage, 211 tests) before committing. Everything passed clean. The branch (`claude/research-intake-links-kqwhod`) is pushed; no PR was opened since you didn't ask for one.
+
+**What I created**
+
+| Area | Docs | Notes |
+|---|---|---|
+| Agentic tooling, agent-memory, code-review, Cursor orchestration posts | 13 | `knowledge/SWE/agentic/*` |
+| Benchmarks & papers (LilyBench, LiveBench, SYCON-Bench, alphaxiv/arxiv) | 9 | `knowledge/SWE/evals/`, `machine-learning/ai-and-mathematics/` |
+| Rust ecosystem | 12 | new `knowledge/SWE/rust/` + 4 in `dev-tools/` |
+| SWE essays (abstraction, reasoning, testing, AI-era practice) | 11 | `software-design/`, `testing/`, `llm-engineering/`, `agentic/governance/`, new `cognitive-science/sensemaking/` |
+| Items no batch owned, filed by me directly | 6 | why-steering-works, follow-md-links.nvim, claudish-to-english+Vomit (merged), Cursor's "Git at any scale", "HTML can do that", "Sol loves to cheat" |
