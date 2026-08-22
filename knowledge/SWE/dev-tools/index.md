@@ -27,3 +27,9 @@ than used.
 - [A User's Guide to the Z-Shell](/knowledge/SWE/dev-tools/zsh-guide.md) — Peter Stephenson's long-form Zsh reference, the canonical guide on the zsh.sourceforge.io project site
 - [OpenTUI](/knowledge/SWE/dev-tools/opentui.md) — Zig-implemented terminal UI library with TypeScript/React/Solid bindings, flexbox layout, and in-terminal multimedia
 - [feedpaper — turning RSS subscriptions into an e-ink newspaper](/knowledge/SWE/dev-tools/rss-to-eink-newspaper.md) — a Homebrew CLI converting unread Feedbin items into an EPUB for a screenless e-ink reader
+- [zinit](/knowledge/SWE/dev-tools/zinit.md) — Zsh plugin manager built around asynchronous "Turbo mode" loading and per-plugin "ice" modifiers for fast startup and fine-grained control
+- [bottom (btm)](/knowledge/SWE/dev-tools/bottom.md) — cross-platform, graphical terminal system/process monitor written in Rust, covering CPU, memory, network, disk, and temperature widgets
+- [zoxide](/knowledge/SWE/dev-tools/zoxide.md) — Rust-written smarter `cd` replacement that ranks directories by frecency and jumps to the best fuzzy match
+- [The Bash Guide (bash.academy)](/knowledge/SWE/dev-tools/bash-academy-guide.md) — Maarten Billemont's open-source Bash scripting guide, the Bash counterpart to this directory's Zsh guide
+- [Git worktrees are great until you forget which one you're running (Wicksipedia)](/knowledge/SWE/dev-tools/git-worktrees-are-great-until-you-forget-which-one-youre-running.md) — a debugging war story resolved with an fzf-based worktree switcher and a SessionStart hook that auto-creates the matching git branch for a Claude Code worktree
+- [follow-md-links.nvim](/knowledge/SWE/dev-tools/follow-md-links-nvim.md) — Neovim plugin that turns Enter, on a markdown link under the cursor, into browser-style navigation across local files, headings, reference links, web URLs, and man pages

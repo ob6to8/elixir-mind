@@ -7,6 +7,7 @@ architecture, serving-stack numerics, and related serving concerns.
 ## References
 
 - [Defeating Nondeterminism in LLM Inference (Thinking Machines Lab)](/knowledge/SWE/llm-engineering/defeating-nondeterminism-in-llm-inference.md) — temperature-0 inference varies not from GPU concurrency but from kernels lacking batch invariance, so a request's numerics depend on the server load it was batched with; batch-invariant kernels make 1,000 completions bitwise identical at ~1.6× latency. `em:ae82a8` _(reference)_
+- [What Is Reasoning (Armin Ronacher)](/knowledge/SWE/llm-engineering/what-is-reasoning.md) — reasoning traces are ordinary text routed into a separate channel by learned convention; reasoning effort is a system-prompt instruction, not a sampling parameter, and "not thinking" is itself a learned, sometimes mechanically-enforced behavior.
 
 - [Chroma — open-source embedding/search database for AI retrieval](/knowledge/SWE/llm-engineering/chroma-vector-database.md) — serverless vector/full-text/regex/metadata search for RAG, tiering storage across memory/SSD/object storage; the retrieval-infrastructure companion to the brain's context-rot and RAG-pruning concepts. `em:ea15aa` _(reference)_
 - [Pruning RAG context with a small LLM before generation (Kapa.ai)](/knowledge/SWE/llm-engineering/rag-context-pruning-with-a-small-llm.md) — a cheap LLM grades retrieved chunks and discards low scorers before the expensive generator sees them. `em:41be22` _(reference)_

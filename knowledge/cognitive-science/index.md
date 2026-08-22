@@ -13,3 +13,7 @@ never as identity.
 - [biases](/knowledge/cognitive-science/biases/index.md) — human cognitive
   biases: systematic, directional deviations in human judgment, each entry
   carrying strictly human-behavioral evidence
+- [sensemaking](/knowledge/cognitive-science/sensemaking/index.md) — building
+  usable understanding of a fast-changing, uncertain situation without
+  needing accurate prediction: regulating attention, small deliberately-partial
+  models, and acting on field reports rather than forecasts
