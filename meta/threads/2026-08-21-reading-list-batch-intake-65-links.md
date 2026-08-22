@@ -6,6 +6,7 @@ provenance: "Claude Code session (Claude Sonnet 5), 2026-08-21; verbatim retaine
 tags: [meta, thread, intake, agentic, evals, rust, dev-tools, cognitive-science, software-design]
 timestamp: 2026-08-21T08:48:00Z
 session: https://claude.ai/code/session_01Se4sNXhx76VngLtF51GPXy
+pr: 259
 ---
 
 # 2026-08-21-reading-list-batch-intake-65-links
